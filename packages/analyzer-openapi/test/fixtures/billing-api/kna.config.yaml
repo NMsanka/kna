@@ -1,0 +1,6 @@
+version: 1
+org: acme
+docs:
+  outputDir: docs
+  types:
+    - api-integration-guide

@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import {
   mergeRegions,
   renderArchitectureOverview,
+  renderIntegrationGuide,
   renderModuleReference,
   renderRegion,
   serialiseFrontmatter,
@@ -32,7 +33,7 @@ import { ui } from '../ui.js';
  * first, and the one where deterministic rendering alone produces something a human would
  * have written.
  */
-const SUPPORTED_DOC_TYPES = ['module-reference', 'architecture-overview'];
+const SUPPORTED_DOC_TYPES = ['module-reference', 'architecture-overview', 'api-integration-guide'];
 
 export interface GenerateOptions {
   types?: string[];
@@ -104,6 +105,17 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
         sourceUrlTemplate: sourceUrlTemplate(ctx),
       }),
     );
+  }
+
+  // §5 — "for API integration guides specifically, generated OpenAPI documents beat AST
+  // parsing every time." One guide per specification the build produced.
+  if (types.includes('api-integration-guide')) {
+    for (const spec of result.bundle.payload.apiSpecs) {
+      documents.push(renderIntegrationGuide({ spec, symbols: result.bundle.payload.symbols }));
+    }
+    if (result.bundle.payload.apiSpecs.length === 0) {
+      ui.detail('No API specifications found, so no integration guide was generated.');
+    }
   }
 
   if (documents.length === 0) {

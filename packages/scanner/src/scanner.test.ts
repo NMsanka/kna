@@ -57,6 +57,14 @@ describe('secret detection', () => {
 });
 
 describe('PII detection', () => {
+  it('does not fire on a nil UUID', () => {
+    const result = scanFile({
+      path: 'src/constants.ts',
+      content: "export const NIL_UUID = '00000000-0000-0000-0000-000000000000';",
+    });
+    expect(result.findings.map((f) => f.ruleId)).not.toContain('credit-card');
+  });
+
   it('validates credit cards with Luhn rather than firing on any long digit run', () => {
     const real = scanFile({
       path: 'test/fixtures/orders.json',
@@ -210,6 +218,13 @@ describe('helpers', () => {
   it('validates Luhn', () => {
     expect(isLuhnValid('4111111111111111')).toBe(true);
     expect(isLuhnValid('4111111111111112')).toBe(false);
+  });
+
+  it('rejects a nil UUID, which passes Luhn but is not a card number', () => {
+    // A card's first digit is its Major Industry Identifier and 0 is unassigned. Without this,
+    // every codebase containing a nil UUID gets a CRITICAL finding and a blocked publish.
+    expect(isLuhnValid('00000000-0000-0000-0000-000000000000')).toBe(false);
+    expect(isLuhnValid('0000000000000000')).toBe(false);
   });
 
   it('redacts without leaking material', () => {

@@ -59,10 +59,19 @@ export function looksLikeNaturalIdentifier(value: string): boolean {
   return /[A-Za-z]{6,}/.test(value) && separators <= 3;
 }
 
-/** Luhn check, so the credit-card rule does not fire on every long digit run. */
+/**
+ * Luhn check, so the credit-card rule does not fire on every long digit run.
+ *
+ * The leading-zero rejection is not cosmetic. A payment card's first digit is its Major
+ * Industry Identifier, and 0 is unassigned — no real card begins with one. Without this,
+ * `00000000-0000-0000-0000-000000000000` passes Luhn (its digits sum to zero), so every
+ * codebase containing a nil UUID or a zero-padded numeric id gets a CRITICAL finding and a
+ * blocked publish. Found by this repository's own fixture tripping the gate.
+ */
 export function isLuhnValid(candidate: string): boolean {
   const digits = candidate.replace(/[^\d]/g, '');
   if (digits.length < 13 || digits.length > 19) return false;
+  if (digits.startsWith('0')) return false;
 
   let sum = 0;
   let double = false;

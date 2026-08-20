@@ -1,0 +1,237 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Billing API",
+    "version": "2.1.0",
+    "description": "Invoice lifecycle for integration partners."
+  },
+  "servers": [
+    { "url": "https://api.acme.example/v2", "description": "Production" },
+    { "url": "https://sandbox.acme.example/v2", "description": "Sandbox" }
+  ],
+  "security": [{ "bearerAuth": [] }],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "A partner access token obtained from the client-credentials endpoint."
+      },
+      "webhookSignature": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Acme-Signature",
+        "description": "HMAC-SHA256 of the raw request body, for webhook callbacks."
+      }
+    },
+    "schemas": {
+      "Money": {
+        "type": "object",
+        "required": ["amountMinor", "currency"],
+        "properties": {
+          "amountMinor": {
+            "type": "integer",
+            "description": "Amount in the smallest currency unit."
+          },
+          "currency": { "type": "string", "description": "ISO 4217 code." }
+        }
+      },
+      "InvoiceLine": {
+        "type": "object",
+        "required": ["description", "quantity", "unitPrice"],
+        "properties": {
+          "description": { "type": "string" },
+          "quantity": { "type": "integer" },
+          "unitPrice": { "$ref": "#/components/schemas/Money" }
+        }
+      },
+      "CreateInvoiceRequest": {
+        "type": "object",
+        "required": ["customerId", "lines"],
+        "properties": {
+          "customerId": {
+            "type": "string",
+            "description": "Identifier of the customer being billed."
+          },
+          "lines": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/InvoiceLine" },
+            "description": "Must contain at least one entry."
+          },
+          "reference": { "type": "string", "description": "Your own reference, echoed back." }
+        }
+      },
+      "Invoice": {
+        "type": "object",
+        "required": ["id", "customerId", "status", "total"],
+        "properties": {
+          "id": { "type": "string" },
+          "customerId": { "type": "string" },
+          "status": { "type": "string", "enum": ["draft", "issued", "paid", "void"] },
+          "total": { "$ref": "#/components/schemas/Money" },
+          "issuedAt": { "type": "string", "format": "date-time", "nullable": true }
+        }
+      },
+      "Problem": {
+        "type": "object",
+        "description": "RFC 9457 problem details.",
+        "properties": {
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "detail": { "type": "string" },
+          "instance": { "type": "string" }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/invoices": {
+      "post": {
+        "operationId": "createInvoice",
+        "summary": "Create a draft invoice",
+        "description": "Creates an invoice in `draft` status. Nothing is charged until it is issued.",
+        "tags": ["Invoices"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateInvoiceRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The created invoice.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Invoice" } }
+            }
+          },
+          "400": {
+            "description": "The request body failed validation — most often an empty `lines` array.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Problem" } }
+            }
+          },
+          "401": { "description": "Missing or expired access token." },
+          "429": { "description": "Rate limit exceeded. Respect `Retry-After`." }
+        }
+      },
+      "get": {
+        "operationId": "listInvoices",
+        "summary": "List invoices",
+        "tags": ["Invoices"],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "Filter to one customer."
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "enum": ["draft", "issued", "paid", "void"] }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 25 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of invoices.",
+            "content": {
+              "application/json": {
+                "schema": { "type": "array", "items": { "$ref": "#/components/schemas/Invoice" } }
+              }
+            }
+          },
+          "401": { "description": "Missing or expired access token." }
+        }
+      }
+    },
+    "/invoices/{invoiceId}": {
+      "get": {
+        "operationId": "getInvoice",
+        "summary": "Fetch one invoice",
+        "tags": ["Invoices"],
+        "parameters": [
+          {
+            "name": "invoiceId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The invoice.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Invoice" } }
+            }
+          },
+          "404": {
+            "description": "No invoice with that identifier.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Problem" } }
+            }
+          }
+        }
+      }
+    },
+    "/invoices/{invoiceId}/issue": {
+      "post": {
+        "operationId": "issueInvoice",
+        "summary": "Issue a draft invoice",
+        "description": "Transitions a `draft` invoice to `issued`. This is the point at which the customer is billed.",
+        "tags": ["Invoices"],
+        "parameters": [
+          {
+            "name": "invoiceId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "A unique key per issue attempt. Retrying with the same key is safe."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The issued invoice.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Invoice" } }
+            }
+          },
+          "409": {
+            "description": "The invoice is not in `draft` status.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Problem" } }
+            }
+          },
+          "422": { "description": "The invoice has no payable lines." }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "Liveness probe",
+        "tags": ["Operations"],
+        "security": [],
+        "responses": {
+          "200": { "description": "The service is up." }
+        }
+      }
+    }
+  }
+}

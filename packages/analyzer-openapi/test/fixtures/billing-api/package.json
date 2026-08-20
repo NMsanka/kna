@@ -1,0 +1,6 @@
+{
+  "name": "@acme/billing-api",
+  "version": "2.1.0",
+  "type": "module",
+  "private": true
+}
