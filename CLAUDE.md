@@ -64,6 +64,43 @@ node apps/cli/dist/bin.js describe --format summary
 Other CLI commands: `init`, `describe`, `scan`, `generate`, `publish`, `ask`, `doctor`. All of
 them work offline except `publish` and `ask`, which need a platform.
 
+### Running the services
+
+Postgres and Redis must be up and migrated (see below). Then, from a shell with the environment
+exported:
+
+```bash
+node apps/api/dist/server.js
+```
+
+```bash
+node apps/mcp/dist/server.js
+```
+
+```bash
+node apps/worker/dist/main.js
+```
+
+All three start and pass their startup assertions with **no LLM provider configured** —
+`LITELLM_BASE_URL` can point at nothing. What breaks without a provider is the query path
+(`/v1/search` needs an embedding) and indexing (needs embeddings and blurbs). Everything
+structural — health, auth, routing, the ACL filter, symbol lookup — works without one.
+
+Verified endpoints:
+
+| Request | Expect |
+|---|---|
+| `GET :8080/health/live` | `{"status":"ok"}` — never touches a dependency |
+| `GET :8080/health/ready` | Per-dependency states. Advisory failures keep the service `ok` |
+| `POST :8080/v1/search` unauthenticated | `401` |
+| `GET :8080/nope` | Uniform error envelope with a `traceId` |
+| `GET :8081/.well-known/oauth-protected-resource` | RFC 9728 metadata |
+| `GET :8081/mcp` unauthenticated | `401` plus a `WWW-Authenticate` naming the resource |
+
+With MinIO stopped, readiness reports `bundle-store: degraded` while overall status stays `ok`.
+That is §15.6 working, not a fault: readiness must not depend on an external provider, or one
+vendor blip pulls every pod from the load balancer.
+
 ---
 
 ## Local environment
@@ -151,6 +188,21 @@ needs a postinstall, justify it there rather than widening the list quietly.
 
 Worth repeating. Eight files pass either way; the isolation and advisory-lock tests only
 actually execute with a database.
+
+### Compiling is not running
+
+Three bugs survived a clean `tsc -b`, a clean lint and 142 passing tests, and only appeared the
+first time a server was actually started:
+
+- `pino-pretty` was named in a transport but never a dependency, so **every service died at
+  startup in development** with a stack trace that did not mention logging. It is now an
+  optional dependency behind a resolve check, falling back to JSON.
+- Fastify 5 takes a configuration object under `logger` and a constructed instance under
+  `loggerInstance`. Passing a pino instance to the former throws.
+- The inferred `buildServer` return type named pino through a nested `node_modules` path, which
+  is not portable. There is now an explicit `KnaServer` type in `apps/api/src/context.ts`.
+
+If you add a service or change its wiring, start it once. The type checker will not tell you.
 
 ---
 

@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { FastifyInstance } from 'fastify';
+
 import { zSearchRequest, zSearchResponse, zFeedbackRequest } from '@kna/contracts';
 import {
   renderAbstention,
@@ -9,7 +9,7 @@ import {
 } from '@kna/retrieval';
 import { sql } from 'drizzle-orm';
 import { withSystemContext } from '@kna/db';
-import type { ApiContext } from '../context.js';
+import type { ApiContext, KnaServer } from '../context.js';
 import { BreadthMonitor } from '../services/audit.js';
 
 /**
@@ -25,7 +25,7 @@ import { BreadthMonitor } from '../services/audit.js';
  * Step 4 is what makes "what was exposed?" answerable after an incident, and step 5 is what
  * makes a thumbs-down actionable rather than noise.
  */
-export async function registerSearchRoutes(app: FastifyInstance, ctx: ApiContext): Promise<void> {
+export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   const breadth = new BreadthMonitor(undefined, (alert) => {
     // §15.4 — breadth, not volume. An engineer touching 40 repos in an hour is the signal.
     ctx.metrics.breadthAnomalies.add(1, { surface: alert.surface });

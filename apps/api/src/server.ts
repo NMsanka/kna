@@ -7,7 +7,7 @@ import { IR_SCHEMA_VERSION } from '@kna/ir';
 import { computeConfigVersion, DEFAULT_RETRIEVAL_CONFIG, AccessDeniedError } from '@kna/retrieval';
 import { installGracefulShutdown } from '@kna/observability';
 import { assertRlsEffective } from '@kna/db';
-import { createApiContext, type ApiContext } from './context.js';
+import { createApiContext, type ApiContext, type KnaServer } from './context.js';
 import { AuthError } from './auth.js';
 import { registerIngestRoutes } from './routes/ingest.js';
 import { registerSearchRoutes } from './routes/search.js';
@@ -26,14 +26,16 @@ import { registerWebhookRoutes } from './routes/webhooks.js';
  * on external providers, and drain semantics that let a rolling deploy finish in-flight work.
  */
 
-export async function buildServer(ctx: ApiContext) {
+export async function buildServer(ctx: ApiContext): Promise<KnaServer> {
   const app = Fastify({
-    logger: ctx.logger,
+    // `loggerInstance`, not `logger`: Fastify 5 takes a *configuration object* under `logger`
+    // and an already-constructed instance under `loggerInstance`. Passing a pino instance to
+    // the former throws at construction.
+    loggerInstance: ctx.logger,
     // Bounded so a hostile or misconfigured client cannot force a large allocation before the
     // signature check. Bundles are large; everything else is not.
     bodyLimit: ctx.env.INGEST_MAX_BUNDLE_BYTES,
     trustProxy: true,
-    disableRequestLogging: false,
     genReqId: () => crypto.randomUUID(),
   });
 

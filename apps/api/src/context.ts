@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { sql } from 'drizzle-orm';
-import type { FastifyRequest } from 'fastify';
+import type { FastifyInstance, FastifyRequest, RawServerDefault } from 'fastify';
+import type { IncomingMessage, ServerResponse } from 'node:http';
 import { createDb, withSystemContext, type DbHandle } from '@kna/db';
 import { KnaMetrics, HealthRegistry, createLogger, type Logger } from '@kna/observability';
 import { LlmClient } from '@kna/llm';
@@ -34,6 +35,21 @@ import { OidcVerifier } from './services/oidc.js';
  *  - The reranker degrades to a null implementation rather than being absent, so the retrieval
  *    path has one code shape whether or not a cross-encoder is deployed (§11 option 4).
  */
+
+/**
+ * The concrete server type.
+ *
+ * Fastify's generics carry the logger type, and ours is pino's `Logger` rather than the default
+ * `FastifyBaseLogger`. Naming it once here — through `@kna/observability`, which re-exports it —
+ * keeps the emitted declarations portable; inferring it reaches into a nested node_modules path
+ * that does not exist on another machine's install layout.
+ */
+export type KnaServer = FastifyInstance<
+  RawServerDefault,
+  IncomingMessage,
+  ServerResponse<IncomingMessage>,
+  Logger
+>;
 
 export interface ApiContext {
   env: PlatformEnv;

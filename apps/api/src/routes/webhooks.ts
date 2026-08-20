@@ -1,8 +1,8 @@
 import { createHmac, timingSafeEqual, randomUUID } from 'node:crypto';
-import type { FastifyInstance, FastifyReply } from 'fastify';
+import type { FastifyReply } from 'fastify';
 import { sql } from 'drizzle-orm';
 import { withSystemContext } from '@kna/db';
-import type { ApiContext } from '../context.js';
+import type { ApiContext, KnaServer } from '../context.js';
 
 /**
  * Git provider webhooks.
@@ -17,7 +17,7 @@ import type { ApiContext } from '../context.js';
  * §15.7 adds: "signed webhooks so a leaked webhook secret alone cannot forge ingestion." The
  * signature is checked before the body is parsed, and the check is constant-time.
  */
-export async function registerWebhookRoutes(app: FastifyInstance, ctx: ApiContext): Promise<void> {
+export async function registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   // Raw body is required for signature verification; parsing first and re-serialising will not
   // reproduce the exact bytes that were signed.
   app.addContentTypeParser('application/json', { parseAs: 'buffer' }, (request, body, done) => {

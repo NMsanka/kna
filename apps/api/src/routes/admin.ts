@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { FastifyInstance } from 'fastify';
+
 import { sql } from 'drizzle-orm';
 import { withSystemContext } from '@kna/db';
 import {
@@ -8,7 +8,7 @@ import {
   zPublishExternallyRequest,
 } from '@kna/contracts';
 import { canonicalRemote, computeRepoId } from '@kna/ir';
-import type { ApiContext } from '../context.js';
+import type { ApiContext, KnaServer } from '../context.js';
 import { AuthError } from '../auth.js';
 
 /**
@@ -18,7 +18,7 @@ import { AuthError } from '../auth.js';
  * routing changes, direct DB sessions." Every route here writes an audit record before it
  * writes anything else, because these are precisely the actions an auditor will ask about.
  */
-export async function registerAdminRoutes(app: FastifyInstance, ctx: ApiContext): Promise<void> {
+export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   const requireAdmin = async (request: Parameters<typeof ctx.authenticate>[0]) => {
     const principal = await ctx.authenticate(request);
     const isAdmin = await ctx.db.sql<Array<{ ok: boolean }>>`

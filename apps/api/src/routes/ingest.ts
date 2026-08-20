@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { FastifyInstance } from 'fastify';
+
 import { sql } from 'drizzle-orm';
 import {
   contentHash,
@@ -13,7 +13,7 @@ import {
 import { verifyEnvelope, explainFailure, zIngestResponse } from '@kna/contracts';
 import { withSystemContext } from '@kna/db';
 import { verifyIngestToken, AuthError } from '../auth.js';
-import type { ApiContext } from '../context.js';
+import type { ApiContext, KnaServer } from '../context.js';
 
 /**
  * The ingest endpoint — the trust boundary.
@@ -26,7 +26,7 @@ import type { ApiContext } from '../context.js';
  * record... Postgres becomes an explicitly derived cache." If the bundle is not durably stored,
  * nothing downstream should have happened, because it could not be replayed.
  */
-export async function registerIngestRoutes(app: FastifyInstance, ctx: ApiContext): Promise<void> {
+export async function registerIngestRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   app.post('/v1/ingest', async (request, reply) => {
     const started = Date.now();
     const traceId = randomUUID();

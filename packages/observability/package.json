@@ -27,5 +27,8 @@
     "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
     "@opentelemetry/resources": "^1.30.0",
     "@opentelemetry/semantic-conventions": "^1.28.0"
+  },
+  "optionalDependencies": {
+    "pino-pretty": "^13.0.0"
   }
 }

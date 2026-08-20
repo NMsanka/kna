@@ -1,3 +1,4 @@
+import { createRequire } from 'node:module';
 import pino, { type Logger } from 'pino';
 
 /**
@@ -42,6 +43,26 @@ export interface LoggerOptions {
   pretty?: boolean;
 }
 
+/**
+ * Pretty output is a development convenience, so it must never be a startup dependency.
+ *
+ * `pino-pretty` is an optional dependency and is pruned from production images. Naming it in a
+ * transport when it is absent throws inside `pino()` — before any logger exists to report the
+ * problem — so a missing dev-only formatter takes the whole service down with a stack trace
+ * that does not mention logging.
+ */
+function prettyTransport(): { transport: { target: string; options: object } } | undefined {
+  try {
+    createRequire(import.meta.url).resolve('pino-pretty');
+    return {
+      transport: { target: 'pino-pretty', options: { colorize: true, singleLine: false } },
+    };
+  } catch {
+    // Structured JSON is the correct fallback: less pleasant to read, entirely functional.
+    return undefined;
+  }
+}
+
 export function createLogger(options: LoggerOptions): Logger {
   const base = {
     service: options.service,
@@ -57,9 +78,7 @@ export function createLogger(options: LoggerOptions): Logger {
     formatters: {
       level: (label) => ({ level: label }),
     },
-    ...(options.pretty
-      ? { transport: { target: 'pino-pretty', options: { colorize: true, singleLine: false } } }
-      : {}),
+    ...(options.pretty ? prettyTransport() : {}),
   });
 }
 
