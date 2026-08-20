@@ -197,6 +197,77 @@ describeIf('database integration', () => {
     }, 30_000);
   });
 
+  describe('privileges (§15.4)', () => {
+    /**
+     * Every table must be reachable by the roles that serve requests.
+     *
+     * 0005 established the roles with `ALTER DEFAULT PRIVILEGES`, which applies only to objects
+     * created *after* it — and every table is created four migrations earlier. The roles could
+     * log in, could see the schema, and had privileges on nothing. It went unnoticed because the
+     * databases in use had accumulated the grants by other means; it appeared the first time the
+     * suite ran against a database built from the migrations alone, which is precisely what a
+     * first deployment is.
+     *
+     * Asserted over every table rather than a sample, because the failure is per-table: a single
+     * table added by a future migration without grants breaks exactly one feature, at runtime,
+     * with a permission error naming a table and no hint of why it differs from its neighbours.
+     */
+    it('grants the application roles access to every table', async () => {
+      const rows = await admin.sql<Array<{ table_name: string; missing: string }>>`
+        WITH tables AS (
+          SELECT tablename AS table_name
+            FROM pg_tables
+           WHERE schemaname = 'public'
+             -- The migration runner connects as the owner, so this one needs no grant.
+             AND tablename <> 'kna_migrations'
+        ),
+        granted AS (
+          SELECT table_name, grantee, array_agg(privilege_type) AS privs
+            FROM information_schema.role_table_grants
+           WHERE table_schema = 'public'
+             AND grantee IN ('kna_interactive', 'kna_batch')
+           GROUP BY table_name, grantee
+        )
+        SELECT t.table_name,
+               concat_ws(', ',
+                 CASE WHEN NOT EXISTS (
+                   SELECT 1 FROM granted g
+                    WHERE g.table_name = t.table_name
+                      AND g.grantee = 'kna_interactive'
+                      AND 'SELECT' = ANY(g.privs)
+                 ) THEN 'kna_interactive:SELECT' END,
+                 CASE WHEN NOT EXISTS (
+                   SELECT 1 FROM granted g
+                    WHERE g.table_name = t.table_name
+                      AND g.grantee = 'kna_batch'
+                      AND 'SELECT' = ANY(g.privs) AND 'INSERT' = ANY(g.privs)
+                 ) THEN 'kna_batch:SELECT+INSERT' END
+               ) AS missing
+          FROM tables t
+      `;
+
+      const gaps = rows.filter((r) => r.missing !== '');
+      expect(
+        gaps.map((r) => `${r.table_name} missing ${r.missing}`),
+        'tables the application roles cannot use',
+      ).toEqual([]);
+    });
+
+    it('does not let the interactive role modify tenant data', async () => {
+      // The narrow exception is append-only bookkeeping: audit_events, query_traces, feedback.
+      // Anything beyond those three would mean the internet-facing role can alter the corpus.
+      const rows = await admin.sql<Array<{ table_name: string }>>`
+        SELECT DISTINCT table_name
+          FROM information_schema.role_table_grants
+         WHERE table_schema = 'public'
+           AND grantee = 'kna_interactive'
+           AND privilege_type IN ('INSERT', 'UPDATE', 'DELETE', 'TRUNCATE')
+           AND table_name NOT IN ('audit_events', 'query_traces', 'feedback')
+      `;
+      expect(rows.map((r) => r.table_name)).toEqual([]);
+    });
+  });
+
   describe('array parameters', () => {
     /**
      * Drizzle's `sql` template does not bind a JavaScript array as one parameter — it *spreads*

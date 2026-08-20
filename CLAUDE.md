@@ -149,7 +149,7 @@ DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm test
 ```
 
 Integration tests **skip silently** when `DATABASE_URL` is unset. A green `pnpm test` with no
-database has not tested tenant isolation. Current baseline: **194 unit tests plus 23 integration tests, 12 files.**
+database has not tested tenant isolation. Current baseline: **194 unit tests plus 25 integration tests, 12 files.**
 
 | Connection | URL | Used by |
 |---|---|---|
@@ -306,6 +306,26 @@ Every tool is read-only, permanently — see the first entry under **Do not**.
 ## Gotchas
 
 These cost time during the build. Each one fails in a way that does not look like its cause.
+
+### ALTER DEFAULT PRIVILEGES does not cover tables that already exist
+
+0005 gave the login roles their posture with `ALTER DEFAULT PRIVILEGES`, which applies only to
+objects created *after* it runs. Every table is created in 0001b, four migrations earlier, so
+none were covered: the roles could log in, could see the schema, and had privileges on nothing.
+
+It stayed invisible because no database in use had been built from the migrations alone — the
+ones we had picked up the grants some other way and carried on working. It appeared the first
+time CI ran against a database created from nothing, which is also exactly what a first
+deployment is. The failure there is total and immediate: every service starts cleanly, passes its
+startup assertions, and then returns permission denied for the first query of any kind.
+
+Fixed forward in 0010 and pinned by an integration test asserting every table is reachable by
+both roles. If you add a table, that test is what tells you it needs grants.
+
+Related, and worth stating precisely because 0007's comment overstates it: `kna_interactive` is
+not SELECT-only. 0002 grants it INSERT on `audit_events`, `query_traces` and `feedback` — three
+append-only tables holding no tenant content. The rule is that the internet-facing role may
+append to its own trail and may not modify anything else.
 
 ### The sweep must compare ids, not commit shas
 
