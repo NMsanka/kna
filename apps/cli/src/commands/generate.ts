@@ -23,6 +23,16 @@ import { ui } from '../ui.js';
  * own repo, so if the platform is ever switched off the documentation stays where it is.
  */
 
+/**
+ * Document types this build can actually produce.
+ *
+ * §6 lists six types; only the module reference is implemented. It is also the one §6 calls
+ * "the most reliably automatable; closest to traditional API docs" — the right one to have
+ * first, and the one where deterministic rendering alone produces something a human would
+ * have written.
+ */
+const SUPPORTED_DOC_TYPES = ['module-reference'];
+
 export interface GenerateOptions {
   types?: string[];
   outputDir?: string;
@@ -36,8 +46,22 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
   const outputDir = options.outputDir ?? ctx.config.docs.outputDir;
   const types = options.types ?? ctx.config.docs.types;
 
+  // Report what was asked for and will not be produced. The previous check was inverted — it
+  // warned when `module-reference` was *absent* — so a repo configuring `architecture-overview`
+  // got silence and no file. Configuration that is silently ignored is worse than configuration
+  // that is rejected: the developer believes it took effect.
+  const unsupported = types.filter((type) => !SUPPORTED_DOC_TYPES.includes(type));
+  if (unsupported.length > 0) {
+    ui.warn(
+      `Not generated: ${unsupported.join(', ')}. ` +
+        `This build produces ${SUPPORTED_DOC_TYPES.join(', ')} only.`,
+    );
+    ui.detail('Configured in docs.types. The remaining types are not implemented yet, not off.');
+  }
+
   if (!types.includes('module-reference')) {
-    ui.warn('Only module-reference generation is wired up in this build.');
+    ui.warn('docs.types does not include module-reference, so nothing will be generated.');
+    return;
   }
 
   const symbolsByModule = new Map<string, typeof result.bundle.payload.symbols>();
