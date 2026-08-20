@@ -124,12 +124,25 @@ jobs:
         id: config
         run: node scripts/check-retrieval-config.mjs "${{ github.event.pull_request.base.sha }}"
 
-      - name: Run eval
+      # The eval harness (metrics, paired bootstrap, CI gate) is implemented and tested in
+      # packages/retrieval/src/eval. The *runner* that executes it against a populated index is
+      # not built yet — it needs a seeded corpus, embeddings and a golden set, none of which
+      # exist in CI today.
+      #
+      # Until then this step fails the build deliberately rather than passing silently. §15.5
+      # is explicit that an ungated retrieval change is how a quality regression ships; a green
+      # check that ran nothing is worse than a red one that says so.
+      - name: Retrieval eval gate
         if: steps.config.outputs.changed == 'true'
         run: |
-          echo "Retrieval configuration changed. The eval set is the only thing standing"
-          echo "between a plausible-sounding change and a silent quality regression."
-          pnpm eval --compare "${{ github.event.pull_request.base.sha }}"
+          echo "::error::Retrieval configuration changed, but no eval runner is wired up yet."
+          echo ""
+          echo "The gate exists (packages/retrieval/src/eval) and is unit-tested. What is"
+          echo "missing is the runner: load eval_items, execute the pipeline against a seeded"
+          echo "corpus, and feed evaluateGate()."
+          echo ""
+          echo "Until that lands, a retrieval change needs a human to say why it is safe."
+          exit 1
 
   security:
     name: Security review

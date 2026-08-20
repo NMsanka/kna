@@ -115,6 +115,9 @@ apps/
   tuning.
 - [Specifications](openspec/) — the contracts several independently-authored components must
   agree on.
+- [CLAUDE.md](CLAUDE.md) / [AGENTS.md](AGENTS.md) — orientation for coding agents: verified
+  commands, the gotchas that fail in ways that do not look like their cause, and what is not
+  built yet.
 
 ---
 
