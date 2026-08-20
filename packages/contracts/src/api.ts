@@ -157,6 +157,57 @@ export const zOnboardRepoRequest = z.object({
   projectSlugs: z.array(z.string()).default([]),
   /** §15.8 — onboarding must be one command with zero YAML for the default case. */
   openPullRequest: z.boolean().default(true),
+  /**
+   * Principals to grant read access, beyond the administrator making the request.
+   *
+   * Registering a repo used to write the `repos` row and stop, which left the repo real but
+   * invisible: the ACL filter reads `repo_permissions`, and a repo with no permission row is
+   * correctly readable by nobody. Onboarding that produces something nobody can see is not
+   * onboarding, so the caller is always granted access and may name others here.
+   *
+   * In a deployment with provider permission sync this is a bootstrap, not the mechanism —
+   * §15.4's webhooks are what keep access current afterwards.
+   */
+  grantTo: z.array(z.string()).default([]),
+});
+
+export const zOnboardRepoResponse = z.object({
+  repoId: z.string(),
+  remote: z.string(),
+  pullRequestUrl: z.string().nullable(),
+  grantedTo: z.array(z.string()),
+  projectSlugs: z.array(z.string()),
+  unknownProjectSlugs: z.array(z.string()),
+});
+
+/**
+ * Mint a repo-scoped ingest credential by hand.
+ *
+ * The supported path is OIDC: CI presents its workload identity to `/v1/auth/ci-exchange` and
+ * receives a credential that lives for minutes, so nothing long-lived exists to leak. This
+ * endpoint is the fallback for the case that path cannot cover — a local stack with no identity
+ * provider, or a first manual publish before any CI exists.
+ *
+ * It is deliberately awkward: it refuses outright in production, it caps the lifetime, it
+ * demands a reason, and it writes an audit record naming the administrator who asked. A
+ * long-lived push credential minted on request is exactly the "static org secret in CI settings"
+ * §15.2 exists to prevent, so it should be visible in the audit log rather than routine.
+ */
+export const zIngestCredentialRequest = z.object({
+  reason: z.string().min(1),
+  ttlHours: z
+    .number()
+    .int()
+    .positive()
+    .max(24 * 30)
+    .default(24),
+});
+
+export const zIngestCredentialResponse = z.object({
+  token: z.string(),
+  repoId: z.string(),
+  expiresAt: z.string(),
+  warning: z.string(),
 });
 
 export const zBulkReviewDecision = z.object({

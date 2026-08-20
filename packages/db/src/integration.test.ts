@@ -8,6 +8,7 @@ import {
   withModuleLock,
   withAuthProbe,
   withIdentityProbe,
+  withRepoProbe,
   withOrgContext,
   withSystemContext,
   type DbHandle,
@@ -289,6 +290,48 @@ describeIf('database integration', () => {
         tx.execute(sql`SELECT id FROM principals`),
       );
       expect(none).toHaveLength(0);
+    });
+  });
+
+  describe('resolving a repository before the tenant is known (§7)', () => {
+    /**
+     * The third read that precedes a tenant scope, and the one whose absence was hardest to
+     * see. A git webhook names a remote and asks which tenant owns it; an unscoped read answered
+     * "nobody" for every repository that exists, so every push event was ignored as "repo not
+     * registered" and automatic indexing never ran — while looking, from the outside, exactly
+     * like a correctly wired integration with nothing to do.
+     */
+    it('cannot resolve a repo without declaring which remote it is looking for', async () => {
+      const rows = await handle.db.execute(
+        sql`SELECT id FROM repos WHERE remote = 'github.com/alpha/one'`,
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('resolves exactly the declared remote', async () => {
+      await admin.sql`
+        UPDATE repos SET remote = 'github.com/alpha/one' WHERE id = 'repo_alpha'
+      `;
+
+      const rows = await withRepoProbe(handle, 'github.com/alpha/one', async (tx) =>
+        tx.execute<{ id: string; org_id: string }>(sql`SELECT id, org_id FROM repos`),
+      );
+
+      expect(rows).toHaveLength(1);
+      expect(rows[0]?.org_id).toBe('org_alpha');
+    });
+
+    it('does not open the table to a caller declaring an unknown remote', async () => {
+      const rows = await withRepoProbe(handle, 'github.com/nobody/nothing', async (tx) =>
+        tx.execute(sql`SELECT id FROM repos`),
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('drops the declaration when the transaction ends', async () => {
+      await withRepoProbe(handle, 'github.com/alpha/one', async (tx) => tx.execute(sql`SELECT 1`));
+      const rows = await handle.db.execute(sql`SELECT id FROM repos`);
+      expect(rows).toHaveLength(0);
     });
   });
 

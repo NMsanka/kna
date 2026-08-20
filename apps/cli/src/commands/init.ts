@@ -111,11 +111,27 @@ export async function initCommand(ctx: CliContext, options: InitOptions): Promis
     }
   }
 
+  // These instructions used to name `kna repo onboard`, which is not a command this CLI has.
+  // Registration is an administrator action against the platform, deliberately: it grants read
+  // access to a repository, and a developer being able to self-serve that would make the ACL
+  // model advisory. So the instruction is the request to make, not a command to run.
   ui.heading('Next steps');
   ui.log('  1. Commit these files and open a pull request.');
-  ui.log('  2. Ask your platform admin to register this repo, or run:');
-  ui.log(`     ${ui.cyan(`kna repo onboard ${ctx.repo.remote}`)}`);
-  ui.log('  3. Merge. The first index runs automatically on the next push to the default branch.');
+  ui.log('  2. Ask a platform administrator to register this repository:');
+  ui.log();
+  ui.log(
+    ui.cyan(
+      `     curl -X POST ${ctx.config.platform.url}/v1/admin/repos \\\n` +
+        `       -H "authorization: Bearer $KNA_TOKEN" \\\n` +
+        `       -H 'content-type: application/json' \\\n` +
+        `       -d '${JSON.stringify({ remote: ctx.repo.remote, projectSlugs: projects })}'`,
+    ),
+  );
+  ui.log();
+  ui.log('  3. Merge. The first index runs on the next push to the default branch.');
+  ui.log();
+  ui.detail('Registering grants read access and reports any project slug that does not exist —');
+  ui.detail('an unknown slug leaves the repo indexed but invisible to project-scoped questions.');
   ui.log();
   ui.detail('Nothing is published until that workflow runs, and the workflow scans for secrets');
   ui.detail('before anything leaves the runner.');
@@ -169,7 +185,13 @@ function renderGitHubWorkflow(input: { languages: string[] }): string {
 #     never on fork PRs. Tier 2 extraction builds the repo, and building a fork's code on a
 #     runner that holds a publish token is remote code execution by design.
 #  2. Analysis and publishing are separate jobs. The analyse job has no credentials and no
-#     network egress; the publish job has the credential but never runs repo build logic.
+#     network egress; the publish job has the credential but never runs repo build logic. The IR
+#     bundle is what crosses between them, which is why publish takes --bundle rather than
+#     re-analysing. Collapsing the two jobs re-creates the exact hazard the split prevents.
+#
+# Prerequisite: the kna CLI must be installable by the runner. It is a workspace package today,
+# so publish it to your internal registry, or replace the npx calls with a checkout of the
+# platform repository, before enabling this workflow.
 #
 name: KNA index
 

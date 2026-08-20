@@ -129,6 +129,7 @@ program
     false,
   )
   .option('--max-tier <tier>', 'tier0 | tier1 | tier2')
+  .option('--bundle <path>', 'publish a bundle from `kna describe --output` instead of analysing')
   .option('--dry-run', 'analyse and sign, but do not send', false)
   .action(async (options) => {
     const ctx = await context(program.opts());
@@ -136,6 +137,8 @@ program
       platformUrl: options.platformUrl,
       token: options.token,
       maxTier: options.maxTier,
+      bundlePath: options.bundle,
+      oidc: Boolean(options.oidc),
       dryRun: Boolean(options.dryRun),
     });
   });

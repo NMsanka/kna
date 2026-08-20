@@ -5,6 +5,7 @@ import { anyOf, withOrgContext, withSystemContext } from '@kna/db';
 import {
   zBulkReviewDecision,
   zOnboardRepoRequest,
+  zIngestCredentialRequest,
   zPublishExternallyRequest,
   zReindexRequest,
 } from '@kna/contracts';
@@ -51,12 +52,46 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
     const remote = canonicalRemote(body.remote);
     const repoId = computeRepoId(principal.orgId, remote);
 
+    // Everyone who should be able to see this repo, the caller included. A repo registered
+    // without a permission row is real, indexable, and invisible — the ACL filter reads
+    // `repo_permissions` on every query, and no row means no reader.
+    const grantTo = [...new Set([principal.id, ...body.grantTo])];
+
+    // Project slugs are validated rather than trusted. A slug that matches nothing is not an
+    // error — the repo still onboards — but it is reported, because the failure it causes
+    // otherwise is silent: modules resolve to no project, and every project-scoped query returns
+    // an empty result that looks exactly like "nothing indexed yet".
+    const knownProjects = await withSystemContext(
+      ctx.db,
+      principal.orgId,
+      'maintenance',
+      async (tx) =>
+        tx.execute<{ slug: string }>(sql`
+          SELECT slug FROM projects
+           WHERE org_id = ${principal.orgId} AND slug = ${anyOf(body.projectSlugs)}
+        `),
+    );
+    const knownSlugs = new Set(knownProjects.map((r) => String(r.slug)));
+    const unknownProjectSlugs = body.projectSlugs.filter((slug) => !knownSlugs.has(slug));
+
     await withSystemContext(ctx.dbBatch, principal.orgId, 'maintenance', async (tx) => {
       await tx.execute(sql`
         INSERT INTO repos (id, org_id, remote, name, provider)
-        VALUES (${repoId}, ${principal.orgId}, ${remote}, ${remote.split('/').pop() ?? remote}, ${ctx.env.GIT_PROVIDER})
+        VALUES (${repoId}, ${principal.orgId}, ${remote}, ${remote.split('/').pop() ?? remote}, ${storedProvider(ctx.env.GIT_PROVIDER)})
         ON CONFLICT (org_id, remote) DO NOTHING
       `);
+
+      for (const principalId of grantTo) {
+        await tx.execute(sql`
+          INSERT INTO repo_permissions (principal_id, repo_id, org_id, level)
+          SELECT ${principalId}, ${repoId}, ${principal.orgId}, 'read'
+           WHERE EXISTS (
+             SELECT 1 FROM principals
+              WHERE id = ${principalId} AND org_id = ${principal.orgId}
+           )
+          ON CONFLICT (principal_id, repo_id) DO NOTHING
+        `);
+      }
     });
 
     await ctx.audit.record({
@@ -67,7 +102,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       resourceType: 'repo',
       resourceId: repoId,
       outcome: 'success',
-      detail: { remote, projects: body.projectSlugs },
+      detail: { remote, projects: body.projectSlugs, grantedTo: grantTo, unknownProjectSlugs },
     });
 
     let pullRequestUrl: string | null = null;
@@ -93,8 +128,91 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       }
     }
 
-    return reply.code(201).send({ repoId, remote, pullRequestUrl });
+    return reply.code(201).send({
+      repoId,
+      remote,
+      pullRequestUrl,
+      grantedTo: grantTo,
+      projectSlugs: body.projectSlugs.filter((slug) => knownSlugs.has(slug)),
+      unknownProjectSlugs,
+    });
   });
+
+  /**
+   * Mint a repo-scoped ingest credential by hand.
+   *
+   * The supported path is OIDC — CI presents its workload identity to `/v1/auth/ci-exchange` and
+   * gets a credential measured in minutes, so there is nothing long-lived to leak. This exists
+   * for the cases that path cannot cover: a local stack with no identity provider, or the first
+   * manual publish before any CI pipeline exists.
+   *
+   * Deliberately awkward, because §15.2's whole point is that a static push credential sitting in
+   * repository settings is the thing to avoid. It refuses in production, caps the lifetime,
+   * requires a written reason, and names the administrator in the audit log.
+   */
+  app.post<{ Params: { repoId: string } }>(
+    '/v1/admin/repos/:repoId/ingest-credential',
+    async (request, reply) => {
+      const principal = await requireAdmin(request);
+      const body = zIngestCredentialRequest.parse(request.body);
+      const { repoId } = request.params;
+
+      if (ctx.env.KNA_ENV === 'production') {
+        return reply.code(403).send({
+          error: {
+            code: 'oidc_required',
+            message: 'Long-lived ingest credentials are not issued in production.',
+            guidance:
+              'CI should exchange its OIDC workload identity at /v1/auth/ci-exchange for a credential scoped to one repository and valid for minutes. A credential that outlives the job that used it is the failure mode this refuses to create.',
+          },
+        });
+      }
+
+      const repo = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
+        tx.execute<{ id: string }>(sql`
+          SELECT id FROM repos WHERE org_id = ${principal.orgId} AND id = ${repoId} LIMIT 1
+        `),
+      );
+
+      if (repo.length === 0) {
+        return reply.code(404).send({
+          error: {
+            code: 'repo_not_found',
+            message: `No repository ${repoId} in this organisation.`,
+            guidance: 'Register it first with POST /v1/admin/repos.',
+          },
+        });
+      }
+
+      const expiresAt = Date.now() + body.ttlHours * 60 * 60 * 1000;
+
+      // Audited before the credential is returned, so the record exists even if the response is
+      // lost in transit. This is the one place the platform hands out a durable push credential.
+      await ctx.audit.record({
+        orgId: principal.orgId,
+        action: 'admin.ingest_credential_minted',
+        actorType: 'admin',
+        actorId: principal.id,
+        resourceType: 'repo',
+        resourceId: repoId,
+        outcome: 'success',
+        detail: { reason: body.reason, ttlHours: body.ttlHours },
+      });
+
+      return reply.send({
+        token: ctx.mintIngestToken({
+          orgId: principal.orgId,
+          repoId,
+          issuedAt: Date.now(),
+          expiresAt,
+        }),
+        repoId,
+        expiresAt: new Date(expiresAt).toISOString(),
+        warning:
+          'Shown once and not recoverable. It authorises publishing to this repository until it expires; treat it as a secret and prefer the OIDC exchange wherever CI can reach it.',
+      });
+    },
+  );
 
   /**
    * §15.3 — clearing a tripped magnitude circuit breaker. Deliberately a human decision with a
@@ -472,4 +590,16 @@ function toPreview(moduleId: string, moduleName: string, sensitivity: string) {
     currentSensitivity: sensitivity,
     newlyVisibleSymbols: [] as Array<{ symbolId: string; qualifiedName: string; kind: string }>,
   };
+}
+
+/**
+ * Translate the configured provider into the value the database enum accepts.
+ *
+ * Two vocabularies that nearly match. Configuration says {@code none} to mean no provider client
+ * is constructed at all, which is how a local stack runs; the {@code git_provider} enum has no
+ * such value and spells the equivalent {@code local}. Writing the config value straight through
+ * produced 'invalid input value for enum git_provider' and a 500 on every onboarding attempt.
+ */
+function storedProvider(provider: string): string {
+  return provider === 'none' ? 'local' : provider;
 }

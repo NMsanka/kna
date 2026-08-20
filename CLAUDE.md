@@ -149,7 +149,7 @@ DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm test
 ```
 
 Integration tests **skip silently** when `DATABASE_URL` is unset. A green `pnpm test` with no
-database has not tested tenant isolation. Current baseline: **192 unit tests plus 19 integration tests, 12 files.**
+database has not tested tenant isolation. Current baseline: **192 unit tests plus 23 integration tests, 12 files.**
 
 | Connection | URL | Used by |
 |---|---|---|
@@ -223,9 +223,100 @@ curl -X POST localhost:8080/v1/admin/reindex -H "authorization: Bearer $KNA_TOKE
 
 ---
 
+## Automatic indexing
+
+Two triggers, and only one of them can actually produce new knowledge.
+
+**CI is the indexer.** Analysis runs the repository's own build logic — resolving a TypeScript
+project or restoring packages executes code from the repo — so it happens where the toolchains
+are, which is CI. `kna init` writes the workflow. Its shape is load-bearing:
+
+```
+analyse job    no credentials, runs repo build logic  ->  kna-ir.json artifact
+publish job    holds the credential, runs no repo code -> kna publish --bundle
+```
+
+Collapsing those two jobs puts a publish credential on a runner executing repository-controlled
+code, which is remote code execution by design. `--bundle` is what makes the split possible; the
+publish step re-signs the envelope, because the analyse job deliberately has no signing secret.
+
+`--oidc` exchanges the runner's workload identity at `/v1/auth/ci-exchange` for a credential
+scoped to one repo and valid for minutes. The job needs `permissions: id-token: write` or the
+exchange fails loudly rather than falling back to something weaker.
+
+**Webhooks trigger regeneration, not indexing.** A push or a merged pull request tells the
+platform the code moved; it does not carry IR, so there is nothing to index until CI publishes.
+What the webhook does is regenerate documentation from the newest stored bundle, debounced 60
+seconds per `(repo, ref)` so a merge train of twenty pushes produces one job.
+
+Merged pull requests are handled as well as pushes. A PR closed *without* merging is ignored, as
+is one merged into a non-default branch — reindexing either would spend money to reproduce the
+state we already have.
+
+Both paths need `GIT_WEBHOOK_SECRET`; unsigned webhooks are refused, and the signature is checked
+against the raw body before it is parsed.
+
+### Onboarding a repository
+
+Registration is an administrator action, deliberately — it grants read access, and a developer
+self-serving that would make the ACL model advisory.
+
+```bash
+curl -X POST localhost:8080/v1/admin/repos -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' -d '{"remote":"github.com/you/svc","projectSlugs":["platform"]}'
+```
+
+That registers the repo, grants the calling administrator read access, and reports any project
+slug that does not exist. All three matter: a repo with no permission row is indexable and
+invisible, and an unknown project slug leaves it invisible to project-scoped questions while
+looking indexed.
+
+For a first manual publish before CI exists, mint a credential explicitly. It refuses in
+production, caps the lifetime, demands a reason, and names you in the audit log:
+
+```bash
+curl -X POST localhost:8080/v1/admin/repos/<repoId>/ingest-credential -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' -d '{"reason":"first manual publish","ttlHours":2}'
+```
+
+---
+
+## Using it from an editor
+
+The MCP server is the developer-facing surface. `.mcp.json` in this repo points at it; each
+developer supplies their own `KNA_MCP_TOKEN`, because results are filtered by *their*
+permissions.
+
+Scope is inferred from the working directory's git remote, so opening a repo in the editor scopes
+tool calls to it with no project picker.
+
+Every tool is read-only, permanently — see the first entry under **Do not**.
+
+---
+
 ## Gotchas
 
 These cost time during the build. Each one fails in a way that does not look like its cause.
+
+### Reads that happen before a tenant is known need a probe
+
+Four of them now, and each failed silently and totally:
+
+| Read | Migration | Symptom while broken |
+|---|---|---|
+| Bearer token → principal | 0006 | "unknown or expired token" for valid tokens |
+| Provider login → principals | 0008 | permission revocations never applied |
+| Git remote → repo | 0009 | every push webhook "repo not registered"; auto-indexing never fired |
+| Role check, org known | — | every admin route 403'd real administrators |
+
+The first three genuinely cannot know the org — working it out *is* the query. Each declares what
+it is resolving and the policy opens exactly that row. Only the token probe is self-authorising
+(naming a hash proves possession); the other two narrow an already-authenticated caller and must
+never be used from a path that has not verified a signature first.
+
+The fourth was not a probe problem at all — the org was known and simply not set. If you are
+reading a tenant table after authentication, use `withOrgContext`.
+
+The tell is always the same: a correct-looking query returning zero rows, and a caller treating
+"none" as a legitimate answer.
 
 ### Drizzle spreads array parameters instead of binding them
 
@@ -402,7 +493,8 @@ If you add a service or change its wiring, start it once. The type checker will 
 | MCP server, seven read-only tools | Complete, exercised over streamable HTTP |
 | Local seed path and end-to-end walkthrough | Complete |
 | Git provider HTTP calls | **Not written.** Interfaces and write-gating refusals work |
-| Web UI, docs site | Not started — bought, not built (ADR 0001) |
+| Documentation site | Not started — bought, not built (ADR 0001) |
+| Web chat UI | Not started, and **not** ruled out by ADR 0001. That ADR defers the *documentation site* and the *external* assistant; the internal assistant is on its build list. The IDE surface (MCP) covers developers today |
 
 ---
 

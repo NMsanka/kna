@@ -1,5 +1,8 @@
+import { randomUUID } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import { analyze } from './analyze.js';
-import { explainFailure, type IngestResponse } from '@kna/contracts';
+import { canonicalClaims, explainFailure, signHmac, type IngestResponse } from '@kna/contracts';
+import { zIrBundle, type IrBundle } from '@kna/ir';
 import type { CliContext } from '../context.js';
 import { ui } from '../ui.js';
 
@@ -21,6 +24,28 @@ export interface PublishOptions {
   token?: string;
   dryRun: boolean;
   maxTier?: 'tier0' | 'tier1' | 'tier2';
+  /**
+   * Publish a bundle produced by an earlier `kna describe --format json --output`.
+   *
+   * This is what makes the separation in the docstring above real rather than aspirational.
+   * Analysis executes repository build logic — resolving a TypeScript project or restoring
+   * packages runs code from the repo — and doing that on a runner holding a publish credential
+   * is remote code execution by design. The workflow therefore analyses in a job with no
+   * credentials and publishes in a job that never runs repo build logic; the bundle is what
+   * passes between them.
+   *
+   * Without this flag the publish job re-analysed from source, and both halves of the split
+   * collapsed back into one job that had the credential *and* ran the repository's code.
+   */
+  bundlePath?: string;
+  /**
+   * Exchange the CI workload identity for a short-lived, repo-scoped credential.
+   *
+   * §15.2 — "never a static org secret". The flag was declared on the command and never read,
+   * so `--oidc` silently did nothing and CI fell back to whatever happened to be in the
+   * environment — usually the long-lived credential the flag exists to avoid.
+   */
+  oidc?: boolean;
 }
 
 export class PublishError extends Error {
@@ -45,8 +70,9 @@ export async function publishCommand(ctx: CliContext, options: PublishOptions): 
     );
   }
 
-  const result = await analyze(ctx, options.maxTier ? { maxTier: options.maxTier } : {});
-  const { bundle } = result;
+  const bundle = options.bundlePath
+    ? resignEnvelope(await loadBundle(options.bundlePath))
+    : (await analyze(ctx, options.maxTier ? { maxTier: options.maxTier } : {})).bundle;
 
   ui.heading('Bundle');
   ui.table([
@@ -73,12 +99,18 @@ export async function publishCommand(ctx: CliContext, options: PublishOptions): 
   }
 
   const platformUrl = options.platformUrl ?? ctx.config.platform.url;
-  const token = options.token ?? process.env[ctx.config.platform.ingestTokenEnv];
+  const token = options.oidc
+    ? await exchangeOidcIdentity(ctx, platformUrl)
+    : (options.token ?? process.env[ctx.config.platform.ingestTokenEnv]);
+
   if (!token) {
+    // Names the ingest variable, not the principal one. These are different credentials and the
+    // previous message pointed at the wrong one, which sent people to set a token that would
+    // never have worked here.
     throw new Error(
-      `No platform token. Set ${ctx.config.platform.tokenEnv}, or pass --token.\n\n` +
-        'In CI, prefer the OIDC exchange over a static secret: a long-lived org token that can\n' +
-        'publish for every repo is the credential you least want on a build runner.',
+      `No ingest credential. Set ${ctx.config.platform.ingestTokenEnv}, or pass --token.\n\n` +
+        'In CI, prefer --oidc over a static secret: a long-lived org token that can publish for\n' +
+        'every repo is the credential you least want sitting on a build runner.',
     );
   }
 
@@ -184,4 +216,159 @@ export function formatPublishError(error: PublishError): string {
     failure: null,
     detail: error.message,
   }).replace('Bundle accepted.', error.guidance ?? error.message);
+}
+
+/**
+ * Read and validate a bundle produced by an earlier `kna describe`.
+ *
+ * Parsed through the schema rather than cast, because this file crossed a job boundary as a CI
+ * artifact. Everything downstream — the envelope check at ingest, the diff, the indexer — treats
+ * the bundle as structurally sound, so a truncated upload or a version mismatch should fail here
+ * with something a human can read rather than three stages later as a type error.
+ */
+async function loadBundle(path: string): Promise<IrBundle> {
+  let raw: string;
+  try {
+    raw = await readFile(path, 'utf8');
+  } catch {
+    throw new Error(
+      `Cannot read bundle at ${path}.\n\n` +
+        'Produce one with: kna describe --format json --output kna-ir.json',
+    );
+  }
+
+  const parsed = zIrBundle.safeParse(JSON.parse(raw));
+  if (!parsed.success) {
+    throw new Error(
+      `${path} is not a valid IR bundle.\n\n` +
+        parsed.error.issues
+          .slice(0, 5)
+          .map((issue) => `  ${issue.path.join('.') || '(root)'}: ${issue.message}`)
+          .join('\n'),
+    );
+  }
+
+  ui.detail(`Publishing a pre-analysed bundle from ${path}; no analysis runs in this step.`);
+  return parsed.data;
+}
+
+/**
+ * Exchange the CI runner's workload identity for a credential scoped to this repository.
+ *
+ * The identity is requested from the CI provider rather than held by us: GitHub mints an OIDC
+ * token on demand for a job that declares `id-token: write`, bound to that repository and
+ * workflow. The platform verifies it and returns a credential good for one repo and a few
+ * minutes, which is what §15.2 asks for in place of a static secret.
+ */
+async function exchangeOidcIdentity(ctx: CliContext, platformUrl: string): Promise<string> {
+  const audience = process.env.KNA_OIDC_AUDIENCE ?? 'kna-platform';
+  const idToken = await requestCiIdToken(audience);
+
+  const response = await fetch(`${platformUrl}/v1/auth/ci-exchange`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ idToken, repoRemote: ctx.repo.remote, audience }),
+  });
+
+  const body = (await response.json().catch(() => null)) as {
+    token?: string;
+    expiresAt?: string;
+    error?: { message?: string; guidance?: string };
+  } | null;
+
+  if (!response.ok || !body?.token) {
+    throw new PublishError(
+      body?.error?.message ?? `OIDC exchange returned ${response.status}`,
+      response.status,
+      body?.error?.guidance ?? null,
+    );
+  }
+
+  ui.detail(`Exchanged CI identity for a repo-scoped credential, expiring ${body.expiresAt}.`);
+  return body.token;
+}
+
+/** Ask the CI provider for a workload identity token. */
+async function requestCiIdToken(audience: string): Promise<string> {
+  // GitHub Actions. These two variables are injected only into jobs that declare
+  // `permissions: id-token: write`, which is why a workflow missing that line fails here loudly
+  // rather than quietly publishing with something weaker.
+  const githubUrl = process.env.ACTIONS_ID_TOKEN_REQUEST_URL;
+  const githubToken = process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN;
+  if (githubUrl && githubToken) {
+    const response = await fetch(`${githubUrl}&audience=${encodeURIComponent(audience)}`, {
+      headers: { authorization: `Bearer ${githubToken}` },
+    });
+    const body = (await response.json().catch(() => null)) as { value?: string } | null;
+    if (!response.ok || !body?.value) {
+      throw new Error(
+        `Could not obtain a GitHub OIDC token (${response.status}).\n\n` +
+          'The job needs `permissions: id-token: write`.',
+      );
+    }
+    return body.value;
+  }
+
+  // GitLab and Azure DevOps inject the token directly rather than offering an endpoint.
+  const injected =
+    process.env.KNA_CI_ID_TOKEN ?? process.env.CI_JOB_JWT_V2 ?? process.env.SYSTEM_ACCESSTOKEN;
+  if (injected) return injected;
+
+  throw new Error(
+    'No CI workload identity is available, so --oidc cannot be used here.\n\n' +
+      'On GitHub Actions the job needs `permissions: id-token: write`. Outside CI, publish with\n' +
+      'an ingest credential instead: POST /v1/admin/repos/:repoId/ingest-credential.',
+  );
+}
+
+/**
+ * Re-sign a bundle that was produced by a separate analysis step.
+ *
+ * The signature belongs to whoever publishes, not to whoever analysed. That falls out of the
+ * job split: the analyse job runs the repository's own build logic, so it deliberately holds no
+ * credentials — which means it cannot sign, and the artifact it hands over is unsigned. If the
+ * analyse job *could* sign, it would be holding the very credential the split exists to keep
+ * away from repo-controlled code.
+ *
+ * So the publish step signs what it is about to send. It re-derives the signature over the
+ * payload hash already in the envelope, which is what binds the signature to the bundle
+ * contents: a tampered payload no longer matches its hash, and ingest checks the hash before it
+ * checks the signature.
+ *
+ * The nonce and expiry are refreshed at the same time. The envelope carries a short expiry
+ * deliberately, and the clock starts when the bundle was analysed — a queued or retried publish
+ * job would otherwise present a credential-shaped thing that expired while it waited.
+ */
+function resignEnvelope(bundle: IrBundle): IrBundle {
+  const secret = process.env.KNA_INGEST_HMAC_SECRET;
+  if (!secret) {
+    // Left as-is rather than failed here. A permissive-dev platform accepts an unsigned bundle,
+    // and publish already warns about it below; failing would make local experimentation
+    // require a secret that serves no purpose against a local stack.
+    return bundle;
+  }
+
+  const nonce = randomUUID();
+  const expiresAt = new Date(Date.now() + 10 * 60_000).toISOString();
+
+  const envelope = { ...bundle.envelope, nonce, expiresAt };
+  return {
+    ...bundle,
+    envelope: {
+      ...envelope,
+      signature: signHmac(
+        secret,
+        canonicalClaims({
+          orgId: envelope.orgId,
+          repoId: envelope.repoId,
+          commitSha: envelope.commitSha,
+          ref: envelope.ref,
+          nonce,
+          expiresAt,
+          payloadHash: envelope.payloadHash,
+          irSchemaVersion: envelope.irSchemaVersion,
+        }),
+      ),
+    },
+  };
 }

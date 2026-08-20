@@ -1,6 +1,13 @@
 import { createHash } from 'node:crypto';
 import { sql } from 'drizzle-orm';
-import { anyOf, withAuthProbe, withSystemContext, withOrgContext, type DbHandle } from '@kna/db';
+import {
+  anyOf,
+  withAuthProbe,
+  withRepoProbe,
+  withSystemContext,
+  withOrgContext,
+  type DbHandle,
+} from '@kna/db';
 import { canonicalRemote, type IrBundle, type IrBundlePayload } from '@kna/ir';
 import type { Principal } from '../auth.js';
 
@@ -223,12 +230,18 @@ export class PlatformStore {
       return null;
     }
 
-    const rows = await this.dbBatch.sql<Array<{ id: string; org_id: string }>>`
-      SELECT id, org_id FROM repos WHERE remote = ${canonical} LIMIT 1
-    `;
+    // Through the repo probe, not a bare connection. `repos` is org-isolated like every tenant
+    // table, and this read happens before there is an org to scope by — that is the question it
+    // is answering. Unscoped, it returned null for every repository that exists, so every push
+    // webhook reported "repo not registered" and the automatic indexing path never fired.
+    const rows = await withRepoProbe(this.dbBatch, canonical, async (tx) =>
+      tx.execute<{ id: string; org_id: string }>(
+        sql`SELECT id, org_id FROM repos WHERE remote = ${canonical} LIMIT 1`,
+      ),
+    );
 
     const row = rows[0];
-    return row ? { orgId: row.org_id, repoId: row.id } : null;
+    return row ? { orgId: String(row.org_id), repoId: String(row.id) } : null;
   }
 
   /** Repos in scope for a project, for scope resolution at query time (§4.3). */

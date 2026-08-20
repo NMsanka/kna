@@ -63,6 +63,9 @@ export async function registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Pr
     switch (event) {
       case 'push':
         return handlePush(ctx, body, reply);
+      case 'pull_request':
+      case 'merge_request':
+        return handlePullRequest(ctx, body, reply);
       case 'member':
       case 'membership':
       case 'team':
@@ -74,6 +77,63 @@ export async function registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Pr
         return reply.code(202).send({ ignored: event });
     }
   });
+}
+
+/**
+ * A merged pull request.
+ *
+ * Merging produces a push to the default branch, so this is not the only signal — but it is the
+ * earliest and the most precise one. The push event says "the branch moved"; this says "a
+ * specific, reviewed change landed", which is the moment documentation is most likely to be
+ * wrong and a developer is most likely to be looking.
+ *
+ * A closed-without-merging PR is explicitly ignored. Nothing about the default branch changed,
+ * so reindexing would spend money to reproduce the state we already have.
+ *
+ * The work is routed through the same debounced path as a push, so a merge train that lands six
+ * PRs in two minutes still results in one job rather than six (§7 coalescing).
+ */
+async function handlePullRequest(
+  ctx: ApiContext,
+  body: Record<string, unknown>,
+  reply: FastifyReply,
+): Promise<unknown> {
+  const action = String(body.action ?? '');
+  const pullRequest = (body.pull_request ?? body.merge_request ?? {}) as {
+    merged?: boolean;
+    merged_at?: string | null;
+    state?: string;
+    base?: { ref?: string };
+    target_branch?: string;
+    merge_commit_sha?: string;
+  };
+
+  // GitHub sends `closed` with `merged: true`; GitLab sends `merge` as the action. Both also
+  // send a closed-without-merge event that looks superficially identical.
+  const merged =
+    pullRequest.merged === true ||
+    Boolean(pullRequest.merged_at) ||
+    action === 'merge' ||
+    pullRequest.state === 'merged';
+
+  if (!merged) return reply.code(202).send({ ignored: `pull request ${action || 'event'}` });
+
+  const targetBranch = pullRequest.base?.ref ?? pullRequest.target_branch ?? '';
+  if (targetBranch && !/^(main|master)$/.test(targetBranch)) {
+    return reply.code(202).send({ ignored: 'merged into a non-default branch' });
+  }
+
+  // Reuse the push path so the branch policy, debounce window and coalescing key are defined
+  // once. A second implementation here would drift from it.
+  return handlePush(
+    ctx,
+    {
+      ref: `refs/heads/${targetBranch || 'main'}`,
+      after: pullRequest.merge_commit_sha ?? 'merged',
+      repository: body.repository ?? body.project,
+    },
+    reply,
+  );
 }
 
 /**

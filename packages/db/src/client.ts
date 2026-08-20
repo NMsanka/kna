@@ -164,6 +164,28 @@ export async function withIdentityProbe<T>(
 }
 
 /**
+ * Resolve a repository by its git remote, before any org is known.
+ *
+ * The webhook and CI-exchange counterpart to `withAuthProbe`. A provider event names a remote and
+ * asks, in effect, "whose is this?" — so there is no tenant to scope by until the answer comes
+ * back. Migration 0009 permits reading the repo row whose `remote` matches the declaration.
+ *
+ * As with `withIdentityProbe`, a remote is not a secret, so this narrows an already-authorised
+ * caller's reach rather than authorising anything itself. Callers must have verified a webhook
+ * signature or an OIDC token first.
+ */
+export async function withRepoProbe<T>(
+  handle: DbHandle,
+  remote: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.repo_remote', ${remote}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
  * Two paths deliberately run outside user context and need explicit org partitioning instead
  * (§15.4): the cross-repo resolution pass and the indexing workers. This wrapper makes that
  * choice visible at the call site rather than implicit in a missing `withOrgContext`.
