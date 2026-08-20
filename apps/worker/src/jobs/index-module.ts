@@ -409,21 +409,49 @@ async function swapModulePartition(
       upserted++;
     }
 
-    // The sweep. Anything not stamped with this commit is from a previous index — including
-    // whatever a crashed run left behind.
+    // The sweep — everything in this partition that this run did not just write.
+    //
+    // This used to delete by `indexed_commit_sha <> commitSha`, on the reasoning that anything
+    // not stamped with this commit belongs to a previous index. That is true for the common case
+    // and silently wrong for two others, both of which stamp the *same* commit:
+    //
+    //   * A deliberate reindex. `/v1/admin/reindex` replays a stored bundle at the commit it was
+    //     built from — that is the point of it, and the reasons for asking are exactly the ones
+    //     that change the output: a new embedding model, different chunk sizes, a fixed indexer
+    //     bug. The stale chunks carry the matching sha, so they survived and the corpus ended up
+    //     holding both versions.
+    //   * A crashed run, retried at the same commit. The docstring above claims robustness here;
+    //     it did not have it, for the same reason.
+    //
+    // Comparing against the ids this run produced covers all three cases and needs no reasoning
+    // about which commit anything came from. It is also what "partition swap" should mean: after
+    // it, the module's partition is exactly what this run built.
+    const chunkIds = input.chunks.map((c) => c.id);
     const deletedRows = await tx.execute<{ count: string }>(sql`
       WITH removed AS (
         DELETE FROM chunks
         WHERE org_id = ${input.orgId}
           AND module_id = ${input.moduleId}
           AND version_id = ${input.versionId}
-          AND indexed_commit_sha <> ${input.commitSha}
+          AND NOT (id = ${anyOf(chunkIds)})
         RETURNING id
       ), removed_embeddings AS (
         DELETE FROM embeddings
         WHERE chunk_id IN (SELECT id FROM removed)
       )
       SELECT count(*)::text AS count FROM removed
+    `);
+
+    // Symbols were never swept at all, so a deleted function stayed queryable forever through
+    // `get_symbol` and `find_usages` — §15.5's "serving deleted code as current is
+    // indistinguishable from confabulation" applied to the symbol surface rather than the chunk
+    // one. Runs after the chunk sweep, because chunks reference symbols.
+    await tx.execute(sql`
+      DELETE FROM symbols
+      WHERE org_id = ${input.orgId}
+        AND module_id = ${input.moduleId}
+        AND version_id = ${input.versionId}
+        AND NOT (id = ${anyOf(input.symbols.map((s) => s.id))})
     `);
 
     return { upserted, deleted: Number(deletedRows[0]?.count ?? 0) };

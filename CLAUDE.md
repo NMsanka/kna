@@ -149,7 +149,7 @@ DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm test
 ```
 
 Integration tests **skip silently** when `DATABASE_URL` is unset. A green `pnpm test` with no
-database has not tested tenant isolation. Current baseline: **192 unit tests plus 23 integration tests, 12 files.**
+database has not tested tenant isolation. Current baseline: **194 unit tests plus 23 integration tests, 12 files.**
 
 | Connection | URL | Used by |
 |---|---|---|
@@ -229,7 +229,18 @@ Two triggers, and only one of them can actually produce new knowledge.
 
 **CI is the indexer.** Analysis runs the repository's own build logic — resolving a TypeScript
 project or restoring packages executes code from the repo — so it happens where the toolchains
-are, which is CI. `kna init` writes the workflow. Its shape is load-bearing:
+are, which is CI. `kna init` writes the workflow, and `--cli-source` decides how the runner gets
+the CLI:
+
+| Mode | What the workflow does | Status |
+|---|---|---|
+| `source` (default) | Checks out the platform repo and builds it in each job | Works today |
+| `registry` | One `npx @kna/cli` line | Needs the CLI published — [ADR 0002](docs/adr/0002-cli-distribution.md) |
+
+`source` costs an install and build per job and gives every indexed repo read access to the
+platform repo. It is interim on purpose; migrating is a one-flag change.
+
+Its shape is load-bearing:
 
 ```
 analyse job    no credentials, runs repo build logic  ->  kna-ir.json artifact
@@ -295,6 +306,50 @@ Every tool is read-only, permanently — see the first entry under **Do not**.
 ## Gotchas
 
 These cost time during the build. Each one fails in a way that does not look like its cause.
+
+### The sweep must compare ids, not commit shas
+
+Indexing deletes whatever it did not just write, scoped to `(module, version)`. It used to delete
+by `indexed_commit_sha <> commitSha`, which is right for a new commit and silently wrong for the
+two cases that reindex the *same* one:
+
+- **A deliberate reindex.** `/v1/admin/reindex` replays a stored bundle at its own commit — that
+  is the point. And the reasons for asking are exactly the ones that change the output: a new
+  embedding model, different chunk sizes, a fixed analyser bug. Stale rows carried the matching
+  sha and survived, so the corpus held both versions at once.
+- **A crashed run, retried.** Same reason. The old comment claimed robustness here and did not
+  have it.
+
+Symbols were not swept at all, so a deleted function stayed answerable through `get_symbol` and
+`find_usages` indefinitely — §15.5's "serving deleted code as current" applied to the symbol
+surface rather than the chunk one.
+
+### Tier 0 read calls as declarations
+
+`clearInterval(this.autoplay);` has the same shape as an interface method signature, and the
+lexical pattern accepted both because `foo(a: string): void;` is a real declaration. Every call
+inside a class body therefore became a method of that class.
+
+In a Shopify theme this produced two `SlideshowComponent.clearInterval` symbols from two calls on
+consecutive lines: identical qualified names, so identical symbol ids, so identical chunk ids, and
+a primary-key violation that failed the whole module's index job. Fixing it removed 70 phantom
+symbols from a 458-symbol repository — about 15% of that index was noise.
+
+Assembly now also drops duplicate ids and records the loss in `analysisNotes`, because §5's
+registry accepts third-party analysers and cannot assume they are correct. One bad line in one
+file should not cost a module its index.
+
+### Luhn alone does not identify a card number
+
+It passes roughly one digit run in ten, and long numeric identifiers are everywhere. A Shopify
+section id — `template--22224696705326` — is fourteen digits, passes Luhn, and blocked a publish
+with a CRITICAL payment-card finding.
+
+Card numbers are not free-form: each scheme fixes a length *and* a prefix, and at fourteen digits
+only Diners Club is assigned. Checking the pair rejects identifiers while still catching every
+real card. This matters more than a tidy scan report — a fail-closed gate that cries wolf teaches
+people to reach for the allowlist, and an allowlist entry added in irritation is how a real
+credential gets waved through later.
 
 ### Reads that happen before a tenant is known need a probe
 
@@ -492,6 +547,8 @@ If you add a service or change its wiring, start it once. The type checker will 
 | Documentation regeneration worker | Complete. Three of §6's six document types; `docs.types` is not yet in the bundle, so the platform copy always has all three |
 | MCP server, seven read-only tools | Complete, exercised over streamable HTTP |
 | Local seed path and end-to-end walkthrough | Complete |
+| Multi-repo | Two repositories indexed and queried in one tenant. Cross-repo *symbol resolution* is written but still unexercised — both repos are independent |
+| CLI distribution to CI | Interim: built from source in the workflow. See [ADR 0002](docs/adr/0002-cli-distribution.md) |
 | Git provider HTTP calls | **Not written.** Interfaces and write-gating refusals work |
 | Documentation site | Not started — bought, not built (ADR 0001) |
 | Web chat UI | Not started, and **not** ruled out by ADR 0001. That ADR defers the *documentation site* and the *external* assistant; the internal assistant is on its build list. The IDE surface (MCP) covers developers today |

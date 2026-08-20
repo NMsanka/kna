@@ -72,6 +72,7 @@ export function isLuhnValid(candidate: string): boolean {
   const digits = candidate.replace(/[^\d]/g, '');
   if (digits.length < 13 || digits.length > 19) return false;
   if (digits.startsWith('0')) return false;
+  if (!matchesKnownIssuer(digits)) return false;
 
   let sum = 0;
   let double = false;
@@ -85,4 +86,58 @@ export function isLuhnValid(candidate: string): boolean {
     double = !double;
   }
   return sum % 10 === 0;
+}
+
+/**
+ * Whether a digit run is consistent with a real card scheme's length *and* prefix.
+ *
+ * Luhn alone is a weak filter: it passes one in ten arbitrary digit runs, and long numeric
+ * identifiers are everywhere. A Shopify theme's section id — `template--22224696705326` — is
+ * fourteen digits, passes Luhn, and blocked a publish with a CRITICAL "payment card" finding.
+ *
+ * Card numbers are not free-form. Each scheme fixes a length and an issuer prefix, so a
+ * fourteen-digit number beginning `2222` belongs to no scheme that exists: at fourteen digits
+ * only Diners Club is assigned, and `2221–2720` is Mastercard, which is always sixteen.
+ * Checking the pair rejects the identifier while still catching every real card.
+ *
+ * This narrows detection deliberately, so it is worth being precise about what it gives up: a
+ * card from a scheme not listed here is missed. That is the right trade for a fail-closed gate —
+ * a false positive blocks a publish and teaches people to reach for the allowlist, and an
+ * allowlist entry added in irritation is how a real credential gets waved through later.
+ */
+function matchesKnownIssuer(digits: string): boolean {
+  const n = digits.length;
+  const starts = (...prefixes: string[]) => prefixes.some((p) => digits.startsWith(p));
+  const between = (from: number, to: number, width: number) => {
+    const head = Number(digits.slice(0, width));
+    return head >= from && head <= to;
+  };
+
+  // Visa: 13, 16 or 19 digits, always 4.
+  if ((n === 13 || n === 16 || n === 19) && starts('4')) return true;
+
+  // Mastercard: 16 digits, 51–55 or the 2221–2720 range.
+  if (n === 16 && (between(51, 55, 2) || between(2221, 2720, 4))) return true;
+
+  // American Express: 15 digits, 34 or 37.
+  if (n === 15 && starts('34', '37')) return true;
+
+  // Diners Club: 14 digits, 300–305, 3095, 36, 38, 39. The only 14-digit scheme.
+  if (n === 14 && (between(300, 305, 3) || starts('3095', '36', '38', '39'))) return true;
+
+  // Discover: 16 or 19 digits.
+  if (
+    (n === 16 || n === 19) &&
+    (starts('6011', '65') || between(644, 649, 3) || between(622126, 622925, 6))
+  ) {
+    return true;
+  }
+
+  // JCB: 16–19 digits, 3528–3589.
+  if (n >= 16 && n <= 19 && between(3528, 3589, 4)) return true;
+
+  // UnionPay: 16–19 digits, 62.
+  if (n >= 16 && n <= 19 && starts('62')) return true;
+
+  return false;
 }

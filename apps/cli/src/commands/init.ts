@@ -26,6 +26,22 @@ export interface InitOptions {
   force: boolean;
   provider?: 'github' | 'azuredevops' | 'gitlab';
   dryRun: boolean;
+  /**
+   * Where the CI runner gets the `kna` CLI from.
+   *
+   * `registry` is the destination: one `npx` line, nothing else to configure. It requires the
+   * CLI to be published, which it is not — it is a workspace package with eight internal
+   * dependencies, so `npx @kna/cli` resolves nothing and the job fails on every push. See
+   * ADR 0002.
+   *
+   * `source` is the interim, and the default because it is the one that works today: check out
+   * the platform repository, build it, run the binary from `dist`. It costs an install and build
+   * per job and requires every indexed repo to have read access to the platform repo, which is
+   * why it is interim rather than the answer.
+   */
+  cliSource?: 'source' | 'registry';
+  /** `owner/name` of the platform repository, for `cliSource: 'source'`. */
+  platformRepo?: string;
 }
 
 export async function initCommand(ctx: CliContext, options: InitOptions): Promise<void> {
@@ -70,7 +86,9 @@ export async function initCommand(ctx: CliContext, options: InitOptions): Promis
   const provider =
     options.provider ?? (ctx.repo.provider === 'local' ? 'github' : ctx.repo.provider);
   const workflowPath = workflowPathFor(provider);
-  const workflow = renderWorkflow(provider, { languages });
+  const cliSource = options.cliSource ?? 'source';
+  const platformRepo = options.platformRepo ?? PLATFORM_REPO_PLACEHOLDER;
+  const workflow = renderWorkflow(provider, { languages, cliSource, platformRepo });
 
   ui.heading('Planned changes');
   ui.log(`  ${ui.green('create')} ${workflowPath}`);
@@ -149,22 +167,84 @@ function workflowPathFor(provider: string): string {
 }
 
 /**
+ * The repository the CLI is built from when `cliSource` is `source`.
+ *
+ * Deliberately an obvious placeholder rather than a guess. `kna init` runs inside the repository
+ * being onboarded and has no way to know where the platform lives; emitting something
+ * plausible-looking would produce a workflow that checks out the wrong repository and fails
+ * confusingly, where this fails immediately and says what to replace.
+ */
+const PLATFORM_REPO_PLACEHOLDER = 'YOUR-ORG/kna';
+
+export interface WorkflowInput {
+  languages: string[];
+  cliSource: 'source' | 'registry';
+  platformRepo: string;
+}
+
+/**
  * The generated workflow embodies §15.2's mitigations directly, and the comments say so —
  * a workflow whose security properties are invisible gets "simplified" by the next person
  * who touches it.
  */
-function renderWorkflow(provider: string, input: { languages: string[] }): string {
+function renderWorkflow(provider: string, input: WorkflowInput): string {
   if (provider === 'github') return renderGitHubWorkflow(input);
-  if (provider === 'gitlab') return renderGitLabWorkflow();
-  return renderAzureWorkflow();
+  if (provider === 'gitlab') return renderGitLabWorkflow(input);
+  return renderAzureWorkflow(input);
 }
 
-function renderGitHubWorkflow(input: { languages: string[] }): string {
+/**
+ * How a job obtains the CLI, and how it invokes it.
+ *
+ * Both jobs need it and neither can hand it to the other: the analyse job runs repository build
+ * logic and holds no credential, the publish job holds the credential and runs no repository
+ * code. A built binary passed between them would be repo-influenced code arriving in the
+ * privileged job, which is the hazard the split exists to prevent. So each job installs it
+ * independently, and in `source` mode each pays the build.
+ */
+function cliInstall(input: WorkflowInput, indent: string): string {
+  if (input.cliSource === 'registry') return '';
+  return [
+    `${indent}- name: Check out the KNA platform`,
+    `${indent}  uses: actions/checkout@v4`,
+    `${indent}  with:`,
+    `${indent}    repository: ${input.platformRepo}`,
+    `${indent}    path: .kna-platform`,
+    `${indent}    # Only needed if the platform repository is private.`,
+    `${indent}    token: \${{ secrets.KNA_PLATFORM_TOKEN || github.token }}`,
+    `${indent}- uses: pnpm/action-setup@v4`,
+    `${indent}  with:`,
+    `${indent}    version: 9`,
+    `${indent}- uses: actions/setup-node@v4`,
+    `${indent}  with:`,
+    `${indent}    node-version: 22`,
+    `${indent}    cache: pnpm`,
+    `${indent}    cache-dependency-path: .kna-platform/pnpm-lock.yaml`,
+    `${indent}- name: Build the kna CLI`,
+    `${indent}  working-directory: .kna-platform`,
+    `${indent}  run: pnpm install --frozen-lockfile && pnpm build`,
+    '',
+  ].join('\n');
+}
+
+/** The command that runs the CLI, which differs by where it came from. */
+function cliCommand(input: WorkflowInput): string {
+  return input.cliSource === 'registry'
+    ? 'npx --yes @kna/cli'
+    : 'node .kna-platform/apps/cli/dist/bin.js';
+}
+
+function renderGitHubWorkflow(input: WorkflowInput): string {
   const setupSteps: string[] = [];
   if (input.languages.some((l) => l === 'typescript' || l === 'javascript')) {
-    setupSteps.push(
-      `      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n      - run: npm ci --ignore-scripts\n        continue-on-error: true`,
-    );
+    // Building the CLI from source has already installed Node with a pnpm cache, so only the
+    // repository's own dependency restore is needed here. Two `setup-node` steps in one job is
+    // harmless, but it is the kind of noise that makes a generated file look untrustworthy.
+    const node =
+      input.cliSource === 'source'
+        ? ''
+        : `      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n`;
+    setupSteps.push(`${node}      - run: npm ci --ignore-scripts\n        continue-on-error: true`);
   }
   if (input.languages.includes('python')) {
     setupSteps.push(
@@ -176,6 +256,13 @@ function renderGitHubWorkflow(input: { languages: string[] }): string {
       `      - uses: actions/setup-dotnet@v4\n        with:\n          dotnet-version: '9.x'`,
     );
   }
+
+  const kna = cliCommand(input);
+  const install = cliInstall(input, '      ');
+  const cliSourceNote =
+    input.cliSource === 'registry'
+      ? 'installed from the registry. If `npx` cannot resolve it, it has not been published yet —\n# see ADR 0002.'
+      : `built from source: each job checks out ${input.platformRepo} and builds it. That costs an\n# install and build per job. Publishing the CLI removes both steps — see ADR 0002.`;
 
   return `# Generated by \`kna init\`.
 #
@@ -189,9 +276,7 @@ function renderGitHubWorkflow(input: { languages: string[] }): string {
 #     bundle is what crosses between them, which is why publish takes --bundle rather than
 #     re-analysing. Collapsing the two jobs re-creates the exact hazard the split prevents.
 #
-# Prerequisite: the kna CLI must be installable by the runner. It is a workspace package today,
-# so publish it to your internal registry, or replace the npx calls with a checkout of the
-# platform repository, before enabling this workflow.
+# The CLI is ${cliSourceNote}
 #
 name: KNA index
 
@@ -220,11 +305,11 @@ jobs:
         with:
           fetch-depth: 0
 
-${setupSteps.join('\n')}
+${install}${setupSteps.join('\n')}
 
       # Produces the IR bundle. Runs with no platform credential in the environment.
       - name: Analyse
-        run: npx --yes @kna/cli describe --format json --output kna-ir.json
+        run: ${kna} describe --format json --output kna-ir.json
 
       - uses: actions/upload-artifact@v4
         with:
@@ -241,16 +326,23 @@ ${setupSteps.join('\n')}
         with:
           name: kna-ir
 
+${install}
       # The credential is minted here, scoped to this repo, valid for minutes — never a static
-      # org secret sitting in the repository settings.
+      # org secret sitting in the repository settings. Requires OIDC_ISSUER on the platform;
+      # without it the exchange refuses rather than falling back to something weaker.
       - name: Publish
         env:
           KNA_PLATFORM_URL: \${{ vars.KNA_PLATFORM_URL }}
-        run: npx --yes @kna/cli publish --bundle kna-ir.json --oidc
+        run: ${kna} publish --bundle kna-ir.json --oidc
 `;
 }
 
-function renderGitLabWorkflow(): string {
+function renderGitLabWorkflow(input: WorkflowInput): string {
+  const kna = cliCommand(input);
+  const build =
+    input.cliSource === 'registry'
+      ? ''
+      : `    - git clone --depth 1 https://gitlab-ci-token:$CI_JOB_TOKEN@$CI_SERVER_HOST/${input.platformRepo}.git .kna-platform\n    - (cd .kna-platform && corepack enable && pnpm install --frozen-lockfile && pnpm build)\n`;
   return `# Generated by \`kna init\`.
 #
 # Analysis and publishing are separate jobs on purpose: the analyse job runs repo build logic
@@ -265,7 +357,7 @@ kna:analyse:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
-    - npx --yes @kna/cli describe --format json --output kna-ir.json
+${build}    - ${kna} describe --format json --output kna-ir.json
   artifacts:
     paths: [kna-ir.json]
     expire_in: 1 day
@@ -279,11 +371,16 @@ kna:publish:
     KNA_ID_TOKEN:
       aud: kna-ingest
   script:
-    - npx --yes @kna/cli publish --bundle kna-ir.json --oidc
+${build}    - ${kna} publish --bundle kna-ir.json --oidc
 `;
 }
 
-function renderAzureWorkflow(): string {
+function renderAzureWorkflow(input: WorkflowInput): string {
+  const kna = cliCommand(input);
+  const build =
+    input.cliSource === 'registry'
+      ? ''
+      : `          - script: git clone --depth 1 https://$(System.AccessToken)@github.com/${input.platformRepo}.git .kna-platform && cd .kna-platform && corepack enable && pnpm install --frozen-lockfile && pnpm build\n            displayName: Build the kna CLI\n`;
   return `# Generated by \`kna init\`.
 trigger:
   branches:
@@ -301,7 +398,7 @@ stages:
             fetchDepth: 0
           - task: NodeTool@0
             inputs: { versionSpec: '22.x' }
-          - script: npx --yes @kna/cli describe --format json --output kna-ir.json
+${build}          - script: ${kna} describe --format json --output kna-ir.json
             displayName: Analyse
           - publish: kna-ir.json
             artifact: kna-ir
@@ -314,7 +411,7 @@ stages:
         steps:
           - download: current
             artifact: kna-ir
-          - script: npx --yes @kna/cli publish --bundle $(Pipeline.Workspace)/kna-ir/kna-ir.json --oidc
+${build}          - script: ${kna} publish --bundle $(Pipeline.Workspace)/kna-ir/kna-ir.json --oidc
             displayName: Publish
             env:
               KNA_PLATFORM_URL: $(KNA_PLATFORM_URL)

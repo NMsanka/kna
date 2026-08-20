@@ -116,7 +116,11 @@ function parseBracedTs(input: Tier0Input): RawSymbol[] {
     } else if (containers.length > 0) {
       const method = TS_METHOD.exec(line);
       // Guard against control-flow keywords, which match the method shape exactly.
-      if (method?.groups && !TS_KEYWORDS.has(method.groups.name!)) {
+      if (
+        method?.groups &&
+        !TS_KEYWORDS.has(method.groups.name!) &&
+        isDeclarationNotCall(line, method.groups, containers[containers.length - 1]!)
+      ) {
         const { modifiers = '', name } = method.groups as Record<string, string>;
         const parent = containers[containers.length - 1]!;
         const qualifiedName = `${parent.qualifiedName}.${name}`;
@@ -702,4 +706,40 @@ function makeRawSymbol(args: MakeSymbolArgs): RawSymbol {
     overloadDiscriminator: args.params.map((p) => p.type?.text ?? '?').join(','),
     parentQualifiedName: args.parentQualifiedName,
   };
+}
+
+/**
+ * Tell a method declaration from a call to a method.
+ *
+ * `TS_METHOD` accepts a trailing `;` as well as `{`, because a TypeScript interface signature or
+ * an abstract declaration genuinely ends that way:
+ *
+ *     resolve(id: string): Promise<Symbol>;
+ *
+ * A call has the identical shape:
+ *
+ *     clearInterval(this.autoplay);
+ *
+ * Left undistinguished, every call inside a class body became a method of that class. In a
+ * Shopify theme that produced two `SlideshowComponent.clearInterval` symbols from two calls on
+ * consecutive lines — identical qualified names, therefore identical symbol ids, therefore
+ * identical chunk ids, and a primary-key violation that failed the whole module's index job.
+ *
+ * The discriminator is what a declaration has and a call cannot: a body, or a return-type
+ * annotation, or an interface to belong to. A `.js` file has no annotations at all, so any
+ * `;`-terminated match there is a call — which is exactly the case that was wrong.
+ */
+function isDeclarationNotCall(
+  line: string,
+  groups: Record<string, string | undefined>,
+  parent: { kind: string },
+): boolean {
+  // A body follows. Nothing else opens a brace in this position.
+  if (/[{]\s*$/.test(line.trimEnd())) return true;
+
+  // Signature-only forms are declarations, but only where declarations without bodies are legal.
+  if (parent.kind === 'interface') return true;
+
+  // `foo(): void;` — a return-type annotation means this was never an expression statement.
+  return Boolean(groups.returns);
 }
