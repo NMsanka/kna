@@ -1,7 +1,7 @@
 import { createHmac, timingSafeEqual, randomUUID } from 'node:crypto';
 import type { FastifyReply } from 'fastify';
 import { sql } from 'drizzle-orm';
-import { withSystemContext } from '@kna/db';
+import { withIdentityProbe, withSystemContext } from '@kna/db';
 import type { ApiContext, KnaServer } from '../context.js';
 
 /**
@@ -121,16 +121,22 @@ async function handlePush(
 
   const timer = setTimeout(() => {
     pending.delete(key);
-    void ctx.queue
-      .enqueueRegenerateDocs({
+    void (async () => {
+      // A push tells us the code moved; it does not give us IR. The bundle for `after` exists
+      // only once CI has published it, so regenerate from the newest bundle actually stored —
+      // which is either that commit, or the last one indexed if CI has not caught up yet.
+      const bundle = await ctx.store.latestBundle(repo.orgId, repo.repoId);
+      if (!bundle) return;
+      return ctx.queue.enqueueRegenerateDocs({
         orgId: repo.orgId,
         repoId: repo.repoId,
-        commitSha: after,
-        bundleStorageKey: '',
-      })
-      .catch((error: unknown) =>
-        ctx.logger.error({ err: String(error) }, 'debounced enqueue failed'),
-      );
+        commitSha: bundle.commitSha,
+        ref: bundle.ref,
+        bundleStorageKey: bundle.storageKey,
+      });
+    })().catch((error: unknown) =>
+      ctx.logger.error({ err: String(error) }, 'debounced enqueue failed'),
+    );
   }, DEBOUNCE_MS);
   timer.unref();
 
@@ -158,9 +164,14 @@ async function handlePermissionChange(
 
   const isRemoval = action === 'removed' || action === 'member_removed' || action === 'deleted';
 
-  const principals = await ctx.db.sql<Array<{ id: string; org_id: string }>>`
-    SELECT id, org_id FROM principals WHERE subject = ${member.login} LIMIT 10
-  `;
+  // Cross-tenant by necessity: one provider login can be a principal in several orgs, and §15.4
+  // requires the revocation to reach all of them. Migration 0008 opens exactly the rows matching
+  // the declared subject; the request's HMAC signature, verified above, is what authorises it.
+  const principals = await withIdentityProbe(ctx.db, member.login, async (tx) =>
+    tx.execute<{ id: string; org_id: string }>(
+      sql`SELECT id, org_id FROM principals WHERE subject = ${member.login} LIMIT 10`,
+    ),
+  );
 
   for (const principal of principals) {
     ctx.permissions.invalidate(principal.org_id, principal.id);

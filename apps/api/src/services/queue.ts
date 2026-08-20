@@ -49,12 +49,29 @@ export interface IndexModuleJob {
   /** A pointer, never the bundle. §15.6 — "bundles in object storage with only a pointer in Redis." */
   bundleStorageKey: string;
   changeCount: number;
+  /**
+   * Set only by an explicit reindex. It joins the job id, which is what makes a deliberate
+   * re-run possible at all: without it the id collides with the completed job for the same
+   * `(moduleId, commitSha)` and BullMQ silently drops the request.
+   */
+  reindexToken?: string;
 }
 
 export interface RegenerateDocsJob {
   orgId: string;
   repoId: string;
   commitSha: string;
+  /** The version the documents belong to. Documentation is versioned with the code it describes. */
+  ref: string;
+  /**
+   * Set only by a deliberate trigger — an operator approving a repo, or an explicit reindex.
+   *
+   * Without it the job id is `(repo, commit)`, which is exactly right for ingest: a replayed
+   * webhook must not regenerate twice. It is exactly wrong for a human asking for regeneration
+   * after a completed run, because BullMQ answers a duplicate id by doing nothing and returning
+   * the old id — so the request succeeds, the operator sees 204, and nothing happens.
+   */
+  regenerationToken?: string;
   bundleStorageKey: string;
 }
 
@@ -69,6 +86,18 @@ export class RedisConfigurationError extends Error {
     super(message);
     this.name = 'RedisConfigurationError';
   }
+}
+
+/**
+ * Build a BullMQ job id.
+ *
+ * BullMQ rejects a custom id containing `:` — it is the Redis key separator, and the failure is
+ * a 500 at enqueue time rather than anything the type system can catch. The ids here are
+ * deliberately deterministic, because that is what makes a replayed webhook a no-op at the
+ * queue instead of something the worker has to detect (§7 idempotency).
+ */
+function jobId(...parts: string[]): string {
+  return parts.join('-').replace(/:/g, '-');
 }
 
 export class JobQueue {
@@ -140,31 +169,37 @@ export class JobQueue {
    * detected in the worker (§7 idempotency and coalescing).
    */
   async enqueueIndexModule(job: IndexModuleJob): Promise<string> {
-    const jobId = `${job.moduleId}:${job.commitSha}`;
+    const id = job.reindexToken
+      ? jobId(job.moduleId, job.commitSha, job.reindexToken)
+      : jobId(job.moduleId, job.commitSha);
     await this.queue(QUEUE_NAMES.indexModule).add(QUEUE_NAMES.indexModule, job, {
-      jobId,
+      jobId: id,
       // Per-org priority partitioning: one tenant onboarding a 3M-LOC monolith must not starve
       // every other tenant for hours (§15.6 "logical isolation without resource isolation").
       priority: job.changeCount > 1_000 ? 10 : 1,
     });
-    return jobId;
+    return id;
   }
 
   async enqueueRegenerateDocs(job: RegenerateDocsJob): Promise<string> {
-    const jobId = `docs:${job.repoId}:${job.commitSha}`;
-    await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, { jobId });
-    return jobId;
+    const id = job.regenerationToken
+      ? jobId('docs', job.repoId, job.commitSha, job.regenerationToken)
+      : jobId('docs', job.repoId, job.commitSha);
+    await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, {
+      jobId: id,
+    });
+    return id;
   }
 
   async enqueueCrossRepo(job: CrossRepoJob): Promise<string> {
     // Coalesced per project: the resolution pass needs the whole project's IR present, so
     // queuing one per repo would run it N times for one meaningful change (§15.6).
-    const jobId = `cross:${job.projectId}`;
+    const id = jobId('cross', job.projectId);
     await this.queue(QUEUE_NAMES.crossRepo).add(QUEUE_NAMES.crossRepo, job, {
-      jobId,
+      jobId: id,
       delay: 60_000,
     });
-    return jobId;
+    return id;
   }
 
   /**

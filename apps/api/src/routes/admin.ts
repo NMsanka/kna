@@ -1,11 +1,12 @@
 import { randomUUID } from 'node:crypto';
 
 import { sql } from 'drizzle-orm';
-import { withSystemContext } from '@kna/db';
+import { anyOf, withOrgContext, withSystemContext } from '@kna/db';
 import {
   zBulkReviewDecision,
   zOnboardRepoRequest,
   zPublishExternallyRequest,
+  zReindexRequest,
 } from '@kna/contracts';
 import { canonicalRemote, computeRepoId } from '@kna/ir';
 import type { ApiContext, KnaServer } from '../context.js';
@@ -21,12 +22,18 @@ import { AuthError } from '../auth.js';
 export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   const requireAdmin = async (request: Parameters<typeof ctx.authenticate>[0]) => {
     const principal = await ctx.authenticate(request);
-    const isAdmin = await ctx.db.sql<Array<{ ok: boolean }>>`
-      SELECT EXISTS (
-        SELECT 1 FROM principal_roles
-        WHERE principal_id = ${principal.id} AND role = 'admin'
-      ) AS ok
-    `;
+    // Inside the principal's org, on a transaction. `principal_roles` is RLS-scoped like every
+    // other tenant table, and the previous bare read returned no rows for everyone — so this
+    // check denied real administrators and would have gone on denying them until someone tried
+    // an admin route, which nothing in the test suite did.
+    const isAdmin = await withOrgContext(ctx.db, principal.orgId, async (tx) =>
+      tx.execute<{ ok: boolean }>(sql`
+        SELECT EXISTS (
+          SELECT 1 FROM principal_roles
+          WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id} AND role = 'admin'
+        ) AS ok
+      `),
+    );
     if (!isAdmin[0]?.ok) {
       throw new AuthError('Administrator role required.', 403, 'not_admin');
     }
@@ -119,12 +126,20 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
     });
 
     if (body.decision === 'approve') {
-      await ctx.queue.enqueueRegenerateDocs({
-        orgId: principal.orgId,
-        repoId: body.repoId,
-        commitSha: 'pending',
-        bundleStorageKey: '',
-      });
+      // Regenerate from what the repo last published. A repo approved before it has ever
+      // published has nothing to regenerate from, and saying so is better than queueing a job
+      // that can only fail.
+      const bundle = await ctx.store.latestBundle(principal.orgId, body.repoId);
+      if (bundle) {
+        await ctx.queue.enqueueRegenerateDocs({
+          orgId: principal.orgId,
+          repoId: body.repoId,
+          commitSha: bundle.commitSha,
+          ref: bundle.ref,
+          bundleStorageKey: bundle.storageKey,
+          regenerationToken: randomUUID().slice(0, 8),
+        });
+      }
     }
 
     return reply.code(204).send();
@@ -159,7 +174,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
           FROM modules m
           JOIN symbols s ON s.module_id = m.id
           WHERE m.org_id = ${principal.orgId}
-            AND m.id = ANY(${moduleIds})
+            AND m.id = ${anyOf(moduleIds)}
             AND s.visibility = 'public'
             AND m.external_publication_approved_at IS NULL
           ORDER BY m.name, s.qualified_name
@@ -192,7 +207,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       tx.execute<{ id: string; name: string; sensitivity: string }>(sql`
         SELECT id, name, sensitivity FROM modules
         WHERE org_id = ${principal.orgId}
-          AND id = ANY(${body.moduleIds})
+          AND id = ${anyOf(body.moduleIds)}
           AND sensitivity <> 'public'
       `),
     );
@@ -213,7 +228,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
         SET visibility = 'public',
             external_publication_approved_by = ${body.approvedBy},
             external_publication_approved_at = now()
-        WHERE org_id = ${principal.orgId} AND id = ANY(${body.moduleIds})
+        WHERE org_id = ${principal.orgId} AND id = ${anyOf(body.moduleIds)}
       `);
     });
 
@@ -232,6 +247,115 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
   });
 
   /** §15.6 — DLQ drain and replay. BullMQ's `failed` set is not a DLQ; this is. */
+  /**
+   * Deliberate reindex.
+   *
+   * §15.1 lists "cheap reindexing when the embedding model changes" as a reason the bundle store
+   * is the system of record, but until now nothing could ask for one. Ingest skips modules whose
+   * IR is unchanged — correct, and the whole cost model — and the queue keys job identity on
+   * `(moduleId, commitSha)`, so republishing the same commit is a no-op. Both are right for code
+   * changes and wrong for platform changes: a new embedding model, different chunk sizes, or a
+   * fixed bug in the indexer leaves a corpus that is stale in a way no diff can see.
+   *
+   * Replay reads the stored bundle rather than asking the repo to publish again, so a reindex
+   * needs no CI run, no checkout, and no cooperation from the team that owns the code.
+   */
+  app.post('/v1/admin/reindex', async (request, reply) => {
+    const principal = await requireAdmin(request);
+    const body = zReindexRequest.parse(request.body);
+
+    // One token for the whole request: every module reindexed together shares a job-id namespace,
+    // so a retried HTTP request coalesces instead of queueing the work twice.
+    const reindexToken = randomUUID().slice(0, 8);
+
+    const targets = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
+      tx.execute<{
+        module_id: string;
+        repo_id: string;
+        commit_sha: string;
+        ref: string;
+        storage_key: string;
+      }>(sql`
+        -- The most recent bundle per repo, not every bundle: reindexing means "rebuild from what
+        -- is current", and the history exists for replay and forensics, not for fan-out.
+        WITH latest AS (
+          SELECT DISTINCT ON (repo_id) repo_id, commit_sha, ref, storage_key
+            FROM ir_bundles
+           WHERE org_id = ${principal.orgId}
+           ORDER BY repo_id, received_at DESC
+        )
+        SELECT m.id AS module_id, l.repo_id, l.commit_sha, l.ref, l.storage_key
+          FROM modules m
+          JOIN latest l ON l.repo_id = m.repo_id
+         WHERE m.org_id = ${principal.orgId}
+           AND (
+             ${body.repoIds.length > 0 ? sql`m.repo_id = ${anyOf(body.repoIds)}` : sql`false`}
+             OR ${body.moduleIds.length > 0 ? sql`m.id = ${anyOf(body.moduleIds)}` : sql`false`}
+           )
+      `),
+    );
+
+    // Audited before the work is queued, not after: the record of who asked must survive the
+    // request failing halfway through the fan-out.
+    await ctx.audit.record({
+      orgId: principal.orgId,
+      action: 'admin.reindex',
+      actorType: 'admin',
+      actorId: principal.id,
+      resourceType: 'modules',
+      resourceId: targets.map((t) => t.module_id).join(','),
+      outcome: 'success',
+      detail: { reason: body.reason, reindexToken, moduleCount: targets.length },
+    });
+
+    const jobIds: string[] = [];
+    for (const target of targets) {
+      jobIds.push(
+        await ctx.queue.enqueueIndexModule({
+          orgId: principal.orgId,
+          repoId: String(target.repo_id),
+          moduleId: String(target.module_id),
+          commitSha: String(target.commit_sha),
+          ref: String(target.ref),
+          bundleStorageKey: String(target.storage_key),
+          // Priority, not volume: a reindex is background work by definition and must not sit
+          // ahead of a developer waiting on a freshly merged commit (§15.6).
+          changeCount: 0,
+          reindexToken,
+        }),
+      );
+    }
+
+    const covered = new Set(targets.map((t) => String(t.repo_id)));
+
+    // Documentation is derived from the same bundle and the same retrieval settings, so a
+    // reindex that left it untouched would leave the two halves of the corpus describing
+    // different configurations. One job per repo, sharing the request's token.
+    for (const repoId of covered) {
+      const bundle = targets.find((t) => String(t.repo_id) === repoId);
+      if (!bundle) continue;
+      jobIds.push(
+        await ctx.queue.enqueueRegenerateDocs({
+          orgId: principal.orgId,
+          repoId,
+          commitSha: String(bundle.commit_sha),
+          ref: String(bundle.ref),
+          bundleStorageKey: String(bundle.storage_key),
+          regenerationToken: reindexToken,
+        }),
+      );
+    }
+
+    // A requested repo with no stored bundle is reported rather than silently contributing zero
+    // jobs — "I asked for a reindex and nothing happened" is the failure this endpoint exists to
+    // stop being mysterious.
+    const skipped = body.repoIds
+      .filter((repoId) => !covered.has(repoId))
+      .map((repoId) => ({ repoId, reason: 'no stored IR bundle for this repo' }));
+
+    return reply.send({ jobIds, moduleCount: targets.length, skipped });
+  });
+
   app.get('/v1/admin/dead-letters', async (request, reply) => {
     const principal = await requireAdmin(request);
     const rows = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>

@@ -53,6 +53,9 @@ importers:
       '@fastify/rate-limit':
         specifier: ^10.2.2
         version: 10.3.0
+      '@kna/audit':
+        specifier: workspace:*
+        version: link:../../packages/audit
       '@kna/chunking':
         specifier: workspace:*
         version: link:../../packages/chunking
@@ -142,6 +145,9 @@ importers:
 
   apps/mcp:
     dependencies:
+      '@kna/audit':
+        specifier: workspace:*
+        version: link:../../packages/audit
       '@kna/config':
         specifier: workspace:*
         version: link:../../packages/config
@@ -276,6 +282,18 @@ importers:
       ts-morph:
         specifier: ^24.0.0
         version: 24.0.0
+
+  packages/audit:
+    dependencies:
+      '@kna/db':
+        specifier: workspace:*
+        version: link:../db
+      '@kna/observability':
+        specifier: workspace:*
+        version: link:../observability
+      drizzle-orm:
+        specifier: ^0.38.4
+        version: 0.38.4(@opentelemetry/api@1.9.1)(@types/pg@8.6.1)(postgres@3.4.9)
 
   packages/chunking:
     dependencies:

@@ -102,14 +102,15 @@ async function reconcile(
         `);
       });
 
-      // Trigger a fresh CI index rather than trying to index from here — CI is the canonical
-      // indexer because it is the only place the toolchains are guaranteed present (§5).
-      await ctx.queue.enqueueRegenerateDocs({
-        orgId,
-        repoId: repo.id,
-        commitSha: head,
-        bundleStorageKey: '',
-      });
+      // No job is queued here, deliberately. The comment this replaces said "trigger a fresh CI
+      // index rather than trying to index from here", which is right — CI is the canonical
+      // indexer because it is the only place the toolchains are guaranteed present (§5) — but
+      // the code then enqueued documentation regeneration, which is neither an index nor
+      // something that can run without a bundle for `head`. It could not have worked; it was
+      // invisible only because nothing consumed that queue.
+      //
+      // The stale flag written above *is* the mechanism: it surfaces on the repo, in the
+      // doctor output and in the operator dashboard, and re-indexing is CI's to perform.
       enqueued++;
     }
   }

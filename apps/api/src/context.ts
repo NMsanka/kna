@@ -17,7 +17,7 @@ import { loadPlatformEnv, type PlatformEnv } from '@kna/config';
 import { BundleStore } from '@kna/contracts';
 import { mintIngestToken, PermissionResolver, AuthError, type Principal } from './auth.js';
 
-import { AuditRecorder } from './services/audit.js';
+import { AuditRecorder } from '@kna/audit';
 import { JobQueue } from './services/queue.js';
 import { PlatformStore } from './services/store.js';
 import { GitProviderClient } from './services/git.js';

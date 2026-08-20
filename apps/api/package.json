@@ -15,6 +15,7 @@
     "@kna/ir": "workspace:*",
     "@kna/config": "workspace:*",
     "@kna/db": "workspace:*",
+    "@kna/audit": "workspace:*",
     "@kna/llm": "workspace:*",
     "@kna/retrieval": "workspace:*",
     "@kna/contracts": "workspace:*",

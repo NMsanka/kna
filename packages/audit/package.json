@@ -1,0 +1,27 @@
+{
+  "name": "@kna/audit",
+  "version": "1.0.0",
+  "description": "Hash-chained audit recording (§10 Layer 6)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/db": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "drizzle-orm": "^0.38.4"
+  }
+}

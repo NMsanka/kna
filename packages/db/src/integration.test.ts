@@ -6,10 +6,13 @@ import {
   RlsIneffectiveError,
   tryModuleLock,
   withModuleLock,
+  withAuthProbe,
+  withIdentityProbe,
   withOrgContext,
   withSystemContext,
   type DbHandle,
 } from './client.js';
+import { anyOf } from './sql.js';
 
 /**
  * Integration tests against a real Postgres.
@@ -191,6 +194,102 @@ describeIf('database integration', () => {
       // Both ran; the whole point of module-level rather than repo-level locking (§15.1 fix 3).
       expect(started.sort()).toEqual(['alpha', 'beta']);
     }, 30_000);
+  });
+
+  describe('array parameters', () => {
+    /**
+     * Drizzle's `sql` template does not bind a JavaScript array as one parameter — it *spreads*
+     * it, emitting one placeholder per element. `ANY(${ids})` therefore compiles to `ANY($1)` for
+     * one id and `ANY($1, $2)` for two, and Postgres rejects both. Twenty-five call sites across
+     * five packages were written the natural way and every one of them was wrong.
+     *
+     * The failure is invisible without a real database: the template reads exactly like the SQL
+     * it was meant to be, and a mocked driver never notices. So it is pinned here.
+     */
+    it('binds an array as a single parameter, not one placeholder per element', async () => {
+      for (const values of [['a'], ['a', 'b'], ['a', 'b', 'c']]) {
+        const rows = await handle.db.execute<{ hit: boolean }>(
+          sql`SELECT 'a' = ${anyOf(values)} AS hit`,
+        );
+        expect(rows[0]?.hit).toBe(true);
+      }
+    });
+
+    it('treats an empty array as matching nothing rather than failing', async () => {
+      const rows = await handle.db.execute<{ hit: boolean }>(sql`SELECT 'a' = ${anyOf([])} AS hit`);
+      expect(rows[0]?.hit).toBe(false);
+    });
+
+    it('fails the way the bug did when the array is passed unwrapped', async () => {
+      // Guards the fix rather than the symptom: if a future drizzle release starts binding arrays
+      // as one parameter, this test fails and `anyOf` can be simplified away deliberately.
+      await expect(
+        handle.db.execute(sql`SELECT 'a' = ANY(${['a', 'b']}) AS hit`),
+      ).rejects.toThrow();
+    });
+  });
+
+  describe('authentication bootstrap (§15.4)', () => {
+    /**
+     * Resolving a bearer token happens before there is a principal, so there is no org to scope
+     * by — and the org-isolation policy correctly hid every row, which made the API answer
+     * "unknown or expired token" for tokens that existed and were valid. Migration 0006 opens
+     * exactly the row whose hash the caller declares.
+     */
+    beforeAll(async () => {
+      await admin.sql`
+        INSERT INTO principals (id, org_id, subject, clearance)
+        VALUES ('prin_alpha', 'org_alpha', 'alpha-user', 'internal')
+        ON CONFLICT (id) DO NOTHING
+      `;
+      await admin.sql`
+        INSERT INTO api_tokens (id, org_id, principal_id, token_hash, name, last_four_chars)
+        VALUES ('tok_alpha', 'org_alpha', 'prin_alpha', 'hash_alpha', 'test', 'aaaa')
+        ON CONFLICT (id) DO NOTHING
+      `;
+    });
+
+    it('cannot see a token row without declaring which hash it is resolving', async () => {
+      const rows = await handle.db.execute(
+        sql`SELECT id FROM api_tokens WHERE token_hash = 'hash_alpha'`,
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('sees exactly the declared token row', async () => {
+      const rows = await withAuthProbe(handle, 'hash_alpha', async (tx) =>
+        tx.execute<{ org_id: string }>(sql`SELECT org_id FROM api_tokens`),
+      );
+      expect(rows).toHaveLength(1);
+      expect(rows[0]?.org_id).toBe('org_alpha');
+    });
+
+    it('does not open the whole table to a caller that declares a wrong hash', async () => {
+      const rows = await withAuthProbe(handle, 'hash_that_does_not_exist', async (tx) =>
+        tx.execute(sql`SELECT id FROM api_tokens`),
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('drops the declaration when the transaction ends', async () => {
+      // The PgBouncer hazard: a declaration that outlived its transaction would give the next
+      // borrower of that pooled connection the right to read someone else's credential row.
+      await withAuthProbe(handle, 'hash_alpha', async (tx) => tx.execute(sql`SELECT 1`));
+      const rows = await handle.db.execute(sql`SELECT id FROM api_tokens`);
+      expect(rows).toHaveLength(0);
+    });
+
+    it('resolves a provider identity across tenants only for the declared subject', async () => {
+      const found = await withIdentityProbe(handle, 'alpha-user', async (tx) =>
+        tx.execute<{ org_id: string }>(sql`SELECT org_id FROM principals`),
+      );
+      expect(found.map((r) => r.org_id)).toEqual(['org_alpha']);
+
+      const none = await withIdentityProbe(handle, 'nobody', async (tx) =>
+        tx.execute(sql`SELECT id FROM principals`),
+      );
+      expect(none).toHaveLength(0);
+    });
   });
 
   describe('pgvector', () => {

@@ -56,6 +56,30 @@ export function makeSymbol(overrides: Partial<IrSymbol> = {}): IrSymbol {
   };
 }
 
+/**
+ * A complete doc comment.
+ *
+ * Every array and object field on `zDocComment` has a Zod default, so code downstream of the
+ * analyser boundary is entitled to assume they are present. A test that hand-rolls a partial
+ * object is testing a shape the system never produces — so tests build them from here instead.
+ */
+export function makeDocComment(
+  overrides: Partial<NonNullable<IrSymbol['docComment']>> = {},
+): NonNullable<IrSymbol['docComment']> {
+  return {
+    summary: 'Does the thing.',
+    description: null,
+    params: [],
+    returns: null,
+    throws: [],
+    examples: [],
+    seeAlso: [],
+    tags: {},
+    format: 'tsdoc',
+    ...overrides,
+  };
+}
+
 /** Rebuild the derived hashes after mutating `signature` — mirrors what assembly does. */
 export function withSignature(symbol: IrSymbol, signature: string): IrSymbol {
   const canonical = normalizeSignature(signature, symbol.language);

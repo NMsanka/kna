@@ -10,6 +10,7 @@
     { "path": "packages/analyzer-typescript" },
     { "path": "packages/analyzer-openapi" },
     { "path": "packages/db" },
+    { "path": "packages/audit" },
     { "path": "packages/llm" },
     { "path": "packages/chunking" },
     { "path": "packages/retrieval" },

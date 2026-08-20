@@ -45,6 +45,13 @@ export interface Chunk {
   sourceEndLine: number | null;
   generated: boolean;
   indexedCommitSha: string;
+  /**
+   * §15.5 — "hash them into one `retrieval_config_version`, stamp it on every chunk and every
+   * query trace". `ChunkOptions` carried it from the start and nothing ever put it on the chunk,
+   * so the column was written as a literal 'v1' and no chunk could ever be identified as having
+   * been built under superseded retrieval settings.
+   */
+  retrievalConfigVersion: string;
 }
 
 export interface ChunkOptions {
@@ -60,6 +67,10 @@ export interface ChunkOptions {
 }
 
 const DEFAULT_MAX_TOKENS = 1_200;
+/** Rough cost of the `// part N of M` marker prepended to every piece of a split symbol. */
+const PART_MARKER_TOKENS = 12;
+/** A piece smaller than this is not worth retrieving on its own. */
+const MIN_PIECE_TOKENS = 64;
 const DEFAULT_OVERLAP_TOKENS = 80;
 
 export function chunkSymbols(symbols: IrSymbol[], options: ChunkOptions): Chunk[] {
@@ -82,20 +93,52 @@ export function chunkSymbols(symbols: IrSymbol[], options: ChunkOptions): Chunk[
     const body = [facts, source].filter(Boolean).join('\n\n');
     const full = header ? `${header}\n\n${body}` : body;
 
-    if (estimateTokens(full) <= maxTokens || !source) {
+    if (estimateTokens(full) <= maxTokens) {
       chunks.push(makeChunk(symbol, options, header, full, 0));
       continue;
     }
 
-    // Oversized: split the *source* at statement boundaries, keeping the header and facts on
-    // every piece so each remains independently interpretable.
-    const pieces = splitAtStatementBoundaries(
-      source,
-      maxTokens - estimateTokens(`${header}\n\n${facts}`),
+    // Oversized.
+    //
+    // The condition above used to read `|| !source`, which skipped splitting entirely for any
+    // symbol whose source was not uploaded — and `security.uploadSource: false` is the default,
+    // so that was the normal case. The facts block alone can be very large (a long doc comment,
+    // or an inferred type printed in full), and the result was a single chunk of unbounded size
+    // that the embedding provider rejected outright with "maximum input length is 8192 tokens",
+    // failing the whole batch and with it the module's index.
+    //
+    // What repeats on each piece is chosen so a piece stays independently interpretable, but
+    // never so large that it leaves no room for content: if the header and facts would eat the
+    // budget, they become part of what gets split rather than part of what repeats.
+    const headerTokens = estimateTokens(header ?? '');
+    const preambleTokens = estimateTokens([header, facts].filter(Boolean).join('\n\n'));
+    const half = Math.floor(maxTokens / 2);
+
+    let preamble: string;
+    let splittable: string;
+    if (source && preambleTokens <= half) {
+      preamble = [header, facts].filter(Boolean).join('\n\n');
+      splittable = source;
+    } else if (headerTokens <= half) {
+      preamble = header ?? '';
+      splittable = body;
+    } else {
+      preamble = '';
+      splittable = full;
+    }
+
+    const budget = Math.max(
+      maxTokens - estimateTokens(preamble) - PART_MARKER_TOKENS,
+      MIN_PIECE_TOKENS,
+    );
+    const pieces = splitToBudget(
+      splittable,
+      budget,
       options.overlapTokens ?? DEFAULT_OVERLAP_TOKENS,
     );
+
     pieces.forEach((piece, index) => {
-      const content = [header, facts, `// part ${index + 1} of ${pieces.length}\n${piece}`]
+      const content = [preamble, `// part ${index + 1} of ${pieces.length}\n${piece}`]
         .filter(Boolean)
         .join('\n\n');
       chunks.push(makeChunk(symbol, options, header, content, index));
@@ -134,6 +177,7 @@ function makeChunk(
     sourceEndLine: symbol.sourceRef.endLine,
     generated: symbol.generated,
     indexedCommitSha: options.commitSha,
+    retrievalConfigVersion: options.retrievalConfigVersion,
   };
 }
 
@@ -245,6 +289,69 @@ function isSubsumedByParent(symbol: IrSymbol): boolean {
  * split does not land mid-expression, and that consecutive pieces overlap so a statement near
  * a boundary is retrievable from either side.
  */
+/**
+ * Split text so that no piece exceeds `maxTokens`.
+ *
+ * Three strategies in descending order of quality, because the boundary that reads best is not
+ * always available and the provider's limit is not negotiable:
+ *
+ *  1. Statement boundaries, for source code — a piece ending mid-expression reads badly and
+ *     embeds badly.
+ *  2. Line boundaries, for prose and fact blocks, which have no statement structure at all.
+ *  3. A fixed character window, for the pathological case of a single line longer than the
+ *     budget: a minified bundle, a base64 blob, or a printed type running to thousands of
+ *     characters without a newline. Both boundary-based splits return such a line whole, so
+ *     without this last step the guarantee is not a guarantee.
+ *
+ * The contract callers rely on is that *every* returned piece fits the budget. "Mostly" here
+ * becomes a 400 from the embedding provider that fails an entire batch of chunks.
+ */
+export function splitToBudget(text: string, maxTokens: number, overlapTokens: number): string[] {
+  const out: string[] = [];
+
+  for (const piece of splitAtStatementBoundaries(text, maxTokens, overlapTokens)) {
+    if (estimateTokens(piece) <= maxTokens) {
+      out.push(piece);
+      continue;
+    }
+    for (const byLine of splitAtLineBoundaries(piece, maxTokens)) {
+      if (estimateTokens(byLine) <= maxTokens) out.push(byLine);
+      else out.push(...splitByCharacterWindow(byLine, maxTokens));
+    }
+  }
+
+  return out.length > 0 ? out : [text];
+}
+
+function splitAtLineBoundaries(text: string, maxTokens: number): string[] {
+  const pieces: string[] = [];
+  let current: string[] = [];
+  let tokens = 0;
+
+  for (const line of text.split('\n')) {
+    const lineTokens = estimateTokens(line);
+    if (tokens + lineTokens > maxTokens && current.length > 0) {
+      pieces.push(current.join('\n'));
+      current = [];
+      tokens = 0;
+    }
+    current.push(line);
+    tokens += lineTokens;
+  }
+
+  if (current.length > 0) pieces.push(current.join('\n'));
+  return pieces;
+}
+
+function splitByCharacterWindow(text: string, maxTokens: number): string[] {
+  // The inverse of estimateTokens, with a margin. The estimate approximates the provider's
+  // tokenizer, and the direction to be wrong in is "smaller than allowed".
+  const windowChars = Math.max(Math.floor(maxTokens * 3.5 * 0.9), 256);
+  const pieces: string[] = [];
+  for (let i = 0; i < text.length; i += windowChars) pieces.push(text.slice(i, i + windowChars));
+  return pieces;
+}
+
 export function splitAtStatementBoundaries(
   source: string,
   maxTokens: number,

@@ -1,4 +1,5 @@
 import { sql, type SQL } from 'drizzle-orm';
+import { anyOf } from '@kna/db';
 import type { AccessContext, RetrievalScope } from './types.js';
 
 /**
@@ -96,11 +97,13 @@ function sensitivityArrayLiteral(clearance: AccessContext['clearance']): string 
 function inArray(column: string, values: string[]): SQL {
   // Parameterised as a single array rather than N placeholders: a principal with 400 repo
   // permissions would otherwise blow past the bind-parameter limit.
-  return sql`${sql.raw(column)} = ANY(${values})`;
+  return sql`${sql.raw(column)} = ${anyOf(values)}`;
 }
 
 function projectOverlap(projectIds: string[]): SQL {
-  return sql`c.project_ids ?| ${projectIds}`;
+  // `sql.param` for the same reason as anyOf(): an unwrapped array is spread into one
+  // placeholder per element, and `?|` then receives a bare text value instead of a text[].
+  return sql`c.project_ids ?| ${sql.param([...projectIds])}`;
 }
 
 /**

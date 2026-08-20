@@ -20,7 +20,8 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "generate": "drizzle-kit generate && node scripts/fix-vector-ddl.mjs",
     "migrate": "tsx bin/migrate.ts",
-    "studio": "drizzle-kit studio"
+    "studio": "drizzle-kit studio",
+    "seed": "tsx bin/seed.ts"
   },
   "dependencies": {
     "@kna/ir": "workspace:*",

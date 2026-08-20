@@ -174,6 +174,32 @@ export const zPublishExternallyRequest = z.object({
   ),
 });
 
+/**
+ * §15.1 — "reproducible evaluation, and cheap reindexing when the embedding model changes."
+ *
+ * That benefit is only real if something can actually ask for a reindex. Ingest deliberately
+ * skips modules whose IR has not changed, and BullMQ keys job identity on `(moduleId, commitSha)`
+ * so a republish of the same commit is a no-op — correct for webhooks, and a dead end when the
+ * *platform* changed rather than the code: a new embedding model, new chunking parameters, a bug
+ * fixed in the indexer. This endpoint is the deliberate override, and it carries a mandatory
+ * reason because a reindex spends real money on a real provider.
+ */
+export const zReindexRequest = z
+  .object({
+    repoIds: z.array(z.string()).default([]),
+    moduleIds: z.array(z.string()).default([]),
+    reason: z.string().min(1),
+  })
+  .refine((v) => v.repoIds.length > 0 || v.moduleIds.length > 0, {
+    message: 'Specify at least one repoId or moduleId. Reindexing an entire org is not implicit.',
+  });
+
+export const zReindexResponse = z.object({
+  jobIds: z.array(z.string()),
+  moduleCount: z.number().int().nonnegative(),
+  skipped: z.array(z.object({ repoId: z.string(), reason: z.string() })),
+});
+
 export const zPublishExternallyPreview = z.object({
   moduleId: z.string(),
   moduleName: z.string(),

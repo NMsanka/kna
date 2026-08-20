@@ -60,8 +60,13 @@ export function canonicalRemote(remoteUrl: string): string {
   u = u.replace(/^[a-z]+:\/\//i, '').replace(/^git@/, '');
   u = u.replace(/^[^@/]+@/, '');
   u = u.replace(/:/g, '/');
+  // Trailing dots and slashes are noise a human typed, not part of the repository's identity.
+  // Stripping them before the `.git` suffix matters: a remote recorded as `repo.git.` would
+  // otherwise keep its suffix, and correcting the typo later would change `repoId` — orphaning
+  // every symbol, chunk and document already indexed under the old one.
+  u = u.replace(/[./]+$/, '');
   u = u.replace(/\.git$/i, '');
-  u = u.replace(/\/+$/, '');
+  u = u.replace(/[./]+$/, '');
   return u.toLowerCase();
 }
 

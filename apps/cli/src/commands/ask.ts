@@ -88,6 +88,21 @@ async function ask(
   return (await response.json()) as SearchResponse;
 }
 
+/**
+ * What to call a result.
+ *
+ * A code chunk has a qualified name. A documentation chunk has no symbol at all, so the fallback
+ * printed a chunk id — a 40-hex-character string that tells the reader nothing about what they
+ * are looking at. The document's path is the name a human would use for it.
+ */
+function resultTitle(hit: {
+  qualifiedName?: string | null;
+  chunkId: string;
+  provenance: { path?: string | null };
+}): string {
+  return hit.qualifiedName ?? hit.provenance.path ?? hit.chunkId;
+}
+
 function render(response: SearchResponse, options: AskOptions): void {
   if (options.json) {
     process.stdout.write(`${JSON.stringify(response, null, 2)}\n`);
@@ -132,7 +147,7 @@ function render(response: SearchResponse, options: AskOptions): void {
     const via = hit.viaExpansion ? ui.dim(` via ${hit.expansionRelation}`) : '';
 
     ui.log(
-      `\n${ui.bold(`${index + 1}. ${hit.qualifiedName ?? hit.chunkId}`)}${via}  ${ui.dim(
+      `\n${ui.bold(`${index + 1}. ${resultTitle(hit)}`)}${via}  ${ui.dim(
         `[${depth}] ${hit.score.toFixed(3)}`,
       )}`,
     );
@@ -172,10 +187,7 @@ async function interactiveSession(ctx: CliContext, context: AskContext): Promise
           // about the async version?" on the next turn (§15.5 multi-turn).
           history.push({
             role: 'assistant',
-            content: response.hits
-              .slice(0, 3)
-              .map((h) => h.qualifiedName ?? h.chunkId)
-              .join(', '),
+            content: response.hits.slice(0, 3).map(resultTitle).join(', '),
           });
         }
       } catch (error) {

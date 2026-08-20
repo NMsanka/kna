@@ -125,8 +125,17 @@ export const zRepoConfig = z.object({
   platform: z
     .object({
       url: z.string().url().default('http://localhost:8080'),
-      /** Never a static org secret in CI — see the OIDC exchange in the ingest client. */
+      /** Principal API token, for `ask` and `doctor`. */
       tokenEnv: z.string().default('KNA_TOKEN'),
+      /**
+       * Ingest credential, for `publish`. A different token entirely: short-lived, scoped to one
+       * repository, and HMAC-signed rather than a principal identity. Sharing one variable
+       * between the two meant a developer could authenticate one command or the other, never
+       * both — and the failure looked like a permissions problem rather than a naming one.
+       *
+       * Never a static org secret in CI: see the OIDC exchange in the ingest client.
+       */
+      ingestTokenEnv: z.string().default('KNA_INGEST_TOKEN'),
     })
     .default({}),
 });

@@ -14,6 +14,14 @@ describe('canonicalRemote', () => {
     );
   });
 
+  it('ignores trailing dots and slashes a human typed', () => {
+    // Correcting such a typo later must not change repoId, which would orphan the whole index.
+    const canonical = 'github.com/acme/billing';
+    expect(canonicalRemote('https://github.com/acme/billing.git.')).toBe(canonical);
+    expect(canonicalRemote('https://github.com/acme/billing.git/')).toBe(canonical);
+    expect(canonicalRemote('https://github.com/acme/billing/')).toBe(canonical);
+  });
+
   it('is case-insensitive', () => {
     expect(canonicalRemote('https://GitHub.com/Acme/Billing')).toBe('github.com/acme/billing');
   });

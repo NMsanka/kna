@@ -36,6 +36,9 @@ services:
     ports: ['5432:5432']
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      # Creates the separate LiteLLM database on first initialisation. See the comment in
+      # 01-databases.sql: LiteLLM's Prisma migration drops tables it does not recognise.
+      - ./postgres/initdb:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U kna -d kna']
       interval: 5s
@@ -107,12 +110,13 @@ services:
     entrypoint: >
       /bin/sh -c "
       mc alias set local http://minio:9000 kna knaknakna;
-      mc mb --ignore-existing local/kna-ir-bundles;
-      mc mb --ignore-existing local/kna-audit;
+      mc mb --ignore-existing --with-lock local/kna-ir-bundles;
+      mc mb --ignore-existing --with-lock local/kna-audit;
       mc version enable local/kna-ir-bundles;
       mc version enable local/kna-audit;
+      mc retention set --default COMPLIANCE 90d local/kna-ir-bundles;
       mc retention set --default COMPLIANCE 90d local/kna-audit;
-      echo 'object storage ready';
+      echo 'object storage ready with object lock';
       "
 
   # §11 — "keep LiteLLM anyway": per-team cost attribution, separate virtual keys for
@@ -123,7 +127,9 @@ services:
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:-sk-placeholder}
       LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-sk-kna-master}
-      DATABASE_URL: postgres://kna:kna@postgres:5432/kna
+      # Its OWN database. LiteLLM runs Prisma migrations on startup that drop unrecognised
+      # tables; pointed at the application database it deletes the entire KNA schema.
+      DATABASE_URL: postgres://kna:kna@postgres:5432/kna_litellm
     ports: ['4000:4000']
     volumes:
       - ./litellm/config.yaml:/app/config.yaml:ro

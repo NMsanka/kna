@@ -8,6 +8,15 @@
 # All three appear below, plus the residency pinning §15.7 requires: "pin region at deployment
 # level, make cross-region fallback fail closed rather than reroute."
 
+# Note the absence of a `tier` annotation on each model. LiteLLM owns `model_info.tier` and
+# validates it as free|paid; using it for the interactive/batch split fails validation and the
+# proxy then starts with **zero models loaded** — /v1/models returns an empty list and every
+# call fails with "no healthy deployments for this model". Observed here, not theorised.
+#
+# The interactive/batch separation §15.6 requires is enforced by the virtual keys documented at
+# the end of this file, which share no model entry. That is a stronger boundary than an
+# annotation anyway: a key physically cannot reach a model it was not granted.
+
 model_list:
   # ── Interactive: the hot path. Tight timeouts, generous rate limits. ───────────────────────
   - model_name: chat
@@ -18,7 +27,6 @@ model_list:
       max_retries: 1
     model_info:
       mode: chat
-      tier: interactive
 
   - model_name: query
     litellm_params:
@@ -30,7 +38,6 @@ model_list:
       max_retries: 0
     model_info:
       mode: chat
-      tier: interactive
 
   # ── Batch: invisible background work. Long timeouts, lower priority. ──────────────────────
   - model_name: blurb
@@ -41,17 +48,20 @@ model_list:
       max_retries: 3
     model_info:
       mode: chat
-      tier: batch
 
+  # The strongest model the account can actually reach. `gpt-5` was configured here and the key
+  # used for local development has no access to it, so every documentation prose call returned
+  # 400 and the docgen job published deterministic sections only — correct degradation, and
+  # completely silent unless someone read the warn logs. Point this at whatever the deployment's
+  # key is entitled to; the grounding check makes the choice a quality decision, not a safety one.
   - model_name: docgen
     litellm_params:
-      model: openai/gpt-5
+      model: openai/gpt-4.1
       api_key: os.environ/OPENAI_API_KEY
       timeout: 300
       max_retries: 2
     model_info:
       mode: chat
-      tier: batch
 
   # ── Embeddings ────────────────────────────────────────────────────────────────────────────
   # §11 "the dimension trap": text-embedding-3-large returns 3,072 dimensions natively and
@@ -66,7 +76,6 @@ model_list:
       max_retries: 3
     model_info:
       mode: embedding
-      tier: batch
 
   # ── Confidential tier ─────────────────────────────────────────────────────────────────────
   # §10 provider posture and §15.7 residency: content classified `confidential` routes to an

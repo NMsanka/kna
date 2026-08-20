@@ -73,7 +73,7 @@ export async function publishCommand(ctx: CliContext, options: PublishOptions): 
   }
 
   const platformUrl = options.platformUrl ?? ctx.config.platform.url;
-  const token = options.token ?? process.env[ctx.config.platform.tokenEnv];
+  const token = options.token ?? process.env[ctx.config.platform.ingestTokenEnv];
   if (!token) {
     throw new Error(
       `No platform token. Set ${ctx.config.platform.tokenEnv}, or pass --token.\n\n` +
