@@ -1,5 +1,10 @@
 # The golden eval set
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. **The eval set it
+> describes does not exist yet**, and neither does the runner. This is a specification for
+> something to build, written before building it. See [Authorship and
+> evidence](../../docs/AUTHORSHIP.md).
+
 §15.5 BLOCKER:
 
 > The eval set as specified is statistically underpowered. At n=100 unstratified, a paired

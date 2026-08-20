@@ -4,6 +4,13 @@
 **Date:** 20 August 2026
 **Deciders:** *(to be named — see §6)*
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human, and **this is the most
+> assertion-heavy document in the repository**. The effort estimate, the cost figures and the
+> claims about what each vendor does not cover are reasoning, not measurement — nothing here
+> was tested against a real procurement or a real team. Treat it as a structured argument to
+> disagree with, which is also why §6 lists its deciders as unnamed. See [Authorship and
+> evidence](../AUTHORSHIP.md).
+
 ---
 
 ## Context

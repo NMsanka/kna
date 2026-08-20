@@ -1,5 +1,10 @@
 # Runbook: embedding model migration
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. **This procedure has
+> never been executed.** It was written before it was needed, which is the point — but that
+> means every timing, cost and threshold in it is an estimate. Update it with real numbers
+> the first time someone runs it. See [Authorship and evidence](../AUTHORSHIP.md).
+
 §15.5 HIGH — *"Embedding model migration needs a runbook, not just a version column. Two
 embedding spaces are not comparable — you cannot fuse across them. Write it now."*
 

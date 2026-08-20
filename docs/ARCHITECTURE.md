@@ -1,5 +1,10 @@
 # Architecture
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. It describes code
+> written in the same session, so it agrees with that code by construction. The "where the
+> design was extended" table is the exception — each row there was found by something
+> failing. See [Authorship and evidence](AUTHORSHIP.md).
+
 How the pieces fit, and which finding shaped each. This is the map; the design document
 (`architecture-recommendation.md`) is the reasoning, and the code carries the citations.
 

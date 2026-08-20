@@ -1,5 +1,10 @@
 # Runbook: incidents
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. **No incident described
+> here has occurred.** The SQL runs against tables that exist; the alert thresholds are
+> plausible starting values calibrated against nothing. See [Authorship and
+> evidence](../AUTHORSHIP.md).
+
 Named degraded modes, the alerts that matter, and the two incidents that need a rehearsed
 response rather than an improvised one.
 

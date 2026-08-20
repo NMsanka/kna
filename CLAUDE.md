@@ -1,5 +1,10 @@
 # CLAUDE.md
 
+> **Authorship.** Written by an LLM (Claude Opus 5) in the session that built this codebase,
+> not by a human. The commands and endpoint behaviours below were run and their output read;
+> the "Next" section is judgement about ordering, not a plan anyone has validated. See
+> [Authorship and evidence](docs/AUTHORSHIP.md).
+
 Working notes for Claude Code sessions in this repository.
 
 Conventions and ground rules live in [AGENTS.md](AGENTS.md) — read that too, it is short. This

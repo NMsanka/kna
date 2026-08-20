@@ -1,5 +1,9 @@
 # KNA — project conventions
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. Conventions derived from
+> the design document while writing the code. See [Authorship and
+> evidence](../docs/AUTHORSHIP.md).
+
 Spec-driven development per §13. Not every change needs a spec; the contract-heavy surfaces do.
 
 ## What gets a spec

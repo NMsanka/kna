@@ -4,6 +4,10 @@
 **Version:** 1.0.0
 **Implements:** `packages/retrieval/src/acl.ts`, `packages/retrieval/src/types.ts`
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. The ACL rules and the
+> isolation properties are under test; the scope-selection defaults are design judgement. See
+> [Authorship and evidence](../../../docs/AUTHORSHIP.md).
+
 ---
 
 ## Why this spec exists

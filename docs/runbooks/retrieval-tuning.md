@@ -1,5 +1,9 @@
 # Runbook: retrieval tuning
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. **None of this has been
+> run against a real corpus**, because no corpus exists yet. The ordering is a hypothesis
+> about where value lies, not a result. See [Authorship and evidence](../AUTHORSHIP.md).
+
 §15.5 is the longest section of the review for a reason: retrieval quality is where this
 platform succeeds or quietly fails. This runbook is the order to try things in, and what each
 change actually costs.

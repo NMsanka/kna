@@ -1,5 +1,9 @@
 # KNA — AI-powered documentation and knowledge platform
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. The implementation-state
+> table reflects what was actually run; the surrounding framing restates the design
+> document's reasoning. See [Authorship and evidence](docs/AUTHORSHIP.md).
+
 A polyglot code knowledge platform built on a normalised Intermediate Representation. Three
 products over one substrate: a CLI that analyses repositories and generates documentation, a
 knowledge base that stays synchronised with code changes, and an MCP server that exposes the
@@ -118,6 +122,9 @@ apps/
 - [CLAUDE.md](CLAUDE.md) / [AGENTS.md](AGENTS.md) — orientation for coding agents: verified
   commands, the gotchas that fail in ways that do not look like their cause, and what is not
   built yet.
+- [Authorship and evidence](docs/AUTHORSHIP.md) — who wrote each document here, and which of
+  its claims were executed, which are internally consistent by construction, and which are
+  reasoning that nobody has tested.
 
 ---
 

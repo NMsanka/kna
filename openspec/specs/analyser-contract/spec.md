@@ -5,6 +5,11 @@
 **Implements:** `packages/analyzer-core/src/registry.ts`
 **Conformance suite:** `CORE_CONFORMANCE` in the same file
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. Unusually for a document
+> here, most of it is enforced rather than asserted: `runConformance()` checks the numbered
+> requirements and the TypeScript analyser passes them. See [Authorship and
+> evidence](../../../docs/AUTHORSHIP.md).
+
 ---
 
 ## Why this spec exists

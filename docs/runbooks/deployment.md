@@ -1,5 +1,10 @@
 # Runbook: deployment
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. **This deployment has
+> never been performed.** The checklist derives from named findings and is worth keeping; the
+> sizing rules are reasoning, and the DR figures say "rehearse this" precisely because nobody
+> has. See [Authorship and evidence](../AUTHORSHIP.md).
+
 ## Environments
 
 §15.3 BLOCKER — *"Environment promotion is undefined for a system that writes to real repos. One

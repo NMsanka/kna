@@ -1,5 +1,10 @@
 # AGENTS.md
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human. These conventions were
+> derived from the design document while writing the code, so they are internally consistent
+> with it rather than independently validated. See [Authorship and
+> evidence](docs/AUTHORSHIP.md).
+
 Conventions for coding agents working in this repository. §13 recommends this file exists so every agent picks up the project's conventions rather than inferring them.
 
 ## What this is

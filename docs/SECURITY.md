@@ -1,5 +1,11 @@
 # Security
 
+> **Authorship.** Written by an LLM (Claude Opus 5), not by a human, and **not a security
+> review**. It describes what the code intends to enforce. The row-level-security claim was
+> verified against a live database; most of the rest is verifiable by reading the code it
+> points at, which is not the same as having been audited. See [Authorship and
+> evidence](AUTHORSHIP.md).
+
 The six-layer model from §10, and what each layer enforces in this codebase. §10's framing is
 worth repeating because it shapes everything below:
 
