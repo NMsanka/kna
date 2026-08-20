@@ -1,0 +1,27 @@
+{
+  "name": "@kna/docgen",
+  "version": "1.0.0",
+  "description": "Deterministic renderer + bounded LLM prose, with provenance",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/config": "workspace:*"
+  }
+}

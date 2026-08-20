@@ -1,0 +1,32 @@
+{
+  "name": "@kna/worker",
+  "version": "1.0.0",
+  "description": "Indexing, doc generation and maintenance workers",
+  "type": "module",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/chunking": "workspace:*",
+    "@kna/retrieval": "workspace:*",
+    "@kna/docgen": "workspace:*",
+    "@kna/contracts": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "bullmq": "^5.34.10",
+    "ioredis": "^5.4.2",
+    "drizzle-orm": "^0.38.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

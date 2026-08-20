@@ -1,0 +1,46 @@
+{
+  "name": "kna-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered documentation & knowledge platform — polyglot IR, deterministic docs, hybrid retrieval, MCP",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/**\" build && pnpm -r --filter \"./apps/**\" build",
+    "clean": "pnpm -r exec rimraf dist .tsbuildinfo && rimraf node_modules/.cache",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,yaml,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yaml,yml}\"",
+    "db:generate": "pnpm --filter @kna/db generate",
+    "db:migrate": "pnpm --filter @kna/db migrate",
+    "db:seed": "pnpm --filter @kna/db seed",
+    "dev:infra": "docker compose -f deploy/docker-compose.yml up -d postgres redis minio litellm",
+    "dev:infra:down": "docker compose -f deploy/docker-compose.yml down",
+    "dev:api": "pnpm --filter @kna/api dev",
+    "dev:worker": "pnpm --filter @kna/worker dev",
+    "dev:mcp": "pnpm --filter @kna/mcp dev",
+    "eval": "pnpm --filter @kna/retrieval eval",
+    "conformance": "vitest run --dir packages/analyzer-core/conformance",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.5",
+    "@vitest/coverage-v8": "^3.0.5",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0",
+    "vitest": "^3.0.5"
+  }
+}

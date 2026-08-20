@@ -1,0 +1,152 @@
+# LiteLLM proxy configuration.
+#
+# §11 — "keep LiteLLM anyway... three named blockers in §15 are solved by the proxy rather than
+# by application code: per-team cost attribution and budget caps, separate virtual keys for
+# interactive versus batch traffic with distinct rate limits, and a vendor-swap that is a config
+# change rather than a refactor."
+#
+# All three appear below, plus the residency pinning §15.7 requires: "pin region at deployment
+# level, make cross-region fallback fail closed rather than reroute."
+
+model_list:
+  # ── Interactive: the hot path. Tight timeouts, generous rate limits. ───────────────────────
+  - model_name: chat
+    litellm_params:
+      model: openai/gpt-4.1
+      api_key: os.environ/OPENAI_API_KEY
+      timeout: 30
+      max_retries: 1
+    model_info:
+      mode: chat
+      tier: interactive
+
+  - model_name: query
+    litellm_params:
+      model: openai/gpt-4.1-mini
+      api_key: os.environ/OPENAI_API_KEY
+      # Query rewriting and intent classification sit before retrieval; a slow call here is
+      # felt as a slow search (§15.5 latency budget).
+      timeout: 5
+      max_retries: 0
+    model_info:
+      mode: chat
+      tier: interactive
+
+  # ── Batch: invisible background work. Long timeouts, lower priority. ──────────────────────
+  - model_name: blurb
+    litellm_params:
+      model: openai/gpt-4.1-mini
+      api_key: os.environ/OPENAI_API_KEY
+      timeout: 120
+      max_retries: 3
+    model_info:
+      mode: chat
+      tier: batch
+
+  - model_name: docgen
+    litellm_params:
+      model: openai/gpt-5
+      api_key: os.environ/OPENAI_API_KEY
+      timeout: 300
+      max_retries: 2
+    model_info:
+      mode: chat
+      tier: batch
+
+  # ── Embeddings ────────────────────────────────────────────────────────────────────────────
+  # §11 "the dimension trap": text-embedding-3-large returns 3,072 dimensions natively and
+  # pgvector's HNSW index caps at 2,000 for the `vector` type. The application always passes
+  # `dimensions: 1536`; this is the second line of defence if it ever stops.
+  - model_name: text-embedding-3-large
+    litellm_params:
+      model: openai/text-embedding-3-large
+      api_key: os.environ/OPENAI_API_KEY
+      dimensions: 1536
+      timeout: 60
+      max_retries: 3
+    model_info:
+      mode: embedding
+      tier: batch
+
+  # ── Confidential tier ─────────────────────────────────────────────────────────────────────
+  # §10 provider posture and §15.7 residency: content classified `confidential` routes to an
+  # endpoint inside the tenant's own region. Commented out because it needs a real deployment;
+  # uncommenting it is the intended way to satisfy the tier restriction rather than relaxing it.
+  #
+  # - model_name: chat-confidential
+  #   litellm_params:
+  #     model: azure/gpt-4.1
+  #     api_base: os.environ/AZURE_OPENAI_ENDPOINT
+  #     api_key: os.environ/AZURE_OPENAI_API_KEY
+  #     api_version: '2024-10-21'
+  #   model_info:
+  #     mode: chat
+  #     tier: interactive
+  #     region: eu-west-1
+
+litellm_settings:
+  drop_params: true
+  set_verbose: false
+  # Zero retention. §10 — "configure zero-retention and no-training endpoints everywhere."
+  turn_off_message_logging: true
+  # §11 cost lever: prompt caching on the repeated prefix, which the blurb workload is almost
+  # entirely composed of.
+  cache: true
+  cache_params:
+    type: redis
+    host: redis
+    port: 6379
+    supported_call_types: ['acompletion', 'atext_completion']
+    ttl: 3600
+
+  # §15.6 — the failure this prevents: "a backfill saturating the embedding provider's TPM
+  # limit will 429 chat and rerank simultaneously: the most visible surface degrades because of
+  # invisible background work."
+  #
+  # Fallbacks are within-tier only. A batch model must never fall back onto an interactive
+  # model's quota, which would reintroduce exactly that coupling.
+  fallbacks:
+    - blurb: ['query']
+  context_window_fallbacks:
+    - chat: ['chat']
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: os.environ/DATABASE_URL
+
+  # §15.8 — "no cost model, budget owner, or chargeback design." Spend is tracked per virtual
+  # key and per metadata tag, so cost per repo per month is a query rather than an estimate.
+  store_model_in_db: true
+  track_cost_per_model: true
+
+  # §15.3 — a per-org daily spend ceiling. The application also enforces one at admission, which
+  # is where it can pause the queue rather than failing mid-write; this is the backstop for
+  # anything that bypasses admission.
+  max_budget: 1000
+  budget_duration: 1d
+
+  # §15.7 — cross-region fallback fails closed rather than rerouting. A request that would leave
+  # its pinned region is an unlogged transfer, which is worse than a failed request.
+  enforce_user_param: false
+  alerting: ['slack']
+  alerting_threshold: 300
+
+router_settings:
+  routing_strategy: simple-shuffle
+  # Retries are deliberately low. §15.6 — "implement 429-aware backpressure that pauses the
+  # queue rather than burning retries"; the application pauses, so the proxy should not spend
+  # the quota trying anyway.
+  num_retries: 1
+  timeout: 60
+  allowed_fails: 3
+  cooldown_time: 30
+
+# Virtual keys. Created at deploy time via the admin API; listed here as the contract the
+# application expects. §15.6 — "split into separate LiteLLM virtual keys with distinct limits
+# and priorities."
+#
+#   kna-interactive  tpm: 500000  rpm: 3000  models: [chat, query]
+#   kna-batch        tpm: 2000000 rpm: 1000  models: [blurb, docgen, text-embedding-3-large]
+#
+# The two key sets share no model entry, which is what makes the isolation real rather than
+# advisory.

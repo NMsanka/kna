@@ -1,0 +1,36 @@
+{
+  "name": "@kna/db",
+  "version": "1.0.0",
+  "description": "Postgres schema, migrations, RLS and pgvector access",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "generate": "drizzle-kit generate && node scripts/fix-vector-ddl.mjs",
+    "migrate": "tsx bin/migrate.ts",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "drizzle-orm": "^0.38.3",
+    "postgres": "^3.4.5",
+    "drizzle-kit": "^0.30.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

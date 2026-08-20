@@ -1,0 +1,166 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: kna
+          POSTGRES_PASSWORD: kna
+          POSTGRES_DB: kna
+        options: >-
+          --health-cmd "pg_isready -U kna"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+        ports: ['5432:5432']
+
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+        ports: ['6379:6379']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Typecheck and build
+        run: pnpm exec tsc -b
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Format check
+        run: pnpm format:check
+
+      - name: Migrate
+        env:
+          DATABASE_URL: postgres://kna:kna@localhost:5432/kna
+        run: pnpm --filter @kna/db migrate
+
+      # The integration tests connect as a *non-superuser* role, because a superuser bypasses
+      # RLS silently and testing isolation over an owner connection proves nothing. See
+      # packages/db/migrations/0005_login_roles.sql.
+      - name: Configure application roles
+        env:
+          PGPASSWORD: kna
+        run: |
+          psql -h localhost -U kna -d kna -c "ALTER ROLE kna_interactive WITH PASSWORD 'ci';"
+          psql -h localhost -U kna -d kna -c "ALTER ROLE kna_batch WITH PASSWORD 'ci';"
+
+      - name: Test
+        env:
+          DATABASE_URL: postgres://kna:kna@localhost:5432/kna
+          TEST_APP_DATABASE_URL: postgres://kna_batch:ci@localhost:5432/kna
+          REDIS_URL: redis://localhost:6379
+        run: pnpm test
+
+      # The platform documents its own repositories from week one (§16 "dogfood"), so a change
+      # that breaks analysis of this repo fails CI here rather than in someone else's.
+      - name: Self-analysis
+        run: node apps/cli/dist/bin.js describe --format summary
+
+      - name: Guardrail scan
+        run: node apps/cli/dist/bin.js scan --annotations
+
+  retrieval-eval:
+    name: Retrieval eval gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: build
+    # §15.5 BLOCKER — "gate merges on a CI eval reporting per-stratum deltas with confidence
+    # intervals". Runs on pull requests, where a regression can still be stopped.
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec tsc -b
+
+      - name: Detect retrieval config change
+        id: config
+        run: node scripts/check-retrieval-config.mjs "${{ github.event.pull_request.base.sha }}"
+
+      - name: Run eval
+        if: steps.config.outputs.changed == 'true'
+        run: |
+          echo "Retrieval configuration changed. The eval set is the only thing standing"
+          echo "between a plausible-sounding change and a silent quality regression."
+          pnpm eval --compare "${{ github.event.pull_request.base.sha }}"
+
+  security:
+    name: Security review
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # §15.2 HIGH — "third-party grammar and analyser supply chain... Pin by digest, vendor into
+      # your own registry, and verify checksums — otherwise a compromised grammar package
+      # executes inside your CI on every repo in the org."
+      - name: Verify lockfile is unchanged by install
+        run: git diff --exit-code pnpm-lock.yaml
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
+
+      # A dependency that can run arbitrary code at install time runs it on every CI runner in
+      # the org, including the ones holding repo read access.
+      - name: Check for install scripts in new dependencies
+        run: node scripts/check-install-scripts.mjs

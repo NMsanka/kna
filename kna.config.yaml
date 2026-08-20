@@ -1,0 +1,53 @@
+# KNA's own configuration.
+#
+# §16 — "Dogfood: the platform documents its own repos from week one." This file is the first
+# real test of the config schema, and of whether the allowlist workflow is tolerable in practice.
+#
+# It is also the honest answer to a problem the tool found in itself: the scanner's test fixtures
+# contain the canonical example secrets every scanner test needs, and the scanner correctly
+# refuses to publish them. That is the fail-closed behaviour working, not a bug — so the fix is a
+# reviewed allowlist with a stated reason, exactly what a real team would have to write.
+
+version: 1
+org: kna
+
+projects:
+  - platform
+
+security:
+  # Raw source never leaves the developer machine. This is the strongest control in §10 and it
+  # is on by default; the platform's own repo has no reason to opt out.
+  uploadSource: false
+
+  sensitivityRules:
+    - paths: ['packages/scanner/**', 'packages/contracts/**']
+      tier: confidential
+      reason: guardrail rulesets and bundle-signing logic — an attacker who reads these learns what the scanner does not catch
+
+  allowlist:
+    - path: 'packages/scanner/src/scanner.test.ts'
+      rule: aws-access-key-id
+      reason: AKIAIOSFODNN7EXAMPLE is AWS's published documentation example; the scanner's own tests must contain it to prove detection works
+    - path: 'packages/scanner/src/scanner.test.ts'
+      rule: url-embedded-credentials
+      reason: synthetic connection string in a detection test; the host does not exist
+    - path: 'packages/scanner/src/scanner.test.ts'
+      rule: email-address
+      reason: synthetic addresses in PII-detection tests, deliberately not on example.com so the exclusion rule is itself under test
+    - path: 'packages/ir/src/ids.test.ts'
+      rule: email-address
+      reason: git remote URLs in identity tests are matched by the email pattern; they are remotes, not addresses
+    - path: 'packages/scanner/src/scanner.test.ts'
+      rule: private-key-block
+      reason: truncated PEM header in a detection test; there is no key material after it
+    - path: 'packages/scanner/src/scanner.test.ts'
+      rule: credit-card
+      reason: 4111111111111111 is the universal Luhn-valid test card, required to prove the Luhn check distinguishes it from a non-Luhn digit run
+
+docs:
+  outputDir: docs/generated
+  prStrategy: daily-digest
+  autoMergeLowRisk: true
+  types:
+    - module-reference
+    - architecture-overview

@@ -1,0 +1,159 @@
+# The canonical indexing workflow.
+#
+# §5 — "CI is the canonical indexer. A post-merge workflow runs full Tier 0+1+2 extraction where
+# every toolchain is guaranteed present and pushes the IR bundle to the platform."
+#
+# §15.2 rates this file's structure as the most serious finding in the whole review:
+#
+#   "The CI analyser is remote code execution by design. Tier 2 requires *building* the repo to
+#    emit OpenAPI. `Microsoft.Build.Locator` evaluates MSBuild files that can run arbitrary
+#    `Exec`/`UsingTask` targets; `npm ci` and `dotnet restore` run lifecycle scripts. Any
+#    contributor who can land a `.csproj`, `package.json` or `nuget.config` change gets code
+#    execution on a runner holding repo read access, network egress, and the platform publish
+#    token."
+#
+# The three prescribed mitigations are all structural properties of this file, not settings:
+#
+#   1. Post-merge only. Never `pull_request_target`, never fork PRs.
+#   2. Analysis and publishing are *separate jobs*. The analyse job runs contributor-controlled
+#      build logic and holds no credential; the publish job holds the credential and runs no
+#      repo code.
+#   3. The credential is minted by OIDC exchange, scoped to one repoId, valid for minutes.
+#
+# Anyone tempted to merge these jobs "for speed" is removing the boundary, not an inefficiency.
+
+name: KNA index
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  # §7 coalescing — "a merge train can fire twenty pushes in three minutes. Index the newest
+  # commit, not each one."
+  group: kna-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyse:
+    name: Analyse
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # No credentials in this job's environment. Deliberate and load-bearing.
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # `--ignore-scripts`: a dependency's install script runs as this job, and this job reads
+      # the whole repository. Type resolution does not need lifecycle scripts to have run.
+      - name: Install (no lifecycle scripts)
+        run: pnpm install --frozen-lockfile --ignore-scripts
+        continue-on-error: true
+
+      - name: Build analysers
+        run: pnpm exec tsc -b
+
+      # The guardrail gate. §10 Layer 2 — fail closed, before anything leaves the runner.
+      - name: Guardrail scan
+        run: node apps/cli/dist/bin.js scan --annotations
+
+      - name: Extract IR
+        run: node apps/cli/dist/bin.js describe --format json --output kna-ir.json --no-pretty
+
+      - name: Summarise
+        run: node apps/cli/dist/bin.js describe --format summary >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kna-ir
+          path: kna-ir.json
+          retention-days: 1
+
+  publish:
+    name: Publish
+    needs: analyse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      # Only the artefact is downloaded. This job never checks out the repository, so no
+      # contributor-controlled code runs in the environment holding the publish credential.
+      - uses: actions/download-artifact@v4
+        with:
+          name: kna-ir
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # §15.2 — "mint the ingest credential via CI OIDC exchange scoped to one `repoId` for ~10
+      # minutes, never a static org secret." A static org secret in repository settings is a
+      # credential that can publish IR for every repository in the company, sitting in the
+      # least protected place in the estate.
+      - name: Exchange workload identity for a repo-scoped token
+        id: token
+        env:
+          KNA_PLATFORM_URL: ${{ vars.KNA_PLATFORM_URL }}
+        run: |
+          ID_TOKEN=$(curl -sSf \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kna-ingest" | jq -r '.value')
+
+          RESPONSE=$(curl -sSf -X POST "$KNA_PLATFORM_URL/v1/auth/ci-exchange" \
+            -H 'content-type: application/json' \
+            -d "$(jq -n --arg t "$ID_TOKEN" --arg r "$GITHUB_REPOSITORY" \
+                  '{idToken: $t, repoRemote: $r, audience: "kna-ingest"}')")
+
+          echo "::add-mask::$(echo "$RESPONSE" | jq -r '.token')"
+          echo "token=$(echo "$RESPONSE" | jq -r '.token')" >> "$GITHUB_OUTPUT"
+
+      - name: Publish IR bundle
+        env:
+          KNA_PLATFORM_URL: ${{ vars.KNA_PLATFORM_URL }}
+          KNA_TOKEN: ${{ steps.token.outputs.token }}
+        run: |
+          npx --yes @kna/cli publish \
+            --bundle kna-ir.json \
+            --platform-url "$KNA_PLATFORM_URL"
+
+  # §6 rule 3 — "generated docs land as a pull request, not a direct commit. Humans review.
+  # This is non-negotiable for adoption."
+  #
+  # §15.3 — the PR is opened by the platform, from production, using the production Git App. A
+  # staging deployment must never reach this path; the PR-creation client refuses regardless of
+  # what any workflow asks it to do.
+  regenerate-docs:
+    name: Request documentation regeneration
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Note
+        run: |
+          echo "Documentation regeneration is queued by the platform from the ingested bundle."
+          echo "It arrives as a reviewed pull request, on the schedule this repo configured"
+          echo "(docs.prStrategy: per-change or daily-digest)."

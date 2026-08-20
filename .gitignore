@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.turbo/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.kna/
+.pnpm-store/
+analyzers/dotnet/**/bin/
+analyzers/dotnet/**/obj/
+analyzers/python/.venv/
+analyzers/python/__pycache__/
+deploy/data/

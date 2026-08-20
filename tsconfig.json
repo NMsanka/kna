@@ -1,0 +1,22 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/ir" },
+    { "path": "packages/config" },
+    { "path": "packages/observability" },
+    { "path": "packages/contracts" },
+    { "path": "packages/scanner" },
+    { "path": "packages/analyzer-core" },
+    { "path": "packages/analyzer-typescript" },
+    { "path": "packages/analyzer-openapi" },
+    { "path": "packages/db" },
+    { "path": "packages/llm" },
+    { "path": "packages/chunking" },
+    { "path": "packages/retrieval" },
+    { "path": "packages/docgen" },
+    { "path": "apps/cli" },
+    { "path": "apps/api" },
+    { "path": "apps/worker" },
+    { "path": "apps/mcp" }
+  ]
+}

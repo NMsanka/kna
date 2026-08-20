@@ -1,0 +1,224 @@
+# Local development stack.
+#
+# §12 — the deployment topology from the design, with the additions the reviews require:
+# separate Postgres roles and pooled connections (§15.6), object storage as the system of record
+# (§15.1), and a self-hosted reranker (§11, since OpenAI has none).
+#
+# This file is for development. Production runs the same images under Kubernetes with the
+# secrets sourced from KMS rather than from an env file — see docs/runbooks/deployment.md.
+
+name: kna
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: kna
+      POSTGRES_PASSWORD: kna
+      POSTGRES_DB: kna
+      # Vector index builds are memory-bound; the default 64MB makes them crawl (§15.6).
+      POSTGRES_INITDB_ARGS: '--data-checksums'
+    command:
+      - postgres
+      - -c
+      - shared_buffers=512MB
+      - -c
+      - maintenance_work_mem=1GB
+      - -c
+      - work_mem=32MB
+      - -c
+      - max_connections=200
+      # Required for the halfvec HNSW build to use more than one core.
+      - -c
+      - max_parallel_maintenance_workers=4
+      - -c
+      - log_min_duration_statement=1000
+    ports: ['5432:5432']
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U kna -d kna']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # §15.6 — "PgBouncer with separate pools and DB roles for interactive versus batch traffic so
+  # a reindex storm cannot exhaust connections for chat."
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    environment:
+      DB_HOST: postgres
+      DB_USER: kna
+      DB_PASSWORD: kna
+      DB_NAME: kna
+      # Transaction pooling is why `withOrgContext` must SET LOCAL inside a transaction: outside
+      # one, tenant context bleeds across pooled connections (§15.4).
+      POOL_MODE: transaction
+      MAX_CLIENT_CONN: '500'
+      DEFAULT_POOL_SIZE: '25'
+      AUTH_TYPE: scram-sha-256
+    ports: ['6432:5432']
+    depends_on:
+      postgres: { condition: service_healthy }
+
+  redis:
+    image: redis:7-alpine
+    # §15.6 — "a Redis config assertion that maxmemory-policy is noeviction with AOF on. An
+    # LRU-evicting Redis silently deletes queued work with no error anywhere." The API refuses
+    # to start against a Redis configured otherwise, so this must match.
+    command:
+      - redis-server
+      - --appendonly
+      - 'yes'
+      - --maxmemory-policy
+      - noeviction
+      - --save
+      - '60 1000'
+    ports: ['6379:6379']
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # §15.1 fix 1 — the IR bundle store is the system of record; Postgres is a derived cache.
+  # MinIO stands in for S3 locally, including object-lock support.
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ':9001'
+    environment:
+      MINIO_ROOT_USER: kna
+      MINIO_ROOT_PASSWORD: knaknakna
+    ports: ['9000:9000', '9001:9001']
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ['CMD', 'mc', 'ready', 'local']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  minio-init:
+    image: minio/mc:latest
+    depends_on:
+      minio: { condition: service_healthy }
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 kna knaknakna;
+      mc mb --ignore-existing local/kna-ir-bundles;
+      mc mb --ignore-existing local/kna-audit;
+      mc version enable local/kna-ir-bundles;
+      mc version enable local/kna-audit;
+      mc retention set --default COMPLIANCE 90d local/kna-audit;
+      echo 'object storage ready';
+      "
+
+  # §11 — "keep LiteLLM anyway": per-team cost attribution, separate virtual keys for
+  # interactive versus batch, and a vendor swap that is a config change rather than a refactor.
+  litellm:
+    image: ghcr.io/berriai/litellm:main-stable
+    command: ['--config', '/app/config.yaml', '--port', '4000']
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-sk-placeholder}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      DATABASE_URL: postgres://kna:kna@postgres:5432/kna
+    ports: ['4000:4000']
+    volumes:
+      - ./litellm/config.yaml:/app/config.yaml:ro
+    depends_on:
+      postgres: { condition: service_healthy }
+
+  # §11 — "OpenAI has no reranker... self-host a cross-encoder. Best fit for the confidential
+  # tier, since §15 flags that the reranker sees the full text of the top-50 chunks — the most
+  # sensitive payload in the pipeline."
+  reranker:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.6
+    command: ['--model-id', 'BAAI/bge-reranker-v2-m3', '--port', '8080']
+    ports: ['8090:8080']
+    volumes:
+      - reranker-cache:/data
+    profiles: ['full']
+
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: api
+    environment:
+      KNA_ENV: development
+      KNA_REGION: local
+      # Application roles, never the owner: a superuser bypasses RLS silently (migration 0005).
+      DATABASE_URL: postgres://kna_interactive:${KNA_INTERACTIVE_PASSWORD:-devpass}@pgbouncer:5432/kna
+      DATABASE_URL_BATCH: postgres://kna_batch:${KNA_BATCH_PASSWORD:-devpass}@postgres:5432/kna
+      REDIS_URL: redis://redis:6379
+      BUNDLE_STORE_ENDPOINT: http://minio:9000
+      BUNDLE_STORE_ACCESS_KEY: kna
+      BUNDLE_STORE_SECRET_KEY: knaknakna
+      LITELLM_BASE_URL: http://litellm:4000
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      SESSION_SECRET: development-session-secret-at-least-32-chars
+      INGEST_SIGNATURE_MODE: hmac
+      INGEST_HMAC_SECRET: development-ingest-secret
+      # §15.3 — never true outside production. The env loader refuses the combination anyway.
+      WRITE_ENABLED: 'false'
+    ports: ['8080:8080']
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    profiles: ['full']
+
+  worker:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: worker
+    environment:
+      KNA_ENV: development
+      KNA_REGION: local
+      # The worker uses the direct connection, not the pooler: long transactions holding a
+      # module advisory lock do not belong in a transaction-pooled connection.
+      DATABASE_URL: postgres://kna_batch:${KNA_BATCH_PASSWORD:-devpass}@postgres:5432/kna
+      REDIS_URL: redis://redis:6379
+      BUNDLE_STORE_ENDPOINT: http://minio:9000
+      BUNDLE_STORE_ACCESS_KEY: kna
+      BUNDLE_STORE_SECRET_KEY: knaknakna
+      LITELLM_BASE_URL: http://litellm:4000
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      SESSION_SECRET: development-session-secret-at-least-32-chars
+      WRITE_ENABLED: 'false'
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    profiles: ['full']
+
+  mcp:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: mcp
+    environment:
+      KNA_ENV: development
+      KNA_REGION: local
+      DATABASE_URL: postgres://kna_interactive:${KNA_INTERACTIVE_PASSWORD:-devpass}@pgbouncer:5432/kna
+      REDIS_URL: redis://redis:6379
+      BUNDLE_STORE_ENDPOINT: http://minio:9000
+      BUNDLE_STORE_ACCESS_KEY: kna
+      BUNDLE_STORE_SECRET_KEY: knaknakna
+      LITELLM_BASE_URL: http://litellm:4000
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      SESSION_SECRET: development-session-secret-at-least-32-chars
+    ports: ['8081:8081']
+    depends_on:
+      postgres: { condition: service_healthy }
+    profiles: ['full']
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:
+  reranker-cache:

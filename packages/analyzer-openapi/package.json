@@ -1,0 +1,29 @@
+{
+  "name": "@kna/analyzer-openapi",
+  "version": "1.0.0",
+  "description": "Tier 2 OpenAPI, IaC and service-manifest extraction",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/analyzer-core": "workspace:*",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.1",
+    "globby": "^14.0.2"
+  }
+}

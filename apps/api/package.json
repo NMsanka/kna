@@ -1,0 +1,36 @@
+{
+  "name": "@kna/api",
+  "version": "1.0.0",
+  "description": "Ingestion, retrieval, chat and admin API",
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/retrieval": "workspace:*",
+    "@kna/contracts": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "@kna/scanner": "workspace:*",
+    "@kna/chunking": "workspace:*",
+    "fastify": "^5.2.1",
+    "@fastify/cors": "^10.0.2",
+    "@fastify/helmet": "^13.0.1",
+    "@fastify/rate-limit": "^10.2.2",
+    "bullmq": "^5.34.10",
+    "ioredis": "^5.4.2",
+    "zod": "^3.24.1",
+    "drizzle-orm": "^0.38.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

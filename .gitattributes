@@ -1,0 +1,40 @@
+# Normalise line endings in the repository regardless of the platform a developer is on.
+#
+# This matters more than usual here: CI runs on Linux, the Dockerfile copies these files into a
+# Linux image, and `bootstrap-roles.sh` is executed by a shell that will not tolerate CRLF in a
+# shebang line. Leaving it to each developer's core.autocrlf setting means the build works on
+# their machine and not in the image.
+
+* text=auto eol=lf
+
+# Shell scripts and Dockerfiles are executed by tools that treat a stray CR as part of the
+# command. These must be LF even if someone sets core.autocrlf=true globally.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.Dockerfile text eol=lf
+
+# Windows-native tooling; leave these alone.
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Never touched by line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.gz binary
+*.pdf binary
+
+# The lockfile is generated; a diff of it is noise in review.
+pnpm-lock.yaml linguist-generated=true -diff
+
+# Generated documentation. §15.8's exit plan keeps it in the repository deliberately — if the
+# platform is ever switched off, the Markdown stays where it is — but it is machine-written and
+# should not dominate a pull request diff or the language statistics.
+docs/generated/** linguist-generated=true

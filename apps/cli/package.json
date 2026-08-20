@@ -1,0 +1,37 @@
+{
+  "name": "@kna/cli",
+  "version": "1.0.0",
+  "description": "docs-cli \u2014 analyse a repo, generate documentation, publish IR",
+  "type": "module",
+  "bin": {
+    "kna": "./dist/bin.js",
+    "docs-cli": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "dev": "tsx src/bin.ts",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/scanner": "workspace:*",
+    "@kna/analyzer-core": "workspace:*",
+    "@kna/analyzer-typescript": "workspace:*",
+    "@kna/analyzer-openapi": "workspace:*",
+    "@kna/contracts": "workspace:*",
+    "@kna/docgen": "workspace:*",
+    "commander": "^13.0.0",
+    "picocolors": "^1.1.1",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

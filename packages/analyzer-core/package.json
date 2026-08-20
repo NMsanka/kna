@@ -1,0 +1,31 @@
+{
+  "name": "@kna/analyzer-core",
+  "version": "1.0.0",
+  "description": "Analyser registry, Tier 0 parsing, conformance harness",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "globby": "^14.0.2",
+    "ignore": "^6.0.2",
+    "zod": "^3.24.1",
+    "@kna/scanner": "workspace:*"
+  }
+}

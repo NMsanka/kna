@@ -1,0 +1,175 @@
+import { drizzle, type PostgresJsDatabase } from 'drizzle-orm/postgres-js';
+import { sql } from 'drizzle-orm';
+import postgres from 'postgres';
+import * as schema from './schema/index.js';
+
+/**
+ * Database access.
+ *
+ * Two structural decisions from §15.6, both about resource isolation rather than correctness:
+ *
+ *  - Separate pools and DB roles for interactive versus batch traffic, "so a reindex storm
+ *    cannot exhaust connections for chat".
+ *  - A mandatory `statement_timeout` on the retrieval path. An unbounded query on the hot path
+ *    stalls every assistant in the org.
+ *
+ * And one from §15.4, about safety: `withOrgContext` sets `app.org_id` inside the transaction,
+ * because with PgBouncer transaction pooling a `SET` outside a transaction leaks tenant context
+ * across pooled connections. RLS policies read that setting.
+ */
+
+export type Db = PostgresJsDatabase<typeof schema>;
+
+export interface DbOptions {
+  url: string;
+  poolMax?: number;
+  statementTimeoutMs?: number;
+  applicationName?: string;
+  /** Interactive traffic gets a short timeout; batch work legitimately runs long. */
+  role: 'interactive' | 'batch' | 'migration';
+  onNotice?: (notice: unknown) => void;
+}
+
+export interface DbHandle {
+  db: Db;
+  sql: postgres.Sql;
+  close: () => Promise<void>;
+  role: DbOptions['role'];
+}
+
+export function createDb(options: DbOptions): DbHandle {
+  const statementTimeout =
+    options.statementTimeoutMs ?? (options.role === 'interactive' ? 10_000 : 600_000);
+
+  const client = postgres(options.url, {
+    max: options.poolMax ?? (options.role === 'interactive' ? 10 : 4),
+    idle_timeout: 30,
+    max_lifetime: 60 * 30,
+    prepare: false, // Required for PgBouncer transaction pooling.
+    connection: {
+      application_name: options.applicationName ?? `kna-${options.role}`,
+      statement_timeout: statementTimeout,
+      // Bound the time a lock wait can hold a connection hostage during a reindex swap.
+      lock_timeout: options.role === 'interactive' ? 3_000 : 30_000,
+      idle_in_transaction_session_timeout: 60_000,
+    },
+    onnotice: options.onNotice ?? (() => undefined),
+  });
+
+  return {
+    db: drizzle(client, { schema }),
+    sql: client,
+    role: options.role,
+    close: async () => {
+      await client.end({ timeout: 10 });
+    },
+  };
+}
+
+export class RlsIneffectiveError extends Error {
+  constructor(role: string) {
+    super(
+      `Connected as '${role}', which bypasses row-level security.\n\n` +
+        'A superuser, or any role with BYPASSRLS, ignores RLS entirely and silently: policies\n' +
+        'exist, relrowsecurity is true, the invariant check passes, and every tenant can read\n' +
+        'every other tenant. Nothing errors.\n\n' +
+        'Connect as kna_interactive or kna_batch instead. RLS that is enabled and inert is\n' +
+        'worse than no RLS, because it is believed.',
+    );
+    this.name = 'RlsIneffectiveError';
+  }
+}
+
+/**
+ * Assert that RLS actually applies to this connection.
+ *
+ * Called at startup by every service. §15.4 asks for forced RLS as defence in depth; this is
+ * what makes the depth real rather than nominal, and it is deliberately fatal — a deployment
+ * that silently lost tenant isolation should not start.
+ */
+export async function assertRlsEffective(handle: DbHandle): Promise<void> {
+  const rows = await handle.sql<Array<{ effective: boolean; role: string }>>`
+    SELECT kna_rls_is_effective() AS effective, current_user AS role
+  `;
+  const row = rows[0];
+  if (!row?.effective) throw new RlsIneffectiveError(row?.role ?? 'unknown');
+}
+
+/**
+ * Run work with tenant context set for RLS.
+ *
+ * The `SET LOCAL` must be inside the transaction — this is the PgBouncer hazard §15.4 names
+ * explicitly. Outside a transaction the setting sticks to a pooled connection and the next
+ * tenant to borrow it inherits the wrong context.
+ */
+export async function withOrgContext<T>(
+  handle: DbHandle,
+  orgId: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.org_id', ${orgId}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
+ * Two paths deliberately run outside user context and need explicit org partitioning instead
+ * (§15.4): the cross-repo resolution pass and the indexing workers. This wrapper makes that
+ * choice visible at the call site rather than implicit in a missing `withOrgContext`.
+ */
+export async function withSystemContext<T>(
+  handle: DbHandle,
+  orgId: string,
+  reason: 'indexing' | 'cross-repo-resolution' | 'maintenance',
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.org_id', ${orgId}, true)`);
+    await tx.execute(sql`SELECT set_config('app.system_context', ${reason}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
+ * §15.6 — per-module advisory lock, which is what actually enforces "per-repo concurrency of 1"
+ * now that we know stock BullMQ cannot. Taken as a transaction-scoped lock so it releases on
+ * commit *or* crash: a worker that dies mid-reindex does not wedge the module forever.
+ */
+export async function withModuleLock<T>(
+  handle: DbHandle,
+  moduleId: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    // hashtextextended gives a stable 64-bit key from the module id.
+    await tx.execute(sql`SELECT pg_advisory_xact_lock(hashtextextended(${moduleId}, 0))`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/** Non-blocking variant, for the "another worker already has it" fast path. */
+export async function tryModuleLock<T>(
+  handle: DbHandle,
+  moduleId: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<{ acquired: true; result: T } | { acquired: false; result: null }> {
+  return handle.db.transaction(async (tx) => {
+    const rows = await tx.execute<{ locked: boolean }>(
+      sql`SELECT pg_try_advisory_xact_lock(hashtextextended(${moduleId}, 0)) AS locked`,
+    );
+    if (!rows[0]?.locked) return { acquired: false as const, result: null };
+    return { acquired: true as const, result: await fn(tx as unknown as Db) };
+  });
+}
+
+/**
+ * Tune pgvector's search-time recall/latency trade-off for this transaction.
+ * §15.5 — "tune pgvector `ef_search` against the eval set rather than defaulting it; that one
+ * parameter usually buys more p99 than anything else."
+ */
+export async function setEfSearch(tx: Db, efSearch: number): Promise<void> {
+  await tx.execute(sql`SET LOCAL hnsw.ef_search = ${sql.raw(String(Math.floor(efSearch)))}`);
+}
+
+export { schema, sql };

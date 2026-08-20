@@ -1,0 +1,31 @@
+{
+  "name": "@kna/retrieval",
+  "version": "1.0.0",
+  "description": "Hybrid retrieval: dense + BM25 + symbol, RRF, rerank, graph expansion",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@kna/ir": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/config": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "@kna/chunking": "workspace:*",
+    "drizzle-orm": "^0.38.3"
+  }
+}
