@@ -5,14 +5,14 @@ generated: true
 generator: kna-docgen
 moduleId: mod_bf87d3c81fe7c219d3ebcf9086ac795a
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
 provenance:
   symbolIds:
     - sym_34b7c605192e3d697e82f1375aea24fb86d91c03
-    - sym_8a12f5fff3268abf5fccf29844b18c2f775fb679
+    - sym_41217b70be2fdbf3094c7eb8dcfa31949914f0e8
     - sym_f43a6452d4efd407560808cb2c1b7fb352fc5e01
     - sym_97aad7e756d236fea8bb2e40f312b59c5eacaee8
     - sym_e66ae37a1726d05a260bd68e16d9eb7a4b955d19
@@ -75,7 +75,7 @@ provenance:
     - sym_2429865e3f1906ff16d97c702f2ec2a5ec533552
   signatureHashes:
     sym_34b7c605192e3d697e82f1375aea24fb86d91c03: d1e3fdcaf5fae1c032e64d0a471cef07c321ac09cf0ef973e27a9d977a97e478
-    sym_8a12f5fff3268abf5fccf29844b18c2f775fb679: d28e66c3436daf6a07a49429533aa58578b42da6221017f260a4343669504fed
+    sym_41217b70be2fdbf3094c7eb8dcfa31949914f0e8: 7a812f8bfc4b0b567ff9725c100332cbc58603ff94dfd6adf4f7f1a6e8ca400c
     sym_f43a6452d4efd407560808cb2c1b7fb352fc5e01: f5685e162de6170551d51d6b48ea3e3d32f5c2df162b9da5ef397844c3032fd8
     sym_97aad7e756d236fea8bb2e40f312b59c5eacaee8: 66a9d993b4e080ef71c20408a4f808c66409f0ab3f77903797e1a5d7dc91fcf9
     sym_e66ae37a1726d05a260bd68e16d9eb7a4b955d19: 8b81cf4b6d59b1751e42d6dd6163c853f4810a6aa1da0cfae22adfcde4b6243f
@@ -227,16 +227,16 @@ const TOOL_DEFINITIONS: {readonly search_codebase: {readonly title: "Search the 
 <sub>Source: `apps/mcp/src/tools.ts:51`</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=0123674eceaca3f7 -->
+<!-- kna:generated:start id=api.function hash=a6c0c74d08df27d6 -->
 ### `createMcpContext`
 
 ```typescript
-createMcpContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…, logger: Logger): Promise<McpContext>
+createMcpContext(env: {KNA_ENV: "production" | "development" | "test" | "staging";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…, logger: Logger): Promise<McpContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env` | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  |
+| `env` | `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  |
 | `logger` | `Logger` |  |
 
 **Returns** `Promise<McpContext>`
@@ -519,7 +519,7 @@ interface SessionPolicy
 <sub>Source: `apps/mcp/src/session.ts:28`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=7cb408e899e95d1b -->
+<!-- kna:generated:start id=api.property hash=9c57df859ee7fe22 -->
 ### `architecture`
 
 ```typescript
@@ -574,7 +574,7 @@ db: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
 <sub>Source: `apps/mcp/src/context.ts:54`</sub>
 

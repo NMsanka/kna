@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_60c6c3d09d17fe1b6c4635bbce85a4da
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
@@ -193,7 +193,7 @@ provenance:
 | Public symbols | 84 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=880e73eeaf03bc9e -->
+<!-- kna:generated:start id=api.function hash=b0fd33e9afec03eb -->
 ### `analyze`
 
 ```typescript
@@ -346,7 +346,7 @@ generateCommand(ctx: CliContext, options: GenerateOptions): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/cli/src/commands/generate.ts:34`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:45`</sub>
 
 ---
 
@@ -429,7 +429,7 @@ reportError(error: unknown): void
 <sub>Source: `apps/cli/src/ui.ts:109`</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=7a96a10528571612 -->
+<!-- kna:generated:start id=api.interface hash=83912dec11ac73e6 -->
 ### `AnalyzeOptions`
 
 The shared analysis path behind `describe`, `index` and `publish`.
@@ -502,13 +502,11 @@ interface DoctorOptions
 
 ### `GenerateOptions`
 
-`kna generate` — write documentation into the repository.
-
 ```typescript
 interface GenerateOptions
 ```
 
-<sub>Source: `apps/cli/src/commands/generate.ts:26`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:37`</sub>
 
 ---
 
@@ -535,7 +533,7 @@ interface PublishOptions
 <sub>Source: `apps/cli/src/commands/publish.ts:19`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=782d3ffecdfcd003 -->
+<!-- kna:generated:start id=api.property hash=a4b2337c20f45929 -->
 ### `maxTier`
 
 ```typescript
@@ -1006,7 +1004,7 @@ dryRun: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/cli/src/commands/generate.ts:31`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:42`</sub>
 
 ---
 
@@ -1018,7 +1016,7 @@ outputDir?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/cli/src/commands/generate.ts:28`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:39`</sub>
 
 ---
 
@@ -1032,7 +1030,7 @@ prose: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/cli/src/commands/generate.ts:30`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:41`</sub>
 
 ---
 
@@ -1044,7 +1042,7 @@ types?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>Source: `apps/cli/src/commands/generate.ts:27`</sub>
+<sub>Source: `apps/cli/src/commands/generate.ts:38`</sub>
 
 ---
 

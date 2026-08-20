@@ -5,13 +5,13 @@ generated: true
 generator: kna-docgen
 moduleId: mod_059a7404d61707948d63d574a23b22c5
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
 provenance:
   symbolIds:
-    - sym_94a8dac65e553dbf73754419fa7cb9f2382566eb
+    - sym_42a489c89b224f4a29fd983226e42176e450f669
     - sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19
     - sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9
     - sym_dbf84f0792700801f3137a55c3114621f5068449
@@ -88,7 +88,7 @@ provenance:
     - sym_c64eac068438700ad3e0fdd220bde04689157665
     - sym_02ea86ef634fdbf9d8bfa2075a3d9c900b9273b8
   signatureHashes:
-    sym_94a8dac65e553dbf73754419fa7cb9f2382566eb: 1f38a39a16c6ee169f400eac16c3e999a57a73e67a853f13c1463f70d99621ff
+    sym_42a489c89b224f4a29fd983226e42176e450f669: 6cd3bf6f5d8ed255c0977593d3e4e86c388d3dfd8412bbc6ee9cc4498362702c
     sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19: db35ff8a4521fa24e81bf2a586585cc4a1b2bcbbe55801861b13c4bf50444358
     sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_dbf84f0792700801f3137a55c3114621f5068449: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
@@ -177,16 +177,16 @@ provenance:
 | Public symbols | 76 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=d3b6f4da945f2d2e -->
+<!-- kna:generated:start id=api.function hash=9871616acec44443 -->
 ### `createWorkerContext`
 
 ```typescript
-createWorkerContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<WorkerContext>
+createWorkerContext(env: {KNA_ENV: "production" | "development" | "test" | "staging";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<WorkerContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env`? | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
+| `env`? | `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
 
 **Returns** `Promise<WorkerContext>`
 
@@ -335,7 +335,7 @@ interface WorkerContext
 <sub>Source: `apps/worker/src/context.ts:22`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=7825af5ad86311d6 -->
+<!-- kna:generated:start id=api.property hash=3d3e61016979c452 -->
 ### `orgId`
 
 ```typescript
@@ -810,7 +810,7 @@ db: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
 <sub>Source: `apps/worker/src/context.ts:23`</sub>
 

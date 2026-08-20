@@ -1,7 +1,7 @@
 {
   "name": "@kna/ir",
   "version": "1.0.0",
-  "description": "Normalised Intermediate Representation — the contract every analyser emits and every consumer reads",
+  "description": "Normalised Intermediate Representation \u2014 the contract every analyser emits and every consumer reads",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,6 +13,10 @@
     "./diff": {
       "types": "./dist/diff/index.d.ts",
       "default": "./dist/diff/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/fixtures.d.ts",
+      "default": "./dist/testing/fixtures.js"
     }
   },
   "files": [

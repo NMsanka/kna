@@ -5,12 +5,15 @@ generated: true
 generator: kna-docgen
 moduleId: mod_9a189635182a8361fe3d3ab5c044c601
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
 provenance:
   symbolIds:
+    - sym_d77d39994bbb798eaa0d6926eb2b727ef1f354fd
+    - sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4
+    - sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75
     - sym_a2d4dbca46908f320d26de49675bd6eb1d38d402
     - sym_3b3a904fb3e886ef4e6006dc8145c2590951329f
     - sym_2b4582952fbd03d46706b4422326cad287906f70
@@ -40,6 +43,10 @@ provenance:
     - sym_4ce95f66b215ccb10aed3f40434034537fd52e90
     - sym_2594db3a322459c41ebe49df3fecfdc8411c0cfe
     - sym_1354063232dd11ba4ce3b764fdcf8577bc43131f
+    - sym_f2106118471bdc8a0642f25d3fa41a8730ee819d
+    - sym_80204670ba26ab3e8e8f9385089f9473cae90942
+    - sym_481fbdb24b1f44b610f3a9b0f3514e3a6ab0f621
+    - sym_d4cee2a7be464e539866edd5b77fa1b0f682fe4b
     - sym_5980b6414b657596767d03eefab094bfe5887f60
     - sym_f2b8e3c644bcc6e0b343b45c4e48292f5c2f13bd
     - sym_646510432dca72c6e3923a77898f50c747927f2d
@@ -54,6 +61,7 @@ provenance:
     - sym_8a4375fa74a0286e421fcc8f2ed40b278a78dec8
     - sym_d2338127b527c6b4666916468276961be3d0df13
     - sym_3eb20c1136aa9547eef53b2a46c2caeca9b00a41
+    - sym_8698550667d83e31c0b7fd6f50a87e9fbad314a6
     - sym_4dcbb1158116043d22d8152757b916ceb0cf3fc5
     - sym_d62fae50b946127ff72f47b281a3488f73adb2a5
     - sym_423a705766d56a9f118b37095061c1c746f728c7
@@ -92,6 +100,9 @@ provenance:
     - sym_55fcb883a54a0dc84d0a1a48ddfdaf10d4622e2b
     - sym_adfd4348d0d5583bd144e09caae6645bf19ad027
   signatureHashes:
+    sym_d77d39994bbb798eaa0d6926eb2b727ef1f354fd: e17246edd35771858985fe8f62bdd085c04384ca703ada98b8c52e2f71037d6f
+    sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4: 37fc3750388d47a9224bc44c7032e499bad9639b31dc85238bd08b58e7c3f8da
+    sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75: 7b1abd85cc0be532c7bc518bd053fed29f4aa175ca537e1a897937b3dc226fe3
     sym_a2d4dbca46908f320d26de49675bd6eb1d38d402: 898d5ef8d25c679924e6481919f7a65f248c68ca1de1e83e9990a166dbfa468a
     sym_3b3a904fb3e886ef4e6006dc8145c2590951329f: 41ef6df4223cf2e205e5e93a6b0e326cf4543ea523957cb203cd965188666e3d
     sym_2b4582952fbd03d46706b4422326cad287906f70: b36a18ad95ac6688071e46f404f3286dc489e915a9617817d308598d838d6132
@@ -121,6 +132,10 @@ provenance:
     sym_4ce95f66b215ccb10aed3f40434034537fd52e90: 36dcca3ab6cf22f4c00aa8fc4242c2739c2f3fbbf46a369674dd0087522009c4
     sym_2594db3a322459c41ebe49df3fecfdc8411c0cfe: ca57bdd334bd69e0d51fea262050129e9b058387acdff1989bea1365c9352ca8
     sym_1354063232dd11ba4ce3b764fdcf8577bc43131f: dd28c483f52f5dd34fa6a0c33b50f62f62730ad21a5773a453379bc2358b9cee
+    sym_f2106118471bdc8a0642f25d3fa41a8730ee819d: 8ab20def7a04cfb1efaea16a30600c244166bd3013b597ae7d936a8d6b056572
+    sym_80204670ba26ab3e8e8f9385089f9473cae90942: 515e29c6e08188213aa489405b48fd134c1e82b1b369c64f368bb6a9c21b7ee5
+    sym_481fbdb24b1f44b610f3a9b0f3514e3a6ab0f621: 7b349755422a131815dbe421e32f2fba4396c67c0e4f93fdff7e476a407e415c
+    sym_d4cee2a7be464e539866edd5b77fa1b0f682fe4b: 4211a9a4977dad4c298f7b9afd0993b65857ecdcd5903dd3931eaa71c210a86d
     sym_5980b6414b657596767d03eefab094bfe5887f60: 623bf2a6e84a101adf0e9d822ccc40631125bf3ddba99771a60cde608701ff4c
     sym_f2b8e3c644bcc6e0b343b45c4e48292f5c2f13bd: da78bacdef1446e15ae0b0903144a390f454571cecc2f462ab370bc69cd78b4e
     sym_646510432dca72c6e3923a77898f50c747927f2d: 4c0246d56865a97d551eed21c5d8ac1e2fe8f16930ba6b2401541f7e8d8e77ed
@@ -135,6 +150,7 @@ provenance:
     sym_8a4375fa74a0286e421fcc8f2ed40b278a78dec8: 7de2690ee9d657c2084c72d63b7a27b522015575d74615a7c876dee0dbe3e0fc
     sym_d2338127b527c6b4666916468276961be3d0df13: 80b7218a238e4f0d36dfee735077a9271da701db069e2415e8b13d5719866d4e
     sym_3eb20c1136aa9547eef53b2a46c2caeca9b00a41: 338cedcc060d657d43c4c672aac4434d8f6e497d1f0d531c6058365ff3031d80
+    sym_8698550667d83e31c0b7fd6f50a87e9fbad314a6: 5bdc4793686b466424aefe2f75dd9af6e7928fc30b8ab9c56fe5533a4cb910c6
     sym_4dcbb1158116043d22d8152757b916ceb0cf3fc5: cfde877555adb871ec61c5ab9b0e9bad4154ce749153908a2eed16a7c9eeacab
     sym_d62fae50b946127ff72f47b281a3488f73adb2a5: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
     sym_423a705766d56a9f118b37095061c1c746f728c7: 579462789f017942a1eb28a948d4f4b5e855f39e6ecde3cdaeb0418dacfa5a14
@@ -176,16 +192,16 @@ provenance:
 
 # @kna/docgen reference
 
-<!-- kna:generated:start id=overview hash=3d87afb27ef669ce -->
+<!-- kna:generated:start id=overview hash=3a8026442c60e9ec -->
 | | |
 |---|---|
 | Package | `@kna/docgen` (npm) |
 | Path | `packages/docgen` |
 | Languages | typescript |
-| Public symbols | 80 |
+| Public symbols | 88 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=7ff8c8e2c4d94ef6 -->
+<!-- kna:generated:start id=api.function hash=b2923e7f9373fc37 -->
 ### `assessStaleness`
 
 ```typescript
@@ -272,6 +288,22 @@ parseRegions(document: string): GeneratedRegion[]
 **Returns** `GeneratedRegion[]`
 
 <sub>Source: `packages/docgen/src/regions.ts:35`</sub>
+
+---
+
+### `renderArchitectureOverview`
+
+```typescript
+renderArchitectureOverview(ctx: ArchitectureContext): RenderedDocument
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `ctx` | `ArchitectureContext` |  |
+
+**Returns** `RenderedDocument`
+
+<sub>Source: `packages/docgen/src/architecture.ts:37`</sub>
 
 ---
 
@@ -436,7 +468,19 @@ verifyGrounding(prose: string, facts: string, options: GenerateProseOptions): Pr
 <sub>Source: `packages/docgen/src/prose.ts:125`</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=4a52ca428a7563dc -->
+<!-- kna:generated:start id=api.interface hash=ab71edbaeae65097 -->
+### `ArchitectureContext`
+
+Architecture overview — deterministic (§6).
+
+```typescript
+interface ArchitectureContext
+```
+
+<sub>Source: `packages/docgen/src/architecture.ts:23`</sub>
+
+---
+
 ### `DocProvenance`
 
 Documentation staleness — a structural comparison, not a judgement (§4.2).
@@ -540,7 +584,33 @@ interface StalenessAssessment
 <sub>Source: `packages/docgen/src/staleness.ts:39`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=560635b25380a49b -->
+<!-- kna:generated:start id=api.property hash=059a7133049eca0f -->
+### `payload`
+
+```typescript
+payload: IrBundlePayload
+```
+
+**Returns** `{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: string; defau…`
+
+<sub>Source: `packages/docgen/src/architecture.ts:24`</sub>
+
+---
+
+### `sourceUrlTemplate`
+
+Repo-relative source URL template, as for the module reference.
+
+```typescript
+sourceUrlTemplate?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>Source: `packages/docgen/src/architecture.ts:26`</sub>
+
+---
+
 ### `documentId`
 
 ```typescript
@@ -814,6 +884,56 @@ replaced: string[]
 **Returns** `string[]`
 
 <sub>Source: `packages/docgen/src/regions.ts:74`</sub>
+
+---
+
+### `dev`
+
+```typescript
+dev: boolean
+```
+
+**Returns** `boolean`
+
+<sub>Source: `packages/docgen/src/architecture.ts:34`</sub>
+
+---
+
+### `evidence`
+
+What proves the edge: a declared package dependency, or a service manifest.
+
+```typescript
+evidence: string
+```
+
+**Returns** `string`
+
+<sub>Source: `packages/docgen/src/architecture.ts:33`</sub>
+
+---
+
+### `from`
+
+```typescript
+from: string
+```
+
+**Returns** `string`
+
+<sub>Source: `packages/docgen/src/architecture.ts:30`</sub>
+
+---
+
+### `to`
+
+```typescript
+to: string
+```
+
+**Returns** `string`
+
+<sub>Source: `packages/docgen/src/architecture.ts:31`</sub>
 
 ---
 

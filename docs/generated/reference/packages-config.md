@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_7a00c0277ef5c28d76ffb0139703d101
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
@@ -15,6 +15,16 @@ provenance:
     - sym_8d5733924f46336d02c9ffb803d11cb1e47590d9
     - sym_0f1c0503e93860583d391d0e40ab59037a824858
     - sym_ba8f44b23fa6a30d0553ef40be90c8666ac8dacf
+    - sym_6cccb1cf0ceda38dc13f3c33ec04149825eb48dc
+    - sym_fd65c4e1da0c51f9d0f39d2e82b9afa4f2f18925
+    - sym_f509a9680661638058a1cd0ed77c03164680dcec
+    - sym_b1eabbb508ea298e9525a963ee6998441e4c3341
+    - sym_06a9f98c82c660badfff8cde8064c09010931b30
+    - sym_f13d687fd025867729c93943eeea740e6ba9a6ec
+    - sym_78cde483668bd6b954640c4c92579ee08ea0ab98
+    - sym_919cd58bd9aeda9d85cb631e5ff5e5111d3cc91f
+    - sym_5fb19d059f527d48f1bc919dc1f05cb05430bca3
+    - sym_9fff14913dc61bcdf12bc8503c45694481460df2
     - sym_2f15e24a1eb459a8fa0dd4563fc9fc03d63049f3
     - sym_589b08334f024f653328517a5d4332fbd71d9a15
     - sym_f27bece091c870a555a02351af9ec48cd698a79b
@@ -23,6 +33,7 @@ provenance:
     - sym_bfb4e36384b85047780fee4b7c87321eea868bf9
     - sym_a9aff535f58e61478ad2c6953649bf4892dc80cd
     - sym_94d1024b86d7c23bd7aef94f6f242d4c4ce4b7b0
+    - sym_c821786de306d6f2fb36cb789266760e9068087c
     - sym_63710ad74364faa7cb5fd5931afdffdab9b2e6ad
     - sym_6328af46cbd5f57a6369b6ac5b954ed51ca9f6a0
     - sym_fdc4022e3fc1a618a207e69381131abed014eb6c
@@ -36,6 +47,16 @@ provenance:
     sym_8d5733924f46336d02c9ffb803d11cb1e47590d9: ded38709068e430f4dd340b6e95356462ab5834495ce7f5e3ae76f559f46daaa
     sym_0f1c0503e93860583d391d0e40ab59037a824858: 1fc9b91f0fe2370fa2bc731fccde889f8dab58af7fa5b67102b4cefdfa7b7795
     sym_ba8f44b23fa6a30d0553ef40be90c8666ac8dacf: e496521f0e6f19cb2029d222a6a622ab14876eb2c439d39553b893acf26a3a78
+    sym_6cccb1cf0ceda38dc13f3c33ec04149825eb48dc: eb4202734d990efb97210dcfe2086be730fc551448c749db3af2323696d1720a
+    sym_fd65c4e1da0c51f9d0f39d2e82b9afa4f2f18925: d6cc59af554bbba7755fc13ebe90dfec7177889c9be12459b2b417ec8360710a
+    sym_f509a9680661638058a1cd0ed77c03164680dcec: cde0ab756657a5444680537c76e60d11b8cdb2b1ca3fca3bc5aa3102d44548ac
+    sym_b1eabbb508ea298e9525a963ee6998441e4c3341: 94b1f11ea1ac085710e1933343f5947b870faa2fcfe47cca6031b6058ce45cb1
+    sym_06a9f98c82c660badfff8cde8064c09010931b30: f3f53a272eb5f8c50ad9dd885f8ac0d67beceb4e9e8c54abade29f815f2c0af9
+    sym_f13d687fd025867729c93943eeea740e6ba9a6ec: ea1cc166fd1a65566f8da16c0829d6dde0aee7d55a71a981817a67c3e7158b87
+    sym_78cde483668bd6b954640c4c92579ee08ea0ab98: ae681172d803c4fa38082940f25d545a5887d60abf9fc8eb9ef5189e274fcaaf
+    sym_919cd58bd9aeda9d85cb631e5ff5e5111d3cc91f: 3f95388ae790869ec9c747bfb9525b91665878794967451e4c893247baedf3bb
+    sym_5fb19d059f527d48f1bc919dc1f05cb05430bca3: 8c09dab31451ef8541245d8abc24d224bb4451066027a8df1af4c4a1f4bac8dc
+    sym_9fff14913dc61bcdf12bc8503c45694481460df2: ebc7dbd0a88bc99d155f481db7535db752ddc1cf1d81a32b825e73f7d1f8e69b
     sym_2f15e24a1eb459a8fa0dd4563fc9fc03d63049f3: 79d613bae2a00f3f5c11ed33ca4f0dabd9acd7cc6d5beef2272f6eeb76f868f3
     sym_589b08334f024f653328517a5d4332fbd71d9a15: 3f9e5c7aaadb6daff60d90ee19df8d1b8ed42dc96a2c8e7d26bc6a8ba1fbe2d4
     sym_f27bece091c870a555a02351af9ec48cd698a79b: 5ba8a42c29728cd1c6802659795615214bcf668acd92f14daf276a4f3596fe45
@@ -44,6 +65,7 @@ provenance:
     sym_bfb4e36384b85047780fee4b7c87321eea868bf9: ede5387781419f46fd5b621cddd55b64d60c465cb66702988ea49746fd88a3de
     sym_a9aff535f58e61478ad2c6953649bf4892dc80cd: b97bf47f1f5027aad023a1bf751f1ca3b5760c531171683b89c6112772738e90
     sym_94d1024b86d7c23bd7aef94f6f242d4c4ce4b7b0: 77eda16accd89a82825f03cff70a90144f36f882f5be8d10c1acc71fd7b39409
+    sym_c821786de306d6f2fb36cb789266760e9068087c: deaf1c435dfab16b1caead846781a7d5698ec6e5ea3dffc2e47bb449f6195c02
     sym_63710ad74364faa7cb5fd5931afdffdab9b2e6ad: 94e311528d44ae58ddc7655d721fca4ad4b688662079354b2ef954fc25f04bb5
     sym_6328af46cbd5f57a6369b6ac5b954ed51ca9f6a0: 0e4f551046ddfa6a13e094916dde26aa48f8ddea62eda275aab028c04fb9baec
     sym_fdc4022e3fc1a618a207e69381131abed014eb6c: 56443cd176ff5fb1949f5075c54cffc7b587d857153eba23c3944f42e659824d
@@ -56,16 +78,16 @@ provenance:
 
 # @kna/config reference
 
-<!-- kna:generated:start id=overview hash=ce34e7fe434473a1 -->
+<!-- kna:generated:start id=overview hash=38ef3f0e0a6e8f58 -->
 | | |
 |---|---|
 | Package | `@kna/config` (npm) |
 | Path | `packages/config` |
 | Languages | typescript |
-| Public symbols | 20 |
+| Public symbols | 31 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=6d06ce809e1a83dc -->
+<!-- kna:generated:start id=api.function hash=c60d5c55e7f60b14 -->
 ### `clearConfigCache`
 
 Clear the cosmiconfig cache — needed in tests and in a long-lived worker process.
@@ -98,6 +120,22 @@ defaultConfig(org: string): {version: 1;org: string;projects: string[];modules: 
 
 ---
 
+### `loadDotEnv`
+
+```typescript
+loadDotEnv(options: LoadDotEnvOptions): LoadDotEnvResult
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `options`? | `LoadDotEnvOptions` |  (default `{}`) |
+
+**Returns** `LoadDotEnvResult`
+
+<sub>Source: `packages/config/src/dotenv.ts:39`</sub>
+
+---
+
 ### `loadPlatformEnv`
 
 ```typescript
@@ -110,7 +148,7 @@ loadPlatformEnv(source: NodeJS.ProcessEnv): {KNA_ENV: "development" | "test" | "
 
 **Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>Source: `packages/config/src/env.ts:135`</sub>
+<sub>Source: `packages/config/src/env.ts:136`</sub>
 
 ---
 
@@ -131,6 +169,24 @@ loadRepoConfig(cwd: string, orgFallback?: string | undefined): Promise<LoadedCon
 
 ---
 
+### `parseDotEnv`
+
+Parse `KEY=value` lines.
+
+```typescript
+parseDotEnv(contents: string): Record<string, string>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `contents` | `string` |  |
+
+**Returns** `Record<string, string>`
+
+<sub>Source: `packages/config/src/dotenv.ts:94`</sub>
+
+---
+
 ### `resetPlatformEnv`
 
 Test-only.
@@ -141,7 +197,7 @@ resetPlatformEnv(): void
 
 **Returns** `void`
 
-<sub>Source: `packages/config/src/env.ts:184`</sub>
+<sub>Source: `packages/config/src/env.ts:190`</sub>
 <!-- kna:generated:end id=api.function -->
 
 <!-- kna:generated:start id=api.class hash=bec968595e41a37b -->
@@ -169,7 +225,29 @@ constructor(readonly filepath: string, readonly zodError: z.ZodError)
 <sub>Source: `packages/config/src/load.ts:56`</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=1a53ff8316c7f405 -->
+<!-- kna:generated:start id=api.interface hash=0277080abeb336f0 -->
+### `LoadDotEnvOptions`
+
+Load a `.env` file into `process.env`, for local development.
+
+```typescript
+interface LoadDotEnvOptions
+```
+
+<sub>Source: `packages/config/src/dotenv.ts:20`</sub>
+
+---
+
+### `LoadDotEnvResult`
+
+```typescript
+interface LoadDotEnvResult
+```
+
+<sub>Source: `packages/config/src/dotenv.ts:30`</sub>
+
+---
+
 ### `LoadedConfig`
 
 ```typescript
@@ -179,7 +257,103 @@ interface LoadedConfig
 <sub>Source: `packages/config/src/load.ts:5`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=9f32226a831274a4 -->
+<!-- kna:generated:start id=api.property hash=87d901f69414f88b -->
+### `cwd`
+
+Directory to start searching from. Defaults to the current working directory.
+
+```typescript
+cwd?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>Source: `packages/config/src/dotenv.ts:22`</sub>
+
+---
+
+### `env`
+
+```typescript
+env?: NodeJS.ProcessEnv
+```
+
+**Returns** `ProcessEnv \| undefined`
+
+<sub>Source: `packages/config/src/dotenv.ts:27`</sub>
+
+---
+
+### `filename`
+
+File name to look for.
+
+```typescript
+filename?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>Source: `packages/config/src/dotenv.ts:24`</sub>
+
+---
+
+### `maxDepth`
+
+How many parent directories to search. Covers running from a package inside the monorepo.
+
+```typescript
+maxDepth?: number
+```
+
+**Returns** `number \| undefined`
+
+<sub>Source: `packages/config/src/dotenv.ts:26`</sub>
+
+---
+
+### `applied`
+
+Keys applied to `process.env`. Excludes keys that were already set.
+
+```typescript
+applied: string[]
+```
+
+**Returns** `string[]`
+
+<sub>Source: `packages/config/src/dotenv.ts:34`</sub>
+
+---
+
+### `path`
+
+Absolute path of the file that was read, or null when none was found.
+
+```typescript
+path: string | null
+```
+
+**Returns** `string \| null`
+
+<sub>Source: `packages/config/src/dotenv.ts:32`</sub>
+
+---
+
+### `skipped`
+
+Keys present in the file but skipped because the real environment already had them.
+
+```typescript
+skipped: string[]
+```
+
+**Returns** `string[]`
+
+<sub>Source: `packages/config/src/dotenv.ts:36`</sub>
+
+---
+
 ### `config`
 
 ```typescript
@@ -231,7 +405,7 @@ warnings: string[]
 <sub>Source: `packages/config/src/load.ts:11`</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=4809fba01166a5d4 -->
+<!-- kna:generated:start id=api.type hash=eeebd0cafa830f52 -->
 ### `ModuleConfig`
 
 ```typescript
@@ -248,7 +422,7 @@ type ModuleConfig = z.infer<typeof zModuleConfig>
 type PlatformEnv = z.infer<typeof zPlatformEnv>
 ```
 
-<sub>Source: `packages/config/src/env.ts:131`</sub>
+<sub>Source: `packages/config/src/env.ts:132`</sub>
 
 ---
 
@@ -271,7 +445,7 @@ type SensitivityRule = z.infer<typeof zSensitivityRule>
 <sub>Source: `packages/config/src/schema.ts:136`</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=eff3442ccfdce17b -->
+<!-- kna:generated:start id=api.constant hash=643eea02fdddb11e -->
 ### `zModuleConfig`
 
 ```typescript
@@ -292,7 +466,7 @@ const zPlatformEnv: z.ZodObject<{KNA_ENV: z.ZodEnum<["development", "test", "sta
 
 **Returns** `ZodObject<{ KNA_ENV: ZodEnum<["development", "test", "staging", "production"]>; KNA_REGION: ZodDefault<ZodString>; LOG_LEVEL: ZodDefault<ZodEnum<["trace", "debug", "info", "warn", "error", "fatal"]>>; DATABASE_URL: ZodString; DATABASE_URL_BATCH: ZodOptional<ZodString>; DATABASE_POOL_MAX: ZodDefault<…`
 
-<sub>Source: `packages/config/src/env.ts:20`</sub>
+<sub>Source: `packages/config/src/env.ts:21`</sub>
 
 ---
 

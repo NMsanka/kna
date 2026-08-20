@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_d73a1a44210fb57290e06032b69a3729
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
@@ -99,7 +99,7 @@ provenance:
 | Public symbols | 37 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=f2e3ed4187f9665a -->
+<!-- kna:generated:start id=api.property hash=5f65d99018ddfecf -->
 ### `consecutiveFailures`
 
 ```typescript
@@ -220,7 +220,7 @@ environment?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/observability/src/logger.ts:40`</sub>
+<sub>Source: `packages/observability/src/logger.ts:41`</sub>
 
 ---
 
@@ -232,7 +232,7 @@ level?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/observability/src/logger.ts:39`</sub>
+<sub>Source: `packages/observability/src/logger.ts:40`</sub>
 
 ---
 
@@ -244,7 +244,7 @@ pretty?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>Source: `packages/observability/src/logger.ts:42`</sub>
+<sub>Source: `packages/observability/src/logger.ts:43`</sub>
 
 ---
 
@@ -256,7 +256,7 @@ region?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/observability/src/logger.ts:41`</sub>
+<sub>Source: `packages/observability/src/logger.ts:42`</sub>
 
 ---
 
@@ -268,7 +268,7 @@ service: string
 
 **Returns** `string`
 
-<sub>Source: `packages/observability/src/logger.ts:38`</sub>
+<sub>Source: `packages/observability/src/logger.ts:39`</sub>
 
 ---
 
@@ -297,7 +297,7 @@ llmTraceId?: string
 <sub>Source: `packages/observability/src/tracing.ts:16`</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=c1b5b3e864dc6c01 -->
+<!-- kna:generated:start id=api.function hash=eda24299ece4c747 -->
 ### `createLogger`
 
 ```typescript
@@ -310,7 +310,7 @@ createLogger(options: LoggerOptions): Logger
 
 **Returns** `Logger`
 
-<sub>Source: `packages/observability/src/logger.ts:45`</sub>
+<sub>Source: `packages/observability/src/logger.ts:66`</sub>
 
 ---
 
@@ -442,7 +442,7 @@ type DependencyState = 'up' | 'degraded' | 'down'
 <sub>Source: `packages/observability/src/health.ts:17`</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.interface hash=9f0f4050f0e01151 -->
+<!-- kna:generated:start id=api.interface hash=a61d683dedec3772 -->
 ### `DependencyCheck`
 
 ```typescript
@@ -459,7 +459,7 @@ interface DependencyCheck
 interface LoggerOptions
 ```
 
-<sub>Source: `packages/observability/src/logger.ts:37`</sub>
+<sub>Source: `packages/observability/src/logger.ts:38`</sub>
 
 ---
 

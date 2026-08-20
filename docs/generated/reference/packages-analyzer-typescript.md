@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_d7bd19fc9cc601bc1fb7894d55770d01
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []

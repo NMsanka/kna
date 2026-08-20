@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import {
   mergeRegions,
+  renderArchitectureOverview,
   renderModuleReference,
   renderRegion,
   serialiseFrontmatter,
@@ -31,7 +32,7 @@ import { ui } from '../ui.js';
  * first, and the one where deterministic rendering alone produces something a human would
  * have written.
  */
-const SUPPORTED_DOC_TYPES = ['module-reference'];
+const SUPPORTED_DOC_TYPES = ['module-reference', 'architecture-overview'];
 
 export interface GenerateOptions {
   types?: string[];
@@ -59,11 +60,6 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
     ui.detail('Configured in docs.types. The remaining types are not implemented yet, not off.');
   }
 
-  if (!types.includes('module-reference')) {
-    ui.warn('docs.types does not include module-reference, so nothing will be generated.');
-    return;
-  }
-
   const symbolsByModule = new Map<string, typeof result.bundle.payload.symbols>();
   for (const symbol of result.bundle.payload.symbols) {
     const list = symbolsByModule.get(symbol.moduleId) ?? [];
@@ -81,17 +77,41 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
     ui.detail('live. The deterministic sections below are complete without it.');
   }
 
-  for (const module of result.bundle.payload.modules) {
-    const symbols = symbolsByModule.get(module.id) ?? [];
-    if (symbols.length === 0) continue;
+  const documents: RenderedDocument[] = [];
 
-    const document = renderModuleReference({
-      module,
-      symbols,
-      commitSha: ctx.version.commitSha,
-      sourceUrlTemplate: sourceUrlTemplate(ctx),
-    });
+  if (types.includes('module-reference')) {
+    for (const module of result.bundle.payload.modules) {
+      const symbols = symbolsByModule.get(module.id) ?? [];
+      if (symbols.length === 0) continue;
 
+      documents.push(
+        renderModuleReference({
+          module,
+          symbols,
+          commitSha: ctx.version.commitSha,
+          sourceUrlTemplate: sourceUrlTemplate(ctx),
+        }),
+      );
+    }
+  }
+
+  // Deterministic, from the module graph and the harvested service manifests. §6: "generate
+  // these from the dependency graph deterministically; do not ask an LLM to draw them."
+  if (types.includes('architecture-overview')) {
+    documents.push(
+      renderArchitectureOverview({
+        payload: result.bundle.payload,
+        sourceUrlTemplate: sourceUrlTemplate(ctx),
+      }),
+    );
+  }
+
+  if (documents.length === 0) {
+    ui.warn('Nothing to generate: docs.types selected no document type this build produces.');
+    return;
+  }
+
+  for (const document of documents) {
     const relPath = join(outputDir, `${document.slug}.md`);
     const fullPath = join(ctx.repoRoot, relPath);
     const rendered = await renderToFile(fullPath, document);

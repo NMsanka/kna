@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_d4b7cb542aa0325c8670d5cc55f2a346
 repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: 0000000000000000000000000000000000000000
+commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
 analysisDepth: semantic
 owners:
   []
@@ -79,7 +79,7 @@ provenance:
     - sym_c76ca06760c178c2ad2365ca3c8a587763ce7670
     - sym_3ac83003863dde63a93cae81db1cd5d7c003c109
     - sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0
-    - sym_a78160698b0c2b066a856dcf67dad150dd14e440
+    - sym_55c8b7b5fc7dc521473bdaafee6082f7f9acea6b
     - sym_ccc6410fe201756198c5cfb0707ff7e43099ac17
     - sym_59c628386d8e8d8f804ee591c9121b9f7d22b349
     - sym_ebc468a68652167a7fdff63615411a0ea2f56c06
@@ -133,6 +133,7 @@ provenance:
     - sym_0693590d7e91e19d14b01b11724a0316c4e2594f
     - sym_a40644458984dd67afb5e1c26cb73118c1fd2eea
     - sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a
+    - sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816
     - sym_6d111ab4bb3127b56fab5186da867fc8c5082a35
     - sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3
     - sym_716024655c502106d72501e2afdf5734b7839d9e
@@ -199,10 +200,10 @@ provenance:
     - sym_25c3e031609c9527e56be98e0f56bd9d4357db9e
     - sym_4467e7cc12acd470b01765b05d496c8ff10325b3
     - sym_7e9046dcfd9a00bfb985840ac82986ea5a399149
-    - sym_1defc90433fc2e3a689501bfae8d468d95684eb9
-    - sym_2f59cc9bc44e6dd5f8c8f629d26d7c1e1075fcdf
-    - sym_e5865edec1c19056078ce5cb8d571db71fd5dc47
-    - sym_7515da70a25c9f4593745eac111b42b5807f5f4c
+    - sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2
+    - sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37
+    - sym_04e278213d5d8a27796972ddaed315645c1bdf91
+    - sym_16e820042efc0adba4b6cdf0339db64a7be12ea1
     - sym_c2d52927bdd110baf677093dfc47438e8fc43346
     - sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a
     - sym_a332150ad93726dd26a04a082a35f8b64930cc10
@@ -271,12 +272,12 @@ provenance:
     sym_48a8a749fc124c09b88d4dae1c1dd07f19b09bca: a5a0b2f6ec7e4873a8e5c58d14898e9e39a19426f470d6303970eec602805fc5
     sym_aeff334a8ea9e3bb63ce5dd1f2ce99c684738d1c: 646555cd09f16cdf84b7ffff6523c5ef352379354a3e8592a6cfb337c1624331
     sym_c7c9ad2ee2e145bf9af9599a5f4bbd169244cf4b: d50b979809c1929b8c0211bdaed3c9cbc5b3298bb26f882ea8fe285caadb5390
-    sym_9403e3ed35885a58aabaffdfbc8ed709aa88e92e: 90ffd3832fec96d053d0b42fa59ffba62f2e42e60e044e2ccdc2f2914dc2abf4
+    sym_9403e3ed35885a58aabaffdfbc8ed709aa88e92e: dcd6ff7c5c3c46f941c9d93e64535a01c2be23aef04d0ff7c2f65f3e0d4fead7
     sym_1f862e1d745ab3a1a8d04a0600eba98539642ea8: d128c5bc41b92338900491ab6741caa11485cded63ac083c8384001cbeafec1c
     sym_c76ca06760c178c2ad2365ca3c8a587763ce7670: 63e31c2d452bac3acfceb313866005d9507beaa345cd0abdc938445414aba0fc
     sym_3ac83003863dde63a93cae81db1cd5d7c003c109: 6d2b711c096d7d2f003f26569933cff575a76aa5ea547da4799ff882def35e2b
     sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0: 583e9e20bf991ec81c9e598e73dad4c10884d03e2873c56f348e90318531a768
-    sym_a78160698b0c2b066a856dcf67dad150dd14e440: 9db623bafb0d0261f9ccf3216b34f1610baf6545cdd385ef7726cf94f0ee9202
+    sym_55c8b7b5fc7dc521473bdaafee6082f7f9acea6b: 868a22211e4a7376914f81a5ff3de57c1b25d81bac8206ed19deb11bcb576619
     sym_ccc6410fe201756198c5cfb0707ff7e43099ac17: 4cfffe10457c091cbc87af1e51986912c3360659456480e9d6fb6c64f9566795
     sym_59c628386d8e8d8f804ee591c9121b9f7d22b349: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_ebc468a68652167a7fdff63615411a0ea2f56c06: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
@@ -330,6 +331,7 @@ provenance:
     sym_0693590d7e91e19d14b01b11724a0316c4e2594f: 3d278c28e4f9908cb8bb45452787e7a5ce4c4ccfb9dbb66754d87ce6d3b1edd4
     sym_a40644458984dd67afb5e1c26cb73118c1fd2eea: c37bba2eebb8a820add7cd7eec0d780e17faeada27d9ceb2cad961158fb0a9bc
     sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a: 5b1f48e3765a659bcd5e1bf482c66be8051fb9193725c8041f7bd3dd74f65742
+    sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816: a43e0eba892eedb967fae25fb557c74c96d4c10532551ed9ab91d0b8ea71d6a0
     sym_6d111ab4bb3127b56fab5186da867fc8c5082a35: 89c5ac5761e3c7359258c1028922b80b83e0601e04adcf7f86789c07f85da759
     sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3: da800be6f74d23ca39b91446c6464882d07b2fde0e43f68d14979f027f39690f
     sym_716024655c502106d72501e2afdf5734b7839d9e: e19d6449ad689627491a90ec0f11d5941d2914058e9903761c832855842645e3
@@ -396,10 +398,10 @@ provenance:
     sym_25c3e031609c9527e56be98e0f56bd9d4357db9e: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
     sym_4467e7cc12acd470b01765b05d496c8ff10325b3: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_7e9046dcfd9a00bfb985840ac82986ea5a399149: d6f360e5cfe2a5704044adc0ffbadc6fcaee0b1bd641df8606047947b963c5b5
-    sym_1defc90433fc2e3a689501bfae8d468d95684eb9: 4b63074362da9253310c63bde8f081a96d14cb8971a6be2c04a620221fe1f996
-    sym_2f59cc9bc44e6dd5f8c8f629d26d7c1e1075fcdf: ab4912ab6321ee9da549c34e2ad8d958e81bfee84b9d2cecf130987f02364ea9
-    sym_e5865edec1c19056078ce5cb8d571db71fd5dc47: 7ffb9397befff396b2384c47bfc4f0bbe13c8e0c1d1d3df5cbe42a710409e7ea
-    sym_7515da70a25c9f4593745eac111b42b5807f5f4c: f412fa468fd72345e3da5ad9b34edfefea97775a4d8aaf445621dcb5b008dcc6
+    sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2: 18e93735f7e9821b45a6414d5790f2fbf734fa1b45ba0a778dcbeea250c866cc
+    sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37: 250ef28ad307a74c04a0317e2edd54d7892e0b646ea45f996905bc01cfad8fd3
+    sym_04e278213d5d8a27796972ddaed315645c1bdf91: f2dd1eb942b12d471ce6d6e7c45cf3f35788bb48c075293031cd5b5b94c343af
+    sym_16e820042efc0adba4b6cdf0339db64a7be12ea1: 0a15a21fae873cbdf0e650c1e7919a40d3628192057dbbd2fd69c7ec828cf62f
     sym_c2d52927bdd110baf677093dfc47438e8fc43346: b0d5cce1d727be34966b4206a6dfc10abd55396016a0bdc5223c10f9925489ab
     sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a: cfae7b76e9a57e1c5b381496635284e49382b453d8fbdab1a4f999680c74d89d
     sym_a332150ad93726dd26a04a082a35f8b64930cc10: f01b54c28b65a8b2fc57aaea6d2933c91367c0673daf1da5b065a34f652b3785
@@ -408,25 +410,23 @@ provenance:
 
 # @kna/api reference
 
-<!-- kna:generated:start id=overview hash=f0d0d28aeda2ff52 -->
+<!-- kna:generated:start id=overview hash=7100b02899f86e3f -->
 | | |
 |---|---|
 | Package | `@kna/api` (npm) |
 | Path | `apps/api` |
 | Languages | typescript |
-| Public symbols | 196 |
+| Public symbols | 197 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=6cb72525fc92057d -->
+<!-- kna:generated:start id=api.interface hash=894394d1a761bcf4 -->
 ### `ApiContext`
-
-Wiring.
 
 ```typescript
 interface ApiContext
 ```
 
-<sub>Source: `apps/api/src/context.ts:38`</sub>
+<sub>Source: `apps/api/src/context.ts:54`</sub>
 
 ---
 
@@ -575,7 +575,7 @@ interface RegenerateDocsJob
 <sub>Source: `apps/api/src/services/queue.ts:54`</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=9c59016818d9e44d -->
+<!-- kna:generated:start id=api.property hash=b1172cf06800ab7a -->
 ### `audit`
 
 ```typescript
@@ -584,7 +584,7 @@ audit: AuditRecorder
 
 **Returns** `AuditRecorder`
 
-<sub>Source: `apps/api/src/context.ts:45`</sub>
+<sub>Source: `apps/api/src/context.ts:61`</sub>
 
 ---
 
@@ -596,7 +596,7 @@ authenticate: (request: FastifyRequest) => Promise<Principal>
 
 **Returns** `(request: FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>>) => Promise<Principal>`
 
-<sub>Source: `apps/api/src/context.ts:54`</sub>
+<sub>Source: `apps/api/src/context.ts:70`</sub>
 
 ---
 
@@ -608,7 +608,7 @@ bundleStore: BundleStore
 
 **Returns** `BundleStore`
 
-<sub>Source: `apps/api/src/context.ts:44`</sub>
+<sub>Source: `apps/api/src/context.ts:60`</sub>
 
 ---
 
@@ -620,7 +620,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/api/src/context.ts:41`</sub>
+<sub>Source: `apps/api/src/context.ts:57`</sub>
 
 ---
 
@@ -632,7 +632,7 @@ dbBatch: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/api/src/context.ts:42`</sub>
+<sub>Source: `apps/api/src/context.ts:58`</sub>
 
 ---
 
@@ -642,9 +642,9 @@ dbBatch: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>Source: `apps/api/src/context.ts:39`</sub>
+<sub>Source: `apps/api/src/context.ts:55`</sub>
 
 ---
 
@@ -656,7 +656,7 @@ git: GitProviderClient | null
 
 **Returns** `GitProviderClient \| null`
 
-<sub>Source: `apps/api/src/context.ts:52`</sub>
+<sub>Source: `apps/api/src/context.ts:68`</sub>
 
 ---
 
@@ -668,7 +668,7 @@ health: HealthRegistry
 
 **Returns** `HealthRegistry`
 
-<sub>Source: `apps/api/src/context.ts:50`</sub>
+<sub>Source: `apps/api/src/context.ts:66`</sub>
 
 ---
 
@@ -680,7 +680,7 @@ llm: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>Source: `apps/api/src/context.ts:49`</sub>
+<sub>Source: `apps/api/src/context.ts:65`</sub>
 
 ---
 
@@ -692,7 +692,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>Source: `apps/api/src/context.ts:40`</sub>
+<sub>Source: `apps/api/src/context.ts:56`</sub>
 
 ---
 
@@ -704,7 +704,7 @@ metrics: typeof KnaMetrics
 
 **Returns** `{ readonly bundlesIngested: Counter<Attributes>; readonly bundlesRejected: Counter<Attributes>; readonly indexLagSeconds: Histogram<Attributes>; readonly symbolsIndexed: Counter<Attributes>; readonly queueDepth: ObservableGauge; readonly queueOldestJobAgeSeconds: ObservableGauge; readonly dlqDepth: …`
 
-<sub>Source: `apps/api/src/context.ts:51`</sub>
+<sub>Source: `apps/api/src/context.ts:67`</sub>
 
 ---
 
@@ -716,7 +716,7 @@ mintIngestToken: (claims: {orgId: string;repoId: string;issuedAt: number;expires
 
 **Returns** `(claims: { orgId: string; repoId: string; issuedAt: number; expiresAt: number; }) => string`
 
-<sub>Source: `apps/api/src/context.ts:55`</sub>
+<sub>Source: `apps/api/src/context.ts:71`</sub>
 
 ---
 
@@ -728,7 +728,7 @@ oidc: OidcVerifier | null
 
 **Returns** `OidcVerifier \| null`
 
-<sub>Source: `apps/api/src/context.ts:53`</sub>
+<sub>Source: `apps/api/src/context.ts:69`</sub>
 
 ---
 
@@ -740,7 +740,7 @@ permissions: PermissionResolver
 
 **Returns** `PermissionResolver`
 
-<sub>Source: `apps/api/src/context.ts:48`</sub>
+<sub>Source: `apps/api/src/context.ts:64`</sub>
 
 ---
 
@@ -752,7 +752,7 @@ queue: JobQueue
 
 **Returns** `JobQueue`
 
-<sub>Source: `apps/api/src/context.ts:46`</sub>
+<sub>Source: `apps/api/src/context.ts:62`</sub>
 
 ---
 
@@ -764,7 +764,7 @@ retrieval: RetrievalPipeline
 
 **Returns** `RetrievalPipeline`
 
-<sub>Source: `apps/api/src/context.ts:47`</sub>
+<sub>Source: `apps/api/src/context.ts:63`</sub>
 
 ---
 
@@ -776,7 +776,7 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>Source: `apps/api/src/context.ts:61`</sub>
+<sub>Source: `apps/api/src/context.ts:77`</sub>
 
 ---
 
@@ -788,7 +788,7 @@ store: PlatformStore
 
 **Returns** `PlatformStore`
 
-<sub>Source: `apps/api/src/context.ts:43`</sub>
+<sub>Source: `apps/api/src/context.ts:59`</sub>
 
 ---
 
@@ -1949,7 +1949,7 @@ repoId: string
 <sub>Source: `apps/api/src/services/queue.ts:56`</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=792091919e6c5feb -->
+<!-- kna:generated:start id=api.function hash=5de9eb3f1c62ef65 -->
 ### `assertAudience`
 
 ```typescript
@@ -1989,14 +1989,14 @@ assertScope(claims: BearerClaims, required: string): void
 The platform API.
 
 ```typescript
-buildServer(ctx: ApiContext): Promise<FastifyInstance<Server<typeof IncomingMessage, typeof ServerResponse>, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>>
+buildServer(ctx: ApiContext): Promise<KnaServer>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `ctx` | `ApiContext` |  |
 
-**Returns** `Promise<FastifyInstance<Server<typeof IncomingMessage, typeof ServerResponse>, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>>`
+**Returns** `Promise<KnaServer>`
 
 <sub>Source: `apps/api/src/server.ts:29`</sub>
 
@@ -2005,16 +2005,16 @@ buildServer(ctx: ApiContext): Promise<FastifyInstance<Server<typeof IncomingMess
 ### `createApiContext`
 
 ```typescript
-createApiContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<ApiContext>
+createApiContext(env: {KNA_ENV: "production" | "development" | "test" | "staging";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<ApiContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env`? | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
+| `env`? | `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
 
 **Returns** `Promise<ApiContext>`
 
-<sub>Source: `apps/api/src/context.ts:64`</sub>
+<sub>Source: `apps/api/src/context.ts:80`</sub>
 
 ---
 
@@ -2030,7 +2030,7 @@ hashToken(token: string): string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/context.ts:286`</sub>
+<sub>Source: `apps/api/src/context.ts:302`</sub>
 
 ---
 
@@ -2051,7 +2051,7 @@ lastIndexedPayload(db: DbHandle, orgId: string, repoId: string, ref: string): Pr
 
 **Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
-<sub>Source: `apps/api/src/context.ts:265`</sub>
+<sub>Source: `apps/api/src/context.ts:281`</sub>
 
 ---
 
@@ -2077,12 +2077,12 @@ mintIngestToken(secret: string, claims: Omit<IngestClaims, "jti">): string
 Admin plane.
 
 ```typescript
-registerAdminRoutes(app: FastifyInstance<import("C:/Work Space/Customer Projects/AI Project/KNA/node_modules/.pnpm/fastify@5.12.1/node_modules/fastify/fastify").RawServerDefault, import…, ctx: ApiContext): Promise<void>
+registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `app` | `FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>` |  |
+| `app` | `KnaServer` |  |
 | `ctx` | `ApiContext` |  |
 
 **Returns** `Promise<void>`
@@ -2096,12 +2096,12 @@ registerAdminRoutes(app: FastifyInstance<import("C:/Work Space/Customer Projects
 The ingest endpoint — the trust boundary.
 
 ```typescript
-registerIngestRoutes(app: FastifyInstance<import("C:/Work Space/Customer Projects/AI Project/KNA/node_modules/.pnpm/fastify@5.12.1/node_modules/fastify/fastify").RawServerDefault, import…, ctx: ApiContext): Promise<void>
+registerIngestRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `app` | `FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>` |  |
+| `app` | `KnaServer` |  |
 | `ctx` | `ApiContext` |  |
 
 **Returns** `Promise<void>`
@@ -2115,12 +2115,12 @@ registerIngestRoutes(app: FastifyInstance<import("C:/Work Space/Customer Project
 Retrieval and feedback routes.
 
 ```typescript
-registerSearchRoutes(app: FastifyInstance<import("C:/Work Space/Customer Projects/AI Project/KNA/node_modules/.pnpm/fastify@5.12.1/node_modules/fastify/fastify").RawServerDefault, import…, ctx: ApiContext): Promise<void>
+registerSearchRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `app` | `FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>` |  |
+| `app` | `KnaServer` |  |
 | `ctx` | `ApiContext` |  |
 
 **Returns** `Promise<void>`
@@ -2134,12 +2134,12 @@ registerSearchRoutes(app: FastifyInstance<import("C:/Work Space/Customer Project
 Git provider webhooks.
 
 ```typescript
-registerWebhookRoutes(app: FastifyInstance<import("C:/Work Space/Customer Projects/AI Project/KNA/node_modules/.pnpm/fastify@5.12.1/node_modules/fastify/fastify").RawServerDefault, import…, ctx: ApiContext): Promise<void>
+registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `app` | `FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>` |  |
+| `app` | `KnaServer` |  |
 | `ctx` | `ApiContext` |  |
 
 **Returns** `Promise<void>`
@@ -2156,7 +2156,7 @@ requestId(): string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/context.ts:282`</sub>
+<sub>Source: `apps/api/src/context.ts:298`</sub>
 
 ---
 
@@ -3016,7 +3016,19 @@ const QUEUE_NAMES: {readonly indexModule: "index-module";readonly crossRepo: "cr
 <sub>Source: `apps/api/src/services/queue.ts:34`</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=e3eae4ee4dea62ec -->
+<!-- kna:generated:start id=api.type hash=fea323b10750e58c -->
+### `KnaServer`
+
+Wiring.
+
+```typescript
+type KnaServer = FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, Logger>
+```
+
+<sub>Source: `apps/api/src/context.ts:47`</sub>
+
+---
+
 ### `QueueName`
 
 ```typescript
