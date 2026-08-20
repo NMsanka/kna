@@ -66,8 +66,23 @@ them work offline except `publish` and `ask`, which need a platform.
 
 ### Running the services
 
-Postgres and Redis must be up and migrated (see below). Then, from a shell with the environment
-exported:
+Configuration comes from `.env` at the repo root — gitignored, and pre-filled with values
+verified against the local stack. `loadPlatformEnv()` loads it automatically, so no shell export
+is needed:
+
+```bash
+node apps/api/dist/server.js
+```
+
+Two properties of that loader are deliberate and worth not undoing:
+
+- **The real environment always wins.** A value already in `process.env` is never overwritten,
+  so a stale local file cannot shadow what CI or an orchestrator set.
+- **Production refuses to read it.** §15.7 requires KMS-backed secrets with no key material in
+  environment variables or images; a `.env` on disk in production is precisely what that
+  prohibits.
+
+Postgres and Redis must be up and migrated (see below). Then:
 
 ```bash
 node apps/api/dist/server.js
@@ -82,7 +97,7 @@ node apps/worker/dist/main.js
 ```
 
 All three start and pass their startup assertions with **no LLM provider configured** —
-`LITELLM_BASE_URL` can point at nothing. What breaks without a provider is the query path
+`LITELLM_BASE_URL` can point at nothing, and `OPENAI_API_KEY` can be empty. What breaks without a provider is the query path
 (`/v1/search` needs an embedding) and indexing (needs embeddings and blurbs). Everything
 structural — health, auth, routing, the ACL filter, symbol lookup — works without one.
 

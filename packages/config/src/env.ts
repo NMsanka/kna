@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { loadDotEnv } from './dotenv.js';
 
 /**
  * Platform environment configuration.
@@ -134,6 +135,11 @@ let cached: PlatformEnv | null = null;
 
 export function loadPlatformEnv(source: NodeJS.ProcessEnv = process.env): PlatformEnv {
   if (cached) return cached;
+
+  // Local development reads `.env`; the real environment always wins, and production refuses to
+  // read a file at all. See `loadDotEnv`.
+  if (source === process.env) loadDotEnv();
+
   const parsed = zPlatformEnv.safeParse(source);
   if (!parsed.success) {
     const issues = parsed.error.issues.map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n');
