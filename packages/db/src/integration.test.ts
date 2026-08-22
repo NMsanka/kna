@@ -406,6 +406,41 @@ describeIf('database integration', () => {
     });
   });
 
+  describe('a ref that has moved', () => {
+    // Regression. The version id is stable per `(repo, ref)` because the stale-chunk sweep is
+    // scoped to `(module, version)`. The upsert that maintains it named the
+    // `(repo_id, ref, commit_sha)` index as its conflict target, which does not fire when only
+    // the sha changes — so a second commit on a branch collided with the primary key instead.
+    //
+    // Nothing offline could see it: the statement is valid SQL and the first insert of any ref
+    // succeeds. It needs two commits on one ref against a real database, which is this test.
+    it('moves the version forward instead of colliding on the primary key', async () => {
+      const upsert = (sha: string) =>
+        withSystemContext(handle, 'org_alpha', 'indexing', async (tx) => {
+          await tx.execute(sql`
+            INSERT INTO versions (id, org_id, repo_id, ref, kind, commit_sha, is_default)
+            VALUES ('ver_moving', 'org_alpha', 'repo_alpha', 'release', 'branch', ${sha}, true)
+            ON CONFLICT (id) DO UPDATE SET
+              commit_sha = EXCLUDED.commit_sha,
+              is_default = EXCLUDED.is_default
+          `);
+        });
+
+      await upsert('a'.repeat(40));
+      await upsert('b'.repeat(40));
+
+      const rows = await withSystemContext(handle, 'org_alpha', 'indexing', (tx) =>
+        tx.execute<{ commit_sha: string }>(
+          sql`SELECT commit_sha FROM versions WHERE id = 'ver_moving'`,
+        ),
+      );
+
+      // One row, at the newer commit — not two rows, and not an exception.
+      expect(rows).toHaveLength(1);
+      expect(rows[0]!.commit_sha).toBe('b'.repeat(40));
+    });
+  });
+
   describe('pgvector', () => {
     it('stores and searches halfvec embeddings through the HNSW index', async () => {
       const dimensions = 1536;
