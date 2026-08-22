@@ -12,111 +12,51 @@ one the code was written against is worth more than another test suite.
 
 ---
 
-## Once, for the machine
+## The short version
 
-Bring up the stack. `--env-file .env` is not optional — compose resolves `.env` relative to the
-compose file, so without it every `${VAR}` comes from `deploy/.env` and your OpenAI key silently
-becomes the placeholder.
+One script holds every local setting and every step:
 
 ```bash
-pnpm install && pnpm build
+./scripts/dev.sh bootstrap
+```
+
+That starts the containers, migrates, sets the role passwords, builds, seeds a tenant, and starts
+the three services — in the order they have to happen. Then:
+
+```bash
+./scripts/dev.sh publish
 ```
 
 ```bash
-pnpm dev:infra
+./scripts/dev.sh ask "how does the ACL filter work?"
 ```
 
-```bash
-DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm db:migrate
-```
+`./scripts/dev.sh help` lists the rest. `pnpm dev <command>` is the same thing if you prefer.
 
-```bash
-docker exec kna-postgres-1 psql -U kna -d kna -c "ALTER ROLE kna_interactive WITH PASSWORD 'devpass'; ALTER ROLE kna_batch WITH PASSWORD 'devpass';"
-```
+**Where things live.** Runtime configuration stays in `.env`, because the services read it
+themselves — duplicating it into a script would only create a second place to be wrong. What the
+script holds is the handful of values that are *not* runtime config: the owner database URL,
+the tenant slugs, and the role password. They are at the top of the file, under a comment saying
+so.
 
-Seed a tenant. `SEED_ORG_ID` must match the `org:` value your repositories will declare.
-
-```bash
-DATABASE_URL=postgres://kna:kna@localhost:5432/kna SEED_ORG_ID=kna SEED_ORG=kna SEED_PROJECT=platform pnpm db:seed
-```
-
-Save the three tokens it prints. They are **three different kinds of credential** and are not
-interchangeable: `KNA_TOKEN` is a principal identity, `KNA_INGEST_TOKEN` is an HMAC claim scoped
-to one repository, `KNA_MCP_TOKEN` is bound to the MCP resource. Re-seeding mints new ones and
-invalidates the old, because they are stored hashed.
-
-Start the three services, each in its own terminal:
-
-```bash
-pnpm dev:api
-```
-
-```bash
-pnpm dev:worker
-```
-
-```bash
-pnpm dev:mcp
-```
-
-An alias saves a lot of typing, since the CLI is not installed globally:
-
-```bash
-alias kna='node "'"$PWD"'/apps/cli/dist/bin.js"'
-```
-
-`kna --cwd <path>` operates on any repository without changing directory.
+Credentials from the seed go to `.kna/tokens.env`, which is gitignored. The seed prints them once
+and stores them hashed, so anything not captured there is gone.
 
 ---
 
-## Per repository, four steps
+## Adding a repository
 
-Repeat for each repository. Nothing is shared between them except the tenant.
-
-### 1. Look before you publish
-
-Entirely offline. Writes nothing, needs no credential.
+Three commands, whatever the repository.
 
 ```bash
-kna --cwd "C:/path/to/repo" describe --format summary
+./scripts/dev.sh repo https://github.com/you/your-repo.git
 ```
 
-Read the **depth** line. `semantic` means types were resolved; `shallow` means signatures as
-written. Only TypeScript reaches semantic today, so a Python or C# repository will say `shallow`
-and that is the honest answer rather than a misconfiguration.
+Registers it, grants you read access, checks the project slug exists, and mints a publish
+credential scoped to that one repository. The credential is stored under a key derived from the
+repository, so several repositories can be registered without their credentials being confused.
 
-```bash
-kna --cwd "C:/path/to/repo" scan
-```
-
-This is the gate that will block a publish. Better to see it now.
-
-### 2. Register it
-
-```bash
-curl -s -X POST http://localhost:8080/v1/admin/repos \
-  -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' \
-  -d '{"remote":"https://github.com/you/your-repo.git","projectSlugs":["platform"],"openPullRequest":false}'
-```
-
-Keep the `repoId` it returns, and check `unknownProjectSlugs` is empty. A slug that matches
-nothing is not an error — the repo still indexes — but it will be invisible to every
-project-scoped question, which looks exactly like nothing having been indexed.
-
-### 3. Mint a credential for it
-
-```bash
-curl -s -X POST http://localhost:8080/v1/admin/repos/<repoId>/ingest-credential \
-  -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' \
-  -d '{"reason":"local testing","ttlHours":8}'
-```
-
-Scoped to that one repository. It refuses outright in production, where CI exchanges its OIDC
-identity instead.
-
-### 4. Configure and publish
-
-`kna.config.yaml` in the repository — `org` must match `SEED_ORG_ID`:
+Then add `kna.config.yaml` to that repository — `org` must match the tenant:
 
 ```yaml
 version: 1
@@ -128,20 +68,76 @@ security:
 ```
 
 ```bash
-KNA_INGEST_TOKEN="<token from step 3>" KNA_INGEST_HMAC_SECRET=development-ingest-secret \
-  kna --cwd "C:/path/to/repo" publish
+./scripts/dev.sh publish "C:/path/to/your-repo"
 ```
 
-Watch the worker: one `module indexed` line per module, then `documentation regenerated`.
+`publish` works out which credential belongs to that repository from its git remote. If there
+isn't one it says so, rather than falling back to another repository's and failing later with an
+error about scope.
 
-Confirm what landed:
+Watch it work:
 
 ```bash
-docker exec kna-postgres-1 psql -U kna -d kna -c "SELECT r.name AS repo, (SELECT count(*) FROM modules m WHERE m.repo_id=r.id) modules, (SELECT count(*) FROM symbols s WHERE s.repo_id=r.id) symbols, (SELECT count(*) FROM chunks c WHERE c.repo_id=r.id) chunks FROM repos r ORDER BY 3 DESC;"
+./scripts/dev.sh logs worker
 ```
 
-Write that query with subqueries, not joins. A four-way `LEFT JOIN` with `count(DISTINCT)` is a
-cartesian blowup that will appear to hang.
+And check what landed:
+
+```bash
+./scripts/dev.sh status
+```
+
+```
+==> Corpus
+    kna: 20 modules, 2139 symbols, 1850 chunks
+    layered: 1 modules, 388 symbols, 388 chunks
+```
+
+---
+
+## Look before you publish
+
+Both of these are offline. They write nothing, need no credential, and are worth running on any
+repository before you involve the platform at all.
+
+```bash
+node apps/cli/dist/bin.js --cwd "C:/path/to/repo" describe --format summary
+```
+
+Read the **depth** line. `semantic` means types were resolved; `shallow` means signatures as
+written. Only TypeScript reaches semantic today, so a Python or C# repository will say `shallow`,
+and that is the honest answer rather than a misconfiguration.
+
+```bash
+node apps/cli/dist/bin.js --cwd "C:/path/to/repo" scan
+```
+
+This is the gate that will block a publish. Better to see it now than in the middle of one.
+
+---
+
+## What the script is doing
+
+Useful when something goes wrong, or if you would rather run the steps yourself.
+
+| Command | Underneath |
+|---|---|
+| `up` | `docker compose --env-file .env -f deploy/docker-compose.yml up -d …` |
+| `db` | migrations as the **owner** role, then `ALTER ROLE … PASSWORD` for the two application roles |
+| `seed` | inserts the org, project, principal and repos; captures the printed credentials |
+| `start` | runs the three `dist` entry points with `nohup`, logging to `.kna/logs/` |
+| `stop` | kills them — via PowerShell on Windows, where `pkill` silently does nothing |
+| `repo` | `POST /v1/admin/repos`, then `POST …/ingest-credential` |
+| `publish` | matches the repo to its credential, then runs the CLI with `--cwd` |
+| `reindex` | `POST /v1/admin/reindex` — rebuilds from the stored bundle, no republish |
+
+Two things it bridges that would otherwise catch you out, both real:
+
+- The CLI signs bundles with `KNA_INGEST_HMAC_SECRET` while the server verifies them with
+  `INGEST_HMAC_SECRET`. One shared value, two names, and only the server's is in `.env` — so a
+  publish quietly produces an unsigned bundle unless the other is set too.
+- `docker compose` resolves `.env` relative to the compose file. Without `--env-file .env` every
+  `${VAR}` comes from `deploy/.env` and the OpenAI key silently becomes the placeholder.
 
 ---
 
@@ -252,15 +248,22 @@ curl -s -X POST http://localhost:8080/v1/admin/reindex \
   -d '{"repoIds":["<repoId>"],"reason":"rebuild"}'
 ```
 
-For a genuinely clean slate, drop the database and repeat the one-time setup. Keep the object
-storage volume — that is the part you cannot rebuild, and re-indexing from it is the fastest way
-back.
+For a genuinely clean slate:
 
 ```bash
-pnpm dev:infra:down
+./scripts/dev.sh reset
 ```
 
-Note that this leaves volumes intact. `down -v` destroys them, including every stored bundle.
+That drops the database, re-migrates, re-seeds and restarts. It asks for confirmation first, and
+it leaves object storage alone — the bundles are the one thing that cannot be rebuilt, and
+re-indexing from them is the fastest way back.
+
+```bash
+./scripts/dev.sh down
+```
+
+Stops the containers and keeps the volumes. `docker compose … down -v` would destroy them,
+including every stored bundle.
 
 ---
 
