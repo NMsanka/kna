@@ -8,4 +8,5 @@ export * from './reranker.js';
 export * from './config-version.js';
 export * from './store.js';
 export * from './pipeline.js';
+export * from './answer.js';
 export * from './eval/index.js';

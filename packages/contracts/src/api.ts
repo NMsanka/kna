@@ -84,6 +84,14 @@ export const zSearchRequest = z.object({
   query: z.string().min(1).max(2000),
   scope: zScopeInput.default({ kind: 'project' }),
   topN: z.number().int().min(1).max(50).default(8),
+  /**
+   * Synthesise a written answer from the retrieved evidence, not just return the evidence.
+   *
+   * Off by default so the endpoint stays a search endpoint: an editor that wants ranked chunks
+   * to reason over itself should not pay for a completion it will discard. `kna ask` sets it,
+   * because a developer asking a question wants an answer.
+   */
+  answer: z.boolean().default(false),
   sessionId: z.string().optional(),
   history: z
     .array(z.object({ role: z.enum(['user', 'assistant']), content: z.string() }))
@@ -114,8 +122,31 @@ export const zSearchHit = z.object({
   alsoPresentInModules: z.array(z.string()).default([]),
 });
 
+export const zAnswer = z.object({
+  text: z.string(),
+  citations: z.array(
+    z.object({
+      marker: z.number().int(),
+      chunkId: z.string(),
+      symbolId: z.string().nullable(),
+      qualifiedName: z.string().nullable(),
+      path: z.string().nullable(),
+      startLine: z.number().int().nullable(),
+      analysisDepth: z.string(),
+    }),
+  ),
+  /** True when retrieval declined and no model was asked. */
+  abstained: z.boolean(),
+  /** True when the answer was required to state a reliability caveat, and why. */
+  hedged: z.boolean(),
+  hedgingReason: z.string().nullable(),
+  model: z.string().nullable(),
+});
+
 export const zSearchResponse = z.object({
   hits: z.array(zSearchHit),
+  /** Present only when the request asked for one. */
+  answer: zAnswer.nullable().default(null),
   abstained: z.boolean(),
   abstentionReason: z.string().nullable(),
   hedging: z.string().nullable(),

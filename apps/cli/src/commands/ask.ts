@@ -76,6 +76,10 @@ async function ask(
         repoIds: context.scope === 'repo' ? [context.ctx.repo.id] : undefined,
       },
       topN: context.topN,
+      // A developer asking a question wants an answer. The endpoint defaults to evidence only,
+      // because an editor reasoning over the chunks itself should not pay for a completion it
+      // would discard.
+      answer: true,
       history: history.length > 0 ? history.slice(-8) : undefined,
     }),
   });
@@ -112,6 +116,31 @@ function render(response: SearchResponse, options: AskOptions): void {
   // §15.6 — degraded modes are a banner, not a silent quality drop.
   for (const mode of response.degradedModes) {
     ui.warn(degradedBanner(mode));
+  }
+
+  if (response.answer && !response.answer.abstained) {
+    const answer = response.answer;
+    ui.log();
+    ui.log(answer.text);
+
+    if (answer.citations.length > 0) {
+      ui.log();
+      ui.heading('Sources');
+      for (const citation of answer.citations) {
+        const name = citation.qualifiedName ?? citation.path ?? citation.chunkId;
+        const where = citation.path
+          ? `${citation.path}${citation.startLine ? `:${citation.startLine}` : ''}`
+          : '';
+        const depth = citation.analysisDepth === 'shallow' ? ui.yellow(' [shallow]') : '';
+        ui.log(`  ${ui.dim(`[${citation.marker}]`)} ${name}${depth}`);
+        if (where) ui.detail(`      ${where}`);
+      }
+    }
+
+    ui.log();
+    ui.detail('Every claim above cites the evidence it came from. Open a source to check it —');
+    ui.detail('that is what the citations are for.');
+    return;
   }
 
   if (response.abstained) {

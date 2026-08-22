@@ -4,8 +4,9 @@ import { zSearchRequest, zSearchResponse, zFeedbackRequest } from '@kna/contract
 import {
   renderAbstention,
   renderHedge,
-  uniformEmptyMessage,
+  synthesiseAnswer,
   type RetrievalScope,
+  uniformEmptyMessage,
 } from '@kna/retrieval';
 import { sql } from 'drizzle-orm';
 import { anyOf, withSystemContext } from '@kna/db';
@@ -160,8 +161,38 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
       result.chunks.map((c) => c.symbolId),
     );
 
+    // Synthesis happens after the ACL filter and the audit record, never before: an answer is
+    // written from evidence the caller was already permitted to see.
+    const answer = body.answer
+      ? await synthesiseAnswer({
+          query: body.query,
+          result,
+          client: ctx.llm,
+          orgId: principal.orgId,
+        }).catch((error: unknown) => {
+          // A provider failure degrades to search results rather than failing the request. The
+          // evidence is the part that was expensive to produce and is still useful without prose
+          // wrapped around it.
+          request.log.warn({ err: String(error) }, 'answer synthesis failed');
+          return null;
+        })
+      : null;
+
     return reply.send(
       zSearchResponse.parse({
+        answer: answer
+          ? {
+              text: answer.text,
+              citations: answer.citations.map((c) => ({
+                ...c,
+                qualifiedName: c.symbolId ? (symbolNames.get(c.symbolId) ?? null) : null,
+              })),
+              abstained: answer.abstained,
+              hedged: answer.hedged,
+              hedgingReason: answer.hedgingReason,
+              model: answer.model,
+            }
+          : null,
         hits: result.chunks.map((chunk) => ({
           chunkId: chunk.chunkId,
           symbolId: chunk.symbolId,
