@@ -4,14 +4,14 @@ docType: module-reference
 generated: true
 generator: kna-docgen
 moduleId: mod_059a7404d61707948d63d574a23b22c5
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
 analysisDepth: semantic
 owners:
   []
 provenance:
   symbolIds:
-    - sym_42a489c89b224f4a29fd983226e42176e450f669
+    - sym_94a8dac65e553dbf73754419fa7cb9f2382566eb
     - sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19
     - sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9
     - sym_dbf84f0792700801f3137a55c3114621f5068449
@@ -23,6 +23,7 @@ provenance:
     - sym_35f3e206eee9eab7549950f96a6c4add09f3c752
     - sym_ff27b625ec6ff86eb2cd8cddcbc26579607fb88c
     - sym_195cabc9a87f8c8f3be89b71b02d7a775924cffe
+    - sym_5116504364bc2d26b4753d29aa760755041d2e2f
     - sym_32e25334f7badd37c560b0d1e5d21bb01869bf6c
     - sym_c4a150b4d35c7a27858fa710367d9070f322a142
     - sym_b9047fb276d379c24b7719458c0c38beef065d03
@@ -60,9 +61,27 @@ provenance:
     - sym_301488b563124f9b33874a3d5843454e4335c624
     - sym_0afbf7fde960791d59f62d11f32fe1e6ab66d3a5
     - sym_fe34ac53d96c81b6d4972b64889c1ffdde53e40b
+    - sym_acb2762a9c42eded1f7a40ffb23d4f5ba4d297f3
     - sym_32d78a49f5d73ef25d370a0ea42aed29bd9bf829
     - sym_848fa38e753834ae4b13a44c757d0c67da2f8010
+    - sym_89c9e55066b0acc68eddc1d33183c68bfa9121b1
+    - sym_5b02f078c6d70317767b3062a20afc4be6b02e9c
+    - sym_6fe89e73dfafa2b80cbed1778f37140ad12617c9
+    - sym_2273363cced4932c03dae9061f23ea493a878c14
+    - sym_cec601dcd773b818b6a82f43cd4afbc2b61c89a4
+    - sym_2b588c37d26b433d0d68a9b73fb3c4ff52dd3c9f
+    - sym_01bfe216ef0869434a2f792a576ad27caa30cba7
+    - sym_a60329d3eb4d36de5d80407463b9850ac1983606
+    - sym_2e397f2b172ae5b1e8c064ee8454e1ddcae6741a
+    - sym_eb9105cf56a92877fc46f1c99996501f76209620
+    - sym_ea1f480590e2891fc74581670f60ebf4f23e6240
+    - sym_057cec57eafb66c6bd5dfef33e4e86132b1a5f60
+    - sym_61ecd61210caf735bf45817344214d7445d68444
+    - sym_ae6b7a330876d913ab099889be2799ad5652faab
+    - sym_1c598430d27722669dec97a561509854fa11273a
+    - sym_6e2bca31a5b7c890e991ff1f14d9a0fc5c1b9b15
     - sym_7fac7d7fe2d474ee1ef0886e125d5fa21404a9e9
+    - sym_645b810bf0fbc373ef6cb37ba33a647d1510b887
     - sym_028cd30fbd98586967f5cbe900b3ac17325a082f
     - sym_1cc5279f159b5f37f58c8c84ffc360503ee1fb9f
     - sym_542ead0a156c61210893996f275fc10a7ff7da5f
@@ -80,15 +99,15 @@ provenance:
     - sym_b68f8d3fe110d8592ec0ab1aca9bc37e44ca5a99
     - sym_266cc43b112224ba0bd61214213532b57f67e31b
     - sym_65b7e29a7695b3a374403ef183c33db958713ada
-    - sym_88d31bfd70ee6affe82313380a86306aaeeb2619
+    - sym_4f41361f91db9eac6f2ab26abb848dbce0805323
     - sym_2536f145da80933106bac104c1a332f923e0cd47
     - sym_4ba9792c950ca1b564a26186f24535c7bdbb1cf1
     - sym_488011f65c46635120ecded8e5e889b3ebc852df
-    - sym_6e79f342ab6af696f5e7b4203bface4b9c4449cc
+    - sym_633adc2c122dcac5cf643e7e426a32bd2024551a
     - sym_c64eac068438700ad3e0fdd220bde04689157665
     - sym_02ea86ef634fdbf9d8bfa2075a3d9c900b9273b8
   signatureHashes:
-    sym_42a489c89b224f4a29fd983226e42176e450f669: 6cd3bf6f5d8ed255c0977593d3e4e86c388d3dfd8412bbc6ee9cc4498362702c
+    sym_94a8dac65e553dbf73754419fa7cb9f2382566eb: 1f38a39a16c6ee169f400eac16c3e999a57a73e67a853f13c1463f70d99621ff
     sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19: db35ff8a4521fa24e81bf2a586585cc4a1b2bcbbe55801861b13c4bf50444358
     sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_dbf84f0792700801f3137a55c3114621f5068449: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
@@ -100,6 +119,7 @@ provenance:
     sym_35f3e206eee9eab7549950f96a6c4add09f3c752: 6e656f41f207dd3faee406b77ead022cff551e317b0de9173f62ceb948659950
     sym_ff27b625ec6ff86eb2cd8cddcbc26579607fb88c: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
     sym_195cabc9a87f8c8f3be89b71b02d7a775924cffe: b71a8b3e7097872ba439de8cb7c6097492a21d6fa668c6a3e39b3192d3352e13
+    sym_5116504364bc2d26b4753d29aa760755041d2e2f: 71b8fe147c51c1dad3f7d029bf68491a9c0f138de22a08cbe1108b874ea7a80c
     sym_32e25334f7badd37c560b0d1e5d21bb01869bf6c: 773f8ae0bff7805aad5e87dbfc3125a317da2555b32c93cd2a4486b7618d92ae
     sym_c4a150b4d35c7a27858fa710367d9070f322a142: a2b9c9f3dc7baf63f0af5984238c9291889ef8b83b2cf1d140505811edf81aa4
     sym_b9047fb276d379c24b7719458c0c38beef065d03: 325c7ea1a14331cdb43ec53cbf89c52458f647faba4cb8f79ab3aa4da792087c
@@ -137,9 +157,27 @@ provenance:
     sym_301488b563124f9b33874a3d5843454e4335c624: dfc3ea3bfb19ae1906798543dfb0fe50bce5d1552bf0ec40be0b4202ba09e2a4
     sym_0afbf7fde960791d59f62d11f32fe1e6ab66d3a5: 06af25e9738c616caa8304572a0e7e006cd198f9d4271960570ca7dc82fea74f
     sym_fe34ac53d96c81b6d4972b64889c1ffdde53e40b: 161f57b9447ab2530fde34543b984c7cd83cbe2d48662367c710cd71874d26fb
+    sym_acb2762a9c42eded1f7a40ffb23d4f5ba4d297f3: 473a30c0538814851918ed2c3869653b9bcbe4718bafbe10ef077d578f5ca942
     sym_32d78a49f5d73ef25d370a0ea42aed29bd9bf829: 84cd0af4fd0d91a91352b7e1cf861d21550dda1c9cc1fc37303b29fcd534de1e
     sym_848fa38e753834ae4b13a44c757d0c67da2f8010: 4ccfb4443fc3d99fa4468820f7aa66e69ca30f3ce5093eea974de26c64869d60
+    sym_89c9e55066b0acc68eddc1d33183c68bfa9121b1: d0d078854f0cf24bc8a60f88e52507559275202541ba94b89f2b811dfe0eab28
+    sym_5b02f078c6d70317767b3062a20afc4be6b02e9c: 317c06206c9afaa80e849fc463faf2adeada8e9b9bb09285ef41695152360d69
+    sym_6fe89e73dfafa2b80cbed1778f37140ad12617c9: 6d51cf1b296f7c0dbb230decaa503acff5edcf0b59e8e3ed61179eb4ba55fc02
+    sym_2273363cced4932c03dae9061f23ea493a878c14: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
+    sym_cec601dcd773b818b6a82f43cd4afbc2b61c89a4: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
+    sym_2b588c37d26b433d0d68a9b73fb3c4ff52dd3c9f: 48b7aa907a739b06962b30ba6cb9ed9a8e81ac36be7e434de958e67b12a786eb
+    sym_01bfe216ef0869434a2f792a576ad27caa30cba7: d6f360e5cfe2a5704044adc0ffbadc6fcaee0b1bd641df8606047947b963c5b5
+    sym_a60329d3eb4d36de5d80407463b9850ac1983606: 923b0f79730c73f9a82601f8ada0a5c7cea2b3b090a372d5840ec52116ad7255
+    sym_2e397f2b172ae5b1e8c064ee8454e1ddcae6741a: f4e570699446db4d73e37f08c0f8b77040916939f0dad2184df3f8057c4283cd
+    sym_eb9105cf56a92877fc46f1c99996501f76209620: a9289d9064479a4f18c742919db7eef0f0d571dc190ec26521fc1de02f293c9a
+    sym_ea1f480590e2891fc74581670f60ebf4f23e6240: 786cbb0b953a6e0aaafa6c037d6932dc9ca85facef99b7d2699e410f28b834e5
+    sym_057cec57eafb66c6bd5dfef33e4e86132b1a5f60: 79254cbc5dfe2187a1957a1686bf25a7b431b4ea78cdc5e5dc4b3a0a4cd96f6a
+    sym_61ecd61210caf735bf45817344214d7445d68444: 2a975a5882b0a60f9c8139b35844930b4c4586e022c03150c7f8554bae11bdae
+    sym_ae6b7a330876d913ab099889be2799ad5652faab: bf0cce155092721fdc365f3630706d7e615fa9697b00e792d70d46e10d5bbaa7
+    sym_1c598430d27722669dec97a561509854fa11273a: 5d424fbc1489612c99dfb525c10ecb237e0de509a778626145f2a57041ba391c
+    sym_6e2bca31a5b7c890e991ff1f14d9a0fc5c1b9b15: c4b2bd1ccc6cb3b1745ad92945970ced46d0bd9eb2f19f97eb97f3d437bf988f
     sym_7fac7d7fe2d474ee1ef0886e125d5fa21404a9e9: eae32d02f06c9a2ff5ff3441b2b7cb50ece6c74596e8bf14e763b6e8d7be551c
+    sym_645b810bf0fbc373ef6cb37ba33a647d1510b887: 0aba119cdde04a643cd567bb3f308bbbeabf7b9ade101260e4d7a0434e84fe56
     sym_028cd30fbd98586967f5cbe900b3ac17325a082f: 43824a00992a57af0e46e8606ff7ee8edd01932117810c5916fdaa1b49190ff6
     sym_1cc5279f159b5f37f58c8c84ffc360503ee1fb9f: 2fe6f2300431d4cdb3b209e872a75b8c9dc1bb25836f81f250d384b0740c1563
     sym_542ead0a156c61210893996f275fc10a7ff7da5f: f939c0b4d9a2da2dba17ff3c6c15230f90634a1a6b4fdfcc19fb6b388f7c63c7
@@ -157,40 +195,60 @@ provenance:
     sym_b68f8d3fe110d8592ec0ab1aca9bc37e44ca5a99: 0a135428c4737d2c93d3c5d9184c818de557c6d33662216f2815d52d0e22e07d
     sym_266cc43b112224ba0bd61214213532b57f67e31b: 0f17e215fb804f8b48ff5cbab26d69e99c95bda03a09f4702dc2f4e1ae614652
     sym_65b7e29a7695b3a374403ef183c33db958713ada: ea6f4b21b3b3b98303a643cf2be29c772627fd68fa194f77204365ef5acd7d0c
-    sym_88d31bfd70ee6affe82313380a86306aaeeb2619: b88aaf75495b30928dcca17b7167fce42c3c0970f3815d284f84aac06220f845
+    sym_4f41361f91db9eac6f2ab26abb848dbce0805323: 30d1c795054b6aa402933dbd425c09b0ca49bce3d8ac047995eb3a33bebbf392
     sym_2536f145da80933106bac104c1a332f923e0cd47: 79207ce290e963ad37326de9ba6312a52c0e53d84d620ff495c67092dd559589
     sym_4ba9792c950ca1b564a26186f24535c7bdbb1cf1: 18ad5231ed6f6f6bd847497c08e4914609e5fa6938e77ca9549bec58c43a5085
     sym_488011f65c46635120ecded8e5e889b3ebc852df: 7750bbc73bf04c84159367d4222ecb60ca182b06d382d07b197b0474e758471a
-    sym_6e79f342ab6af696f5e7b4203bface4b9c4449cc: 1e1447f939f5343345201391aec9b1724bbc939438701b0fb59b7f9d4302c5d3
+    sym_633adc2c122dcac5cf643e7e426a32bd2024551a: ff624492cbe5a81e75b2ddeb394236faa24baecf0f64f916679940b2b418a77b
     sym_c64eac068438700ad3e0fdd220bde04689157665: f01b54c28b65a8b2fc57aaea6d2933c91367c0673daf1da5b065a34f652b3785
     sym_02ea86ef634fdbf9d8bfa2075a3d9c900b9273b8: 44eb603063e71c22dd40f4a27ffc6060a87ac85439f12fc7718529c4f2d8e911
 ---
 
 # @kna/worker reference
 
-<!-- kna:generated:start id=overview hash=ba4f35013a8e45a6 -->
+<!-- kna:generated:start id=overview hash=958416fad8ea959d -->
 | | |
 |---|---|
 | Package | `@kna/worker` (npm) |
 | Path | `apps/worker` |
 | Languages | typescript |
-| Public symbols | 76 |
+| Public symbols | 95 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=9871616acec44443 -->
+<!-- kna:generated:start id=api.function hash=e9bdf50bb1b9a58c -->
 ### `createWorkerContext`
 
 ```typescript
-createWorkerContext(env: {KNA_ENV: "production" | "development" | "test" | "staging";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<WorkerContext>
+createWorkerContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<WorkerContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env`? | `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
+| `env`? | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
 
 **Returns** `Promise<WorkerContext>`
 
-<sub>Source: `apps/worker/src/context.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L37)</sub>
+
+---
+
+### `embedChunks`
+
+Embedding with the content-hash cache.
+
+```typescript
+embedChunks(ctx: WorkerContext, orgId: string, chunks: Chunk[]): Promise<{vectors: Map<string, number[]>;fromCache: number;computed: number;usd: number;}>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `ctx` | `WorkerContext` |  |
+| `orgId` | `string` |  |
+| `chunks` | `Chunk[]` |  |
+
+**Returns** `Promise<{ vectors: Map<string, number[]>; fromCache: number; computed: number; usd: number; }>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L472)</sub>
 
 ---
 
@@ -207,7 +265,40 @@ indexModule(ctx: WorkerContext, input: IndexModuleInput): Promise<IndexModuleRes
 
 **Returns** `Promise<IndexModuleResult>`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:50`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L51)</sub>
+
+---
+
+### `parseVector`
+
+```typescript
+parseVector(text: string): number[]
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `text` | `string` |  |
+
+**Returns** `number[]`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L601)</sub>
+
+---
+
+### `regenerateDocs`
+
+```typescript
+regenerateDocs(ctx: WorkerContext, input: RegenerateDocsInput): Promise<RegenerateDocsResult>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `ctx` | `WorkerContext` |  |
+| `input` | `RegenerateDocsInput` |  |
+
+**Returns** `Promise<RegenerateDocsResult>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L79)</sub>
 
 ---
 
@@ -225,7 +316,27 @@ resolveCrossRepoEdges(ctx: WorkerContext, input: CrossRepoInput, options: {timeo
 
 **Returns** `Promise<CrossRepoResult>`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:42`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L42)</sub>
+
+---
+
+### `resolveProjectIds`
+
+Translate the project references a repository declares into the project ids the platform uses.
+
+```typescript
+resolveProjectIds(ctx: WorkerContext, orgId: string, declared: readonly string[]): Promise<string[]>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `ctx` | `WorkerContext` |  |
+| `orgId` | `string` |  |
+| `declared` | `readonly string[]` |  |
+
+**Returns** `Promise<string[]>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/project-scope.ts#L23)</sub>
 
 ---
 
@@ -242,10 +353,10 @@ runNightlyMaintenance(ctx: WorkerContext, orgId: string): Promise<MaintenanceRep
 
 **Returns** `Promise<MaintenanceReport>`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L40)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=17316601997670ea -->
+<!-- kna:generated:start id=api.interface hash=7fea21cc5335a2e8 -->
 ### `CrossRepoInput`
 
 The cross-repo resolution pass (§4.3).
@@ -254,7 +365,7 @@ The cross-repo resolution pass (§4.3).
 interface CrossRepoInput
 ```
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L24)</sub>
 
 ---
 
@@ -264,7 +375,7 @@ interface CrossRepoInput
 interface CrossRepoResult
 ```
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L30)</sub>
 
 ---
 
@@ -276,7 +387,7 @@ Worker-side Git client.
 interface GitClientOptions
 ```
 
-<sub>Source: `apps/worker/src/services/git.ts:12`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L12)</sub>
 
 ---
 
@@ -288,7 +399,7 @@ Index one module.
 interface IndexModuleInput
 ```
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L30)</sub>
 
 ---
 
@@ -298,7 +409,7 @@ interface IndexModuleInput
 interface IndexModuleResult
 ```
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L39)</sub>
 
 ---
 
@@ -308,7 +419,7 @@ interface IndexModuleResult
 interface InvariantViolation
 ```
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L27)</sub>
 
 ---
 
@@ -320,7 +431,29 @@ Nightly maintenance.
 interface MaintenanceReport
 ```
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L20)</sub>
+
+---
+
+### `RegenerateDocsInput`
+
+Regenerate documentation for a repository.
+
+```typescript
+interface RegenerateDocsInput
+```
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L44)</sub>
+
+---
+
+### `RegenerateDocsResult`
+
+```typescript
+interface RegenerateDocsResult
+```
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L52)</sub>
 
 ---
 
@@ -332,10 +465,10 @@ Worker wiring.
 interface WorkerContext
 ```
 
-<sub>Source: `apps/worker/src/context.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L22)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=3d3e61016979c452 -->
+<!-- kna:generated:start id=api.property hash=2a2ca6f120ccc13b -->
 ### `orgId`
 
 ```typescript
@@ -344,7 +477,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L25)</sub>
 
 ---
 
@@ -356,7 +489,7 @@ projectId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L26)</sub>
 
 ---
 
@@ -368,7 +501,7 @@ triggeredByRepoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L27)</sub>
 
 ---
 
@@ -380,7 +513,7 @@ byKind: Record<string, number>
 
 **Returns** `Record<string, number>`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L34)</sub>
 
 ---
 
@@ -392,7 +525,7 @@ durationMs: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L36)</sub>
 
 ---
 
@@ -404,7 +537,7 @@ edgesPending: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L33)</sub>
 
 ---
 
@@ -416,7 +549,7 @@ edgesResolved: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L32)</sub>
 
 ---
 
@@ -428,7 +561,7 @@ projectId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:31`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L31)</sub>
 
 ---
 
@@ -440,7 +573,7 @@ timedOut: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/worker/src/jobs/cross-repo.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/cross-repo.ts#L35)</sub>
 
 ---
 
@@ -452,7 +585,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>Source: `apps/worker/src/services/git.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L16)</sub>
 
 ---
 
@@ -464,7 +597,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>Source: `apps/worker/src/services/git.ts:15`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L15)</sub>
 
 ---
 
@@ -476,7 +609,7 @@ provider: 'github' | 'azuredevops' | 'gitlab'
 
 **Returns** `"github" \| "azuredevops" \| "gitlab"`
 
-<sub>Source: `apps/worker/src/services/git.ts:13`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L13)</sub>
 
 ---
 
@@ -488,7 +621,7 @@ writeEnabled: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/worker/src/services/git.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L14)</sub>
 
 ---
 
@@ -500,7 +633,7 @@ bundleStorageKey: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L36)</sub>
 
 ---
 
@@ -512,7 +645,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L34)</sub>
 
 ---
 
@@ -524,7 +657,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L33)</sub>
 
 ---
 
@@ -536,7 +669,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L31)</sub>
 
 ---
 
@@ -548,7 +681,7 @@ ref: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L35)</sub>
 
 ---
 
@@ -560,7 +693,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:31`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L32)</sub>
 
 ---
 
@@ -572,7 +705,7 @@ blurbsGenerated: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L45)</sub>
 
 ---
 
@@ -584,7 +717,7 @@ chunksDeleted: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L42)</sub>
 
 ---
 
@@ -596,7 +729,7 @@ chunksUpserted: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L41)</sub>
 
 ---
 
@@ -608,7 +741,7 @@ embeddingsComputed: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:42`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L43)</sub>
 
 ---
 
@@ -620,7 +753,7 @@ embeddingsFromCache: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L44)</sub>
 
 ---
 
@@ -632,7 +765,7 @@ estimatedUsd: number
 
 **Returns** `number`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L46)</sub>
 
 ---
 
@@ -644,7 +777,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L40)</sub>
 
 ---
 
@@ -656,7 +789,7 @@ skipped: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L47)</sub>
 
 ---
 
@@ -668,7 +801,7 @@ skipReason: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `apps/worker/src/jobs/index-module.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/index-module.ts#L48)</sub>
 
 ---
 
@@ -680,7 +813,7 @@ detail: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L35)</sub>
 
 ---
 
@@ -692,7 +825,7 @@ kind: | 'chunk-symbol-count-mismatch' | 'orphan-chunk' | 'dangling-cross-repo-ed
 
 **Returns** `"chunk-symbol-count-mismatch" \| "orphan-chunk" \| "dangling-cross-repo-edge" \| "doc-references-dead-symbol" \| "rls-missing" \| "stale-module"`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L28)</sub>
 
 ---
 
@@ -704,7 +837,7 @@ scope: string
 
 **Returns** `string`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L36)</sub>
 
 ---
 
@@ -716,7 +849,7 @@ severity: 'warn' | 'error'
 
 **Returns** `"warn" \| "error"`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L37)</sub>
 
 ---
 
@@ -728,7 +861,7 @@ evalQuarantine: {quarantined: number;released: number}
 
 **Returns** `{ quarantined: number; released: number; }`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L23)</sub>
 
 ---
 
@@ -740,7 +873,7 @@ invariants: InvariantViolation[]
 
 **Returns** `InvariantViolation[]`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L22)</sub>
 
 ---
 
@@ -752,7 +885,7 @@ lexicalStats: {projectsRefreshed: number;terms: number}
 
 **Returns** `{ projectsRefreshed: number; terms: number; }`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L24)</sub>
 
 ---
 
@@ -764,7 +897,167 @@ reconciliation: {checked: number;stale: number;enqueued: number}
 
 **Returns** `{ checked: number; stale: number; enqueued: number; }`
 
-<sub>Source: `apps/worker/src/jobs/maintenance.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/maintenance.ts#L21)</sub>
+
+---
+
+### `bundleStorageKey`
+
+```typescript
+bundleStorageKey: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L49)</sub>
+
+---
+
+### `commitSha`
+
+```typescript
+commitSha: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L47)</sub>
+
+---
+
+### `orgId`
+
+```typescript
+orgId: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L45)</sub>
+
+---
+
+### `ref`
+
+```typescript
+ref: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L48)</sub>
+
+---
+
+### `repoId`
+
+```typescript
+repoId: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L46)</sub>
+
+---
+
+### `chunksUpserted`
+
+```typescript
+chunksUpserted: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L54)</sub>
+
+---
+
+### `documentsWritten`
+
+```typescript
+documentsWritten: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L53)</sub>
+
+---
+
+### `estimatedUsd`
+
+```typescript
+estimatedUsd: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L60)</sub>
+
+---
+
+### `proseFailed`
+
+Prose that never happened: provider error, timeout, budget. An availability signal.
+
+```typescript
+proseFailed: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L59)</sub>
+
+---
+
+### `proseRejected`
+
+Prose the model produced that the grounding check refused. A quality signal.
+
+```typescript
+proseRejected: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L57)</sub>
+
+---
+
+### `proseSections`
+
+```typescript
+proseSections: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L55)</sub>
+
+---
+
+### `skipped`
+
+```typescript
+skipped: boolean
+```
+
+**Returns** `boolean`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L61)</sub>
+
+---
+
+### `skipReason`
+
+```typescript
+skipReason: string | null
+```
+
+**Returns** `string \| null`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/jobs/regenerate-docs.ts#L62)</sub>
 
 ---
 
@@ -776,7 +1069,7 @@ budget: BudgetManager
 
 **Returns** `BudgetManager`
 
-<sub>Source: `apps/worker/src/context.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L27)</sub>
 
 ---
 
@@ -788,7 +1081,7 @@ bundleStore: BundleStore
 
 **Returns** `BundleStore`
 
-<sub>Source: `apps/worker/src/context.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L28)</sub>
 
 ---
 
@@ -800,7 +1093,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/worker/src/context.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L25)</sub>
 
 ---
 
@@ -810,9 +1103,9 @@ db: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>Source: `apps/worker/src/context.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L23)</sub>
 
 ---
 
@@ -824,7 +1117,7 @@ git: GitClient | null
 
 **Returns** `GitClient \| null`
 
-<sub>Source: `apps/worker/src/context.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L30)</sub>
 
 ---
 
@@ -836,7 +1129,13 @@ health: HealthRegistry
 
 **Returns** `HealthRegistry`
 
-<sub>Source: `apps/worker/src/context.ts:31`</sub>
+**Endpoint** `GET /health`
+
+| Status | Description |
+|---|---|
+| `200` | The service is up. |
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L31)</sub>
 
 ---
 
@@ -848,7 +1147,7 @@ llm: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>Source: `apps/worker/src/context.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L26)</sub>
 
 ---
 
@@ -860,7 +1159,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>Source: `apps/worker/src/context.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L24)</sub>
 
 ---
 
@@ -872,7 +1171,7 @@ metrics: typeof KnaMetrics
 
 **Returns** `{ readonly bundlesIngested: Counter<Attributes>; readonly bundlesRejected: Counter<Attributes>; readonly indexLagSeconds: Histogram<Attributes>; readonly symbolsIndexed: Counter<Attributes>; readonly queueDepth: ObservableGauge; readonly queueOldestJobAgeSeconds: ObservableGauge; readonly dlqDepth: …`
 
-<sub>Source: `apps/worker/src/context.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L32)</sub>
 
 ---
 
@@ -884,7 +1183,7 @@ queue: WorkerQueue
 
 **Returns** `WorkerQueue`
 
-<sub>Source: `apps/worker/src/context.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L29)</sub>
 
 ---
 
@@ -896,7 +1195,7 @@ retrievalConfig: RetrievalConfig
 
 **Returns** `RetrievalConfig`
 
-<sub>Source: `apps/worker/src/context.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L33)</sub>
 
 ---
 
@@ -908,29 +1207,27 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>Source: `apps/worker/src/context.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/context.ts#L34)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=046abc964f5a82c3 -->
+<!-- kna:generated:start id=api.class hash=75149c3b844f35e7 -->
 ### `GitClient`
 
 ```typescript
 class GitClient
 ```
 
-<sub>Source: `apps/worker/src/services/git.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L29)</sub>
 
 ---
 
 ### `WorkerQueue`
 
-The worker side of the queue.
-
 ```typescript
 class WorkerQueue
 ```
 
-<sub>Source: `apps/worker/src/services/queue.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L50)</sub>
 
 ---
 
@@ -940,10 +1237,10 @@ class WorkerQueue
 class WriteDisabledError extends Error
 ```
 
-<sub>Source: `apps/worker/src/services/git.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L19)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=9d90b8dd6cf2be0e -->
+<!-- kna:generated:start id=api.method hash=b92698bed907f395 -->
 ### `constructor`
 
 ```typescript
@@ -954,7 +1251,7 @@ constructor(private readonly options: GitClientOptions)
 |---|---|---|
 | `options` | `GitClientOptions` |  |
 
-<sub>Source: `apps/worker/src/services/git.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L30)</sub>
 
 ---
 
@@ -973,7 +1270,7 @@ headSha(remote: string, branch: string): Promise<string | null>
 
 **Returns** `Promise<string \| null>`
 
-<sub>Source: `apps/worker/src/services/git.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L33)</sub>
 
 ---
 
@@ -989,7 +1286,7 @@ openDocsPullRequest(input: {repoRemote: string;branch: string;title: string;body
 
 **Returns** `Promise<{ url: string; number: number; }>`
 
-<sub>Source: `apps/worker/src/services/git.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L39)</sub>
 
 ---
 
@@ -1003,7 +1300,7 @@ close(): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/worker/src/services/queue.ts:180`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L198)</sub>
 
 ---
 
@@ -1019,23 +1316,23 @@ constructor(redisUrl: string, private readonly logger: Logger, private readonly 
 | `logger` | `Logger` |  |
 | `options`? | `{ maxInFlightPerOrg?: number \| undefined; }` |  (default `{}`) |
 
-<sub>Source: `apps/worker/src/services/queue.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L57)</sub>
 
 ---
 
 ### `enqueueRegenerateDocs`
 
 ```typescript
-enqueueRegenerateDocs(job: {orgId: string;repoId: string;commitSha: string;bundleStorageKey: string;}): Promise<string>
+enqueueRegenerateDocs(job: {orgId: string;repoId: string;commitSha: string;ref: string;bundleStorageKey: string;}): Promise<string>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `job` | `{ orgId: string; repoId: string; commitSha: string; bundleStorageKey: string; }` |  |
+| `job` | `{ orgId: string; repoId: string; commitSha: string; ref: string; bundleStorageKey: string; }` |  |
 
 **Returns** `Promise<string>`
 
-<sub>Source: `apps/worker/src/services/queue.ts:186`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L204)</sub>
 
 ---
 
@@ -1052,7 +1349,7 @@ pause(name: QueueName, reason: string): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/worker/src/services/queue.ts:197`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L218)</sub>
 
 ---
 
@@ -1071,7 +1368,7 @@ pauseAll(reason: string, durationMs: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/worker/src/services/queue.ts:166`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L184)</sub>
 
 ---
 
@@ -1083,7 +1380,7 @@ ping(): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `apps/worker/src/services/queue.ts:171`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L189)</sub>
 
 ---
 
@@ -1092,18 +1389,18 @@ ping(): Promise<boolean>
 Register a processor.
 
 ```typescript
-register(name: QueueName, processor: (job: Job<T>) => Promise<unknown>, options: {concurrency?: number;db?: DbHandle;}): void
+register(name: QueueName, processor: (job: Job<T>) => Promise<unknown>, options: {concurrency?: number;db?: DbHandle;lockDurationMs?: number;}): void
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `name` | `QueueName` |  |
 | `processor` | `(job: Job<T, any, string>) => Promise<unknown>` |  |
-| `options`? | `{ concurrency?: number \| undefined; db?: DbHandle \| undefined; }` |  (default `{}`) |
+| `options`? | `{ concurrency?: number \| undefined; db?: DbHandle \| undefined; lockDurationMs?: number \| undefined; }` |  (default `{}`) |
 
 **Returns** `void`
 
-<sub>Source: `apps/worker/src/services/queue.ts:69`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L81)</sub>
 
 ---
 
@@ -1117,10 +1414,10 @@ constructor(operation: string)
 |---|---|---|
 | `operation` | `string` |  |
 
-<sub>Source: `apps/worker/src/services/git.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/git.ts#L20)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=a18d2283affc0933 -->
+<!-- kna:generated:start id=api.constant hash=47dbfb8b861089b7 -->
 ### `QUEUE_NAMES`
 
 ```typescript
@@ -1129,15 +1426,15 @@ const QUEUE_NAMES: {readonly indexModule: "index-module";readonly crossRepo: "cr
 
 **Returns** `{ readonly indexModule: "index-module"; readonly crossRepo: "cross-repo-resolve"; readonly regenerateDocs: "regenerate-docs"; readonly maintenance: "maintenance"; }`
 
-<sub>Source: `apps/worker/src/services/queue.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L14)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=c23912369ad7396c -->
+<!-- kna:generated:start id=api.type hash=df7d0b0488a557a1 -->
 ### `QueueName`
 
 ```typescript
 type QueueName = (typeof QUEUE_NAMES)[keyof typeof QUEUE_NAMES]
 ```
 
-<sub>Source: `apps/worker/src/services/queue.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/worker/src/services/queue.ts#L21)</sub>
 <!-- kna:generated:end id=api.type -->

@@ -4,8 +4,8 @@ docType: module-reference
 generated: true
 generator: kna-docgen
 moduleId: mod_4658fcccdf0a526787cf6b39caf28dc0
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
 analysisDepth: semantic
 owners:
   []
@@ -199,7 +199,7 @@ provenance:
 | Public symbols | 87 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=19320ee64763bc68 -->
+<!-- kna:generated:start id=api.constant hash=ea61aa654c7d544b -->
 ### `ALL_RULES`
 
 ```typescript
@@ -208,7 +208,7 @@ const ALL_RULES: Rule[]
 
 **Returns** `Rule[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:277`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L277)</sub>
 
 ---
 
@@ -222,7 +222,7 @@ const DEFAULT_CLASSIFICATION_RULES: ClassificationRule[]
 
 **Returns** `ClassificationRule[]`
 
-<sub>Source: `packages/scanner/src/classify.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L30)</sub>
 
 ---
 
@@ -236,7 +236,7 @@ const DENY_PATH_PATTERNS: RegExp[]
 
 **Returns** `RegExp[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:248`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L248)</sub>
 
 ---
 
@@ -250,7 +250,7 @@ const INJECTION_RULES: Rule[]
 
 **Returns** `Rule[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:202`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L202)</sub>
 
 ---
 
@@ -264,7 +264,7 @@ const PII_RULES: Rule[]
 
 **Returns** `Rule[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:156`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L156)</sub>
 
 ---
 
@@ -276,7 +276,7 @@ const SCANNER_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>Source: `packages/scanner/src/gate.ts:6`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L6)</sub>
 
 ---
 
@@ -288,7 +288,7 @@ const SECRET_RULES: Rule[]
 
 **Returns** `Rule[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L32)</sub>
 
 ---
 
@@ -302,17 +302,17 @@ const SKIP_PATH_PATTERNS: RegExp[]
 
 **Returns** `RegExp[]`
 
-<sub>Source: `packages/scanner/src/rules.ts:267`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L267)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=efdee1258a615f17 -->
+<!-- kna:generated:start id=api.type hash=abd826fdb985c6e1 -->
 ### `Category`
 
 ```typescript
 type Category = 'secret' | 'pii' | 'injection'
 ```
 
-<sub>Source: `packages/scanner/src/rules.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L14)</sub>
 
 ---
 
@@ -324,17 +324,17 @@ Detection ruleset for the pre-index scan (§10 Layer 2).
 type Severity = 'critical' | 'high' | 'medium'
 ```
 
-<sub>Source: `packages/scanner/src/rules.ts:13`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L13)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.interface hash=7dc69d411acce7eb -->
+<!-- kna:generated:start id=api.interface hash=fcf41a3abfcf4dd1 -->
 ### `Classification`
 
 ```typescript
 interface Classification
 ```
 
-<sub>Source: `packages/scanner/src/classify.ts:70`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L70)</sub>
 
 ---
 
@@ -344,7 +344,7 @@ interface Classification
 interface ClassificationRule
 ```
 
-<sub>Source: `packages/scanner/src/classify.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L23)</sub>
 
 ---
 
@@ -354,7 +354,7 @@ interface ClassificationRule
 interface ClassifyInput
 ```
 
-<sub>Source: `packages/scanner/src/classify.ts:59`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L59)</sub>
 
 ---
 
@@ -364,7 +364,7 @@ interface ClassifyInput
 interface FileScanResult
 ```
 
-<sub>Source: `packages/scanner/src/scanner.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L43)</sub>
 
 ---
 
@@ -374,7 +374,7 @@ interface FileScanResult
 interface Finding
 ```
 
-<sub>Source: `packages/scanner/src/scanner.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L18)</sub>
 
 ---
 
@@ -384,7 +384,7 @@ interface Finding
 interface GateOptions
 ```
 
-<sub>Source: `packages/scanner/src/gate.ts:8`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L8)</sub>
 
 ---
 
@@ -394,7 +394,7 @@ interface GateOptions
 interface GateResult
 ```
 
-<sub>Source: `packages/scanner/src/gate.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L18)</sub>
 
 ---
 
@@ -404,7 +404,7 @@ interface GateResult
 interface Rule
 ```
 
-<sub>Source: `packages/scanner/src/rules.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L16)</sub>
 
 ---
 
@@ -414,10 +414,10 @@ interface Rule
 interface ScanOptions
 ```
 
-<sub>Source: `packages/scanner/src/scanner.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L32)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=141ce9b6c41b2a65 -->
+<!-- kna:generated:start id=api.property hash=3497a92fa8f23d0f -->
 ### `reasons`
 
 ```typescript
@@ -426,7 +426,7 @@ reasons: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/scanner/src/classify.ts:72`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L72)</sub>
 
 ---
 
@@ -440,7 +440,7 @@ requiresReviewToPublishExternally: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/classify.ts:74`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L74)</sub>
 
 ---
 
@@ -452,7 +452,7 @@ tier: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/scanner/src/classify.ts:71`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L71)</sub>
 
 ---
 
@@ -464,7 +464,7 @@ pattern: RegExp
 
 **Returns** `RegExp`
 
-<sub>Source: `packages/scanner/src/classify.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L24)</sub>
 
 ---
 
@@ -476,7 +476,7 @@ reason: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/classify.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L26)</sub>
 
 ---
 
@@ -488,7 +488,7 @@ tier: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/scanner/src/classify.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L25)</sub>
 
 ---
 
@@ -502,7 +502,7 @@ codeMarkers?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>Source: `packages/scanner/src/classify.ts:67`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L67)</sub>
 
 ---
 
@@ -516,7 +516,7 @@ configuredTier?: Sensitivity | null
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted" \| null \| undefined`
 
-<sub>Source: `packages/scanner/src/classify.ts:62`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L62)</sub>
 
 ---
 
@@ -528,7 +528,7 @@ path: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/classify.ts:60`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L60)</sub>
 
 ---
 
@@ -542,7 +542,7 @@ repoDefault: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/scanner/src/classify.ts:64`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L64)</sub>
 
 ---
 
@@ -554,7 +554,7 @@ rules?: ClassificationRule[]
 
 **Returns** `ClassificationRule[] \| undefined`
 
-<sub>Source: `packages/scanner/src/classify.ts:65`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L65)</sub>
 
 ---
 
@@ -566,7 +566,7 @@ findings: Finding[]
 
 **Returns** `Finding[]`
 
-<sub>Source: `packages/scanner/src/scanner.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L45)</sub>
 
 ---
 
@@ -578,7 +578,7 @@ path: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L44)</sub>
 
 ---
 
@@ -590,7 +590,7 @@ skipped: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/scanner.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L46)</sub>
 
 ---
 
@@ -602,7 +602,7 @@ skipReason: 'denied-path' | 'binary-or-generated' | 'too-large' | null
 
 **Returns** `"denied-path" \| "binary-or-generated" \| "too-large" \| null`
 
-<sub>Source: `packages/scanner/src/scanner.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L47)</sub>
 
 ---
 
@@ -614,7 +614,7 @@ category: Category
 
 **Returns** `Category`
 
-<sub>Source: `packages/scanner/src/scanner.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L20)</sub>
 
 ---
 
@@ -626,7 +626,7 @@ column: number
 
 **Returns** `number`
 
-<sub>Source: `packages/scanner/src/scanner.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L24)</sub>
 
 ---
 
@@ -638,7 +638,7 @@ description: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L27)</sub>
 
 ---
 
@@ -650,7 +650,7 @@ line: number
 
 **Returns** `number`
 
-<sub>Source: `packages/scanner/src/scanner.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L23)</sub>
 
 ---
 
@@ -662,7 +662,7 @@ path: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L22)</sub>
 
 ---
 
@@ -676,7 +676,7 @@ redacted: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L26)</sub>
 
 ---
 
@@ -688,7 +688,7 @@ ruleId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L19)</sub>
 
 ---
 
@@ -700,7 +700,7 @@ severity: Severity
 
 **Returns** `Severity`
 
-<sub>Source: `packages/scanner/src/scanner.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L21)</sub>
 
 ---
 
@@ -714,7 +714,7 @@ suppressedBy: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `packages/scanner/src/scanner.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L29)</sub>
 
 ---
 
@@ -726,7 +726,7 @@ allowlist?: Array<{path: string;rule: string;reason: string}>
 
 **Returns** `{ path: string; rule: string; reason: string; }[] \| undefined`
 
-<sub>Source: `packages/scanner/src/gate.ts:12`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L12)</sub>
 
 ---
 
@@ -738,7 +738,7 @@ concurrency?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/scanner/src/gate.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L14)</sub>
 
 ---
 
@@ -750,7 +750,7 @@ extraSecretPatterns?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>Source: `packages/scanner/src/gate.ts:13`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L13)</sub>
 
 ---
 
@@ -764,7 +764,7 @@ files: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/scanner/src/gate.ts:11`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L11)</sub>
 
 ---
 
@@ -776,7 +776,7 @@ onProgress?: (scanned: number, total: number) => void
 
 **Returns** `((scanned: number, total: number) => void) \| undefined`
 
-<sub>Source: `packages/scanner/src/gate.ts:15`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L15)</sub>
 
 ---
 
@@ -788,7 +788,7 @@ repoRoot: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/gate.ts:9`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L9)</sub>
 
 ---
 
@@ -802,7 +802,7 @@ deniedPaths: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/scanner/src/gate.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L26)</sub>
 
 ---
 
@@ -814,7 +814,7 @@ findings: Finding[]
 
 **Returns** `Finding[]`
 
-<sub>Source: `packages/scanner/src/gate.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L20)</sub>
 
 ---
 
@@ -828,7 +828,7 @@ flagged: Finding[]
 
 **Returns** `Finding[]`
 
-<sub>Source: `packages/scanner/src/gate.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L24)</sub>
 
 ---
 
@@ -840,7 +840,7 @@ passed: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/gate.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L19)</sub>
 
 ---
 
@@ -852,7 +852,7 @@ rulesetHash: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/gate.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L36)</sub>
 
 ---
 
@@ -864,7 +864,7 @@ scannerVersion: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/gate.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L35)</sub>
 
 ---
 
@@ -876,7 +876,7 @@ stats: {filesScanned: number;filesSkipped: number;secretsFound: number;piiFound:
 
 **Returns** `{ filesScanned: number; filesSkipped: number; secretsFound: number; piiFound: number; injectionPatternsFlagged: number; durationMs: number; }`
 
-<sub>Source: `packages/scanner/src/gate.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L27)</sub>
 
 ---
 
@@ -890,7 +890,7 @@ suppressed: Finding[]
 
 **Returns** `Finding[]`
 
-<sub>Source: `packages/scanner/src/gate.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L22)</sub>
 
 ---
 
@@ -904,7 +904,7 @@ captureGroup?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/scanner/src/rules.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L25)</sub>
 
 ---
 
@@ -916,7 +916,7 @@ category: Category
 
 **Returns** `Category`
 
-<sub>Source: `packages/scanner/src/rules.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L19)</sub>
 
 ---
 
@@ -928,7 +928,7 @@ description: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/rules.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L18)</sub>
 
 ---
 
@@ -942,7 +942,7 @@ excludePaths?: RegExp[]
 
 **Returns** `RegExp[] \| undefined`
 
-<sub>Source: `packages/scanner/src/rules.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L27)</sub>
 
 ---
 
@@ -954,7 +954,7 @@ id: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/rules.ts:17`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L17)</sub>
 
 ---
 
@@ -968,7 +968,7 @@ minEntropy?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/scanner/src/rules.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L23)</sub>
 
 ---
 
@@ -980,7 +980,7 @@ pattern: RegExp
 
 **Returns** `RegExp`
 
-<sub>Source: `packages/scanner/src/rules.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L21)</sub>
 
 ---
 
@@ -992,7 +992,7 @@ severity: Severity
 
 **Returns** `Severity`
 
-<sub>Source: `packages/scanner/src/rules.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L20)</sub>
 
 ---
 
@@ -1004,7 +1004,7 @@ allowlist?: Array<{path: string;rule: string;reason: string}>
 
 **Returns** `{ path: string; rule: string; reason: string; }[] \| undefined`
 
-<sub>Source: `packages/scanner/src/scanner.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L37)</sub>
 
 ---
 
@@ -1016,7 +1016,7 @@ content: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L35)</sub>
 
 ---
 
@@ -1028,7 +1028,7 @@ extraSecretPatterns?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>Source: `packages/scanner/src/scanner.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L38)</sub>
 
 ---
 
@@ -1042,7 +1042,7 @@ maxFindingsPerFile?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/scanner/src/scanner.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L40)</sub>
 
 ---
 
@@ -1056,7 +1056,7 @@ path: string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L34)</sub>
 
 ---
 
@@ -1068,10 +1068,10 @@ rules?: Rule[]
 
 **Returns** `Rule[] \| undefined`
 
-<sub>Source: `packages/scanner/src/scanner.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L36)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=14a83120055ad865 -->
+<!-- kna:generated:start id=api.function hash=59c7f8377da319ae -->
 ### `classify`
 
 ```typescript
@@ -1084,7 +1084,7 @@ classify(input: ClassifyInput): Classification
 
 **Returns** `Classification`
 
-<sub>Source: `packages/scanner/src/classify.ts:79`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L79)</sub>
 
 ---
 
@@ -1102,7 +1102,7 @@ formatGateReport(result: GateResult): string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/gate.ts:136`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L136)</sub>
 
 ---
 
@@ -1120,7 +1120,7 @@ formatGitHubAnnotations(result: GateResult): string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/gate.ts:176`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L176)</sub>
 
 ---
 
@@ -1138,7 +1138,7 @@ isDeniedPath(path: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/scanner.ts:53`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L53)</sub>
 
 ---
 
@@ -1156,7 +1156,7 @@ isEmbeddable(tier: "public" | "internal" | "confidential" | "restricted"): boole
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/classify.ts:126`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L126)</sub>
 
 ---
 
@@ -1174,7 +1174,7 @@ isLuhnValid(candidate: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/entropy.ts:63`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/entropy.ts#L71)</sub>
 
 ---
 
@@ -1192,7 +1192,7 @@ isPlaceholder(value: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/entropy.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/entropy.ts#L37)</sub>
 
 ---
 
@@ -1208,7 +1208,7 @@ isSkippablePath(path: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/scanner.ts:57`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L57)</sub>
 
 ---
 
@@ -1227,7 +1227,7 @@ isVisibleTo(contentTier: "public" | "internal" | "confidential" | "restricted", 
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/classify.ts:131`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/classify.ts#L131)</sub>
 
 ---
 
@@ -1245,7 +1245,7 @@ looksLikeNaturalIdentifier(value: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/entropy.ts:49`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/entropy.ts#L49)</sub>
 
 ---
 
@@ -1263,7 +1263,7 @@ redact(value: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:146`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L146)</sub>
 
 ---
 
@@ -1281,7 +1281,7 @@ rulesetHash(rules: Rule[]): string
 
 **Returns** `string`
 
-<sub>Source: `packages/scanner/src/scanner.ts:206`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L206)</sub>
 
 ---
 
@@ -1299,7 +1299,7 @@ runGate(options: GateOptions): Promise<GateResult>
 
 **Returns** `Promise<GateResult>`
 
-<sub>Source: `packages/scanner/src/gate.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/gate.ts#L47)</sub>
 
 ---
 
@@ -1315,7 +1315,7 @@ scanFile(options: ScanOptions): FileScanResult
 
 **Returns** `FileScanResult`
 
-<sub>Source: `packages/scanner/src/scanner.ts:61`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/scanner.ts#L61)</sub>
 
 ---
 
@@ -1333,7 +1333,7 @@ shannonEntropy(value: string): number
 
 **Returns** `number`
 
-<sub>Source: `packages/scanner/src/entropy.ts:9`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/entropy.ts#L9)</sub>
 
 ---
 
@@ -1350,5 +1350,5 @@ shouldSuppressInTests(rule: Rule, path: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/scanner/src/rules.ts:279`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/scanner/src/rules.ts#L279)</sub>
 <!-- kna:generated:end id=api.function -->

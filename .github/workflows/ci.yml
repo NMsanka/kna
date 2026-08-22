@@ -94,6 +94,25 @@ jobs:
       - name: Guardrail scan
         run: node apps/cli/dist/bin.js scan --annotations
 
+      # The in-repo documentation is the half of §15.8's exit plan that survives this platform
+      # being switched off — "keep nothing that lives only in the platform's database". The
+      # platform's own copy is regenerated on every publish; this one is written by a human
+      # running a command, so without a check it silently rots. It had drifted by dozens of
+      # commits before anyone noticed.
+      #
+      # --no-prose because the prose layer needs a model route and CI has no provider credential.
+      # The deterministic sections are the ones that must not drift; prose is added platform-side.
+      - name: Documentation is current
+        run: |
+          node apps/cli/dist/bin.js generate --no-prose
+          git add --intent-to-add docs/generated
+          if ! git diff --quiet -- docs/generated; then
+            echo "::error::Generated documentation is out of date. Run: kna generate --no-prose"
+            git diff --stat -- docs/generated
+            exit 1
+          fi
+          echo "docs/generated matches the code"
+
   retrieval-eval:
     name: Retrieval eval gate
     runs-on: ubuntu-latest

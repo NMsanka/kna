@@ -4,8 +4,8 @@ docType: module-reference
 generated: true
 generator: kna-docgen
 moduleId: mod_db9e3004a1a04564cf55e9eb719ad3d3
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
 analysisDepth: semantic
 owners:
   []
@@ -97,6 +97,7 @@ provenance:
     - sym_073857f569aaafc9cbe978b25011b7a480110d06
     - sym_fb91a08f85b21b02d391729ccbedd128839f04a5
     - sym_6847f0ffa0d4508a774c1f25f9766c13808425c2
+    - sym_72cbb8ff82a43971d7857f6302457909eb087f3f
     - sym_fb9aaf9b05e5aeee229eb9c960065196f79c0350
     - sym_1b2c073f18930d46f9d0beadd6d8d06afbeee1c8
     - sym_43f763a69c09eace228d6af8b6b10d00565b7082
@@ -277,6 +278,7 @@ provenance:
     sym_073857f569aaafc9cbe978b25011b7a480110d06: 97605eba3e4ea7db72ce39249566ec2fd76fe031392653876b9e033b7459022b
     sym_fb91a08f85b21b02d391729ccbedd128839f04a5: 5bf9d542704e2a31e8c3efca0868d029f79899b8da549f11f42edc15321f6959
     sym_6847f0ffa0d4508a774c1f25f9766c13808425c2: 5f1e73f2e0c35f82ad21f32031ab453ab6ffd7e15f94e5e5f2f7f3751188eeed
+    sym_72cbb8ff82a43971d7857f6302457909eb087f3f: 6134326ee4e152ce619a6668e8dcd080a3d172efd0b14ed72c502fa9918eec84
     sym_fb9aaf9b05e5aeee229eb9c960065196f79c0350: 4b022b30e8f59e736a9378a435eb51b24b7557c969edd130a5b3fc3ceee3aeac
     sym_1b2c073f18930d46f9d0beadd6d8d06afbeee1c8: 4463f3d072d936ac9fc15ffce7d4dd68a46342699492ec36c77cfce3ea92eaab
     sym_43f763a69c09eace228d6af8b6b10d00565b7082: a4c46594130e2804053705c477ccf671bc7d660e58d367304ca8d57adfc0fa54
@@ -374,23 +376,23 @@ provenance:
 
 # @kna/ir reference
 
-<!-- kna:generated:start id=overview hash=13511f87c7955b84 -->
+<!-- kna:generated:start id=overview hash=1900d28f76326154 -->
 | | |
 |---|---|
 | Package | `@kna/ir` (npm) |
 | Path | `packages/ir` |
 | Languages | typescript |
-| Public symbols | 179 |
+| Public symbols | 180 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.type hash=ca9164c1f8b6abf4 -->
+<!-- kna:generated:start id=api.type hash=5607aa7aa8ccb628 -->
 ### `AnalysisDepth`
 
 ```typescript
 type AnalysisDepth = z.infer<typeof zAnalysisDepth>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L35)</sub>
 
 ---
 
@@ -400,7 +402,7 @@ type AnalysisDepth = z.infer<typeof zAnalysisDepth>
 type ApiSpec = z.infer<typeof zApiSpec>
 ```
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L19)</sub>
 
 ---
 
@@ -410,7 +412,7 @@ type ApiSpec = z.infer<typeof zApiSpec>
 type BreakerVerdict = | {tripped: false;policy: CircuitBreakerPolicy} | {tripped: true;policy: CircuitBreakerPolicy;rule: 'churn-ratio' | 'absolute-count' | 'regeneration-count';reason: string;observed: {changed: number;churnRat…
 ```
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L36)</sub>
 
 ---
 
@@ -422,7 +424,7 @@ Griffe-style breaking-change taxonomy, applied uniformly across all three langua
 type BreakingKind = | 'symbol-removed' | 'parameter-removed' | 'parameter-added-required' | 'parameter-type-changed' | 'parameter-renamed' | 'parameter-made-required' | 'return-type-changed' | 'visibility-reduced' | 'endpoint-removed' | 'route-changed' | 'method-changed' | 'response-removed' | 'request-field-required-added' | 'security-added'
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:92`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L92)</sub>
 
 ---
 
@@ -432,7 +434,7 @@ type BreakingKind = | 'symbol-removed' | 'parameter-removed' | 'parameter-added-
 type BundleSignature = z.infer<typeof zBundleSignature>
 ```
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:110`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L110)</sub>
 
 ---
 
@@ -444,7 +446,7 @@ type BundleSignature = z.infer<typeof zBundleSignature>
 type ChangeClass = | 'unchanged' | 'formatting-only' | 'body-changed' | 'doc-changed' | 'signature-changed' | 'visibility-changed' | 'deprecation-changed' | 'http-binding-changed' | 'added' | 'removed' | 'moved' | 'renamed'
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:8`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L8)</sub>
 
 ---
 
@@ -454,7 +456,7 @@ type ChangeClass = | 'unchanged' | 'formatting-only' | 'body-changed' | 'doc-cha
 type Deprecation = z.infer<typeof zDeprecation>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:88`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L88)</sub>
 
 ---
 
@@ -464,7 +466,7 @@ type Deprecation = z.infer<typeof zDeprecation>
 type DocComment = z.infer<typeof zDocComment>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:81`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L81)</sub>
 
 ---
 
@@ -474,7 +476,7 @@ type DocComment = z.infer<typeof zDocComment>
 type Ecosystem = z.infer<typeof zEcosystem>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:49`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L49)</sub>
 
 ---
 
@@ -484,7 +486,7 @@ type Ecosystem = z.infer<typeof zEcosystem>
 type HttpBinding = z.infer<typeof zHttpBinding>
 ```
 
-<sub>Source: `packages/ir/src/schema/http.ts:69`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L69)</sub>
 
 ---
 
@@ -494,7 +496,7 @@ type HttpBinding = z.infer<typeof zHttpBinding>
 type IdPrefix = (typeof ID_PREFIXES)[number]
 ```
 
-<sub>Source: `packages/ir/src/ids.ts:104`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L109)</sub>
 
 ---
 
@@ -504,7 +506,7 @@ type IdPrefix = (typeof ID_PREFIXES)[number]
 type IrBundle = z.infer<typeof zIrBundle>
 ```
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:141`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L141)</sub>
 
 ---
 
@@ -514,7 +516,7 @@ type IrBundle = z.infer<typeof zIrBundle>
 type IrBundleEnvelope = z.infer<typeof zIrBundleEnvelope>
 ```
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:135`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L135)</sub>
 
 ---
 
@@ -524,7 +526,7 @@ type IrBundleEnvelope = z.infer<typeof zIrBundleEnvelope>
 type IrBundlePayload = z.infer<typeof zIrBundlePayload>
 ```
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:70`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L70)</sub>
 
 ---
 
@@ -534,7 +536,7 @@ type IrBundlePayload = z.infer<typeof zIrBundlePayload>
 type IrModule = z.infer<typeof zModule>
 ```
 
-<sub>Source: `packages/ir/src/schema/module.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/module.ts#L48)</sub>
 
 ---
 
@@ -544,7 +546,7 @@ type IrModule = z.infer<typeof zModule>
 type IrSymbol = z.infer<typeof zSymbol>
 ```
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:107`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L107)</sub>
 
 ---
 
@@ -554,7 +556,7 @@ type IrSymbol = z.infer<typeof zSymbol>
 type Language = z.infer<typeof zLanguage>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:5`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L5)</sub>
 
 ---
 
@@ -564,7 +566,7 @@ type Language = z.infer<typeof zLanguage>
 type NormalizableLanguage = 'typescript' | 'javascript' | 'python' | 'csharp' | 'unknown'
 ```
 
-<sub>Source: `packages/ir/src/normalize.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/normalize.ts#L43)</sub>
 
 ---
 
@@ -574,7 +576,7 @@ type NormalizableLanguage = 'typescript' | 'javascript' | 'python' | 'csharp' | 
 type Parameter = z.infer<typeof zParameter>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:111`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L111)</sub>
 
 ---
 
@@ -584,7 +586,7 @@ type Parameter = z.infer<typeof zParameter>
 type RawModule = z.infer<typeof zRawModule>
 ```
 
-<sub>Source: `packages/ir/src/schema/module.ts:58`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/module.ts#L58)</sub>
 
 ---
 
@@ -594,7 +596,7 @@ type RawModule = z.infer<typeof zRawModule>
 type RawSymbol = z.infer<typeof zRawSymbol>
 ```
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:137`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L137)</sub>
 
 ---
 
@@ -604,7 +606,7 @@ type RawSymbol = z.infer<typeof zRawSymbol>
 type RepoRef = z.infer<typeof zRepoRef>
 ```
 
-<sub>Source: `packages/ir/src/schema/repo.ts:12`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/repo.ts#L12)</sub>
 
 ---
 
@@ -614,7 +616,7 @@ type RepoRef = z.infer<typeof zRepoRef>
 type Sensitivity = z.infer<typeof zSensitivity>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L39)</sub>
 
 ---
 
@@ -624,7 +626,7 @@ type Sensitivity = z.infer<typeof zSensitivity>
 type SourceRef = z.infer<typeof zSourceRef>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:59`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L59)</sub>
 
 ---
 
@@ -634,7 +636,7 @@ type SourceRef = z.infer<typeof zSourceRef>
 type SymbolEdges = z.infer<typeof zSymbolEdges>
 ```
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L27)</sub>
 
 ---
 
@@ -644,7 +646,7 @@ type SymbolEdges = z.infer<typeof zSymbolEdges>
 type SymbolKind = z.infer<typeof zSymbolKind>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L24)</sub>
 
 ---
 
@@ -654,7 +656,7 @@ type SymbolKind = z.infer<typeof zSymbolKind>
 type TypeRef = z.infer<typeof zTypeRef>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:101`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L101)</sub>
 
 ---
 
@@ -666,7 +668,7 @@ type TypeRef = z.infer<typeof zTypeRef>
 type Upcast = (input: unknown) => unknown
 ```
 
-<sub>Source: `packages/ir/src/upcast.ts:15`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L15)</sub>
 
 ---
 
@@ -676,7 +678,7 @@ type Upcast = (input: unknown) => unknown
 type VersionRef = z.infer<typeof zVersionRef>
 ```
 
-<sub>Source: `packages/ir/src/schema/repo.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/repo.ts#L25)</sub>
 
 ---
 
@@ -686,10 +688,10 @@ type VersionRef = z.infer<typeof zVersionRef>
 type Visibility = z.infer<typeof zVisibility>
 ```
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L27)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.function hash=04bd7fb10ebbad93 -->
+<!-- kna:generated:start id=api.function hash=5f7f32718e59f835 -->
 ### `assemble`
 
 ```typescript
@@ -702,7 +704,7 @@ assemble(input: AssembleInput): AssembleResult
 
 **Returns** `AssembleResult`
 
-<sub>Source: `packages/ir/src/assemble.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L44)</sub>
 
 ---
 
@@ -718,7 +720,7 @@ buildBundle(input: BuildBundleInput): {envelope: {orgId: string;ref: string;comm
 
 **Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: stri…`
 
-<sub>Source: `packages/ir/src/assemble.ts:236`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L269)</sub>
 
 ---
 
@@ -736,7 +738,7 @@ canonicalRemote(remoteUrl: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:58`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L58)</sub>
 
 ---
 
@@ -756,7 +758,7 @@ computeChunkId(symbolId: string, ordinal: number, contentHashHex: string): strin
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:99`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L104)</sub>
 
 ---
 
@@ -773,7 +775,7 @@ computeModuleId(orgId: string, key: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:68`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L73)</sub>
 
 ---
 
@@ -792,7 +794,7 @@ computeRepoId(orgId: string, remoteUrl: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:53`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L53)</sub>
 
 ---
 
@@ -808,7 +810,7 @@ computeSymbolId(input: SymbolIdInput): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:85`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L90)</sub>
 
 ---
 
@@ -826,7 +828,7 @@ contentHash(value: unknown): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/hash.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/hash.ts#L35)</sub>
 
 ---
 
@@ -844,7 +846,7 @@ degradedPlan(verdict: BreakerVerdict): {reindex: boolean;regenerate: boolean;req
 
 **Returns** `{ reindex: boolean; regenerate: boolean; requiresOperatorApproval: boolean; }`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:105`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L105)</sub>
 
 ---
 
@@ -863,7 +865,7 @@ detectBreakingChanges(before: {id: string;orgId: string;name: string;kind: "func
 
 **Returns** `BreakingChange[]`
 
-<sub>Source: `packages/ir/src/diff/breaking.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/breaking.ts#L21)</sub>
 
 ---
 
@@ -882,7 +884,7 @@ diffIr(before: {languages: ("unknown" | "typescript" | "javascript" | "python" |
 
 **Returns** `IrDiff`
 
-<sub>Source: `packages/ir/src/diff/diff.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/diff.ts#L19)</sub>
 
 ---
 
@@ -899,7 +901,7 @@ evaluateCircuitBreaker(diff: IrDiff, policy: CircuitBreakerPolicy): BreakerVerdi
 
 **Returns** `BreakerVerdict`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L48)</sub>
 
 ---
 
@@ -916,7 +918,7 @@ isId(value: string, prefix?: "repo_" | "mod_" | "sym_" | "chk_" | "doc_" | "org_
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/ids.ts:106`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L111)</sub>
 
 ---
 
@@ -935,7 +937,7 @@ isSensitivityDowngrade(before: {id: string;orgId: string;name: string;kind: "fun
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/diff/breaking.ts:182`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/breaking.ts#L182)</sub>
 
 ---
 
@@ -954,7 +956,25 @@ isWithinSupportWindow(candidate: string, current: string): boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/version.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/version.ts#L37)</sub>
+
+---
+
+### `makeDocComment`
+
+A complete doc comment.
+
+```typescript
+makeDocComment(overrides: Partial<{params: {name: string;type: string | null;description: string;}[];description: string | null;summary: string;returns: {type: string | null;de…): {params: {name: string;type: string | null;description: string;}[];description: string | null;summary: string;returns: {type: string | null;description: string;} | null;throws: {type: str…
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `overrides`? | `Partial<{ params: { name: string; type: string \| null; description: string; }[]; description: string \| null; summary: string; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, s…` |  (default `{}`) |
+
+**Returns** `{ params: { name: string; type: string \| null; description: string; }[]; description: string \| null; summary: string; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, string>; …`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/testing/fixtures.ts#L66)</sub>
 
 ---
 
@@ -970,7 +990,7 @@ makeModule(overrides: Partial<{id: string;orgId: string;name: string;path: strin
 
 **Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csha…`
 
-<sub>Source: `packages/ir/src/testing/fixtures.ts:69`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/testing/fixtures.ts#L93)</sub>
 
 ---
 
@@ -987,7 +1007,7 @@ makePayload(symbols: {id: string;orgId: string;name: string;kind: "function" | "
 
 **Returns** `{ languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }; repo: { id: string; orgId: string; remote: string; name: string; defau…`
 
-<sub>Source: `packages/ir/src/testing/fixtures.ts:94`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/testing/fixtures.ts#L118)</sub>
 
 ---
 
@@ -1003,7 +1023,7 @@ makeSymbol(overrides: Partial<{id: string;orgId: string;name: string;kind: "func
 
 **Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
 
-<sub>Source: `packages/ir/src/testing/fixtures.ts:15`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/testing/fixtures.ts#L15)</sub>
 
 ---
 
@@ -1021,7 +1041,7 @@ moduleKey(input: {repoId: string;path: string;ecosystem: EcosystemLike;packageNa
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L28)</sub>
 
 ---
 
@@ -1039,7 +1059,7 @@ normalizeDocText(text: string | null | undefined): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/normalize.ts:98`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/normalize.ts#L98)</sub>
 
 ---
 
@@ -1057,7 +1077,7 @@ normalizePath(p: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L41)</sub>
 
 ---
 
@@ -1076,7 +1096,7 @@ normalizeSignature(signature: string, language: NormalizableLanguage): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/normalize.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/normalize.ts#L51)</sub>
 
 ---
 
@@ -1094,7 +1114,7 @@ parseVersion(v: string): [number, number, number]
 
 **Returns** `[number, number, number]`
 
-<sub>Source: `packages/ir/src/version.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/version.ts#L30)</sub>
 
 ---
 
@@ -1113,7 +1133,7 @@ registerUpcast(fromMajor: number, fn: Upcast): void
 
 **Returns** `void`
 
-<sub>Source: `packages/ir/src/upcast.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L20)</sub>
 
 ---
 
@@ -1131,7 +1151,7 @@ sha256Hex(input: string): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/hash.ts:4`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/hash.ts#L4)</sub>
 
 ---
 
@@ -1150,7 +1170,7 @@ sha256Short(input: string, len: number): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/hash.ts:9`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/hash.ts#L9)</sub>
 
 ---
 
@@ -1168,7 +1188,7 @@ stableStringify(value: unknown): string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/hash.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/hash.ts#L18)</sub>
 
 ---
 
@@ -1184,7 +1204,7 @@ upcastBundle(input: unknown): UpcastResult
 
 **Returns** `UpcastResult`
 
-<sub>Source: `packages/ir/src/upcast.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L45)</sub>
 
 ---
 
@@ -1202,7 +1222,7 @@ weakestDepth(depths: ("shallow" | "semantic" | "artifact")[]): "shallow" | "sema
 
 **Returns** `"shallow" \| "semantic" \| "artifact"`
 
-<sub>Source: `packages/ir/src/assemble.ts:210`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L243)</sub>
 
 ---
 
@@ -1221,10 +1241,10 @@ withSignature(symbol: {id: string;orgId: string;name: string;kind: "function" | 
 
 **Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
 
-<sub>Source: `packages/ir/src/testing/fixtures.ts:60`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/testing/fixtures.ts#L84)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=452d81fdd6266b45 -->
+<!-- kna:generated:start id=api.interface hash=49f208485f2b2b8e -->
 ### `AssembleInput`
 
 IR assembly — the CLI's normalisation step (§3.1).
@@ -1233,7 +1253,7 @@ IR assembly — the CLI's normalisation step (§3.1).
 interface AssembleInput
 ```
 
-<sub>Source: `packages/ir/src/assemble.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L24)</sub>
 
 ---
 
@@ -1243,7 +1263,7 @@ interface AssembleInput
 interface AssembleResult
 ```
 
-<sub>Source: `packages/ir/src/assemble.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L36)</sub>
 
 ---
 
@@ -1253,7 +1273,7 @@ interface AssembleResult
 interface BreakingChange
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:108`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L108)</sub>
 
 ---
 
@@ -1263,7 +1283,7 @@ interface BreakingChange
 interface BuildBundleInput
 ```
 
-<sub>Source: `packages/ir/src/assemble.ts:217`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L250)</sub>
 
 ---
 
@@ -1273,7 +1293,7 @@ interface BuildBundleInput
 interface ChangeAction
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L22)</sub>
 
 ---
 
@@ -1285,7 +1305,7 @@ interface ChangeAction
 interface CircuitBreakerPolicy
 ```
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L14)</sub>
 
 ---
 
@@ -1295,7 +1315,7 @@ interface CircuitBreakerPolicy
 interface IrDiff
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:126`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L126)</sub>
 
 ---
 
@@ -1305,7 +1325,7 @@ interface IrDiff
 interface ModuleDiffSummary
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:115`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L115)</sub>
 
 ---
 
@@ -1315,7 +1335,7 @@ interface ModuleDiffSummary
 interface SymbolChange
 ```
 
-<sub>Source: `packages/ir/src/diff/types.ts:78`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L78)</sub>
 
 ---
 
@@ -1325,7 +1345,7 @@ interface SymbolChange
 interface SymbolIdInput
 ```
 
-<sub>Source: `packages/ir/src/ids.ts:72`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L77)</sub>
 
 ---
 
@@ -1335,10 +1355,10 @@ interface SymbolIdInput
 interface UpcastResult
 ```
 
-<sub>Source: `packages/ir/src/upcast.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L36)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=e696c95632edd882 -->
+<!-- kna:generated:start id=api.property hash=67c18ae165d95cfb -->
 ### `apiSpecs`
 
 ```typescript
@@ -1347,7 +1367,7 @@ apiSpecs?: ApiSpec[]
 
 **Returns** `{ version: string; moduleId: string; format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; specId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[] \| undefined`
 
-<sub>Source: `packages/ir/src/assemble.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L30)</sub>
 
 ---
 
@@ -1359,7 +1379,7 @@ includeSource: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/assemble.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L33)</sub>
 
 ---
 
@@ -1371,7 +1391,7 @@ modules: Array<{module: RawModule;symbols: RawSymbol[]}>
 
 **Returns** `{ module: { name: string; path: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" …`
 
-<sub>Source: `packages/ir/src/assemble.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L29)</sub>
 
 ---
 
@@ -1383,7 +1403,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/assemble.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L25)</sub>
 
 ---
 
@@ -1395,7 +1415,7 @@ projectIds: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/ir/src/assemble.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L28)</sub>
 
 ---
 
@@ -1407,7 +1427,7 @@ repo: RepoRef
 
 **Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L26)</sub>
 
 ---
 
@@ -1421,7 +1441,7 @@ sensitivityByModulePath?: Record<string, Sensitivity>
 
 **Returns** `Record<string, "public" \| "internal" \| "confidential" \| "restricted"> \| undefined`
 
-<sub>Source: `packages/ir/src/assemble.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L32)</sub>
 
 ---
 
@@ -1433,7 +1453,7 @@ version: VersionRef
 
 **Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L27)</sub>
 
 ---
 
@@ -1445,7 +1465,7 @@ modules: IrModule[]
 
 **Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csha…`
 
-<sub>Source: `packages/ir/src/assemble.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L37)</sub>
 
 ---
 
@@ -1457,7 +1477,7 @@ symbols: IrSymbol[]
 
 **Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
 
-<sub>Source: `packages/ir/src/assemble.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L38)</sub>
 
 ---
 
@@ -1471,7 +1491,7 @@ unresolvedCount: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/assemble.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L41)</sub>
 
 ---
 
@@ -1485,7 +1505,7 @@ confidence: 'certain' | 'likely'
 
 **Returns** `"certain" \| "likely"`
 
-<sub>Source: `packages/ir/src/diff/types.ts:112`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L112)</sub>
 
 ---
 
@@ -1497,7 +1517,7 @@ detail: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:110`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L110)</sub>
 
 ---
 
@@ -1509,7 +1529,7 @@ kind: BreakingKind
 
 **Returns** `BreakingKind`
 
-<sub>Source: `packages/ir/src/diff/types.ts:109`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L109)</sub>
 
 ---
 
@@ -1521,7 +1541,7 @@ apiSpecs: ApiSpec[]
 
 **Returns** `{ version: string; moduleId: string; format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; specId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
 
-<sub>Source: `packages/ir/src/assemble.ts:221`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L254)</sub>
 
 ---
 
@@ -1533,7 +1553,7 @@ environment: 'ci' | 'local' | 'replay'
 
 **Returns** `"local" \| "ci" \| "replay"`
 
-<sub>Source: `packages/ir/src/assemble.ts:227`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L260)</sub>
 
 ---
 
@@ -1545,7 +1565,7 @@ includesSource: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/assemble.ts:225`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L258)</sub>
 
 ---
 
@@ -1557,7 +1577,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/assemble.ts:218`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L251)</sub>
 
 ---
 
@@ -1569,7 +1589,7 @@ producerVersion: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/assemble.ts:226`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L259)</sub>
 
 ---
 
@@ -1581,7 +1601,7 @@ repo: RepoRef
 
 **Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:219`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L252)</sub>
 
 ---
 
@@ -1593,7 +1613,7 @@ scan: IrBundlePayload['scan']
 
 **Returns** `{ scannerVersion: string; rulesetHash: string; filesScanned: number; secretsFound: number; piiFound: number; pathsExcluded: number; injectionPatternsFlagged: number; passed: boolean; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:224`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L257)</sub>
 
 ---
 
@@ -1605,7 +1625,7 @@ services: IrBundlePayload['services']
 
 **Returns** `{ name: string; kind: "service" \| "database" \| "queue" \| "cache" \| "external" \| "job"; moduleId: string \| null; image: string \| null; dependsOn: string[]; ports: number[]; source: string; }[]`
 
-<sub>Source: `packages/ir/src/assemble.ts:222`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L255)</sub>
 
 ---
 
@@ -1619,7 +1639,7 @@ sign: (payloadHash: string, envelopeClaims: Record<string, string>) => IrBundle[
 
 **Returns** `(payloadHash: string, envelopeClaims: Record<string, string>) => { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: st…`
 
-<sub>Source: `packages/ir/src/assemble.ts:229`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L262)</sub>
 
 ---
 
@@ -1631,7 +1651,7 @@ toolchain: IrBundlePayload['toolchain']
 
 **Returns** `{ detected: Record<string, string \| null>; tiersRun: ("tier0" \| "tier1" \| "tier2")[]; degradations: { module: string; reason: string; missing: string \| null; }[]; durationMs: number; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:223`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L256)</sub>
 
 ---
 
@@ -1643,7 +1663,7 @@ ttlSeconds?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/ir/src/assemble.ts:233`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L266)</sub>
 
 ---
 
@@ -1655,7 +1675,7 @@ version: VersionRef
 
 **Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }`
 
-<sub>Source: `packages/ir/src/assemble.ts:220`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/assemble.ts#L253)</sub>
 
 ---
 
@@ -1669,7 +1689,7 @@ potentiallyBreaking: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/diff/types.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L28)</sub>
 
 ---
 
@@ -1683,7 +1703,7 @@ priority: 'low' | 'normal' | 'high'
 
 **Returns** `"low" \| "normal" \| "high"`
 
-<sub>Source: `packages/ir/src/diff/types.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L30)</sub>
 
 ---
 
@@ -1697,7 +1717,7 @@ regenerate: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/diff/types.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L26)</sub>
 
 ---
 
@@ -1711,7 +1731,7 @@ reindex: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/diff/types.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L24)</sub>
 
 ---
 
@@ -1725,7 +1745,7 @@ exemptFirstIndex: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L23)</sub>
 
 ---
 
@@ -1739,7 +1759,7 @@ maxChangedSymbols: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L19)</sub>
 
 ---
 
@@ -1753,7 +1773,7 @@ maxChurnRatio: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L16)</sub>
 
 ---
 
@@ -1767,7 +1787,7 @@ maxRegenerations: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L21)</sub>
 
 ---
 
@@ -1781,7 +1801,7 @@ smallRepoFloor: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L25)</sub>
 
 ---
 
@@ -1793,7 +1813,7 @@ changes: SymbolChange[]
 
 **Returns** `SymbolChange[]`
 
-<sub>Source: `packages/ir/src/diff/types.ts:130`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L130)</sub>
 
 ---
 
@@ -1805,7 +1825,7 @@ fromCommitSha: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `packages/ir/src/diff/types.ts:128`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L128)</sub>
 
 ---
 
@@ -1817,7 +1837,7 @@ modules: ModuleDiffSummary[]
 
 **Returns** `ModuleDiffSummary[]`
 
-<sub>Source: `packages/ir/src/diff/types.ts:131`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L131)</sub>
 
 ---
 
@@ -1829,7 +1849,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:127`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L127)</sub>
 
 ---
 
@@ -1841,7 +1861,7 @@ toCommitSha: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:129`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L129)</sub>
 
 ---
 
@@ -1853,7 +1873,7 @@ totals: {symbolsBefore: number;symbolsAfter: number;added: number;removed: numbe
 
 **Returns** `{ symbolsBefore: number; symbolsAfter: number; added: number; removed: number; changed: number; unchanged: number; breaking: number; reindexCount: number; regenerateCount: number; churnRatio: number; }`
 
-<sub>Source: `packages/ir/src/diff/types.ts:132`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L132)</sub>
 
 ---
 
@@ -1865,7 +1885,7 @@ added: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:117`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L117)</sub>
 
 ---
 
@@ -1877,7 +1897,7 @@ breaking: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:121`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L121)</sub>
 
 ---
 
@@ -1889,7 +1909,7 @@ changed: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:119`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L119)</sub>
 
 ---
 
@@ -1903,7 +1923,7 @@ churnRatio: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:123`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L123)</sub>
 
 ---
 
@@ -1915,7 +1935,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:116`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L116)</sub>
 
 ---
 
@@ -1927,7 +1947,7 @@ removed: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:118`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L118)</sub>
 
 ---
 
@@ -1939,7 +1959,7 @@ unchanged: number
 
 **Returns** `number`
 
-<sub>Source: `packages/ir/src/diff/types.ts:120`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L120)</sub>
 
 ---
 
@@ -1951,7 +1971,7 @@ action: ChangeAction
 
 **Returns** `ChangeAction`
 
-<sub>Source: `packages/ir/src/diff/types.ts:83`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L83)</sub>
 
 ---
 
@@ -1963,7 +1983,7 @@ after: IrSymbol | null
 
 **Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
 
-<sub>Source: `packages/ir/src/diff/types.ts:88`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L88)</sub>
 
 ---
 
@@ -1975,7 +1995,7 @@ before: IrSymbol | null
 
 **Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
 
-<sub>Source: `packages/ir/src/diff/types.ts:87`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L87)</sub>
 
 ---
 
@@ -1987,7 +2007,7 @@ breaking: BreakingChange[]
 
 **Returns** `BreakingChange[]`
 
-<sub>Source: `packages/ir/src/diff/types.ts:86`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L86)</sub>
 
 ---
 
@@ -1999,7 +2019,7 @@ changeClass: ChangeClass
 
 **Returns** `ChangeClass`
 
-<sub>Source: `packages/ir/src/diff/types.ts:82`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L82)</sub>
 
 ---
 
@@ -2011,7 +2031,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:81`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L81)</sub>
 
 ---
 
@@ -2023,7 +2043,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:80`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L80)</sub>
 
 ---
 
@@ -2037,7 +2057,7 @@ reasons: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/ir/src/diff/types.ts:85`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L85)</sub>
 
 ---
 
@@ -2049,7 +2069,7 @@ symbolId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/diff/types.ts:79`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L79)</sub>
 
 ---
 
@@ -2061,7 +2081,7 @@ kind: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:76`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L81)</sub>
 
 ---
 
@@ -2073,7 +2093,7 @@ language: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:75`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L80)</sub>
 
 ---
 
@@ -2085,7 +2105,7 @@ moduleKey: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:74`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L79)</sub>
 
 ---
 
@@ -2097,7 +2117,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:73`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L78)</sub>
 
 ---
 
@@ -2111,7 +2131,7 @@ overloadDiscriminator?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>Source: `packages/ir/src/ids.ts:82`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L87)</sub>
 
 ---
 
@@ -2123,7 +2143,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/ids.ts:77`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/ids.ts#L82)</sub>
 
 ---
 
@@ -2135,7 +2155,7 @@ bundle: IrBundle
 
 **Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: stri…`
 
-<sub>Source: `packages/ir/src/upcast.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L37)</sub>
 
 ---
 
@@ -2147,7 +2167,7 @@ fromVersion: string
 
 **Returns** `string`
 
-<sub>Source: `packages/ir/src/upcast.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L40)</sub>
 
 ---
 
@@ -2161,7 +2181,7 @@ upcasted: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/ir/src/upcast.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L39)</sub>
 
 ---
 
@@ -2175,10 +2195,10 @@ warnings: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `packages/ir/src/upcast.ts:42`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L42)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=64f13f0aa47738be -->
+<!-- kna:generated:start id=api.constant hash=3ce20ecdae368e13 -->
 ### `CHANGE_ACTIONS`
 
 ```typescript
@@ -2187,7 +2207,7 @@ const CHANGE_ACTIONS: Record<ChangeClass, ChangeAction>
 
 **Returns** `Record<ChangeClass, ChangeAction>`
 
-<sub>Source: `packages/ir/src/diff/types.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/types.ts#L33)</sub>
 
 ---
 
@@ -2199,7 +2219,7 @@ const DEFAULT_CIRCUIT_BREAKER: CircuitBreakerPolicy
 
 **Returns** `CircuitBreakerPolicy`
 
-<sub>Source: `packages/ir/src/diff/circuit-breaker.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/diff/circuit-breaker.ts#L28)</sub>
 
 ---
 
@@ -2213,7 +2233,7 @@ const IR_SCHEMA_MIN_SUPPORTED: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>Source: `packages/ir/src/version.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/version.ts#L20)</sub>
 
 ---
 
@@ -2227,7 +2247,7 @@ const IR_SCHEMA_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>Source: `packages/ir/src/version.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/version.ts#L14)</sub>
 
 ---
 
@@ -2239,7 +2259,7 @@ const SENSITIVITY_RANK: Record<"public" | "internal" | "confidential" | "restric
 
 **Returns** `Record<"public" \| "internal" \| "confidential" \| "restricted", number>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L41)</sub>
 
 ---
 
@@ -2253,7 +2273,7 @@ const SYMBOL_ID_ALGORITHM_VERSION: 2
 
 **Returns** `2`
 
-<sub>Source: `packages/ir/src/version.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/version.ts#L27)</sub>
 
 ---
 
@@ -2267,7 +2287,7 @@ const zAnalysisDepth: z.ZodEnum<["shallow", "semantic", "artifact"]>
 
 **Returns** `ZodEnum<["shallow", "semantic", "artifact"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L34)</sub>
 
 ---
 
@@ -2281,7 +2301,7 @@ const zApiSpec: z.ZodObject<{specId: z.ZodString;moduleId: z.ZodString;title: z.
 
 **Returns** `ZodObject<{ specId: ZodString; moduleId: ZodString; title: ZodString; version: ZodString; format: ZodEnum<["openapi3", "openapi31", "swagger2", "asyncapi", "graphql", "grpc"]>; document: ZodUnknown; documentHash: ZodString; sourcePath: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { ve…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:8`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L8)</sub>
 
 ---
 
@@ -2295,7 +2315,7 @@ const zBundleSignature: z.ZodObject<{algorithm: z.ZodEnum<["sigstore-keyless", "
 
 **Returns** `ZodObject<{ algorithm: ZodEnum<["sigstore-keyless", "hmac-sha256", "ed25519", "unsigned-dev"]>; value: ZodString; signerClaims: ZodDefault<ZodObject<{ issuer: ZodDefault<ZodNullable<ZodString>>; subject: ZodDefault<ZodNullable<ZodString>>; repository: ZodDefault<ZodNullable<ZodString>>; ref: ZodDefa…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:92`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L92)</sub>
 
 ---
 
@@ -2307,7 +2327,7 @@ const zDeprecation: z.ZodObject<{since: z.ZodDefault<z.ZodNullable<z.ZodString>>
 
 **Returns** `ZodObject<{ since: ZodDefault<ZodNullable<ZodString>>; reason: ZodDefault<ZodString>; replacement: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { since: string \| null; reason: string; replacement: string \| null; }, { since?: string \| null \| undefined; reason?: string \| undefined; repl…`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:83`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L83)</sub>
 
 ---
 
@@ -2319,7 +2339,7 @@ const zDocComment: z.ZodObject<{summary: z.ZodString;description: z.ZodDefault<z
 
 **Returns** `ZodObject<{ summary: ZodString; description: ZodDefault<ZodNullable<ZodString>>; params: ZodDefault<ZodArray<ZodObject<{ name: ZodString; type: ZodNullable<ZodString>; description: ZodString; }, "strip", ZodTypeAny, { name: string; type: string \| null; description: string; }, { name: string; type: s…`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:61`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L61)</sub>
 
 ---
 
@@ -2331,7 +2351,7 @@ const zEcosystem: z.ZodEnum<["npm", "nuget", "pypi", "go", "maven", "none"]>
 
 **Returns** `ZodEnum<["npm", "nuget", "pypi", "go", "maven", "none"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L48)</sub>
 
 ---
 
@@ -2343,7 +2363,7 @@ const zHttpBinding: z.ZodObject<{method: z.ZodEnum<["GET", "POST", "PUT", "PATCH
 
 **Returns** `ZodObject<{ method: ZodEnum<["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "TRACE"]>; route: ZodString; operationId: ZodDefault<ZodNullable<ZodString>>; summary: ZodDefault<ZodNullable<ZodString>>; tags: ZodDefault<ZodArray<ZodString, "many">>; parameters: ZodDefault<ZodArray<ZodObject…`
 
-<sub>Source: `packages/ir/src/schema/http.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L51)</sub>
 
 ---
 
@@ -2355,7 +2375,7 @@ const zHttpBody: z.ZodObject<{contentType: z.ZodString;schemaRef: z.ZodDefault<z
 
 **Returns** `ZodObject<{ contentType: ZodString; schemaRef: ZodDefault<ZodNullable<ZodString>>; schema: ZodDefault<ZodNullable<ZodUnknown>>; required: ZodDefault<ZodBoolean>; example: ZodDefault<ZodNullable<ZodUnknown>>; }, "strip", ZodTypeAny, { required: boolean; contentType: string; schemaRef: string \| null; …`
 
-<sub>Source: `packages/ir/src/schema/http.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L28)</sub>
 
 ---
 
@@ -2369,7 +2389,7 @@ const zHttpMethod: z.ZodEnum<["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "
 
 **Returns** `ZodEnum<["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "TRACE"]>`
 
-<sub>Source: `packages/ir/src/schema/http.ts:8`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L8)</sub>
 
 ---
 
@@ -2381,7 +2401,7 @@ const zHttpParameter: z.ZodObject<{name: z.ZodString;in: z.ZodEnum<["path", "que
 
 **Returns** `ZodObject<{ name: ZodString; in: ZodEnum<["path", "query", "header", "cookie"]>; required: ZodDefault<ZodBoolean>; schema: ZodDefault<ZodNullable<ZodUnknown>>; description: ZodDefault<ZodNullable<ZodString>>; deprecated: ZodDefault<ZodBoolean>; }, "strip", ZodTypeAny, { name: string; description: st…`
 
-<sub>Source: `packages/ir/src/schema/http.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L19)</sub>
 
 ---
 
@@ -2393,7 +2413,7 @@ const zHttpResponse: z.ZodObject<{status: z.ZodString;description: z.ZodDefault<
 
 **Returns** `ZodObject<{ status: ZodString; description: ZodDefault<ZodString>; contentType: ZodDefault<ZodNullable<ZodString>>; schemaRef: ZodDefault<ZodNullable<ZodString>>; schema: ZodDefault<ZodNullable<ZodUnknown>>; headers: ZodDefault<ZodRecord<ZodString, ZodString>>; }, "strip", ZodTypeAny, { status: stri…`
 
-<sub>Source: `packages/ir/src/schema/http.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L36)</sub>
 
 ---
 
@@ -2405,7 +2425,7 @@ const zIrBundle: z.ZodObject<{envelope: z.ZodObject<{irSchemaVersion: z.ZodStrin
 
 **Returns** `ZodObject<{ envelope: ZodObject<{ irSchemaVersion: ZodString; bundleId: ZodString; orgId: ZodString; repoId: ZodString; commitSha: ZodString; ref: ZodString; nonce: ZodString; issuedAt: ZodString; expiresAt: ZodString; producer: ZodObject<{ name: ZodDefault<ZodString>; version: ZodString; environmen…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:137`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L137)</sub>
 
 ---
 
@@ -2417,7 +2437,7 @@ const zIrBundleEnvelope: z.ZodObject<{irSchemaVersion: z.ZodString;bundleId: z.Z
 
 **Returns** `ZodObject<{ irSchemaVersion: ZodString; bundleId: ZodString; orgId: ZodString; repoId: ZodString; commitSha: ZodString; ref: ZodString; nonce: ZodString; issuedAt: ZodString; expiresAt: ZodString; producer: ZodObject<{ name: ZodDefault<ZodString>; version: ZodString; environment: ZodEnum<["ci", "loc…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:112`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L112)</sub>
 
 ---
 
@@ -2429,7 +2449,7 @@ const zIrBundlePayload: z.ZodObject<{repo: z.ZodObject<{id: z.ZodString;orgId: z
 
 **Returns** `ZodObject<{ repo: ZodObject<{ id: ZodString; orgId: ZodString; remote: ZodString; name: ZodString; defaultBranch: ZodDefault<ZodString>; provider: ZodDefault<ZodEnum<["github", "azuredevops", "gitlab", "bitbucket", "local"]>>; }, "strip", ZodTypeAny, { id: string; orgId: string; remote: string; name…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:55`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L55)</sub>
 
 ---
 
@@ -2443,7 +2463,7 @@ const zLanguage: z.ZodEnum<["typescript", "javascript", "python", "csharp", "unk
 
 **Returns** `ZodEnum<["typescript", "javascript", "python", "csharp", "unknown"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:4`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L4)</sub>
 
 ---
 
@@ -2457,7 +2477,7 @@ const zModule: z.ZodObject<{id: z.ZodString;key: z.ZodString;orgId: z.ZodString;
 
 **Returns** `ZodObject<{ id: ZodString; key: ZodString; orgId: ZodString; repoId: ZodString; projectIds: ZodDefault<ZodArray<ZodString, "many">>; path: ZodString; name: ZodString; ecosystem: ZodDefault<ZodEnum<["npm", "nuget", "pypi", "go", "maven", "none"]>>; packageName: ZodDefault<ZodNullable<ZodString>>; pac…`
 
-<sub>Source: `packages/ir/src/schema/module.ts:9`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/module.ts#L9)</sub>
 
 ---
 
@@ -2469,7 +2489,7 @@ const zParameter: z.ZodObject<{name: z.ZodString;type: z.ZodDefault<z.ZodNullabl
 
 **Returns** `ZodObject<{ name: ZodString; type: ZodDefault<ZodNullable<ZodObject<{ text: ZodString; symbolId: ZodDefault<ZodNullable<ZodString>>; package: ZodDefault<ZodNullable<ZodString>>; nullable: ZodDefault<ZodBoolean>; isArray: ZodDefault<ZodBoolean>; typeArguments: ZodDefault<ZodArray<ZodString, "many">>;…`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:103`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L103)</sub>
 
 ---
 
@@ -2481,7 +2501,7 @@ const zRawModule: z.ZodObject<Omit<{id: z.ZodString;key: z.ZodString;orgId: z.Zo
 
 **Returns** `ZodObject<Omit<{ id: ZodString; key: ZodString; orgId: ZodString; repoId: ZodString; projectIds: ZodDefault<ZodArray<ZodString, "many">>; path: ZodString; name: ZodString; ecosystem: ZodDefault<ZodEnum<["npm", "nuget", "pypi", "go", "maven", "none"]>>; packageName: ZodDefault<ZodNullable<ZodString>>…`
 
-<sub>Source: `packages/ir/src/schema/module.ts:50`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/module.ts#L50)</sub>
 
 ---
 
@@ -2495,7 +2515,7 @@ const zRawSymbol: z.ZodObject<Omit<{name: z.ZodString;kind: z.ZodEnum<["class", 
 
 **Returns** `ZodObject<Omit<{ name: ZodString; kind: ZodEnum<["class", "interface", "function", "method", "property", "field", "enum", "enumMember", "type", "constant", "module", "namespace", "endpoint", "record", "struct"]>; visibility: ZodEnum<["public", "protected", "internal", "private"]>; analysisDepth: Zod…`
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:110`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L110)</sub>
 
 ---
 
@@ -2507,7 +2527,7 @@ const zRepoRef: z.ZodObject<{id: z.ZodString;orgId: z.ZodString;remote: z.ZodStr
 
 **Returns** `ZodObject<{ id: ZodString; orgId: ZodString; remote: ZodString; name: ZodString; defaultBranch: ZodDefault<ZodString>; provider: ZodDefault<ZodEnum<["github", "azuredevops", "gitlab", "bitbucket", "local"]>>; }, "strip", ZodTypeAny, { id: string; orgId: string; remote: string; name: string; defaultB…`
 
-<sub>Source: `packages/ir/src/schema/repo.ts:3`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/repo.ts#L3)</sub>
 
 ---
 
@@ -2521,7 +2541,7 @@ const zScanReport: z.ZodObject<{scannerVersion: z.ZodString;rulesetHash: z.ZodSt
 
 **Returns** `ZodObject<{ scannerVersion: ZodString; rulesetHash: ZodString; filesScanned: ZodNumber; secretsFound: ZodDefault<ZodNumber>; piiFound: ZodDefault<ZodNumber>; pathsExcluded: ZodDefault<ZodNumber>; injectionPatternsFlagged: ZodDefault<ZodNumber>; passed: ZodBoolean; }, "strip", ZodTypeAny, { scannerVe…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L44)</sub>
 
 ---
 
@@ -2533,7 +2553,7 @@ const zSecurityRequirement: z.ZodObject<{scheme: z.ZodString;type: z.ZodEnum<["a
 
 **Returns** `ZodObject<{ scheme: ZodString; type: ZodEnum<["apiKey", "http", "oauth2", "openIdConnect", "mutualTLS", "unknown"]>; scopes: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { type: "unknown" \| "apiKey" \| "http" \| "oauth2" \| "openIdConnect" \| "mutualTLS"; scheme: string; scopes: stri…`
 
-<sub>Source: `packages/ir/src/schema/http.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/http.ts#L45)</sub>
 
 ---
 
@@ -2547,7 +2567,7 @@ const zSensitivity: z.ZodEnum<["public", "internal", "confidential", "restricted
 
 **Returns** `ZodEnum<["public", "internal", "confidential", "restricted"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L38)</sub>
 
 ---
 
@@ -2561,7 +2581,7 @@ const zServiceManifest: z.ZodObject<{name: z.ZodString;kind: z.ZodEnum<["service
 
 **Returns** `ZodObject<{ name: ZodString; kind: ZodEnum<["service", "database", "queue", "cache", "external", "job"]>; moduleId: ZodDefault<ZodNullable<ZodString>>; image: ZodDefault<ZodNullable<ZodString>>; dependsOn: ZodDefault<ZodArray<ZodString, "many">>; ports: ZodDefault<ZodArray<ZodNumber, "many">>; sourc…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L22)</sub>
 
 ---
 
@@ -2573,7 +2593,7 @@ const zSourceRef: z.ZodObject<{path: z.ZodString;startLine: z.ZodNumber;endLine:
 
 **Returns** `ZodObject<{ path: ZodString; startLine: ZodNumber; endLine: ZodNumber; startColumn: ZodOptional<ZodNumber>; endColumn: ZodOptional<ZodNumber>; commitSha: ZodString; }, "strip", ZodTypeAny, { path: string; commitSha: string; startLine: number; endLine: number; startColumn?: number \| undefined; endCol…`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L51)</sub>
 
 ---
 
@@ -2585,7 +2605,7 @@ const zSymbol: z.ZodObject<{id: z.ZodString;previousIds: z.ZodDefault<z.ZodArray
 
 **Returns** `ZodObject<{ id: ZodString; previousIds: ZodDefault<ZodArray<ZodString, "many">>; qualifiedName: ZodString; name: ZodString; kind: ZodEnum<["class", "interface", "function", "method", "property", "field", "enum", "enumMember", "type", "constant", "module", "namespace", "endpoint", "record", "struct"]…`
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L40)</sub>
 
 ---
 
@@ -2599,7 +2619,7 @@ const zSymbolEdges: z.ZodObject<{calls: z.ZodDefault<z.ZodArray<z.ZodString, "ma
 
 **Returns** `ZodObject<{ calls: ZodDefault<ZodArray<ZodString, "many">>; implements: ZodDefault<ZodArray<ZodString, "many">>; extends: ZodDefault<ZodArray<ZodString, "many">>; references: ZodDefault<ZodArray<ZodString, "many">>; usedBy: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { calls: st…`
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L20)</sub>
 
 ---
 
@@ -2611,7 +2631,7 @@ const zSymbolKind: z.ZodEnum<["class", "interface", "function", "method", "prope
 
 **Returns** `ZodEnum<["class", "interface", "function", "method", "property", "field", "enum", "enumMember", "type", "constant", "module", "namespace", "endpoint", "record", "struct"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:7`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L7)</sub>
 
 ---
 
@@ -2625,7 +2645,7 @@ const zToolchainReport: z.ZodObject<{detected: z.ZodDefault<z.ZodRecord<z.ZodStr
 
 **Returns** `ZodObject<{ detected: ZodDefault<ZodRecord<ZodString, ZodNullable<ZodString>>>; tiersRun: ZodDefault<ZodArray<ZodEnum<["tier0", "tier1", "tier2"]>, "many">>; degradations: ZodDefault<ZodArray<ZodObject<{ module: ZodString; reason: ZodString; missing: ZodNullable<ZodString>; }, "strip", ZodTypeAny, {…`
 
-<sub>Source: `packages/ir/src/schema/bundle.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/bundle.ts#L33)</sub>
 
 ---
 
@@ -2637,7 +2657,7 @@ const zTypeRef: z.ZodObject<{text: z.ZodString;symbolId: z.ZodDefault<z.ZodNulla
 
 **Returns** `ZodObject<{ text: ZodString; symbolId: ZodDefault<ZodNullable<ZodString>>; package: ZodDefault<ZodNullable<ZodString>>; nullable: ZodDefault<ZodBoolean>; isArray: ZodDefault<ZodBoolean>; typeArguments: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { text: string; symbolId: string …`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:90`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L90)</sub>
 
 ---
 
@@ -2651,7 +2671,7 @@ const zUnresolvedRef: z.ZodObject<{name: z.ZodString;kind: z.ZodEnum<["call", "t
 
 **Returns** `ZodObject<{ name: ZodString; kind: ZodEnum<["call", "type", "import", "extends", "implements"]>; hint: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { name: string; kind: "type" \| "implements" \| "extends" \| "call" \| "import"; hint: string \| null; }, { name: string; kind: "type" \| "impl…`
 
-<sub>Source: `packages/ir/src/schema/symbol.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/symbol.ts#L34)</sub>
 
 ---
 
@@ -2665,7 +2685,7 @@ const zVersionRef: z.ZodObject<{ref: z.ZodString;kind: z.ZodEnum<["branch", "tag
 
 **Returns** `ZodObject<{ ref: ZodString; kind: ZodEnum<["branch", "tag"]>; commitSha: ZodString; committedAt: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }, { ref: string; kind: "branch" \| "tag"; commitSha: stri…`
 
-<sub>Source: `packages/ir/src/schema/repo.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/repo.ts#L19)</sub>
 
 ---
 
@@ -2677,20 +2697,20 @@ const zVisibility: z.ZodEnum<["public", "protected", "internal", "private"]>
 
 **Returns** `ZodEnum<["public", "protected", "internal", "private"]>`
 
-<sub>Source: `packages/ir/src/schema/primitives.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/schema/primitives.ts#L26)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.class hash=344d758ff35c7177 -->
+<!-- kna:generated:start id=api.class hash=069f038f10adc789 -->
 ### `IrVersionError`
 
 ```typescript
 class IrVersionError extends Error
 ```
 
-<sub>Source: `packages/ir/src/upcast.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L24)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=c4e349d880573680 -->
+<!-- kna:generated:start id=api.method hash=c7a7ebfabaea30aa -->
 ### `constructor`
 
 ```typescript
@@ -2704,5 +2724,5 @@ constructor(message: string, readonly received: string, readonly minimum: string
 | `minimum` | `string` |  |
 | `current` | `string` |  |
 
-<sub>Source: `packages/ir/src/upcast.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/ir/src/upcast.ts#L25)</sub>
 <!-- kna:generated:end id=api.method -->
