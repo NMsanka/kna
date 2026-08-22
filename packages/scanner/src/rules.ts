@@ -159,7 +159,24 @@ export const PII_RULES: Rule[] = [
     description: 'Email address',
     category: 'pii',
     severity: 'medium',
-    pattern: /\b[A-Za-z0-9._%+-]+@(?!example\.|test\.|localhost)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g,
+    /*
+     * An address that cannot receive mail identifies nobody, so it is not the thing this rule
+     * exists to catch. Two conventions cover almost all of them: a `no-reply` local part, and a
+     * `noreply.` label in the domain — `kna-docs@users.noreply.github.com` is what every git
+     * host puts in a bot's commits, and this repository's own generated workflow contains one,
+     * which blocked `kna generate` and `kna publish` on this repo outright.
+     *
+     * Worth being precise rather than reaching for the allowlist. A gate that blocks a publish
+     * over a machine address teaches people that the allowlist is how you get work done, and an
+     * entry added in irritation is how a real credential gets waved through later. Same reason
+     * `credit-card` checks the issuer prefix instead of trusting Luhn alone.
+     *
+     * The left edge is a lookbehind rather than `\b` on purpose. With `\b`, rejecting the
+     * address at `no-reply@` just moves the engine one character along to match `reply@`, and
+     * the exemption silently does nothing.
+     */
+    pattern:
+      /(?<![A-Za-z0-9._%+-])(?!(?:no-?reply|donotreply|do-not-reply)@)[A-Za-z0-9._%+-]+@(?!example\.|test\.|localhost)(?![A-Za-z0-9.-]*\bnoreply\.)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g,
   },
   {
     id: 'credit-card',

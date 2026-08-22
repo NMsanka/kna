@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_627827a11e1b8647a8d1d3512bb1008c
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -93,7 +93,7 @@ provenance:
 | Public symbols | 34 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=d0cc0ddba1c175f6 -->
+<!-- kna:generated:start id=api.interface hash=162c6f2c6f81bc6e -->
 ### `AuditEvent`
 
 Audit recording.
@@ -102,7 +102,7 @@ Audit recording.
 interface AuditEvent
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L22)</sub>
 
 ---
 
@@ -114,10 +114,10 @@ interface AuditEvent
 interface BreadthPolicy
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L206)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L206)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=42c59ef30bb2548a -->
+<!-- kna:generated:start id=api.property hash=5eac588721d123dd -->
 ### `action`
 
 ```typescript
@@ -126,7 +126,7 @@ action: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L24)</sub>
 
 ---
 
@@ -138,7 +138,7 @@ actorId?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L26)</sub>
 
 ---
 
@@ -150,7 +150,7 @@ actorSubject?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L27)</sub>
 
 ---
 
@@ -162,7 +162,7 @@ actorType: 'user' | 'ci' | 'mcp' | 'system' | 'admin' | 'partner'
 
 **Returns** `"user" \| "ci" \| "mcp" \| "system" \| "admin" \| "partner"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L25)</sub>
 
 ---
 
@@ -176,7 +176,7 @@ chunkIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L33)</sub>
 
 ---
 
@@ -188,7 +188,7 @@ detail?: Record<string, unknown>
 
 **Returns** `Record<string, unknown> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L31)</sub>
 
 ---
 
@@ -200,7 +200,7 @@ llmTraceId?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L36)</sub>
 
 ---
 
@@ -212,7 +212,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L23)</sub>
 
 ---
 
@@ -224,7 +224,7 @@ outcome?: 'success' | 'denied' | 'error'
 
 **Returns** `"error" \| "success" \| "denied" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L30)</sub>
 
 ---
 
@@ -236,7 +236,7 @@ reposTouched?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L34)</sub>
 
 ---
 
@@ -248,7 +248,7 @@ resourceId?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L29)</sub>
 
 ---
 
@@ -260,7 +260,7 @@ resourceType?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L28)</sub>
 
 ---
 
@@ -272,7 +272,7 @@ sourceIp?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L37)</sub>
 
 ---
 
@@ -284,7 +284,7 @@ traceId?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L35)</sub>
 
 ---
 
@@ -296,7 +296,7 @@ userAgent?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L38)</sub>
 
 ---
 
@@ -310,7 +310,7 @@ moduleThreshold: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L211)</sub>
 
 ---
 
@@ -324,7 +324,7 @@ repoThreshold: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L209)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L209)</sub>
 
 ---
 
@@ -336,7 +336,7 @@ windowMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L207)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L207)</sub>
 
 ---
 
@@ -348,7 +348,7 @@ alerted: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L225)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L225)</sub>
 
 ---
 
@@ -360,7 +360,7 @@ modules: Set<string>
 
 **Returns** `Set<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L223)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L223)</sub>
 
 ---
 
@@ -372,7 +372,7 @@ repos: Set<string>
 
 **Returns** `Set<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L222)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L222)</sub>
 
 ---
 
@@ -384,7 +384,7 @@ toolCalls: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L224)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L224)</sub>
 
 ---
 
@@ -396,17 +396,17 @@ windowStart: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L221)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L221)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=2ecb6fa6dfc6a2d1 -->
+<!-- kna:generated:start id=api.class hash=e8ccc2d52bfefbf1 -->
 ### `AuditRecorder`
 
 ```typescript
 class AuditRecorder
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L41)</sub>
 
 ---
 
@@ -416,10 +416,10 @@ class AuditRecorder
 class BreadthMonitor
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L228)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L228)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=4deb37eea59061fb -->
+<!-- kna:generated:start id=api.method hash=19e770b06fa2897f -->
 ### `constructor`
 
 ```typescript
@@ -432,7 +432,7 @@ constructor(private readonly db: DbHandle, private readonly logger: Logger, priv
 | `logger` | `Logger` |  |
 | `options`? | `{ batchSize?: number \| undefined; flushIntervalMs?: number \| undefined; }` |  (default `{}`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L49)</sub>
 
 ---
 
@@ -444,7 +444,7 @@ flush(): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L118)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L118)</sub>
 
 ---
 
@@ -462,7 +462,7 @@ record(event: AuditEvent): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L63)</sub>
 
 ---
 
@@ -477,7 +477,7 @@ constructor(private readonly policy: BreadthPolicy = DEFAULT_BREADTH_POLICY, pri
 | `policy`? | `BreadthPolicy` |  (default `DEFAULT_BREADTH_POLICY`) |
 | `onAlert`? | `((alert: { orgId: string; principalId: string; surface: string; repos: number; modules: number; toolCalls: number; }) => void) \| undefined` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L231)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L231)</sub>
 
 ---
 
@@ -493,7 +493,7 @@ observe(input: {orgId: string;principalId: string;surface: string;repoIds: strin
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L243)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L243)</sub>
 
 ---
 
@@ -513,10 +513,10 @@ snapshot(orgId: string, principalId: string, surface: string): BreadthWindow | n
 
 **Returns** `BreadthWindow \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L287)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L287)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=cd1878a8e86ac75b -->
+<!-- kna:generated:start id=api.constant hash=7b41ecf14a0e2305 -->
 ### `DEFAULT_BREADTH_POLICY`
 
 ```typescript
@@ -525,5 +525,5 @@ const DEFAULT_BREADTH_POLICY: BreadthPolicy
 
 **Returns** `BreadthPolicy`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/audit/src/recorder.ts#L214)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/audit/src/recorder.ts#L214)</sub>
 <!-- kna:generated:end id=api.constant -->

@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_d7bd19fc9cc601bc1fb7894d55770d01
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -30,6 +30,7 @@ provenance:
     - sym_05c45b865de3da603483fbc7b90259f75fd46f8a
     - sym_417a5b9c68e3aaea75ae9410f25ac72a0ad3b0f3
     - sym_dfb1de587eea89c565e7f0458da440166b20944a
+    - sym_3d8dec2a8fd7f30f20494621b2dad76e956f0ec8
     - sym_8ba6de1e2fd860a17336364b1c39f5a9d2da491c
     - sym_11bc312dc30a569e1db78af2e95c627b84c09f2e
     - sym_6a3deb01d1aa46c008941f47bc273d1fdb4b2238
@@ -58,6 +59,7 @@ provenance:
     sym_05c45b865de3da603483fbc7b90259f75fd46f8a: 035c38490bb8a7495e39d1a7556eca29d9234a2ddd49328d99dfaf6507085d47
     sym_417a5b9c68e3aaea75ae9410f25ac72a0ad3b0f3: ca051ac08180e7b6288218796c9f9d409ead302a6f1af0ed84c6fb94685a716e
     sym_dfb1de587eea89c565e7f0458da440166b20944a: a5c1a99be7af42cd1951a3c4808af7fbc3bd10d3ab2625c972d12ca01b0843dd
+    sym_3d8dec2a8fd7f30f20494621b2dad76e956f0ec8: f5de4ea7c5ac13bd530b866ba1ad75b89f91800ce1a4b93cf6f70048f20b30ec
     sym_8ba6de1e2fd860a17336364b1c39f5a9d2da491c: 074aae72f8deac8d80c98af96bdaf6508348b6546e7ce6017e412d5d4abb0c88
     sym_11bc312dc30a569e1db78af2e95c627b84c09f2e: 108cd7e42ab1c9dfac81b3b1c970bce93a3f2214a567e22a2b294c8f11ae40b3
     sym_6a3deb01d1aa46c008941f47bc273d1fdb4b2238: abd5b2b927a755427a235d73854f050974f252a88d31a03ae74d0168aacdb0ed
@@ -70,16 +72,16 @@ provenance:
 
 # @kna/analyzer-typescript reference
 
-<!-- kna:generated:start id=overview hash=aa9fd7b73a75f902 -->
+<!-- kna:generated:start id=overview hash=bcd1238dbdd1cc7f -->
 | | |
 |---|---|
 | Package | `@kna/analyzer-typescript` (npm) |
 | Path | `packages/analyzer-typescript` |
 | Languages | typescript |
-| Public symbols | 27 |
+| Public symbols | 28 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=5682cdf171d748df -->
+<!-- kna:generated:start id=api.property hash=647bdb5076b93ae1 -->
 ### `decorators`
 
 ```typescript
@@ -88,7 +90,7 @@ decorators: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L516)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L519)</sub>
 
 ---
 
@@ -100,7 +102,7 @@ doc: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L517)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L520)</sub>
 
 ---
 
@@ -112,7 +114,7 @@ edges: {calls: string[];references: string[];extends: string[];implements: strin
 
 **Returns** `{ calls: string[]; references: string[]; extends: string[]; implements: string[]; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L522)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L525)</sub>
 
 ---
 
@@ -124,7 +126,7 @@ kind: SymbolKind
 
 **Returns** `"function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L512)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L515)</sub>
 
 ---
 
@@ -136,7 +138,7 @@ modifiers: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L515)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L518)</sub>
 
 ---
 
@@ -148,7 +150,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L510)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L513)</sub>
 
 ---
 
@@ -160,7 +162,7 @@ node: Node
 
 **Returns** `Node<Node>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L518)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L521)</sub>
 
 ---
 
@@ -172,7 +174,7 @@ parameters?: Parameter[]
 
 **Returns** `{ type: { text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null; description: string \| null; name: string; optional: boolean; defaultValue: string \| null; rest: boolean; }[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L519)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L522)</sub>
 
 ---
 
@@ -184,7 +186,7 @@ parentQualifiedName: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L523)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L526)</sub>
 
 ---
 
@@ -196,7 +198,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L511)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L514)</sub>
 
 ---
 
@@ -208,7 +210,7 @@ returnType?: TypeRef | null
 
 **Returns** `{ text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L520)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L523)</sub>
 
 ---
 
@@ -220,7 +222,7 @@ signature: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L513)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L516)</sub>
 
 ---
 
@@ -232,7 +234,7 @@ typeParameters?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L521)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L524)</sub>
 
 ---
 
@@ -244,7 +246,7 @@ visibility: Visibility
 
 **Returns** `"public" \| "protected" \| "internal" \| "private"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L514)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L517)</sub>
 
 ---
 
@@ -256,7 +258,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L170)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L170)</sub>
 
 ---
 
@@ -268,7 +270,7 @@ generated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L172)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L172)</sub>
 
 ---
 
@@ -280,7 +282,7 @@ includeSource: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L171)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L171)</sub>
 
 ---
 
@@ -292,7 +294,7 @@ relPath: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L169)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L169)</sub>
 
 ---
 
@@ -304,7 +306,7 @@ sourceFile: SourceFile
 
 **Returns** `SourceFile`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L168)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L168)</sub>
 
 ---
 
@@ -316,7 +318,7 @@ capabilities: AnalyzerCapabilities
 
 **Returns** `AnalyzerCapabilities`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L58)</sub>
 
 ---
 
@@ -328,7 +330,7 @@ languages: ("typescript" | "javascript" | "python" | "csharp" | "unknown")[]
 
 **Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L57)</sub>
 
 ---
 
@@ -340,7 +342,7 @@ name: "ts-morph"
 
 **Returns** `"ts-morph"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L55)</sub>
 
 ---
 
@@ -352,10 +354,10 @@ version: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L56)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=59b7e0bc2f152ac6 -->
+<!-- kna:generated:start id=api.constant hash=0ffb3f54eb8c9ce8 -->
 ### `TS_ANALYZER_VERSION`
 
 Tier 1 TypeScript/JavaScript analyser (§5).
@@ -366,20 +368,20 @@ const TS_ANALYZER_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L52)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.class hash=ef3c954f82488d21 -->
+<!-- kna:generated:start id=api.class hash=889f98f028af425f -->
 ### `TypeScriptAnalyzer`
 
 ```typescript
 class TypeScriptAnalyzer implements Analyzer
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L54)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=d76683b94c0ad8e7 -->
+<!-- kna:generated:start id=api.method hash=a56d0f05ff3a087f -->
 ### `analyze`
 
 ```typescript
@@ -392,7 +394,7 @@ analyze(request: {protocol: "kna-analyzer/1";options: {includeSource: boolean;ti
 
 **Returns** `Promise<{ protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "public" \| "protected" \| "internal" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L77)</sub>
 
 ---
 
@@ -410,5 +412,24 @@ probe(repoRoot: string): Promise<string | null>
 
 **Returns** `Promise<string \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/analyzer-typescript/src/analyzer.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L69)</sub>
 <!-- kna:generated:end id=api.method -->
+
+<!-- kna:generated:start id=api.function hash=59c9d228f23fb435 -->
+### `renderType`
+
+Render a type as a person would write it, not as the checker prints it.
+
+```typescript
+renderType(text: string, max: number): string
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `text` | `string` |  |
+| `max` | `number` |  |
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/src/analyzer.ts#L731)</sub>
+<!-- kna:generated:end id=api.function -->

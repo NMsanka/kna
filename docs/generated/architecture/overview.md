@@ -4,7 +4,7 @@ docType: architecture-overview
 generated: true
 generator: kna-docgen
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 provenance:
   moduleIds:
@@ -63,11 +63,11 @@ provenance:
 
 # kna architecture
 
-<!-- kna:generated:start id=architecture.summary hash=c8a5c783d3e9d8cc -->
+<!-- kna:generated:start id=architecture.summary hash=4abc737a123b69d1 -->
 | | |
 |---|---|
 | Repository | `github.com/nmsanka/kna` |
-| Commit | `486c61286bfa` on `end-to-end-pipeline` |
+| Commit | `0e88100c77d7` on `end-to-end-pipeline` |
 | Modules | 20 |
 | Internal dependencies | 65 |
 | Runtime services | 10 |
@@ -294,7 +294,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=b34d7fdeecc02e3c -->
+<!-- kna:generated:start id=architecture.component hash=08fb348944ddd216 -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
 | `packages/ir` | 15 | 180 | 0 | typescript | — |
@@ -302,7 +302,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/observability` | 8 | 37 | 0 | typescript | — |
 | `packages/llm` | 6 | 98 | 0 | typescript | — |
 | `packages/db` | 5 | 79 | 0 | typescript | — |
-| `packages/contracts` | 4 | 68 | 0 | typescript | — |
+| `packages/contracts` | 4 | 70 | 0 | typescript | — |
 | `packages/retrieval` | 3 | 328 | 0 | typescript | — |
 | `packages/analyzer-core` | 3 | 124 | 0 | typescript | — |
 | `packages/scanner` | 3 | 87 | 0 | typescript | — |
@@ -310,10 +310,10 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/docgen` | 2 | 142 | 0 | typescript | — |
 | `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
-| `packages/analyzer-typescript` | 1 | 27 | 0 | typescript | — |
-| `apps/api` | 0 | 167 | 1 | typescript | — |
+| `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |
+| `apps/api` | 0 | 183 | 1 | typescript | — |
 | `apps/worker` | 0 | 95 | 1 | typescript | — |
-| `apps/cli` | 0 | 92 | 0 | typescript | — |
+| `apps/cli` | 0 | 93 | 0 | typescript | — |
 | `apps/mcp` | 0 | 62 | 1 | typescript | — |
 | `packages/analyzer-typescript/test/fixtures/billing` | 0 | 33 | 0 | typescript | — |
 | `.` | 0 | 0 | 0 | typescript | — |

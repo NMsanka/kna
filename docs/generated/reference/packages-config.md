@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_7a00c0277ef5c28d76ffb0139703d101
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -87,7 +87,7 @@ provenance:
 | Public symbols | 31 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=a7826e7d9932f86c -->
+<!-- kna:generated:start id=api.function hash=dd9529c42f18411b -->
 ### `clearConfigCache`
 
 Clear the cosmiconfig cache — needed in tests and in a long-lived worker process.
@@ -98,7 +98,7 @@ clearConfigCache(): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L69)</sub>
 
 ---
 
@@ -116,7 +116,7 @@ defaultConfig(org: string): {version: 1;org: string;projects: string[];modules: 
 
 **Returns** `{ version: 1; org: string; projects: string[]; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "public" \| "internal" \| undefined; sensitivity?: "public" \| "internal" \| "confidential" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L148)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L148)</sub>
 
 ---
 
@@ -132,7 +132,7 @@ loadDotEnv(options: LoadDotEnvOptions): LoadDotEnvResult
 
 **Returns** `LoadDotEnvResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L39)</sub>
 
 ---
 
@@ -148,7 +148,7 @@ loadPlatformEnv(source: NodeJS.ProcessEnv): {KNA_ENV: "development" | "test" | "
 
 **Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/env.ts#L148)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/env.ts#L148)</sub>
 
 ---
 
@@ -165,7 +165,7 @@ loadRepoConfig(cwd: string, orgFallback?: string | undefined): Promise<LoadedCon
 
 **Returns** `Promise<LoadedConfig>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L28)</sub>
 
 ---
 
@@ -183,7 +183,7 @@ parseDotEnv(contents: string): Record<string, string>
 
 **Returns** `Record<string, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L94)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L94)</sub>
 
 ---
 
@@ -197,20 +197,20 @@ resetPlatformEnv(): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/env.ts#L202)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/env.ts#L202)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.class hash=eb4a5104f8a9d128 -->
+<!-- kna:generated:start id=api.class hash=339f22540e7d5597 -->
 ### `ConfigError`
 
 ```typescript
 class ConfigError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L55)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=88c117d531ad931a -->
+<!-- kna:generated:start id=api.method hash=6fbfb98d1eae8f4a -->
 ### `constructor`
 
 ```typescript
@@ -222,10 +222,10 @@ constructor(readonly filepath: string, readonly zodError: z.ZodError)
 | `filepath` | `string` |  |
 | `zodError` | `ZodError<any>` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L56)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=728c1e14534adbbb -->
+<!-- kna:generated:start id=api.interface hash=4b5297b9d06f98ba -->
 ### `LoadDotEnvOptions`
 
 Load a `.env` file into `process.env`, for local development.
@@ -234,7 +234,7 @@ Load a `.env` file into `process.env`, for local development.
 interface LoadDotEnvOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L20)</sub>
 
 ---
 
@@ -244,7 +244,7 @@ interface LoadDotEnvOptions
 interface LoadDotEnvResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L30)</sub>
 
 ---
 
@@ -254,10 +254,10 @@ interface LoadDotEnvResult
 interface LoadedConfig
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L5)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L5)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=20564abb8bd8a776 -->
+<!-- kna:generated:start id=api.property hash=8e3049ac14870056 -->
 ### `cwd`
 
 Directory to start searching from. Defaults to the current working directory.
@@ -268,7 +268,7 @@ cwd?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L22)</sub>
 
 ---
 
@@ -280,7 +280,7 @@ env?: NodeJS.ProcessEnv
 
 **Returns** `ProcessEnv \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L27)</sub>
 
 ---
 
@@ -294,7 +294,7 @@ filename?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L24)</sub>
 
 ---
 
@@ -308,7 +308,7 @@ maxDepth?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L26)</sub>
 
 ---
 
@@ -322,7 +322,7 @@ applied: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L34)</sub>
 
 ---
 
@@ -336,7 +336,7 @@ path: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L32)</sub>
 
 ---
 
@@ -350,7 +350,7 @@ skipped: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/dotenv.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/dotenv.ts#L36)</sub>
 
 ---
 
@@ -362,7 +362,7 @@ config: RepoConfig
 
 **Returns** `{ version: 1; org: string; projects: string[]; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "public" \| "internal" \| undefined; sensitivity?: "public" \| "internal" \| "confidential" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L6)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L6)</sub>
 
 ---
 
@@ -376,7 +376,7 @@ filepath: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L8)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L8)</sub>
 
 ---
 
@@ -390,7 +390,7 @@ isDefault: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L10)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L10)</sub>
 
 ---
 
@@ -402,17 +402,17 @@ warnings: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/load.ts#L11)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/load.ts#L11)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=3bf707ad78d20be3 -->
+<!-- kna:generated:start id=api.type hash=e944b27e430f3628 -->
 ### `ModuleConfig`
 
 ```typescript
 type ModuleConfig = z.infer<typeof zModuleConfig>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L144)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L144)</sub>
 
 ---
 
@@ -422,7 +422,7 @@ type ModuleConfig = z.infer<typeof zModuleConfig>
 type PlatformEnv = z.infer<typeof zPlatformEnv>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/env.ts#L144)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/env.ts#L144)</sub>
 
 ---
 
@@ -432,7 +432,7 @@ type PlatformEnv = z.infer<typeof zPlatformEnv>
 type RepoConfig = z.infer<typeof zRepoConfig>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L143)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L143)</sub>
 
 ---
 
@@ -442,10 +442,10 @@ type RepoConfig = z.infer<typeof zRepoConfig>
 type SensitivityRule = z.infer<typeof zSensitivityRule>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L145)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L145)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=47b3db4f3cbb2440 -->
+<!-- kna:generated:start id=api.constant hash=d458bca8f162e826 -->
 ### `zModuleConfig`
 
 ```typescript
@@ -454,7 +454,7 @@ const zModuleConfig: z.ZodObject<{path: z.ZodString;name: z.ZodOptional<z.ZodStr
 
 **Returns** `ZodObject<{ path: ZodString; name: ZodOptional<ZodString>; projects: ZodDefault<ZodArray<ZodString, "many">>; visibility: ZodOptional<ZodEnum<["public", "internal"]>>; sensitivity: ZodOptional<ZodEnum<["public", "internal", "confidential", "restricted"]>>; owners: ZodDefault<ZodArray<ZodString, "man…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L19)</sub>
 
 ---
 
@@ -466,7 +466,7 @@ const zPlatformEnv: z.ZodObject<{KNA_ENV: z.ZodEnum<["development", "test", "sta
 
 **Returns** `ZodObject<{ KNA_ENV: ZodEnum<["development", "test", "staging", "production"]>; KNA_REGION: ZodDefault<ZodString>; LOG_LEVEL: ZodDefault<ZodEnum<["trace", "debug", "info", "warn", "error", "fatal"]>>; DATABASE_URL: ZodString; DATABASE_URL_BATCH: ZodOptional<ZodString>; DATABASE_POOL_MAX: ZodDefault<…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/env.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/env.ts#L21)</sub>
 
 ---
 
@@ -478,7 +478,7 @@ const zRepoConfig: z.ZodObject<{version: z.ZodDefault<z.ZodLiteral<1>>;org: z.Zo
 
 **Returns** `ZodObject<{ version: ZodDefault<ZodLiteral<1>>; org: ZodString; projects: ZodDefault<ZodArray<ZodString, "many">>; modules: ZodDefault<ZodArray<ZodObject<{ path: ZodString; name: ZodOptional<ZodString>; projects: ZodDefault<ZodArray<ZodString, "many">>; visibility: ZodOptional<ZodEnum<["public", "in…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L28)</sub>
 
 ---
 
@@ -492,5 +492,5 @@ const zSensitivityRule: z.ZodObject<{paths: z.ZodArray<z.ZodString, "many">;tier
 
 **Returns** `ZodObject<{ paths: ZodArray<ZodString, "many">; tier: ZodEnum<["public", "internal", "confidential", "restricted"]>; reason: ZodOptional<ZodString>; }, "strip", ZodTypeAny, { paths: string[]; tier: "public" \| "internal" \| "confidential" \| "restricted"; reason?: string \| undefined; }, { paths: string…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/packages/config/src/schema.ts#L12)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/config/src/schema.ts#L12)</sub>
 <!-- kna:generated:end id=api.constant -->

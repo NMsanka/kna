@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_60c6c3d09d17fe1b6c4635bbce85a4da
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 486c61286bfa1cd2cadabe6b53585202c2e154ce
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -101,6 +101,7 @@ provenance:
     - sym_ad44fd2b009a0548cdb605484da49e98ed9ace2a
     - sym_4f079d1e6f49151404b4e1b81e8a518dfe0d57f3
     - sym_51b665eedfad73deef578a30622d5f16ea3c6b3a
+    - sym_20ce984c6560610cadf93e435a18098d02e84ffa
     - sym_ec9e41d218aff36c4d14d327da90843daef1f5e0
     - sym_4d779ac000442e41a38dfe60725bc6591481aa5f
   signatureHashes:
@@ -194,22 +195,23 @@ provenance:
     sym_ad44fd2b009a0548cdb605484da49e98ed9ace2a: f6aaaf8c55243ff4fd571bf7c35715b87c282b1ef25c563a727294a8d605861b
     sym_4f079d1e6f49151404b4e1b81e8a518dfe0d57f3: 1ef487103a7a3445f3dc55636606194d7c45c258b910f85a4f505128eeff1e73
     sym_51b665eedfad73deef578a30622d5f16ea3c6b3a: 5797bcf5b99110df61c536703763ca7d763d57c0eb55af6b7ea11f989473cbb8
+    sym_20ce984c6560610cadf93e435a18098d02e84ffa: 0fc534753bac6b0b8afc366b3cf99e40ee7d47904f1155e92bc49fbb144504f8
     sym_ec9e41d218aff36c4d14d327da90843daef1f5e0: 150e4e5c5a76053f1da17493156b8df8b3708ab632a188d065c23a87ba6d9aaa
     sym_4d779ac000442e41a38dfe60725bc6591481aa5f: 978434dd5cb0f3781c454687f90d62edca99c90b65c17e45ad93f63b86ca55e2
 ---
 
 # @kna/cli reference
 
-<!-- kna:generated:start id=overview hash=9835160bbbaece5c -->
+<!-- kna:generated:start id=overview hash=fade73b5bc6ff122 -->
 | | |
 |---|---|
 | Package | `@kna/cli` (npm) |
 | Path | `apps/cli` |
 | Languages | typescript |
-| Public symbols | 92 |
+| Public symbols | 93 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=db8f0838f7b88b64 -->
+<!-- kna:generated:start id=api.function hash=18012ac802f7437d -->
 ### `analyze`
 
 ```typescript
@@ -223,7 +225,7 @@ analyze(ctx: CliContext, options: AnalyzeOptions): Promise<AnalyzeOutput>
 
 **Returns** `Promise<AnalyzeOutput>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L39)</sub>
 
 ---
 
@@ -241,7 +243,7 @@ askCommand(ctx: CliContext, question: string | undefined, options: AskOptions): 
 
 **Returns** `Promise<number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L29)</sub>
 
 ---
 
@@ -261,7 +263,7 @@ changedFiles(git: SimpleGit, from: string, to: string): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L161)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L161)</sub>
 
 ---
 
@@ -277,7 +279,7 @@ createContext(options: {cwd?: string;org?: string;ref?: string;}): Promise<CliCo
 
 **Returns** `Promise<CliContext>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L41)</sub>
 
 ---
 
@@ -294,7 +296,7 @@ describeCommand(ctx: CliContext, options: DescribeOptions): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L27)</sub>
 
 ---
 
@@ -311,7 +313,7 @@ doctorCommand(ctx: CliContext, options: DoctorOptions): Promise<number>
 
 **Returns** `Promise<number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L30)</sub>
 
 ---
 
@@ -329,7 +331,7 @@ exchangeOidcToken(input: {platformUrl: string;idToken: string;repoRemote: string
 
 **Returns** `Promise<{ token: string; expiresAt: string; repoId: string; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L185)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L185)</sub>
 
 ---
 
@@ -345,7 +347,7 @@ formatPublishError(error: PublishError): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L213)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L213)</sub>
 
 ---
 
@@ -362,7 +364,7 @@ generateCommand(ctx: CliContext, options: GenerateOptions): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L46)</sub>
 
 ---
 
@@ -379,7 +381,7 @@ initCommand(ctx: CliContext, options: InitOptions): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L47)</sub>
 
 ---
 
@@ -391,7 +393,7 @@ isCiEnvironment(): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L147)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L147)</sub>
 
 ---
 
@@ -407,7 +409,7 @@ isUnborn(commitSha: string): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L115)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L115)</sub>
 
 ---
 
@@ -424,7 +426,7 @@ publishCommand(ctx: CliContext, options: PublishOptions): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L62)</sub>
 
 ---
 
@@ -442,10 +444,10 @@ reportError(error: unknown): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/ui.ts#L109)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/ui.ts#L109)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=eff21e6297cfd51f -->
+<!-- kna:generated:start id=api.interface hash=09f0e279962c6eda -->
 ### `AnalyzeOptions`
 
 The shared analysis path behind `describe`, `index` and `publish`.
@@ -454,7 +456,7 @@ The shared analysis path behind `describe`, `index` and `publish`.
 interface AnalyzeOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L18)</sub>
 
 ---
 
@@ -464,7 +466,7 @@ interface AnalyzeOptions
 interface AnalyzeOutput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L25)</sub>
 
 ---
 
@@ -476,7 +478,7 @@ interface AnalyzeOutput
 interface AskOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L20)</sub>
 
 ---
 
@@ -488,7 +490,7 @@ Shared CLI context: where we are, what repo this is, and which analysers are ava
 interface CliContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L15)</sub>
 
 ---
 
@@ -500,7 +502,7 @@ interface CliContext
 interface DescribeOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L18)</sub>
 
 ---
 
@@ -512,7 +514,7 @@ interface DescribeOptions
 interface DoctorOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L18)</sub>
 
 ---
 
@@ -522,7 +524,7 @@ interface DoctorOptions
 interface GenerateOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L38)</sub>
 
 ---
 
@@ -534,7 +536,7 @@ interface GenerateOptions
 interface InitOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L21)</sub>
 
 ---
 
@@ -546,7 +548,7 @@ interface InitOptions
 interface PublishOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L22)</sub>
 
 ---
 
@@ -556,10 +558,10 @@ interface PublishOptions
 interface WorkflowInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L179)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L184)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=987ae47448b9a9c3 -->
+<!-- kna:generated:start id=api.property hash=19dfe86bd64f841f -->
 ### `maxTier`
 
 ```typescript
@@ -568,7 +570,7 @@ maxTier?: 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L19)</sub>
 
 ---
 
@@ -580,7 +582,7 @@ quiet?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L22)</sub>
 
 ---
 
@@ -594,7 +596,7 @@ skipScan?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L21)</sub>
 
 ---
 
@@ -606,7 +608,7 @@ apiSpecs: ApiSpec[]
 
 **Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L29)</sub>
 
 ---
 
@@ -618,7 +620,7 @@ bundle: IrBundle
 
 **Returns** `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; wo…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L28)</sub>
 
 ---
 
@@ -630,7 +632,7 @@ gate: GateResult | null
 
 **Returns** `GateResult \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L27)</sub>
 
 ---
 
@@ -642,7 +644,7 @@ pipeline: PipelineResult
 
 **Returns** `PipelineResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L26)</sub>
 
 ---
 
@@ -654,7 +656,7 @@ ctx: CliContext
 
 **Returns** `CliContext`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L54)</sub>
 
 ---
 
@@ -666,7 +668,7 @@ platformUrl: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L55)</sub>
 
 ---
 
@@ -678,7 +680,7 @@ token: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L56)</sub>
 
 ---
 
@@ -690,7 +692,7 @@ interactive: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L26)</sub>
 
 ---
 
@@ -702,7 +704,7 @@ json: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L25)</sub>
 
 ---
 
@@ -714,7 +716,7 @@ platformUrl?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L21)</sub>
 
 ---
 
@@ -726,7 +728,7 @@ scope: 'project' | 'repo' | 'org' | 'expanded'
 
 **Returns** `"project" \| "repo" \| "org" \| "expanded"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L23)</sub>
 
 ---
 
@@ -738,7 +740,7 @@ token?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L22)</sub>
 
 ---
 
@@ -750,7 +752,7 @@ topN: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/ask.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/ask.ts#L24)</sub>
 
 ---
 
@@ -762,7 +764,7 @@ action: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L27)</sub>
 
 ---
 
@@ -774,7 +776,7 @@ detail: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L26)</sub>
 
 ---
 
@@ -786,7 +788,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L24)</sub>
 
 ---
 
@@ -798,7 +800,7 @@ status: 'ok' | 'warn' | 'fail'
 
 **Returns** `"ok" \| "warn" \| "fail"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L25)</sub>
 
 ---
 
@@ -810,7 +812,7 @@ config: RepoConfig
 
 **Returns** `{ projects: string[]; version: 1; org: string; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "public" \| "internal" \| undefined; sensitivity?: "public" \| "internal" \| "confidential" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L18)</sub>
 
 ---
 
@@ -822,7 +824,7 @@ configIsDefault: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L20)</sub>
 
 ---
 
@@ -834,7 +836,7 @@ configPath: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L19)</sub>
 
 ---
 
@@ -846,7 +848,7 @@ configWarnings: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L21)</sub>
 
 ---
 
@@ -858,7 +860,7 @@ cwd: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L16)</sub>
 
 ---
 
@@ -870,7 +872,7 @@ git: SimpleGit
 
 **Returns** `SimpleGit`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L25)</sub>
 
 ---
 
@@ -884,7 +886,7 @@ isCi: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L27)</sub>
 
 ---
 
@@ -896,7 +898,7 @@ registry: AnalyzerRegistry
 
 **Returns** `AnalyzerRegistry`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L24)</sub>
 
 ---
 
@@ -908,7 +910,7 @@ repo: RepoRef
 
 **Returns** `{ name: string; id: string; orgId: string; remote: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L22)</sub>
 
 ---
 
@@ -920,7 +922,7 @@ repoRoot: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L17)</sub>
 
 ---
 
@@ -932,7 +934,7 @@ version: VersionRef
 
 **Returns** `{ commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L23)</sub>
 
 ---
 
@@ -944,7 +946,7 @@ format: 'json' | 'summary' | 'symbols'
 
 **Returns** `"json" \| "summary" \| "symbols"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L20)</sub>
 
 ---
 
@@ -956,7 +958,7 @@ maxTier?: 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L21)</sub>
 
 ---
 
@@ -968,7 +970,7 @@ output?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L19)</sub>
 
 ---
 
@@ -980,7 +982,7 @@ pretty: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L24)</sub>
 
 ---
 
@@ -994,7 +996,7 @@ scan: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/describe.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/describe.ts#L23)</sub>
 
 ---
 
@@ -1006,7 +1008,7 @@ platformUrl?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L19)</sub>
 
 ---
 
@@ -1018,7 +1020,7 @@ token?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/doctor.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/doctor.ts#L20)</sub>
 
 ---
 
@@ -1030,7 +1032,7 @@ dryRun: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L43)</sub>
 
 ---
 
@@ -1042,7 +1044,7 @@ outputDir?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L40)</sub>
 
 ---
 
@@ -1056,7 +1058,7 @@ prose: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L42)</sub>
 
 ---
 
@@ -1068,7 +1070,7 @@ types?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/generate.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/generate.ts#L39)</sub>
 
 ---
 
@@ -1082,7 +1084,7 @@ cliSource?: 'source' | 'registry'
 
 **Returns** `"source" \| "registry" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L42)</sub>
 
 ---
 
@@ -1094,7 +1096,7 @@ dryRun: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L28)</sub>
 
 ---
 
@@ -1108,7 +1110,7 @@ force: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L26)</sub>
 
 ---
 
@@ -1120,7 +1122,7 @@ org?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L22)</sub>
 
 ---
 
@@ -1134,7 +1136,7 @@ platformRepo?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L44)</sub>
 
 ---
 
@@ -1146,7 +1148,7 @@ platformUrl?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L24)</sub>
 
 ---
 
@@ -1158,7 +1160,7 @@ projects?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L23)</sub>
 
 ---
 
@@ -1170,7 +1172,7 @@ provider?: 'github' | 'azuredevops' | 'gitlab'
 
 **Returns** `"github" \| "azuredevops" \| "gitlab" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L27)</sub>
 
 ---
 
@@ -1184,7 +1186,7 @@ bundlePath?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L40)</sub>
 
 ---
 
@@ -1196,7 +1198,7 @@ dryRun: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L25)</sub>
 
 ---
 
@@ -1208,7 +1210,7 @@ maxTier?: 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L26)</sub>
 
 ---
 
@@ -1222,7 +1224,7 @@ oidc?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L48)</sub>
 
 ---
 
@@ -1234,7 +1236,7 @@ platformUrl?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L23)</sub>
 
 ---
 
@@ -1246,7 +1248,7 @@ token?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L24)</sub>
 
 ---
 
@@ -1258,7 +1260,21 @@ cliSource: 'source' | 'registry'
 
 **Returns** `"source" \| "registry"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L181)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L186)</sub>
+
+---
+
+### `docsPr`
+
+Whether the workflow opens a documentation pull request.
+
+```typescript
+docsPr: boolean
+```
+
+**Returns** `boolean`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L194)</sub>
 
 ---
 
@@ -1270,7 +1286,7 @@ languages: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L180)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L185)</sub>
 
 ---
 
@@ -1282,10 +1298,10 @@ platformRepo: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/init.ts#L182)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/init.ts#L187)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=fb856686996e97fc -->
+<!-- kna:generated:start id=api.constant hash=45d7728789ffa149 -->
 ### `CLI_VERSION`
 
 ```typescript
@@ -1294,7 +1310,7 @@ const CLI_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L211)</sub>
 
 ---
 
@@ -1306,7 +1322,7 @@ const ui: {log(message?: string): void;info(message: string): void;success(messa
 
 **Returns** `{ log(message?: string): void; info(message: string): void; success(message: string): void; warn(message: string): void; error(message: string): void; heading(message: string): void; detail(message: string): void; progress(label: string): { update: (message: string) => void; done: (message?: string …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/ui.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/ui.ts#L28)</sub>
 
 ---
 
@@ -1320,17 +1336,17 @@ const UNBORN_COMMIT_SHA: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L113)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L113)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.class hash=3e22750193175e65 -->
+<!-- kna:generated:start id=api.class hash=2514c9879df5d8cf -->
 ### `GuardrailBlockedError`
 
 ```typescript
 class GuardrailBlockedError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L32)</sub>
 
 ---
 
@@ -1340,7 +1356,7 @@ class GuardrailBlockedError extends Error
 class NotAGitRepoError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L30)</sub>
 
 ---
 
@@ -1350,10 +1366,10 @@ class NotAGitRepoError extends Error
 class PublishError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L51)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=c7219a30b2ec85d4 -->
+<!-- kna:generated:start id=api.method hash=808650499c56c095 -->
 ### `constructor`
 
 ```typescript
@@ -1364,7 +1380,7 @@ constructor(readonly gate: GateResult)
 |---|---|---|
 | `gate` | `GateResult` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/analyze.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/analyze.ts#L33)</sub>
 
 ---
 
@@ -1378,7 +1394,7 @@ constructor(cwd: string)
 |---|---|---|
 | `cwd` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/context.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/context.ts#L31)</sub>
 
 ---
 
@@ -1394,5 +1410,5 @@ constructor(message: string, readonly status: number, readonly guidance: string 
 | `status` | `number` |  |
 | `guidance` | `string \| null` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/486c61286bfa1cd2cadabe6b53585202c2e154ce/apps/cli/src/commands/publish.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/cli/src/commands/publish.ts#L52)</sub>
 <!-- kna:generated:end id=api.method -->
