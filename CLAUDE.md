@@ -27,6 +27,9 @@ To run this anywhere other than a laptop, read [`docs/HOSTING.md`](docs/HOSTING.
 provision, how to build the images, and the bootstrap order — alongside
 [`docs/runbooks/deployment.md`](docs/runbooks/deployment.md), which is the policy half.
 
+To exercise it locally across more than one repository — which is the cheapest way to find real
+bugs — read [`docs/LOCAL-TESTING.md`](docs/LOCAL-TESTING.md).
+
 **Orientation, in the order that makes each next file make sense:**
 
 1. `packages/ir/src/schema/symbol.ts` — the contract everything reads
