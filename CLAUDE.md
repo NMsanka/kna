@@ -262,6 +262,16 @@ publish step re-signs the envelope, because the analyse job deliberately has no 
 scoped to one repo and valid for minutes. The job needs `permissions: id-token: write` or the
 exchange fails loudly rather than falling back to something weaker.
 
+**Documentation lands as a pull request.** The workflow's third job downloads the documentation
+the analyse job produced and opens a PR with it — §6 rule 3, "generated docs land as a pull
+request, not a direct commit. Humans review." It is the only job with `contents: write`, and it
+runs none of the repository's code, for the same reason the analyse and publish jobs are split.
+
+Skipped entirely when `docs.prStrategy` is `off`. The in-repo copy is the half of §15.8's exit
+plan that survives the platform being switched off, so it should not be the manual one — this
+repo's own copy had drifted eleven commits before anyone noticed, which is why `ci.yml` now fails
+when `docs/generated` no longer matches the code.
+
 **Webhooks trigger regeneration, not indexing.** A push or a merged pull request tells the
 platform the code moved; it does not carry IR, so there is nothing to index until CI publishes.
 What the webhook does is regenerate documentation from the newest stored bundle, debounced 60

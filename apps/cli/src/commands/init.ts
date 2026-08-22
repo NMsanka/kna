@@ -88,7 +88,12 @@ export async function initCommand(ctx: CliContext, options: InitOptions): Promis
   const workflowPath = workflowPathFor(provider);
   const cliSource = options.cliSource ?? 'source';
   const platformRepo = options.platformRepo ?? PLATFORM_REPO_PLACEHOLDER;
-  const workflow = renderWorkflow(provider, { languages, cliSource, platformRepo });
+  const workflow = renderWorkflow(provider, {
+    languages,
+    cliSource,
+    platformRepo,
+    docsPr: ctx.config.docs.prStrategy !== 'off',
+  });
 
   ui.heading('Planned changes');
   ui.log(`  ${ui.green('create')} ${workflowPath}`);
@@ -180,6 +185,13 @@ export interface WorkflowInput {
   languages: string[];
   cliSource: 'source' | 'registry';
   platformRepo: string;
+  /**
+   * Whether the workflow opens a documentation pull request.
+   *
+   * Follows `docs.prStrategy` from the repo's config, because a repository that has said it does
+   * not want documentation PRs should not be handed a workflow that opens them.
+   */
+  docsPr: boolean;
 }
 
 /**
@@ -259,6 +271,25 @@ function renderGitHubWorkflow(input: WorkflowInput): string {
 
   const kna = cliCommand(input);
   const install = cliInstall(input, '      ');
+
+  // Generation runs in the analyse job because it needs the IR, and producing the IR runs the
+  // repository's own build logic. The documentation is carried out as an artifact for the same
+  // reason the bundle is: the job that ran repo code must not be the job holding a credential.
+  const docsGenerate = input.docsPr
+    ? `
+      # Deterministic sections only. The prose layer needs a model route, and this job holds no
+      # provider credential — prose is added platform-side, where the grounding check lives.
+      - name: Generate documentation
+        run: ${kna} generate --no-prose
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kna-docs
+          path: docs/generated
+          retention-days: 1`
+    : '';
+
+  const docsJob = input.docsPr ? renderDocsJob() : '';
   const cliSourceNote =
     input.cliSource === 'registry'
       ? 'installed from the registry. If `npx` cannot resolve it, it has not been published yet —\n# see ADR 0002.'
@@ -316,6 +347,7 @@ ${install}${setupSteps.join('\n')}
           name: kna-ir
           path: kna-ir.json
           retention-days: 1
+${docsGenerate}
 
   publish:
     needs: analyse
@@ -334,6 +366,72 @@ ${install}
         env:
           KNA_PLATFORM_URL: \${{ vars.KNA_PLATFORM_URL }}
         run: ${kna} publish --bundle kna-ir.json --oidc
+${docsJob}`;
+}
+
+/**
+ * The job that turns generated documentation into a pull request.
+ *
+ * §6 rule 3 — "Generated docs land as a pull request, not a direct commit. Humans review."
+ * Committing straight to the default branch would make the platform the author of record for
+ * documentation nobody read, which is the fastest way to make people stop reading it.
+ *
+ * It is a third job rather than a step in the other two, for the same reason those two are
+ * separate: this one holds write access to the repository, and it must never be the job that
+ * ran the repository's own build logic. It downloads the artifact and touches no repo code.
+ *
+ * `gh` is preinstalled on GitHub runners and authenticates with the job's own token, so this
+ * needs no third-party action and no secret beyond what the workflow already has.
+ */
+function renderDocsJob(): string {
+  return `
+  documentation:
+    needs: analyse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # The only job with write access, and it runs none of this repository's code.
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: kna-docs
+          path: docs/generated
+
+      - name: Open a documentation pull request
+        env:
+          GH_TOKEN: \${{ github.token }}
+        run: |
+          git add docs/generated
+          if git diff --cached --quiet; then
+            echo "Documentation is unchanged."
+            exit 0
+          fi
+
+          branch="kna/docs-\${GITHUB_SHA::7}"
+          git config user.name "kna-docs[bot]"
+          git config user.email "kna-docs@users.noreply.github.com"
+          git checkout -b "$branch"
+          git commit -m "Update generated documentation for \${GITHUB_SHA::7}"
+
+          # force-with-lease so a re-run of the same commit updates its branch rather than
+          # failing, and still refuses to clobber anything it has not seen.
+          git push --force-with-lease origin "$branch"
+
+          if [ -n "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
+            echo "A pull request for $branch is already open; it now has the latest run."
+            exit 0
+          fi
+
+          # Each command on one line. A trailing backslash is a line continuation inside the
+          # template literal that generates this file, so it is consumed there and never reaches
+          # the workflow — the arguments end up concatenated into one unreadable line.
+          summary="Regenerated from \${GITHUB_SHA::7} by the KNA indexing workflow. Sections between the kna:generated markers are rendered from the code; anything written outside them is preserved on the next run. If something here looks wrong, check the code it describes first — these sections are extracted, not written."
+
+          gh pr create --base "\${GITHUB_REF_NAME}" --head "$branch" --title "Update generated documentation" --body "$summary"
 `;
 }
 
