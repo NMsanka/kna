@@ -381,8 +381,20 @@ cmd_publish() {
 
 cmd_ask() {
   load_tokens
-  [ $# -gt 0 ] || die 'usage: ./scripts/dev.sh ask "your question"'
-  node "$ROOT/apps/cli/dist/bin.js" ask "$@"
+
+  # Scope is inferred from the working directory, exactly as it is in an editor. Run from this
+  # repository and you ask about this repository — which is rarely what you want once a second
+  # one is indexed, and gives no clue that it is what happened.
+  local target="$ROOT" scope=()
+  if [ "${1:-}" = "--in" ]; then
+    [ -n "${2:-}" ] || die 'usage: ask --in <path-to-repo> "your question"'
+    target="$2"; shift 2
+    scope=(--scope repo)
+    [ -d "$target" ] || die "no such directory: $target"
+  fi
+
+  [ $# -gt 0 ] || die "usage: $(invocation) ask [--in <path>] \"your question\""
+  node "$ROOT/apps/cli/dist/bin.js" --cwd "$target" ask "${scope[@]}" "$@"
 }
 
 cmd_reindex() {
@@ -446,7 +458,8 @@ cmd_help() {
   Using it
     repo <remote>        register a repository and mint its publish credential
     publish [path]       analyse and publish a repository (defaults to this one)
-    ask "question"       query the knowledge base
+    ask "question"       query the knowledge base (this repository)
+    ask --in <path> "…"  query one specific repository
     reindex <repoId>     rebuild from the stored bundle, without republishing
 
   Starting over
