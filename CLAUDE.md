@@ -30,6 +30,9 @@ provision, how to build the images, and the bootstrap order — alongside
 To exercise it locally across more than one repository — which is the cheapest way to find real
 bugs — read [`docs/LOCAL-TESTING.md`](docs/LOCAL-TESTING.md).
 
+[`docs/COMMANDS.md`](docs/COMMANDS.md) is the short version of both: every command from a cold
+machine to an answer, in order.
+
 **Orientation, in the order that makes each next file make sense:**
 
 1. `packages/ir/src/schema/symbol.ts` — the contract everything reads
