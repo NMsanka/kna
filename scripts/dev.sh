@@ -110,6 +110,28 @@ is_running() {
   esac
 }
 
+# Start a service without holding on to this terminal.
+#
+# `nohup ... &` is enough on Unix and is not enough here. Under Git Bash the backgrounded process
+# keeps the parent's console handles even with every stream redirected, so the shell that
+# launched it does not return — `start` appears to hang while all three services are in fact
+# running perfectly. `Start-Process` genuinely detaches.
+#
+# The cost is two files per service, because Start-Process cannot point both streams at one. In
+# practice everything normal goes to .log, since the services log to stdout, and .err.log stays
+# empty unless something crashed — which makes a non-empty one a useful signal in itself.
+spawn_service() {
+  local svc="$1" entry="$2"
+  case "$(uname -s)" in
+    MINGW*|MSYS*|CYGWIN*)
+      powershell.exe -NoProfile -Command         "Start-Process -FilePath 'node' -ArgumentList '$entry'            -WorkingDirectory '$(cygpath -w "$ROOT")'            -RedirectStandardOutput '$(cygpath -w "$LOG_DIR/$svc.log")'            -RedirectStandardError '$(cygpath -w "$LOG_DIR/$svc.err.log")'            -WindowStyle Hidden" >/dev/null 2>&1
+      ;;
+    *)
+      ( cd "$ROOT" && nohup node "$entry" < /dev/null > "$LOG_DIR/$svc.log" 2>&1 & )
+      ;;
+  esac
+}
+
 # ── Commands ───────────────────────────────────────────────────────────────────────────────
 
 cmd_up() {
@@ -229,7 +251,7 @@ cmd_start() {
       info "$svc already running"
       continue
     fi
-    ( cd "$ROOT" && nohup node "$entry" > "$LOG_DIR/$svc.log" 2>&1 & )
+    spawn_service "$svc" "$entry"
     info "$svc started"
   done
   note "logs in .kna/logs/ — follow one with: ./scripts/dev.sh logs worker"
@@ -247,7 +269,24 @@ cmd_restart() { cmd_stop; sleep 2; cmd_start; }
 
 cmd_logs() {
   local svc="${1:-worker}"
-  service_entry "$svc" >/dev/null
+  local entry; entry="$(service_entry "$svc")"
+
+  # A missing log file usually means the service is running but was not started by this script —
+  # started by hand, it logs wherever that command sent it. `tail: no such file` is a true and
+  # unhelpful way to say so.
+  if [ ! -f "$LOG_DIR/$svc.log" ]; then
+    if is_running "$entry"; then
+      die "$svc is running but was not started by this script, so it is logging elsewhere.
+    $(invocation) restart   will restart all three and log to .kna/logs/"
+    fi
+    die "$svc is not running.
+    $(invocation) start"
+  fi
+
+  if [ -s "$LOG_DIR/$svc.err.log" ]; then
+    warn "$svc has written to $svc.err.log — something was logged outside the normal stream"
+  fi
+
   tail -f "$LOG_DIR/$svc.log"
 }
 
