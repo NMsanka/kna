@@ -4,6 +4,7 @@ import { sql } from 'drizzle-orm';
 import { anyOf, withOrgContext } from '@kna/db';
 import { TOOL_DEFINITIONS, wrapUntrusted } from './tools.js';
 import type { McpContext, McpIdentity } from './context.js';
+import { scopeNarrowing } from './scope.js';
 
 /**
  * Tool handlers.
@@ -129,6 +130,7 @@ export function registerTools(
     },
     async (args) => {
       const access = await ctx.permissions.resolve(identity.principal, { corpus: 'internal' });
+      const scope = await ctx.resolveScope(identity, args.scope);
 
       const rows = await withOrgContext(ctx.db, access.orgId, async (tx) =>
         tx.execute<{
@@ -153,6 +155,7 @@ export function registerTools(
           WHERE s.org_id = ${access.orgId}
             AND s.repo_id = ${anyOf(access.permittedRepoIds)}
             AND s.sensitivity <> 'restricted'
+            ${scopeNarrowing(scope, { moduleId: sql`s.module_id`, repoId: sql`s.repo_id` })}
             AND (
               s.id = ${args.symbol}
               OR s.qualified_name = ${args.symbol}
@@ -240,6 +243,7 @@ export function registerTools(
     },
     async (args) => {
       const access = await ctx.permissions.resolve(identity.principal, { corpus: 'internal' });
+      const scope = await ctx.resolveScope(identity, args.scope);
 
       const rows = await withOrgContext(ctx.db, access.orgId, async (tx) =>
         tx.execute<{
@@ -251,10 +255,18 @@ export function registerTools(
           relation: string;
           total: string;
         }>(sql`
+          -- Scope narrows two of the three parts, and deliberately not the third. The target
+          -- is narrowed because a qualified name can exist in several repositories and scope
+          -- is what says which one you meant. Direct usages are narrowed because that is the
+          -- question being asked. Cross-repo usages are *not*: they are by definition outside
+          -- the current scope, and finding them is the whole point of the arm — narrowing them
+          -- to the caller's project would silently turn the feature off. includeCrossRepo is
+          -- the control for that, and it stays the control.
           WITH target AS (
-            SELECT id FROM symbols
-            WHERE org_id = ${access.orgId}
-              AND (id = ${args.symbol} OR qualified_name = ${args.symbol})
+            SELECT id FROM symbols s
+            WHERE s.org_id = ${access.orgId}
+              AND (s.id = ${args.symbol} OR s.qualified_name = ${args.symbol})
+              ${scopeNarrowing(scope, { moduleId: sql`s.module_id`, repoId: sql`s.repo_id` })}
             LIMIT 1
           ),
           direct AS (
@@ -264,6 +276,7 @@ export function registerTools(
             WHERE s.org_id = ${access.orgId}
               AND s.repo_id = ${anyOf(access.permittedRepoIds)}
               AND s.sensitivity <> 'restricted'
+              ${scopeNarrowing(scope, { moduleId: sql`s.module_id`, repoId: sql`s.repo_id` })}
               AND s.edges -> 'calls' @> to_jsonb(target.id)
           ),
           cross_repo AS (
@@ -446,7 +459,8 @@ export function registerTools(
     },
     async (args) => {
       const access = await ctx.permissions.resolve(identity.principal, { corpus: 'internal' });
-      const graph = await ctx.architecture(access, args.service ?? null);
+      const scope = await ctx.resolveScope(identity, args.scope);
+      const graph = await ctx.architecture(access, scope, args.service ?? null);
 
       await ctx.recordAccess({
         identity,
@@ -480,7 +494,8 @@ export function registerTools(
     },
     async (args) => {
       const access = await ctx.permissions.resolve(identity.principal, { corpus: 'internal' });
-      const diff = await ctx.changesSince(access, args.since, {
+      const scope = await ctx.resolveScope(identity, args.scope);
+      const diff = await ctx.changesSince(access, scope, args.since, {
         breakingOnly: args.breakingOnly ?? false,
         limit: args.limit ?? 50,
       });

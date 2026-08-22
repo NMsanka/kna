@@ -21,6 +21,7 @@ import {
   type RetrievalScope,
 } from '@kna/retrieval';
 import type { PlatformEnv } from '@kna/config';
+import { scopeNarrowing } from './scope.js';
 
 /**
  * MCP server wiring.
@@ -81,6 +82,7 @@ export interface McpContext {
   }) => Promise<void>;
   architecture: (
     access: AccessContext,
+    scope: RetrievalScope,
     service: string | null,
   ) => Promise<{
     mermaid: string;
@@ -90,6 +92,7 @@ export interface McpContext {
   }>;
   changesSince: (
     access: AccessContext,
+    scope: RetrievalScope,
     since: string,
     options: { breakingOnly: boolean; limit: number },
   ) => Promise<{ rendered: string; repoIds: string[] }>;
@@ -384,7 +387,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
       });
     },
 
-    async architecture(access, service) {
+    async architecture(access, scope, service) {
       const modules = await withOrgContext(db, access.orgId, async (tx) =>
         tx.execute<{
           id: string;
@@ -392,18 +395,21 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
           repo_id: string;
           dependencies: Array<{ name: string }>;
         }>(sql`
-          SELECT id, name, repo_id, dependencies FROM modules
-          WHERE org_id = ${access.orgId}
-            AND repo_id = ${anyOf(access.permittedRepoIds)}
-            ${service ? sql`AND name ILIKE ${`%${service}%`}` : sql``}
+          SELECT id, name, repo_id, dependencies FROM modules m
+          WHERE m.org_id = ${access.orgId}
+            AND m.repo_id = ${anyOf(access.permittedRepoIds)}
+            ${scopeNarrowing(scope, { moduleId: sql`m.id`, repoId: sql`m.repo_id` })}
+            ${service ? sql`AND m.name ILIKE ${`%${service}%`}` : sql``}
           LIMIT 200
         `),
       );
 
       const services = await withOrgContext(db, access.orgId, async (tx) =>
         tx.execute<{ name: string; kind: string; depends_on: string[] }>(sql`
-          SELECT name, kind, depends_on FROM services
-          WHERE org_id = ${access.orgId} AND repo_id = ${anyOf(access.permittedRepoIds)}
+          SELECT name, kind, depends_on FROM services sv
+          WHERE sv.org_id = ${access.orgId}
+            AND sv.repo_id = ${anyOf(access.permittedRepoIds)}
+            ${scopeNarrowing(scope, { moduleId: sql`sv.module_id`, repoId: sql`sv.repo_id` })}
           LIMIT 200
         `),
       );
@@ -437,7 +443,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
       };
     },
 
-    async changesSince(access, since, options) {
+    async changesSince(access, scope, since, options) {
       const rows = await withOrgContext(db, access.orgId, async (tx) =>
         tx.execute<{
           qualified_name: string;
@@ -451,6 +457,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
           JOIN ir_bundles b ON b.repo_id = s.repo_id AND b.commit_sha = ${since}
           WHERE s.org_id = ${access.orgId}
             AND s.repo_id = ${anyOf(access.permittedRepoIds)}
+            ${scopeNarrowing(scope, { moduleId: sql`s.module_id`, repoId: sql`s.repo_id` })}
             AND s.indexed_at > b.received_at
           ORDER BY s.indexed_at DESC
           LIMIT ${options.limit}
