@@ -1,9 +1,10 @@
-import { randomUUID } from 'node:crypto';
+import { createHash, randomBytes, randomUUID } from 'node:crypto';
 
 import { sql } from 'drizzle-orm';
 import { anyOf, withOrgContext, withSystemContext } from '@kna/db';
 import {
   zBulkReviewDecision,
+  zCreatePrincipalRequest,
   zOnboardRepoRequest,
   zIngestCredentialRequest,
   zPublishExternallyRequest,
@@ -135,6 +136,103 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       grantedTo: grantTo,
       projectSlugs: body.projectSlugs.filter((slug) => knownSlugs.has(slug)),
       unknownProjectSlugs,
+    });
+  });
+
+  /**
+   * Create a person, and issue them a token.
+   *
+   * The token is returned once and stored only as a hash, so it cannot be recovered — the same
+   * property the seed relies on, for the same reason: a database that leaks should yield
+   * fingerprints rather than working credentials.
+   *
+   * Idempotent on `(org, subject)`. Re-running it for someone who exists issues them a *new*
+   * token rather than a second identity, which is also how you rotate one.
+   */
+  app.post('/v1/admin/principals', async (request, reply) => {
+    const principal = await requireAdmin(request);
+    const body = zCreatePrincipalRequest.parse(request.body);
+
+    const principalId = `prin_${randomUUID().replace(/-/g, '').slice(0, 20)}`;
+    const plain = `kna_${randomBytes(24).toString('base64url')}`;
+    const tokenHash = createHash('sha256').update(plain).digest('hex');
+
+    const granted = await withSystemContext(
+      ctx.dbBatch,
+      principal.orgId,
+      'maintenance',
+      async (tx) => {
+        const rows = await tx.execute<{ id: string }>(sql`
+        INSERT INTO principals (id, org_id, subject, email, display_name, clearance, is_service_account)
+        VALUES (
+          ${principalId}, ${principal.orgId}, ${body.subject}, ${body.email},
+          ${body.displayName}, ${body.clearance}, ${body.isServiceAccount}
+        )
+        ON CONFLICT (org_id, subject) DO UPDATE SET
+          email = COALESCE(EXCLUDED.email, principals.email),
+          display_name = COALESCE(EXCLUDED.display_name, principals.display_name),
+          clearance = EXCLUDED.clearance,
+          disabled_at = NULL
+        RETURNING id
+      `);
+        const id = String(rows[0]!.id);
+
+        for (const role of body.roles) {
+          await tx.execute(sql`
+          INSERT INTO principal_roles (principal_id, org_id, role, granted_by)
+          VALUES (${id}, ${principal.orgId}, ${role}, ${principal.id})
+          ON CONFLICT (principal_id, role) DO NOTHING
+        `);
+        }
+
+        // Only repositories that exist in this org, so a typo narrows access rather than
+        // silently creating a permission row pointing at nothing.
+        const grants = await tx.execute<{ repo_id: string }>(sql`
+        INSERT INTO repo_permissions (principal_id, repo_id, org_id, level)
+        SELECT ${id}, r.id, ${principal.orgId}, 'read'
+          FROM repos r
+         WHERE r.org_id = ${principal.orgId} AND r.id = ${anyOf(body.grantRepoIds)}
+        ON CONFLICT (principal_id, repo_id) DO NOTHING
+        RETURNING repo_id
+      `);
+
+        await tx.execute(sql`
+        INSERT INTO api_tokens (id, org_id, principal_id, token_hash, name, last_four_chars, scopes)
+        VALUES (
+          ${`tok_${randomBytes(8).toString('hex')}`}, ${principal.orgId}, ${id}, ${tokenHash},
+          ${`issued by ${principal.subject}`}, ${plain.slice(-4)},
+          ${JSON.stringify(['kna:search', 'kna:symbols', 'kna:docs'])}::jsonb
+        )
+      `);
+
+        return grants.map((g) => String(g.repo_id));
+      },
+    );
+
+    await ctx.audit.record({
+      orgId: principal.orgId,
+      action: 'admin.principal_created',
+      actorType: 'admin',
+      actorId: principal.id,
+      resourceType: 'principal',
+      resourceId: body.subject,
+      outcome: 'success',
+      detail: {
+        reason: body.reason,
+        clearance: body.clearance,
+        roles: body.roles,
+        grantedRepoIds: granted,
+      },
+    });
+
+    return reply.code(201).send({
+      principalId,
+      subject: body.subject,
+      token: plain,
+      lastFourChars: plain.slice(-4),
+      grantedRepoIds: granted,
+      warning:
+        'Shown once and stored only as a hash. It cannot be recovered — issue a new one if it is lost.',
     });
   });
 
