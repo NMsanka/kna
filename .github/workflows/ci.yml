@@ -135,13 +135,20 @@ jobs:
       - name: Retrieval eval gate
         if: steps.config.outputs.changed == 'true'
         run: |
-          echo "::error::Retrieval configuration changed, but no eval runner is wired up yet."
+          echo "::error::Retrieval configuration changed with no measurement and no justification."
           echo ""
           echo "The gate exists (packages/retrieval/src/eval) and is unit-tested. What is"
           echo "missing is the runner: load eval_items, execute the pipeline against a seeded"
-          echo "corpus, and feed evaluateGate()."
+          echo "corpus, and feed evaluateGate(). Until that lands nothing here is measured."
           echo ""
-          echo "Until that lands, a retrieval change needs a human to say why it is safe."
+          echo "So this change needs a human to say why it is safe, in writing and in the same"
+          echo "diff. Add an entry to docs/retrieval-changes.md explaining the mechanism by"
+          echo "which the change cannot regress quality — or stating plainly that it might, and"
+          echo "why that is acceptable."
+          echo ""
+          echo "An entry that says 'small change, looks fine' is not one. §15.5's whole point is"
+          echo "that at n=100 the eval set resolves 5-8 point deltas while most real changes move"
+          echo "1-3, so looking fine was never evidence."
           exit 1
 
   security:
