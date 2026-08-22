@@ -20,12 +20,15 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yaml,yml}\"",
     "db:generate": "pnpm --filter @kna/db generate",
     "db:migrate": "pnpm --filter @kna/db migrate",
-    "dev:infra": "docker compose -f deploy/docker-compose.yml up -d postgres redis minio litellm",
-    "dev:infra:down": "docker compose -f deploy/docker-compose.yml down",
+    "dev:infra": "docker compose --env-file .env -f deploy/docker-compose.yml up -d postgres redis minio minio-init litellm",
+    "dev:infra:down": "docker compose --env-file .env -f deploy/docker-compose.yml down",
     "dev:api": "pnpm --filter @kna/api dev",
     "dev:worker": "pnpm --filter @kna/worker dev",
     "dev:mcp": "pnpm --filter @kna/mcp dev",
-    "conformance": "vitest run packages/analyzer-typescript"
+    "conformance": "vitest run packages/analyzer-typescript",
+    "db:seed": "pnpm --filter @kna/db seed",
+    "dev:infra:full": "docker compose --env-file .env -f deploy/docker-compose.yml --profile full up -d",
+    "dev:infra:logs": "docker compose --env-file .env -f deploy/docker-compose.yml logs -f"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",

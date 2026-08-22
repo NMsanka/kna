@@ -50,12 +50,21 @@ export class BundleStore {
     );
 
     const body = gzipSync(Buffer.from(JSON.stringify(bundle), 'utf8'), { level: 6 });
+
+    // Note what is *not* sent here: a per-object `x-amz-object-lock-mode`.
+    //
+    // §15.1 requires these bundles to be immutable, but object lock is a property of the
+    // bucket, configured at creation and enforced by a default retention rule. Asserting it
+    // per object fails with `InvalidRequest: Bucket is missing ObjectLockConfiguration` on any
+    // bucket not created with `--with-lock`, and a mode without a retain-until date is invalid
+    // even on one that was. The result was that ingest failed at the first write rather than
+    // at deploy time.
+    //
+    // Immutability is therefore infrastructure configuration, verified by `objectLockEnabled()`
+    // and asserted at startup in production, rather than a header on the hot path.
     await this.request('PUT', key, body, {
       'content-type': 'application/json',
       'content-encoding': 'gzip',
-      // Immutability is asserted at write time. A bundle that can be rewritten is not a system
-      // of record, and DR that depends on "nobody overwrote it" is not a DR story.
-      'x-amz-object-lock-mode': 'COMPLIANCE',
       'x-amz-meta-ir-schema-version': bundle.envelope.irSchemaVersion,
       'x-amz-meta-payload-hash': bundle.envelope.payloadHash,
     });
@@ -66,14 +75,35 @@ export class BundleStore {
   async get(key: string): Promise<IrBundle> {
     const response = await this.request('GET', key);
     const buffer = Buffer.from(await response.arrayBuffer());
-    const json = key.endsWith('.gz')
-      ? gunzipSync(buffer).toString('utf8')
-      : buffer.toString('utf8');
+    // Sniff the bytes rather than trusting the key suffix. The object is stored with
+    // `content-encoding: gzip`, so `fetch` transparently decompresses it — and gunzipping
+    // already-decompressed bytes fails with "incorrect header check", an error that says
+    // nothing about where the double-decompression happened. Any proxy or CDN in front of the
+    // store can do the same, so the magic bytes are the only reliable signal.
+    const json = isGzip(buffer) ? gunzipSync(buffer).toString('utf8') : buffer.toString('utf8');
     return JSON.parse(json) as IrBundle;
   }
 
   async getPayload(key: string): Promise<IrBundlePayload> {
     return (await this.get(key)).payload;
+  }
+
+  /**
+   * Whether the bucket actually enforces immutability.
+   *
+   * §15.1 makes the bundle store the system of record and Postgres a derived cache, which only
+   * holds if a stored bundle cannot be rewritten. A bucket without object lock looks identical
+   * in every other respect, so this is checked explicitly rather than assumed — production
+   * asserts it at startup, development logs it and continues.
+   */
+  async objectLockEnabled(): Promise<boolean> {
+    try {
+      const response = await this.request('GET', '', undefined, {}, true, '?object-lock=');
+      const xml = await response.text();
+      return /<ObjectLockEnabled>Enabled<\/ObjectLockEnabled>/.test(xml);
+    } catch {
+      return false;
+    }
   }
 
   async healthy(): Promise<boolean> {
@@ -201,6 +231,11 @@ export class BundleStore {
 
     return `AWS4-HMAC-SHA256 Credential=${this.options.accessKey}/${scope}, SignedHeaders=${signedHeaderNames.join(';')}, Signature=${signature}`;
   }
+}
+
+/** gzip magic number: 0x1f 0x8b. */
+function isGzip(buffer: Buffer): boolean {
+  return buffer.length >= 2 && buffer[0] === 0x1f && buffer[1] === 0x8b;
 }
 
 export class BundleStoreError extends Error {

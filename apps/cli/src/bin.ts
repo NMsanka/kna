@@ -39,6 +39,8 @@ program
   .option('--project <slug...>', 'project slugs this repo belongs to')
   .option('--platform-url <url>', 'platform base URL')
   .option('--provider <provider>', 'github | azuredevops | gitlab')
+  .option('--cli-source <mode>', 'source | registry — where CI gets the kna CLI', 'source')
+  .option('--platform-repo <owner/name>', 'platform repository, for --cli-source source')
   .option('--force', 'write a config file even when every value would be a default', false)
   .option('--dry-run', 'show what would be written without writing it', false)
   .action(async (options) => {
@@ -48,6 +50,8 @@ program
       projects: options.project,
       platformUrl: options.platformUrl,
       provider: options.provider,
+      cliSource: options.cliSource,
+      platformRepo: options.platformRepo,
       force: Boolean(options.force),
       dryRun: Boolean(options.dryRun),
     });
@@ -129,6 +133,7 @@ program
     false,
   )
   .option('--max-tier <tier>', 'tier0 | tier1 | tier2')
+  .option('--bundle <path>', 'publish a bundle from `kna describe --output` instead of analysing')
   .option('--dry-run', 'analyse and sign, but do not send', false)
   .action(async (options) => {
     const ctx = await context(program.opts());
@@ -136,6 +141,8 @@ program
       platformUrl: options.platformUrl,
       token: options.token,
       maxTier: options.maxTier,
+      bundlePath: options.bundle,
+      oidc: Boolean(options.oidc),
       dryRun: Boolean(options.dryRun),
     });
   });

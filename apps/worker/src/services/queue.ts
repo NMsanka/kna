@@ -35,6 +35,18 @@ export type QueueName = (typeof QUEUE_NAMES)[keyof typeof QUEUE_NAMES];
  *  - **Graceful drain.** A rolling deploy must let in-flight indexing finish rather than
  *    orphaning a half-written module partition.
  */
+/**
+ * Build a BullMQ job id.
+ *
+ * BullMQ rejects a custom id containing `:` — it is the Redis key separator, and the failure is
+ * a 500 at enqueue time rather than anything the type system can catch. The ids here are
+ * deliberately deterministic, because that is what makes a replayed webhook a no-op at the
+ * queue instead of something the worker has to detect (§7 idempotency).
+ */
+function jobId(...parts: string[]): string {
+  return parts.join('-').replace(/:/g, '-');
+}
+
 export class WorkerQueue {
   private readonly connection: Redis;
   private readonly workers = new Map<QueueName, Worker>();
@@ -69,7 +81,7 @@ export class WorkerQueue {
   register<T>(
     name: QueueName,
     processor: (job: Job<T>) => Promise<unknown>,
-    options: { concurrency?: number; db?: DbHandle } = {},
+    options: { concurrency?: number; db?: DbHandle; lockDurationMs?: number } = {},
   ): void {
     const wrapped: Processor<T> = async (job) => {
       // Provider backpressure. Throwing here returns the job to the queue with its backoff
@@ -112,6 +124,12 @@ export class WorkerQueue {
       // interleaving with the original run (§15.6).
       stalledInterval: 60_000,
       maxStalledCount: 2,
+      // BullMQ's 30-second default assumes short jobs. It renews on a timer while the processor
+      // runs, so the default is fine for indexing — but a job that is still holding the lock
+      // when its process is replaced loses it, and one long enough to span a deploy will be
+      // re-dispatched mid-flight. Documentation regeneration makes one model call per module in
+      // sequence and runs for minutes; it asks for a lock that matches.
+      lockDuration: options.lockDurationMs ?? 30_000,
     });
 
     worker.on('failed', (job, error) => {
@@ -187,11 +205,14 @@ export class WorkerQueue {
     orgId: string;
     repoId: string;
     commitSha: string;
+    ref: string;
     bundleStorageKey: string;
   }): Promise<string> {
-    const jobId = `docs:${job.repoId}:${job.commitSha}`;
-    await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, { jobId });
-    return jobId;
+    const id = jobId('docs', job.repoId, job.commitSha);
+    await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, {
+      jobId: id,
+    });
+    return id;
   }
 
   async pause(name: QueueName, reason: string): Promise<void> {

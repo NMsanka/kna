@@ -210,6 +210,7 @@ export async function registerIngestRoutes(app: KnaServer, ctx: ApiContext): Pro
         orgId: bundle.envelope.orgId,
         repoId: bundle.envelope.repoId,
         commitSha: bundle.envelope.commitSha,
+        ref: bundle.envelope.ref,
         bundleStorageKey: storageKey,
       });
       jobIds.push(jobId);

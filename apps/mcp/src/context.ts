@@ -1,6 +1,14 @@
 import { createHash } from 'node:crypto';
 import { sql } from 'drizzle-orm';
-import { createDb, withOrgContext, type DbHandle } from '@kna/db';
+import {
+  anyOf,
+  createDb,
+  withAuthProbe,
+  withOrgContext,
+  withSystemContext,
+  type DbHandle,
+} from '@kna/db';
+import { AuditRecorder } from '@kna/audit';
 import { HealthRegistry, KnaMetrics, type Logger } from '@kna/observability';
 import { LlmClient } from '@kna/llm';
 import {
@@ -113,6 +121,18 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
     applicationName: 'kna-mcp',
   });
 
+  // A second handle with the write-capable role. 0005 gives `kna_interactive` SELECT only, which
+  // is the right posture for the surface an agent drives — but audit and breadth accounting are
+  // writes the platform owes regardless of what the caller asked for.
+  const dbBatch = createDb({
+    url: env.DATABASE_URL_BATCH ?? env.DATABASE_URL,
+    role: 'batch',
+    poolMax: 4,
+    applicationName: 'kna-mcp-audit',
+  });
+
+  const audit = new AuditRecorder(dbBatch, logger);
+
   const llm = new LlmClient({
     baseUrl: env.LITELLM_BASE_URL,
     keys: { interactive: env.LITELLM_KEY_INTERACTIVE, batch: env.LITELLM_KEY_BATCH },
@@ -173,17 +193,23 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
         };
       }
 
-      const [granted, denied] = await Promise.all([
-        db.sql<Array<{ repo_id: string }>>`
-          SELECT repo_id FROM repo_permissions
-          WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id}
-        `,
-        db.sql<Array<{ repo_id: string | null }>>`
-          SELECT repo_id FROM permission_revocations
-          WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id}
-            AND expires_at > now()
-        `,
-      ]);
+      // Inside org context, not on the bare connection. `repo_permissions` is RLS-scoped like
+      // everything else, so an unscoped read returns zero rows — and zero permitted repos is
+      // indistinguishable from a principal with no access. Every MCP tool call failed with
+      // "caller has no permitted repositories" while the grant sat in the table.
+      const [granted, denied] = await withOrgContext(db, principal.orgId, async (tx) =>
+        Promise.all([
+          tx.execute<{ repo_id: string }>(sql`
+            SELECT repo_id FROM repo_permissions
+            WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id}
+          `),
+          tx.execute<{ repo_id: string | null }>(sql`
+            SELECT repo_id FROM permission_revocations
+            WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id}
+              AND expires_at > now()
+          `),
+        ]),
+      );
 
       const deniedIds = denied.map((d) => d.repo_id).filter((id): id is string => id !== null);
       const denyAll = denied.some((d) => d.repo_id === null);
@@ -212,57 +238,64 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
 
     async authenticate(token: string): Promise<McpIdentity> {
       const hash = createHash('sha256').update(token).digest('hex');
-      const rows = await db.sql<
-        Array<{
-          principal_id: string;
-          org_id: string;
-          subject: string;
-          email: string | null;
-          clearance: McpPrincipal['clearance'];
-          is_service_account: boolean;
-          audience: string;
-          scopes: string[];
-          inferred_project_id: string | null;
-          client_name: string | null;
-          expires_at: Date;
-        }>
-      >`
-        SELECT t.principal_id, p.org_id, p.subject, p.email, p.clearance, p.is_service_account,
-               t.audience, t.scopes, t.inferred_project_id, t.client_name, t.expires_at
-        FROM mcp_tokens t
-        JOIN principals p ON p.id = t.principal_id
-        WHERE t.token_hash = ${hash}
-          AND t.expires_at > now()
-          AND t.revoked_at IS NULL
-          AND p.disabled_at IS NULL
-        LIMIT 1
-      `;
 
-      const row = rows[0];
-      if (!row) throw new McpAuthError('Unknown, expired or revoked token.');
+      // Two contexts, for the reason spelled out in migration 0006: the token row is read
+      // through the auth probe because there is no principal yet to derive a tenant scope from,
+      // and everything after it is read inside the org that token resolved to.
+      const claim = await withAuthProbe(db, hash, async (tx) => {
+        const rows = await tx.execute(sql`
+          SELECT principal_id, org_id, audience, scopes, inferred_project_id, client_name,
+                 expires_at
+            FROM mcp_tokens
+           WHERE token_hash = ${hash}
+             AND expires_at > now()
+             AND revoked_at IS NULL
+           LIMIT 1
+        `);
+        return rows[0] ?? null;
+      });
+
+      if (!claim) throw new McpAuthError('Unknown, expired or revoked token.');
 
       // §15.4 — the confused-deputy defence. A token minted for a different MCP resource is
-      // refused even though its signature and expiry are perfectly valid.
-      if (row.audience !== resourceIndicator) {
+      // refused even though its signature and expiry are perfectly valid. Checked before the
+      // principal is loaded: a token for the wrong resource should learn nothing about who it
+      // would have been.
+      const audience = String(claim.audience);
+      if (audience !== resourceIndicator) {
         throw new McpAuthError(
-          `Token audience '${row.audience}' does not match this resource. Audience-bound tokens are what stop a credential minted for one MCP server being replayed against another.`,
+          `Token audience '${audience}' does not match this resource. Audience-bound tokens are what stop a credential minted for one MCP server being replayed against another.`,
         );
       }
 
+      const orgId = String(claim.org_id);
+      const principal = await withOrgContext(db, orgId, async (tx) => {
+        const rows = await tx.execute(sql`
+          SELECT id, subject, email, clearance, is_service_account
+            FROM principals
+           WHERE id = ${String(claim.principal_id)} AND org_id = ${orgId} AND disabled_at IS NULL
+           LIMIT 1
+        `);
+        return rows[0] ?? null;
+      });
+
+      if (!principal) throw new McpAuthError('Unknown, expired or revoked token.');
+
       return {
         principal: {
-          id: row.principal_id,
-          orgId: row.org_id,
-          subject: row.subject,
-          email: row.email,
-          clearance: row.clearance,
-          isServiceAccount: row.is_service_account,
+          id: String(principal.id),
+          orgId,
+          subject: String(principal.subject),
+          email: principal.email === null ? null : String(principal.email),
+          clearance: principal.clearance as McpPrincipal['clearance'],
+          isServiceAccount: Boolean(principal.is_service_account),
         },
-        audience: row.audience,
-        scopes: row.scopes,
-        inferredProjectId: row.inferred_project_id,
-        clientName: row.client_name,
-        expiresAt: row.expires_at.getTime(),
+        audience,
+        scopes: claim.scopes as string[],
+        inferredProjectId:
+          claim.inferred_project_id === null ? null : String(claim.inferred_project_id),
+        clientName: claim.client_name === null ? null : String(claim.client_name),
+        expiresAt: new Date(String(claim.expires_at)).getTime(),
       };
     },
 
@@ -311,35 +344,44 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
     async recordAccess(input) {
       KnaMetrics.providerRequests.add(1, { surface: 'mcp', tool: input.action });
 
-      await db.sql`
-        INSERT INTO audit_events (id, org_id, hash, actor_type, actor_id, actor_subject,
-                                  action, outcome, detail, repos_touched, chunk_ids)
-        VALUES (
-          gen_random_uuid()::text, ${input.identity.principal.orgId}, '',
-          'mcp', ${input.identity.principal.id}, ${input.identity.principal.subject},
-          ${input.action}, 'success',
-          ${JSON.stringify({ sessionId: input.sessionId, client: input.identity.clientName })}::jsonb,
-          ${JSON.stringify(input.repoIds)}::jsonb,
-          ${JSON.stringify(input.chunkIds)}::jsonb
-        )
-      `.catch((error: unknown) => {
-        logger.error({ err: String(error) }, 'mcp audit write failed');
+      // Through the shared recorder, not an inline INSERT.
+      //
+      // The inline version was wrong in three independent ways, and every one of them was
+      // swallowed by the `.catch()` around it, so MCP appeared to be audited and was not:
+      // it wrote `hash = ''`, placing the row outside the tamper-evident chain §15.7 requires;
+      // it ran without org context, so the RLS WITH CHECK rejected it; and it used the
+      // interactive handle, which 0005 grants SELECT and nothing more.
+      await audit.record({
+        orgId: input.identity.principal.orgId,
+        action: input.action,
+        actorType: 'mcp',
+        actorId: input.identity.principal.id,
+        actorSubject: input.identity.principal.subject,
+        outcome: 'success',
+        detail: { sessionId: input.sessionId, client: input.identity.clientName },
+        reposTouched: input.repoIds,
+        chunkIds: input.chunkIds,
       });
 
       // §15.4 — breadth over volume. Maintained as a rolling aggregate so the detector is a
       // cheap upsert rather than a scan of audit rows.
-      await db.sql`
-        INSERT INTO access_breadth (org_id, principal_id, window_start, distinct_repos,
-                                    distinct_modules, tool_calls, surface)
-        VALUES (
-          ${input.identity.principal.orgId}, ${input.identity.principal.id},
-          date_trunc('hour', now()), ${input.repoIds.length}, ${input.moduleIds.length}, 1, 'mcp'
-        )
-        ON CONFLICT (org_id, principal_id, window_start, surface) DO UPDATE SET
-          distinct_repos = access_breadth.distinct_repos + EXCLUDED.distinct_repos,
-          distinct_modules = access_breadth.distinct_modules + EXCLUDED.distinct_modules,
-          tool_calls = access_breadth.tool_calls + 1
-      `.catch(() => undefined);
+      await withSystemContext(dbBatch, input.identity.principal.orgId, 'maintenance', (tx) =>
+        tx.execute(sql`
+          INSERT INTO access_breadth (org_id, principal_id, window_start, distinct_repos,
+                                      distinct_modules, tool_calls, surface)
+          VALUES (
+            ${input.identity.principal.orgId}, ${input.identity.principal.id},
+            date_trunc('hour', now()), ${input.repoIds.length}, ${input.moduleIds.length}, 1, 'mcp'
+          )
+          ON CONFLICT (org_id, principal_id, window_start, surface) DO UPDATE SET
+            distinct_repos = access_breadth.distinct_repos + EXCLUDED.distinct_repos,
+            distinct_modules = access_breadth.distinct_modules + EXCLUDED.distinct_modules,
+            tool_calls = access_breadth.tool_calls + 1
+        `),
+      ).catch((error: unknown) => {
+        // Aggregate only — the authoritative record is the audit row above.
+        logger.error({ err: String(error) }, 'mcp access-breadth update failed');
+      });
     },
 
     async architecture(access, service) {
@@ -352,7 +394,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
         }>(sql`
           SELECT id, name, repo_id, dependencies FROM modules
           WHERE org_id = ${access.orgId}
-            AND repo_id = ANY(${access.permittedRepoIds})
+            AND repo_id = ${anyOf(access.permittedRepoIds)}
             ${service ? sql`AND name ILIKE ${`%${service}%`}` : sql``}
           LIMIT 200
         `),
@@ -361,7 +403,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
       const services = await withOrgContext(db, access.orgId, async (tx) =>
         tx.execute<{ name: string; kind: string; depends_on: string[] }>(sql`
           SELECT name, kind, depends_on FROM services
-          WHERE org_id = ${access.orgId} AND repo_id = ANY(${access.permittedRepoIds})
+          WHERE org_id = ${access.orgId} AND repo_id = ${anyOf(access.permittedRepoIds)}
           LIMIT 200
         `),
       );
@@ -408,7 +450,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
           FROM symbols s
           JOIN ir_bundles b ON b.repo_id = s.repo_id AND b.commit_sha = ${since}
           WHERE s.org_id = ${access.orgId}
-            AND s.repo_id = ANY(${access.permittedRepoIds})
+            AND s.repo_id = ${anyOf(access.permittedRepoIds)}
             AND s.indexed_at > b.received_at
           ORDER BY s.indexed_at DESC
           LIMIT ${options.limit}
@@ -435,7 +477,10 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
     },
 
     async shutdown() {
-      await db.close();
+      // Audit first: the recorder buffers, and a rolling deploy that closes the pool underneath
+      // it loses the tail of the trail — precisely the records an incident review would want.
+      await audit.flush();
+      await Promise.all([db.close(), dbBatch.close()]);
     },
   };
 }

@@ -1,10 +1,11 @@
 import { sql } from 'drizzle-orm';
-import { withModuleLock, withSystemContext } from '@kna/db';
+import { anyOf, withModuleLock, withSystemContext } from '@kna/db';
 import { chunkSymbols, clusterChunks, generateBlurbs, type Chunk } from '@kna/chunking';
 import { estimateIndexCost } from '@kna/llm';
 import { computeConfigVersion } from '@kna/retrieval';
 import type { IrBundlePayload, IrModule, IrSymbol } from '@kna/ir';
 import type { WorkerContext } from '../context.js';
+import { resolveProjectIds } from './project-scope.js';
 
 /**
  * Index one module.
@@ -70,8 +71,22 @@ export async function indexModule(
     return { ...empty, skipped: true, skipReason: 'module not present in bundle' };
   }
 
-  const symbols = payload.symbols.filter((s) => s.moduleId === input.moduleId);
+  const symbolsAsPublished = payload.symbols.filter((s) => s.moduleId === input.moduleId);
   const versionId = await resolveVersionId(ctx, input, payload);
+
+  // Project membership arrives from the repo in the repo's own vocabulary — the slugs written in
+  // its kna.config.yaml — because a repository cannot be expected to know the platform's internal
+  // project ids, any more than it knows its own orgId (which the CLI likewise sends as a slug).
+  // Resolving here, once, means everything downstream — module_projects, chunks.project_ids, and
+  // therefore the ACL filter's project overlap — speaks in resolved ids.
+  //
+  // Left unresolved, this fails silently in the worst way: membership rows simply never match, so
+  // every project-scoped query returns an empty result that is indistinguishable from "nothing
+  // indexed yet". Unknown slugs are dropped rather than invented, so a typo narrows visibility
+  // instead of granting it.
+  const projectIds = await resolveProjectIds(ctx, input.orgId, module.projectIds);
+  const scopedModule: IrModule = { ...module, projectIds };
+  const symbols: IrSymbol[] = symbolsAsPublished.map((s) => ({ ...s, projectIds }));
 
   // ── 2. Serialise on the module ───────────────────────────────────────────────────────────
   return withModuleLock(ctx.db, input.moduleId, async () => {
@@ -104,7 +119,7 @@ export async function indexModule(
       const retrievalConfigVersion = computeConfigVersion(ctx.retrievalConfig).version;
 
       let chunks = chunkSymbols(symbols, {
-        module,
+        module: scopedModule,
         versionId,
         commitSha: input.commitSha,
         retrievalConfigVersion,
@@ -136,7 +151,7 @@ export async function indexModule(
         // Re-chunk with the blurbs present. The context header is part of what gets embedded,
         // so embedding the pre-blurb text would waste the whole point of contextual retrieval.
         chunks = chunkSymbols(symbols, {
-          module,
+          module: scopedModule,
           versionId,
           commitSha: input.commitSha,
           retrievalConfigVersion,
@@ -163,7 +178,7 @@ export async function indexModule(
         vectors,
         clusters,
         symbols,
-        module,
+        module: scopedModule,
       });
 
       ctx.metrics.symbolsIndexed.add(symbols.length, { module: input.moduleId });
@@ -212,7 +227,71 @@ async function swapModulePartition(
   },
 ): Promise<{ upserted: number; deleted: number }> {
   return withSystemContext(ctx.db, input.orgId, 'indexing', async (tx) => {
-    // Symbols first: chunks reference them, and the graph-expansion query joins through them.
+    // The module row first, because everything below is a child of it.
+    //
+    // Nothing upstream creates it. Ingest verifies the envelope, stores the bundle and queues a
+    // job per module; the bundle is the system of record and Postgres is a derived cache
+    // (§15.1 fix 1), so the cache is populated by the job that rebuilds it — not by the request
+    // that accepted the bundle. Writing it here also keeps §15.1 fix 3 honest: the module is the
+    // unit of reindex atomicity, so its own row belongs inside its own partition swap, under the
+    // same advisory lock, rather than in a repo-wide pre-pass that would serialise a monorepo.
+    //
+    // This was previously a bare `UPDATE modules` at the end of the swap, which matched zero
+    // rows and reported success. The symbols insert below is what surfaced it, via a foreign key.
+    await tx.execute(sql`
+      INSERT INTO modules (
+        id, org_id, repo_id, key, path, name, ecosystem, package_name, package_version,
+        languages, visibility, sensitivity, analysis_depth, analysis_notes, owners,
+        dependencies, symbol_count, file_count, indexed_commit_sha, indexed_at
+      ) VALUES (
+        ${input.module.id}, ${input.orgId}, ${input.module.repoId}, ${input.module.key},
+        ${input.module.path}, ${input.module.name}, ${input.module.ecosystem},
+        ${input.module.packageName}, ${input.module.packageVersion},
+        ${JSON.stringify(input.module.languages)}::jsonb,
+        ${input.module.visibility}, ${input.module.sensitivity}, ${input.module.analysisDepth},
+        ${JSON.stringify(input.module.analysisNotes)}::jsonb,
+        ${JSON.stringify(input.module.owners)}::jsonb,
+        ${JSON.stringify(input.module.dependencies)}::jsonb,
+        ${input.symbols.length}, ${input.module.fileCount}, ${input.commitSha}, now()
+      )
+      ON CONFLICT (id) DO UPDATE SET
+        key = EXCLUDED.key,
+        path = EXCLUDED.path,
+        name = EXCLUDED.name,
+        ecosystem = EXCLUDED.ecosystem,
+        package_name = EXCLUDED.package_name,
+        package_version = EXCLUDED.package_version,
+        languages = EXCLUDED.languages,
+        visibility = EXCLUDED.visibility,
+        sensitivity = EXCLUDED.sensitivity,
+        analysis_depth = EXCLUDED.analysis_depth,
+        analysis_notes = EXCLUDED.analysis_notes,
+        owners = EXCLUDED.owners,
+        dependencies = EXCLUDED.dependencies,
+        symbol_count = EXCLUDED.symbol_count,
+        file_count = EXCLUDED.file_count,
+        indexed_commit_sha = EXCLUDED.indexed_commit_sha,
+        indexed_at = EXCLUDED.indexed_at
+    `);
+
+    // §4.3 — project membership is a property of the module, not the repo. Declared ids that do
+    // not resolve to a project are skipped rather than failing the index: a typo in a repo's
+    // config should narrow what the module is visible under, not stop it being indexed at all.
+    await tx.execute(sql`
+      INSERT INTO module_projects (module_id, project_id, org_id)
+      SELECT ${input.module.id}, p.id, ${input.orgId}
+        FROM projects p
+       WHERE p.org_id = ${input.orgId} AND p.id = ${anyOf(input.module.projectIds)}
+      ON CONFLICT (module_id, project_id) DO NOTHING
+    `);
+    await tx.execute(sql`
+      DELETE FROM module_projects
+       WHERE org_id = ${input.orgId}
+         AND module_id = ${input.module.id}
+         AND NOT (project_id = ${anyOf(input.module.projectIds)})
+    `);
+
+    // Symbols next: chunks reference them, and the graph-expansion query joins through them.
     for (const symbol of input.symbols) {
       await tx.execute(sql`
         INSERT INTO symbols (
@@ -292,9 +371,16 @@ async function swapModulePartition(
           ${chunk.contentHash}, ${chunk.tokenCount}, ${null}, ${clusterId},
           ${isRepresentative}, ${chunk.generated}, ${chunk.sensitivity}, ${chunk.analysisDepth},
           ${chunk.sourcePath}, ${chunk.sourceStartLine}, ${chunk.sourceEndLine},
-          ${input.commitSha}, ${chunk.id.slice(0, 0) || 'v1'}
+          ${input.commitSha}, ${chunk.retrievalConfigVersion}
         )
         ON CONFLICT (org_id, symbol_id, ordinal, version_id) DO UPDATE SET
+          -- Project membership moves: a module is reassigned, a repo's config changes, or — as
+          -- here — the ids themselves are resolved differently. Leaving it out of the update
+          -- meant a reindex rebuilt the content and the vectors but kept whatever scope the
+          -- chunk was first written with, which is the one column the ACL filter reads.
+          project_ids = EXCLUDED.project_ids,
+          generated = EXCLUDED.generated,
+          retrieval_config_version = EXCLUDED.retrieval_config_version,
           content = EXCLUDED.content,
           context_header = EXCLUDED.context_header,
           content_hash = EXCLUDED.content_hash,
@@ -323,15 +409,31 @@ async function swapModulePartition(
       upserted++;
     }
 
-    // The sweep. Anything not stamped with this commit is from a previous index — including
-    // whatever a crashed run left behind.
+    // The sweep — everything in this partition that this run did not just write.
+    //
+    // This used to delete by `indexed_commit_sha <> commitSha`, on the reasoning that anything
+    // not stamped with this commit belongs to a previous index. That is true for the common case
+    // and silently wrong for two others, both of which stamp the *same* commit:
+    //
+    //   * A deliberate reindex. `/v1/admin/reindex` replays a stored bundle at the commit it was
+    //     built from — that is the point of it, and the reasons for asking are exactly the ones
+    //     that change the output: a new embedding model, different chunk sizes, a fixed indexer
+    //     bug. The stale chunks carry the matching sha, so they survived and the corpus ended up
+    //     holding both versions.
+    //   * A crashed run, retried at the same commit. The docstring above claims robustness here;
+    //     it did not have it, for the same reason.
+    //
+    // Comparing against the ids this run produced covers all three cases and needs no reasoning
+    // about which commit anything came from. It is also what "partition swap" should mean: after
+    // it, the module's partition is exactly what this run built.
+    const chunkIds = input.chunks.map((c) => c.id);
     const deletedRows = await tx.execute<{ count: string }>(sql`
       WITH removed AS (
         DELETE FROM chunks
         WHERE org_id = ${input.orgId}
           AND module_id = ${input.moduleId}
           AND version_id = ${input.versionId}
-          AND indexed_commit_sha <> ${input.commitSha}
+          AND NOT (id = ${anyOf(chunkIds)})
         RETURNING id
       ), removed_embeddings AS (
         DELETE FROM embeddings
@@ -340,16 +442,16 @@ async function swapModulePartition(
       SELECT count(*)::text AS count FROM removed
     `);
 
+    // Symbols were never swept at all, so a deleted function stayed queryable forever through
+    // `get_symbol` and `find_usages` — §15.5's "serving deleted code as current is
+    // indistinguishable from confabulation" applied to the symbol surface rather than the chunk
+    // one. Runs after the chunk sweep, because chunks reference symbols.
     await tx.execute(sql`
-      UPDATE modules
-      SET indexed_commit_sha = ${input.commitSha},
-          indexed_at = now(),
-          symbol_count = ${input.symbols.length},
-          analysis_depth = ${input.module.analysisDepth},
-          sensitivity = ${input.module.sensitivity},
-          analysis_notes = ${JSON.stringify(input.module.analysisNotes)}::jsonb,
-          owners = ${JSON.stringify(input.module.owners)}::jsonb
-      WHERE org_id = ${input.orgId} AND id = ${input.moduleId}
+      DELETE FROM symbols
+      WHERE org_id = ${input.orgId}
+        AND module_id = ${input.moduleId}
+        AND version_id = ${input.versionId}
+        AND NOT (id = ${anyOf(input.symbols.map((s) => s.id))})
     `);
 
     return { upserted, deleted: Number(deletedRows[0]?.count ?? 0) };
@@ -363,7 +465,11 @@ async function swapModulePartition(
  * large volumes of byte-identical chunks across an org, and deduplicating them is the cheapest
  * cost lever available."
  */
-async function embedChunks(
+/**
+ * Exported because documentation regeneration embeds too, and the content-hash cache is the
+ * whole cost model (§11): a second implementation would quietly halve the hit rate.
+ */
+export async function embedChunks(
   ctx: WorkerContext,
   orgId: string,
   chunks: Chunk[],
@@ -376,7 +482,7 @@ async function embedChunks(
       SELECT content_hash, embedding::text AS embedding
       FROM embedding_cache
       WHERE org_id = ${orgId} AND model = ${model}
-        AND content_hash = ANY(${chunks.map((c) => c.contentHash)})
+        AND content_hash = ${anyOf(chunks.map((c) => c.contentHash))}
     `),
   );
 
@@ -438,7 +544,7 @@ async function loadCachedBlurbs(
       SELECT signature_hash, blurb FROM context_blurbs
       WHERE org_id = ${orgId}
         AND prompt_version = ${ctx.retrievalConfig.blurbPromptVersion}
-        AND signature_hash = ANY(${symbols.map((s) => s.signatureHash)})
+        AND signature_hash = ${anyOf(symbols.map((s) => s.signatureHash))}
     `),
   );
 
@@ -492,7 +598,7 @@ async function resolveVersionId(
   return versionId;
 }
 
-function parseVector(text: string): number[] {
+export function parseVector(text: string): number[] {
   return text
     .slice(1, -1)
     .split(',')

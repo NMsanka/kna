@@ -1,7 +1,7 @@
 {
   "name": "@kna/mcp",
   "version": "1.0.0",
-  "description": "MCP server \u2014 read-only knowledge tools for coding agents",
+  "description": "MCP server — read-only knowledge tools for coding agents",
   "type": "module",
   "main": "./dist/server.js",
   "scripts": {
@@ -12,16 +12,17 @@
     "clean": "rimraf dist *.tsbuildinfo"
   },
   "dependencies": {
-    "@kna/ir": "workspace:*",
+    "@kna/audit": "workspace:*",
     "@kna/config": "workspace:*",
-    "@kna/db": "workspace:*",
-    "@kna/llm": "workspace:*",
-    "@kna/retrieval": "workspace:*",
-    "@kna/observability": "workspace:*",
     "@kna/contracts": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/ir": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "@kna/retrieval": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.13.0",
-    "zod": "^3.24.1",
-    "drizzle-orm": "^0.38.3"
+    "drizzle-orm": "^0.45.2",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "tsx": "^4.19.2"

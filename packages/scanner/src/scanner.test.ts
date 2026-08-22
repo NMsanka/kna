@@ -227,6 +227,25 @@ describe('helpers', () => {
     expect(isLuhnValid('0000000000000000')).toBe(false);
   });
 
+  it('rejects a long numeric id whose length and prefix match no card scheme', () => {
+    // A Shopify theme section id. Fourteen digits, passes Luhn, and blocked a real publish with
+    // a CRITICAL "payment card" finding. At fourteen digits only Diners Club is assigned, and
+    // 2221–2720 is Mastercard, which is always sixteen — so this belongs to no scheme at all.
+    expect(isLuhnValid('22224696705326')).toBe(false);
+    expect(isLuhnValid('template--22224696705326')).toBe(false);
+  });
+
+  it('still accepts a card from every scheme it claims to know', () => {
+    expect(isLuhnValid('4111111111111111')).toBe(true); // Visa, 16
+    expect(isLuhnValid('4222222222222')).toBe(true); // Visa, 13
+    expect(isLuhnValid('5555555555554444')).toBe(true); // Mastercard, 51-55
+    expect(isLuhnValid('2223003122003222')).toBe(true); // Mastercard, 2-series
+    expect(isLuhnValid('378282246310005')).toBe(true); // American Express
+    expect(isLuhnValid('30569309025904')).toBe(true); // Diners Club, 14
+    expect(isLuhnValid('6011111111111117')).toBe(true); // Discover
+    expect(isLuhnValid('3530111333300000')).toBe(true); // JCB
+  });
+
   it('redacts without leaking material', () => {
     const out = redact('AKIAIOSFODNN7EXAMPLE');
     expect(out.startsWith('AKIA')).toBe(true);

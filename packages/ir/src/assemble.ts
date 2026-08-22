@@ -180,6 +180,31 @@ export function assemble(input: AssembleInput): AssembleResult {
     symbols.push(symbol);
   }
 
+  // Symbol ids must be unique before anything downstream touches them.
+  //
+  // A duplicate id is by definition a bug in whichever analyser produced it — two symbols with
+  // the same identity are one symbol — but assembly is where it has to be caught, because §5's
+  // registry accepts third-party analysers over a subprocess contract and cannot assume they are
+  // correct. Left alone, duplicates travel to the indexer, which derives chunk ids from symbol
+  // ids and fails the whole module's job on a primary-key violation: a mistake in one line of one
+  // file taking out an entire module's index, with an error naming neither.
+  //
+  // The first occurrence wins, and the loss is recorded on the module rather than swallowed, so
+  // "why does this module have fewer symbols than I expect" has an answer in the IR itself.
+  const seenIds = new Set<string>();
+  const deduplicated: IrSymbol[] = [];
+  const droppedByModule = new Map<string, number>();
+  for (const symbol of symbols) {
+    if (seenIds.has(symbol.id)) {
+      droppedByModule.set(symbol.moduleId, (droppedByModule.get(symbol.moduleId) ?? 0) + 1);
+      continue;
+    }
+    seenIds.add(symbol.id);
+    deduplicated.push(symbol);
+  }
+  symbols.length = 0;
+  symbols.push(...deduplicated);
+
   // Reverse edges. `usedBy` needs the whole repo present, which is why analysers leave it empty
   // and why the cross-repo variant is a separate pass on the platform side (§4.3).
   const byId = new Map(symbols.map((s) => [s.id, s]));
@@ -197,6 +222,14 @@ export function assemble(input: AssembleInput): AssembleResult {
     module.symbolCount = own.length;
     module.analysisDepth = weakestDepth(own.map((s) => s.analysisDepth));
     module.languages = [...new Set(own.map((s) => s.language))];
+
+    const dropped = droppedByModule.get(module.id);
+    if (dropped) {
+      module.analysisNotes.push(
+        `${dropped} symbol(s) shared an identity with an earlier symbol and were dropped. ` +
+          `This is an analyser defect: two symbols with the same id are one symbol.`,
+      );
+    }
   }
 
   return { modules, symbols, unresolvedCount };

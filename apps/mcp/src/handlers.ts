@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { sql } from 'drizzle-orm';
-import { withOrgContext } from '@kna/db';
+import { anyOf, withOrgContext } from '@kna/db';
 import { TOOL_DEFINITIONS, wrapUntrusted } from './tools.js';
 import type { McpContext, McpIdentity } from './context.js';
 
@@ -151,7 +151,7 @@ export function registerTools(
         }>(sql`
           SELECT s.* FROM symbols s
           WHERE s.org_id = ${access.orgId}
-            AND s.repo_id = ANY(${access.permittedRepoIds})
+            AND s.repo_id = ${anyOf(access.permittedRepoIds)}
             AND s.sensitivity <> 'restricted'
             AND (
               s.id = ${args.symbol}
@@ -262,7 +262,7 @@ export function registerTools(
                    'call' AS relation
             FROM symbols s, target
             WHERE s.org_id = ${access.orgId}
-              AND s.repo_id = ANY(${access.permittedRepoIds})
+              AND s.repo_id = ${anyOf(access.permittedRepoIds)}
               AND s.sensitivity <> 'restricted'
               AND s.edges -> 'calls' @> to_jsonb(target.id)
           ),
@@ -275,7 +275,7 @@ export function registerTools(
               AND e.org_id = ${access.orgId}
               AND e.to_symbol_id = target.id
               AND e.status = 'resolved'
-              AND s.repo_id = ANY(${access.permittedRepoIds})
+              AND s.repo_id = ${anyOf(access.permittedRepoIds)}
           ),
           combined AS (SELECT * FROM direct UNION ALL SELECT * FROM cross_repo)
           SELECT *, (SELECT count(*)::text FROM combined) AS total
@@ -334,7 +334,7 @@ export function registerTools(
         tx.execute<{ title: string; spec_version: string; document: unknown; repo_id: string }>(sql`
           SELECT title, spec_version, document, repo_id FROM api_specs
           WHERE org_id = ${access.orgId}
-            AND repo_id = ANY(${access.permittedRepoIds})
+            AND repo_id = ${anyOf(access.permittedRepoIds)}
             AND (spec_id = ${args.service} OR title ILIKE ${`%${args.service}%`})
             ${args.version ? sql`AND spec_version = ${args.version}` : sql``}
           ORDER BY created_at DESC

@@ -61,7 +61,7 @@ export class AuditRecorder {
    * tail.
    */
   async record(event: AuditEvent): Promise<void> {
-    const previousHash = this.lastHash.get(event.orgId) ?? null;
+    const previousHash = await this.tailHash(event.orgId);
     const id = randomUUID();
     const hash = this.chainHash(previousHash, id, event);
 
@@ -75,6 +75,43 @@ export class AuditRecorder {
         void this.flush();
       }, this.options.flushIntervalMs ?? 2_000);
       this.flushTimer.unref();
+    }
+  }
+
+  /**
+   * The hash this org's chain currently ends on.
+   *
+   * Held in memory once known, but seeded from the database on first use, because the chain has
+   * to survive process boundaries. Without this, every restart began a fresh chain with a null
+   * `previous_hash`, and §15.7's guarantee — "hash-chained records" that make tampering with the
+   * hot copy detectable — held only within one process lifetime. Every deploy left a seam an
+   * auditor could not distinguish from a deletion.
+   *
+   * A read failure yields null rather than throwing: an unchained audit row is a real loss of
+   * evidence quality, and a dropped audit row is a total one.
+   */
+  private async tailHash(orgId: string): Promise<string | null> {
+    const cached = this.lastHash.get(orgId);
+    if (cached !== undefined) return cached;
+
+    try {
+      const rows = await withSystemContext(this.db, orgId, 'maintenance', async (tx) =>
+        tx.execute<{ hash: string }>(sql`
+          SELECT hash FROM audit_events
+           WHERE org_id = ${orgId}
+           ORDER BY occurred_at DESC, id DESC
+           LIMIT 1
+        `),
+      );
+      const tail = rows[0] ? String(rows[0].hash) : null;
+      if (tail !== null) this.lastHash.set(orgId, tail);
+      return tail;
+    } catch (error) {
+      this.logger.error(
+        { err: error instanceof Error ? error.message : String(error), orgId },
+        'audit chain tail lookup failed; recording an unchained event',
+      );
+      return null;
     }
   }
 

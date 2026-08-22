@@ -149,7 +149,7 @@ DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm test
 ```
 
 Integration tests **skip silently** when `DATABASE_URL` is unset. A green `pnpm test` with no
-database has not tested tenant isolation. Current baseline: **142 tests, 8 files.**
+database has not tested tenant isolation. Current baseline: **194 unit tests plus 25 integration tests, 12 files.**
 
 | Connection | URL | Used by |
 |---|---|---|
@@ -161,9 +161,359 @@ The distinction is not cosmetic — see the first gotcha below.
 
 ---
 
+## End-to-end against a real repository
+
+The full loop — analyse, publish, index, generate documentation, ask — verified against this
+repository. Every step below has been run; the failures each one exposed are in Gotchas.
+
+Bring up the stack. `--env-file .env` is not optional: compose resolves `.env` relative to the
+compose file, so without it every `${VAR}` comes from `deploy/.env` and the OpenAI key silently
+becomes the placeholder.
+
+```bash
+docker compose --env-file .env -f deploy/docker-compose.yml up -d postgres redis minio litellm
+```
+
+Migrate, then seed a tenant. The seed must run as the **owner** role — the application roles have
+no rights on `orgs` — and `SEED_ORG_ID` must match the `org:` value in `kna.config.yaml`, because
+the CLI asserts it in the bundle envelope and ingest refuses a mismatch (§15.2).
+
+```bash
+DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm db:migrate
+```
+
+```bash
+DATABASE_URL=postgres://kna:kna@localhost:5432/kna SEED_ORG_ID=kna SEED_ORG=kna SEED_PROJECT=platform SEED_REPOS=$(git remote get-url origin) INGEST_HMAC_SECRET=development-ingest-secret pnpm db:seed
+```
+
+The seed prints three credentials, once, because they are stored hashed. They are **three
+different kinds of token** and are not interchangeable:
+
+| Variable | Used by | What it is |
+|---|---|---|
+| `KNA_TOKEN` | `kna ask`, `kna doctor`, `/v1/*` | A principal identity, resolved against `api_tokens` |
+| `KNA_INGEST_TOKEN` | `kna publish` | An HMAC-signed claim scoped to one repository (§15.2) |
+| `KNA_MCP_TOKEN` | The MCP server | Audience-bound to the resource indicator (§15.4) |
+
+Start the services, publish, and ask:
+
+```bash
+node apps/api/dist/server.js & node apps/worker/dist/main.js & node apps/mcp/dist/server.js &
+```
+
+```bash
+node apps/cli/dist/bin.js publish
+```
+
+```bash
+node apps/cli/dist/bin.js ask "how does the ACL filter enforce tenant isolation?"
+```
+
+What a healthy run looks like on this repo: 19–20 modules indexed, ~2,000 symbols, ~1,200 code
+chunks, 22 documents, ~317 documentation chunks. `kna ask` warns that ordering is fusion-only
+because no reranker runs locally — that warning is the abstention machinery working, not a fault.
+
+To force a rebuild after changing something about *retrieval* rather than the code — a new
+embedding model, different chunk sizes, a fixed indexer bug — ingest will not do it for you,
+because it correctly skips modules whose IR is unchanged:
+
+```bash
+curl -X POST localhost:8080/v1/admin/reindex -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' -d '{"repoIds":["<repoId>"],"reason":"why"}'
+```
+
+---
+
+## Automatic indexing
+
+Two triggers, and only one of them can actually produce new knowledge.
+
+**CI is the indexer.** Analysis runs the repository's own build logic — resolving a TypeScript
+project or restoring packages executes code from the repo — so it happens where the toolchains
+are, which is CI. `kna init` writes the workflow, and `--cli-source` decides how the runner gets
+the CLI:
+
+| Mode | What the workflow does | Status |
+|---|---|---|
+| `source` (default) | Checks out the platform repo and builds it in each job | Works today |
+| `registry` | One `npx @kna/cli` line | Needs the CLI published — [ADR 0002](docs/adr/0002-cli-distribution.md) |
+
+`source` costs an install and build per job and gives every indexed repo read access to the
+platform repo. It is interim on purpose; migrating is a one-flag change.
+
+Its shape is load-bearing:
+
+```
+analyse job    no credentials, runs repo build logic  ->  kna-ir.json artifact
+publish job    holds the credential, runs no repo code -> kna publish --bundle
+```
+
+Collapsing those two jobs puts a publish credential on a runner executing repository-controlled
+code, which is remote code execution by design. `--bundle` is what makes the split possible; the
+publish step re-signs the envelope, because the analyse job deliberately has no signing secret.
+
+`--oidc` exchanges the runner's workload identity at `/v1/auth/ci-exchange` for a credential
+scoped to one repo and valid for minutes. The job needs `permissions: id-token: write` or the
+exchange fails loudly rather than falling back to something weaker.
+
+**Webhooks trigger regeneration, not indexing.** A push or a merged pull request tells the
+platform the code moved; it does not carry IR, so there is nothing to index until CI publishes.
+What the webhook does is regenerate documentation from the newest stored bundle, debounced 60
+seconds per `(repo, ref)` so a merge train of twenty pushes produces one job.
+
+Merged pull requests are handled as well as pushes. A PR closed *without* merging is ignored, as
+is one merged into a non-default branch — reindexing either would spend money to reproduce the
+state we already have.
+
+Both paths need `GIT_WEBHOOK_SECRET`; unsigned webhooks are refused, and the signature is checked
+against the raw body before it is parsed.
+
+### Onboarding a repository
+
+Registration is an administrator action, deliberately — it grants read access, and a developer
+self-serving that would make the ACL model advisory.
+
+```bash
+curl -X POST localhost:8080/v1/admin/repos -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' -d '{"remote":"github.com/you/svc","projectSlugs":["platform"]}'
+```
+
+That registers the repo, grants the calling administrator read access, and reports any project
+slug that does not exist. All three matter: a repo with no permission row is indexable and
+invisible, and an unknown project slug leaves it invisible to project-scoped questions while
+looking indexed.
+
+For a first manual publish before CI exists, mint a credential explicitly. It refuses in
+production, caps the lifetime, demands a reason, and names you in the audit log:
+
+```bash
+curl -X POST localhost:8080/v1/admin/repos/<repoId>/ingest-credential -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' -d '{"reason":"first manual publish","ttlHours":2}'
+```
+
+---
+
+## Using it from an editor
+
+The MCP server is the developer-facing surface. `.mcp.json` in this repo points at it; each
+developer supplies their own `KNA_MCP_TOKEN`, because results are filtered by *their*
+permissions.
+
+Scope is inferred from the working directory's git remote, so opening a repo in the editor scopes
+tool calls to it with no project picker.
+
+Every tool is read-only, permanently — see the first entry under **Do not**.
+
+---
+
 ## Gotchas
 
 These cost time during the build. Each one fails in a way that does not look like its cause.
+
+### ALTER DEFAULT PRIVILEGES does not cover tables that already exist
+
+0005 gave the login roles their posture with `ALTER DEFAULT PRIVILEGES`, which applies only to
+objects created *after* it runs. Every table is created in 0001b, four migrations earlier, so
+none were covered: the roles could log in, could see the schema, and had privileges on nothing.
+
+It stayed invisible because no database in use had been built from the migrations alone — the
+ones we had picked up the grants some other way and carried on working. It appeared the first
+time CI ran against a database created from nothing, which is also exactly what a first
+deployment is. The failure there is total and immediate: every service starts cleanly, passes its
+startup assertions, and then returns permission denied for the first query of any kind.
+
+Fixed forward in 0010 and pinned by an integration test asserting every table is reachable by
+both roles. If you add a table, that test is what tells you it needs grants.
+
+Related, and worth stating precisely because 0007's comment overstates it: `kna_interactive` is
+not SELECT-only. 0002 grants it INSERT on `audit_events`, `query_traces` and `feedback` — three
+append-only tables holding no tenant content. The rule is that the internet-facing role may
+append to its own trail and may not modify anything else.
+
+### The sweep must compare ids, not commit shas
+
+Indexing deletes whatever it did not just write, scoped to `(module, version)`. It used to delete
+by `indexed_commit_sha <> commitSha`, which is right for a new commit and silently wrong for the
+two cases that reindex the *same* one:
+
+- **A deliberate reindex.** `/v1/admin/reindex` replays a stored bundle at its own commit — that
+  is the point. And the reasons for asking are exactly the ones that change the output: a new
+  embedding model, different chunk sizes, a fixed analyser bug. Stale rows carried the matching
+  sha and survived, so the corpus held both versions at once.
+- **A crashed run, retried.** Same reason. The old comment claimed robustness here and did not
+  have it.
+
+Symbols were not swept at all, so a deleted function stayed answerable through `get_symbol` and
+`find_usages` indefinitely — §15.5's "serving deleted code as current" applied to the symbol
+surface rather than the chunk one.
+
+### Tier 0 read calls as declarations
+
+`clearInterval(this.autoplay);` has the same shape as an interface method signature, and the
+lexical pattern accepted both because `foo(a: string): void;` is a real declaration. Every call
+inside a class body therefore became a method of that class.
+
+In a Shopify theme this produced two `SlideshowComponent.clearInterval` symbols from two calls on
+consecutive lines: identical qualified names, so identical symbol ids, so identical chunk ids, and
+a primary-key violation that failed the whole module's index job. Fixing it removed 70 phantom
+symbols from a 458-symbol repository — about 15% of that index was noise.
+
+Assembly now also drops duplicate ids and records the loss in `analysisNotes`, because §5's
+registry accepts third-party analysers and cannot assume they are correct. One bad line in one
+file should not cost a module its index.
+
+### Luhn alone does not identify a card number
+
+It passes roughly one digit run in ten, and long numeric identifiers are everywhere. A Shopify
+section id — `template--22224696705326` — is fourteen digits, passes Luhn, and blocked a publish
+with a CRITICAL payment-card finding.
+
+Card numbers are not free-form: each scheme fixes a length *and* a prefix, and at fourteen digits
+only Diners Club is assigned. Checking the pair rejects identifiers while still catching every
+real card. This matters more than a tidy scan report — a fail-closed gate that cries wolf teaches
+people to reach for the allowlist, and an allowlist entry added in irritation is how a real
+credential gets waved through later.
+
+### Reads that happen before a tenant is known need a probe
+
+Four of them now, and each failed silently and totally:
+
+| Read | Migration | Symptom while broken |
+|---|---|---|
+| Bearer token → principal | 0006 | "unknown or expired token" for valid tokens |
+| Provider login → principals | 0008 | permission revocations never applied |
+| Git remote → repo | 0009 | every push webhook "repo not registered"; auto-indexing never fired |
+| Role check, org known | — | every admin route 403'd real administrators |
+
+The first three genuinely cannot know the org — working it out *is* the query. Each declares what
+it is resolving and the policy opens exactly that row. Only the token probe is self-authorising
+(naming a hash proves possession); the other two narrow an already-authenticated caller and must
+never be used from a path that has not verified a signature first.
+
+The fourth was not a probe problem at all — the org was known and simply not set. If you are
+reading a tenant table after authentication, use `withOrgContext`.
+
+The tell is always the same: a correct-looking query returning zero rows, and a caller treating
+"none" as a legitimate answer.
+
+### Drizzle spreads array parameters instead of binding them
+
+``sql`c.id = ANY(${ids})` `` does not compile to `ANY($1)` with an array bound to it. Drizzle
+*spreads* the array into one placeholder per element, so it becomes `ANY($1)` for one id — a text
+value where an array was expected — and `ANY($1, $2)` for two. Postgres rejects both:
+
+```
+malformed array literal: "chk_1a2b..."
+op ANY/ALL (array) requires array on right side
+```
+
+Twenty-five call sites across five packages were written the natural way and every one was wrong.
+Use `anyOf()` from `@kna/db`, never a bare array in a template. The same applies to `unnest()` and
+the jsonb `?|` operator, which need `sql.param()`.
+
+Nothing catches this without a live database: the template reads exactly like the SQL it was meant
+to be, and a mocked driver never notices. Pinned now in `packages/db/src/integration.test.ts`.
+
+### RLS hides the rows authentication needs
+
+Resolving a bearer token happens before there is a principal, so there is no org to set — and
+`api_tokens` is org-isolated like every other tenant table. The read returned zero rows and the
+API answered "unknown or expired token" for tokens created seconds earlier.
+
+Migrations 0006 and 0008 add two narrow probes. `withAuthProbe` opens exactly the row whose token
+hash the caller declares — naming the hash proves possession of the token. `withIdentityProbe`
+opens principals matching a declared provider subject, for the identity webhook, which is
+genuinely cross-tenant and is authorised by its HMAC signature instead.
+
+Anything reading before a principal exists has this problem. Anything reading *after* one exists
+must use `withOrgContext` — `requireAdmin` and the MCP permission resolver both used a bare
+connection, so every admin route 403'd a real administrator and every MCP tool call reported "no
+permitted repositories".
+
+### The interactive role cannot write, deliberately
+
+0005 grants `kna_interactive` SELECT and nothing else. That rules out conveniences that look
+harmless: stamping `last_used_at` during authentication would mean granting the internet-facing
+role UPDATE on the credential table. Writes the platform owes regardless of the caller — audit,
+breadth accounting — go through a batch handle. See migration 0007.
+
+Related: there is no such thing as a best-effort statement inside a transaction. A failing INSERT
+wrapped in `.catch()` still aborts the transaction, and the COMMIT fails.
+
+### BullMQ job ids make deliberate re-runs no-ops
+
+Job identity is `(moduleId, commitSha)` for indexing and `(repoId, commitSha)` for docs, which
+gives replayed-webhook idempotency for free. It also means an operator asking for the same work
+again gets a 204 and nothing happens. Deliberate triggers pass a discriminator — `reindexToken`
+or `regenerationToken` — which joins the job id. Ingest does not.
+
+Also: BullMQ rejects `:` in a job id, and its default 30-second lock assumes short jobs.
+Documentation regeneration makes one model call per module in sequence and needs `lockDurationMs`
+sized for that, or it is declared stalled while it is still working.
+
+### Model names in application code defeat the proxy
+
+`WORKLOAD_POLICIES[*].defaultModel` and the `MODEL_*` env vars name **routes on the LiteLLM
+proxy** — `chat`, `query`, `blurb`, `docgen` — not provider model ids. §11 keeps LiteLLM so that a
+vendor swap is a config change; naming `gpt-5` in application code moves that decision back into a
+deploy, and a model the deployment's key cannot reach becomes a runtime 400 the proxy existed to
+prevent.
+
+The symptom was 21 of 21 documentation prose sections "rejected", which reads as a content-quality
+problem and was a model-access problem. The counters are now separate: `proseRejected` is the
+grounding check refusing a claim, `proseFailed` is the call never completing.
+
+### LiteLLM shares a Postgres server, not a database
+
+Its Prisma migrations drop tables they do not recognise. Point the LiteLLM container's
+`DATABASE_URL` at `kna_litellm`, created by `deploy/postgres/initdb/01-databases.sql`. Also:
+`model_info.tier` is LiteLLM's own field, validated as `free|paid` — using it for the
+interactive/batch split starts the proxy with **zero models loaded**.
+
+### The repo speaks slugs; the platform speaks ids
+
+`kna.config.yaml` says `projects: [platform]`. The platform stores `prj_local`. A repository
+cannot know platform ids, so resolution happens at index time — `resolveProjectIds` in
+`apps/worker/src/jobs/project-scope.ts`, shared by both jobs that write chunks.
+
+It is shared because it was not. Indexing resolved and documentation regeneration did not, so the
+code and docs corpora ended up in different namespaces, and every project-scoped query — which is
+every MCP tool call, since scope is inferred from the working directory — silently returned zero
+documentation chunks. Anything writing `chunks.project_ids` or `module_projects` must resolve
+first.
+
+### Postgres roles are cluster-wide, so a scratch database clobbers the real one
+
+`ALTER ROLE kna_interactive WITH PASSWORD ...` does not belong to the database you are connected
+to. Setting a CI-style password while reproducing a CI failure against a throwaway database
+changed it for every database in the cluster, and the running services died at startup with
+`password authentication failed` — which looks exactly like the dependency upgrade under test
+having broken something.
+
+Reproduce CI against a scratch database by all means, but put the passwords back afterwards, or
+use a separate cluster.
+
+### The OpenTelemetry SDK was never wired up
+
+`packages/observability` imports only `@opentelemetry/api`, which returns a **no-op tracer** when
+no SDK is registered. Nothing registers one, so `withSpan` has always been decoration: correct
+code, producing no spans.
+
+That was disguised by `sdk-node`, `auto-instrumentations-node`, `exporter-trace-otlp-http`,
+`resources` and `semantic-conventions` all sitting in `package.json` — declared, never imported.
+They were removed when five of them turned up in a security audit, which is a poor reason to
+discover that your tracing does nothing.
+
+Depending on the OTel API alone is the right shape for a shared library; registering the SDK is
+the application's job, usually through a `--require` bootstrap. That bootstrap does not exist
+yet. §15.6's requirement to correlate a Langfuse trace id with an OTel span id is unmet until it
+does.
+
+### Windows: `pkill` does not reach node processes
+
+`pkill -f "apps/worker/dist/main.js"` reports success and kills nothing, so a stale worker keeps
+consuming jobs with the old code — which looks exactly like a fix that did not take. Use:
+
+```bash
+powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Where-Object { $_.CommandLine -like '*apps/worker/dist/main.js*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }"
+```
 
 ### A superuser connection makes RLS silently inert
 
@@ -240,10 +590,15 @@ If you add a service or change its wiring, start it once. The type checker will 
 | Postgres schema, RLS, pgvector | Complete, verified against a live database |
 | Retrieval: hybrid, fusion, diversity, expansion, abstention | Complete, tested |
 | Eval harness (metrics, bootstrap, gate) | Complete, tested. **The runner is not built** |
-| Indexing worker, partition swap, cross-repo resolution | Complete |
-| MCP server, seven read-only tools | Complete |
+| Indexing worker, partition swap, cross-repo resolution | Complete, run end to end against this repo |
+| Documentation regeneration worker | Complete. Three of §6's six document types; `docs.types` is not yet in the bundle, so the platform copy always has all three |
+| MCP server, seven read-only tools | Complete, exercised over streamable HTTP |
+| Local seed path and end-to-end walkthrough | Complete |
+| Multi-repo | Two repositories indexed and queried in one tenant. Cross-repo *symbol resolution* is written but still unexercised — both repos are independent |
+| CLI distribution to CI | Interim: built from source in the workflow. See [ADR 0002](docs/adr/0002-cli-distribution.md) |
 | Git provider HTTP calls | **Not written.** Interfaces and write-gating refusals work |
-| Web UI, docs site | Not started — bought, not built (ADR 0001) |
+| Documentation site | Not started — bought, not built (ADR 0001) |
+| Web chat UI | Not started, and **not** ruled out by ADR 0001. That ADR defers the *documentation site* and the *external* assistant; the internal assistant is on its build list. The IDE surface (MCP) covers developers today |
 
 ---
 
@@ -251,28 +606,33 @@ If you add a service or change its wiring, start it once. The type checker will 
 
 Roughly in order of value. Each is scoped to be a session's work.
 
-**1. The eval runner.** The highest-value gap. `packages/retrieval/src/eval` has the metrics,
-the paired bootstrap and the CI gate, all unit-tested — what is missing is the thing that loads
+**1. The eval runner.** The highest-value gap. `packages/retrieval/src/eval` has the metrics, the
+paired bootstrap and the CI gate, all unit-tested — what is missing is the thing that loads
 `eval_items`, runs the pipeline against a seeded corpus, and calls `evaluateGate()`. CI currently
 **fails deliberately** when a retrieval config change is detected, rather than passing silently;
-that is the honest state but not a good permanent one. Needs a seeded corpus first.
+that is the honest state but not a good permanent one. The corpus it needed now exists: `pnpm
+db:seed` plus `kna publish` produces a real indexed repository in minutes.
 
-**2. A seed path.** Nothing populates a database for local development. The pieces exist —
-`kna describe` produces a bundle, and the worker can index one — but there is no command that
-joins them without the full API. This unblocks the eval runner and makes the retrieval code
-runnable rather than only testable.
-
-**3. The Griffe analyser.** `packages/analyzer-core/src/registry.ts` defines the contract and
+**2. The Griffe analyser.** `packages/analyzer-core/src/registry.ts` defines the contract and
 `subprocess.ts` the transport. Write it as a Python subprocess speaking `kna-analyzer/1`, add a
 fixture repo mirroring `packages/analyzer-typescript/test/fixtures/billing`, and run
 `pnpm conformance`. §5 estimates a week; the suite is what makes that estimate hold.
 
-**4. Git provider calls.** `apps/api/src/services/git.ts` and `apps/worker/src/services/git.ts`.
+**3. Git provider calls.** `apps/api/src/services/git.ts` and `apps/worker/src/services/git.ts`.
 The refusal logic and write-gating are done and correct — what is missing is the HTTP. Start with
 `commitExists()` (needed by ingest verification) and `headSha()` (needed by the reconciliation
 sweep); PR creation is larger and can wait.
 
-**5. Roslyn analyser.** Same shape as 3, as a `dotnet tool`.
+**4. Roslyn analyser.** Same shape as 2, as a `dotnet tool`.
+
+**5. Per-module documentation jobs.** Regeneration currently does a whole repo in one job, one
+model call per module in sequence, held together by a 15-minute queue lock. That is fine for a
+repo of this size and is the wrong shape at organisation scale; fanning out to one job per module
+bounds it properly and removes the long lock.
+
+**6. `docs.types` in the bundle envelope.** The platform cannot see a repo's document-type
+selection, so `kna generate` honours it and the platform's queryable copy does not. Carrying it in
+the envelope is an IR schema change and belongs with the next version bump.
 
 Four **decisions**, not code, are still open and block Phase 1 per §15.8. They are listed in
 [ADR 0001 §6](docs/adr/0001-build-vs-buy.md): named owner and funding line, the coexistence rule
@@ -293,4 +653,9 @@ rollout waves with kill criteria.
   fusion, reranking, expansion or prompts moves `retrieval_config_version`. §15.5's point is
   about statistical power: at n=100 the set resolves 5–8 point deltas and most real changes move
   1–3, so a point estimate that improved is not evidence.
+
+  Until the runner exists there is an interim control, not a substitute: a watched file change
+  must carry an entry in [`docs/retrieval-changes.md`](docs/retrieval-changes.md) arguing why it
+  cannot regress quality. `scripts/check-retrieval-config.mjs` enforces it. An entry saying
+  "small change, looks fine" is exactly what that section says is not evidence.
 - **Edit an applied migration.** Fix forward.

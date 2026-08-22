@@ -8,9 +8,9 @@ import {
   type RetrievalScope,
 } from '@kna/retrieval';
 import { sql } from 'drizzle-orm';
-import { withSystemContext } from '@kna/db';
+import { anyOf, withSystemContext } from '@kna/db';
 import type { ApiContext, KnaServer } from '../context.js';
-import { BreadthMonitor } from '../services/audit.js';
+import { BreadthMonitor } from '@kna/audit';
 
 /**
  * Retrieval and feedback routes.
@@ -284,7 +284,7 @@ async function symbolNamesFor(
 
   const rows = await withSystemContext(ctx.db, orgId, 'maintenance', async (tx) =>
     tx.execute<{ id: string; qualified_name: string }>(sql`
-      SELECT id, qualified_name FROM symbols WHERE org_id = ${orgId} AND id = ANY(${ids})
+      SELECT id, qualified_name FROM symbols WHERE org_id = ${orgId} AND id = ${anyOf(ids)}
     `),
   );
 

@@ -29,6 +29,20 @@ export interface WorkloadPolicy {
   keyClass: KeyClass;
   /** Env var name holding the model id, so operators retune without a deploy. */
   modelEnv: string;
+  /**
+   * The **proxy route name**, not a provider model id.
+   *
+   * §11 keeps LiteLLM specifically so that "a vendor-swap is a config change rather than a
+   * refactor". That only holds if the application names a route the proxy owns — `docgen`,
+   * `chat`, `query`, `blurb` — and the proxy decides which vendor and model serves it. Naming
+   * `gpt-5` here put the vendor's model id in application code, which meant the routes in
+   * `deploy/litellm/config.yaml` were never used by anything, changing a model meant a deploy,
+   * and a model the deployment's key could not reach failed at runtime with a 400 the proxy was
+   * there to prevent.
+   *
+   * Keep these in step with the `model_name` entries in the proxy config. A route the proxy does
+   * not define fails closed and loudly, which is the intended failure mode.
+   */
   defaultModel: string;
   /** Highest sensitivity tier this workload's default route may handle. */
   maxSensitivity: Sensitivity;
@@ -47,7 +61,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'context-blurb',
     keyClass: 'batch',
     modelEnv: 'MODEL_BLURB',
-    defaultModel: 'gpt-4.1-mini',
+    defaultModel: 'blurb',
     maxSensitivity: 'confidential',
     latencyBudgetMs: 30_000,
     batchEligible: true,
@@ -58,7 +72,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'query-rewrite',
     keyClass: 'interactive',
     modelEnv: 'MODEL_QUERY',
-    defaultModel: 'gpt-4.1-mini',
+    defaultModel: 'query',
     maxSensitivity: 'confidential',
     latencyBudgetMs: 600,
     batchEligible: false,
@@ -68,7 +82,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'intent-classify',
     keyClass: 'interactive',
     modelEnv: 'MODEL_QUERY',
-    defaultModel: 'gpt-4.1-mini',
+    defaultModel: 'query',
     maxSensitivity: 'confidential',
     latencyBudgetMs: 400,
     batchEligible: false,
@@ -79,7 +93,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'chat',
     keyClass: 'interactive',
     modelEnv: 'MODEL_CHAT',
-    defaultModel: 'gpt-4.1',
+    defaultModel: 'chat',
     maxSensitivity: 'confidential',
     latencyBudgetMs: 20_000,
     batchEligible: false,
@@ -90,7 +104,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'docgen',
     keyClass: 'batch',
     modelEnv: 'MODEL_DOCGEN',
-    defaultModel: 'gpt-5',
+    defaultModel: 'docgen',
     maxSensitivity: 'internal',
     latencyBudgetMs: 120_000,
     batchEligible: true,
@@ -127,7 +141,7 @@ export const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy> = {
     workload: 'grounding-judge',
     keyClass: 'batch',
     modelEnv: 'MODEL_QUERY',
-    defaultModel: 'gpt-4.1-mini',
+    defaultModel: 'query',
     maxSensitivity: 'internal',
     latencyBudgetMs: 30_000,
     batchEligible: true,
@@ -208,6 +222,14 @@ export const MODEL_PRICING_USD_PER_MTOK: Record<
   string,
   { input: number; output: number; cachedInput: number }
 > = {
+  // Proxy routes, priced as whatever they currently resolve to. These are what the application
+  // asks for, so these are what the spend ledger sees; the concrete model ids below remain for
+  // deployments that override a route via its env var.
+  chat: { input: 2, output: 8, cachedInput: 0.5 },
+  query: { input: 0.4, output: 1.6, cachedInput: 0.1 },
+  blurb: { input: 0.4, output: 1.6, cachedInput: 0.1 },
+  docgen: { input: 2, output: 8, cachedInput: 0.5 },
+
   'gpt-5': { input: 1.25, output: 10, cachedInput: 0.125 },
   'gpt-4.1': { input: 2, output: 8, cachedInput: 0.5 },
   'gpt-4.1-mini': { input: 0.4, output: 1.6, cachedInput: 0.1 },

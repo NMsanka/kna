@@ -5,6 +5,7 @@ import { QUEUE_NAMES } from './services/queue.js';
 import { indexModule, type IndexModuleInput } from './jobs/index-module.js';
 import { resolveCrossRepoEdges, type CrossRepoInput } from './jobs/cross-repo.js';
 import { runNightlyMaintenance } from './jobs/maintenance.js';
+import { regenerateDocs, type RegenerateDocsInput } from './jobs/regenerate-docs.js';
 
 /**
  * The worker process.
@@ -57,6 +58,34 @@ async function main(): Promise<void> {
     // Deliberately 1: the pass takes a per-project lock, so extra concurrency buys nothing
     // except contention.
     { concurrency: 1, db: ctx.db },
+  );
+
+  ctx.queue.register<RegenerateDocsInput>(
+    QUEUE_NAMES.regenerateDocs,
+    async (job) => {
+      const result = await regenerateDocs(ctx, job.data);
+      ctx.logger.info(
+        {
+          documents: result.documentsWritten,
+          chunks: result.chunksUpserted,
+          proseSections: result.proseSections,
+          proseRejected: result.proseRejected,
+          proseFailed: result.proseFailed,
+          usd: result.estimatedUsd.toFixed(4),
+        },
+        result.skipped ? 'documentation regeneration skipped' : 'documentation regenerated',
+      );
+      return result;
+    },
+    // One at a time per worker: regeneration reads the whole bundle and rewrites a repo's
+    // documentation corpus, so parallelism buys latency on a job nobody is waiting on while
+    // competing with indexing for the same provider quota (§15.6).
+    //
+    // The long lock is the honest cost of doing a repo's modules in one job. Fanning out to one
+    // job per module would bound it properly and is the answer at organisation scale; until
+    // then, the lock is sized so a repo of a few hundred modules cannot be declared stalled
+    // while it is still working.
+    { concurrency: 1, db: ctx.db, lockDurationMs: 900_000 },
   );
 
   ctx.queue.register<{ orgId: string }>(

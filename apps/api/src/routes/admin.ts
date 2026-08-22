@@ -1,11 +1,13 @@
 import { randomUUID } from 'node:crypto';
 
 import { sql } from 'drizzle-orm';
-import { withSystemContext } from '@kna/db';
+import { anyOf, withOrgContext, withSystemContext } from '@kna/db';
 import {
   zBulkReviewDecision,
   zOnboardRepoRequest,
+  zIngestCredentialRequest,
   zPublishExternallyRequest,
+  zReindexRequest,
 } from '@kna/contracts';
 import { canonicalRemote, computeRepoId } from '@kna/ir';
 import type { ApiContext, KnaServer } from '../context.js';
@@ -21,12 +23,18 @@ import { AuthError } from '../auth.js';
 export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
   const requireAdmin = async (request: Parameters<typeof ctx.authenticate>[0]) => {
     const principal = await ctx.authenticate(request);
-    const isAdmin = await ctx.db.sql<Array<{ ok: boolean }>>`
-      SELECT EXISTS (
-        SELECT 1 FROM principal_roles
-        WHERE principal_id = ${principal.id} AND role = 'admin'
-      ) AS ok
-    `;
+    // Inside the principal's org, on a transaction. `principal_roles` is RLS-scoped like every
+    // other tenant table, and the previous bare read returned no rows for everyone — so this
+    // check denied real administrators and would have gone on denying them until someone tried
+    // an admin route, which nothing in the test suite did.
+    const isAdmin = await withOrgContext(ctx.db, principal.orgId, async (tx) =>
+      tx.execute<{ ok: boolean }>(sql`
+        SELECT EXISTS (
+          SELECT 1 FROM principal_roles
+          WHERE org_id = ${principal.orgId} AND principal_id = ${principal.id} AND role = 'admin'
+        ) AS ok
+      `),
+    );
     if (!isAdmin[0]?.ok) {
       throw new AuthError('Administrator role required.', 403, 'not_admin');
     }
@@ -44,12 +52,46 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
     const remote = canonicalRemote(body.remote);
     const repoId = computeRepoId(principal.orgId, remote);
 
+    // Everyone who should be able to see this repo, the caller included. A repo registered
+    // without a permission row is real, indexable, and invisible — the ACL filter reads
+    // `repo_permissions` on every query, and no row means no reader.
+    const grantTo = [...new Set([principal.id, ...body.grantTo])];
+
+    // Project slugs are validated rather than trusted. A slug that matches nothing is not an
+    // error — the repo still onboards — but it is reported, because the failure it causes
+    // otherwise is silent: modules resolve to no project, and every project-scoped query returns
+    // an empty result that looks exactly like "nothing indexed yet".
+    const knownProjects = await withSystemContext(
+      ctx.db,
+      principal.orgId,
+      'maintenance',
+      async (tx) =>
+        tx.execute<{ slug: string }>(sql`
+          SELECT slug FROM projects
+           WHERE org_id = ${principal.orgId} AND slug = ${anyOf(body.projectSlugs)}
+        `),
+    );
+    const knownSlugs = new Set(knownProjects.map((r) => String(r.slug)));
+    const unknownProjectSlugs = body.projectSlugs.filter((slug) => !knownSlugs.has(slug));
+
     await withSystemContext(ctx.dbBatch, principal.orgId, 'maintenance', async (tx) => {
       await tx.execute(sql`
         INSERT INTO repos (id, org_id, remote, name, provider)
-        VALUES (${repoId}, ${principal.orgId}, ${remote}, ${remote.split('/').pop() ?? remote}, ${ctx.env.GIT_PROVIDER})
+        VALUES (${repoId}, ${principal.orgId}, ${remote}, ${remote.split('/').pop() ?? remote}, ${storedProvider(ctx.env.GIT_PROVIDER)})
         ON CONFLICT (org_id, remote) DO NOTHING
       `);
+
+      for (const principalId of grantTo) {
+        await tx.execute(sql`
+          INSERT INTO repo_permissions (principal_id, repo_id, org_id, level)
+          SELECT ${principalId}, ${repoId}, ${principal.orgId}, 'read'
+           WHERE EXISTS (
+             SELECT 1 FROM principals
+              WHERE id = ${principalId} AND org_id = ${principal.orgId}
+           )
+          ON CONFLICT (principal_id, repo_id) DO NOTHING
+        `);
+      }
     });
 
     await ctx.audit.record({
@@ -60,7 +102,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       resourceType: 'repo',
       resourceId: repoId,
       outcome: 'success',
-      detail: { remote, projects: body.projectSlugs },
+      detail: { remote, projects: body.projectSlugs, grantedTo: grantTo, unknownProjectSlugs },
     });
 
     let pullRequestUrl: string | null = null;
@@ -86,8 +128,91 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       }
     }
 
-    return reply.code(201).send({ repoId, remote, pullRequestUrl });
+    return reply.code(201).send({
+      repoId,
+      remote,
+      pullRequestUrl,
+      grantedTo: grantTo,
+      projectSlugs: body.projectSlugs.filter((slug) => knownSlugs.has(slug)),
+      unknownProjectSlugs,
+    });
   });
+
+  /**
+   * Mint a repo-scoped ingest credential by hand.
+   *
+   * The supported path is OIDC — CI presents its workload identity to `/v1/auth/ci-exchange` and
+   * gets a credential measured in minutes, so there is nothing long-lived to leak. This exists
+   * for the cases that path cannot cover: a local stack with no identity provider, or the first
+   * manual publish before any CI pipeline exists.
+   *
+   * Deliberately awkward, because §15.2's whole point is that a static push credential sitting in
+   * repository settings is the thing to avoid. It refuses in production, caps the lifetime,
+   * requires a written reason, and names the administrator in the audit log.
+   */
+  app.post<{ Params: { repoId: string } }>(
+    '/v1/admin/repos/:repoId/ingest-credential',
+    async (request, reply) => {
+      const principal = await requireAdmin(request);
+      const body = zIngestCredentialRequest.parse(request.body);
+      const { repoId } = request.params;
+
+      if (ctx.env.KNA_ENV === 'production') {
+        return reply.code(403).send({
+          error: {
+            code: 'oidc_required',
+            message: 'Long-lived ingest credentials are not issued in production.',
+            guidance:
+              'CI should exchange its OIDC workload identity at /v1/auth/ci-exchange for a credential scoped to one repository and valid for minutes. A credential that outlives the job that used it is the failure mode this refuses to create.',
+          },
+        });
+      }
+
+      const repo = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
+        tx.execute<{ id: string }>(sql`
+          SELECT id FROM repos WHERE org_id = ${principal.orgId} AND id = ${repoId} LIMIT 1
+        `),
+      );
+
+      if (repo.length === 0) {
+        return reply.code(404).send({
+          error: {
+            code: 'repo_not_found',
+            message: `No repository ${repoId} in this organisation.`,
+            guidance: 'Register it first with POST /v1/admin/repos.',
+          },
+        });
+      }
+
+      const expiresAt = Date.now() + body.ttlHours * 60 * 60 * 1000;
+
+      // Audited before the credential is returned, so the record exists even if the response is
+      // lost in transit. This is the one place the platform hands out a durable push credential.
+      await ctx.audit.record({
+        orgId: principal.orgId,
+        action: 'admin.ingest_credential_minted',
+        actorType: 'admin',
+        actorId: principal.id,
+        resourceType: 'repo',
+        resourceId: repoId,
+        outcome: 'success',
+        detail: { reason: body.reason, ttlHours: body.ttlHours },
+      });
+
+      return reply.send({
+        token: ctx.mintIngestToken({
+          orgId: principal.orgId,
+          repoId,
+          issuedAt: Date.now(),
+          expiresAt,
+        }),
+        repoId,
+        expiresAt: new Date(expiresAt).toISOString(),
+        warning:
+          'Shown once and not recoverable. It authorises publishing to this repository until it expires; treat it as a secret and prefer the OIDC exchange wherever CI can reach it.',
+      });
+    },
+  );
 
   /**
    * §15.3 — clearing a tripped magnitude circuit breaker. Deliberately a human decision with a
@@ -119,12 +244,20 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
     });
 
     if (body.decision === 'approve') {
-      await ctx.queue.enqueueRegenerateDocs({
-        orgId: principal.orgId,
-        repoId: body.repoId,
-        commitSha: 'pending',
-        bundleStorageKey: '',
-      });
+      // Regenerate from what the repo last published. A repo approved before it has ever
+      // published has nothing to regenerate from, and saying so is better than queueing a job
+      // that can only fail.
+      const bundle = await ctx.store.latestBundle(principal.orgId, body.repoId);
+      if (bundle) {
+        await ctx.queue.enqueueRegenerateDocs({
+          orgId: principal.orgId,
+          repoId: body.repoId,
+          commitSha: bundle.commitSha,
+          ref: bundle.ref,
+          bundleStorageKey: bundle.storageKey,
+          regenerationToken: randomUUID().slice(0, 8),
+        });
+      }
     }
 
     return reply.code(204).send();
@@ -159,7 +292,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
           FROM modules m
           JOIN symbols s ON s.module_id = m.id
           WHERE m.org_id = ${principal.orgId}
-            AND m.id = ANY(${moduleIds})
+            AND m.id = ${anyOf(moduleIds)}
             AND s.visibility = 'public'
             AND m.external_publication_approved_at IS NULL
           ORDER BY m.name, s.qualified_name
@@ -192,7 +325,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       tx.execute<{ id: string; name: string; sensitivity: string }>(sql`
         SELECT id, name, sensitivity FROM modules
         WHERE org_id = ${principal.orgId}
-          AND id = ANY(${body.moduleIds})
+          AND id = ${anyOf(body.moduleIds)}
           AND sensitivity <> 'public'
       `),
     );
@@ -213,7 +346,7 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
         SET visibility = 'public',
             external_publication_approved_by = ${body.approvedBy},
             external_publication_approved_at = now()
-        WHERE org_id = ${principal.orgId} AND id = ANY(${body.moduleIds})
+        WHERE org_id = ${principal.orgId} AND id = ${anyOf(body.moduleIds)}
       `);
     });
 
@@ -232,6 +365,115 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
   });
 
   /** §15.6 — DLQ drain and replay. BullMQ's `failed` set is not a DLQ; this is. */
+  /**
+   * Deliberate reindex.
+   *
+   * §15.1 lists "cheap reindexing when the embedding model changes" as a reason the bundle store
+   * is the system of record, but until now nothing could ask for one. Ingest skips modules whose
+   * IR is unchanged — correct, and the whole cost model — and the queue keys job identity on
+   * `(moduleId, commitSha)`, so republishing the same commit is a no-op. Both are right for code
+   * changes and wrong for platform changes: a new embedding model, different chunk sizes, or a
+   * fixed bug in the indexer leaves a corpus that is stale in a way no diff can see.
+   *
+   * Replay reads the stored bundle rather than asking the repo to publish again, so a reindex
+   * needs no CI run, no checkout, and no cooperation from the team that owns the code.
+   */
+  app.post('/v1/admin/reindex', async (request, reply) => {
+    const principal = await requireAdmin(request);
+    const body = zReindexRequest.parse(request.body);
+
+    // One token for the whole request: every module reindexed together shares a job-id namespace,
+    // so a retried HTTP request coalesces instead of queueing the work twice.
+    const reindexToken = randomUUID().slice(0, 8);
+
+    const targets = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
+      tx.execute<{
+        module_id: string;
+        repo_id: string;
+        commit_sha: string;
+        ref: string;
+        storage_key: string;
+      }>(sql`
+        -- The most recent bundle per repo, not every bundle: reindexing means "rebuild from what
+        -- is current", and the history exists for replay and forensics, not for fan-out.
+        WITH latest AS (
+          SELECT DISTINCT ON (repo_id) repo_id, commit_sha, ref, storage_key
+            FROM ir_bundles
+           WHERE org_id = ${principal.orgId}
+           ORDER BY repo_id, received_at DESC
+        )
+        SELECT m.id AS module_id, l.repo_id, l.commit_sha, l.ref, l.storage_key
+          FROM modules m
+          JOIN latest l ON l.repo_id = m.repo_id
+         WHERE m.org_id = ${principal.orgId}
+           AND (
+             ${body.repoIds.length > 0 ? sql`m.repo_id = ${anyOf(body.repoIds)}` : sql`false`}
+             OR ${body.moduleIds.length > 0 ? sql`m.id = ${anyOf(body.moduleIds)}` : sql`false`}
+           )
+      `),
+    );
+
+    // Audited before the work is queued, not after: the record of who asked must survive the
+    // request failing halfway through the fan-out.
+    await ctx.audit.record({
+      orgId: principal.orgId,
+      action: 'admin.reindex',
+      actorType: 'admin',
+      actorId: principal.id,
+      resourceType: 'modules',
+      resourceId: targets.map((t) => t.module_id).join(','),
+      outcome: 'success',
+      detail: { reason: body.reason, reindexToken, moduleCount: targets.length },
+    });
+
+    const jobIds: string[] = [];
+    for (const target of targets) {
+      jobIds.push(
+        await ctx.queue.enqueueIndexModule({
+          orgId: principal.orgId,
+          repoId: String(target.repo_id),
+          moduleId: String(target.module_id),
+          commitSha: String(target.commit_sha),
+          ref: String(target.ref),
+          bundleStorageKey: String(target.storage_key),
+          // Priority, not volume: a reindex is background work by definition and must not sit
+          // ahead of a developer waiting on a freshly merged commit (§15.6).
+          changeCount: 0,
+          reindexToken,
+        }),
+      );
+    }
+
+    const covered = new Set(targets.map((t) => String(t.repo_id)));
+
+    // Documentation is derived from the same bundle and the same retrieval settings, so a
+    // reindex that left it untouched would leave the two halves of the corpus describing
+    // different configurations. One job per repo, sharing the request's token.
+    for (const repoId of covered) {
+      const bundle = targets.find((t) => String(t.repo_id) === repoId);
+      if (!bundle) continue;
+      jobIds.push(
+        await ctx.queue.enqueueRegenerateDocs({
+          orgId: principal.orgId,
+          repoId,
+          commitSha: String(bundle.commit_sha),
+          ref: String(bundle.ref),
+          bundleStorageKey: String(bundle.storage_key),
+          regenerationToken: reindexToken,
+        }),
+      );
+    }
+
+    // A requested repo with no stored bundle is reported rather than silently contributing zero
+    // jobs — "I asked for a reindex and nothing happened" is the failure this endpoint exists to
+    // stop being mysterious.
+    const skipped = body.repoIds
+      .filter((repoId) => !covered.has(repoId))
+      .map((repoId) => ({ repoId, reason: 'no stored IR bundle for this repo' }));
+
+    return reply.send({ jobIds, moduleCount: targets.length, skipped });
+  });
+
   app.get('/v1/admin/dead-letters', async (request, reply) => {
     const principal = await requireAdmin(request);
     const rows = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
@@ -348,4 +590,16 @@ function toPreview(moduleId: string, moduleName: string, sensitivity: string) {
     currentSensitivity: sensitivity,
     newlyVisibleSymbols: [] as Array<{ symbolId: string; qualifiedName: string; kind: string }>,
   };
+}
+
+/**
+ * Translate the configured provider into the value the database enum accepts.
+ *
+ * Two vocabularies that nearly match. Configuration says {@code none} to mean no provider client
+ * is constructed at all, which is how a local stack runs; the {@code git_provider} enum has no
+ * such value and spells the equivalent {@code local}. Writing the config value straight through
+ * produced 'invalid input value for enum git_provider' and a 500 on every onboarding attempt.
+ */
+function storedProvider(provider: string): string {
+  return provider === 'none' ? 'local' : provider;
 }

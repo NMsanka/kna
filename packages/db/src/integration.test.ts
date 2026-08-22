@@ -6,10 +6,14 @@ import {
   RlsIneffectiveError,
   tryModuleLock,
   withModuleLock,
+  withAuthProbe,
+  withIdentityProbe,
+  withRepoProbe,
   withOrgContext,
   withSystemContext,
   type DbHandle,
 } from './client.js';
+import { anyOf } from './sql.js';
 
 /**
  * Integration tests against a real Postgres.
@@ -191,6 +195,215 @@ describeIf('database integration', () => {
       // Both ran; the whole point of module-level rather than repo-level locking (§15.1 fix 3).
       expect(started.sort()).toEqual(['alpha', 'beta']);
     }, 30_000);
+  });
+
+  describe('privileges (§15.4)', () => {
+    /**
+     * Every table must be reachable by the roles that serve requests.
+     *
+     * 0005 established the roles with `ALTER DEFAULT PRIVILEGES`, which applies only to objects
+     * created *after* it — and every table is created four migrations earlier. The roles could
+     * log in, could see the schema, and had privileges on nothing. It went unnoticed because the
+     * databases in use had accumulated the grants by other means; it appeared the first time the
+     * suite ran against a database built from the migrations alone, which is precisely what a
+     * first deployment is.
+     *
+     * Asserted over every table rather than a sample, because the failure is per-table: a single
+     * table added by a future migration without grants breaks exactly one feature, at runtime,
+     * with a permission error naming a table and no hint of why it differs from its neighbours.
+     */
+    it('grants the application roles access to every table', async () => {
+      const rows = await admin.sql<Array<{ table_name: string; missing: string }>>`
+        WITH tables AS (
+          SELECT tablename AS table_name
+            FROM pg_tables
+           WHERE schemaname = 'public'
+             -- The migration runner connects as the owner, so this one needs no grant.
+             AND tablename <> 'kna_migrations'
+        ),
+        granted AS (
+          SELECT table_name, grantee, array_agg(privilege_type) AS privs
+            FROM information_schema.role_table_grants
+           WHERE table_schema = 'public'
+             AND grantee IN ('kna_interactive', 'kna_batch')
+           GROUP BY table_name, grantee
+        )
+        SELECT t.table_name,
+               concat_ws(', ',
+                 CASE WHEN NOT EXISTS (
+                   SELECT 1 FROM granted g
+                    WHERE g.table_name = t.table_name
+                      AND g.grantee = 'kna_interactive'
+                      AND 'SELECT' = ANY(g.privs)
+                 ) THEN 'kna_interactive:SELECT' END,
+                 CASE WHEN NOT EXISTS (
+                   SELECT 1 FROM granted g
+                    WHERE g.table_name = t.table_name
+                      AND g.grantee = 'kna_batch'
+                      AND 'SELECT' = ANY(g.privs) AND 'INSERT' = ANY(g.privs)
+                 ) THEN 'kna_batch:SELECT+INSERT' END
+               ) AS missing
+          FROM tables t
+      `;
+
+      const gaps = rows.filter((r) => r.missing !== '');
+      expect(
+        gaps.map((r) => `${r.table_name} missing ${r.missing}`),
+        'tables the application roles cannot use',
+      ).toEqual([]);
+    });
+
+    it('does not let the interactive role modify tenant data', async () => {
+      // The narrow exception is append-only bookkeeping: audit_events, query_traces, feedback.
+      // Anything beyond those three would mean the internet-facing role can alter the corpus.
+      const rows = await admin.sql<Array<{ table_name: string }>>`
+        SELECT DISTINCT table_name
+          FROM information_schema.role_table_grants
+         WHERE table_schema = 'public'
+           AND grantee = 'kna_interactive'
+           AND privilege_type IN ('INSERT', 'UPDATE', 'DELETE', 'TRUNCATE')
+           AND table_name NOT IN ('audit_events', 'query_traces', 'feedback')
+      `;
+      expect(rows.map((r) => r.table_name)).toEqual([]);
+    });
+  });
+
+  describe('array parameters', () => {
+    /**
+     * Drizzle's `sql` template does not bind a JavaScript array as one parameter — it *spreads*
+     * it, emitting one placeholder per element. `ANY(${ids})` therefore compiles to `ANY($1)` for
+     * one id and `ANY($1, $2)` for two, and Postgres rejects both. Twenty-five call sites across
+     * five packages were written the natural way and every one of them was wrong.
+     *
+     * The failure is invisible without a real database: the template reads exactly like the SQL
+     * it was meant to be, and a mocked driver never notices. So it is pinned here.
+     */
+    it('binds an array as a single parameter, not one placeholder per element', async () => {
+      for (const values of [['a'], ['a', 'b'], ['a', 'b', 'c']]) {
+        const rows = await handle.db.execute<{ hit: boolean }>(
+          sql`SELECT 'a' = ${anyOf(values)} AS hit`,
+        );
+        expect(rows[0]?.hit).toBe(true);
+      }
+    });
+
+    it('treats an empty array as matching nothing rather than failing', async () => {
+      const rows = await handle.db.execute<{ hit: boolean }>(sql`SELECT 'a' = ${anyOf([])} AS hit`);
+      expect(rows[0]?.hit).toBe(false);
+    });
+
+    it('fails the way the bug did when the array is passed unwrapped', async () => {
+      // Guards the fix rather than the symptom: if a future drizzle release starts binding arrays
+      // as one parameter, this test fails and `anyOf` can be simplified away deliberately.
+      await expect(
+        handle.db.execute(sql`SELECT 'a' = ANY(${['a', 'b']}) AS hit`),
+      ).rejects.toThrow();
+    });
+  });
+
+  describe('authentication bootstrap (§15.4)', () => {
+    /**
+     * Resolving a bearer token happens before there is a principal, so there is no org to scope
+     * by — and the org-isolation policy correctly hid every row, which made the API answer
+     * "unknown or expired token" for tokens that existed and were valid. Migration 0006 opens
+     * exactly the row whose hash the caller declares.
+     */
+    beforeAll(async () => {
+      await admin.sql`
+        INSERT INTO principals (id, org_id, subject, clearance)
+        VALUES ('prin_alpha', 'org_alpha', 'alpha-user', 'internal')
+        ON CONFLICT (id) DO NOTHING
+      `;
+      await admin.sql`
+        INSERT INTO api_tokens (id, org_id, principal_id, token_hash, name, last_four_chars)
+        VALUES ('tok_alpha', 'org_alpha', 'prin_alpha', 'hash_alpha', 'test', 'aaaa')
+        ON CONFLICT (id) DO NOTHING
+      `;
+    });
+
+    it('cannot see a token row without declaring which hash it is resolving', async () => {
+      const rows = await handle.db.execute(
+        sql`SELECT id FROM api_tokens WHERE token_hash = 'hash_alpha'`,
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('sees exactly the declared token row', async () => {
+      const rows = await withAuthProbe(handle, 'hash_alpha', async (tx) =>
+        tx.execute<{ org_id: string }>(sql`SELECT org_id FROM api_tokens`),
+      );
+      expect(rows).toHaveLength(1);
+      expect(rows[0]?.org_id).toBe('org_alpha');
+    });
+
+    it('does not open the whole table to a caller that declares a wrong hash', async () => {
+      const rows = await withAuthProbe(handle, 'hash_that_does_not_exist', async (tx) =>
+        tx.execute(sql`SELECT id FROM api_tokens`),
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('drops the declaration when the transaction ends', async () => {
+      // The PgBouncer hazard: a declaration that outlived its transaction would give the next
+      // borrower of that pooled connection the right to read someone else's credential row.
+      await withAuthProbe(handle, 'hash_alpha', async (tx) => tx.execute(sql`SELECT 1`));
+      const rows = await handle.db.execute(sql`SELECT id FROM api_tokens`);
+      expect(rows).toHaveLength(0);
+    });
+
+    it('resolves a provider identity across tenants only for the declared subject', async () => {
+      const found = await withIdentityProbe(handle, 'alpha-user', async (tx) =>
+        tx.execute<{ org_id: string }>(sql`SELECT org_id FROM principals`),
+      );
+      expect(found.map((r) => r.org_id)).toEqual(['org_alpha']);
+
+      const none = await withIdentityProbe(handle, 'nobody', async (tx) =>
+        tx.execute(sql`SELECT id FROM principals`),
+      );
+      expect(none).toHaveLength(0);
+    });
+  });
+
+  describe('resolving a repository before the tenant is known (§7)', () => {
+    /**
+     * The third read that precedes a tenant scope, and the one whose absence was hardest to
+     * see. A git webhook names a remote and asks which tenant owns it; an unscoped read answered
+     * "nobody" for every repository that exists, so every push event was ignored as "repo not
+     * registered" and automatic indexing never ran — while looking, from the outside, exactly
+     * like a correctly wired integration with nothing to do.
+     */
+    it('cannot resolve a repo without declaring which remote it is looking for', async () => {
+      const rows = await handle.db.execute(
+        sql`SELECT id FROM repos WHERE remote = 'github.com/alpha/one'`,
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('resolves exactly the declared remote', async () => {
+      await admin.sql`
+        UPDATE repos SET remote = 'github.com/alpha/one' WHERE id = 'repo_alpha'
+      `;
+
+      const rows = await withRepoProbe(handle, 'github.com/alpha/one', async (tx) =>
+        tx.execute<{ id: string; org_id: string }>(sql`SELECT id, org_id FROM repos`),
+      );
+
+      expect(rows).toHaveLength(1);
+      expect(rows[0]?.org_id).toBe('org_alpha');
+    });
+
+    it('does not open the table to a caller declaring an unknown remote', async () => {
+      const rows = await withRepoProbe(handle, 'github.com/nobody/nothing', async (tx) =>
+        tx.execute(sql`SELECT id FROM repos`),
+      );
+      expect(rows).toHaveLength(0);
+    });
+
+    it('drops the declaration when the transaction ends', async () => {
+      await withRepoProbe(handle, 'github.com/alpha/one', async (tx) => tx.execute(sql`SELECT 1`));
+      const rows = await handle.db.execute(sql`SELECT id FROM repos`);
+      expect(rows).toHaveLength(0);
+    });
   });
 
   describe('pgvector', () => {

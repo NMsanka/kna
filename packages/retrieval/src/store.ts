@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { setEfSearch, withOrgContext, type DbHandle } from '@kna/db';
+import { anyOf, setEfSearch, withOrgContext, type DbHandle } from '@kna/db';
 import { buildAclPredicate } from './acl.js';
 import type { AccessContext, CandidateRef, RetrievalScope, ScoredChunk } from './types.js';
 import type { GraphNeighbour } from './expansion.js';
@@ -50,7 +50,7 @@ export class RetrievalStore {
          -- meaningless, and this is the join condition that makes it impossible.
          AND e.model = ${options.embeddingModel}
         WHERE ${acl}
-          ${corpora.length ? sql`AND c.corpus = ANY(${corpora})` : sql``}
+          ${corpora.length ? sql`AND c.corpus = ${anyOf(corpora)}` : sql``}
         ORDER BY e.embedding <=> ${vector}::halfvec
         LIMIT ${limit}
       `);
@@ -90,7 +90,7 @@ export class RetrievalStore {
         FROM chunks c, q
         WHERE ${acl}
           AND (c.content_tsv @@ q.tsq OR c.content % ${query})
-          ${corpora.length ? sql`AND c.corpus = ANY(${corpora})` : sql``}
+          ${corpora.length ? sql`AND c.corpus = ${anyOf(corpora)}` : sql``}
         ORDER BY score DESC
         LIMIT ${limit}
       `);
@@ -124,17 +124,17 @@ export class RetrievalStore {
       const rows = await tx.execute<{ chunk_id: string; exactness: number }>(sql`
         SELECT c.id AS chunk_id,
                CASE
-                 WHEN lower(s.name) = ANY(${lowered}) THEN 1.0
-                 WHEN lower(s.qualified_name) = ANY(${lowered}) THEN 0.95
+                 WHEN lower(s.name) = ${anyOf(lowered)} THEN 1.0
+                 WHEN lower(s.qualified_name) = ${anyOf(lowered)} THEN 0.95
                  ELSE 0.6
                END AS exactness
         FROM chunks c
         JOIN symbols s ON s.id = c.symbol_id
         WHERE ${acl}
           AND (
-            lower(s.name) = ANY(${lowered})
-            OR lower(s.qualified_name) = ANY(${lowered})
-            OR s.qualified_name ILIKE ANY(${identifiers.map((i) => `%${i}%`)})
+            lower(s.name) = ${anyOf(lowered)}
+            OR lower(s.qualified_name) = ${anyOf(lowered)}
+            OR s.qualified_name ILIKE ${anyOf(identifiers.map((i) => `%${i}%`))}
           )
         ORDER BY exactness DESC, length(s.qualified_name) ASC
         LIMIT ${limit}
@@ -187,7 +187,7 @@ export class RetrievalStore {
         FROM chunks c
         -- Re-applied rather than trusted from the arm queries. Hydration is a second read, and
         -- a second read gets a second filter (§10 Layer 4).
-        WHERE ${acl} AND c.id = ANY(${ids})
+        WHERE ${acl} AND c.id = ${anyOf(ids)}
       `);
 
       return rows
@@ -248,7 +248,7 @@ export class RetrievalStore {
         sensitivity: ScoredChunk['sensitivity'];
         analysis_depth: string;
       }>(sql`
-        WITH seeds AS (SELECT unnest(${symbolIds}::text[]) AS id),
+        WITH seeds AS (SELECT unnest(${sql.param([...symbolIds])}::text[]) AS id),
         edges AS (
           -- Callees and referenced types, from the seed's own edge lists.
           SELECT s.id AS seed_symbol_id,
@@ -288,7 +288,7 @@ export class RetrievalStore {
           FROM edges
           JOIN symbols n ON n.id = edges.target
           WHERE n.org_id = ${options.access.orgId}
-            AND n.repo_id = ANY(${options.access.permittedRepoIds})
+            AND n.repo_id = ${anyOf(options.access.permittedRepoIds)}
             AND n.sensitivity <> 'restricted'
         )
         SELECT * FROM ranked WHERE rn <= ${perSymbolLimit}
@@ -323,7 +323,7 @@ export class RetrievalStore {
     return withOrgContext(this.handle, orgId, async (tx) => {
       const rows = await tx.execute<{ id: string }>(sql`
         SELECT id FROM repos
-        WHERE org_id = ${orgId} AND id = ANY(${repoIds}) AND stale_since_sha IS NOT NULL
+        WHERE org_id = ${orgId} AND id = ${anyOf(repoIds)} AND stale_since_sha IS NOT NULL
       `);
       return rows.map((r) => r.id);
     });

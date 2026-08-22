@@ -114,6 +114,78 @@ export async function withOrgContext<T>(
 }
 
 /**
+ * Resolve a bearer token before there is a principal to scope by.
+ *
+ * The chicken-and-egg in §15.4's tenant isolation: `app.org_id` comes from the authenticated
+ * principal, and authentication is what reads the token row. Setting no org means the isolation
+ * policy hides the row; guessing an org means trusting the caller.
+ *
+ * So the transaction declares the token hash instead. Migration 0006 permits reading exactly the
+ * row whose `token_hash` equals the declaration — a credential the caller demonstrably already
+ * holds — and nothing else. `SET LOCAL` again, for the same PgBouncer reason as `withOrgContext`:
+ * the declaration must die with the transaction, not linger on a pooled connection where the
+ * next borrower would inherit the right to read someone else's token row.
+ *
+ * Everything after the lookup belongs in `withOrgContext` with the org the token resolved to.
+ */
+export async function withAuthProbe<T>(
+  handle: DbHandle,
+  tokenHash: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.auth_token_hash', ${tokenHash}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
+ * Resolve a provider identity across tenants, before any org is known.
+ *
+ * The identity-webhook counterpart to `withAuthProbe`: a provider reports that a login left the
+ * organisation, and §15.4 requires the revocation to land at once, but that login may map to
+ * principals in several orgs. Migration 0008 permits reading principals whose `subject` matches
+ * the declaration and nothing else.
+ *
+ * The guarantee is weaker than the token probe's, because a login is public where a token hash is
+ * not. Callers must therefore be authenticated by other means first — the webhook route verifies
+ * the provider's HMAC signature before it gets here. Do not reach for this from a path that has
+ * not already established who is calling.
+ */
+export async function withIdentityProbe<T>(
+  handle: DbHandle,
+  subject: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.identity_subject', ${subject}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
+ * Resolve a repository by its git remote, before any org is known.
+ *
+ * The webhook and CI-exchange counterpart to `withAuthProbe`. A provider event names a remote and
+ * asks, in effect, "whose is this?" — so there is no tenant to scope by until the answer comes
+ * back. Migration 0009 permits reading the repo row whose `remote` matches the declaration.
+ *
+ * As with `withIdentityProbe`, a remote is not a secret, so this narrows an already-authorised
+ * caller's reach rather than authorising anything itself. Callers must have verified a webhook
+ * signature or an OIDC token first.
+ */
+export async function withRepoProbe<T>(
+  handle: DbHandle,
+  remote: string,
+  fn: (tx: Db) => Promise<T>,
+): Promise<T> {
+  return handle.db.transaction(async (tx) => {
+    await tx.execute(sql`SELECT set_config('app.repo_remote', ${remote}, true)`);
+    return fn(tx as unknown as Db);
+  });
+}
+
+/**
  * Two paths deliberately run outside user context and need explicit org partitioning instead
  * (§15.4): the cross-repo resolution pass and the indexing workers. This wrapper makes that
  * choice visible at the call site rather than implicit in a missing `withOrgContext`.

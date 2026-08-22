@@ -20,12 +20,12 @@
     "clean": "rimraf dist *.tsbuildinfo"
   },
   "dependencies": {
-    "@kna/ir": "workspace:*",
-    "@kna/db": "workspace:*",
-    "@kna/llm": "workspace:*",
-    "@kna/config": "workspace:*",
-    "@kna/observability": "workspace:*",
     "@kna/chunking": "workspace:*",
-    "drizzle-orm": "^0.38.3"
+    "@kna/config": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/ir": "workspace:*",
+    "@kna/llm": "workspace:*",
+    "@kna/observability": "workspace:*",
+    "drizzle-orm": "^0.45.2"
   }
 }
