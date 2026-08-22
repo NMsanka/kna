@@ -12,18 +12,18 @@
     "clean": "rimraf dist *.tsbuildinfo"
   },
   "dependencies": {
-    "@kna/ir": "workspace:*",
-    "@kna/config": "workspace:*",
-    "@kna/db": "workspace:*",
-    "@kna/llm": "workspace:*",
     "@kna/chunking": "workspace:*",
-    "@kna/retrieval": "workspace:*",
-    "@kna/docgen": "workspace:*",
+    "@kna/config": "workspace:*",
     "@kna/contracts": "workspace:*",
+    "@kna/db": "workspace:*",
+    "@kna/docgen": "workspace:*",
+    "@kna/ir": "workspace:*",
+    "@kna/llm": "workspace:*",
     "@kna/observability": "workspace:*",
+    "@kna/retrieval": "workspace:*",
     "bullmq": "^5.34.10",
+    "drizzle-orm": "^0.45.2",
     "ioredis": "^5.4.2",
-    "drizzle-orm": "^0.38.3",
     "zod": "^3.24.1"
   },
   "devDependencies": {

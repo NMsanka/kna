@@ -479,6 +479,33 @@ every MCP tool call, since scope is inferred from the working directory — sile
 documentation chunks. Anything writing `chunks.project_ids` or `module_projects` must resolve
 first.
 
+### Postgres roles are cluster-wide, so a scratch database clobbers the real one
+
+`ALTER ROLE kna_interactive WITH PASSWORD ...` does not belong to the database you are connected
+to. Setting a CI-style password while reproducing a CI failure against a throwaway database
+changed it for every database in the cluster, and the running services died at startup with
+`password authentication failed` — which looks exactly like the dependency upgrade under test
+having broken something.
+
+Reproduce CI against a scratch database by all means, but put the passwords back afterwards, or
+use a separate cluster.
+
+### The OpenTelemetry SDK was never wired up
+
+`packages/observability` imports only `@opentelemetry/api`, which returns a **no-op tracer** when
+no SDK is registered. Nothing registers one, so `withSpan` has always been decoration: correct
+code, producing no spans.
+
+That was disguised by `sdk-node`, `auto-instrumentations-node`, `exporter-trace-otlp-http`,
+`resources` and `semantic-conventions` all sitting in `package.json` — declared, never imported.
+They were removed when five of them turned up in a security audit, which is a poor reason to
+discover that your tracing does nothing.
+
+Depending on the OTel API alone is the right shape for a shared library; registering the SDK is
+the application's job, usually through a `--require` bootstrap. That bootstrap does not exist
+yet. §15.6's requirement to correlate a Langfuse trace id with an OTel span id is unmet until it
+does.
+
 ### Windows: `pkill` does not reach node processes
 
 `pkill -f "apps/worker/dist/main.js"` reports success and kills nothing, so a stale worker keeps
