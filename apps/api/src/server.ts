@@ -191,6 +191,11 @@ async function main(): Promise<void> {
       env: ctx.env.KNA_ENV,
       region: ctx.env.KNA_REGION,
       writeEnabled: ctx.env.WRITE_ENABLED,
+      // Reported because the failure mode is silent. Without a secret the webhook route refuses
+      // every delivery with a 501 — correct, since accepting unsigned webhooks would let anyone
+      // trigger regeneration — but from the provider's side it looks like a working endpoint
+      // that simply never does anything.
+      webhooks: ctx.env.GIT_WEBHOOK_SECRET ? 'enabled' : 'disabled (no GIT_WEBHOOK_SECRET)',
       irSchemaVersion: IR_SCHEMA_VERSION,
     },
     'kna-api listening',
