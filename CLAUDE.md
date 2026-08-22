@@ -23,6 +23,10 @@ section first — most of them exist because a specific failure was anticipated.
 Read [`docs/adr/0001-build-vs-buy.md`](docs/adr/0001-build-vs-buy.md) before proposing new
 scope. It records what was deliberately **not** built.
 
+To run this anywhere other than a laptop, read [`docs/HOSTING.md`](docs/HOSTING.md) — what to
+provision, how to build the images, and the bootstrap order — alongside
+[`docs/runbooks/deployment.md`](docs/runbooks/deployment.md), which is the policy half.
+
 **Orientation, in the order that makes each next file make sense:**
 
 1. `packages/ir/src/schema/symbol.ts` — the contract everything reads

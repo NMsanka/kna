@@ -5,6 +5,12 @@
 > sizing rules are reasoning, and the DR figures say "rehearse this" precisely because nobody
 > has. See [Authorship and evidence](../AUTHORSHIP.md).
 
+[`../HOSTING.md`](../HOSTING.md) is the mechanics — what to provision, how to build the images,
+and the bootstrap order. This file is the policy: environment separation, deploy ordering, sizing,
+and what must be true before production.
+
+---
+
 ## Environments
 
 §15.3 BLOCKER — *"Environment promotion is undefined for a system that writes to real repos. One
