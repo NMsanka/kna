@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
+import { loadDotEnv } from '@kna/config';
 import { runGate, formatGateReport, formatGitHubAnnotations } from '@kna/scanner';
 import { discover } from '@kna/analyzer-core';
 import { createContext } from './context.js';
@@ -20,6 +21,25 @@ import { reportError, ui } from './ui.js';
  * complete." Every command here works with no platform, no token and no config, because a tool
  * that requires setup before it does anything useful does not get adopted (§15.8).
  */
+
+/**
+ * Read `.env`, the same file the services read.
+ *
+ * The CLI previously read `process.env` alone, so `KNA_TOKEN` had to be exported into every shell
+ * before `ask` or `publish` would work — and putting it in `.env`, which is the obvious place to
+ * look, did nothing at all. That is a confusing way to fail: the file exists, the variable is in
+ * it, and the command still says no token.
+ *
+ * Two properties of the loader make this safe to do here. The real environment always wins, so a
+ * value already exported is never overwritten by the file; and it refuses to read anything at all
+ * when `KNA_ENV=production`, because configuration there comes from a secrets manager rather
+ * than a file sitting next to the code.
+ *
+ * Credentials issued by `db:seed` still land in `.kna/tokens.env` rather than here. That file is
+ * machine-written and replaced on every seed; merging generated secrets into a hand-edited config
+ * file is how someone's settings get clobbered.
+ */
+loadDotEnv();
 
 const program = new Command();
 
