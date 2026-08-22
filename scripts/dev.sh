@@ -8,6 +8,9 @@
 # the owner database URL used for migrations and seeding, the tenant slugs, and where credentials
 # are kept once the seed has printed them.
 #
+# Run it from Git Bash as ./scripts/dev.sh, or from PowerShell and cmd as `pnpm dev` — on
+# Windows the `bash` on PATH is usually WSL's, which is a different thing entirely.
+#
 # Usage:
 #   ./scripts/dev.sh bootstrap        everything from cold, in order
 #   ./scripts/dev.sh status           what is up and what is not

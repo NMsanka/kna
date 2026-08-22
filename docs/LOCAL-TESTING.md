@@ -12,6 +12,27 @@ one the code was written against is worth more than another test suite.
 
 ---
 
+## Running the script
+
+From **Git Bash**, run it directly:
+
+```bash
+./scripts/dev.sh status
+```
+
+From **PowerShell** or **cmd**, go through pnpm:
+
+```bash
+pnpm dev status
+```
+
+Both do the same thing. `pnpm dev` exists because `bash` on the Windows PATH is usually WSL's
+bash, which cannot see the filesystem the way this script expects — so `bash scripts/dev.sh`
+fails there with an error from a Linux subsystem you did not ask for. The launcher finds Git Bash
+instead.
+
+---
+
 ## The short version
 
 One script holds every local setting and every step:
