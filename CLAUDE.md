@@ -626,4 +626,9 @@ rollout waves with kill criteria.
   fusion, reranking, expansion or prompts moves `retrieval_config_version`. §15.5's point is
   about statistical power: at n=100 the set resolves 5–8 point deltas and most real changes move
   1–3, so a point estimate that improved is not evidence.
+
+  Until the runner exists there is an interim control, not a substitute: a watched file change
+  must carry an entry in [`docs/retrieval-changes.md`](docs/retrieval-changes.md) arguing why it
+  cannot regress quality. `scripts/check-retrieval-config.mjs` enforces it. An entry saying
+  "small change, looks fine" is exactly what that section says is not evidence.
 - **Edit an applied migration.** Fix forward.
