@@ -44,6 +44,9 @@ function findShell() {
 const child = spawn(findShell(), [script, ...process.argv.slice(2)], {
   stdio: 'inherit',
   cwd: root,
+  // So the script suggests follow-up commands in the form the caller can actually run. Someone
+  // in PowerShell told to run `./scripts/dev.sh` gets an error from their shell.
+  env: { ...process.env, KNA_DEV_INVOCATION: 'pnpm dev' },
 });
 
 child.on('exit', (code, signal) => {

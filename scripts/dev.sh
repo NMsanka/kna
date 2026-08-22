@@ -57,6 +57,10 @@ else
   DIM=''; BOLD=''; GREEN=''; RED=''; YELLOW=''; OFF=''
 fi
 
+# How to spell the next command back to the caller. `pnpm dev` sets this, so a PowerShell user is
+# not told to run `./scripts/dev.sh`, which their shell cannot execute.
+invocation() { printf '%s' "${KNA_DEV_INVOCATION:-./scripts/dev.sh}"; }
+
 step() { printf '\n%s==>%s %s%s%s\n' "$GREEN" "$OFF" "$BOLD" "$1" "$OFF"; }
 info() { printf '    %s\n' "$1"; }
 note() { printf '    %s%s%s\n' "$DIM" "$1" "$OFF"; }
@@ -304,8 +308,10 @@ cmd_repo() {
   info "saved as $key"
 
   echo
-  info "next: add kna.config.yaml to that repository with 'org: $ORG', then"
-  info "  ./scripts/dev.sh publish /path/to/repo"
+  info "next: clone the repository if you have not already, add kna.config.yaml to"
+  info "it with 'org: $ORG', then:"
+  info ""
+  info "  $(invocation) publish /path/to/repo"
 }
 
 cmd_publish() {
@@ -360,9 +366,9 @@ cmd_bootstrap() {
   cmd_start
   echo
   step "Ready"
-  info "./scripts/dev.sh publish          index this repository"
-  info "./scripts/dev.sh ask \"a question\"  once indexing finishes"
-  info "./scripts/dev.sh status           check on everything"
+  info "$(invocation) publish          index this repository"
+  info "$(invocation) ask \"a question\"  once indexing finishes"
+  info "$(invocation) status           check on everything"
 }
 
 cmd_reset() {
