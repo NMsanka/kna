@@ -204,6 +204,67 @@ cmd_seed() {
   info ""
   info "credentials written to .kna/tokens.env"
   note "regenerated on every seed; the previous ones stop working"
+  sync_env_tokens
+  mcp_token_hint
+}
+
+# Point .env at the credentials that were just minted.
+#
+# The seed regenerates every credential and stores them hashed, so the previous ones stop
+# working the moment it runs. .kna/tokens.env is rewritten here, but the CLI reads .env — and
+# nothing kept the two in step, so after a wipe-and-rebuild `kna ask` failed with
+# `invalid_token`, which reads like a bug rather than "you re-seeded".
+#
+# Only the two keys the CLI actually uses, only if .env exists, and a commented placeholder is
+# activated rather than duplicated. Everything else in the file is left exactly as it was.
+sync_env_tokens() {
+  [ -f "$ROOT/.env" ] || { note "no .env — skipping token sync"; return 0; }
+
+  local synced=""
+  for key in KNA_TOKEN KNA_INGEST_TOKEN; do
+    local value
+    value="$(grep -E "^export $key=" "$TOKENS_FILE" | head -1 | cut -d= -f2-)"
+    [ -n "$value" ] || continue
+
+    local tmp="$ROOT/.env.tmp.$$"
+    # Through ENVIRON rather than -v: awk expands backslash escapes in a -v value, and a
+    # credential is not something to run through an escape parser.
+    KNA_SYNC_KEY="$key" KNA_SYNC_VAL="$value" awk '
+      BEGIN { key = ENVIRON["KNA_SYNC_KEY"]; val = ENVIRON["KNA_SYNC_VAL"]; done = 0 }
+      $0 ~ "^" key "=" || $0 ~ "^#[ \t]*" key "=" {
+        if (!done) { print key "=" val; done = 1 }
+        next
+      }
+      { print }
+      END { if (!done) print key "=" val }
+    ' "$ROOT/.env" > "$tmp" && mv "$tmp" "$ROOT/.env"
+
+    synced="$synced $key"
+  done
+
+  [ -n "$synced" ] && info ".env updated:$synced"
+  return 0
+}
+
+# The MCP token is read by the editor from the OS environment, not from .env, so it is the one
+# credential this script cannot put in place itself.
+mcp_token_hint() {
+  local value
+  value="$(grep -E '^export KNA_MCP_TOKEN=' "$TOKENS_FILE" | head -1 | cut -d= -f2-)"
+  [ -n "$value" ] || return 0
+
+  info ""
+  info "for the editor, set KNA_MCP_TOKEN and restart it:"
+  case "$(uname -s)" in
+    MINGW*|MSYS*|CYGWIN*)
+      # PowerShell, because that is where this is run from on Windows even though the script
+      # itself is bash. Handing over a `grep | cut` pipeline here just produces an error.
+      info "  setx KNA_MCP_TOKEN \"$value\""
+      ;;
+    *)
+      info "  export KNA_MCP_TOKEN=$value"
+      ;;
+  esac
 }
 
 load_tokens() {

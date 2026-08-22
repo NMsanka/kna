@@ -63,6 +63,11 @@ so.
 Credentials from the seed go to `.kna/tokens.env`, which is gitignored. The seed prints them once
 and stores them hashed, so anything not captured there is gone.
 
+Seeding also repoints `KNA_TOKEN` and `KNA_INGEST_TOKEN` in `.env`, because the CLI reads that
+file and a stale value there fails as `invalid_token` — which reads like a bug rather than "you
+re-seeded". The editor's `KNA_MCP_TOKEN` lives in your OS environment instead, so the seed prints
+the line to set it rather than setting it for you.
+
 ---
 
 ## Adding a repository

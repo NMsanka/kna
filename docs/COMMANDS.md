@@ -240,6 +240,58 @@ left alone, so everything can be rebuilt from the bundles with `reindex`.
 
 ---
 
+## Starting over from nothing
+
+Deleting the containers keeps the volumes; `-v` is what destroys them.
+
+```bash
+docker compose -f deploy/docker-compose.yml down -v
+```
+
+| Volume | Holds | Recoverable |
+|---|---|---|
+| `kna_postgres-data` | tenant, credentials, the whole index | Yes — bootstrap and publish rebuild it |
+| `kna_minio-data` | **IR bundles: the system of record** | Only by publishing again from source |
+| `kna_redis-data` | job queues | Nothing worth keeping |
+
+`.env` is not in a container, so it survives — your model provider key with it. If it is missing,
+copy `.env.example` and set `OPENAI_API_KEY`; without one the services still start, and search
+and indexing are what break.
+
+Then the same command as a cold machine:
+
+```bash
+pnpm dev bootstrap
+```
+
+Seeding regenerates every credential and stores them hashed, so the previous ones stop working.
+Two of the three are handled for you — `.kna/tokens.env` is rewritten, and the `KNA_TOKEN` and
+`KNA_INGEST_TOKEN` lines in `.env` are pointed at the new values.
+
+The third is the editor's, which lives in your OS environment rather than in any file here. The
+seed prints the line to run; on Windows it is:
+
+```bash
+setx KNA_MCP_TOKEN "<the value the seed printed>"
+```
+
+Restart the editor afterwards — `setx` only affects processes started after it runs.
+
+Bootstrap registers only this repository, from its own git remote. Others need adding back:
+
+```bash
+pnpm dev repo https://github.com/you/other-repo.git
+```
+
+The bundles are gone, so `reindex` has nothing to replay. Each repository has to be analysed
+from source again:
+
+```bash
+pnpm dev publish .
+```
+
+---
+
 ## Administration
 
 The console at **http://localhost:8080/admin** covers registering repositories, minting publish
@@ -257,8 +309,8 @@ Their token is returned once and stored hashed. A lost one is reissued, never re
 
 ## When something looks wrong
 
-**`No platform token`** — `KNA_TOKEN` is not set. It is in `.kna/tokens.env`, and can be copied
-into `.env`, which the CLI now reads.
+**`No platform token`** — `KNA_TOKEN` is not set. Seeding writes it to both `.kna/tokens.env` and
+`.env`, and the CLI reads `.env`.
 
 **The publish is blocked by the scanner** — working as designed. Look at what it flagged: a real
 secret needs removing, a false-positive class is worth fixing in the rules, a genuine one-off goes
@@ -276,8 +328,9 @@ docker exec kna-postgres-1 psql -U kna -d kna -c "SELECT project_ids, corpus, co
 A slug rather than a `prj_` id means project-scoped queries match nothing while `--scope org`
 still works.
 
-**`unknown or expired token`** — re-seeding mints new credentials and invalidates the old ones.
-The current ones are in `.kna/tokens.env`.
+**`unknown or expired token`** or **`invalid_token`** — re-seeding mints new credentials and
+invalidates the old ones. `pnpm dev seed` now repoints `.env` for you; the editor's
+`KNA_MCP_TOKEN` lives in your OS environment and is the one you still have to set by hand.
 
 **A fix did not take effect** — the service is still running old code. `pnpm dev restart`.
 
