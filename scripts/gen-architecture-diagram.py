@@ -97,6 +97,142 @@ STEP = ("#1e1e1e", "#f8f9fa")
 # ══════════════════════════════════════════════════════════════════════════════
 # ZONE 1 — Components and how they communicate
 # ══════════════════════════════════════════════════════════════════════════════
+def emit(stem):
+    """Validate the canvas, then write it as both an .excalidraw and an .svg."""
+    # --- checks ------------------------------------------------------------------
+    # These are the reason this file is generated rather than drawn. A hand-drawn canvas
+    # drifts silently; a generated one refuses to be written when it stops being legible.
+    by_id = {e["id"]: e for e in E}
+    assert len(by_id) == len(E), "duplicate element ids"
+
+    for e in E:
+        if e["type"] == "arrow":
+            for k in ("startBinding", "endBinding"):
+                assert not e[k] or e[k]["elementId"] in by_id, "dangling arrow binding"
+        if e["type"] == "text" and e.get("containerId"):
+            assert e["containerId"] in by_id, "dangling text container"
+
+    def label_of(r):
+        return next((by_id[b["id"]]["text"] for b in r["boundElements"] if b["type"] == "text"), "")
+
+    # Zone backdrops and the CI grouping box are containers, not content: things are
+    # meant to sit inside them and arrows are meant to cross their edges.
+    solid = [e for e in E if e["type"] == "rectangle"
+             and e["strokeColor"] != "#adb5bd" and label_of(e).strip()]
+
+    def overlaps(a, b):
+        return not (a["x"] + a["width"] <= b["x"] or b["x"] + b["width"] <= a["x"] or
+                    a["y"] + a["height"] <= b["y"] or b["y"] + b["height"] <= a["y"])
+
+    for i, a in enumerate(solid):
+        for b in solid[i + 1:]:
+            assert not overlaps(a, b), "boxes overlap: %s / %s" % (
+                label_of(a).splitlines()[0], label_of(b).splitlines()[0])
+
+    def crosses(p, q, r):
+        x0, y0 = r["x"] + 3, r["y"] + 3
+        x1, y1 = r["x"] + r["width"] - 3, r["y"] + r["height"] - 3
+        if p[0] == q[0]:
+            return x0 < p[0] < x1 and max(y0, min(p[1], q[1])) < min(y1, max(p[1], q[1]))
+        if p[1] == q[1]:
+            return y0 < p[1] < y1 and max(x0, min(p[0], q[0])) < min(x1, max(p[0], q[0]))
+        return False
+
+    for e in E:
+        if e["type"] != "arrow":
+            continue
+        pts = [(e["x"] + p[0], e["y"] + p[1]) for p in e["points"]]
+        ends = {e["startBinding"]["elementId"], e["endBinding"]["elementId"]}
+        for a, b in zip(pts, pts[1:]):
+            for r in solid:
+                if r["id"] in ends:
+                    continue
+                assert not crosses(a, b, r), "arrow crosses %s" % label_of(r).splitlines()[0]
+
+    for e in E:
+        if e["type"] != "text" or not e.get("containerId"):
+            continue
+        c = by_id[e["containerId"]]
+        if c["type"] != "rectangle":
+            continue
+        lines = e["text"].split("\n")
+        wide = max(len(l) for l in lines) * e["fontSize"] * 0.58
+        tall = len(lines) * e["fontSize"] * 1.25
+        assert wide <= c["width"] - 12 and tall <= c["height"] - 8, \
+            "text overflows its box: %s" % lines[0][:40]
+
+    # --- write -------------------------------------------------------------------
+    import os
+    os.makedirs("docs/diagrams", exist_ok=True)
+    for e in E:
+        e.pop("_c", None)
+
+    with open("docs/diagrams/%s.excalidraw" % stem, "w", encoding="utf-8") as f:
+        json.dump({"type": "excalidraw", "version": 2, "source": "kna", "elements": E,
+                   "appState": {"gridSize": None, "viewBackgroundColor": "#ffffff"},
+                   "files": {}}, f, indent=2, ensure_ascii=False)
+
+    # An SVG alongside it, so the diagram is readable on GitHub and in a browser without
+    # opening Excalidraw. Deliberately plain: this is a rendering, not the source.
+    import html as _html
+    xs = [e["x"] for e in E]; ys = [e["y"] for e in E]
+    xe = [e["x"] + e["width"] for e in E]; ye = [e["y"] + e["height"] for e in E]
+    mnx, mny = min(xs) - 40, min(ys) - 40
+    w, h = max(xe) + 40 - mnx, max(ye) + 40 - mny
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="%g %g %g %g" width="%g" '
+           'height="%g" style="background:#fff">' % (mnx, mny, w, h, w, h),
+           '<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" '
+           'orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" '
+           'stroke-width="1.4"/></marker></defs>']
+    for e in E:
+        dash = ' stroke-dasharray="8 6"' if e["strokeStyle"] == "dashed" else ""
+        if e["type"] == "rectangle":
+            fill = "none" if e["backgroundColor"] == "transparent" else e["backgroundColor"]
+            svg.append('<rect x="%g" y="%g" width="%g" height="%g" rx="8" fill="%s" '
+                       'stroke="%s" stroke-width="%g"%s/>'
+                       % (e["x"], e["y"], e["width"], e["height"], fill,
+                          e["strokeColor"], e["strokeWidth"], dash))
+        elif e["type"] == "arrow":
+            pts = " ".join("%g,%g" % (e["x"] + p[0], e["y"] + p[1]) for p in e["points"])
+            svg.append('<polyline points="%s" fill="none" stroke="%s" stroke-width="1.8" '
+                       'marker-end="url(#a)"%s/>' % (pts, e["strokeColor"], dash))
+    for e in E:
+        if e["type"] != "text":
+            continue
+        lines = e["text"].split("\n"); fs = e["fontSize"]; lh = fs * 1.25
+        cid = e.get("containerId")
+        if cid and by_id[cid]["type"] == "rectangle":
+            c = by_id[cid]
+            cx = c["x"] + c["width"] / 2
+            y0 = c["y"] + (c["height"] - len(lines) * lh) / 2 + fs
+            anchor_ = "middle"
+        elif cid:
+            c = by_id[cid]
+            px = [c["x"] + p[0] for p in c["points"]]
+            py = [c["y"] + p[1] for p in c["points"]]
+            cx, anchor_ = sum(px) / len(px), "middle"
+            y0 = sum(py) / len(py) - len(lines) * lh / 2 + fs
+            lw = max(len(l) for l in lines) * fs * 0.58
+            svg.append('<rect x="%g" y="%g" width="%g" height="%g" fill="#fff" opacity="0.9"/>'
+                       % (cx - lw / 2, y0 - fs, lw, len(lines) * lh))
+        else:
+            cx, y0, anchor_ = e["x"], e["y"] + fs, "start"
+        for i, ln in enumerate(lines):
+            svg.append('<text x="%g" y="%g" font-family="Segoe UI,sans-serif" font-size="%g" '
+                       'fill="%s" text-anchor="%s" xml:space="preserve">%s</text>'
+                       % (cx, y0 + i * lh, fs, e["strokeColor"], anchor_, _html.escape(ln)))
+    svg.append("</svg>")
+    with open("docs/diagrams/%s.svg" % stem, "w", encoding="utf-8") as f:
+        f.write("\n".join(svg))
+
+    kinds = {}
+    for e in E:
+        kinds[e["type"]] = kinds.get(e["type"], 0) + 1
+    print("ok  %-14s %3d elements  %dx%d" % (stem, len(E), w, h))
+
+# ==============================================================================
+# The detailed canvas
+# ==============================================================================
 zone(0, 0, 2360, 1340, "1 · Components, and how they talk to each other")
 
 dev    = box(70, 130, 230, 60, "Developer", *EXT)
@@ -387,133 +523,73 @@ out = {"type": "excalidraw", "version": 2, "source": "kna", "elements": E,
 for e in E:
     e.pop("_c", None)
 
-# --- checks ------------------------------------------------------------------
-# These are the reason this file is generated rather than drawn. A hand-drawn canvas
-# drifts silently; a generated one refuses to be written when it stops being legible.
-by_id = {e["id"]: e for e in E}
-assert len(by_id) == len(E), "duplicate element ids"
+emit("kna-system")
 
-for e in E:
-    if e["type"] == "arrow":
-        for k in ("startBinding", "endBinding"):
-            assert not e[k] or e[k]["elementId"] in by_id, "dangling arrow binding"
-    if e["type"] == "text" and e.get("containerId"):
-        assert e["containerId"] in by_id, "dangling text container"
+# ==============================================================================
+# The simple canvas — one page, the tools by name, and where the data goes
+# ==============================================================================
+E.clear()
 
-def label_of(r):
-    return next((by_id[b["id"]]["text"] for b in r["boundElements"] if b["type"] == "text"), "")
+heading(40, 30, "KNA — system overview", 32)
+text_el(40, 78, 1000, 24,
+        "Node 22 and TypeScript, one pnpm monorepo. Everything below runs in Docker.",
+        size=15, align="left", colour="#5c6670")
 
-# Zone backdrops and the CI grouping box are containers, not content: things are
-# meant to sit inside them and arrows are meant to cross their edges.
-solid = [e for e in E if e["type"] == "rectangle"
-         and e["strokeColor"] != "#adb5bd" and label_of(e).strip()]
+# --- who talks to it ---------------------------------------------------------
+text_el(40, 132, 300, 20, "PRODUCERS", size=12, align="left", colour="#f08c00")
+repo = box(40, 158, 210, 62, "Your repositories" + chr(10) + "GitHub", *EXT, size=13)
+gha = box(40, 250, 210, 62, "GitHub Actions" + chr(10) + "analyse -> publish", *CI, size=13)
 
-def overlaps(a, b):
-    return not (a["x"] + a["width"] <= b["x"] or b["x"] + b["width"] <= a["x"] or
-                a["y"] + a["height"] <= b["y"] or b["y"] + b["height"] <= a["y"])
+text_el(40, 392, 300, 20, "CONSUMERS", size=12, align="left", colour="#9c36b5")
+edt = box(40, 418, 210, 62, "Editor" + chr(10) + "Claude Code / Cursor", *EXT, size=13)
+trm = box(40, 510, 210, 62, "Terminal & browser" + chr(10) + "kna ask  ·  /admin", *EXT, size=13)
 
-for i, a in enumerate(solid):
-    for b in solid[i + 1:]:
-        assert not overlaps(a, b), "boxes overlap: %s / %s" % (
-            label_of(a).splitlines()[0], label_of(b).splitlines()[0])
+# --- the three services ------------------------------------------------------
+text_el(380, 132, 400, 20, "SERVICES", size=12, align="left", colour="#1971c2")
+api = box(380, 158, 250, 96, "API   :8080" + chr(10) + "Fastify 5" + chr(10) +
+          "ingest · search · docs · admin", *SVC, size=13)
+wrk = box(380, 288, 250, 96, "Worker" + chr(10) + "BullMQ" + chr(10) +
+          "indexing · documentation", *SVC, size=13)
+mcp = box(380, 418, 250, 96, "MCP server   :8081" + chr(10) + "streamable HTTP" + chr(10) +
+          "7 read-only tools", *SVC, size=13)
 
-def crosses(p, q, r):
-    x0, y0 = r["x"] + 3, r["y"] + 3
-    x1, y1 = r["x"] + r["width"] - 3, r["y"] + r["height"] - 3
-    if p[0] == q[0]:
-        return x0 < p[0] < x1 and max(y0, min(p[1], q[1])) < min(y1, max(p[1], q[1]))
-    if p[1] == q[1]:
-        return y0 < p[1] < y1 and max(x0, min(p[0], q[0])) < min(x1, max(p[0], q[0]))
-    return False
+# --- where the state lives ---------------------------------------------------
+# Who reads and who writes is written inside each box rather than onto the arrows.
+# Eight labels sharing one corridor land on top of each other; the same words sit
+# perfectly well next to the thing they describe.
+text_el(840, 132, 400, 20, "STATE AND MODELS", size=12, align="left", colour="#2f9e44")
+pg = box(840, 158, 300, 100, "PostgreSQL 16" + chr(10) + "pgvector · HNSW · row-level security" +
+         chr(10) + chr(10) + "worker writes it · API and MCP read it", *DAT, size=12)
+rds = box(840, 288, 300, 100, "Redis" + chr(10) + "job queues" + chr(10) + chr(10) +
+          "API adds jobs · worker takes them", *DAT, size=12)
+obj = box(840, 418, 300, 100, "MinIO / S3" + chr(10) + "IR bundles, the system of record" +
+          chr(10) + chr(10) + "API writes · worker reads", *DAT, size=12)
+lite = box(840, 548, 300, 100, "LiteLLM  ->  OpenAI" + chr(10) + "embeddings, and the doc prose" +
+           chr(10) + chr(10) + "called by the worker and by search", *EXT, size=12)
 
-for e in E:
-    if e["type"] != "arrow":
-        continue
-    pts = [(e["x"] + p[0], e["y"] + p[1]) for p in e["points"]]
-    ends = {e["startBinding"]["elementId"], e["endBinding"]["elementId"]}
-    for a, b in zip(pts, pts[1:]):
-        for r in solid:
-            if r["id"] in ends:
-                continue
-            assert not crosses(a, b, r), "arrow crosses %s" % label_of(r).splitlines()[0]
+# --- data flow ---------------------------------------------------------------
+# One vertical lane per arrow, inside a corridor with nothing in it, so no line is
+# ever drawn across a box.
+def mid(b): return b["y"] + b["height"] / 2
 
-for e in E:
-    if e["type"] != "text" or not e.get("containerId"):
-        continue
-    c = by_id[e["containerId"]]
-    if c["type"] != "rectangle":
-        continue
-    lines = e["text"].split("\n")
-    wide = max(len(l) for l in lines) * e["fontSize"] * 0.58
-    tall = len(lines) * e["fontSize"] * 1.25
-    assert wide <= c["width"] - 12 and tall <= c["height"] - 8, \
-        "text overflows its box: %s" % lines[0][:40]
+def lane(a, b, x):
+    return dict(sides=("r", "l"), via=[(x, mid(a)), (x, mid(b))])
 
-# --- write -------------------------------------------------------------------
-import os
-os.makedirs("docs/diagrams", exist_ok=True)
-for e in E:
-    e.pop("_c", None)
+arrow(repo, gha, label="push / PR")
+arrow(gha, api, label="signed IR bundle", colour="#e03131", **lane(gha, api, 300))
+arrow(trm, api, label="HTTPS", **lane(trm, api, 332))
+arrow(edt, mcp, label="MCP over HTTP")
 
-with open("docs/diagrams/kna-system.excalidraw", "w", encoding="utf-8") as f:
-    json.dump({"type": "excalidraw", "version": 2, "source": "kna", "elements": E,
-               "appState": {"gridSize": None, "viewBackgroundColor": "#ffffff"},
-               "files": {}}, f, indent=2, ensure_ascii=False)
+for a, b, x in [(api, pg, 652), (api, rds, 675), (api, obj, 698),
+                (wrk, rds, 721), (wrk, obj, 744), (wrk, pg, 767),
+                (wrk, lite, 790), (mcp, pg, 812)]:
+    arrow(a, b, **lane(a, b, x))
 
-# An SVG alongside it, so the diagram is readable on GitHub and in a browser without
-# opening Excalidraw. Deliberately plain: this is a rendering, not the source.
-import html as _html
-xs = [e["x"] for e in E]; ys = [e["y"] for e in E]
-xe = [e["x"] + e["width"] for e in E]; ye = [e["y"] + e["height"] for e in E]
-mnx, mny = min(xs) - 40, min(ys) - 40
-w, h = max(xe) + 40 - mnx, max(ye) + 40 - mny
-svg = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="%g %g %g %g" width="%g" '
-       'height="%g" style="background:#fff">' % (mnx, mny, w, h, w, h),
-       '<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" '
-       'orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" '
-       'stroke-width="1.4"/></marker></defs>']
-for e in E:
-    dash = ' stroke-dasharray="8 6"' if e["strokeStyle"] == "dashed" else ""
-    if e["type"] == "rectangle":
-        fill = "none" if e["backgroundColor"] == "transparent" else e["backgroundColor"]
-        svg.append('<rect x="%g" y="%g" width="%g" height="%g" rx="8" fill="%s" '
-                   'stroke="%s" stroke-width="%g"%s/>'
-                   % (e["x"], e["y"], e["width"], e["height"], fill,
-                      e["strokeColor"], e["strokeWidth"], dash))
-    elif e["type"] == "arrow":
-        pts = " ".join("%g,%g" % (e["x"] + p[0], e["y"] + p[1]) for p in e["points"])
-        svg.append('<polyline points="%s" fill="none" stroke="%s" stroke-width="1.8" '
-                   'marker-end="url(#a)"%s/>' % (pts, e["strokeColor"], dash))
-for e in E:
-    if e["type"] != "text":
-        continue
-    lines = e["text"].split("\n"); fs = e["fontSize"]; lh = fs * 1.25
-    cid = e.get("containerId")
-    if cid and by_id[cid]["type"] == "rectangle":
-        c = by_id[cid]
-        cx = c["x"] + c["width"] / 2
-        y0 = c["y"] + (c["height"] - len(lines) * lh) / 2 + fs
-        anchor_ = "middle"
-    elif cid:
-        c = by_id[cid]
-        px = [c["x"] + p[0] for p in c["points"]]
-        py = [c["y"] + p[1] for p in c["points"]]
-        cx, anchor_ = sum(px) / len(px), "middle"
-        y0 = sum(py) / len(py) - len(lines) * lh / 2 + fs
-        lw = max(len(l) for l in lines) * fs * 0.58
-        svg.append('<rect x="%g" y="%g" width="%g" height="%g" fill="#fff" opacity="0.9"/>'
-                   % (cx - lw / 2, y0 - fs, lw, len(lines) * lh))
-    else:
-        cx, y0, anchor_ = e["x"], e["y"] + fs, "start"
-    for i, ln in enumerate(lines):
-        svg.append('<text x="%g" y="%g" font-family="Segoe UI,sans-serif" font-size="%g" '
-                   'fill="%s" text-anchor="%s" xml:space="preserve">%s</text>'
-                   % (cx, y0 + i * lh, fs, e["strokeColor"], anchor_, _html.escape(ln)))
-svg.append("</svg>")
-with open("docs/diagrams/kna-system.svg", "w", encoding="utf-8") as f:
-    f.write("\n".join(svg))
+text_el(40, 700, 1100, 90,
+        "Two paths, one index. Code arrives from CI as a signed bundle, is stored in object "
+        "storage, and the worker turns it into a searchable index.\nQuestions arrive from an "
+        "editor or a terminal and are answered from that same index — filtered in SQL by what "
+        "the person asking is allowed to read.",
+        size=14, align="left")
 
-kinds = {}
-for e in E:
-    kinds[e["type"]] = kinds.get(e["type"], 0) + 1
-print("ok  %d elements %s  canvas %dx%d" % (len(E), kinds, w, h))
+emit("kna-overview")

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="KNA reads your company's code and answers questions about it, showing the exact file and line behind every answer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%97%82%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  /* Reset first, so the page stylesheet below still wins. The artifact host supplies
+     one of these; a file opened from disk does not. */
+  *, *::before, *::after { box-sizing: border-box; }
+  body, figure, figcaption, h1, h2, h3, p { margin: 0; }
+</style>
+<title>KNA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+  :root {
+    --ground: #edf1f0;
+    --paper: #fbfcfc;
+    --ink: #10201d;
+    --muted: #5a6b67;
+    --rule: #d2dbd8;
+    --accent: #9c5c05;
+    --accent-soft: #f6e7cf;
+    --sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Menlo, monospace;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0b1412;
+      --paper: #121d1a;
+      --ink: #e3ebe8;
+      --muted: #93a5a0;
+      --rule: #23312d;
+      --accent: #e0a44c;
+      --accent-soft: #2c2413;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0b1412;
+    --paper: #121d1a;
+    --ink: #e3ebe8;
+    --muted: #93a5a0;
+    --rule: #23312d;
+    --accent: #e0a44c;
+    --accent-soft: #2c2413;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(3rem, 9vw, 7rem) clamp(1.25rem, 5vw, 3rem) 6rem;
+  }
+
+  .col { max-width: 640px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 7vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0 0 1.5rem;
+  }
+
+  .lede {
+    font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0;
+    max-width: 34em;
+  }
+
+  hr.rule {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: clamp(3.5rem, 8vw, 5.5rem) 0 clamp(2rem, 4vw, 3rem);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.75rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.1rem;
+  }
+
+  p { margin: 0 0 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .figure-shell { margin: 0; }
+
+  .scroller {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  svg.flow {
+    display: block;
+    width: 100%;
+    min-width: 660px;
+    height: auto;
+    color: var(--ink);
+  }
+
+  /* The drawing keeps a readable minimum width and scrolls inside its own box, so the
+     page never scrolls sideways. Say so on narrow screens — a sideways-scrolling figure
+     is invisible if nobody tells you it is there. */
+  .swipe {
+    display: none;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 0.65rem;
+  }
+
+  @media (max-width: 719px) {
+    .swipe { display: block; }
+  }
+
+  figcaption {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-top: 1.5rem;
+    max-width: 40em;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
+    max-width: 860px;
+  }
+
+  /* Two columns, never three: there are four cards, and a three-wide grid
+     leaves one stranded on a row of its own. */
+  @media (min-width: 720px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1.6rem 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.005em;
+  }
+
+  .card p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .quiet {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .quiet strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="col">
+    <p class="eyebrow">KNA</p>
+    <h1>A search engine that has actually read your code.</h1>
+    <p class="lede">
+      Ask it anything about your company's software. It answers in plain English, then shows you
+      the exact file and line it got that from.
+    </p>
+  </header>
+
+  <hr class="rule">
+
+  <section class="col">
+    <h2>The problem it solves</h2>
+    <p>
+      A company ends up with forty or fifty separate code repositories. The person who wrote the
+      billing service left last year. The written documentation was accurate in 2023.
+    </p>
+    <p>
+      So when someone needs to know how a thing works, there are two options: read code for an
+      afternoon, or interrupt whoever already knows. Both are expensive, and the second one has a
+      queue.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="col">How it works</h2>
+
+    <figure class="figure-shell">
+      <div class="scroller">
+        <svg class="flow" viewBox="0 0 920 400" role="img"
+             aria-label="Code repositories are read after every push into a single index. A developer's question goes to that same index, which returns a plain-English answer together with the exact file and line it came from.">
+
+          <defs>
+            <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="currentColor"></path>
+            </marker>
+            <marker id="tip-accent" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+
+          <!-- the repositories -->
+          <text x="30" y="26" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="var(--muted)" letter-spacing="1.2">YOUR CODE</text>
+
+          <rect x="30" y="40" width="150" height="40" rx="2"
+                fill="var(--paper)" stroke="currentColor" stroke-width="1.25"></rect>
+          <text x="46" y="65" font-family="IBM Plex Mono, monospace" font-size="12.5"
+                fill="currentColor">billing-api</text>
+
+          <rect x="30" y="92" width="150" height="40" rx="2"
+                fill="var(--paper)" stroke="currentColor" stroke-width="1.25"></rect>
+          <text x="46" y="117" font-family="IBM Plex Mono, monospace" font-size="12.5"
+                fill="currentColor">web-app</text>
+
+          <rect x="30" y="144" width="150" height="40" rx="2"
+                fill="var(--paper)" stroke="currentColor" stroke-width="1.25"></rect>
+          <text x="46" y="169" font-family="IBM Plex Mono, monospace" font-size="12.5"
+                fill="currentColor">auth-service</text>
+
+          <text x="46" y="203" font-family="IBM Plex Sans, sans-serif" font-size="12"
+                fill="var(--muted)">…and forty more</text>
+
+          <!-- repos to index -->
+          <line x1="190" y1="112" x2="330" y2="112"
+                stroke="currentColor" stroke-width="1.5" marker-end="url(#tip)"></line>
+          <text x="260" y="101" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+                font-size="12" fill="var(--muted)">reads it after every push</text>
+
+          <!-- the index -->
+          <rect x="342" y="52" width="228" height="120" rx="3"
+                fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.75"></rect>
+          <text x="456" y="94" text-anchor="middle" font-family="Instrument Serif, Georgia, serif"
+                font-size="21" fill="currentColor">The index</text>
+          <text x="456" y="121" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+                font-size="12.5" fill="var(--muted)">every function, what it does,</text>
+          <text x="456" y="139" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+                font-size="12.5" fill="var(--muted)">and the line it lives on</text>
+
+          <!-- the question -->
+          <text x="30" y="238" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="var(--muted)" letter-spacing="1.2">IN YOUR EDITOR</text>
+
+          <rect x="30" y="252" width="250" height="68" rx="2"
+                fill="var(--paper)" stroke="currentColor" stroke-width="1.25"></rect>
+          <text x="48" y="281" font-family="IBM Plex Sans, sans-serif" font-size="13.5"
+                fill="currentColor">“How does billing retry</text>
+          <text x="48" y="302" font-family="IBM Plex Sans, sans-serif" font-size="13.5"
+                fill="currentColor">a failed charge?”</text>
+
+          <!-- question to index -->
+          <polyline points="288,286 456,286 456,182" fill="none"
+                    stroke="currentColor" stroke-width="1.5" marker-end="url(#tip)"></polyline>
+          <text x="372" y="275" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+                font-size="12" fill="var(--muted)">asks, in plain English</text>
+
+          <!-- index to answer -->
+          <polyline points="578,112 762,112 762,224" fill="none"
+                    stroke="var(--accent)" stroke-width="1.75" marker-end="url(#tip-accent)"></polyline>
+          <text x="668" y="101" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+                font-size="12" fill="var(--accent)">answers, with the receipts</text>
+
+          <!-- the answer -->
+          <rect x="638" y="234" width="252" height="126" rx="2"
+                fill="var(--paper)" stroke="currentColor" stroke-width="1.25"></rect>
+          <text x="656" y="264" font-family="IBM Plex Sans, sans-serif" font-size="13.5"
+                fill="currentColor">“It tries three times, then</text>
+          <text x="656" y="285" font-family="IBM Plex Sans, sans-serif" font-size="13.5"
+                fill="currentColor">parks the charge for a</text>
+          <text x="656" y="306" font-family="IBM Plex Sans, sans-serif" font-size="13.5"
+                fill="currentColor">human to look at.”</text>
+          <line x1="656" y1="322" x2="872" y2="322"
+                stroke="var(--rule)" stroke-width="1"></line>
+          <text x="656" y="343" font-family="IBM Plex Mono, monospace" font-size="12"
+                fill="var(--accent)">billing/charge.ts:212</text>
+        </svg>
+      </div>
+
+      <p class="swipe">scroll the picture sideways &rarr;</p>
+
+      <figcaption>
+        Code goes in on the left, and is re-read whenever someone pushes. Questions come in from
+        the bottom. Both meet at one index — and every answer points back at a real line of code,
+        so you can check it yourself in about five seconds.
+      </figcaption>
+    </figure>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="col">Why not just ask ChatGPT?</h2>
+    <p class="col" style="color: var(--muted);">
+      A general chatbot has never seen your company's code. These are the four differences that
+      matter.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>It only knows your code</h3>
+        <p>
+          Nothing general, nothing borrowed from the internet. If the answer isn't somewhere in
+          your repositories, it doesn't have one.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Every answer has receipts</h3>
+        <p>
+          Each claim arrives with the file and line number behind it. You never have to take its
+          word for anything — you can go and look.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>It says when it doesn't know</h3>
+        <p>
+          If what it found is thin, it refuses rather than guessing. A confident wrong answer
+          about your payment code is worse than no answer at all.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>It respects who you are</h3>
+        <p>
+          You only ever see code you already have permission to read. Two people asking the same
+          question can correctly get different answers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="col">
+    <h2>Where you use it</h2>
+    <p>
+      Mostly inside the code editor, right next to whatever you're working on — it works out which
+      project you mean from the folder you have open, so there's nothing to configure. There's a
+      terminal command too, for when you're not in an editor.
+    </p>
+    <p class="quiet" style="margin-top: 2rem;">
+      <strong>Where it's at.</strong> A working system rather than a demo — today it indexes two
+      repositories and roughly 2,500 functions and classes on a single laptop, and answers
+      questions about them with citations.
+    </p>
+  </section>
+
+</div>
+</body>
+</html>
