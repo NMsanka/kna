@@ -55,7 +55,7 @@ export const DEFAULT_RETRIEVAL_CONFIG: RetrievalConfig = {
   blurbPromptVersion: '1.0.0',
   blurbModel: 'gpt-4.1-mini',
   embeddingModel: 'text-embedding-3-large',
-  embeddingDimensions: 1536,
+  embeddingDimensions: 1024,
   dedupeThreshold: 3,
 
   rrfK: 60,

@@ -338,7 +338,7 @@ implementation makes choices the prose left open.
 | **`assertRlsEffective()` at startup** | A superuser bypasses RLS *silently*. Found by the integration test: policies existed, the invariant check passed, and every tenant read every other tenant. RLS that is enabled and inert is worse than none, because it is believed |
 | **`halfvec` rather than `vector`** | §11's dimension trap, resolved structurally. Indexes to 4,000 dimensions, so both escape hatches stay open without a schema change |
 | **Migration 0004** | The invariant check found `lexical_stats` unprotected — created after the policy loop in the same migration. Fixed forward, because applied migrations are immutable |
-| **Post-generation DDL fixup** | Drizzle emits `"halfvec(1536)"` quoted, which Postgres reads as a type of that literal name. Automated rather than hand-edited, because hand-editing works until the once it is forgotten |
+| **Post-generation DDL fixup** | Drizzle emits `"halfvec(1024)"` quoted, which Postgres reads as a type of that literal name. Automated rather than hand-edited, because hand-editing works until the once it is forgotten |
 | **Symbol id algorithm v2** | §15.1 flags `sha256(repo + module + qualifiedName)` as not rename-stable. v2 keys on package identity where one exists, so a directory move is a no-op for identity |
 
 ---

@@ -31,6 +31,12 @@ export const zPlatformEnv = z.object({
   DATABASE_POOL_MAX: z.coerce.number().int().positive().default(10),
   /** Mandatory on the retrieval path; an unbounded query stalls every assistant in the org. */
   DATABASE_STATEMENT_TIMEOUT_MS: z.coerce.number().int().positive().default(10_000),
+  /**
+   * Batch indexing deliberately holds a transaction-scoped module advisory lock while it calls
+   * embedding and blurb providers. Zero disables PostgreSQL's idle-in-transaction timeout for
+   * that batch connection; interactive connections retain their short fail-safe timeout.
+   */
+  DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: z.coerce.number().int().nonnegative().default(0),
 
   REDIS_URL: z.string().url(),
 
@@ -50,11 +56,21 @@ export const zPlatformEnv = z.object({
   LITELLM_KEY_INTERACTIVE: z.string(),
   /** Batch/backfill traffic, lower priority, separate rate limit. */
   LITELLM_KEY_BATCH: z.string(),
+  /**
+   * Authentication for the OpenAI-compatible endpoint. `authorization` + `bearer` preserves
+   * the LiteLLM/OpenAI default; gateways that use an API-key header can select any valid HTTP
+   * token (for example `x-api-key`) and the `raw` scheme without a code change.
+   */
+  LITELLM_AUTH_HEADER: z
+    .string()
+    .regex(/^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/, 'must be a valid HTTP header name')
+    .default('authorization'),
+  LITELLM_AUTH_SCHEME: z.enum(['bearer', 'raw']).default('bearer'),
 
   EMBEDDING_MODEL: z.string().default('text-embedding-3-large'),
   /** §11 "the dimension trap": pgvector's HNSW index caps at 2,000 dims and
-   *  text-embedding-3-large is 3,072 native. Matryoshka truncation to 1536 is the default. */
-  EMBEDDING_DIMENSIONS: z.coerce.number().int().positive().default(1536),
+   *  text-embedding-3-large is 3,072 native. Matryoshka truncation to 1024 is the default. */
+  EMBEDDING_DIMENSIONS: z.coerce.number().int().positive().default(1024),
   /**
    * Names of **routes on the LiteLLM proxy** — the `model_name` entries in its config — not
    * provider model ids. §11 keeps the proxy so a vendor swap is a config change; naming
@@ -184,7 +200,7 @@ export function loadPlatformEnv(source: NodeJS.ProcessEnv = process.env): Platfo
 
   if (env.EMBEDDING_DIMENSIONS > 2000) {
     throw new Error(
-      `EMBEDDING_DIMENSIONS=${env.EMBEDDING_DIMENSIONS} exceeds pgvector's 2,000-dimension HNSW limit for the vector type. Pass dimensions:1536 to the embeddings API, or switch the column to halfvec (§11 "the dimension trap").`,
+      `EMBEDDING_DIMENSIONS=${env.EMBEDDING_DIMENSIONS} exceeds pgvector's 2,000-dimension HNSW limit for the vector type. Pass dimensions:1024 to the embeddings API, or switch the column to halfvec (§11 "the dimension trap").`,
     );
   }
 

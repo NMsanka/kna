@@ -465,13 +465,38 @@ cmd_ask() {
 
 cmd_reindex() {
   local repo_id="${1:-}"
-  [ -n "$repo_id" ] || die "usage: $(invocation) reindex <repoId>  (see: $(invocation) status)"
+  [ -n "$repo_id" ] || die "usage: $(invocation) reindex <repoId>  (see: dev.sh status)"
+
+  # Some Markdown renderers visually consume the escape in `repo\_…` but leave the literal
+  # backslash in copied text. PowerShell does not treat that backslash as an escape, so the API
+  # receives a different repository id and used to answer with the deeply misleading
+  # "0 job(s) for 0 module(s)". Accept that one unambiguous presentation-layer escape here,
+  # then validate the identifier before sending it across the API boundary.
+  local supplied_repo_id="$repo_id"
+  repo_id="${repo_id//\\_/_}"
+  if [ "$repo_id" != "$supplied_repo_id" ]; then
+    warn "normalised copied repository id to $repo_id"
+  fi
+  [[ "$repo_id" =~ ^repo_[0-9a-f]{32}$ ]] || die "invalid repoId '$repo_id'
+    expected repo_ followed by 32 lowercase hexadecimal characters"
+
   load_tokens
   step "Reindexing $repo_id"
-  curl -sf -X POST "$API_URL/v1/admin/reindex" \
+  local response
+  response="$(curl -sf -X POST "$API_URL/v1/admin/reindex" \
     -H "authorization: Bearer $KNA_TOKEN" -H 'content-type: application/json' \
-    -d "{\"repoIds\":[\"$repo_id\"],\"reason\":\"local development\"}" \
-    | node -pe 'const j=JSON.parse(require("fs").readFileSync(0,"utf8")); `queued ${j.jobIds.length} job(s) for ${j.moduleCount} module(s)`'
+    -d "{\"repoIds\":[\"$repo_id\"],\"reason\":\"local development\"}")" \
+    || die "reindex request failed — is the API running?"
+
+  echo "$response" | node -e '
+    const j = JSON.parse(require("fs").readFileSync(0, "utf8"));
+    if (j.moduleCount === 0) {
+      const reason = j.skipped?.map((x) => x.reason).join(", ") || "repository has no modules";
+      console.error(`reindex queued nothing: ${reason}`);
+      process.exit(1);
+    }
+    console.log(`queued ${j.jobIds.length} job(s) for ${j.moduleCount} module(s)`);
+  '
 }
 
 cmd_bootstrap() {

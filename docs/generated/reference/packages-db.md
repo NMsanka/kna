@@ -323,10 +323,10 @@ const documents: PgTableWithColumns<{name: "documents";schema: undefined;columns
 Matches EMBEDDING_DIMENSIONS. Changing it is an expand/contract migration, never an ALTER.
 
 ```typescript
-const EMBEDDING_DIMENSIONS: 1536
+const EMBEDDING_DIMENSIONS: 1024
 ```
 
-**Returns** `1536`
+**Returns** `1024`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L52)</sub>
 

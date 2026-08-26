@@ -131,6 +131,7 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
     url: env.DATABASE_URL_BATCH ?? env.DATABASE_URL,
     role: 'batch',
     poolMax: 4,
+    idleInTransactionSessionTimeoutMs: env.DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS,
     applicationName: 'kna-mcp-audit',
   });
 
@@ -139,6 +140,8 @@ export async function createMcpContext(env: PlatformEnv, logger: Logger): Promis
   const llm = new LlmClient({
     baseUrl: env.LITELLM_BASE_URL,
     keys: { interactive: env.LITELLM_KEY_INTERACTIVE, batch: env.LITELLM_KEY_BATCH },
+    authHeader: env.LITELLM_AUTH_HEADER,
+    authScheme: env.LITELLM_AUTH_SCHEME,
     region: env.KNA_REGION,
     onRateLimited: ({ model }) => KnaMetrics.providerRateLimited.add(1, { model, surface: 'mcp' }),
   });

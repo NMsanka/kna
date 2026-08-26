@@ -2,5 +2,9 @@ packages:
   - 'packages/*'
   - 'apps/*'
 
+allowBuilds:
+  esbuild: set this to true or false
+  msgpackr-extract: set this to true or false
+
 onlyBuiltDependencies:
   - esbuild

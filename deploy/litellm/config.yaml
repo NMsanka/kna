@@ -66,12 +66,12 @@ model_list:
   # ── Embeddings ────────────────────────────────────────────────────────────────────────────
   # §11 "the dimension trap": text-embedding-3-large returns 3,072 dimensions natively and
   # pgvector's HNSW index caps at 2,000 for the `vector` type. The application always passes
-  # `dimensions: 1536`; this is the second line of defence if it ever stops.
+  # `dimensions: 1024`; this is the second line of defence if it ever stops.
   - model_name: text-embedding-3-large
     litellm_params:
       model: openai/text-embedding-3-large
       api_key: os.environ/OPENAI_API_KEY
-      dimensions: 1536
+      dimensions: 1024
       timeout: 60
       max_retries: 3
     model_info:

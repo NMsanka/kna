@@ -3,8 +3,8 @@
  * Post-process generated migrations to unquote pgvector's parameterised types.
  *
  * Drizzle's `customType` emits whatever `dataType()` returns as a quoted identifier, so a
- * `halfvec(1536)` column is generated as `"halfvec(1536)"` — which Postgres reads as a type
- * literally named `halfvec(1536)`, and rejects. There is no way to express a parameterised
+ * `halfvec(1024)` column is generated as `"halfvec(1024)"` — which Postgres reads as a type
+ * literally named `halfvec(1024)`, and rejects. There is no way to express a parameterised
  * custom type in Drizzle that avoids this today.
  *
  * Rather than hand-editing every generated migration (and forgetting once), generation runs

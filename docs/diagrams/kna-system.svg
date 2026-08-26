@@ -186,7 +186,7 @@
 <text x="1745" y="209.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">PostgreSQL</text>
 <text x="1745" y="224.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
 <text x="1745" y="239.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Row-Level Security, FORCED</text>
-<text x="1745" y="254.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">pgvector  halfvec 1536  HNSW</text>
+<text x="1745" y="254.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">pgvector  halfvec 1024  HNSW</text>
 <text x="1745" y="269.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
 <text x="1745" y="284.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">roles:</text>
 <text x="1745" y="299.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">  kna_interactive  SELECT</text>
