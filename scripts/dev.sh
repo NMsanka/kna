@@ -167,7 +167,7 @@ cmd_db() {
 
 container() {
   "${COMPOSE[@]}" ps -q "$1" 2>/dev/null | head -1 ||
-    die "container '$1' is not running — try: ./scripts/dev.sh up"
+    die "container '$1' is not running — try: $(invocation) up"
 }
 
 cmd_seed() {
@@ -268,7 +268,7 @@ mcp_token_hint() {
 }
 
 load_tokens() {
-  [ -f "$TOKENS_FILE" ] || die "no credentials yet — run: ./scripts/dev.sh seed"
+  [ -f "$TOKENS_FILE" ] || die "no credentials yet — run: $(invocation) seed"
   set -a; . "$TOKENS_FILE"; set +a
 }
 
@@ -315,7 +315,7 @@ cmd_start() {
     spawn_service "$svc" "$entry"
     info "$svc started"
   done
-  note "logs in .kna/logs/ — follow one with: ./scripts/dev.sh logs worker"
+  note "logs in .kna/logs/ — follow one with: $(invocation) logs worker"
 }
 
 cmd_stop() {
@@ -376,7 +376,7 @@ cmd_status() {
 
 cmd_repo() {
   local remote="${1:-}"
-  [ -n "$remote" ] || die "usage: ./scripts/dev.sh repo <git-remote-url>"
+  [ -n "$remote" ] || die "usage: $(invocation) repo <git-remote-url>"
   load_tokens
 
   step "Registering $remote"
@@ -433,7 +433,7 @@ cmd_publish() {
   # scoped to one repository, so using another repo's would fail at the server with an error
   # about org and repo scope — true, and no help at all in working out what to do next.
   [ -n "$token" ] || die "no credential for $remote
-    run: ./scripts/dev.sh repo $remote"
+    run: $(invocation) repo $remote"
 
   load_signing_secret
   step "Publishing $path"
@@ -460,7 +460,7 @@ cmd_ask() {
 
 cmd_reindex() {
   local repo_id="${1:-}"
-  [ -n "$repo_id" ] || die "usage: ./scripts/dev.sh reindex <repoId>  (see: dev.sh status)"
+  [ -n "$repo_id" ] || die "usage: $(invocation) reindex <repoId>  (see: $(invocation) status)"
   load_tokens
   step "Reindexing $repo_id"
   curl -sf -X POST "$API_URL/v1/admin/reindex" \
@@ -503,7 +503,7 @@ cmd_reset() {
 cmd_help() {
   cat <<'USAGE'
 
-  ./scripts/dev.sh <command>
+  $(invocation) <command>
 
   Getting going
     bootstrap            containers, database, build, seed, services — from cold
@@ -549,5 +549,5 @@ case "${1:-help}" in
   reindex)   shift; cmd_reindex "$@" ;;
   reset)     shift; cmd_reset "$@" ;;
   help|-h|--help) cmd_help ;;
-  *) die "unknown command '$1' — try: ./scripts/dev.sh help" ;;
+  *) die "unknown command '$1' — try: $(invocation) help" ;;
 esac
