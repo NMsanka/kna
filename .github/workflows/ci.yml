@@ -109,6 +109,9 @@ jobs:
           if ! git diff --quiet -- docs/generated; then
             echo "::error::Generated documentation is out of date. Run: kna generate --no-prose"
             git diff --stat -- docs/generated
+            # The stat says which files; it never says what changed, which is the only thing
+            # that tells you whether this is real drift or the check disagreeing with itself.
+            git diff -- docs/generated | head -80
             exit 1
           fi
           echo "docs/generated matches the code"
