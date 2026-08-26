@@ -11,6 +11,8 @@ import { createApiContext, type ApiContext, type KnaServer } from './context.js'
 import { AuthError } from './auth.js';
 import { registerIngestRoutes } from './routes/ingest.js';
 import { registerSearchRoutes } from './routes/search.js';
+import { registerDocsRoutes } from './routes/docs.js';
+import { registerAdminUiRoutes } from './routes/admin-ui.js';
 import { registerAdminRoutes } from './routes/admin.js';
 import { registerWebhookRoutes } from './routes/webhooks.js';
 
@@ -93,7 +95,9 @@ export async function buildServer(ctx: ApiContext): Promise<KnaServer> {
   // ── Routes ────────────────────────────────────────────────────────────────────────────────
   await registerIngestRoutes(app, ctx);
   await registerSearchRoutes(app, ctx);
+  await registerDocsRoutes(app, ctx);
   await registerAdminRoutes(app, ctx);
+  await registerAdminUiRoutes(app, ctx);
   await registerWebhookRoutes(app, ctx);
 
   /**

@@ -581,9 +581,19 @@ async function resolveVersionId(
   input: IndexModuleInput,
   payload: IrBundlePayload,
 ): Promise<string> {
+  // Stable per `(repo, ref)`, deliberately: a ref is a moving pointer, and the stale-chunk
+  // sweep is scoped to `(module, version)`. Minting a new version per commit would mean the
+  // sweep never matched anything it wrote last time, so every commit would accumulate a fresh
+  // full copy of the corpus instead of replacing one.
   const versionId = `ver_${input.repoId.slice(5, 21)}_${input.ref.replace(/[^\w.-]/g, '-')}`;
 
   await withSystemContext(ctx.db, input.orgId, 'indexing', async (tx) => {
+    // The conflict target has to be the primary key. It used to name the
+    // `(repo_id, ref, commit_sha)` index, which is a *different* constraint and does not fire
+    // when only the sha changes — so the row went on to collide with `versions_pkey`, unhandled.
+    // The effect was that the first publish of a ref succeeded and every later one failed: the
+    // CLI still reported "N indexing job(s) queued", and every one of those jobs then died in
+    // the worker on a duplicate key.
     await tx.execute(sql`
       INSERT INTO versions (id, org_id, repo_id, ref, kind, commit_sha, committed_at, is_default)
       VALUES (
@@ -591,7 +601,10 @@ async function resolveVersionId(
         ${input.commitSha}, ${payload.version.committedAt},
         ${payload.version.kind === 'branch'}
       )
-      ON CONFLICT (repo_id, ref, commit_sha) DO NOTHING
+      ON CONFLICT (id) DO UPDATE SET
+        commit_sha = EXCLUDED.commit_sha,
+        committed_at = EXCLUDED.committed_at,
+        is_default = EXCLUDED.is_default
     `);
   });
 

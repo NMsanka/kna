@@ -23,6 +23,16 @@ section first — most of them exist because a specific failure was anticipated.
 Read [`docs/adr/0001-build-vs-buy.md`](docs/adr/0001-build-vs-buy.md) before proposing new
 scope. It records what was deliberately **not** built.
 
+To run this anywhere other than a laptop, read [`docs/HOSTING.md`](docs/HOSTING.md) — what to
+provision, how to build the images, and the bootstrap order — alongside
+[`docs/runbooks/deployment.md`](docs/runbooks/deployment.md), which is the policy half.
+
+To exercise it locally across more than one repository — which is the cheapest way to find real
+bugs — read [`docs/LOCAL-TESTING.md`](docs/LOCAL-TESTING.md).
+
+[`docs/COMMANDS.md`](docs/COMMANDS.md) is the short version of both: every command from a cold
+machine to an answer, in order.
+
 **Orientation, in the order that makes each next file make sense:**
 
 1. `packages/ir/src/schema/symbol.ts` — the contract everything reads
@@ -254,6 +264,16 @@ publish step re-signs the envelope, because the analyse job deliberately has no 
 `--oidc` exchanges the runner's workload identity at `/v1/auth/ci-exchange` for a credential
 scoped to one repo and valid for minutes. The job needs `permissions: id-token: write` or the
 exchange fails loudly rather than falling back to something weaker.
+
+**Documentation lands as a pull request.** The workflow's third job downloads the documentation
+the analyse job produced and opens a PR with it — §6 rule 3, "generated docs land as a pull
+request, not a direct commit. Humans review." It is the only job with `contents: write`, and it
+runs none of the repository's code, for the same reason the analyse and publish jobs are split.
+
+Skipped entirely when `docs.prStrategy` is `off`. The in-repo copy is the half of §15.8's exit
+plan that survives the platform being switched off, so it should not be the manual one — this
+repo's own copy had drifted eleven commits before anyone noticed, which is why `ci.yml` now fails
+when `docs/generated` no longer matches the code.
 
 **Webhooks trigger regeneration, not indexing.** A push or a merged pull request tells the
 platform the code moved; it does not carry IR, so there is nothing to index until CI publishes.

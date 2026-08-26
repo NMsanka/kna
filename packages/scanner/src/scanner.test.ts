@@ -90,6 +90,28 @@ describe('PII detection', () => {
     const result = scanFile({ path: 'docs/guide.md', content: 'mail to alice@example.com' });
     expect(result.findings.map((f) => f.ruleId)).not.toContain('email-address');
   });
+
+  // The git-host bot convention. This exact address appears in the workflow `kna init`
+  // generates, so before the domain exemption it blocked `generate` and `publish` on this
+  // repository — a fail-closed gate firing on an address that cannot receive mail.
+  it.each([
+    'kna-docs@users.noreply.github.com',
+    'no-reply@sendgrid.net',
+    'noreply@stripe.com',
+    '12345+someone@users.noreply.github.com',
+  ])('ignores the unreachable address %s', (address) => {
+    const result = scanFile({ path: '.github/workflows/kna.yml', content: address });
+    expect(result.findings.map((f) => f.ruleId)).not.toContain('email-address');
+  });
+
+  // The exemption is for addresses that cannot receive mail, not for anything resembling one.
+  it.each(['person@mynoreply.com', 'noreplyer@acmecorp.co.uk', 'reply@acmecorp.co.uk'])(
+    'still flags %s',
+    (address) => {
+      const result = scanFile({ path: 'src/config.ts', content: address });
+      expect(result.findings.map((f) => f.ruleId)).toContain('email-address');
+    },
+  );
 });
 
 describe('injection detection (§10 Layer 5)', () => {

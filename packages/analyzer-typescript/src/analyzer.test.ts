@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { describe, expect, it, beforeAll } from 'vitest';
 import { assemble, diffIr, type RawSymbol } from '@kna/ir';
 import { AnalyzerRegistry, discover, runConformance, runPipeline } from '@kna/analyzer-core';
-import { TypeScriptAnalyzer } from './analyzer.js';
+import { renderType, TypeScriptAnalyzer } from './analyzer.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixtureRoot = join(here, '..', 'test', 'fixtures', 'billing');
@@ -258,3 +258,49 @@ function find(symbols: RawSymbol[], qualifiedName: string): RawSymbol {
   }
   return found;
 }
+
+describe('renderType', () => {
+  // Every input below is a string this analyser really produced for this repository, and
+  // published verbatim into docs/generated. The absolute paths are a developer's machine.
+  it('drops the absolute path from a cross-file type', () => {
+    expect(
+      renderType(
+        'import("C:/Work Space/AI Project/KNA/node_modules/.pnpm/@opentelemetry+api@1.9.1/node_modules/@opentelemetry/api/build/src/index").Span',
+        300,
+      ),
+    ).toBe('Span');
+  });
+
+  it('keeps a bare import type usable by naming the package instead of the path', () => {
+    expect(
+      renderType(
+        'typeof import("/repo/node_modules/.pnpm/drizzle-orm@0.38.4/node_modules/drizzle-orm/pg-core/table")',
+        300,
+      ),
+    ).toBe("typeof import('drizzle-orm')");
+  });
+
+  it('handles several qualifiers in one type', () => {
+    expect(
+      renderType(
+        'Map<import("/a/node_modules/x/i").Key, import("/a/node_modules/y/i").Value>',
+        300,
+      ),
+    ).toBe('Map<Key, Value>');
+  });
+
+  it('names a first-party module by its file when it is not in node_modules', () => {
+    expect(renderType('typeof import("/repo/packages/db/src/schema/chunks")', 300)).toBe(
+      "typeof import('chunks')",
+    );
+  });
+
+  it('leaves a type with no import qualifier alone', () => {
+    expect(renderType('Promise<Array<string>>', 300)).toBe('Promise<Array<string>>');
+  });
+
+  it('still truncates, and truncates the collapsed form rather than the raw one', () => {
+    const raw = `import("/repo/node_modules/pkg/i").${'A'.repeat(40)}`;
+    expect(renderType(raw, 20)).toBe(`${'A'.repeat(20)}…`);
+  });
+});

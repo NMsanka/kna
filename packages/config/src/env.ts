@@ -55,10 +55,22 @@ export const zPlatformEnv = z.object({
   /** §11 "the dimension trap": pgvector's HNSW index caps at 2,000 dims and
    *  text-embedding-3-large is 3,072 native. Matryoshka truncation to 1536 is the default. */
   EMBEDDING_DIMENSIONS: z.coerce.number().int().positive().default(1536),
-  MODEL_BLURB: z.string().default('gpt-4.1-mini'),
-  MODEL_QUERY: z.string().default('gpt-4.1-mini'),
-  MODEL_CHAT: z.string().default('gpt-4.1'),
-  MODEL_DOCGEN: z.string().default('gpt-5'),
+  /**
+   * Names of **routes on the LiteLLM proxy** — the `model_name` entries in its config — not
+   * provider model ids. §11 keeps the proxy so a vendor swap is a config change; naming
+   * `gpt-4.1` here moves that decision back into a deploy.
+   *
+   * These are defaults rather than documentation: `WORKLOAD_POLICIES` also carries a
+   * `defaultModel`, but it is only reached when the variable is unset, and a `.default()` here
+   * means it never is. So these values are the ones that actually take effect, and they were
+   * provider ids while the policy table said routes — which is why a deployment that did not
+   * override them sent `gpt-5` to a proxy that has no such route and got a 400 on every
+   * documentation prose call.
+   */
+  MODEL_BLURB: z.string().default('blurb'),
+  MODEL_QUERY: z.string().default('query'),
+  MODEL_CHAT: z.string().default('chat'),
+  MODEL_DOCGEN: z.string().default('docgen'),
 
   /** Self-hosted cross-encoder. §11 — OpenAI has no reranker; option 1 for production. */
   RERANKER_URL: z.string().url().optional(),

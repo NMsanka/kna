@@ -4,8 +4,8 @@ docType: module-reference
 generated: true
 generator: kna-docgen
 moduleId: mod_f97af031ba2ebd388bca0f23eb2f345c
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -171,7 +171,7 @@ provenance:
     sym_6a4633bc42e789df59f658a35088c5df04eb108e: 98d9b0b31f0b581eff7c527b94a87b4badf165fab9fc6bf4e355068ea358ff15
     sym_1ac3d06357afd9bba0c5506f799f76244ceb4409: 7c23d4cc44cceb1386f50a50edffbdab9f83f6e23e481b065e85eda9e2f54be1
     sym_5ccd747617dc98c4bd26a1f32ca00a4fbfd76fdc: 013b9626387a97da99a981bb03d05f0c90f660f3babab85970e0a5c2c8e5efbd
-    sym_817cdb726f0515dddd09d61ff89619d09aeda500: 3bbeb6202366537f7bb0c3f67ec82a19d7a00298615fdefac558a57e05409543
+    sym_817cdb726f0515dddd09d61ff89619d09aeda500: bf6ab5fdbb8ca9dd20e2d9b65df76e1362c29d31747d53763eda7e3deb67d9f0
     sym_5d6654ea6418c08628b11c50b178213db4017ccd: 55bf66316b3250fcf4adcafc2370b83556629045b625e28cbdafe59c57ca137b
     sym_a8fbe6573ed5689d05276483ca47de9b7024ac14: 94bdf79ff564951c2108ffdda689f05020197d995de1d1538412a9ede3c6efbd
     sym_fbf3846bf63e93d22f2b354d42c6fcb4f67142bd: ff41ec5f2e22a17297b0b3e44aaf4db15d4f3d7ebd5d37dce1de3d4403907312
@@ -221,14 +221,14 @@ provenance:
 | Public symbols | 98 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.class hash=b64b0b0bf63af9e3 -->
+<!-- kna:generated:start id=api.class hash=75fa5a84feae0a5f -->
 ### `BudgetManager`
 
 ```typescript
 class BudgetManager
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L38)</sub>
 
 ---
 
@@ -240,7 +240,7 @@ In-memory store — real deployments back this with Redis so workers share state
 class InMemoryBudgetStore implements BudgetStore
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:161`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L161)</sub>
 
 ---
 
@@ -250,7 +250,7 @@ class InMemoryBudgetStore implements BudgetStore
 class LlmClient
 ```
 
-<sub>Source: `packages/llm/src/client.ts:120`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L120)</sub>
 
 ---
 
@@ -260,7 +260,7 @@ class LlmClient
 class LlmPolicyError extends Error
 ```
 
-<sub>Source: `packages/llm/src/client.ts:50`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L50)</sub>
 
 ---
 
@@ -270,10 +270,10 @@ class LlmPolicyError extends Error
 class LlmRateLimitError extends Error
 ```
 
-<sub>Source: `packages/llm/src/client.ts:57`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L57)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=b1ac3a54c2bea55e -->
+<!-- kna:generated:start id=api.method hash=371d75dc21f1f57b -->
 ### `admit`
 
 Admit a unit of work, reserving its estimated cost.
@@ -289,7 +289,7 @@ admit(orgId: string, estimatedUsd: number): Promise<BudgetVerdict>
 
 **Returns** `Promise<BudgetVerdict>`
 
-<sub>Source: `packages/llm/src/budget.ts:54`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L54)</sub>
 
 ---
 
@@ -304,7 +304,7 @@ constructor(private readonly store: BudgetStore, private readonly options: {warn
 | `store` | `BudgetStore` |  |
 | `options`? | `{ warnAtFraction?: number \| undefined; onWarn?: ((state: BudgetState) => void) \| undefined; }` |  (default `{}`) |
 
-<sub>Source: `packages/llm/src/budget.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L39)</sub>
 
 ---
 
@@ -324,7 +324,7 @@ settle(orgId: string, reservationId: string, actualUsd: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `packages/llm/src/budget.ts:92`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L92)</sub>
 
 ---
 
@@ -340,7 +340,7 @@ get(orgId: string): Promise<BudgetState>
 
 **Returns** `Promise<BudgetState>`
 
-<sub>Source: `packages/llm/src/budget.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L33)</sub>
 
 ---
 
@@ -358,7 +358,7 @@ release(orgId: string, reservationId: string, actualUsd: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `packages/llm/src/budget.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L35)</sub>
 
 ---
 
@@ -376,7 +376,7 @@ reserve(orgId: string, amountUsd: number, reservationId: string): Promise<boolea
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `packages/llm/src/budget.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L34)</sub>
 
 ---
 
@@ -390,7 +390,7 @@ constructor(private readonly defaultCeilingUsd = 500)
 |---|---|---|
 | `defaultCeilingUsd`? | `number` |  (default `500`) |
 
-<sub>Source: `packages/llm/src/budget.ts:165`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L165)</sub>
 
 ---
 
@@ -406,7 +406,7 @@ get(orgId: string): Promise<BudgetState>
 
 **Returns** `Promise<BudgetState>`
 
-<sub>Source: `packages/llm/src/budget.ts:167`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L167)</sub>
 
 ---
 
@@ -424,7 +424,7 @@ release(orgId: string, reservationId: string, actualUsd: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `packages/llm/src/budget.ts:186`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L186)</sub>
 
 ---
 
@@ -442,7 +442,7 @@ reserve(orgId: string, amountUsd: number, reservationId: string): Promise<boolea
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `packages/llm/src/budget.ts:178`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L178)</sub>
 
 ---
 
@@ -461,7 +461,7 @@ setCeiling(orgId: string, ceilingUsd: number): void
 
 **Returns** `void`
 
-<sub>Source: `packages/llm/src/budget.ts:197`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L197)</sub>
 
 ---
 
@@ -477,7 +477,7 @@ complete(request: CompleteRequest): Promise<CompleteResult>
 
 **Returns** `Promise<CompleteResult>`
 
-<sub>Source: `packages/llm/src/client.ts:127`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L127)</sub>
 
 ---
 
@@ -491,7 +491,7 @@ constructor(private readonly options: LlmClientOptions)
 |---|---|---|
 | `options` | `LlmClientOptions` |  |
 
-<sub>Source: `packages/llm/src/client.ts:123`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L123)</sub>
 
 ---
 
@@ -509,7 +509,7 @@ embed(request: {orgId: string;repoId?: string;texts: string[];dimensions: number
 
 **Returns** `Promise<{ vectors: number[][]; model: string; usage: UsageRecord; }>`
 
-<sub>Source: `packages/llm/src/client.ts:195`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L195)</sub>
 
 ---
 
@@ -523,7 +523,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>Source: `packages/llm/src/client.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L51)</sub>
 
 ---
 
@@ -539,10 +539,10 @@ constructor(message: string, readonly retryAfterMs: number, readonly keyClass: K
 | `retryAfterMs` | `number` |  |
 | `keyClass` | `KeyClass` |  |
 
-<sub>Source: `packages/llm/src/client.ts:58`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L58)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=3a662513207b19ce -->
+<!-- kna:generated:start id=api.interface hash=71468fbe41c9c09e -->
 ### `BudgetState`
 
 Spend budgets and backpressure.
@@ -551,7 +551,7 @@ Spend budgets and backpressure.
 interface BudgetState
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:13`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L13)</sub>
 
 ---
 
@@ -561,7 +561,7 @@ interface BudgetState
 interface BudgetStore
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L32)</sub>
 
 ---
 
@@ -571,7 +571,7 @@ interface BudgetStore
 interface ChatMessage
 ```
 
-<sub>Source: `packages/llm/src/client.ts:95`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L95)</sub>
 
 ---
 
@@ -581,7 +581,7 @@ interface ChatMessage
 interface CompleteRequest
 ```
 
-<sub>Source: `packages/llm/src/client.ts:100`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L100)</sub>
 
 ---
 
@@ -591,7 +591,7 @@ interface CompleteRequest
 interface CompleteResult
 ```
 
-<sub>Source: `packages/llm/src/client.ts:113`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L113)</sub>
 
 ---
 
@@ -603,7 +603,7 @@ Cost estimation for an indexing unit.
 interface IndexCostEstimate
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:105`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L105)</sub>
 
 ---
 
@@ -615,7 +615,7 @@ LiteLLM client.
 interface LlmClientOptions
 ```
 
-<sub>Source: `packages/llm/src/client.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L24)</sub>
 
 ---
 
@@ -625,7 +625,7 @@ interface LlmClientOptions
 interface RouteDecision
 ```
 
-<sub>Source: `packages/llm/src/policy.ts:145`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L159)</sub>
 
 ---
 
@@ -635,7 +635,7 @@ interface RouteDecision
 interface RouteRequest
 ```
 
-<sub>Source: `packages/llm/src/policy.ts:153`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L167)</sub>
 
 ---
 
@@ -645,7 +645,7 @@ interface RouteRequest
 interface UsageRecord
 ```
 
-<sub>Source: `packages/llm/src/client.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L35)</sub>
 
 ---
 
@@ -655,10 +655,10 @@ interface UsageRecord
 interface WorkloadPolicy
 ```
 
-<sub>Source: `packages/llm/src/policy.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L27)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=e12173d87225191a -->
+<!-- kna:generated:start id=api.property hash=d763e30af6c8b368 -->
 ### `ceilingUsd`
 
 ```typescript
@@ -667,7 +667,7 @@ ceilingUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L16)</sub>
 
 ---
 
@@ -679,7 +679,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/budget.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L14)</sub>
 
 ---
 
@@ -693,7 +693,7 @@ reservedUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L19)</sub>
 
 ---
 
@@ -705,7 +705,7 @@ spentTodayUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:15`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L15)</sub>
 
 ---
 
@@ -717,7 +717,7 @@ content: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:97`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L97)</sub>
 
 ---
 
@@ -729,7 +729,7 @@ role: 'system' | 'user' | 'assistant'
 
 **Returns** `"system" \| "user" \| "assistant"`
 
-<sub>Source: `packages/llm/src/client.ts:96`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L96)</sub>
 
 ---
 
@@ -741,7 +741,7 @@ contentSensitivity: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/llm/src/client.ts:105`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L105)</sub>
 
 ---
 
@@ -753,7 +753,7 @@ maxTokens?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:107`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L107)</sub>
 
 ---
 
@@ -765,7 +765,7 @@ messages: ChatMessage[]
 
 **Returns** `ChatMessage[]`
 
-<sub>Source: `packages/llm/src/client.ts:104`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L104)</sub>
 
 ---
 
@@ -777,7 +777,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:102`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L102)</sub>
 
 ---
 
@@ -789,7 +789,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:103`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L103)</sub>
 
 ---
 
@@ -801,7 +801,7 @@ responseFormat?: 'text' | 'json_object'
 
 **Returns** `"text" \| "json_object" \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:110`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L110)</sub>
 
 ---
 
@@ -813,7 +813,7 @@ temperature?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:106`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L106)</sub>
 
 ---
 
@@ -827,7 +827,7 @@ timeoutMs?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:109`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L109)</sub>
 
 ---
 
@@ -839,7 +839,7 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>Source: `packages/llm/src/client.ts:101`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L101)</sub>
 
 ---
 
@@ -851,7 +851,7 @@ finishReason: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `packages/llm/src/client.ts:116`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L116)</sub>
 
 ---
 
@@ -863,7 +863,7 @@ model: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:115`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L115)</sub>
 
 ---
 
@@ -875,7 +875,7 @@ text: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:114`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L114)</sub>
 
 ---
 
@@ -887,7 +887,7 @@ usage: UsageRecord
 
 **Returns** `UsageRecord`
 
-<sub>Source: `packages/llm/src/client.ts:117`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L117)</sub>
 
 ---
 
@@ -899,7 +899,7 @@ blurbUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:107`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L107)</sub>
 
 ---
 
@@ -911,7 +911,7 @@ breakdown: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/budget.ts:109`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L109)</sub>
 
 ---
 
@@ -923,7 +923,7 @@ embeddingUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:106`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L106)</sub>
 
 ---
 
@@ -935,7 +935,7 @@ totalUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/budget.ts:108`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L108)</sub>
 
 ---
 
@@ -947,7 +947,7 @@ baseUrl: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L25)</sub>
 
 ---
 
@@ -959,7 +959,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L32)</sub>
 
 ---
 
@@ -971,7 +971,7 @@ keys: Record<KeyClass, string>
 
 **Returns** `Record<KeyClass, string>`
 
-<sub>Source: `packages/llm/src/client.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L26)</sub>
 
 ---
 
@@ -985,7 +985,7 @@ onRateLimited?: (info: {model: string;keyClass: KeyClass;retryAfterMs: number}) 
 
 **Returns** `((info: { model: string; keyClass: KeyClass; retryAfterMs: number; }) => void) \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:31`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L31)</sub>
 
 ---
 
@@ -999,7 +999,7 @@ onUsage?: (usage: UsageRecord) => void | Promise<void>
 
 **Returns** `((usage: UsageRecord) => void \| Promise<void>) \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L29)</sub>
 
 ---
 
@@ -1011,7 +1011,7 @@ region: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L27)</sub>
 
 ---
 
@@ -1023,7 +1023,7 @@ keyClass: KeyClass
 
 **Returns** `KeyClass`
 
-<sub>Source: `packages/llm/src/policy.ts:147`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L161)</sub>
 
 ---
 
@@ -1035,7 +1035,7 @@ model: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/policy.ts:146`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L160)</sub>
 
 ---
 
@@ -1049,7 +1049,7 @@ refusal: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `packages/llm/src/policy.ts:150`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L164)</sub>
 
 ---
 
@@ -1061,7 +1061,7 @@ timeoutMs: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/policy.ts:148`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L162)</sub>
 
 ---
 
@@ -1075,7 +1075,7 @@ contentSensitivity: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/llm/src/policy.ts:156`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L170)</sub>
 
 ---
 
@@ -1087,7 +1087,7 @@ env?: NodeJS.ProcessEnv
 
 **Returns** `ProcessEnv \| undefined`
 
-<sub>Source: `packages/llm/src/policy.ts:161`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L175)</sub>
 
 ---
 
@@ -1101,7 +1101,7 @@ region: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/policy.ts:158`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L172)</sub>
 
 ---
 
@@ -1115,7 +1115,7 @@ routeRegion?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/llm/src/policy.ts:160`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L174)</sub>
 
 ---
 
@@ -1127,7 +1127,7 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>Source: `packages/llm/src/policy.ts:154`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L168)</sub>
 
 ---
 
@@ -1139,7 +1139,7 @@ cachedInputTokens: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/client.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L43)</sub>
 
 ---
 
@@ -1151,7 +1151,7 @@ estimatedUsd: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/client.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L44)</sub>
 
 ---
 
@@ -1163,7 +1163,7 @@ inputTokens: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/client.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L41)</sub>
 
 ---
 
@@ -1175,7 +1175,7 @@ keyClass: KeyClass
 
 **Returns** `KeyClass`
 
-<sub>Source: `packages/llm/src/client.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L40)</sub>
 
 ---
 
@@ -1187,7 +1187,7 @@ latencyMs: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/client.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L45)</sub>
 
 ---
 
@@ -1199,7 +1199,7 @@ model: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:37`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L37)</sub>
 
 ---
 
@@ -1211,7 +1211,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L46)</sub>
 
 ---
 
@@ -1223,7 +1223,7 @@ outputTokens: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/client.ts:42`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L42)</sub>
 
 ---
 
@@ -1235,7 +1235,7 @@ provider: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L38)</sub>
 
 ---
 
@@ -1247,7 +1247,7 @@ region: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/client.ts:39`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L39)</sub>
 
 ---
 
@@ -1259,7 +1259,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `packages/llm/src/client.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L47)</sub>
 
 ---
 
@@ -1271,7 +1271,7 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>Source: `packages/llm/src/client.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/client.ts#L36)</sub>
 
 ---
 
@@ -1285,7 +1285,7 @@ batchEligible: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/llm/src/policy.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L52)</sub>
 
 ---
 
@@ -1299,11 +1299,13 @@ cacheablePrefix: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `packages/llm/src/policy.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L54)</sub>
 
 ---
 
 ### `defaultModel`
+
+The **proxy route name**, not a provider model id.
 
 ```typescript
 defaultModel: string
@@ -1311,7 +1313,7 @@ defaultModel: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/policy.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L46)</sub>
 
 ---
 
@@ -1323,7 +1325,7 @@ keyClass: KeyClass
 
 **Returns** `KeyClass`
 
-<sub>Source: `packages/llm/src/policy.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L29)</sub>
 
 ---
 
@@ -1337,7 +1339,7 @@ latencyBudgetMs: number
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/policy.ts:36`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L50)</sub>
 
 ---
 
@@ -1351,7 +1353,7 @@ maxSensitivity: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>Source: `packages/llm/src/policy.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L48)</sub>
 
 ---
 
@@ -1365,7 +1367,7 @@ modelEnv: string
 
 **Returns** `string`
 
-<sub>Source: `packages/llm/src/policy.ts:31`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L31)</sub>
 
 ---
 
@@ -1377,17 +1379,17 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>Source: `packages/llm/src/policy.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L28)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=b18e25ebfcad471e -->
+<!-- kna:generated:start id=api.type hash=4a199d0625d1e723 -->
 ### `BudgetVerdict`
 
 ```typescript
 type BudgetVerdict = | {admitted: true;reservationId: string;estimatedUsd: number} | {admitted: false;reason: string;spentTodayUsd: number;ceilingUsd: number;retryAfterMs: number;}
 ```
 
-<sub>Source: `packages/llm/src/budget.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L22)</sub>
 
 ---
 
@@ -1399,7 +1401,7 @@ type BudgetVerdict = | {admitted: true;reservationId: string;estimatedUsd: numbe
 type KeyClass = 'interactive' | 'batch'
 ```
 
-<sub>Source: `packages/llm/src/policy.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L25)</sub>
 
 ---
 
@@ -1411,10 +1413,10 @@ Model and provider policy.
 type Workload = | 'context-blurb' | 'query-rewrite' | 'intent-classify' | 'chat' | 'docgen' | 'embedding' | 'rerank' | 'grounding-judge'
 ```
 
-<sub>Source: `packages/llm/src/policy.ts:14`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L14)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.function hash=71cb2e386ded4b95 -->
+<!-- kna:generated:start id=api.function hash=25d0a283907b985e -->
 ### `estimateCostUsd`
 
 ```typescript
@@ -1429,7 +1431,7 @@ estimateCostUsd(model: string, usage: {inputTokens: number;outputTokens: number;
 
 **Returns** `number`
 
-<sub>Source: `packages/llm/src/policy.ts:219`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L241)</sub>
 
 ---
 
@@ -1445,7 +1447,7 @@ estimateIndexCost(input: {symbolCount: number;blurbMissRate: number;embeddingCac
 
 **Returns** `IndexCostEstimate`
 
-<sub>Source: `packages/llm/src/budget.ts:112`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/budget.ts#L112)</sub>
 
 ---
 
@@ -1463,21 +1465,21 @@ route(request: RouteRequest): RouteDecision
 
 **Returns** `RouteDecision`
 
-<sub>Source: `packages/llm/src/policy.ts:176`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L190)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.constant hash=b6d3919640343e8e -->
+<!-- kna:generated:start id=api.constant hash=867cf0b28d936e1f -->
 ### `MODEL_PRICING_USD_PER_MTOK`
 
 Rough token pricing for the spend ledger. Approximate by design — it drives chargeback conversations and budget alarms, not invoices. Override per deployment.
 
 ```typescript
-const MODEL_PRICING_USD_PER_MTOK: Record<string, {input: number;output: number;cachedInput: number;}>
+const MODEL_PRICING_USD_PER_MTOK: Record<string, {input: number;output: number;cachedInput: number}>
 ```
 
 **Returns** `Record<string, { input: number; output: number; cachedInput: number; }>`
 
-<sub>Source: `packages/llm/src/policy.ts:207`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L221)</sub>
 
 ---
 
@@ -1489,5 +1491,5 @@ const WORKLOAD_POLICIES: Record<Workload, WorkloadPolicy>
 
 **Returns** `Record<Workload, WorkloadPolicy>`
 
-<sub>Source: `packages/llm/src/policy.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/llm/src/policy.ts#L57)</sub>
 <!-- kna:generated:end id=api.constant -->

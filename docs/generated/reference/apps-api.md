@@ -4,8 +4,8 @@ docType: module-reference
 generated: true
 generator: kna-docgen
 moduleId: mod_d4b7cb542aa0325c8670d5cc55f2a346
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 owners:
   []
@@ -32,26 +32,6 @@ provenance:
     - sym_37a025545903a459488de88f603d16ef5e0a0d52
     - sym_251c0f052990d13f10607424300cdf08a3fa5631
     - sym_8a626ccc8d96b6a77c556b4c2e4176f3f2422667
-    - sym_60250826fef2e5b95557c5782ebab952c5d8388b
-    - sym_bfab6c337e5b75dc8f013a179878f9ffeff75211
-    - sym_ed428bfe1a1983b7bf8ad5bd563e7f09ceeebb2b
-    - sym_0489508982e2cdc8b1eda1e43925a99ca5ca4797
-    - sym_6d688ebe9e8029346ba4c03f7af2f2123c4e4eb9
-    - sym_948a330b966d905b5917ad8a6318db636440a4e2
-    - sym_25b2d9ff8172ecc8e496a62b45db35b38d211ff9
-    - sym_f1050e49cf03027a6463e91c60117e199e2f0367
-    - sym_bc234c05e09e3f31f388f403965e44c8f5e03a7f
-    - sym_968af583c490c04a7549b7b5610d0eaeba437f09
-    - sym_dd2307a43d539c0a4c87fa12eca9051628053679
-    - sym_d63ca16f9ec229767743cace453c9b6d19bb4afe
-    - sym_ef6c3c293128668037c2e507f9d8f2919581f1d1
-    - sym_d48266e49a1cf686be1d74a85f489a19a1ad233e
-    - sym_dfab280ce41610655d912040aac84f34e41fe2e3
-    - sym_811c8772e3e0fb6cdb008e3b488f5d96eca3aba3
-    - sym_bc43e6f27285a5de8f265f8427a48282e6a9c195
-    - sym_c6b7e98b98a8540540c820473a0b97ea9ea65e25
-    - sym_888d8ff106b0f5abeebb095b7f4bf341e87b6ce5
-    - sym_11daf5a21fe3d9210f8384c979a83bc234a770cb
     - sym_bec1792de2a3357504660870a6faf0fcae1e2598
     - sym_9d1b8cf1633dfddd31cf47bf1e52647692e379b3
     - sym_bbd4a73f3943cce485ab95bf981c80c03d963dcb
@@ -61,30 +41,26 @@ provenance:
     - sym_9c5a60d9f2ca62f7db4a5c19711a1e987a75c293
     - sym_44426e62ed4f8a6bbbc30d619e350d5496be2e59
     - sym_ff6964d26330d77dd33b376b0ffe38f2ee72fee4
-    - sym_ba52e42d19b307a4c2860b94424a536ebe1bd13e
-    - sym_3b7b89c8f4cd55d23715f602633e2d4b7b5438d4
-    - sym_fde14c72304267a9a1bec01c0fd261d766fbd3cd
-    - sym_b9fc972359673019523182d6de209be1ac923de7
-    - sym_c6fd0cecea0461921bd096a8fe61fae9ae23fce7
-    - sym_d50f9d965a569a63cf7433e99d34aa1166d0d74b
-    - sym_67f23deb8b202476e871950fa517f0efd070934a
-    - sym_739c487b6cc8b31cc0f94e28e7f804dff492863b
-    - sym_382e723169084aefc10cfe519be5fd8f518aa61f
-    - sym_f14b40c6055fe858b4381bb100970c221f2040b2
-    - sym_48a8a749fc124c09b88d4dae1c1dd07f19b09bca
-    - sym_aeff334a8ea9e3bb63ce5dd1f2ce99c684738d1c
-    - sym_c7c9ad2ee2e145bf9af9599a5f4bbd169244cf4b
     - sym_9403e3ed35885a58aabaffdfbc8ed709aa88e92e
     - sym_1f862e1d745ab3a1a8d04a0600eba98539642ea8
     - sym_c76ca06760c178c2ad2365ca3c8a587763ce7670
     - sym_3ac83003863dde63a93cae81db1cd5d7c003c109
     - sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0
-    - sym_55c8b7b5fc7dc521473bdaafee6082f7f9acea6b
+    - sym_a78160698b0c2b066a856dcf67dad150dd14e440
     - sym_ccc6410fe201756198c5cfb0707ff7e43099ac17
     - sym_59c628386d8e8d8f804ee591c9121b9f7d22b349
     - sym_ebc468a68652167a7fdff63615411a0ea2f56c06
     - sym_791f75cf2d885886b9d635e0fa8bc631ad0bd391
-    - sym_5e57918283ea4ff27cfa966eb2bbeb89b4ff5dbd
+    - sym_aa4f578b885be6cda72f8ff091083f86307cc670
+    - sym_efb52676ba610440366406276c126e972c2fd210
+    - sym_b8fec62107c63540d775425299a954df4b4c67a3
+    - sym_02f3a9764ead0e69ef34eb76f03bc4d76974d86a
+    - sym_363719cb7f9c39298b025f8fbd091bbb975b93e0
+    - sym_5c809bb2b083c5d9099d78bbb2b62f0c058f1fed
+    - sym_0d9026c66955ef18c9d35fccba585949da0934b2
+    - sym_9178b8cfbf9283569a795c576ae22e85b25d1619
+    - sym_9d83aac414b0b8a9c16154dab6aa3f12575d741c
+    - sym_54b2104e78f4df7f4161f648c5b033d2ab42c438
     - sym_8060308bf8f81dbdb041ee945891b6a7533a8d13
     - sym_5c99466d4c51a85a09c6c0eec570aa8f663a2a91
     - sym_3cbd1f42583af8f3c4fa05388663f52e52079a6e
@@ -107,6 +83,7 @@ provenance:
     - sym_6b7a277ceac2cb8d74b17f473d9f68dba8d24551
     - sym_d692adcaa1eebd3b13c9b7f0481aeec3c4769bda
     - sym_5b9b34eb115be5736b59eec963c98c67869236d2
+    - sym_a5150ca64b66b214a4518c11d76ee0a3fb357397
     - sym_15f71d00c5d2d20f919dcce40e9fede94e1cf707
     - sym_6620728786b14c6bc846671faa291db29d49900a
     - sym_2cab35d32277f77698a15b1859581e32166d2c79
@@ -135,6 +112,7 @@ provenance:
     - sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a
     - sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816
     - sym_6d111ab4bb3127b56fab5186da867fc8c5082a35
+    - sym_b3996c309af80d17ab3dcb7ef414095bc409b228
     - sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3
     - sym_716024655c502106d72501e2afdf5734b7839d9e
     - sym_3b511c7a05eb34e95d02d21f3b8643fd7d19ad44
@@ -152,6 +130,7 @@ provenance:
     - sym_b8801541afee066cb475ac3fb39d15d383174d8f
     - sym_5f8c4f21db87b5029986275520e3b68caba9d0bb
     - sym_6337825473fbaf345143c9a670a47380c1854128
+    - sym_a3fbd69e1f0ac11256cdad3e1ae8b9a8dd9fecf9
     - sym_99e2f2f344cb4ecd8e7cadb44ddad2efb7ab2e51
     - sym_d4fd472fc6f5e8a311c78a9875f9649cb4b0a2b4
     - sym_3a42bfee3bb48f340da9071ce6f4844acdba67a1
@@ -165,6 +144,7 @@ provenance:
     - sym_325192417b00b51b7b001dc660a9541c8d6aaefb
     - sym_090c27518932fa82886e3da7b4ab8fa8fdd71725
     - sym_a3da9e6f6d24b117530357a6c0a597215a0569d8
+    - sym_b4a28b39a203e833ec671121f10466f74d9e06d2
     - sym_85afc4df40c3cc32fa89978ce01f8645611d41d1
     - sym_58368ebd61bbab3f25c60d432e8242c9aa216e4b
     - sym_9983c138fbf01bc55ae1e33d296811275e7ee90d
@@ -199,12 +179,18 @@ provenance:
     - sym_5786e0e0e751eac814698ec495801f22d449d703
     - sym_25c3e031609c9527e56be98e0f56bd9d4357db9e
     - sym_4467e7cc12acd470b01765b05d496c8ff10325b3
+    - sym_acf9456f9dd1a32ba15b565592cdde348ffc4964
+    - sym_b308e5a622e4c88cc3e56e8f0597b1373c2a3793
     - sym_7e9046dcfd9a00bfb985840ac82986ea5a399149
     - sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2
+    - sym_a63de5d32ff052e84116851be5928d49e20716ee
+    - sym_b31927a18f52be77c9e87dde00e4606d927732e4
     - sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37
     - sym_04e278213d5d8a27796972ddaed315645c1bdf91
     - sym_16e820042efc0adba4b6cdf0339db64a7be12ea1
     - sym_c2d52927bdd110baf677093dfc47438e8fc43346
+    - sym_ebeb53fb8511430ae5aa20ec754d4381c2635758
+    - sym_9d4313c5e2fbfb9515fed1d5f5cd91cf848bbee3
     - sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a
     - sym_a332150ad93726dd26a04a082a35f8b64930cc10
     - sym_80cc72939489227c8887d03365f48b187f759fd4
@@ -230,26 +216,6 @@ provenance:
     sym_37a025545903a459488de88f603d16ef5e0a0d52: 2bf4374ce2b26b8e447dd2137212ee6880d227bf5e6c33e963c6d84a80524627
     sym_251c0f052990d13f10607424300cdf08a3fa5631: 2f97661122acb6bcdcffa4211e15c8b2686cb14385ad162c3e475076096a4543
     sym_8a626ccc8d96b6a77c556b4c2e4176f3f2422667: 72ac9f01c1c87bd16a3e4dac55efd8e5744f8f61e14e91957cac3f75e19d0f5b
-    sym_60250826fef2e5b95557c5782ebab952c5d8388b: f42807dc1b4e05eb2c1caacf2879eb59f1f95c58359fe5b64806216ddd5162d0
-    sym_bfab6c337e5b75dc8f013a179878f9ffeff75211: f1cbd6811f75ffb116e020ae69b11eda035fd0d4e3ff649dd2ba9d08e7d68d6e
-    sym_ed428bfe1a1983b7bf8ad5bd563e7f09ceeebb2b: 167268235c1bbbcf74546cb2d23a4a6a1b93de91c87b768915c41b39574370bd
-    sym_0489508982e2cdc8b1eda1e43925a99ca5ca4797: addcbeaa38e710d9c9653740408b0a1220115b478b0e1fcd8a3a88c6e3a69dcf
-    sym_6d688ebe9e8029346ba4c03f7af2f2123c4e4eb9: 0074299cb3575c349abf84f2e55c2734436842c1c3c25b52b02491f1fcf24c8f
-    sym_948a330b966d905b5917ad8a6318db636440a4e2: 3c80fdd4e4bd96a7749eb8572be35f133a6d718eb9c267046f4b80460aeaffe5
-    sym_25b2d9ff8172ecc8e496a62b45db35b38d211ff9: a2f4acedacd435e85c37990a39fb20c39bea6a848408c1e84e49c26fe7d71ab6
-    sym_f1050e49cf03027a6463e91c60117e199e2f0367: 174d4fd409e1bd4e0a2d6f764643b37eeadc91ab0ade04610932a5a11d3aa567
-    sym_bc234c05e09e3f31f388f403965e44c8f5e03a7f: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
-    sym_968af583c490c04a7549b7b5610d0eaeba437f09: d7c057b40f32656105f1f8999a3bf0292d46ba75ca50fef65e6878ef8f857d0a
-    sym_dd2307a43d539c0a4c87fa12eca9051628053679: a03793022e9b429c7743b0bbb61ceb6e7530017305aae6e6451526421c35df77
-    sym_d63ca16f9ec229767743cace453c9b6d19bb4afe: 0e4b748fde135669e7b3012e94be40660f11d0c5c1cb034c91aa531200a97cb1
-    sym_ef6c3c293128668037c2e507f9d8f2919581f1d1: 8b00157568417e861ef2ccfd15e343e99e2bc2dd49f2d97c99353cec9a9bc9f0
-    sym_d48266e49a1cf686be1d74a85f489a19a1ad233e: bc6deef5d7c3c4897557b736d7a595536c3b8108e2002e24be4ef9e3aba884a8
-    sym_dfab280ce41610655d912040aac84f34e41fe2e3: be536ed6dab331a0671b610452f65c1ca4a4fbf53ba6d9ed4e38a84a7d5c2cc2
-    sym_811c8772e3e0fb6cdb008e3b488f5d96eca3aba3: f11af169f04e5773ef3ae7ae334aac030240a1ffb8bbffbb9f870958389129d8
-    sym_bc43e6f27285a5de8f265f8427a48282e6a9c195: ee7eff5d1b7e93da9971a6ae2adafcc5e26b5690e5339d26e81ff2947d2274a3
-    sym_c6b7e98b98a8540540c820473a0b97ea9ea65e25: 82368dddf44d4544670550f4f72391d76f4891ca4239fe8c0777b30d04657893
-    sym_888d8ff106b0f5abeebb095b7f4bf341e87b6ce5: 257eaf8a212c167dfe229ad19cc4022973c4aec8731dc34e7fd397a3704233b5
-    sym_11daf5a21fe3d9210f8384c979a83bc234a770cb: 3a30036b4d9cadded7a0c4bafc9a9a4cba4c8c7a57ae1abc8a3f05229891869c
     sym_bec1792de2a3357504660870a6faf0fcae1e2598: d855f5eee8d69753697c994e05b09355c6f969eb7f335f738f8129890d3b12ab
     sym_9d1b8cf1633dfddd31cf47bf1e52647692e379b3: 97b5d8aaad292809209bb9b11669024ba3bd81d09e7fbb36bb77977937500b09
     sym_bbd4a73f3943cce485ab95bf981c80c03d963dcb: 384632a6bebda8917da1f01fe7c2b54dab5f81d0ff035407424566b68a2350cf
@@ -259,30 +225,26 @@ provenance:
     sym_9c5a60d9f2ca62f7db4a5c19711a1e987a75c293: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_44426e62ed4f8a6bbbc30d619e350d5496be2e59: 8920d837924ebe36701ba06d836010f6c578ed3b62e9b5c218aeb4f76c451d9a
     sym_ff6964d26330d77dd33b376b0ffe38f2ee72fee4: 16d93949ce8747279de74fd98de83ec34394e58bec4c604ac69beef4db215f7d
-    sym_ba52e42d19b307a4c2860b94424a536ebe1bd13e: 4a9765ddc3867a02a9084aa7b37ba0ccbe88ac26e59f2bac74e98ec2b71b9e19
-    sym_3b7b89c8f4cd55d23715f602633e2d4b7b5438d4: 94ae2c35d86af6b42d8921051403aa94b8268d1cdc3688a5c09cc30a7949cd1b
-    sym_fde14c72304267a9a1bec01c0fd261d766fbd3cd: d4a7b5b537aede46fcc8938a9bd560d52417d8d38fed9e1ce1a29a900c83f8a2
-    sym_b9fc972359673019523182d6de209be1ac923de7: 9f9e0408f16c300d4d1ad60e9af54829ced8a1b97c844ff68de8340e63b07924
-    sym_c6fd0cecea0461921bd096a8fe61fae9ae23fce7: 9177db3c09a907a558d651f91b33d5fa5f1cc015d6738f6344985abe323243f3
-    sym_d50f9d965a569a63cf7433e99d34aa1166d0d74b: 1a511107a12eb3113adb3e731ea6a0c4e33eeb360b25c3eb26fce0d1140227a7
-    sym_67f23deb8b202476e871950fa517f0efd070934a: a78f296e6b7a739dafa410eea952f9e69838dab1b39e05db252e242f39894a9f
-    sym_739c487b6cc8b31cc0f94e28e7f804dff492863b: f7c6d9c3c74a938e6f4e790d97c558546f1e377234baef7abda431d271f5d79c
-    sym_382e723169084aefc10cfe519be5fd8f518aa61f: 7a22db93eab77af750a71dd42d970c3ebeb0bb9657da6adb8f2f9a5e5443f413
-    sym_f14b40c6055fe858b4381bb100970c221f2040b2: 09a39b36817916bb7af4c0c0438ac71efc06ac24448d6030079402943f689d5d
-    sym_48a8a749fc124c09b88d4dae1c1dd07f19b09bca: a5a0b2f6ec7e4873a8e5c58d14898e9e39a19426f470d6303970eec602805fc5
-    sym_aeff334a8ea9e3bb63ce5dd1f2ce99c684738d1c: 646555cd09f16cdf84b7ffff6523c5ef352379354a3e8592a6cfb337c1624331
-    sym_c7c9ad2ee2e145bf9af9599a5f4bbd169244cf4b: d50b979809c1929b8c0211bdaed3c9cbc5b3298bb26f882ea8fe285caadb5390
     sym_9403e3ed35885a58aabaffdfbc8ed709aa88e92e: dcd6ff7c5c3c46f941c9d93e64535a01c2be23aef04d0ff7c2f65f3e0d4fead7
     sym_1f862e1d745ab3a1a8d04a0600eba98539642ea8: d128c5bc41b92338900491ab6741caa11485cded63ac083c8384001cbeafec1c
     sym_c76ca06760c178c2ad2365ca3c8a587763ce7670: 63e31c2d452bac3acfceb313866005d9507beaa345cd0abdc938445414aba0fc
     sym_3ac83003863dde63a93cae81db1cd5d7c003c109: 6d2b711c096d7d2f003f26569933cff575a76aa5ea547da4799ff882def35e2b
     sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0: 583e9e20bf991ec81c9e598e73dad4c10884d03e2873c56f348e90318531a768
-    sym_55c8b7b5fc7dc521473bdaafee6082f7f9acea6b: 868a22211e4a7376914f81a5ff3de57c1b25d81bac8206ed19deb11bcb576619
+    sym_a78160698b0c2b066a856dcf67dad150dd14e440: 9db623bafb0d0261f9ccf3216b34f1610baf6545cdd385ef7726cf94f0ee9202
     sym_ccc6410fe201756198c5cfb0707ff7e43099ac17: 4cfffe10457c091cbc87af1e51986912c3360659456480e9d6fb6c64f9566795
     sym_59c628386d8e8d8f804ee591c9121b9f7d22b349: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_ebc468a68652167a7fdff63615411a0ea2f56c06: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
     sym_791f75cf2d885886b9d635e0fa8bc631ad0bd391: 7bc1eca6c2eb21b3d62def4fb735e65f2283c7e1d59464b7b6f9116a69c77d7f
-    sym_5e57918283ea4ff27cfa966eb2bbeb89b4ff5dbd: 61632e88f13d6ad40110b492a3e6f55c24343441ebbd5107ddcbe3ffcd63b857
+    sym_aa4f578b885be6cda72f8ff091083f86307cc670: ec0463599b98badf866a4983037007e3a2d85b200e59ad7f61191e39a3415723
+    sym_efb52676ba610440366406276c126e972c2fd210: 51f2d52e0f9b5a9ec7ae921c149eba29b7754e2e374d2c47d8054eab3ed7cd67
+    sym_b8fec62107c63540d775425299a954df4b4c67a3: 6fa10742937ea9fe59c886ae81f21885a06579cfd39d36e0de89f308b45d8225
+    sym_02f3a9764ead0e69ef34eb76f03bc4d76974d86a: ec6026c145450d4cc20f4117bede59c9a7905a8763ccbd3858a57e60c66fe353
+    sym_363719cb7f9c39298b025f8fbd091bbb975b93e0: 23f61b01ab717f33c225e75ea3aeb45173609b0eff4973fbd52751443e4daa8b
+    sym_5c809bb2b083c5d9099d78bbb2b62f0c058f1fed: a1dad40c0aac1725060001c06c822346388d471cdfbd75f9dd5aee7da1eb44df
+    sym_0d9026c66955ef18c9d35fccba585949da0934b2: b646b7eaf578b4ffa792d9e8f5df17f1d3a50df75dd1c314cf7cc4c890d1511e
+    sym_9178b8cfbf9283569a795c576ae22e85b25d1619: c31e3e3ee6a741126e59b3dafdd17f10555d1041cff97f452cffcb2673893a47
+    sym_9d83aac414b0b8a9c16154dab6aa3f12575d741c: c1ba2d39c2049c95f131a33295bbec702fb49172f67df467dd6d5d089adc7dee
+    sym_54b2104e78f4df7f4161f648c5b033d2ab42c438: 06a3ca82032de63f3f958b9c259333feeb7e515112edc0e933da0f856eafed1a
     sym_8060308bf8f81dbdb041ee945891b6a7533a8d13: d355eb93bebda82fc79cd083408543afb527cf0cc2349627e92fdbe1f3a82f35
     sym_5c99466d4c51a85a09c6c0eec570aa8f663a2a91: 45accbb99769f672ef5628ac4a89f58f6ffb1743da6b40a8f2c5b1759bffe245
     sym_3cbd1f42583af8f3c4fa05388663f52e52079a6e: e7af95d993ba7dce5734faf2cda9bfabbd6583c0b17e92a13f360b0173b6099f
@@ -305,6 +267,7 @@ provenance:
     sym_6b7a277ceac2cb8d74b17f473d9f68dba8d24551: 016a862b5f7e8846b393971ea04d90ceaae469137e8ba5d35b3276681890c004
     sym_d692adcaa1eebd3b13c9b7f0481aeec3c4769bda: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_5b9b34eb115be5736b59eec963c98c67869236d2: 48b7aa907a739b06962b30ba6cb9ed9a8e81ac36be7e434de958e67b12a786eb
+    sym_a5150ca64b66b214a4518c11d76ee0a3fb357397: f4b4fb07ccb2587f0faeab345ef17365b02f3e20e1d2b5cc3f4273ce9384a416
     sym_15f71d00c5d2d20f919dcce40e9fede94e1cf707: d6f360e5cfe2a5704044adc0ffbadc6fcaee0b1bd641df8606047947b963c5b5
     sym_6620728786b14c6bc846671faa291db29d49900a: 712b2e85414c4e9a27b927c78b5bdfad7ce9dd4d37282757debccf10d5437167
     sym_2cab35d32277f77698a15b1859581e32166d2c79: 37610bb81e784153648e9b9a5ef601e704c0b267565acc3ca422ed563c978917
@@ -333,6 +296,7 @@ provenance:
     sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a: 5b1f48e3765a659bcd5e1bf482c66be8051fb9193725c8041f7bd3dd74f65742
     sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816: a43e0eba892eedb967fae25fb557c74c96d4c10532551ed9ab91d0b8ea71d6a0
     sym_6d111ab4bb3127b56fab5186da867fc8c5082a35: 89c5ac5761e3c7359258c1028922b80b83e0601e04adcf7f86789c07f85da759
+    sym_b3996c309af80d17ab3dcb7ef414095bc409b228: c7d9aca82b05bc5e97eeb211be646d952021695427b2abe4fbfd4c5b919ca3fc
     sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3: da800be6f74d23ca39b91446c6464882d07b2fde0e43f68d14979f027f39690f
     sym_716024655c502106d72501e2afdf5734b7839d9e: e19d6449ad689627491a90ec0f11d5941d2914058e9903761c832855842645e3
     sym_3b511c7a05eb34e95d02d21f3b8643fd7d19ad44: 98d9b0b31f0b581eff7c527b94a87b4badf165fab9fc6bf4e355068ea358ff15
@@ -350,6 +314,7 @@ provenance:
     sym_b8801541afee066cb475ac3fb39d15d383174d8f: de4a4424817b1c7ed9f44296fb7134449c3456ba0d0aa02d0d0d3b74915afb25
     sym_5f8c4f21db87b5029986275520e3b68caba9d0bb: ce00fe67a76409731c89cb7ca0878b35f16d981ca07492c2767fffd9bea7084f
     sym_6337825473fbaf345143c9a670a47380c1854128: 7c690a24d9de06ee8965cb219ad9b6e3df4e5cb4ddf21494c01dcbfb27389050
+    sym_a3fbd69e1f0ac11256cdad3e1ae8b9a8dd9fecf9: 7bdbb258a07a016721ffe1c6370bbd87b7378088f4a6f19f2b6baf7757f6d6fb
     sym_99e2f2f344cb4ecd8e7cadb44ddad2efb7ab2e51: 950e6d017832a50f398df3ac601d1d22820ddf24e3d6250a6adf34d929dd6ee5
     sym_d4fd472fc6f5e8a311c78a9875f9649cb4b0a2b4: a8ffed659525d435be937100e8392d4130d23df795e3c0fe15d8daae9f5156c8
     sym_3a42bfee3bb48f340da9071ce6f4844acdba67a1: 634b66809e06e05d06a74e8c00780bf1ddb5dd3f288b917a364b00d576c4ff5e
@@ -363,6 +328,7 @@ provenance:
     sym_325192417b00b51b7b001dc660a9541c8d6aaefb: 4154accffa1db93d138debba5885544c7740be4b85de56a3688c9c025c0e5bf2
     sym_090c27518932fa82886e3da7b4ab8fa8fdd71725: 29e6c1d36fac7c7beb39cb119e9ea1f00f0b2ac88651b9044d008341c1d9065c
     sym_a3da9e6f6d24b117530357a6c0a597215a0569d8: fb347d86afbfb9c2a0e656d0770fcb3dee24a6926af52c700b0895f3015fc7f9
+    sym_b4a28b39a203e833ec671121f10466f74d9e06d2: 53ce5aaad4469889f4c305ae84fd5b4cd198492a91c58d2bd46702a14af4a2ae
     sym_85afc4df40c3cc32fa89978ce01f8645611d41d1: 58ffbd145d92c062e87b4afffb32f497bc0787ff603b4662bde1bf675fcdf1e4
     sym_58368ebd61bbab3f25c60d432e8242c9aa216e4b: 7e80178c783d3fcbcdf3afd348af74ed42d0c70e6d73402aa535e28e06bd5b9e
     sym_9983c138fbf01bc55ae1e33d296811275e7ee90d: 45ffe233f4362412371cc8218ceca366e952ed6a400b6882b5b37b05ce942ae8
@@ -397,12 +363,18 @@ provenance:
     sym_5786e0e0e751eac814698ec495801f22d449d703: 6d51cf1b296f7c0dbb230decaa503acff5edcf0b59e8e3ed61179eb4ba55fc02
     sym_25c3e031609c9527e56be98e0f56bd9d4357db9e: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
     sym_4467e7cc12acd470b01765b05d496c8ff10325b3: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
+    sym_acf9456f9dd1a32ba15b565592cdde348ffc4964: 48b7aa907a739b06962b30ba6cb9ed9a8e81ac36be7e434de958e67b12a786eb
+    sym_b308e5a622e4c88cc3e56e8f0597b1373c2a3793: ad0aeee6ea50456b3b89333adc706c5ddbd652c7307e75ff7293b6722daaa6af
     sym_7e9046dcfd9a00bfb985840ac82986ea5a399149: d6f360e5cfe2a5704044adc0ffbadc6fcaee0b1bd641df8606047947b963c5b5
     sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2: 18e93735f7e9821b45a6414d5790f2fbf734fa1b45ba0a778dcbeea250c866cc
+    sym_a63de5d32ff052e84116851be5928d49e20716ee: ca893473720282a6189093a2b05f59f1120c881c46b155203f6234885f0bc175
+    sym_b31927a18f52be77c9e87dde00e4606d927732e4: 22392da1e6e50f529a21cb858ed8ef97df3a8edb0ef60b67c9cbd4ec15799b6b
     sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37: 250ef28ad307a74c04a0317e2edd54d7892e0b646ea45f996905bc01cfad8fd3
     sym_04e278213d5d8a27796972ddaed315645c1bdf91: f2dd1eb942b12d471ce6d6e7c45cf3f35788bb48c075293031cd5b5b94c343af
     sym_16e820042efc0adba4b6cdf0339db64a7be12ea1: 0a15a21fae873cbdf0e650c1e7919a40d3628192057dbbd2fd69c7ec828cf62f
     sym_c2d52927bdd110baf677093dfc47438e8fc43346: b0d5cce1d727be34966b4206a6dfc10abd55396016a0bdc5223c10f9925489ab
+    sym_ebeb53fb8511430ae5aa20ec754d4381c2635758: 37610bb81e784153648e9b9a5ef601e704c0b267565acc3ca422ed563c978917
+    sym_9d4313c5e2fbfb9515fed1d5f5cd91cf848bbee3: 4e64fdb85b14133cac8db3a6ea06758b277970d7f1dc8b2f9c3c8411ac1307e2
     sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a: cfae7b76e9a57e1c5b381496635284e49382b453d8fbdab1a4f999680c74d89d
     sym_a332150ad93726dd26a04a082a35f8b64930cc10: f01b54c28b65a8b2fc57aaea6d2933c91367c0673daf1da5b065a34f652b3785
     sym_80cc72939489227c8887d03365f48b187f759fd4: 44eb603063e71c22dd40f4a27ffc6060a87ac85439f12fc7718529c4f2d8e911
@@ -410,35 +382,23 @@ provenance:
 
 # @kna/api reference
 
-<!-- kna:generated:start id=overview hash=7100b02899f86e3f -->
+<!-- kna:generated:start id=overview hash=d31550f2f68ed38d -->
 | | |
 |---|---|
 | Package | `@kna/api` (npm) |
 | Path | `apps/api` |
 | Languages | typescript |
-| Public symbols | 197 |
+| Public symbols | 183 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=894394d1a761bcf4 -->
+<!-- kna:generated:start id=api.interface hash=c83aa58dabdded41 -->
 ### `ApiContext`
 
 ```typescript
 interface ApiContext
 ```
 
-<sub>Source: `apps/api/src/context.ts:54`</sub>
-
----
-
-### `AuditEvent`
-
-Audit recording.
-
-```typescript
-interface AuditEvent
-```
-
-<sub>Source: `apps/api/src/services/audit.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L54)</sub>
 
 ---
 
@@ -450,19 +410,7 @@ interface AuditEvent
 interface BearerClaims
 ```
 
-<sub>Source: `apps/api/src/auth.ts:236`</sub>
-
----
-
-### `BreadthPolicy`
-
-§15.4 — insider exfiltration detection.
-
-```typescript
-interface BreadthPolicy
-```
-
-<sub>Source: `apps/api/src/services/audit.ts:169`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L236)</sub>
 
 ---
 
@@ -472,7 +420,7 @@ interface BreadthPolicy
 interface CrossRepoJob
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:61`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L78)</sub>
 
 ---
 
@@ -484,7 +432,7 @@ Git provider client.
 interface GitProviderOptions
 ```
 
-<sub>Source: `apps/api/src/services/git.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L22)</sub>
 
 ---
 
@@ -494,7 +442,7 @@ interface GitProviderOptions
 interface IndexModuleJob
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:43`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L43)</sub>
 
 ---
 
@@ -506,7 +454,7 @@ Short-lived, repo-scoped ingest credentials (§15.2).
 interface IngestClaims
 ```
 
-<sub>Source: `apps/api/src/auth.ts:188`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L188)</sub>
 
 ---
 
@@ -518,7 +466,7 @@ Platform data access for the API.
 interface OidcIdentity
 ```
 
-<sub>Source: `apps/api/src/services/store.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L23)</sub>
 
 ---
 
@@ -530,7 +478,7 @@ OIDC verification for the CI token exchange (§15.2).
 interface OidcOptions
 ```
 
-<sub>Source: `apps/api/src/services/oidc.ts:16`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L16)</sub>
 
 ---
 
@@ -540,7 +488,7 @@ interface OidcOptions
 interface PermissionResolverOptions
 ```
 
-<sub>Source: `apps/api/src/auth.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L51)</sub>
 
 ---
 
@@ -552,7 +500,7 @@ Identity, permissions and revocation.
 interface Principal
 ```
 
-<sub>Source: `apps/api/src/auth.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L23)</sub>
 
 ---
 
@@ -562,7 +510,7 @@ interface Principal
 interface PullRequestInput
 ```
 
-<sub>Source: `apps/api/src/services/git.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L46)</sub>
 
 ---
 
@@ -572,10 +520,10 @@ interface PullRequestInput
 interface RegenerateDocsJob
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:54`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L60)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=b1172cf06800ab7a -->
+<!-- kna:generated:start id=api.property hash=486a9bde98870c0c -->
 ### `audit`
 
 ```typescript
@@ -584,7 +532,7 @@ audit: AuditRecorder
 
 **Returns** `AuditRecorder`
 
-<sub>Source: `apps/api/src/context.ts:61`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L61)</sub>
 
 ---
 
@@ -596,7 +544,7 @@ authenticate: (request: FastifyRequest) => Promise<Principal>
 
 **Returns** `(request: FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>>) => Promise<Principal>`
 
-<sub>Source: `apps/api/src/context.ts:70`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L70)</sub>
 
 ---
 
@@ -608,7 +556,7 @@ bundleStore: BundleStore
 
 **Returns** `BundleStore`
 
-<sub>Source: `apps/api/src/context.ts:60`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L60)</sub>
 
 ---
 
@@ -620,7 +568,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/api/src/context.ts:57`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L57)</sub>
 
 ---
 
@@ -632,7 +580,7 @@ dbBatch: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/api/src/context.ts:58`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L58)</sub>
 
 ---
 
@@ -642,9 +590,9 @@ dbBatch: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>Source: `apps/api/src/context.ts:55`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L55)</sub>
 
 ---
 
@@ -656,7 +604,7 @@ git: GitProviderClient | null
 
 **Returns** `GitProviderClient \| null`
 
-<sub>Source: `apps/api/src/context.ts:68`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L68)</sub>
 
 ---
 
@@ -668,7 +616,13 @@ health: HealthRegistry
 
 **Returns** `HealthRegistry`
 
-<sub>Source: `apps/api/src/context.ts:66`</sub>
+**Endpoint** `GET /health`
+
+| Status | Description |
+|---|---|
+| `200` | The service is up. |
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L66)</sub>
 
 ---
 
@@ -680,7 +634,7 @@ llm: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>Source: `apps/api/src/context.ts:65`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L65)</sub>
 
 ---
 
@@ -692,7 +646,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>Source: `apps/api/src/context.ts:56`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L56)</sub>
 
 ---
 
@@ -704,7 +658,7 @@ metrics: typeof KnaMetrics
 
 **Returns** `{ readonly bundlesIngested: Counter<Attributes>; readonly bundlesRejected: Counter<Attributes>; readonly indexLagSeconds: Histogram<Attributes>; readonly symbolsIndexed: Counter<Attributes>; readonly queueDepth: ObservableGauge; readonly queueOldestJobAgeSeconds: ObservableGauge; readonly dlqDepth: …`
 
-<sub>Source: `apps/api/src/context.ts:67`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L67)</sub>
 
 ---
 
@@ -716,7 +670,7 @@ mintIngestToken: (claims: {orgId: string;repoId: string;issuedAt: number;expires
 
 **Returns** `(claims: { orgId: string; repoId: string; issuedAt: number; expiresAt: number; }) => string`
 
-<sub>Source: `apps/api/src/context.ts:71`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L71)</sub>
 
 ---
 
@@ -728,7 +682,7 @@ oidc: OidcVerifier | null
 
 **Returns** `OidcVerifier \| null`
 
-<sub>Source: `apps/api/src/context.ts:69`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L69)</sub>
 
 ---
 
@@ -740,7 +694,7 @@ permissions: PermissionResolver
 
 **Returns** `PermissionResolver`
 
-<sub>Source: `apps/api/src/context.ts:64`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L64)</sub>
 
 ---
 
@@ -752,7 +706,7 @@ queue: JobQueue
 
 **Returns** `JobQueue`
 
-<sub>Source: `apps/api/src/context.ts:62`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L62)</sub>
 
 ---
 
@@ -764,7 +718,7 @@ retrieval: RetrievalPipeline
 
 **Returns** `RetrievalPipeline`
 
-<sub>Source: `apps/api/src/context.ts:63`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L63)</sub>
 
 ---
 
@@ -776,7 +730,7 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>Source: `apps/api/src/context.ts:77`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L77)</sub>
 
 ---
 
@@ -788,189 +742,7 @@ store: PlatformStore
 
 **Returns** `PlatformStore`
 
-<sub>Source: `apps/api/src/context.ts:59`</sub>
-
----
-
-### `action`
-
-```typescript
-action: string
-```
-
-**Returns** `string`
-
-<sub>Source: `apps/api/src/services/audit.ts:24`</sub>
-
----
-
-### `actorId`
-
-```typescript
-actorId?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:26`</sub>
-
----
-
-### `actorSubject`
-
-```typescript
-actorSubject?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:27`</sub>
-
----
-
-### `actorType`
-
-```typescript
-actorType: 'user' | 'ci' | 'mcp' | 'system' | 'admin' | 'partner'
-```
-
-**Returns** `"user" \| "ci" \| "mcp" \| "system" \| "admin" \| "partner"`
-
-<sub>Source: `apps/api/src/services/audit.ts:25`</sub>
-
----
-
-### `chunkIds`
-
-Chunk *ids*, never chunk text. The audit trail must not become a second copy of the corpus.
-
-```typescript
-chunkIds?: string[]
-```
-
-**Returns** `string[] \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:33`</sub>
-
----
-
-### `detail`
-
-```typescript
-detail?: Record<string, unknown>
-```
-
-**Returns** `Record<string, unknown> \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:31`</sub>
-
----
-
-### `llmTraceId`
-
-```typescript
-llmTraceId?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:36`</sub>
-
----
-
-### `orgId`
-
-```typescript
-orgId: string
-```
-
-**Returns** `string`
-
-<sub>Source: `apps/api/src/services/audit.ts:23`</sub>
-
----
-
-### `outcome`
-
-```typescript
-outcome?: 'success' | 'denied' | 'error'
-```
-
-**Returns** `"error" \| "success" \| "denied" \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:30`</sub>
-
----
-
-### `reposTouched`
-
-```typescript
-reposTouched?: string[]
-```
-
-**Returns** `string[] \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:34`</sub>
-
----
-
-### `resourceId`
-
-```typescript
-resourceId?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:29`</sub>
-
----
-
-### `resourceType`
-
-```typescript
-resourceType?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:28`</sub>
-
----
-
-### `sourceIp`
-
-```typescript
-sourceIp?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:37`</sub>
-
----
-
-### `traceId`
-
-```typescript
-traceId?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:35`</sub>
-
----
-
-### `userAgent`
-
-```typescript
-userAgent?: string | null
-```
-
-**Returns** `string \| null \| undefined`
-
-<sub>Source: `apps/api/src/services/audit.ts:38`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L59)</sub>
 
 ---
 
@@ -984,7 +756,7 @@ aud: string | string[]
 
 **Returns** `string \| string[]`
 
-<sub>Source: `apps/api/src/auth.ts:240`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L240)</sub>
 
 ---
 
@@ -996,7 +768,7 @@ exp: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:242`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L242)</sub>
 
 ---
 
@@ -1010,7 +782,7 @@ mcpSessionId?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/auth.ts:244`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L244)</sub>
 
 ---
 
@@ -1022,7 +794,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:238`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L238)</sub>
 
 ---
 
@@ -1034,7 +806,7 @@ scope: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `apps/api/src/auth.ts:241`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L241)</sub>
 
 ---
 
@@ -1046,107 +818,7 @@ sub: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:237`</sub>
-
----
-
-### `moduleThreshold`
-
-Distinct modules — a secondary signal for monorepo-heavy orgs where repo count is low.
-
-```typescript
-moduleThreshold: number
-```
-
-**Returns** `number`
-
-<sub>Source: `apps/api/src/services/audit.ts:174`</sub>
-
----
-
-### `repoThreshold`
-
-Distinct repos in the window that trips an alert.
-
-```typescript
-repoThreshold: number
-```
-
-**Returns** `number`
-
-<sub>Source: `apps/api/src/services/audit.ts:172`</sub>
-
----
-
-### `windowMs`
-
-```typescript
-windowMs: number
-```
-
-**Returns** `number`
-
-<sub>Source: `apps/api/src/services/audit.ts:170`</sub>
-
----
-
-### `alerted`
-
-```typescript
-alerted: boolean
-```
-
-**Returns** `boolean`
-
-<sub>Source: `apps/api/src/services/audit.ts:188`</sub>
-
----
-
-### `modules`
-
-```typescript
-modules: Set<string>
-```
-
-**Returns** `Set<string>`
-
-<sub>Source: `apps/api/src/services/audit.ts:186`</sub>
-
----
-
-### `repos`
-
-```typescript
-repos: Set<string>
-```
-
-**Returns** `Set<string>`
-
-<sub>Source: `apps/api/src/services/audit.ts:185`</sub>
-
----
-
-### `toolCalls`
-
-```typescript
-toolCalls: number
-```
-
-**Returns** `number`
-
-<sub>Source: `apps/api/src/services/audit.ts:187`</sub>
-
----
-
-### `windowStart`
-
-```typescript
-windowStart: number
-```
-
-**Returns** `number`
-
-<sub>Source: `apps/api/src/services/audit.ts:184`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L237)</sub>
 
 ---
 
@@ -1158,7 +830,7 @@ cachedAt: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L46)</sub>
 
 ---
 
@@ -1170,7 +842,7 @@ clearance: Sensitivity
 
 **Returns** `"internal" \| "public" \| "confidential" \| "restricted"`
 
-<sub>Source: `apps/api/src/auth.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L45)</sub>
 
 ---
 
@@ -1184,7 +856,7 @@ hardExpiryAt: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L48)</sub>
 
 ---
 
@@ -1196,7 +868,7 @@ repoIds: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `apps/api/src/auth.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L44)</sub>
 
 ---
 
@@ -1208,7 +880,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:62`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L79)</sub>
 
 ---
 
@@ -1220,7 +892,7 @@ projectId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:63`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L80)</sub>
 
 ---
 
@@ -1232,7 +904,115 @@ triggeredByRepoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:64`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L81)</sub>
+
+---
+
+### `doc_type`
+
+```typescript
+doc_type: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L28)</sub>
+
+---
+
+### `module_id`
+
+```typescript
+module_id: string | null
+```
+
+**Returns** `string \| null`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L30)</sub>
+
+---
+
+### `repo_id`
+
+```typescript
+repo_id: string | null
+```
+
+**Returns** `string \| null`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L29)</sub>
+
+---
+
+### `sensitivity`
+
+```typescript
+sensitivity: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L31)</sub>
+
+---
+
+### `slug`
+
+```typescript
+slug: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L26)</sub>
+
+---
+
+### `staleness_score`
+
+```typescript
+staleness_score: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L33)</sub>
+
+---
+
+### `status`
+
+```typescript
+status: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L32)</sub>
+
+---
+
+### `title`
+
+```typescript
+title: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L27)</sub>
+
+---
+
+### `updated_at`
+
+```typescript
+updated_at: Date
+```
+
+**Returns** `Date`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L34)</sub>
 
 ---
 
@@ -1244,7 +1024,7 @@ appId?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/git.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L24)</sub>
 
 ---
 
@@ -1256,7 +1036,7 @@ baseUrl?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/git.ts:31`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L31)</sub>
 
 ---
 
@@ -1268,7 +1048,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>Source: `apps/api/src/services/git.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L30)</sub>
 
 ---
 
@@ -1280,7 +1060,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>Source: `apps/api/src/services/git.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L29)</sub>
 
 ---
 
@@ -1294,7 +1074,7 @@ privateKeyRef?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/git.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L27)</sub>
 
 ---
 
@@ -1306,7 +1086,7 @@ provider: 'github' | 'azuredevops' | 'gitlab'
 
 **Returns** `"github" \| "azuredevops" \| "gitlab"`
 
-<sub>Source: `apps/api/src/services/git.ts:23`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L23)</sub>
 
 ---
 
@@ -1318,7 +1098,7 @@ writeEnabled: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/api/src/services/git.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L28)</sub>
 
 ---
 
@@ -1332,7 +1112,7 @@ bundleStorageKey: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:50`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L50)</sub>
 
 ---
 
@@ -1344,7 +1124,7 @@ changeCount: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/services/queue.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L51)</sub>
 
 ---
 
@@ -1356,7 +1136,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L47)</sub>
 
 ---
 
@@ -1368,7 +1148,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:46`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L46)</sub>
 
 ---
 
@@ -1380,7 +1160,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:44`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L44)</sub>
 
 ---
 
@@ -1392,7 +1172,21 @@ ref: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L48)</sub>
+
+---
+
+### `reindexToken`
+
+Set only by an explicit reindex. It joins the job id, which is what makes a deliberate re-run possible at all: without it the id collides with the completed job for the same `(moduleId, commitSha)` and BullMQ silently drops the request.
+
+```typescript
+reindexToken?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L57)</sub>
 
 ---
 
@@ -1404,7 +1198,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L45)</sub>
 
 ---
 
@@ -1416,7 +1210,7 @@ expiresAt: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:192`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L192)</sub>
 
 ---
 
@@ -1428,7 +1222,7 @@ issuedAt: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:191`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L191)</sub>
 
 ---
 
@@ -1440,7 +1234,7 @@ jti: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:193`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L193)</sub>
 
 ---
 
@@ -1452,7 +1246,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:189`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L189)</sub>
 
 ---
 
@@ -1464,7 +1258,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:190`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L190)</sub>
 
 ---
 
@@ -1476,7 +1270,7 @@ get redis(): Redis
 
 **Returns** `Redis`
 
-<sub>Source: `apps/api/src/services/queue.ts:236`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L271)</sub>
 
 ---
 
@@ -1488,7 +1282,7 @@ alg?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L29)</sub>
 
 ---
 
@@ -1500,7 +1294,7 @@ e?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L28)</sub>
 
 ---
 
@@ -1512,7 +1306,7 @@ kid: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/oidc.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L25)</sub>
 
 ---
 
@@ -1524,7 +1318,7 @@ kty: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/oidc.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L26)</sub>
 
 ---
 
@@ -1536,7 +1330,7 @@ n?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L27)</sub>
 
 ---
 
@@ -1548,7 +1342,7 @@ use?: string
 
 **Returns** `string \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:30`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L30)</sub>
 
 ---
 
@@ -1560,7 +1354,7 @@ issuer: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/store.ts:17`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L24)</sub>
 
 ---
 
@@ -1572,7 +1366,7 @@ ref: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `apps/api/src/services/store.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L28)</sub>
 
 ---
 
@@ -1586,7 +1380,7 @@ repository: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `apps/api/src/services/store.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L27)</sub>
 
 ---
 
@@ -1598,7 +1392,7 @@ sha: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `apps/api/src/services/store.ts:22`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L29)</sub>
 
 ---
 
@@ -1610,7 +1404,7 @@ subject: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/store.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L25)</sub>
 
 ---
 
@@ -1622,7 +1416,7 @@ audience: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/oidc.ts:18`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L18)</sub>
 
 ---
 
@@ -1634,7 +1428,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:19`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L19)</sub>
 
 ---
 
@@ -1646,7 +1440,7 @@ issuer: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/oidc.ts:17`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L17)</sub>
 
 ---
 
@@ -1660,7 +1454,7 @@ jwksTtlMs?: number
 
 **Returns** `number \| undefined`
 
-<sub>Source: `apps/api/src/services/oidc.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L21)</sub>
 
 ---
 
@@ -1674,7 +1468,7 @@ cacheTtlMs: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:54`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L54)</sub>
 
 ---
 
@@ -1686,7 +1480,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>Source: `apps/api/src/auth.ts:52`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L52)</sub>
 
 ---
 
@@ -1700,7 +1494,7 @@ hardExpiryMs: number
 
 **Returns** `number`
 
-<sub>Source: `apps/api/src/auth.ts:56`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L56)</sub>
 
 ---
 
@@ -1712,7 +1506,7 @@ clearance: Sensitivity
 
 **Returns** `"internal" \| "public" \| "confidential" \| "restricted"`
 
-<sub>Source: `apps/api/src/auth.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L28)</sub>
 
 ---
 
@@ -1724,7 +1518,7 @@ email: string | null
 
 **Returns** `string \| null`
 
-<sub>Source: `apps/api/src/auth.ts:27`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L27)</sub>
 
 ---
 
@@ -1736,7 +1530,7 @@ id: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:24`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L24)</sub>
 
 ---
 
@@ -1748,7 +1542,7 @@ isServiceAccount: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/api/src/auth.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L29)</sub>
 
 ---
 
@@ -1760,7 +1554,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L25)</sub>
 
 ---
 
@@ -1772,7 +1566,7 @@ subject: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L26)</sub>
 
 ---
 
@@ -1786,7 +1580,7 @@ assignees: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `apps/api/src/services/git.ts:54`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L54)</sub>
 
 ---
 
@@ -1800,7 +1594,7 @@ autoMerge: boolean
 
 **Returns** `boolean`
 
-<sub>Source: `apps/api/src/services/git.ts:59`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L59)</sub>
 
 ---
 
@@ -1812,7 +1606,7 @@ baseBranch: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/git.ts:49`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L49)</sub>
 
 ---
 
@@ -1824,7 +1618,7 @@ body: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/git.ts:51`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L51)</sub>
 
 ---
 
@@ -1836,7 +1630,7 @@ branch: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/git.ts:48`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L48)</sub>
 
 ---
 
@@ -1848,7 +1642,7 @@ files: Array<{path: string;content: string}>
 
 **Returns** `{ path: string; content: string; }[]`
 
-<sub>Source: `apps/api/src/services/git.ts:52`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L52)</sub>
 
 ---
 
@@ -1860,7 +1654,7 @@ labels: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `apps/api/src/services/git.ts:57`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L57)</sub>
 
 ---
 
@@ -1872,7 +1666,7 @@ repoRemote: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/git.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L47)</sub>
 
 ---
 
@@ -1886,7 +1680,7 @@ reviewers: string[]
 
 **Returns** `string[]`
 
-<sub>Source: `apps/api/src/services/git.ts:56`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L56)</sub>
 
 ---
 
@@ -1898,7 +1692,7 @@ title: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/git.ts:50`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L50)</sub>
 
 ---
 
@@ -1910,7 +1704,7 @@ bundleStorageKey: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:58`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L75)</sub>
 
 ---
 
@@ -1922,7 +1716,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:57`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L63)</sub>
 
 ---
 
@@ -1934,7 +1728,35 @@ orgId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:55`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L61)</sub>
+
+---
+
+### `ref`
+
+The version the documents belong to. Documentation is versioned with the code it describes.
+
+```typescript
+ref: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L65)</sub>
+
+---
+
+### `regenerationToken`
+
+Set only by a deliberate trigger — an operator approving a repo, or an explicit reindex.
+
+```typescript
+regenerationToken?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L74)</sub>
 
 ---
 
@@ -1946,10 +1768,34 @@ repoId: string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/services/queue.ts:56`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L62)</sub>
+
+---
+
+### `expiresAt`
+
+```typescript
+expiresAt: number
+```
+
+**Returns** `number`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui.ts#L33)</sub>
+
+---
+
+### `token`
+
+```typescript
+token: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui.ts#L32)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=5de9eb3f1c62ef65 -->
+<!-- kna:generated:start id=api.function hash=7e885e14b4e3b1ae -->
 ### `assertAudience`
 
 ```typescript
@@ -1963,7 +1809,7 @@ assertAudience(claims: BearerClaims, expectedAudience: string): void
 
 **Returns** `void`
 
-<sub>Source: `apps/api/src/auth.ts:247`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L247)</sub>
 
 ---
 
@@ -1980,7 +1826,7 @@ assertScope(claims: BearerClaims, required: string): void
 
 **Returns** `void`
 
-<sub>Source: `apps/api/src/auth.ts:258`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L258)</sub>
 
 ---
 
@@ -1998,23 +1844,41 @@ buildServer(ctx: ApiContext): Promise<KnaServer>
 
 **Returns** `Promise<KnaServer>`
 
-<sub>Source: `apps/api/src/server.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/server.ts#L31)</sub>
 
 ---
 
 ### `createApiContext`
 
 ```typescript
-createApiContext(env: {KNA_ENV: "production" | "development" | "test" | "staging";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<ApiContext>
+createApiContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<ApiContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env`? | `{ KNA_ENV: "production" \| "development" \| "test" \| "staging"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
+| `env`? | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
 
 **Returns** `Promise<ApiContext>`
 
-<sub>Source: `apps/api/src/context.ts:80`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L80)</sub>
+
+---
+
+### `escapeHtml`
+
+Markup for the administration console.
+
+```typescript
+escapeHtml(value: string): string
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `value` | `string` |  |
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui/render.ts#L15)</sub>
 
 ---
 
@@ -2030,7 +1894,7 @@ hashToken(token: string): string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/context.ts:302`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L302)</sub>
 
 ---
 
@@ -2051,7 +1915,25 @@ lastIndexedPayload(db: DbHandle, orgId: string, repoId: string, ref: string): Pr
 
 **Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
-<sub>Source: `apps/api/src/context.ts:281`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L281)</sub>
+
+---
+
+### `layout`
+
+```typescript
+layout(title: string, body: string, options: {chrome?: boolean;}): string
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `title` | `string` |  |
+| `body` | `string` |  |
+| `options`? | `{ chrome?: boolean \| undefined; }` |  (default `{}`) |
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui/render.ts#L91)</sub>
 
 ---
 
@@ -2068,7 +1950,25 @@ mintIngestToken(secret: string, claims: Omit<IngestClaims, "jti">): string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/auth.ts:196`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L196)</sub>
+
+---
+
+### `page`
+
+```typescript
+page(title: string, flash: string | null | undefined, sections: string[]): string
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `title` | `string` |  |
+| `flash` | `string \| null \| undefined` |  |
+| `sections` | `string[]` |  |
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui/render.ts#L116)</sub>
 
 ---
 
@@ -2087,7 +1987,41 @@ registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/routes/admin.ts:21`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin.ts#L24)</sub>
+
+---
+
+### `registerAdminUiRoutes`
+
+```typescript
+registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `app` | `KnaServer` |  |
+| `ctx` | `ApiContext` |  |
+
+**Returns** `Promise<void>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/admin-ui.ts#L36)</sub>
+
+---
+
+### `registerDocsRoutes`
+
+```typescript
+registerDocsRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `app` | `KnaServer` |  |
+| `ctx` | `ApiContext` |  |
+
+**Returns** `Promise<void>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/docs.ts#L37)</sub>
 
 ---
 
@@ -2106,7 +2040,7 @@ registerIngestRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/routes/ingest.ts:29`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/ingest.ts#L29)</sub>
 
 ---
 
@@ -2125,7 +2059,7 @@ registerSearchRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/routes/search.ts:28`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/search.ts#L29)</sub>
 
 ---
 
@@ -2144,7 +2078,7 @@ registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/routes/webhooks.ts:20`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/routes/webhooks.ts#L20)</sub>
 
 ---
 
@@ -2156,7 +2090,7 @@ requestId(): string
 
 **Returns** `string`
 
-<sub>Source: `apps/api/src/context.ts:298`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L298)</sub>
 
 ---
 
@@ -2173,37 +2107,17 @@ verifyIngestToken(secret: string, token: string): IngestClaims
 
 **Returns** `IngestClaims`
 
-<sub>Source: `apps/api/src/auth.ts:203`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L203)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.class hash=79ffa31f4a221ac1 -->
-### `AuditRecorder`
-
-```typescript
-class AuditRecorder
-```
-
-<sub>Source: `apps/api/src/services/audit.ts:41`</sub>
-
----
-
+<!-- kna:generated:start id=api.class hash=13b48adb6d5a0650 -->
 ### `AuthError`
 
 ```typescript
 class AuthError extends Error
 ```
 
-<sub>Source: `apps/api/src/auth.ts:32`</sub>
-
----
-
-### `BreadthMonitor`
-
-```typescript
-class BreadthMonitor
-```
-
-<sub>Source: `apps/api/src/services/audit.ts:191`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L32)</sub>
 
 ---
 
@@ -2213,7 +2127,7 @@ class BreadthMonitor
 class GitProviderClient
 ```
 
-<sub>Source: `apps/api/src/services/git.ts:62`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L62)</sub>
 
 ---
 
@@ -2223,7 +2137,7 @@ class GitProviderClient
 class JobQueue
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:74`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L103)</sub>
 
 ---
 
@@ -2233,7 +2147,7 @@ class JobQueue
 class OidcError extends Error
 ```
 
-<sub>Source: `apps/api/src/services/oidc.ts:33`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L33)</sub>
 
 ---
 
@@ -2243,7 +2157,7 @@ class OidcError extends Error
 class OidcVerifier
 ```
 
-<sub>Source: `apps/api/src/services/oidc.ts:40`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L40)</sub>
 
 ---
 
@@ -2253,7 +2167,7 @@ class OidcVerifier
 class PermissionResolver
 ```
 
-<sub>Source: `apps/api/src/auth.ts:59`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L59)</sub>
 
 ---
 
@@ -2263,7 +2177,7 @@ class PermissionResolver
 class PlatformStore
 ```
 
-<sub>Source: `apps/api/src/services/store.ts:25`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L32)</sub>
 
 ---
 
@@ -2273,7 +2187,7 @@ class PlatformStore
 class RedisConfigurationError extends Error
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:67`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L84)</sub>
 
 ---
 
@@ -2283,56 +2197,10 @@ class RedisConfigurationError extends Error
 class WriteDisabledError extends Error
 ```
 
-<sub>Source: `apps/api/src/services/git.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L34)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=86a414187a15f185 -->
-### `constructor`
-
-```typescript
-constructor(private readonly db: DbHandle, private readonly logger: Logger, private readonly options: {batchSize?: number;flushIntervalMs?: number} = {})
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `db` | `DbHandle` |  |
-| `logger` | `Logger` |  |
-| `options`? | `{ batchSize?: number \| undefined; flushIntervalMs?: number \| undefined; }` |  (default `{}`) |
-
-<sub>Source: `apps/api/src/services/audit.ts:49`</sub>
-
----
-
-### `flush`
-
-```typescript
-flush(): Promise<void>
-```
-
-**Returns** `Promise<void>`
-
-<sub>Source: `apps/api/src/services/audit.ts:81`</sub>
-
----
-
-### `record`
-
-Record an event.
-
-```typescript
-record(event: AuditEvent): Promise<void>
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `event` | `AuditEvent` |  |
-
-**Returns** `Promise<void>`
-
-<sub>Source: `apps/api/src/services/audit.ts:63`</sub>
-
----
-
+<!-- kna:generated:start id=api.method hash=737f9e5ed944a878 -->
 ### `constructor`
 
 ```typescript
@@ -2345,58 +2213,7 @@ constructor(message: string, readonly status: number, readonly code: string)
 | `status` | `number` |  |
 | `code` | `string` |  |
 
-<sub>Source: `apps/api/src/auth.ts:33`</sub>
-
----
-
-### `constructor`
-
-```typescript
-constructor(private readonly policy: BreadthPolicy = DEFAULT_BREADTH_POLICY, private readonly onAlert?: (alert: {orgId: string;principalId: string;surface: string;repos: number;modules: number;toolCalls: number;}) => void)
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `policy`? | `BreadthPolicy` |  (default `DEFAULT_BREADTH_POLICY`) |
-| `onAlert`? | `((alert: { orgId: string; principalId: string; surface: string; repos: number; modules: number; toolCalls: number; }) => void) \| undefined` |  |
-
-<sub>Source: `apps/api/src/services/audit.ts:194`</sub>
-
----
-
-### `observe`
-
-```typescript
-observe(input: {orgId: string;principalId: string;surface: string;repoIds: string[];moduleIds: string[];}): void
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `input` | `{ orgId: string; principalId: string; surface: string; repoIds: string[]; moduleIds: string[]; }` |  |
-
-**Returns** `void`
-
-<sub>Source: `apps/api/src/services/audit.ts:206`</sub>
-
----
-
-### `snapshot`
-
-Current breadth, for the admin console.
-
-```typescript
-snapshot(orgId: string, principalId: string, surface: string): BreadthWindow | null
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `orgId` | `string` |  |
-| `principalId` | `string` |  |
-| `surface` | `string` |  |
-
-**Returns** `BreadthWindow \| null`
-
-<sub>Source: `apps/api/src/services/audit.ts:250`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L33)</sub>
 
 ---
 
@@ -2414,7 +2231,7 @@ closeSupersededPullRequests(input: {repoRemote: string;labelPrefix: string;keepN
 
 **Returns** `Promise<number>`
 
-<sub>Source: `apps/api/src/services/git.ts:103`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L103)</sub>
 
 ---
 
@@ -2432,7 +2249,7 @@ commitExists(input: {repoId: string;commitSha: string;ref: string;}): Promise<bo
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `apps/api/src/services/git.ts:71`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L71)</sub>
 
 ---
 
@@ -2446,7 +2263,7 @@ constructor(private readonly options: GitProviderOptions)
 |---|---|---|
 | `options` | `GitProviderOptions` |  |
 
-<sub>Source: `apps/api/src/services/git.ts:66`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L66)</sub>
 
 ---
 
@@ -2464,7 +2281,7 @@ openPullRequest(input: PullRequestInput): Promise<{url: string;number: number;}>
 
 **Returns** `Promise<{ url: string; number: number; }>`
 
-<sub>Source: `apps/api/src/services/git.ts:82`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L82)</sub>
 
 ---
 
@@ -2482,7 +2299,7 @@ repoPermissions(subject: string): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>Source: `apps/api/src/services/git.ts:117`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L117)</sub>
 
 ---
 
@@ -2496,7 +2313,7 @@ assertConfiguration(): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/queue.ts:96`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L125)</sub>
 
 ---
 
@@ -2508,7 +2325,7 @@ close(): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/queue.ts:230`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L265)</sub>
 
 ---
 
@@ -2523,7 +2340,7 @@ constructor(redisUrl: string, private readonly logger: Logger)
 | `redisUrl` | `string` |  |
 | `logger` | `Logger` |  |
 
-<sub>Source: `apps/api/src/services/queue.ts:79`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L108)</sub>
 
 ---
 
@@ -2539,7 +2356,7 @@ enqueueCrossRepo(job: CrossRepoJob): Promise<string>
 
 **Returns** `Promise<string>`
 
-<sub>Source: `apps/api/src/services/queue.ts:159`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L194)</sub>
 
 ---
 
@@ -2557,7 +2374,7 @@ enqueueIndexModule(job: IndexModuleJob): Promise<string>
 
 **Returns** `Promise<string>`
 
-<sub>Source: `apps/api/src/services/queue.ts:142`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L171)</sub>
 
 ---
 
@@ -2573,7 +2390,7 @@ enqueueRegenerateDocs(job: RegenerateDocsJob): Promise<string>
 
 **Returns** `Promise<string>`
 
-<sub>Source: `apps/api/src/services/queue.ts:153`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L184)</sub>
 
 ---
 
@@ -2589,7 +2406,7 @@ isPaused(name: QueueName): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `apps/api/src/services/queue.ts:218`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L253)</sub>
 
 ---
 
@@ -2608,7 +2425,7 @@ pause(name: QueueName, reason: string): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/queue.ts:208`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L243)</sub>
 
 ---
 
@@ -2620,7 +2437,7 @@ ping(): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `apps/api/src/services/queue.ts:222`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L257)</sub>
 
 ---
 
@@ -2636,7 +2453,7 @@ resume(name: QueueName): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/queue.ts:213`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L248)</sub>
 
 ---
 
@@ -2650,7 +2467,7 @@ stats(): Promise<{queue: QueueName;waiting: number;active: number;failed: number
 
 **Returns** `Promise<{ queue: QueueName; waiting: number; active: number; failed: number; oldestJobAgeSeconds: number; }[]>`
 
-<sub>Source: `apps/api/src/services/queue.ts:175`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L210)</sub>
 
 ---
 
@@ -2664,7 +2481,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>Source: `apps/api/src/services/oidc.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L34)</sub>
 
 ---
 
@@ -2678,7 +2495,7 @@ constructor(private readonly options: OidcOptions)
 |---|---|---|
 | `options` | `OidcOptions` |  |
 
-<sub>Source: `apps/api/src/services/oidc.ts:45`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L45)</sub>
 
 ---
 
@@ -2695,7 +2512,7 @@ verify(idToken: string, expectedAudience: string): Promise<OidcIdentity>
 
 **Returns** `Promise<OidcIdentity>`
 
-<sub>Source: `apps/api/src/services/oidc.ts:49`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/oidc.ts#L49)</sub>
 
 ---
 
@@ -2709,7 +2526,7 @@ constructor(private readonly options: PermissionResolverOptions)
 |---|---|---|
 | `options` | `PermissionResolverOptions` |  |
 
-<sub>Source: `apps/api/src/auth.ts:62`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L62)</sub>
 
 ---
 
@@ -2728,7 +2545,7 @@ invalidate(orgId: string, principalId: string): void
 
 **Returns** `void`
 
-<sub>Source: `apps/api/src/auth.ts:172`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L172)</sub>
 
 ---
 
@@ -2740,7 +2557,7 @@ invalidateAll(): void
 
 **Returns** `void`
 
-<sub>Source: `apps/api/src/auth.ts:176`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L176)</sub>
 
 ---
 
@@ -2761,7 +2578,7 @@ resolve(principal: Principal, options: {corpus: "internal" | "external";required
 
 **Returns** `Promise<AccessContext>`
 
-<sub>Source: `apps/api/src/auth.ts:70`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/auth.ts#L70)</sub>
 
 ---
 
@@ -2776,7 +2593,7 @@ constructor(private readonly db: DbHandle, private readonly dbBatch: DbHandle)
 | `db` | `DbHandle` |  |
 | `dbBatch` | `DbHandle` |  |
 
-<sub>Source: `apps/api/src/services/store.ts:26`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L33)</sub>
 
 ---
 
@@ -2795,7 +2612,7 @@ isNonceSeen(orgId: string, nonce: string): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>Source: `apps/api/src/services/store.ts:69`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L126)</sub>
 
 ---
 
@@ -2816,7 +2633,26 @@ lastIndexedPayload(orgId: string, repoId: string, ref: string, fetchPayload?: ((
 
 **Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
-<sub>Source: `apps/api/src/services/store.ts:123`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L180)</sub>
+
+---
+
+### `latestBundle`
+
+Tokens are stored hashed. A database dump must not hand over live credentials.
+
+```typescript
+latestBundle(orgId: string, repoId: string): Promise<{commitSha: string;ref: string;storageKey: string;} | null>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `orgId` | `string` |  |
+| `repoId` | `string` |  |
+
+**Returns** `Promise<{ commitSha: string; ref: string; storageKey: string; } \| null>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L58)</sub>
 
 ---
 
@@ -2835,7 +2671,7 @@ linkedProjects(orgId: string, projectIds: string[]): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>Source: `apps/api/src/services/store.ts:202`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L265)</sub>
 
 ---
 
@@ -2853,13 +2689,11 @@ markPendingBulkReview(orgId: string, repoId: string, reason: string): Promise<vo
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/store.ts:150`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L207)</sub>
 
 ---
 
 ### `principalForToken`
-
-Tokens are stored hashed. A database dump must not hand over live credentials.
 
 ```typescript
 principalForToken(token: string): Promise<(Principal&{disabledAt: Date | null;}) | null>
@@ -2871,7 +2705,7 @@ principalForToken(token: string): Promise<(Principal&{disabledAt: Date | null;})
 
 **Returns** `Promise<(Principal & { disabledAt: Date \| null; }) \| null>`
 
-<sub>Source: `apps/api/src/services/store.ts:32`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L80)</sub>
 
 ---
 
@@ -2887,7 +2721,7 @@ recordBundle(input: {bundle: IrBundle;storageKey: string;upcastedFrom: string | 
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/store.ts:88`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L145)</sub>
 
 ---
 
@@ -2903,7 +2737,7 @@ recordQueryTrace(trace: Record<string, unknown>): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>Source: `apps/api/src/services/store.ts:222`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L285)</sub>
 
 ---
 
@@ -2921,7 +2755,7 @@ repoRemote(repoId: string): Promise<string | null>
 
 **Returns** `Promise<string \| null>`
 
-<sub>Source: `apps/api/src/services/store.ts:81`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L138)</sub>
 
 ---
 
@@ -2940,7 +2774,7 @@ reposForProjects(orgId: string, projectIds: string[]): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>Source: `apps/api/src/services/store.ts:185`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L248)</sub>
 
 ---
 
@@ -2959,7 +2793,7 @@ resolveRepoForIdentity(identity: OidcIdentity, repoRemote: string): Promise<{org
 
 **Returns** `Promise<{ orgId: string; repoId: string; } \| null>`
 
-<sub>Source: `apps/api/src/services/store.ts:166`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/store.ts#L223)</sub>
 
 ---
 
@@ -2973,7 +2807,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>Source: `apps/api/src/services/queue.ts:68`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L85)</sub>
 
 ---
 
@@ -2987,22 +2821,10 @@ constructor(operation: string)
 |---|---|---|
 | `operation` | `string` |  |
 
-<sub>Source: `apps/api/src/services/git.ts:35`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/git.ts#L35)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=a06d1dbc34434ea5 -->
-### `DEFAULT_BREADTH_POLICY`
-
-```typescript
-const DEFAULT_BREADTH_POLICY: BreadthPolicy
-```
-
-**Returns** `BreadthPolicy`
-
-<sub>Source: `apps/api/src/services/audit.ts:177`</sub>
-
----
-
+<!-- kna:generated:start id=api.constant hash=b2f24e62aad5ce57 -->
 ### `QUEUE_NAMES`
 
 Job queues.
@@ -3013,10 +2835,10 @@ const QUEUE_NAMES: {readonly indexModule: "index-module";readonly crossRepo: "cr
 
 **Returns** `{ readonly indexModule: "index-module"; readonly crossRepo: "cross-repo-resolve"; readonly regenerateDocs: "regenerate-docs"; readonly maintenance: "maintenance"; }`
 
-<sub>Source: `apps/api/src/services/queue.ts:34`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L34)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=fea323b10750e58c -->
+<!-- kna:generated:start id=api.type hash=5e0426de0c3d6833 -->
 ### `KnaServer`
 
 Wiring.
@@ -3025,7 +2847,7 @@ Wiring.
 type KnaServer = FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, Logger>
 ```
 
-<sub>Source: `apps/api/src/context.ts:47`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/context.ts#L47)</sub>
 
 ---
 
@@ -3035,5 +2857,5 @@ type KnaServer = FastifyInstance<RawServerDefault, IncomingMessage, ServerRespon
 type QueueName = (typeof QUEUE_NAMES)[keyof typeof QUEUE_NAMES]
 ```
 
-<sub>Source: `apps/api/src/services/queue.ts:41`</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/api/src/services/queue.ts#L41)</sub>
 <!-- kna:generated:end id=api.type -->

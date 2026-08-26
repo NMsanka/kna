@@ -1,0 +1,444 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 3205 4070" width="3205" height="4070" style="background:#fff">
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" stroke-width="1.4"/></marker></defs>
+<rect x="0" y="0" width="2360" height="1340" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="70" y="130" width="230" height="60" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="70" y="230" width="230" height="80" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="70" y="350" width="230" height="80" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="70" y="480" width="230" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="50" y="600" width="270" height="350" rx="8" fill="none" stroke="#f08c00" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="70" y="648" width="230" height="88" rx="8" fill="#ffec99" stroke="#f08c00" stroke-width="2"/>
+<rect x="70" y="762" width="230" height="88" rx="8" fill="#ffec99" stroke="#f08c00" stroke-width="2"/>
+<rect x="70" y="872" width="230" height="62" rx="8" fill="#ffec99" stroke="#f08c00" stroke-width="2"/>
+<rect x="70" y="1000" width="230" height="70" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="790" y="150" width="400" height="250" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="790" y="450" width="400" height="180" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="790" y="690" width="400" height="210" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1580" y="150" width="330" height="230" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1580" y="430" width="330" height="110" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1580" y="590" width="330" height="130" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1580" y="770" width="330" height="120" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="1580" y="940" width="330" height="70" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="1580" y="1050" width="330" height="96" rx="8" fill="none" stroke="#9c36b5" stroke-width="2" stroke-dasharray="8 6"/>
+<polyline points="185,190 185,230" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,160 330,160 330,390 300,390" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="185,550 185,648" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="185,736 185,762" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,692 360,692 360,903 300,903" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,903 415,903 415,515 300,515" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,270 520,270 520,540 790,540" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,390 600,390 600,275 790,275" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,806 690,806 690,275 790,275" fill="none" stroke="#e03131" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="300,1035 755,1035 755,275 790,275" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,275 1230,275 1230,265 1580,265" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,275 1270,275 1270,485 1580,485" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,275 1310,275 1310,655 1580,655" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,275 1350,275 1350,830 1580,830" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,540 1390,540 1390,265 1580,265" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,795 1430,795 1430,265 1580,265" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,795 1470,795 1470,485 1580,485" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,795 1505,795 1505,655 1580,655" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1190,795 1545,795 1545,830 1580,830" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1745,890 1745,940" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="0" y="1440" width="2360" height="800" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="40" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="332" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="624" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="916" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="1208" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="1500" y="1552" width="250" height="108" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<polyline points="290,1606 332,1606" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="582,1606 624,1606" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="874,1606 916,1606" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1166,1606 1208,1606" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1458,1606 1500,1606" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="40" y="1740" width="250" height="108" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<rect x="332" y="1740" width="250" height="108" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="624" y="1740" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="916" y="1740" width="250" height="108" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<rect x="1208" y="1740" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1625,1660 1665,1690 165,1690 165,1740" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="290,1794 332,1794" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="582,1794 624,1794" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="874,1794 916,1794" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1166,1794 1208,1794" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="40" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="332" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="624" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="916" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1208" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1500" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="290,1976 332,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="582,1976 624,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="874,1976 916,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1166,1976 1208,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1458,1976 1500,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1333,1848 1333,1880 165,1880 165,1922" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1792" y="1922" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1792" y="1740" width="250" height="108" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1750,1976 1792,1976" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1917,1922 1917,1848" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="0" y="2340" width="2360" height="660" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="40" y="2460" width="220" height="80" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="320" y="2460" width="240" height="80" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="260,2500 320,2500" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="620" y="2436" width="260" height="128" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<polyline points="560,2500 620,2500" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="940" y="2400" width="260" height="74" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="940" y="2492" width="260" height="74" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="940" y="2584" width="260" height="74" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="880,2500 940,2437" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="880,2500 940,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="880,2500 940,2621" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1268" y="2492" width="230" height="74" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1200,2437 1268,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1200,2529 1268,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1200,2621 1268,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1560" y="2492" width="230" height="74" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1852" y="2492" width="230" height="74" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1498,2529 1560,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="1790,2529 1852,2529" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1852" y="2660" width="230" height="92" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1967,2566 1967,2660" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1500" y="2660" width="290" height="92" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<polyline points="1852,2706 1790,2706" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1120" y="2660" width="300" height="92" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<polyline points="1500,2706 1420,2706" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="760" y="2660" width="280" height="92" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<polyline points="1120,2706 1040,2706" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="360" y="2660" width="300" height="92" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="1270,2752 1270,2788 510,2788 510,2752" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)" stroke-dasharray="8 6"/>
+<rect x="0" y="3060" width="1160" height="620" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="40" y="3170" width="240" height="84" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="320" y="3170" width="240" height="84" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="600" y="3170" width="240" height="84" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="280,3212 320,3212" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="560,3212 600,3212" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="40" y="3310" width="240" height="84" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="320" y="3310" width="240" height="84" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="600" y="3310" width="240" height="84" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<polyline points="720,3254 720,3280 160,3280 160,3310" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="280,3352 320,3352" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="560,3352 600,3352" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="320" y="3450" width="240" height="74" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="600" y="3450" width="240" height="74" rx="8" fill="#ffec99" stroke="#f08c00" stroke-width="2"/>
+<polyline points="720,3394 720,3420 440,3420 440,3450" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="720,3394 720,3450" fill="none" stroke="#1e1e1e" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="1200" y="3060" width="1160" height="620" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="1240" y="3170" width="500" height="200" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<rect x="1780" y="3170" width="540" height="200" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1240" y="3400" width="1080" height="190" rx="8" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<rect x="0" y="3760" width="2360" height="230" rx="8" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="8 6"/>
+<rect x="40" y="3860" width="250" height="60" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="340" y="3860" width="250" height="60" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<rect x="640" y="3860" width="250" height="60" rx="8" fill="#ffec99" stroke="#f08c00" stroke-width="2"/>
+<rect x="940" y="3860" width="250" height="60" rx="8" fill="#eebefa" stroke="#9c36b5" stroke-width="2"/>
+<rect x="1240" y="3860" width="250" height="60" rx="8" fill="#ffc9c9" stroke="#e03131" stroke-width="2"/>
+<text x="24" y="46" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">1 · Components, and how they talk to each other</text>
+<text x="185" y="166" font-family="Segoe UI,sans-serif" font-size="16" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Developer</text>
+<text x="185" y="266.5" font-family="Segoe UI,sans-serif" font-size="14" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Editor</text>
+<text x="185" y="284" font-family="Segoe UI,sans-serif" font-size="14" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Claude Code / Cursor</text>
+<text x="185" y="378.625" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">kna CLI</text>
+<text x="185" y="394.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">init describe scan</text>
+<text x="185" y="411.125" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">generate publish ask</text>
+<text x="185" y="511.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Git repository</text>
+<text x="185" y="528" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">+ kna.config.yaml</text>
+<text x="185" y="781" font-family="Segoe UI,sans-serif" font-size="16" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="66" y="627" font-family="Segoe UI,sans-serif" font-size="15" fill="#f08c00" text-anchor="start" xml:space="preserve">GitHub Actions</text>
+<text x="185" y="681.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">analyse job</text>
+<text x="185" y="696.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">no credentials</text>
+<text x="185" y="711.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">RUNS repo build logic</text>
+<text x="185" y="795.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">publish job</text>
+<text x="185" y="810.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">HOLDS credential</text>
+<text x="185" y="825.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">runs no repo code</text>
+<text x="185" y="900" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">docs PR job</text>
+<text x="185" y="915" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">contents: write</text>
+<text x="185" y="1031.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Git provider</text>
+<text x="185" y="1048" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">push / PR webhooks</text>
+<text x="990" y="204.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">API   :8080</text>
+<text x="990" y="219.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="990" y="234.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/ingest      trust boundary</text>
+<text x="990" y="249.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/search      hybrid retrieval</text>
+<text x="990" y="264.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/docs        published prose</text>
+<text x="990" y="279.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/webhooks/git</text>
+<text x="990" y="294.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/auth/ci-exchange</text>
+<text x="990" y="309.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/v1/admin/*     repos principals</text>
+<text x="990" y="324.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">                reindex erasure</text>
+<text x="990" y="339.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/admin          console</text>
+<text x="990" y="354.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">/health/live  /health/ready</text>
+<text x="990" y="484.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">MCP server   :8081</text>
+<text x="990" y="499.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">streamable HTTP, RFC 9728</text>
+<text x="990" y="514.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="990" y="529.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">search_codebase   get_symbol</text>
+<text x="990" y="544.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">find_usages       search_docs</text>
+<text x="990" y="559.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">get_architecture  get_api_spec</text>
+<text x="990" y="574.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">get_changes_since</text>
+<text x="990" y="589.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="990" y="604.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">read-only, permanently</text>
+<text x="990" y="739.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Worker</text>
+<text x="990" y="754.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BullMQ consumers</text>
+<text x="990" y="769.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="990" y="784.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">index-module</text>
+<text x="990" y="799.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">regenerate-docs</text>
+<text x="990" y="814.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">cross-repo-resolution</text>
+<text x="990" y="829.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">maintenance</text>
+<text x="990" y="844.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="990" y="859.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">advisory lock per module</text>
+<text x="1745" y="209.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">PostgreSQL</text>
+<text x="1745" y="224.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="1745" y="239.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Row-Level Security, FORCED</text>
+<text x="1745" y="254.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">pgvector  halfvec 1536  HNSW</text>
+<text x="1745" y="269.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="1745" y="284.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">roles:</text>
+<text x="1745" y="299.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">  kna_interactive  SELECT</text>
+<text x="1745" y="314.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">  kna_batch        write</text>
+<text x="1745" y="329.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">  owner            migrate</text>
+<text x="1745" y="473.625" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Redis</text>
+<text x="1745" y="489.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BullMQ queues</text>
+<text x="1745" y="506.125" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">job id = (module, sha)</text>
+<text x="1745" y="627.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Object storage</text>
+<text x="1745" y="643.625" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">S3 / MinIO</text>
+<text x="1745" y="659.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="1745" y="676.125" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">IR bundles</text>
+<text x="1745" y="692.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">THE SYSTEM OF RECORD</text>
+<text x="1745" y="818.625" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">LiteLLM proxy   :4000</text>
+<text x="1745" y="834.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">routes, not model ids:</text>
+<text x="1745" y="851.125" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">chat  query  blurb  docgen</text>
+<text x="1745" y="971.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Model provider</text>
+<text x="1745" y="988" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">OpenAI / Bedrock / Azure</text>
+<text x="1745" y="1080" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Reranker  (optional)</text>
+<text x="1745" y="1095" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">cross-encoder, called by /v1/search</text>
+<text x="1745" y="1110" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">when configured. Not running locally,</text>
+<text x="1745" y="1125" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">which is why answers say so.</text>
+<rect x="151.07" y="590.875" width="67.86" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="185" y="603.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">push / PR</text>
+<rect x="109.6" y="740.875" width="150.8" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="185" y="753.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">kna-ir.json artifact</text>
+<rect x="280.99" y="789.375" width="98.02" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="330" y="802.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">docs artifact</text>
+<rect x="327.34" y="700.875" width="60.32" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="357.5" y="713.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">opens PR</text>
+<rect x="457.1" y="388.75" width="150.8" height="32.5" fill="#fff" opacity="0.9"/>
+<text x="532.5" y="401.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">MCP over HTTP</text>
+<text x="532.5" y="418" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Bearer KNA_MCP_TOKEN</text>
+<rect x="512.18" y="324.375" width="120.64" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="572.5" y="337.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">HTTPS  KNA_TOKEN</text>
+<rect x="560.95" y="524.25" width="113.1" height="32.5" fill="#fff" opacity="0.9"/>
+<text x="617.5" y="537.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="middle" xml:space="preserve">POST /v1/ingest</text>
+<text x="617.5" y="553.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="middle" xml:space="preserve">signed envelope</text>
+<rect x="578.37" y="646.875" width="143.26" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="650" y="659.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">HMAC-signed webhook</text>
+<rect x="1254.72" y="261.875" width="105.56" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1307.5" y="274.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">withOrgContext</text>
+<rect x="1301.11" y="371.875" width="52.78" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1327.5" y="384.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">enqueue</text>
+<rect x="1309.8" y="456.875" width="75.4" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1347.5" y="469.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">put bundle</text>
+<rect x="1326.03" y="544.375" width="82.94" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1367.5" y="557.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">embed query</text>
+<rect x="1349.8" y="394.375" width="75.4" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1387.5" y="407.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">ACL in SQL</text>
+<rect x="1354.72" y="513.75" width="105.56" height="32.5" fill="#fff" opacity="0.9"/>
+<text x="1407.5" y="526.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">partition swap</text>
+<text x="1407.5" y="543" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">+ stale sweep</text>
+<rect x="1401.11" y="631.875" width="52.78" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1427.5" y="644.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">consume</text>
+<rect x="1407.3" y="716.875" width="75.4" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1445" y="729.875" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">get bundle</text>
+<rect x="1389.6" y="804.375" width="150.8" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="1465" y="817.375" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">embed  blurb  docgen</text>
+<text x="340" y="1193" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">The analyse / publish split is the trust boundary. The analyse job runs the repository&#x27;s own build logic and holds no credential;</text>
+<text x="340" y="1209.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">the publish job holds the credential and runs none of the repository&#x27;s code. Collapsing them puts a publish credential on a runner</text>
+<text x="340" y="1225.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">executing repository-controlled code, which is remote code execution by design.</text>
+<text x="24" y="1486" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">2 · Ingest — from source code to a searchable index</text>
+<text x="40" y="1533" font-family="Segoe UI,sans-serif" font-size="15" fill="#9c36b5" text-anchor="start" xml:space="preserve">In the repository  ·  no platform involved</text>
+<text x="165" y="1595.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">1  discover</text>
+<text x="165" y="1610.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">modules from</text>
+<text x="165" y="1625.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">manifests</text>
+<text x="457" y="1588" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">2  analyse</text>
+<text x="457" y="1603" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Tier 0 lexical</text>
+<text x="457" y="1618" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Tier 1 semantic</text>
+<text x="457" y="1633" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Tier 2 config</text>
+<text x="749" y="1595.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">3  assemble IR</text>
+<text x="749" y="1610.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">stable ids, drop</text>
+<text x="749" y="1625.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">duplicate symbols</text>
+<text x="1041" y="1595.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">4  guardrail scan</text>
+<text x="1041" y="1610.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">FAIL CLOSED</text>
+<text x="1041" y="1625.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">on a finding</text>
+<text x="1333" y="1595.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">5  classify</text>
+<text x="1333" y="1610.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">sensitivity tier</text>
+<text x="1333" y="1625.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">per chunk</text>
+<text x="1625" y="1595.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">6  sign envelope</text>
+<text x="1625" y="1610.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">HMAC or Sigstore</text>
+<text x="1625" y="1625.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">org + repo + sha</text>
+<text x="40" y="1723" font-family="Segoe UI,sans-serif" font-size="15" fill="#e03131" text-anchor="start" xml:space="preserve">Crossing the trust boundary</text>
+<text x="165" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">7  POST /v1/ingest</text>
+<text x="165" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">verify signature</text>
+<text x="165" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">org matches envelope</text>
+<text x="165" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">repo in credential scope</text>
+<text x="457" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">8  store bundle</text>
+<text x="457" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">object storage</text>
+<text x="457" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">system of record</text>
+<text x="457" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Postgres is a cache</text>
+<text x="749" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">9  diff against</text>
+<text x="749" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">stored IR</text>
+<text x="749" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">unchanged modules</text>
+<text x="749" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">cost nothing</text>
+<text x="1041" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">10  circuit breaker</text>
+<text x="1041" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">magnitude check</text>
+<text x="1041" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BEFORE fan-out,</text>
+<text x="1041" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">not during it</text>
+<text x="1333" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">11  enqueue</text>
+<text x="1333" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">one index-module</text>
+<text x="1333" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">job per changed</text>
+<text x="1333" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">module</text>
+<text x="40" y="1903" font-family="Segoe UI,sans-serif" font-size="15" fill="#1971c2" text-anchor="start" xml:space="preserve">In the worker  ·  one module at a time</text>
+<text x="165" y="1958" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">12  advisory lock</text>
+<text x="165" y="1973" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">on the module</text>
+<text x="165" y="1988" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Postgres, not</text>
+<text x="165" y="2003" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BullMQ</text>
+<text x="457" y="1958" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">13  chunk</text>
+<text x="457" y="1973" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">split to the</text>
+<text x="457" y="1988" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">embedding</text>
+<text x="457" y="2003" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">token budget</text>
+<text x="749" y="1958" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">14  embed</text>
+<text x="749" y="1973" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">via LiteLLM</text>
+<text x="749" y="1988" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">content-hash</text>
+<text x="749" y="2003" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">cache</text>
+<text x="1041" y="1965.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">15  partition swap</text>
+<text x="1041" y="1980.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">write the new</text>
+<text x="1041" y="1995.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">rows atomically</text>
+<text x="1333" y="1958" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">16  sweep</text>
+<text x="1333" y="1973" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">delete chunks and</text>
+<text x="1333" y="1988" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">symbols this run</text>
+<text x="1333" y="2003" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">did not write</text>
+<text x="1625" y="1965.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">17  resolve</text>
+<text x="1625" y="1980.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">project slugs</text>
+<text x="1625" y="1995.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">to prj_ ids</text>
+<text x="1917" y="1958" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">18  cross-repo</text>
+<text x="1917" y="1973" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">edge resolution</text>
+<text x="1917" y="1988" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">API contracts,</text>
+<text x="1917" y="2003" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">package deps</text>
+<text x="1917" y="1776" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">19  enqueue</text>
+<text x="1917" y="1791" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">regenerate-docs</text>
+<text x="1917" y="1806" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">debounced 60s</text>
+<text x="1917" y="1821" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">per (repo, ref)</text>
+<text x="40" y="2093" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">The sweep compares chunk and symbol ids against what this run just wrote — never commit shas. Comparing shas is right for a new commit and</text>
+<text x="40" y="2109.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">silently wrong for the two cases that reindex the same one: a deliberate /v1/admin/reindex, and a crashed run retried. Stale rows carried the</text>
+<text x="40" y="2125.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">matching sha, survived, and the corpus held two versions of the same code at once.</text>
+<text x="24" y="2386" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">3 · Query — from a question to an answer that cites its evidence</text>
+<text x="150" y="2496.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Question</text>
+<text x="150" y="2513" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">from editor or CLI</text>
+<text x="440" y="2489.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">understand</text>
+<text x="440" y="2504.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">rewrite multi-turn,</text>
+<text x="440" y="2519.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">classify intent</text>
+<text x="750" y="2482" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">ACL PREDICATE</text>
+<text x="750" y="2497" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">built from the caller&#x27;s</text>
+<text x="750" y="2512" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">identity, applied IN SQL</text>
+<text x="750" y="2527" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BEFORE scoring</text>
+<text x="1070" y="2434" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">dense</text>
+<text x="1070" y="2449" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">pgvector HNSW  k=50</text>
+<text x="1070" y="2526" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">lexical</text>
+<text x="1070" y="2541" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">BM25 tsvector  k=50</text>
+<text x="1070" y="2618" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">symbol exact</text>
+<text x="1070" y="2633" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">direct IR lookup  k=10</text>
+<text x="1383" y="2525.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Reciprocal</text>
+<text x="1383" y="2542" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Rank Fusion</text>
+<text x="1675" y="2526" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">diversity</text>
+<text x="1675" y="2541" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">MMR + per-module cap</text>
+<text x="1967" y="2518.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">rerank</text>
+<text x="1967" y="2533.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">cross-encoder</text>
+<text x="1967" y="2548.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">top 50 to top 8</text>
+<text x="1967" y="2688" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">graph expansion</text>
+<text x="1967" y="2703" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">callers, callees,</text>
+<text x="1967" y="2718" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">type definitions</text>
+<text x="1967" y="2733" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">within token budget</text>
+<text x="1645" y="2688" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">ABSTENTION GATE</text>
+<text x="1645" y="2703" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">score &lt; 0.35, or too few</text>
+<text x="1645" y="2718" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">candidates with no reranker</text>
+<text x="1645" y="2733" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">-&gt;  refuse, no model call</text>
+<text x="1270" y="2688" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">answer synthesis</text>
+<text x="1270" y="2703" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">every claim cites evidence</text>
+<text x="1270" y="2718" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">hedging forced when shallow</text>
+<text x="1270" y="2733" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">or the repo is stale</text>
+<text x="900" y="2694.62" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Answer</text>
+<text x="900" y="2710.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">numbered citations,</text>
+<text x="900" y="2727.12" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">file and line for each</text>
+<text x="510" y="2688" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">query_traces</text>
+<text x="510" y="2703" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">every stage timing,</text>
+<text x="510" y="2718" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">abstained, top score</text>
+<text x="510" y="2733" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">replayable</text>
+<rect x="822.14" y="2761.88" width="135.72" height="16.25" fill="#fff" opacity="0.9"/>
+<text x="890" y="2774.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">every query traced</text>
+<text x="40" y="2823" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">The ACL filter is a hard predicate in the database query, not a prompt instruction and not a post-filter. Filtering after ranking still leaks result</text>
+<text x="40" y="2839.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">counts and relative scores for repositories the caller cannot read.</text>
+<text x="40" y="2855.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve"></text>
+<text x="40" y="2871.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">Abstention happens BEFORE the model, never after. Handing a model weak evidence and asking it to decline politely is asking it to do the one thing</text>
+<text x="40" y="2888" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">it is worst at. When retrieval abstains there is no model call at all.</text>
+<text x="40" y="2904.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve"></text>
+<text x="40" y="2920.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">The threshold is calibrated on cross-encoder scores, which are comparable across queries. Fusion ranks are not — a top RRF score of 0.05 means</text>
+<text x="40" y="2936.75" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">nothing in isolation — so when the reranker is down the rule changes shape rather than degrading silently.</text>
+<text x="24" y="3106" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">4 · Documentation</text>
+<text x="160" y="3201.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">push or merged PR</text>
+<text x="160" y="3216.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">HMAC verified against</text>
+<text x="160" y="3231.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">the RAW body</text>
+<text x="440" y="3194" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">debounce 60s</text>
+<text x="440" y="3209" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">per (repo, ref)</text>
+<text x="440" y="3224" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">a merge train -&gt;</text>
+<text x="440" y="3239" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">one job</text>
+<text x="720" y="3194" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">newest stored</text>
+<text x="720" y="3209" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">bundle</text>
+<text x="720" y="3224" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">no IR in the</text>
+<text x="720" y="3239" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">webhook itself</text>
+<text x="160" y="3341.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">deterministic first</text>
+<text x="160" y="3356.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">signatures, graphs,</text>
+<text x="160" y="3371.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">endpoints, diagrams</text>
+<text x="440" y="3341.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">LLM prose second</text>
+<text x="440" y="3356.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">one call per module</text>
+<text x="440" y="3371.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">via the docgen route</text>
+<text x="720" y="3341.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">grounding check</text>
+<text x="720" y="3356.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">rejected prose is</text>
+<text x="720" y="3371.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">dropped, not shipped</text>
+<text x="440" y="3476.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">documents</text>
+<text x="440" y="3491.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">+ docs chunks</text>
+<text x="440" y="3506.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">queryable copy</text>
+<text x="720" y="3476.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">pull request</text>
+<text x="720" y="3491.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">humans review,</text>
+<text x="720" y="3506.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">never a direct commit</text>
+<text x="40" y="3563" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">The in-repo copy is the half of the exit plan that survives the platform</text>
+<text x="40" y="3579.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">being switched off. Generated docs land as a pull request, and a human</text>
+<text x="40" y="3595.5" font-family="Segoe UI,sans-serif" font-size="13" fill="#e03131" text-anchor="start" xml:space="preserve">agrees to them.</text>
+<text x="1224" y="3106" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">5 · Tenancy and the security model</text>
+<text x="1490" y="3222" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Every tenant table carries org_id and FORCE ROW LEVEL SECURITY.</text>
+<text x="1490" y="3237" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Policies test  org_id = kna_current_org(),  a per-transaction</text>
+<text x="1490" y="3252" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">setting. A SUPERUSER connection makes all of it SILENTLY inert —</text>
+<text x="1490" y="3267" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">policies still exist, the invariant check still passes, and every</text>
+<text x="1490" y="3282" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">tenant reads every other tenant&#x27;s source.</text>
+<text x="1490" y="3297" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="1490" y="3312" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">assertRlsEffective() runs at startup in every service and refuses</text>
+<text x="1490" y="3327" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">to serve otherwise.</text>
+<text x="2050" y="3214.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Reads that happen BEFORE a tenant is known need a narrow probe:</text>
+<text x="2050" y="3229.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="2050" y="3244.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">withAuthProbe        bearer token -&gt; principal</text>
+<text x="2050" y="3259.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">                     naming the hash proves possession</text>
+<text x="2050" y="3274.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">withIdentityProbe    provider subject -&gt; principals</text>
+<text x="2050" y="3289.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">                     authorised by HMAC, not by identity</text>
+<text x="2050" y="3304.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">withRepoProbe        git remote -&gt; repo, for webhooks</text>
+<text x="2050" y="3319.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="2050" y="3334.5" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Anything reading AFTER a principal exists uses withOrgContext.</text>
+<text x="1780" y="3447" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Six guardrail layers</text>
+<text x="1780" y="3462" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve"></text>
+<text x="1780" y="3477" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">1  minimise      only what a question needs leaves the repo</text>
+<text x="1780" y="3492" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">2  scan          fail closed on a finding, before publish</text>
+<text x="1780" y="3507" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">3  classify      sensitivity tier per chunk, restricted never embedded</text>
+<text x="1780" y="3522" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">4  ACL in SQL    the caller&#x27;s permissions as a query predicate</text>
+<text x="1780" y="3537" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">5  injection     retrieved content wrapped as untrusted data</text>
+<text x="1780" y="3552" font-family="Segoe UI,sans-serif" font-size="12" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">6  audit         every read recorded by chunk id, breadth monitored</text>
+<text x="24" y="3806" font-family="Segoe UI,sans-serif" font-size="28" fill="#1e1e1e" text-anchor="start" xml:space="preserve">Legend</text>
+<text x="165" y="3894.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Platform service</text>
+<text x="465" y="3894.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Data store</text>
+<text x="765" y="3894.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">CI job</text>
+<text x="1065" y="3894.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Outside the platform</text>
+<text x="1365" y="3894.88" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="middle" xml:space="preserve">Security boundary</text>
+<text x="1600" y="3873" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="start" xml:space="preserve">A dashed border means optional or not yet running.</text>
+<text x="1600" y="3889.25" font-family="Segoe UI,sans-serif" font-size="13" fill="#1e1e1e" text-anchor="start" xml:space="preserve">Red text is a failure this design exists to prevent.</text>
+</svg>

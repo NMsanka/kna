@@ -3,8 +3,8 @@ title: "kna architecture"
 docType: architecture-overview
 generated: true
 generator: kna-docgen
-repoId: repo_73c6ab83773f23c663c06039d97f969c
-commitSha: e2fd52c8ec216351e374b5869552abf5708fde77
+repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
+commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
 analysisDepth: semantic
 provenance:
   moduleIds:
@@ -17,6 +17,7 @@ provenance:
     - mod_5ad4e42d509481ab472fb7e14415c7be
     - mod_d7bd19fc9cc601bc1fb7894d55770d01
     - mod_ea77493fddbabc61a22fc9301ccd5bd3
+    - mod_627827a11e1b8647a8d1d3512bb1008c
     - mod_095c1135195b5ab97f79cc1523d4f37a
     - mod_7a00c0277ef5c28d76ffb0139703d101
     - mod_1f78830f9189e59a918cb6b012c825e7
@@ -37,6 +38,7 @@ provenance:
     - "pkg:npm/@kna/analyzer-openapi"
     - "pkg:npm/@kna/analyzer-typescript"
     - "pkg:npm/@acme/billing"
+    - "pkg:npm/@kna/audit"
     - "pkg:npm/@kna/chunking"
     - "pkg:npm/@kna/config"
     - "pkg:npm/@kna/contracts"
@@ -47,25 +49,29 @@ provenance:
     - "pkg:npm/@kna/observability"
     - "pkg:npm/@kna/retrieval"
     - "pkg:npm/@kna/scanner"
-  edgeCount: 61
+  edgeCount: 65
   serviceCount: 10
   symbolIds:
-    []
+    - sym_81a54a7f19231b3c761122c398b4df758c334a9f
+    - sym_cabbf5ceedd3587f542cabd6521edf89bf0c0feb
+    - sym_57d85190e0c1e489e83d36b04439b197db61eb2f
   signatureHashes:
-
+    sym_81a54a7f19231b3c761122c398b4df758c334a9f: 6077cefafce1934fee281eaf1ec35e71a519caced23001d9aa8d8266f0e673cd
+    sym_cabbf5ceedd3587f542cabd6521edf89bf0c0feb: 6077cefafce1934fee281eaf1ec35e71a519caced23001d9aa8d8266f0e673cd
+    sym_57d85190e0c1e489e83d36b04439b197db61eb2f: 6077cefafce1934fee281eaf1ec35e71a519caced23001d9aa8d8266f0e673cd
 ---
 
 # kna architecture
 
-<!-- kna:generated:start id=architecture.summary hash=8a917836adbfb592 -->
+<!-- kna:generated:start id=architecture.summary hash=4abc737a123b69d1 -->
 | | |
 |---|---|
-| Repository | `local/c//work space/customer projects/ai project/kna` |
-| Commit | `e2fd52c8ec21` on `master` |
-| Modules | 19 |
-| Internal dependencies | 61 |
+| Repository | `github.com/nmsanka/kna` |
+| Commit | `0e88100c77d7` on `end-to-end-pipeline` |
+| Modules | 20 |
+| Internal dependencies | 65 |
 | Runtime services | 10 |
-| HTTP endpoints | 0 |
+| HTTP endpoints | 3 |
 | Languages | typescript |
 <!-- kna:generated:end id=architecture.summary -->
 
@@ -124,7 +130,7 @@ Runtime topology: 10 service(s)
 | `worker` | job | — | `deploy/docker-compose.yml` |
 <!-- kna:generated:end id=architecture.context -->
 
-<!-- kna:generated:start id=architecture.container hash=3bd39ff2d068ea8d -->
+<!-- kna:generated:start id=architecture.container hash=e6d7b46e1a9052d9 -->
 ```mermaid
 graph LR
   nq79hr9["kna-platform"]
@@ -136,6 +142,7 @@ graph LR
   ng38xj1["@kna/analyzer-openapi"]
   n5t7t0m["@kna/analyzer-typescript"]
   npn4q8d["@acme/billing"]
+  ngg1o6m["@kna/audit"]
   nky29sl["@kna/chunking"]
   nob0n5d["@kna/config"]
   nci1whn["@kna/contracts"]
@@ -169,6 +176,8 @@ graph LR
   nszx0fb --> nekc84h
   nszx0fb --> n5t7t0m
   nszx0fb --> n5s5pyy
+  ngg1o6m --> ny11cr7
+  ngg1o6m --> n8x7ko0
   nob0n5d --> n5s5pyy
   nmgrrdj --> nob0n5d
   nmgrrdj --> n5s5pyy
@@ -178,6 +187,7 @@ graph LR
   nekc84h --> ny11cr7
   nekc84h --> n5s5pyy
   nok97yi --> nci1whn
+  nok97yi --> ngg1o6m
   nok97yi --> nob0n5d
   nok97yi --> ny11cr7
   nok97yi --> n5s5pyy
@@ -187,6 +197,7 @@ graph LR
   nhlj2kt --> nky29sl
   nhlj2kt --> nci1whn
   nhlj2kt --> n18dtev
+  nhlj2kt --> ngg1o6m
   nhlj2kt --> nob0n5d
   nhlj2kt --> ny11cr7
   nhlj2kt --> n5s5pyy
@@ -212,7 +223,7 @@ graph LR
 <details>
 <summary>Text description of the diagram above</summary>
 
-Module graph: 19 module(s), 61 internal dependency edge(s). Solid arrows are runtime dependencies; dashed arrows are development-only.
+Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are runtime dependencies; dashed arrows are development-only.
 
 - @kna/worker depends on @kna/chunking
 - @kna/worker depends on @kna/contracts
@@ -237,6 +248,8 @@ Module graph: 19 module(s), 61 internal dependency edge(s). Solid arrows are run
 - @kna/cli depends on @kna/analyzer-core
 - @kna/cli depends on @kna/analyzer-typescript
 - @kna/cli depends on @kna/ir
+- @kna/audit depends on @kna/observability
+- @kna/audit depends on @kna/db
 - @kna/config depends on @kna/ir
 - @kna/docgen depends on @kna/config
 - @kna/docgen depends on @kna/ir
@@ -246,6 +259,7 @@ Module graph: 19 module(s), 61 internal dependency edge(s). Solid arrows are run
 - @kna/analyzer-core depends on @kna/observability
 - @kna/analyzer-core depends on @kna/ir
 - @kna/mcp depends on @kna/contracts
+- @kna/mcp depends on @kna/audit
 - @kna/mcp depends on @kna/config
 - @kna/mcp depends on @kna/observability
 - @kna/mcp depends on @kna/ir
@@ -255,6 +269,7 @@ Module graph: 19 module(s), 61 internal dependency edge(s). Solid arrows are run
 - @kna/api depends on @kna/chunking
 - @kna/api depends on @kna/contracts
 - @kna/api depends on @kna/scanner
+- @kna/api depends on @kna/audit
 - @kna/api depends on @kna/config
 - @kna/api depends on @kna/observability
 - @kna/api depends on @kna/ir
@@ -279,32 +294,43 @@ Module graph: 19 module(s), 61 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=fcf856efc4045a1b -->
+<!-- kna:generated:start id=architecture.component hash=08fb348944ddd216 -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
-| `packages/ir` | 15 | 179 | 0 | typescript | — |
+| `packages/ir` | 15 | 180 | 0 | typescript | — |
 | `packages/config` | 9 | 31 | 0 | typescript | — |
-| `packages/observability` | 7 | 37 | 0 | typescript | — |
+| `packages/observability` | 8 | 37 | 0 | typescript | — |
 | `packages/llm` | 6 | 98 | 0 | typescript | — |
-| `packages/db` | 4 | 75 | 0 | typescript | — |
-| `packages/contracts` | 4 | 61 | 0 | typescript | — |
-| `packages/retrieval` | 3 | 304 | 0 | typescript | — |
+| `packages/db` | 5 | 79 | 0 | typescript | — |
+| `packages/contracts` | 4 | 70 | 0 | typescript | — |
+| `packages/retrieval` | 3 | 328 | 0 | typescript | — |
 | `packages/analyzer-core` | 3 | 124 | 0 | typescript | — |
 | `packages/scanner` | 3 | 87 | 0 | typescript | — |
-| `packages/chunking` | 3 | 69 | 0 | typescript | — |
-| `packages/docgen` | 2 | 88 | 0 | typescript | — |
+| `packages/chunking` | 3 | 71 | 0 | typescript | — |
+| `packages/docgen` | 2 | 142 | 0 | typescript | — |
+| `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
-| `packages/analyzer-typescript` | 1 | 27 | 0 | typescript | — |
-| `apps/api` | 0 | 197 | 0 | typescript | — |
-| `apps/cli` | 0 | 84 | 0 | typescript | — |
-| `apps/worker` | 0 | 76 | 0 | typescript | — |
-| `apps/mcp` | 0 | 62 | 0 | typescript | — |
+| `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |
+| `apps/api` | 0 | 183 | 1 | typescript | — |
+| `apps/worker` | 0 | 95 | 1 | typescript | — |
+| `apps/cli` | 0 | 93 | 0 | typescript | — |
+| `apps/mcp` | 0 | 62 | 1 | typescript | — |
 | `packages/analyzer-typescript/test/fixtures/billing` | 0 | 33 | 0 | typescript | — |
 | `.` | 0 | 0 | 0 | typescript | — |
 
 Ordered by in-degree. `packages/ir` is the most depended-upon module here, which makes it the one where a breaking change costs most.
 <!-- kna:generated:end id=architecture.component -->
 
-<!-- kna:generated:start id=architecture.confidence hash=5563297de3be26f9 -->
-All 19 module(s) were analysed at semantic depth or better, so the dependency edges above are resolved rather than inferred from text.
+<!-- kna:generated:start id=architecture.confidence hash=483c54f83128e244 -->
+All 20 module(s) were analysed at semantic depth or better, so the dependency edges above are resolved rather than inferred from text.
 <!-- kna:generated:end id=architecture.confidence -->
+
+<!-- kna:generated:start id=architecture.api-surface hash=2da356d23a8c0c71 -->
+| Method | Route | Module | Auth | Handler |
+|---|---|---|---|---|
+| `GET` | `/health` | `apps/api` | _none declared_ | `ApiContext.health` |
+| `GET` | `/health` | `apps/mcp` | _none declared_ | `McpContext.health` |
+| `GET` | `/health` | `apps/worker` | _none declared_ | `WorkerContext.health` |
+
+> 3 endpoint(s) declare no authentication in their specification. That may be correct — health checks and public documentation routes usually are — but it is worth confirming rather than assuming the specification is incomplete.
+<!-- kna:generated:end id=architecture.api-surface -->

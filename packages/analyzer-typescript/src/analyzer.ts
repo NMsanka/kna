@@ -349,7 +349,7 @@ function extractTypeAlias(ctx: FileContext, alias: TypeAliasDeclaration): RawSym
     kind: 'type',
     signature: `type ${name}${renderTypeParams(
       alias.getTypeParameters().map((t) => t.getText()),
-    )} = ${truncate(alias.getTypeNode()?.getText() ?? alias.getType().getText(), 400)}`,
+    )} = ${renderType(alias.getTypeNode()?.getText() ?? alias.getType().getText(), 400)}`,
     visibility: alias.isExported() ? 'public' : 'internal',
     modifiers: [],
     decorators: [],
@@ -418,9 +418,12 @@ function extractVariable(ctx: FileContext, decl: VariableDeclaration): RawSymbol
     name,
     qualifiedName: name,
     kind: isCallable ? 'function' : 'constant',
-    signature: isCallable
-      ? `const ${name}: ${truncate(type.getText(decl), 300)}`
-      : `const ${name}: ${truncate(type.getText(decl), 300)}`,
+    // A written annotation is what the author chose to say; the inferred type is the
+    // fallback. Both branches used to render the inferred one, identically.
+    signature: `const ${name}: ${renderType(
+      decl.getTypeNode()?.getText() ?? type.getText(decl),
+      300,
+    )}`,
     visibility: exported ? 'public' : 'internal',
     modifiers: [],
     decorators: [],
@@ -492,7 +495,7 @@ function propertySymbol(ctx: FileContext, ownerName: string, prop: PropertyDecla
     name,
     qualifiedName: `${ownerName}.${name}`,
     kind: 'property',
-    signature: `${name}: ${truncate(prop.getType().getText(prop), 200)}`,
+    signature: `${name}: ${renderType(prop.getType().getText(prop), 200)}`,
     visibility: mapVisibility(prop.getScope()),
     modifiers: collectModifiers(prop.getModifiers().map((m) => m.getText())),
     decorators: prop.getDecorators().map((d) => d.getText()),
@@ -592,7 +595,7 @@ function mapParameter(param: ParameterDeclaration): Parameter {
 
 function typeRefOf(type: Type | undefined): TypeRef | null {
   if (!type) return null;
-  const text = truncate(type.getText(undefined, ts.TypeFormatFlags.NoTruncation), 300);
+  const text = renderType(type.getText(undefined, ts.TypeFormatFlags.NoTruncation), 300);
   return {
     text,
     // Resolution to a symbol id happens in assembly, which owns identity; the analyser only
@@ -601,7 +604,7 @@ function typeRefOf(type: Type | undefined): TypeRef | null {
     package: packageOf(type),
     nullable: type.isNullable() || /\|\s*(null|undefined)\b/.test(text),
     isArray: type.isArray() || /\[\]$/.test(text) || /^(Array|ReadonlyArray)</.test(text),
-    typeArguments: type.getTypeArguments().map((t) => truncate(t.getText(), 120)),
+    typeArguments: type.getTypeArguments().map((t) => renderType(t.getText(), 120)),
   };
 }
 
@@ -671,10 +674,10 @@ function renderCallableSignature(
     .map((p) => {
       const optional = p.isOptional() && !p.getInitializer() ? '?' : '';
       const rest = p.isRestParameter() ? '...' : '';
-      return `${rest}${p.getName()}${optional}: ${truncate(p.getType().getText(p), 160)}`;
+      return `${rest}${p.getName()}${optional}: ${renderType(p.getType().getText(p), 160)}`;
     })
     .join(', ');
-  return `${name}(${params}): ${truncate(node.getReturnType().getText(undefined, ts.TypeFormatFlags.NoTruncation), 200)}`;
+  return `${name}(${params}): ${renderType(node.getReturnType().getText(undefined, ts.TypeFormatFlags.NoTruncation), 200)}`;
 }
 
 function renderClassSignature(cls: ClassDeclaration): string {
@@ -710,6 +713,43 @@ function mapVisibility(scope: string | undefined): Visibility {
 function joinJsDoc(docs: JSDoc[]): string | null {
   if (docs.length === 0) return null;
   return docs.map((d) => d.getInnerText()).join('\n\n');
+}
+
+/**
+ * Render a type as a person would write it, not as the checker prints it.
+ *
+ * The type checker names a cross-file type `import("<absolute path>").Name`. Two things go
+ * wrong when that reaches the corpus. It is unreadable — nobody writes a type that way, and an
+ * inferred Drizzle table renders as several hundred characters of machine output that says
+ * nothing a reader wanted. And the path is absolute *on the machine that ran the analysis*, so
+ * a developer's directory layout — or a CI runner's — is published into documentation the whole
+ * organisation can read, and indexed into chunks that then match queries about paths.
+ *
+ * Which package a type came from is reported separately by `packageOf`, so dropping the
+ * qualifier here loses nothing that anything downstream was reading.
+ */
+export function renderType(text: string, max: number): string {
+  return truncate(collapseImportTypes(text), max);
+}
+
+const IMPORT_QUALIFIER = /import\((["'])(?:(?!\1).)*\1\)\./g;
+const IMPORT_TYPE = /import\((["'])((?:(?!\1).)*)\1\)/g;
+/** pnpm nests the real package under `.pnpm/<id>/node_modules/`, so skip that layer. */
+const PACKAGE_IN_PATH = /node_modules\/(?:\.pnpm\/[^/]+\/node_modules\/)?((?:@[^/]+\/)?[^/]+)/;
+
+function collapseImportTypes(text: string): string {
+  return text
+    .replace(IMPORT_QUALIFIER, '')
+    .replace(
+      IMPORT_TYPE,
+      (_match, _quote, specifier: string) => `import('${moduleLabel(specifier)}')`,
+    );
+}
+
+/** A path inside `node_modules` becomes its package name; anything else, its basename. */
+function moduleLabel(specifier: string): string {
+  const path = normalizeSlashes(specifier);
+  return PACKAGE_IN_PATH.exec(path)?.[1] ?? /([^/]+)$/.exec(path)?.[1] ?? path;
 }
 
 function truncate(value: string, max: number): string {

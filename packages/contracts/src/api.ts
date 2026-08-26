@@ -84,6 +84,14 @@ export const zSearchRequest = z.object({
   query: z.string().min(1).max(2000),
   scope: zScopeInput.default({ kind: 'project' }),
   topN: z.number().int().min(1).max(50).default(8),
+  /**
+   * Synthesise a written answer from the retrieved evidence, not just return the evidence.
+   *
+   * Off by default so the endpoint stays a search endpoint: an editor that wants ranked chunks
+   * to reason over itself should not pay for a completion it will discard. `kna ask` sets it,
+   * because a developer asking a question wants an answer.
+   */
+  answer: z.boolean().default(false),
   sessionId: z.string().optional(),
   history: z
     .array(z.object({ role: z.enum(['user', 'assistant']), content: z.string() }))
@@ -114,8 +122,70 @@ export const zSearchHit = z.object({
   alsoPresentInModules: z.array(z.string()).default([]),
 });
 
+export const zAnswer = z.object({
+  text: z.string(),
+  citations: z.array(
+    z.object({
+      marker: z.number().int(),
+      chunkId: z.string(),
+      symbolId: z.string().nullable(),
+      qualifiedName: z.string().nullable(),
+      path: z.string().nullable(),
+      startLine: z.number().int().nullable(),
+      analysisDepth: z.string(),
+    }),
+  ),
+  /** True when retrieval declined and no model was asked. */
+  abstained: z.boolean(),
+  /** True when the answer was required to state a reliability caveat, and why. */
+  hedged: z.boolean(),
+  hedgingReason: z.string().nullable(),
+  model: z.string().nullable(),
+});
+
+/**
+ * Create a person and issue them a credential.
+ *
+ * Until now the only thing in the codebase that wrote to `principals` or `api_tokens` was the
+ * development seed, which refuses to run in production. So a real deployment could serve exactly
+ * one person — whoever inserted their own rows by hand — and adding a colleague meant hashing a
+ * token yourself and writing SQL.
+ *
+ * The destination is SSO: a principal is created when someone first signs in, and their
+ * repository access is synced from the git provider rather than granted here. This is the path
+ * for the cases that will always exist alongside it — service accounts, and the first
+ * administrator, who cannot be created by a login that nobody can perform yet.
+ *
+ * `subject` is the SSO subject when there is one, so a principal created here is the same
+ * principal that later logs in rather than a duplicate.
+ */
+export const zCreatePrincipalRequest = z.object({
+  subject: z.string().min(1),
+  email: z.string().email().nullable().default(null),
+  displayName: z.string().nullable().default(null),
+  /** A ceiling on what this person may read, never a grant of anything specific. */
+  clearance: z.enum(['public', 'internal', 'confidential', 'restricted']).default('internal'),
+  isServiceAccount: z.boolean().default(false),
+  roles: z.array(z.enum(['admin', 'member'])).default([]),
+  /** Repositories to grant read access to immediately, by id. */
+  grantRepoIds: z.array(z.string()).default([]),
+  /** Recorded in the audit trail. Creating an identity is not a routine action. */
+  reason: z.string().min(1),
+});
+
+export const zCreatePrincipalResponse = z.object({
+  principalId: z.string(),
+  subject: z.string(),
+  token: z.string(),
+  lastFourChars: z.string(),
+  grantedRepoIds: z.array(z.string()),
+  warning: z.string(),
+});
+
 export const zSearchResponse = z.object({
   hits: z.array(zSearchHit),
+  /** Present only when the request asked for one. */
+  answer: zAnswer.nullable().default(null),
   abstained: z.boolean(),
   abstentionReason: z.string().nullable(),
   hedging: z.string().nullable(),

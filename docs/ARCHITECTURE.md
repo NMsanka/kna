@@ -44,6 +44,208 @@ PLATFORM
 
 ---
 
+## System view
+
+Every arrow is a real call in the code. Credentials are named because which one a service holds
+is a design decision, not a detail.
+
+```mermaid
+graph TB
+    subgraph dev["Developer machine / CI runner"]
+        CLI["kna CLI<br/><i>analyse · scan · sign</i>"]
+        IDE["Editor<br/><i>Cursor, Claude Code</i>"]
+    end
+
+    subgraph platform["Platform services"]
+        API["API :8080<br/><i>ingest · search · admin</i>"]
+        MCP["MCP :8081<br/><i>7 read-only tools</i>"]
+        WORKER["Worker<br/><i>no HTTP surface</i>"]
+    end
+
+    subgraph state["Stateful dependencies"]
+        OBJ[("Object storage<br/><b>system of record</b><br/><i>IR bundles, WORM</i>")]
+        PG[("Postgres + pgvector<br/><i>derived cache</i><br/><i>RLS forced</i>")]
+        REDIS[("Redis<br/><i>4 job queues</i>")]
+    end
+
+    PROXY["LiteLLM :4000<br/><i>routes · cost · quotas</i>"]
+    PROVIDER["Model provider"]
+    GIT["Git provider"]
+
+    CLI -->|"POST /v1/ingest<br/>signed envelope"| API
+    IDE -->|"streamable HTTP<br/>audience-bound token"| MCP
+    GIT -->|"webhook, HMAC-signed"| API
+
+    API -->|"writes bundle"| OBJ
+    API -->|"enqueues"| REDIS
+    API -->|"kna_interactive · read<br/>kna_batch · audit"| PG
+    API -->|"embed query"| PROXY
+
+    WORKER -->|"reads bundle"| OBJ
+    WORKER -->|"consumes"| REDIS
+    WORKER -->|"kna_batch · read+write"| PG
+    WORKER -->|"blurbs · embeddings · prose"| PROXY
+
+    MCP -->|"kna_interactive · read<br/>kna_batch · audit"| PG
+    MCP -->|"embed query"| PROXY
+
+    PROXY --> PROVIDER
+
+    classDef record fill:#1f6f43,stroke:#0d3d24,color:#fff
+    classDef cache fill:#1f4e79,stroke:#0d2b45,color:#fff
+    class OBJ record
+    class PG,REDIS cache
+```
+
+The green box is the one that matters. Object storage holds the IR bundles and **is the system of
+record**; Postgres is an explicitly derived cache that can be dropped and rebuilt by replaying
+them. That inversion is what makes reindexing cheap, staging realistic, and disaster recovery a
+rehearsable procedure rather than a hope.
+
+---
+
+## Ingest: how code becomes knowledge
+
+The trust boundary is the vertical line. Everything left of the API runs on a machine you do not
+control; only a signed, scanned bundle crosses.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant CI as CI runner
+    participant API
+    participant OBJ as Object storage
+    participant Q as Redis
+    participant W as Worker
+    participant PG as Postgres
+    participant LLM as LiteLLM
+
+    Note over CI: analyse job — no credentials,<br/>runs repo build logic
+    CI->>CI: discover · Tier 0/1/2 · scan (fails closed)
+    Note over CI: publish job — holds credential,<br/>runs no repo code
+    CI->>API: POST /v1/ingest (signed envelope)
+
+    API->>API: verify signature, orgId, expiry, nonce
+    API->>OBJ: store bundle (immutable)
+    API->>PG: diff against previous bundle
+    Note right of API: unchanged modules are skipped —<br/>this is the whole cost model
+    API->>Q: enqueue index-module × changed
+    API->>Q: enqueue regenerate-docs
+    API-->>CI: 202 accepted + job ids
+
+    W->>Q: claim index-module
+    W->>OBJ: read bundle (the record, not a copy)
+    W->>PG: pg_advisory_xact_lock(moduleId)
+    W->>W: admit against budget before spending
+    W->>LLM: context blurbs (cached by signatureHash)
+    W->>LLM: embeddings (cached by contentHash)
+    W->>PG: partition swap — upsert, then sweep what<br/>this run did not write
+```
+
+Two properties are load-bearing and easy to destroy by simplification:
+
+- **The analyse and publish jobs are separate.** Analysis executes the repository's own build
+  logic, so a publish credential on that runner is remote code execution by design. The bundle is
+  what crosses between them.
+- **The sweep compares ids, not commit shas.** Deleting "anything not from this commit" is right
+  for a new commit and silently wrong for a deliberate reindex or a retried crash, which stamp
+  the same one.
+
+---
+
+## Query: how a question becomes an answer
+
+```mermaid
+flowchart LR
+    Q["Question"] --> EMB["Embed<br/><i>LiteLLM</i>"]
+    EMB --> ACL{{"ACL filter<br/><b>SQL predicate</b>"}}
+
+    ACL --> D["Dense<br/><i>pgvector HNSW</i>"]
+    ACL --> L["Lexical<br/><i>BM25</i>"]
+    ACL --> S["Symbol exact"]
+
+    D --> RRF["RRF fusion"]
+    L --> RRF
+    S --> RRF
+
+    RRF --> MMR["MMR diversity"]
+    MMR --> RR["Rerank<br/><i>optional</i>"]
+    RR --> EXP["Graph expansion<br/><i>call edges</i>"]
+    EXP --> AB{"Confident?"}
+
+    AB -->|yes| ANS["Answer with<br/>provenance + depth badge"]
+    AB -->|no| ABST["Abstain, and say why"]
+
+    classDef gate fill:#7a1f1f,stroke:#3d0d0d,color:#fff
+    class ACL gate
+```
+
+The red node is the security boundary. The ACL filter is a **predicate inside the query**, applied
+before scoring — never a post-filter and never a prompt instruction. Filtering after ranking still
+leaks result counts and relative scores for repositories the caller cannot read. Row-level
+security enforces the same thing a second time underneath, in case the filter has a bug.
+
+Every result carries an `analysisDepth` badge from the analyser that produced it, all the way
+into the response, so shallow output is never presented with the confidence of semantic output.
+
+---
+
+## Who talks to what, and with which credential
+
+```mermaid
+graph LR
+    subgraph roles["Postgres roles"]
+        RI["kna_interactive<br/><i>SELECT, plus INSERT on<br/>three append-only tables</i>"]
+        RB["kna_batch<br/><i>full read/write</i>"]
+        RO["owner<br/><i>migrations only</i>"]
+    end
+
+    API2["API"] --> RI
+    API2 -.->|"audit · breadth"| RB
+    MCP2["MCP"] --> RI
+    MCP2 -.->|"audit · breadth"| RB
+    W2["Worker"] --> RB
+    MIG["Migration job"] --> RO
+
+    classDef ro fill:#1f4e79,stroke:#0d2b45,color:#fff
+    classDef rw fill:#7a5a1f,stroke:#3d2d0d,color:#fff
+    class RI ro
+    class RB,RO rw
+```
+
+The internet-facing services connect as a role that cannot modify tenant data. They hold a second
+handle only for writes the platform owes regardless of the caller — the audit trail and breadth
+accounting — because granting the request path UPDATE on, say, the credential table would be a
+write primitive exactly where it is least wanted.
+
+Migrations run as the owner in a separate image. If a service ever connected as the owner,
+row-level security would become **silently** inert, so every service asserts
+`kna_rls_is_effective()` at startup and refuses to serve otherwise.
+
+---
+
+## Queues
+
+Four, consumed by one worker process with different concurrency because the jobs have different
+shapes.
+
+| Queue | Concurrency | Job identity | Why |
+|---|---|---|---|
+| `index-module` | 4 | `(moduleId, commitSha)` | Provider-bound; parallelism helps |
+| `regenerate-docs` | 1 | `(repoId, commitSha)` | One model call per module, in sequence |
+| `cross-repo-resolve` | 1 | `(projectId)` | Takes a per-project lock; parallelism only contends |
+| `maintenance` | 1 | `(orgId)` | Nightly reconciliation and invariant checks |
+
+Job identity gives replayed-webhook idempotency for free — a duplicate id is refused at the queue
+rather than detected in the worker. It also means a deliberate re-run is a silent no-op, which is
+why explicit triggers pass a discriminator that joins the id.
+
+Per-module serialisation is a **Postgres advisory lock**, not a queue feature, because stock
+BullMQ cannot enforce per-key concurrency. A re-dispatched stalled job blocks on the lock instead
+of interleaving with the run that is still going.
+
+---
+
 ## Package dependency order
 
 Nothing above depends on anything below it, which is what keeps the IR usable independently of
