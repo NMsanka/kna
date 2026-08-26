@@ -264,7 +264,7 @@ wrk = box(790, 690, 400, 210,
           "cross-repo-resolution\nmaintenance\n\nadvisory lock per module", *SVC, size=12)
 
 pg = box(1580, 150, 330, 230,
-         "PostgreSQL\n\nRow-Level Security, FORCED\npgvector  halfvec 1536  HNSW\n\n"
+         "PostgreSQL\n\nRow-Level Security, FORCED\npgvector  halfvec 1024  HNSW\n\n"
          "roles:\n  kna_interactive  SELECT\n  kna_batch        write\n  owner            migrate", *DAT, size=12)
 
 redis = box(1580, 430, 330, 110, "Redis\nBullMQ queues\njob id = (module, sha)", *DAT, size=13)

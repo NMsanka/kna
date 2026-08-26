@@ -47,6 +47,7 @@ export async function createWorkerContext(env = loadPlatformEnv()): Promise<Work
     url: env.DATABASE_URL_BATCH ?? env.DATABASE_URL,
     role: 'batch',
     poolMax: 6,
+    idleInTransactionSessionTimeoutMs: env.DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS,
     applicationName: 'kna-worker',
   });
 
@@ -61,6 +62,8 @@ export async function createWorkerContext(env = loadPlatformEnv()): Promise<Work
       interactive: env.LITELLM_KEY_BATCH,
       batch: env.LITELLM_KEY_BATCH,
     },
+    authHeader: env.LITELLM_AUTH_HEADER,
+    authScheme: env.LITELLM_AUTH_SCHEME,
     region: env.KNA_REGION,
     onRateLimited: ({ model, keyClass, retryAfterMs }) => {
       KnaMetrics.providerRateLimited.add(1, { model, keyClass });

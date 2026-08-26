@@ -563,9 +563,9 @@ CommonJS require that cannot resolve NodeNext `.js` specifiers. **Build before g
 pnpm build && pnpm db:generate
 ```
 
-`db:generate` also runs `scripts/fix-vector-ddl.mjs`, which unquotes `"halfvec(1536)"` →
-`halfvec(1536)`. Drizzle emits parameterised custom types as quoted identifiers, which Postgres
-reads as a type literally named `halfvec(1536)` and rejects. The fixup is idempotent; do not
+`db:generate` also runs `scripts/fix-vector-ddl.mjs`, which unquotes `"halfvec(1024)"` →
+`halfvec(1024)`. Drizzle emits parameterised custom types as quoted identifiers, which Postgres
+reads as a type literally named `halfvec(1024)` and rejects. The fixup is idempotent; do not
 remove it.
 
 ### pnpm blocks install scripts

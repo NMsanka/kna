@@ -4,7 +4,7 @@ import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
 import { ZodError } from 'zod';
 import { IR_SCHEMA_VERSION } from '@kna/ir';
-import { computeConfigVersion, DEFAULT_RETRIEVAL_CONFIG, AccessDeniedError } from '@kna/retrieval';
+import { computeConfigVersion, AccessDeniedError } from '@kna/retrieval';
 import { installGracefulShutdown } from '@kna/observability';
 import { assertRlsEffective } from '@kna/db';
 import { createApiContext, type ApiContext, type KnaServer } from './context.js';
@@ -82,7 +82,7 @@ export async function buildServer(ctx: ApiContext): Promise<KnaServer> {
           : 'not-ready',
       version: '1.0.0',
       irSchemaVersion: IR_SCHEMA_VERSION,
-      retrievalConfigVersion: computeConfigVersion(DEFAULT_RETRIEVAL_CONFIG).version,
+      retrievalConfigVersion: computeConfigVersion(ctx.retrievalConfig).version,
       degradedModes: readiness.degradedModes,
       dependencies: readiness.dependencies.map((d) => ({
         name: d.name,

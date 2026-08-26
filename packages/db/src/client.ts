@@ -24,6 +24,8 @@ export interface DbOptions {
   url: string;
   poolMax?: number;
   statementTimeoutMs?: number;
+  /** Zero disables PostgreSQL's idle-in-transaction timeout for intentionally long batch work. */
+  idleInTransactionSessionTimeoutMs?: number;
   applicationName?: string;
   /** Interactive traffic gets a short timeout; batch work legitimately runs long. */
   role: 'interactive' | 'batch' | 'migration';
@@ -40,6 +42,8 @@ export interface DbHandle {
 export function createDb(options: DbOptions): DbHandle {
   const statementTimeout =
     options.statementTimeoutMs ?? (options.role === 'interactive' ? 10_000 : 600_000);
+  const idleInTransactionSessionTimeout =
+    options.idleInTransactionSessionTimeoutMs ?? (options.role === 'interactive' ? 60_000 : 0);
 
   const client = postgres(options.url, {
     max: options.poolMax ?? (options.role === 'interactive' ? 10 : 4),
@@ -51,7 +55,7 @@ export function createDb(options: DbOptions): DbHandle {
       statement_timeout: statementTimeout,
       // Bound the time a lock wait can hold a connection hostage during a reindex swap.
       lock_timeout: options.role === 'interactive' ? 3_000 : 30_000,
-      idle_in_transaction_session_timeout: 60_000,
+      idle_in_transaction_session_timeout: idleInTransactionSessionTimeout,
     },
     onnotice: options.onNotice ?? (() => undefined),
   });

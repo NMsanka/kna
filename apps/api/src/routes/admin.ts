@@ -484,32 +484,78 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
     // so a retried HTTP request coalesces instead of queueing the work twice.
     const reindexToken = randomUUID().slice(0, 8);
 
-    const targets = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) =>
-      tx.execute<{
+    const { repoBundles, moduleTargets } = await withSystemContext(
+      ctx.db,
+      principal.orgId,
+      'maintenance',
+      async (tx) => {
+        const repoBundles = await tx.execute<{
+          repo_id: string;
+          commit_sha: string;
+          ref: string;
+          storage_key: string;
+        }>(sql`
+          SELECT DISTINCT ON (repo_id) repo_id, commit_sha, ref, storage_key
+            FROM ir_bundles
+           WHERE org_id = ${principal.orgId}
+             AND ${body.repoIds.length > 0 ? sql`repo_id = ${anyOf(body.repoIds)}` : sql`false`}
+           ORDER BY repo_id, received_at DESC
+        `);
+
+        const moduleTargets = await tx.execute<{
         module_id: string;
         repo_id: string;
         commit_sha: string;
         ref: string;
         storage_key: string;
-      }>(sql`
-        -- The most recent bundle per repo, not every bundle: reindexing means "rebuild from what
-        -- is current", and the history exists for replay and forensics, not for fan-out.
-        WITH latest AS (
-          SELECT DISTINCT ON (repo_id) repo_id, commit_sha, ref, storage_key
-            FROM ir_bundles
-           WHERE org_id = ${principal.orgId}
-           ORDER BY repo_id, received_at DESC
-        )
-        SELECT m.id AS module_id, l.repo_id, l.commit_sha, l.ref, l.storage_key
-          FROM modules m
-          JOIN latest l ON l.repo_id = m.repo_id
-         WHERE m.org_id = ${principal.orgId}
-           AND (
-             ${body.repoIds.length > 0 ? sql`m.repo_id = ${anyOf(body.repoIds)}` : sql`false`}
-             OR ${body.moduleIds.length > 0 ? sql`m.id = ${anyOf(body.moduleIds)}` : sql`false`}
-           )
-      `),
+        }>(sql`
+          -- Module-specific reindexes can use the derived table because a module id only exists
+          -- after at least one successful index. Repository reindexes below deliberately do not:
+          -- recovering a first index that failed must work while that table is still empty.
+          WITH latest AS (
+            SELECT DISTINCT ON (repo_id) repo_id, commit_sha, ref, storage_key
+              FROM ir_bundles
+             WHERE org_id = ${principal.orgId}
+             ORDER BY repo_id, received_at DESC
+          )
+          SELECT m.id AS module_id, l.repo_id, l.commit_sha, l.ref, l.storage_key
+            FROM modules m
+            JOIN latest l ON l.repo_id = m.repo_id
+           WHERE m.org_id = ${principal.orgId}
+             AND ${body.moduleIds.length > 0 ? sql`m.id = ${anyOf(body.moduleIds)}` : sql`false`}
+        `);
+
+        return { repoBundles, moduleTargets };
+      },
     );
+
+    // §15.1 — the immutable bundle store is the system of record; Postgres is a derived cache.
+    // Reading repository modules from `modules` made recovery from a failed *first* index
+    // impossible: the bundle existed, but the derived table was necessarily empty, so reindex
+    // reported zero work. Discover them from the stored payload instead.
+    const storedTargets = (
+      await Promise.all(
+        repoBundles.map(async (bundle) => {
+          const payload = await ctx.bundleStore.getPayload(String(bundle.storage_key));
+          return payload.modules.map((module) => ({
+            module_id: module.id,
+            repo_id: String(bundle.repo_id),
+            commit_sha: String(bundle.commit_sha),
+            ref: String(bundle.ref),
+            storage_key: String(bundle.storage_key),
+          }));
+        }),
+      )
+    ).flat();
+
+    const targets = [
+      ...new Map(
+        [...storedTargets, ...moduleTargets].map((target) => [
+          `${target.repo_id}:${target.module_id}`,
+          target,
+        ]),
+      ).values(),
+    ];
 
     // Audited before the work is queued, not after: the record of who asked must survive the
     // request failing halfway through the fan-out.
@@ -542,7 +588,10 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
       );
     }
 
-    const covered = new Set(targets.map((t) => String(t.repo_id)));
+    const covered = new Set([
+      ...repoBundles.map((bundle) => String(bundle.repo_id)),
+      ...targets.map((target) => String(target.repo_id)),
+    ]);
 
     // Documentation is derived from the same bundle and the same retrieval settings, so a
     // reindex that left it untouched would leave the two halves of the corpus describing

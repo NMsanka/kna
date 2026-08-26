@@ -648,11 +648,11 @@ Three ways out, in order of preference:
 
 | Option | How | Trade-off |
 |---|---|---|
-| **Shorten via the API** | Pass `dimensions: 1536` (or 1024) to the embeddings endpoint | These models are Matryoshka-trained, so truncation is graceful — quality loss is small and it halves index RAM. **Recommended default.** |
-| **Use `halfvec`** | `halfvec(3072)` — half-precision, indexable up to 4,000 dims | Keeps full dimensionality, halves storage versus `vector`, negligible recall impact. Good if you measure a real quality gap at 1536. |
+| **Shorten via the API** | Pass `dimensions: 1024` to the embeddings endpoint | Matryoshka-trained models shorten gracefully, and 1024 also matches common fixed-size OpenAI-compatible embedding models. **Recommended default.** |
+| **Use `halfvec`** | `halfvec(3072)` — half-precision, indexable up to 4,000 dims | Keeps full dimensionality, halves storage versus `vector`, negligible recall impact. Good if you measure a real quality gap at 1024. |
 | **Use `text-embedding-3-small`** | 1536 native | Cheaper and faster; measurably weaker. Fine for a Phase 1 spike. |
 
-Given §15's finding that pgvector index memory is one of your first scaling walls, `dimensions: 1536` or `halfvec` is not merely a workaround — it is the right engineering choice regardless.
+Given §15's finding that pgvector index memory is one of your first scaling walls, `dimensions: 1024` or `halfvec` is not merely a workaround — it is the right engineering choice regardless.
 
 #### The hole: OpenAI has no reranker
 
@@ -681,7 +681,7 @@ Do not use one model for everything; the cost difference across these workloads 
 | Query rewriting, intent classification, abstention scoring | Cheapest, latency-critical | Sits in the hot path before retrieval |
 | Chat answering | Mid-tier | Where quality is most visible to users |
 | Documentation prose generation | Strongest | Low volume, high stakes, human-reviewed |
-| Embeddings | `text-embedding-3-large` at `dimensions: 1536` | See the dimension trap above |
+| Embeddings | OpenAI-compatible embedding model at `dimensions: 1024` | See the dimension trap above |
 
 #### Cost levers specific to OpenAI
 

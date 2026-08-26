@@ -158,13 +158,22 @@ services:
       # Application roles, never the owner: a superuser bypasses RLS silently (migration 0005).
       DATABASE_URL: postgres://kna_interactive:${KNA_INTERACTIVE_PASSWORD:-devpass}@pgbouncer:5432/kna
       DATABASE_URL_BATCH: postgres://kna_batch:${KNA_BATCH_PASSWORD:-devpass}@postgres:5432/kna
+      DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: ${DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS:-0}
       REDIS_URL: redis://redis:6379
       BUNDLE_STORE_ENDPOINT: http://minio:9000
       BUNDLE_STORE_ACCESS_KEY: kna
       BUNDLE_STORE_SECRET_KEY: knaknakna
-      LITELLM_BASE_URL: http://litellm:4000
-      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
-      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_KEY_INTERACTIVE:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_KEY_BATCH: ${LITELLM_KEY_BATCH:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_AUTH_HEADER: ${LITELLM_AUTH_HEADER:-authorization}
+      LITELLM_AUTH_SCHEME: ${LITELLM_AUTH_SCHEME:-bearer}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-text-embedding-3-large}
+      EMBEDDING_DIMENSIONS: ${EMBEDDING_DIMENSIONS:-1024}
+      MODEL_BLURB: ${MODEL_BLURB:-blurb}
+      MODEL_QUERY: ${MODEL_QUERY:-query}
+      MODEL_CHAT: ${MODEL_CHAT:-chat}
+      MODEL_DOCGEN: ${MODEL_DOCGEN:-docgen}
       SESSION_SECRET: development-session-secret-at-least-32-chars
       INGEST_SIGNATURE_MODE: hmac
       INGEST_HMAC_SECRET: development-ingest-secret
@@ -187,13 +196,22 @@ services:
       # The worker uses the direct connection, not the pooler: long transactions holding a
       # module advisory lock do not belong in a transaction-pooled connection.
       DATABASE_URL: postgres://kna_batch:${KNA_BATCH_PASSWORD:-devpass}@postgres:5432/kna
+      DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: ${DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS:-0}
       REDIS_URL: redis://redis:6379
       BUNDLE_STORE_ENDPOINT: http://minio:9000
       BUNDLE_STORE_ACCESS_KEY: kna
       BUNDLE_STORE_SECRET_KEY: knaknakna
-      LITELLM_BASE_URL: http://litellm:4000
-      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
-      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_KEY_INTERACTIVE:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_KEY_BATCH: ${LITELLM_KEY_BATCH:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_AUTH_HEADER: ${LITELLM_AUTH_HEADER:-authorization}
+      LITELLM_AUTH_SCHEME: ${LITELLM_AUTH_SCHEME:-bearer}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-text-embedding-3-large}
+      EMBEDDING_DIMENSIONS: ${EMBEDDING_DIMENSIONS:-1024}
+      MODEL_BLURB: ${MODEL_BLURB:-blurb}
+      MODEL_QUERY: ${MODEL_QUERY:-query}
+      MODEL_CHAT: ${MODEL_CHAT:-chat}
+      MODEL_DOCGEN: ${MODEL_DOCGEN:-docgen}
       SESSION_SECRET: development-session-secret-at-least-32-chars
       WRITE_ENABLED: 'false'
     depends_on:
@@ -210,13 +228,22 @@ services:
       KNA_ENV: development
       KNA_REGION: local
       DATABASE_URL: postgres://kna_interactive:${KNA_INTERACTIVE_PASSWORD:-devpass}@pgbouncer:5432/kna
+      DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: ${DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS:-0}
       REDIS_URL: redis://redis:6379
       BUNDLE_STORE_ENDPOINT: http://minio:9000
       BUNDLE_STORE_ACCESS_KEY: kna
       BUNDLE_STORE_SECRET_KEY: knaknakna
-      LITELLM_BASE_URL: http://litellm:4000
-      LITELLM_KEY_INTERACTIVE: ${LITELLM_MASTER_KEY:-sk-kna-master}
-      LITELLM_KEY_BATCH: ${LITELLM_MASTER_KEY:-sk-kna-master}
+      LITELLM_BASE_URL: ${LITELLM_BASE_URL:-http://litellm:4000}
+      LITELLM_KEY_INTERACTIVE: ${LITELLM_KEY_INTERACTIVE:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_KEY_BATCH: ${LITELLM_KEY_BATCH:-${LITELLM_MASTER_KEY:-sk-kna-master}}
+      LITELLM_AUTH_HEADER: ${LITELLM_AUTH_HEADER:-authorization}
+      LITELLM_AUTH_SCHEME: ${LITELLM_AUTH_SCHEME:-bearer}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-text-embedding-3-large}
+      EMBEDDING_DIMENSIONS: ${EMBEDDING_DIMENSIONS:-1024}
+      MODEL_BLURB: ${MODEL_BLURB:-blurb}
+      MODEL_QUERY: ${MODEL_QUERY:-query}
+      MODEL_CHAT: ${MODEL_CHAT:-chat}
+      MODEL_DOCGEN: ${MODEL_DOCGEN:-docgen}
       SESSION_SECRET: development-session-secret-at-least-32-chars
     ports: ['8081:8081']
     depends_on:

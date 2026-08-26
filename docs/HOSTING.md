@@ -106,6 +106,8 @@ BUNDLE_STORE_SECRET_KEY
 LITELLM_BASE_URL
 LITELLM_KEY_INTERACTIVE      distinct virtual keys — see below
 LITELLM_KEY_BATCH
+LITELLM_AUTH_HEADER          optional; defaults to authorization
+LITELLM_AUTH_SCHEME          bearer (default) or raw
 SESSION_SECRET               32 bytes minimum
 ```
 
@@ -121,6 +123,23 @@ GIT_WEBHOOK_SECRET                without it webhooks are refused with 501
 
 `GIT_APP_PRIVATE_KEY_REF` is a **reference** to a KMS key, never key material. That key grants
 read access across every repository in the company.
+
+`LITELLM_BASE_URL` may point at the bundled LiteLLM instance or directly at any endpoint that
+implements the OpenAI-compatible `/v1/chat/completions` and `/v1/embeddings` schema. The base URL
+must not include `/v1`; KNA appends the endpoint path. For gateways that authenticate with a raw
+API-key header rather than `Authorization: Bearer`, set for example:
+
+```dotenv
+LITELLM_BASE_URL=https://models.example.com
+LITELLM_KEY_INTERACTIVE=<interactive-or-shared-key>
+LITELLM_KEY_BATCH=<batch-or-shared-key>
+LITELLM_AUTH_HEADER=x-api-key
+LITELLM_AUTH_SCHEME=raw
+```
+
+The `MODEL_*` and `EMBEDDING_MODEL` values must name models or route aliases exposed by that
+gateway. A gateway with one shared key can use the same value for both key variables; separate
+keys remain preferable when the gateway supports independent interactive and batch quotas.
 
 **The two LiteLLM keys must share no model entry.** That is what stops a backfill saturating the
 embedding quota and 429-ing interactive chat at the same moment. An annotation would not; a key

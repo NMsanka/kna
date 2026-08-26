@@ -11,6 +11,7 @@ import {
   Reranker,
   NullReranker,
   DEFAULT_RETRIEVAL_CONFIG,
+  type RetrievalConfig,
 } from '@kna/retrieval';
 import type { IrBundle, IrBundlePayload } from '@kna/ir';
 import { loadPlatformEnv, type PlatformEnv } from '@kna/config';
@@ -61,6 +62,7 @@ export interface ApiContext {
   audit: AuditRecorder;
   queue: JobQueue;
   retrieval: RetrievalPipeline;
+  retrievalConfig: RetrievalConfig;
   permissions: PermissionResolver;
   llm: LlmClient;
   health: HealthRegistry;
@@ -98,12 +100,15 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
     url: env.DATABASE_URL_BATCH ?? env.DATABASE_URL,
     role: 'batch',
     poolMax: 4,
+    idleInTransactionSessionTimeoutMs: env.DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS,
     applicationName: 'kna-api-batch',
   });
 
   const llm = new LlmClient({
     baseUrl: env.LITELLM_BASE_URL,
     keys: { interactive: env.LITELLM_KEY_INTERACTIVE, batch: env.LITELLM_KEY_BATCH },
+    authHeader: env.LITELLM_AUTH_HEADER,
+    authScheme: env.LITELLM_AUTH_SCHEME,
     region: env.KNA_REGION,
     onRateLimited: ({ model, keyClass, retryAfterMs }) => {
       KnaMetrics.providerRateLimited.add(1, { model, keyClass });
@@ -136,6 +141,21 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
       })
     : new NullReranker();
 
+  const retrievalConfig: RetrievalConfig = {
+    ...DEFAULT_RETRIEVAL_CONFIG,
+    embeddingModel: env.EMBEDDING_MODEL,
+    embeddingDimensions: env.EMBEDDING_DIMENSIONS,
+    rerankerModel: env.RERANKER_URL ? env.RERANKER_MODEL : null,
+    rrfK: env.RETRIEVAL_RRF_K,
+    topKDense: env.RETRIEVAL_TOP_K_DENSE,
+    topKLexical: env.RETRIEVAL_TOP_K_LEXICAL,
+    topKSymbol: env.RETRIEVAL_TOP_K_SYMBOL,
+    topNFinal: env.RETRIEVAL_TOP_N_FINAL,
+    efSearch: env.PGVECTOR_EF_SEARCH,
+    abstentionThreshold: env.ABSTENTION_THRESHOLD,
+    chatModel: env.MODEL_CHAT,
+  };
+
   const retrieval = new RetrievalPipeline({
     store: retrievalStore,
     reranker,
@@ -149,20 +169,7 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
       });
       return result.vectors[0]!;
     },
-    config: {
-      ...DEFAULT_RETRIEVAL_CONFIG,
-      embeddingModel: env.EMBEDDING_MODEL,
-      embeddingDimensions: env.EMBEDDING_DIMENSIONS,
-      rerankerModel: env.RERANKER_URL ? env.RERANKER_MODEL : null,
-      rrfK: env.RETRIEVAL_RRF_K,
-      topKDense: env.RETRIEVAL_TOP_K_DENSE,
-      topKLexical: env.RETRIEVAL_TOP_K_LEXICAL,
-      topKSymbol: env.RETRIEVAL_TOP_K_SYMBOL,
-      topNFinal: env.RETRIEVAL_TOP_N_FINAL,
-      efSearch: env.PGVECTOR_EF_SEARCH,
-      abstentionThreshold: env.ABSTENTION_THRESHOLD,
-      chatModel: env.MODEL_CHAT,
-    },
+    config: retrievalConfig,
     abstentionPolicy: {
       rerankThreshold: env.ABSTENTION_THRESHOLD,
       minChunksWithoutReranker: 3,
@@ -259,6 +266,7 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
     audit,
     queue,
     retrieval,
+    retrievalConfig,
     permissions,
     llm,
     health,

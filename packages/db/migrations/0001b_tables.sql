@@ -304,7 +304,7 @@ CREATE TABLE "embedding_cache" (
 	"content_hash" text NOT NULL,
 	"model" text NOT NULL,
 	"org_id" text NOT NULL,
-	"embedding" halfvec(1536),
+	"embedding" halfvec(1024),
 	"hits" integer DEFAULT 0 NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
 );
@@ -316,7 +316,7 @@ CREATE TABLE "embeddings" (
 	"version_id" text NOT NULL,
 	"model" text NOT NULL,
 	"dimensions" integer NOT NULL,
-	"embedding" halfvec(1536),
+	"embedding" halfvec(1024),
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint

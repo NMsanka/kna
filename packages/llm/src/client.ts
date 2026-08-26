@@ -24,6 +24,10 @@ import {
 export interface LlmClientOptions {
   baseUrl: string;
   keys: Record<KeyClass, string>;
+  /** Header used to authenticate to the OpenAI-compatible endpoint. */
+  authHeader?: string;
+  /** Bearer is the OpenAI/LiteLLM default; raw supports API-key headers. */
+  authScheme?: 'bearer' | 'raw';
   region: string;
   /** Called after every request with the usage record, for the spend ledger. */
   onUsage?: (usage: UsageRecord) => void | Promise<void>;
@@ -119,9 +123,13 @@ export interface CompleteResult {
 
 export class LlmClient {
   private readonly fetchImpl: typeof fetch;
+  private readonly baseUrl: string;
 
   constructor(private readonly options: LlmClientOptions) {
     this.fetchImpl = options.fetchImpl ?? fetch;
+    // Call sites pass paths beginning with `/`; accepting a trailing slash in configuration
+    // without normalising it produces `//v1/...`, which some compatible gateways reject.
+    this.baseUrl = options.baseUrl.replace(/\/+$/, '');
   }
 
   async complete(request: CompleteRequest): Promise<CompleteResult> {
@@ -189,7 +197,7 @@ export class LlmClient {
    * Embed a batch of texts.
    *
    * `dimensions` is passed explicitly rather than left to the provider default. §11 — the
-   * models are Matryoshka-trained, so truncation is graceful, and 1536 both fits pgvector's
+   * models are Matryoshka-trained, so truncation is graceful, and 1024 both fits pgvector's
    * index ceiling and halves index RAM. Leaving this off is how a corpus ends up unindexable.
    */
   async embed(request: {
@@ -267,11 +275,15 @@ export class LlmClient {
     const timer = setTimeout(() => controller.abort(), context.timeoutMs);
 
     try {
-      const response = await this.fetchImpl(`${this.options.baseUrl}${path}`, {
+      const authHeader = this.options.authHeader ?? 'authorization';
+      const key = this.options.keys[keyClass];
+      const credential = this.options.authScheme === 'raw' ? key : `Bearer ${key}`;
+
+      const response = await this.fetchImpl(`${this.baseUrl}${path}`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          authorization: `Bearer ${this.options.keys[keyClass]}`,
+          [authHeader]: credential,
           // Region is asserted on every request so the proxy can refuse a cross-region route
           // rather than silently falling back (§15.7).
           'x-kna-region': this.options.region,

@@ -21,7 +21,7 @@ import { sensitivityTier } from './tenancy.js';
  * §11 "the dimension trap": pgvector's HNSW index caps at 2,000 dimensions for `vector`, and
  * `text-embedding-3-large` is 3,072 native. The column is `halfvec`, which indexes to 4,000
  * dimensions at half precision with negligible recall impact, and the default write path still
- * requests `dimensions: 1536`. Both escape hatches are therefore open without a migration.
+ * requests `dimensions: 1024`. Both escape hatches are therefore open without a migration.
  *
  * §8 "store the model name and version on every embedding row. Model upgrades are inevitable,
  * and without versioning you cannot do a shadow reindex or a gradual cutover."
@@ -49,7 +49,7 @@ export const halfvec = (dimensions: number) =>
   });
 
 /** Matches EMBEDDING_DIMENSIONS. Changing it is an expand/contract migration, never an ALTER. */
-export const EMBEDDING_DIMENSIONS = 1536;
+export const EMBEDDING_DIMENSIONS = 1024;
 
 const embeddingVector = halfvec(EMBEDDING_DIMENSIONS)('embedding', {
   dimensions: EMBEDDING_DIMENSIONS,

@@ -2829,7 +2829,7 @@
         },
         "embedding": {
           "name": "embedding",
-          "type": "halfvec(1536)",
+          "type": "halfvec(1024)",
           "primaryKey": false,
           "notNull": false
         },
@@ -2926,7 +2926,7 @@
         },
         "embedding": {
           "name": "embedding",
-          "type": "halfvec(1536)",
+          "type": "halfvec(1024)",
           "primaryKey": false,
           "notNull": false
         },

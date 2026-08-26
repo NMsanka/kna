@@ -443,7 +443,7 @@ describeIf('database integration', () => {
 
   describe('pgvector', () => {
     it('stores and searches halfvec embeddings through the HNSW index', async () => {
-      const dimensions = 1536;
+      const dimensions = 1024;
       const vector = (seed: number) =>
         `[${Array.from({ length: dimensions }, (_, i) => ((i * seed) % 97) / 97).join(',')}]`;
 
@@ -495,7 +495,7 @@ describeIf('database integration', () => {
     it('rejects a vector of the wrong dimensionality', async () => {
       // Dimension drift corrupts an index in a way that is hard to diagnose later, because
       // cosine distance still returns numbers. The column type is the last line of defence.
-      await expect(handle.sql`SELECT ${'[1,2,3]'}::halfvec(1536)`).rejects.toThrow();
+      await expect(handle.sql`SELECT ${'[1,2,3]'}::halfvec(1024)`).rejects.toThrow();
     });
   });
 });
