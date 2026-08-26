@@ -22,14 +22,27 @@ export function escapeHtml(value: string): string {
 }
 
 const STYLES = `
+  /*
+   * Palette taken from the Confirma Software deck.
+   *
+   * Its theme1.xml is stock Office, so the real colours are the ones the slides use: a warm
+   * near-black ground (#2E2C2A), warm off-whites for text (#E7E3E2, #CFC8C5), a cool grey-purple
+   * for secondary text on light (#717182), and a bright green (#66BE2B) as the one accent.
+   *
+   * Two colours are darkened rather than copied, because the deck uses them as fills and this
+   * uses them as text. #66BE2B on a light ground is 2.15:1 — fine behind white type on a slide,
+   * unreadable as a citation link. #3E7A1A is the same hue at 4.81:1. #717182 lands at 4.39:1,
+   * just under the threshold, so it is darkened to #5F5F70. On the dark ground the deck's own
+   * values are already strong (#66BE2B is 5.94:1) and are used unchanged.
+   */
   :root {
-    --ground: #f4f5f4; --card: #ffffff; --ink: #161c19; --muted: #5d6b64;
-    --rule: #dde2df; --accent: #1f6f43; --warn: #8c3f1d; --shade: #eef1ef;
+    --ground: #f5f5f6; --card: #ffffff; --ink: #2e2c2a; --muted: #5f5f70;
+    --rule: #d6d8db; --accent: #3e7a1a; --warn: #8c3f1d; --shade: #eceded;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --ground: #10150f; --card: #171d19; --ink: #e6ebe7; --muted: #97a49c;
-      --rule: #26302a; --accent: #4fb37c; --warn: #d08454; --shade: #1d2420;
+      --ground: #2e2c2a; --card: #3a3733; --ink: #e7e3e2; --muted: #cfc8c5;
+      --rule: #4a4642; --accent: #66be2b; --warn: #d9915f; --shade: #45413c;
     }
   }
   * { box-sizing: border-box; }
