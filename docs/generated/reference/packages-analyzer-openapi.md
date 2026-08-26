@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_5ad4e42d509481ab472fb7e14415c7be
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
 analysisDepth: semantic
 owners:
   []
@@ -101,7 +101,7 @@ provenance:
 | Public symbols | 38 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=7cfd2858f19c3427 -->
+<!-- kna:generated:start id=api.property hash=8c4fc1945973ca1d -->
 ### `services`
 
 ```typescript
@@ -110,7 +110,7 @@ services?: Record<string, {image?: string;build?: unknown;depends_on?: string[] 
 
 **Returns** `Record<string, { image?: string \| undefined; build?: unknown; depends_on?: string[] \| Record<string, unknown> \| undefined; ports?: (string \| number)[] \| undefined; links?: string[] \| undefined; }> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/infra.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/infra.ts#L69)</sub>
 
 ---
 
@@ -122,7 +122,7 @@ repoRoot: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/infra.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/infra.ts#L23)</sub>
 
 ---
 
@@ -136,7 +136,7 @@ explicitPaths?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L44)</sub>
 
 ---
 
@@ -148,7 +148,7 @@ modules: Array<{path: string;name: string}>
 
 **Returns** `{ path: string; name: string; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L42)</sub>
 
 ---
 
@@ -160,7 +160,7 @@ repoRoot: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L41)</sub>
 
 ---
 
@@ -174,7 +174,7 @@ bindings: Map<string, HttpBinding>
 
 **Returns** `Map<string, { method: "GET" \| "POST" \| "PUT" \| "PATCH" \| "DELETE" \| "HEAD" \| "OPTIONS" \| "TRACE"; summary: string \| null; tags: string[]; deprecated: boolean; route: string; operationId: string \| null; parameters: { description: string \| null; name: string; in: "path" \| "query" \| "header" \| "cookie"…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L53)</sub>
 
 ---
 
@@ -188,7 +188,7 @@ skipped: Array<{path: string;reason: string}>
 
 **Returns** `{ path: string; reason: string; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L55)</sub>
 
 ---
 
@@ -200,7 +200,7 @@ specs: ApiSpec[]
 
 **Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L48)</sub>
 
 ---
 
@@ -212,7 +212,7 @@ components?: {securitySchemes?: Record<string, {type?: string;scheme?: string}>}
 
 **Returns** `{ securitySchemes?: Record<string, { type?: string \| undefined; scheme?: string \| undefined; }> \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L124)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L124)</sub>
 
 ---
 
@@ -224,7 +224,7 @@ info?: {title?: string;version?: string}
 
 **Returns** `{ title?: string \| undefined; version?: string \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L122)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L122)</sub>
 
 ---
 
@@ -236,7 +236,7 @@ openapi?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L120)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L120)</sub>
 
 ---
 
@@ -248,7 +248,7 @@ paths?: Record<string, Record<string, OpenApiOperation>&{parameters?: OpenApiPar
 
 **Returns** `Record<string, Record<string, OpenApiOperation> & { parameters?: OpenApiParameter[] \| undefined; }> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L123)</sub>
 
 ---
 
@@ -260,7 +260,7 @@ security?: Array<Record<string, string[]>>
 
 **Returns** `Record<string, string[]>[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L126)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L126)</sub>
 
 ---
 
@@ -272,7 +272,7 @@ securityDefinitions?: Record<string, {type?: string}>
 
 **Returns** `Record<string, { type?: string \| undefined; }> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L125)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L125)</sub>
 
 ---
 
@@ -284,7 +284,7 @@ swagger?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L121)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L121)</sub>
 
 ---
 
@@ -296,7 +296,7 @@ swagger?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L151)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L151)</sub>
 
 ---
 
@@ -308,7 +308,7 @@ swagger?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L150)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L150)</sub>
 
 ---
 
@@ -320,7 +320,7 @@ swagger?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L152)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L152)</sub>
 
 ---
 
@@ -332,7 +332,7 @@ deprecated?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L134)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L134)</sub>
 
 ---
 
@@ -344,7 +344,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L132)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L132)</sub>
 
 ---
 
@@ -356,7 +356,7 @@ operationId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L130)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L130)</sub>
 
 ---
 
@@ -368,7 +368,7 @@ parameters?: OpenApiParameter[]
 
 **Returns** `OpenApiParameter[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L135)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L135)</sub>
 
 ---
 
@@ -380,7 +380,7 @@ requestBody?: {required?: boolean;content?: Record<string, {schema?: unknown;exa
 
 **Returns** `{ required?: boolean \| undefined; content?: Record<string, { schema?: unknown; example?: unknown; }> \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L136)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L136)</sub>
 
 ---
 
@@ -392,7 +392,7 @@ responses?: Record<string, {description?: string;content?: Record<string, {schem
 
 **Returns** `Record<string, { description?: string \| undefined; content?: Record<string, { schema?: unknown; }> \| undefined; headers?: Record<string, unknown> \| undefined; schema?: unknown; }> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L140)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L140)</sub>
 
 ---
 
@@ -404,7 +404,7 @@ security?: Array<Record<string, string[]>>
 
 **Returns** `Record<string, string[]>[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L149)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L149)</sub>
 
 ---
 
@@ -416,7 +416,7 @@ summary?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L131)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L131)</sub>
 
 ---
 
@@ -428,7 +428,7 @@ tags?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L133)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L133)</sub>
 
 ---
 
@@ -440,7 +440,7 @@ deprecated?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L161)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L161)</sub>
 
 ---
 
@@ -452,7 +452,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L160)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L160)</sub>
 
 ---
 
@@ -464,7 +464,7 @@ in?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L157)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L157)</sub>
 
 ---
 
@@ -476,7 +476,7 @@ name?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L156)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L156)</sub>
 
 ---
 
@@ -488,7 +488,7 @@ required?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L158)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L158)</sub>
 
 ---
 
@@ -500,10 +500,10 @@ schema?: unknown
 
 **Returns** `unknown`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L159)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L159)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=a8b1798d4d2c84de -->
+<!-- kna:generated:start id=api.function hash=65662402e7bd99ad -->
 ### `extractApiSpecs`
 
 ```typescript
@@ -516,7 +516,7 @@ extractApiSpecs(input: ExtractSpecsInput): Promise<ExtractSpecsResult>
 
 **Returns** `Promise<ExtractSpecsResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L58)</sub>
 
 ---
 
@@ -532,10 +532,10 @@ extractServices(input: ExtractServicesInput): Promise<{name: string;kind: "servi
 
 **Returns** `Promise<{ name: string; kind: "service" \| "database" \| "queue" \| "cache" \| "external" \| "job"; moduleId: string \| null; image: string \| null; dependsOn: string[]; ports: number[]; source: string; }[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/infra.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/infra.ts#L26)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=7f0a8f98a7a4766e -->
+<!-- kna:generated:start id=api.interface hash=497fed1f7107425f -->
 ### `ExtractServicesInput`
 
 Tier 2, second half — deployment topology (§5).
@@ -544,7 +544,7 @@ Tier 2, second half — deployment topology (§5).
 interface ExtractServicesInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/infra.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/infra.ts#L22)</sub>
 
 ---
 
@@ -554,7 +554,7 @@ interface ExtractServicesInput
 interface ExtractSpecsInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L40)</sub>
 
 ---
 
@@ -564,5 +564,5 @@ interface ExtractSpecsInput
 interface ExtractSpecsResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-openapi/src/openapi.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-openapi/src/openapi.ts#L47)</sub>
 <!-- kna:generated:end id=api.interface -->

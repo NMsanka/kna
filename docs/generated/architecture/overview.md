@@ -4,8 +4,8 @@ docType: architecture-overview
 generated: true
 generator: kna-docgen
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
-analysisDepth: semantic
+commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+analysisDepth: shallow
 provenance:
   moduleIds:
     - mod_5bdb211a43046f19ca2ed8c4e3a662ca
@@ -63,16 +63,16 @@ provenance:
 
 # kna architecture
 
-<!-- kna:generated:start id=architecture.summary hash=4abc737a123b69d1 -->
+<!-- kna:generated:start id=architecture.summary hash=c1ed8a31aab7f654 -->
 | | |
 |---|---|
 | Repository | `github.com/nmsanka/kna` |
-| Commit | `0e88100c77d7` on `end-to-end-pipeline` |
+| Commit | `bb7ab26e932f` on `master` |
 | Modules | 20 |
 | Internal dependencies | 65 |
 | Runtime services | 10 |
 | HTTP endpoints | 3 |
-| Languages | typescript |
+| Languages | typescript, python |
 <!-- kna:generated:end id=architecture.summary -->
 
 <!-- kna:generated:start id=architecture.context hash=63ad7c0463de2068 -->
@@ -294,7 +294,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=08fb348944ddd216 -->
+<!-- kna:generated:start id=architecture.component hash=aea3d5121aa1cbcb -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
 | `packages/ir` | 15 | 180 | 0 | typescript | — |
@@ -311,18 +311,27 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
 | `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |
-| `apps/api` | 0 | 183 | 1 | typescript | — |
+| `apps/api` | 0 | 219 | 1 | typescript | — |
 | `apps/worker` | 0 | 95 | 1 | typescript | — |
 | `apps/cli` | 0 | 93 | 0 | typescript | — |
-| `apps/mcp` | 0 | 62 | 1 | typescript | — |
+| `apps/mcp` | 0 | 63 | 1 | typescript | — |
 | `packages/analyzer-typescript/test/fixtures/billing` | 0 | 33 | 0 | typescript | — |
-| `.` | 0 | 0 | 0 | typescript | — |
+| `.` | 0 | 19 | 0 | typescript, python | — |
 
 Ordered by in-degree. `packages/ir` is the most depended-upon module here, which makes it the one where a breaking change costs most.
 <!-- kna:generated:end id=architecture.component -->
 
-<!-- kna:generated:start id=architecture.confidence hash=483c54f83128e244 -->
-All 20 module(s) were analysed at semantic depth or better, so the dependency edges above are resolved rather than inferred from text.
+<!-- kna:generated:start id=architecture.confidence hash=fee125b5aad123bd -->
+**1 of 20 module(s) were analysed at shallow depth.** Their
+dependency edges come from declared manifests only; type references and call edges that
+would appear at semantic depth are missing from the diagrams above.
+
+| Module | Why |
+|---|---|
+| `.` | No analyser registered for python |
+
+CI runners that build this repository have those toolchains by definition, so the
+shared index is more complete than a local run. `kna doctor` explains a specific case.
 <!-- kna:generated:end id=architecture.confidence -->
 
 <!-- kna:generated:start id=architecture.api-surface hash=2da356d23a8c0c71 -->

@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_a6d6b353ede56846d3b6628df43de776
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
 analysisDepth: semantic
 owners:
   []
@@ -273,14 +273,14 @@ provenance:
 | Public symbols | 124 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=4f57887852586c99 -->
+<!-- kna:generated:start id=api.interface hash=4c92da32ffa85d69 -->
 ### `Analyzer`
 
 ```typescript
 interface Analyzer
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L76)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L76)</sub>
 
 ---
 
@@ -290,7 +290,7 @@ interface Analyzer
 interface AnalyzerCapabilities
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L68)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L68)</sub>
 
 ---
 
@@ -302,7 +302,7 @@ Conformance expectations every analyser must satisfy, checked by the shared suit
 interface ConformanceExpectation
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L129)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L129)</sub>
 
 ---
 
@@ -314,7 +314,7 @@ Repo discovery — walk, language detection, module detection.
 interface DiscoveredFile
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L28)</sub>
 
 ---
 
@@ -324,7 +324,7 @@ interface DiscoveredFile
 interface DiscoveredModule
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L40)</sub>
 
 ---
 
@@ -334,7 +334,7 @@ interface DiscoveredModule
 interface DiscoveryOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L76)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L76)</sub>
 
 ---
 
@@ -344,7 +344,7 @@ interface DiscoveryOptions
 interface DiscoveryResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L47)</sub>
 
 ---
 
@@ -354,7 +354,7 @@ interface DiscoveryResult
 interface ModuleAnalysis
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L45)</sub>
 
 ---
 
@@ -366,7 +366,7 @@ The extraction pipeline (§5).
 interface PipelineOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L28)</sub>
 
 ---
 
@@ -376,7 +376,7 @@ interface PipelineOptions
 interface PipelineProgress
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L37)</sub>
 
 ---
 
@@ -386,7 +386,7 @@ interface PipelineProgress
 interface PipelineResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L52)</sub>
 
 ---
 
@@ -398,7 +398,7 @@ Subprocess transport for out-of-process analysers (Griffe, Roslyn).
 interface SubprocessOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L22)</sub>
 
 ---
 
@@ -410,10 +410,10 @@ Tier 0 — the universal floor (§5).
 interface Tier0Input
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L21)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.method hash=5430224680257f70 -->
+<!-- kna:generated:start id=api.method hash=30d3382fd879f5f0 -->
 ### `analyze`
 
 ```typescript
@@ -426,7 +426,7 @@ analyze(request: AnalyzerRequest): Promise<AnalyzerResponse>
 
 **Returns** `Promise<{ diagnostics: { path: string \| null; message: string; level: "info" \| "warn" \| "error"; }[]; degradations: { reason: string; missing: string \| null; }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "public" \| "i…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L86)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L86)</sub>
 
 ---
 
@@ -444,7 +444,7 @@ probe(repoRoot: string): Promise<string | null>
 
 **Returns** `Promise<string \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L85)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L85)</sub>
 
 ---
 
@@ -456,7 +456,7 @@ all(): Analyzer[]
 
 **Returns** `Analyzer[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L101)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L101)</sub>
 
 ---
 
@@ -472,7 +472,7 @@ forLanguage(language: "typescript" | "javascript" | "python" | "csharp" | "unkno
 
 **Returns** `Analyzer[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L97)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L97)</sub>
 
 ---
 
@@ -490,7 +490,7 @@ probeAll(repoRoot: string): Promise<Map<string, string | null>>
 
 **Returns** `Promise<Map<string, string \| null>>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L110)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L110)</sub>
 
 ---
 
@@ -506,7 +506,7 @@ register(analyzer: Analyzer): this
 
 **Returns** `this`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L92)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L92)</sub>
 
 ---
 
@@ -522,7 +522,7 @@ constructor(message: string, readonly code: 'timeout' | 'spawn-failed' | 'nonzer
 | `code` | `"timeout" \| "spawn-failed" \| "nonzero-exit" \| "bad-protocol" \| "output-too-large"` |  |
 | `stderr`? | `string` |  (default `''`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L35)</sub>
 
 ---
 
@@ -538,7 +538,7 @@ add(patterns: string | string[]): IgnoreMatcher
 
 **Returns** `IgnoreMatcher`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L14)</sub>
 
 ---
 
@@ -554,10 +554,10 @@ ignores(path: string): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L15)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.property hash=7a6866372d695938 -->
+<!-- kna:generated:start id=api.property hash=235f040091299d79 -->
 ### `capabilities`
 
 ```typescript
@@ -566,7 +566,7 @@ capabilities: AnalyzerCapabilities
 
 **Returns** `AnalyzerCapabilities`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L80)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L80)</sub>
 
 ---
 
@@ -578,7 +578,7 @@ languages: Language[]
 
 **Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L79)</sub>
 
 ---
 
@@ -590,7 +590,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L77)</sub>
 
 ---
 
@@ -602,7 +602,7 @@ version: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L78)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L78)</sub>
 
 ---
 
@@ -616,7 +616,7 @@ depth: 'semantic' | 'artifact'
 
 **Returns** `"semantic" \| "artifact"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L70)</sub>
 
 ---
 
@@ -628,7 +628,7 @@ resolvesCallGraph: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L73)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L73)</sub>
 
 ---
 
@@ -642,7 +642,7 @@ resolvesTypes: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L72)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L72)</sub>
 
 ---
 
@@ -654,7 +654,7 @@ check: (symbols: RawSymbol[]) => string | null
 
 **Returns** `(symbols: { name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: s…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L131)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L131)</sub>
 
 ---
 
@@ -666,7 +666,7 @@ description: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L130)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L130)</sub>
 
 ---
 
@@ -680,7 +680,7 @@ closeAt: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L33)</sub>
 
 ---
 
@@ -692,7 +692,7 @@ kind: SymbolKind
 
 **Returns** `"function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L31)</sub>
 
 ---
 
@@ -704,7 +704,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L30)</sub>
 
 ---
 
@@ -716,7 +716,7 @@ absolutePath: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L31)</sub>
 
 ---
 
@@ -728,7 +728,7 @@ bytes: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L33)</sub>
 
 ---
 
@@ -742,7 +742,7 @@ generated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L35)</sub>
 
 ---
 
@@ -754,7 +754,7 @@ language: Language
 
 **Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L32)</sub>
 
 ---
 
@@ -768,7 +768,7 @@ path: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L30)</sub>
 
 ---
 
@@ -782,7 +782,7 @@ vendored: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L37)</sub>
 
 ---
 
@@ -794,7 +794,7 @@ files: DiscoveredFile[]
 
 **Returns** `DiscoveredFile[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L42)</sub>
 
 ---
 
@@ -808,7 +808,7 @@ manifestPath: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L44)</sub>
 
 ---
 
@@ -820,7 +820,7 @@ module: RawModule
 
 **Returns** `{ path: string; name: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" \| "semanti…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L41)</sub>
 
 ---
 
@@ -832,7 +832,7 @@ exclude?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L78)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L78)</sub>
 
 ---
 
@@ -844,7 +844,7 @@ generatedPatterns?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L80)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L80)</sub>
 
 ---
 
@@ -856,7 +856,7 @@ languages?: Language[]
 
 **Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L81)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L81)</sub>
 
 ---
 
@@ -870,7 +870,7 @@ maxFiles?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L83)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L83)</sub>
 
 ---
 
@@ -882,7 +882,7 @@ repoRoot: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L77)</sub>
 
 ---
 
@@ -894,7 +894,7 @@ vendored?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L79)</sub>
 
 ---
 
@@ -906,7 +906,7 @@ deniedPaths: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L51)</sub>
 
 ---
 
@@ -918,7 +918,7 @@ languages: Language[]
 
 **Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L53)</sub>
 
 ---
 
@@ -930,7 +930,7 @@ modules: DiscoveredModule[]
 
 **Returns** `DiscoveredModule[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L48)</sub>
 
 ---
 
@@ -944,7 +944,7 @@ orphanFiles: DiscoveredFile[]
 
 **Returns** `DiscoveredFile[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L50)</sub>
 
 ---
 
@@ -956,7 +956,7 @@ totalFiles: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L52)</sub>
 
 ---
 
@@ -968,7 +968,7 @@ decorators?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L654)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L654)</sub>
 
 ---
 
@@ -980,7 +980,7 @@ doc: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L658)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L658)</sub>
 
 ---
 
@@ -992,7 +992,7 @@ endLine: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L657)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L657)</sub>
 
 ---
 
@@ -1004,7 +1004,7 @@ input: Tier0Input
 
 **Returns** `Tier0Input`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L647)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L647)</sub>
 
 ---
 
@@ -1016,7 +1016,7 @@ kind: SymbolKind
 
 **Returns** `"function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L650)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L650)</sub>
 
 ---
 
@@ -1028,7 +1028,7 @@ modifiers: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L653)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L653)</sub>
 
 ---
 
@@ -1040,7 +1040,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L648)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L648)</sub>
 
 ---
 
@@ -1052,7 +1052,7 @@ params: RawSymbol['parameters']
 
 **Returns** `{ type: { text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null; description: string \| null; name: string; optional: boolean; defaultValue: string \| null; rest: boolean; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L659)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L659)</sub>
 
 ---
 
@@ -1064,7 +1064,7 @@ parentQualifiedName: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L655)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L655)</sub>
 
 ---
 
@@ -1076,7 +1076,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L649)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L649)</sub>
 
 ---
 
@@ -1088,7 +1088,7 @@ returnTypeText?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L660)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L660)</sub>
 
 ---
 
@@ -1100,7 +1100,7 @@ signature: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L651)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L651)</sub>
 
 ---
 
@@ -1112,7 +1112,7 @@ startLine: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L656)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L656)</sub>
 
 ---
 
@@ -1124,7 +1124,7 @@ visibility: Visibility
 
 **Returns** `"public" \| "internal" \| "protected" \| "private"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L652)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L652)</sub>
 
 ---
 
@@ -1136,7 +1136,7 @@ dependencies: RawModule['dependencies']
 
 **Returns** `{ name: string; version: string \| null; dev: boolean; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L193)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L193)</sub>
 
 ---
 
@@ -1148,7 +1148,7 @@ ecosystem: Ecosystem
 
 **Returns** `"npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L190)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L190)</sub>
 
 ---
 
@@ -1160,7 +1160,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L189)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L189)</sub>
 
 ---
 
@@ -1172,7 +1172,7 @@ packageName: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L191)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L191)</sub>
 
 ---
 
@@ -1184,7 +1184,7 @@ packageVersion: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L192)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L192)</sub>
 
 ---
 
@@ -1196,7 +1196,7 @@ degradations: Array<{reason: string;missing: string | null}>
 
 **Returns** `{ reason: string; missing: string \| null; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L49)</sub>
 
 ---
 
@@ -1208,7 +1208,7 @@ depth: AnalysisDepth
 
 **Returns** `"shallow" \| "semantic" \| "artifact"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L48)</sub>
 
 ---
 
@@ -1220,7 +1220,7 @@ module: RawModule
 
 **Returns** `{ path: string; name: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" \| "semanti…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L46)</sub>
 
 ---
 
@@ -1232,7 +1232,7 @@ symbols: RawSymbol[]
 
 **Returns** `{ name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: string \| nu…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L47)</sub>
 
 ---
 
@@ -1244,7 +1244,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L29)</sub>
 
 ---
 
@@ -1256,7 +1256,7 @@ includeSource: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L32)</sub>
 
 ---
 
@@ -1268,7 +1268,7 @@ maxTier: 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L31)</sub>
 
 ---
 
@@ -1280,7 +1280,7 @@ onProgress?: (event: PipelineProgress) => void
 
 **Returns** `((event: PipelineProgress) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L34)</sub>
 
 ---
 
@@ -1292,7 +1292,7 @@ registry: AnalyzerRegistry
 
 **Returns** `AnalyzerRegistry`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L30)</sub>
 
 ---
 
@@ -1304,7 +1304,7 @@ timeoutMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L33)</sub>
 
 ---
 
@@ -1316,7 +1316,7 @@ analyzer?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L40)</sub>
 
 ---
 
@@ -1328,7 +1328,7 @@ completed: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L41)</sub>
 
 ---
 
@@ -1340,7 +1340,7 @@ module?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L39)</sub>
 
 ---
 
@@ -1352,7 +1352,7 @@ phase: 'discovery' | 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2" \| "discovery"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L38)</sub>
 
 ---
 
@@ -1364,7 +1364,7 @@ total: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L42)</sub>
 
 ---
 
@@ -1376,7 +1376,7 @@ diagnostics: Array<{level: 'info' | 'warn' | 'error';message: string;path: strin
 
 **Returns** `{ level: "info" \| "warn" \| "error"; message: string; path: string \| null; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L58)</sub>
 
 ---
 
@@ -1388,7 +1388,7 @@ discovery: DiscoveryResult
 
 **Returns** `DiscoveryResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L53)</sub>
 
 ---
 
@@ -1400,7 +1400,7 @@ durationMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L57)</sub>
 
 ---
 
@@ -1412,7 +1412,7 @@ modules: ModuleAnalysis[]
 
 **Returns** `ModuleAnalysis[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L54)</sub>
 
 ---
 
@@ -1424,7 +1424,7 @@ tiersRun: Array<'tier0' | 'tier1' | 'tier2'>
 
 **Returns** `("tier0" \| "tier1" \| "tier2")[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L56)</sub>
 
 ---
 
@@ -1436,7 +1436,7 @@ toolchain: Record<string, string | null>
 
 **Returns** `Record<string, string \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L55)</sub>
 
 ---
 
@@ -1448,7 +1448,7 @@ args: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L24)</sub>
 
 ---
 
@@ -1460,7 +1460,7 @@ command: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L23)</sub>
 
 ---
 
@@ -1472,7 +1472,7 @@ cwd: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L25)</sub>
 
 ---
 
@@ -1486,7 +1486,7 @@ env?: Record<string, string>
 
 **Returns** `Record<string, string> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L29)</sub>
 
 ---
 
@@ -1500,7 +1500,7 @@ inheritPath?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L31)</sub>
 
 ---
 
@@ -1512,7 +1512,7 @@ maxOutputBytes?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L27)</sub>
 
 ---
 
@@ -1524,7 +1524,7 @@ timeoutMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L26)</sub>
 
 ---
 
@@ -1536,7 +1536,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L25)</sub>
 
 ---
 
@@ -1548,7 +1548,7 @@ content: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L23)</sub>
 
 ---
 
@@ -1560,7 +1560,7 @@ generated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L26)</sub>
 
 ---
 
@@ -1572,7 +1572,7 @@ language: Language
 
 **Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L24)</sub>
 
 ---
 
@@ -1584,17 +1584,17 @@ path: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L22)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=26cfbd4f319f21a5 -->
+<!-- kna:generated:start id=api.class hash=14304d8199511f42 -->
 ### `AnalyzerRegistry`
 
 ```typescript
 class AnalyzerRegistry
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L89)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L89)</sub>
 
 ---
 
@@ -1604,17 +1604,17 @@ class AnalyzerRegistry
 class AnalyzerSubprocessError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L34)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.type hash=088902c2a081deaa -->
+<!-- kna:generated:start id=api.type hash=328e25d0db5baf11 -->
 ### `AnalyzerRequest`
 
 ```typescript
 type AnalyzerRequest = z.infer<typeof zAnalyzerRequest>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L31)</sub>
 
 ---
 
@@ -1624,10 +1624,10 @@ type AnalyzerRequest = z.infer<typeof zAnalyzerRequest>
 type AnalyzerResponse = z.infer<typeof zAnalyzerResponse>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L66)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L66)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=8dc43bf6f174d7db -->
+<!-- kna:generated:start id=api.constant hash=8f1e69fbde3acf32 -->
 ### `CORE_CONFORMANCE`
 
 ```typescript
@@ -1636,7 +1636,7 @@ const CORE_CONFORMANCE: ConformanceExpectation[]
 
 **Returns** `ConformanceExpectation[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L134)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L134)</sub>
 
 ---
 
@@ -1650,7 +1650,7 @@ const zAnalyzerRequest: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;re
 
 **Returns** `ZodObject<{ protocol: ZodLiteral<"kna-analyzer/1">; repoRoot: ZodString; commitSha: ZodString; module: ZodObject<{ path: ZodString; name: ZodString; manifestPath: ZodNullable<ZodString>; }, "strip", ZodTypeAny, { path: string; name: string; manifestPath: string \| null; }, { path: string; name: strin…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L14)</sub>
 
 ---
 
@@ -1662,10 +1662,10 @@ const zAnalyzerResponse: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;o
 
 **Returns** `ZodObject<{ protocol: ZodLiteral<"kna-analyzer/1">; ok: ZodBoolean; analyzer: ZodObject<{ name: ZodString; version: ZodString; }, "strip", ZodTypeAny, { name: string; version: string; }, { name: string; version: string; }>; symbols: ZodDefault<ZodArray<ZodObject<Omit<{ name: ZodString; visibility: Z…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L33)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=89c96f70be65ceaa -->
+<!-- kna:generated:start id=api.function hash=dd60d23e6475d8ec -->
 ### `detectLanguage`
 
 ```typescript
@@ -1678,7 +1678,7 @@ detectLanguage(path: string): "typescript" | "javascript" | "python" | "csharp" 
 
 **Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L70)</sub>
 
 ---
 
@@ -1694,7 +1694,7 @@ discover(options: DiscoveryOptions): Promise<DiscoveryResult>
 
 **Returns** `Promise<DiscoveryResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L86)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L86)</sub>
 
 ---
 
@@ -1712,7 +1712,7 @@ explainDepth(result: PipelineResult): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L257)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L257)</sub>
 
 ---
 
@@ -1731,7 +1731,7 @@ extractParams(signature: string, language: "typescript" | "javascript" | "python
 
 **Returns** `{ type: { text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null; description: string \| null; name: string; optional: boolean; defaultValue: string \| null; rest: boolean; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L526)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L526)</sub>
 
 ---
 
@@ -1748,7 +1748,7 @@ matchCodeowners(content: string, path: string): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/discovery.ts#L384)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/discovery.ts#L384)</sub>
 
 ---
 
@@ -1765,7 +1765,7 @@ parseDocComment(raw: string, language: "typescript" | "javascript" | "python" | 
 
 **Returns** `{ params: { type: string \| null; description: string; name: string; }[]; summary: string; description: string \| null; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, string>; …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/doc-comment.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/doc-comment.ts#L24)</sub>
 
 ---
 
@@ -1781,7 +1781,7 @@ parseTier0(input: Tier0Input): {name: string;visibility: "public" | "internal" |
 
 **Returns** `{ name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: string \| nu…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/tier0/lexical.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/tier0/lexical.ts#L53)</sub>
 
 ---
 
@@ -1801,7 +1801,7 @@ probeCommand(command: string, args: string[], timeoutMs: number): Promise<string
 
 **Returns** `Promise<string \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L208)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L208)</sub>
 
 ---
 
@@ -1818,7 +1818,7 @@ runAnalyzerSubprocess(options: SubprocessOptions, request: {module: {path: strin
 
 **Returns** `Promise<{ diagnostics: { path: string \| null; message: string; level: "info" \| "warn" \| "error"; }[]; degradations: { reason: string; missing: string \| null; }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "public" \| "i…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/subprocess.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/subprocess.ts#L48)</sub>
 
 ---
 
@@ -1834,7 +1834,7 @@ runConformance(symbols: {name: string;visibility: "public" | "protected" | "inte
 
 **Returns** `{ passed: boolean; failures: string[]; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/registry.ts#L205)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/registry.ts#L205)</sub>
 
 ---
 
@@ -1850,5 +1850,5 @@ runPipeline(options: PipelineOptions): Promise<PipelineResult>
 
 **Returns** `Promise<PipelineResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-core/src/pipeline.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/analyzer-core/src/pipeline.ts#L61)</sub>
 <!-- kna:generated:end id=api.function -->

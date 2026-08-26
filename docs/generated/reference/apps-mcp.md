@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_bf87d3c81fe7c219d3ebcf9086ac795a
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
 analysisDepth: semantic
 owners:
   []
@@ -50,6 +50,7 @@ provenance:
     - sym_db3b884a3d2a30915f6c1bee979a08ef6ae06a47
     - sym_d821279b061e6d3957698a20260f1a3f5525a3fa
     - sym_5db93157b322c948cf776bf95cf8c3c482212e0c
+    - sym_a620820e2314da574b0bf32f4890d1ae65cedf60
     - sym_f47c8cac739b451fa0897ab19d725bf56e70b2bc
     - sym_f4c0575239e8087662e5ab8cbe34c932b4c1eecd
     - sym_8742556cc15dae15fcbfbc0a5f55dba1c8eec2e4
@@ -81,9 +82,9 @@ provenance:
     sym_e66ae37a1726d05a260bd68e16d9eb7a4b955d19: 8b81cf4b6d59b1751e42d6dd6163c853f4810a6aa1da0cfae22adfcde4b6243f
     sym_cfd955d4f9dc4d3b8528ee61c0177e5aba61779e: 98d9b0b31f0b581eff7c527b94a87b4badf165fab9fc6bf4e355068ea358ff15
     sym_88347f8bdd734cb80e76bc11cb96c4b863124a91: 3eeaf881e06daedf4d3026a5c6c126084169489b9578f9638ba562b39a70855d
-    sym_e232d5f6aa0f3252dfa460774eb8924c06ea2ad8: e8749aa7b2b2824024d57edfb9c766d062193e8ba125fc26fee32011813fee45
+    sym_e232d5f6aa0f3252dfa460774eb8924c06ea2ad8: 454d761063544f61a28b7d3eb67b4d4ecccf2cb4e6707a5fd483742fcf5c8fa9
     sym_b977a0dd0929dc398107a326c0d700fe0e5473b4: c41b6ed252165bcb098f1cd3dec27ae281efcd4daff8985b0ca383d45eea44c3
-    sym_d275e9175ad19826edf3a31ff69a0e11ff47d0c0: a2b3586ea7bd35cd6c436b807a6ae016fe2994b8f012d57ed2b489b4fd51cc93
+    sym_d275e9175ad19826edf3a31ff69a0e11ff47d0c0: ab8020e0effaac00e1e3a60b8d1a13a7ad22ef44bff1ac3f2e572078ba1bc38a
     sym_0afda17d1d8d1444a45ad3bf535705930bfb05cb: 96dcde66bd5dec5d51998500b9eb87c4c52247568a280465bbdba65ac758013f
     sym_cfc5d1f139930c6d8033b7a19baf3e52ecf4a992: 726ea3f1526905c0630cf8ac178d3ca4a8d9ff926c1aff51ad923e8169abbde5
     sym_cabbf5ceedd3587f542cabd6521edf89bf0c0feb: 6077cefafce1934fee281eaf1ec35e71a519caced23001d9aa8d8266f0e673cd
@@ -113,6 +114,7 @@ provenance:
     sym_db3b884a3d2a30915f6c1bee979a08ef6ae06a47: 06786016204b119045fcf6b462423014fbbb87412f40370a18308cbc0977513e
     sym_d821279b061e6d3957698a20260f1a3f5525a3fa: cfda646e7312d5f97a58c69e109753bc7526670b89194f64f56c0a0ec142afca
     sym_5db93157b322c948cf776bf95cf8c3c482212e0c: 5c26ac3e3014ea8c5d789e3aeebfa8d5a1fbb83ed458b8ff9fce175e39c833b2
+    sym_a620820e2314da574b0bf32f4890d1ae65cedf60: c66304aca95ae97019942136698a7da186477c6d48c6f03993d58d2157dd0f49
     sym_f47c8cac739b451fa0897ab19d725bf56e70b2bc: b83da3ec66a6008a707e939f8e33fc2d07cb1983054bc8552351c28558d42c96
     sym_f4c0575239e8087662e5ab8cbe34c932b4c1eecd: 84dd0fed2014a448dd010312d3e1f05ed4abe46e4970de818ff0388510c6f713
     sym_8742556cc15dae15fcbfbc0a5f55dba1c8eec2e4: 1443169fe7f0996941250bcd458c6757abc94e045ff69d79395f21f114c20c8d
@@ -140,16 +142,16 @@ provenance:
 
 # @kna/mcp reference
 
-<!-- kna:generated:start id=overview hash=46f40a4f0a5125b2 -->
+<!-- kna:generated:start id=overview hash=56072f801763a5d1 -->
 | | |
 |---|---|
 | Package | `@kna/mcp` (npm) |
 | Path | `apps/mcp` |
 | Languages | typescript |
-| Public symbols | 62 |
+| Public symbols | 63 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=ceeb5711c910b9e6 -->
+<!-- kna:generated:start id=api.constant hash=29f7c34949b5a94a -->
 ### `_schemaProbe`
 
 ```typescript
@@ -158,7 +160,7 @@ const _schemaProbe: z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>
 
 **Returns** `ZodObject<{}, "strip", ZodTypeAny, {}, {}>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/handlers.ts#L527)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/handlers.ts#L542)</sub>
 
 ---
 
@@ -170,7 +172,7 @@ const DEFAULT_SESSION_POLICY: SessionPolicy
 
 **Returns** `SessionPolicy`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L37)</sub>
 
 ---
 
@@ -184,7 +186,7 @@ const MCP_TOOL_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L23)</sub>
 
 ---
 
@@ -198,7 +200,7 @@ const PROMPT_DEFINITIONS: readonly[{readonly name: "onboard_to_service";readonly
 
 **Returns** `readonly [{ readonly name: "onboard_to_service"; readonly description: "Orient yourself in an unfamiliar service: entry points, key types, and how it is called."; readonly arguments: readonly [{ readonly name: "service"; readonly description: "Service or project name"; readonly required: true; }]; }…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L224)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L224)</sub>
 
 ---
 
@@ -212,7 +214,7 @@ const RESOURCE_TEMPLATES: readonly[{readonly uriTemplate: "kna://project/{projec
 
 **Returns** `readonly [{ readonly uriTemplate: "kna://project/{project}/architecture"; readonly name: "Architecture overview"; readonly description: "Component graph and runtime topology for a project. Updates when the graph changes."; readonly mimeType: "text/markdown"; }, { readonly uriTemplate: "kna://module/…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L198)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L198)</sub>
 
 ---
 
@@ -224,10 +226,10 @@ const TOOL_DEFINITIONS: {readonly search_codebase: {readonly title: "Search the 
 
 **Returns** `{ readonly search_codebase: { readonly title: "Search the codebase"; readonly description: string; readonly inputSchema: { readonly query: ZodString; readonly scope: ZodOptional<ZodObject<{ project: ZodOptional<ZodString>; repo: ZodOptional<ZodString>; version: ZodOptional<ZodString>; expand: ZodOpt…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L51)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=af41fa5a07eaac75 -->
+<!-- kna:generated:start id=api.function hash=b6570ad1c23bac49 -->
 ### `createMcpContext`
 
 ```typescript
@@ -241,7 +243,7 @@ createMcpContext(env: {KNA_ENV: "development" | "test" | "staging" | "production
 
 **Returns** `Promise<McpContext>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L113)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L116)</sub>
 
 ---
 
@@ -262,7 +264,26 @@ registerTools(server: McpServer, ctx: McpContext, identity: McpIdentity, session
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/handlers.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/handlers.ts#L26)</sub>
+
+---
+
+### `scopeNarrowing`
+
+Narrow a symbol, module or service query to the caller's scope.
+
+```typescript
+scopeNarrowing(scope: RetrievalScope, column: {moduleId?: SQL;repoId: SQL;}): SQL<unknown>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `scope` | `RetrievalScope` |  |
+| `column` | `{ moduleId?: SQL<unknown> \| undefined; repoId: SQL<unknown>; }` |  |
+
+**Returns** `SQL<unknown>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/scope.ts#L22)</sub>
 
 ---
 
@@ -281,17 +302,17 @@ wrapUntrusted(content: string, source: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L258)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L258)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.class hash=3d5e243b6b99d761 -->
+<!-- kna:generated:start id=api.class hash=9d48ed79ed4a68dd -->
 ### `McpAuthError`
 
 ```typescript
 class McpAuthError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L106)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L109)</sub>
 
 ---
 
@@ -301,10 +322,10 @@ class McpAuthError extends Error
 class SessionRegistry
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L43)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=8c52ff7952d9cae9 -->
+<!-- kna:generated:start id=api.method hash=6971b86818a87178 -->
 ### `constructor`
 
 ```typescript
@@ -315,7 +336,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L107)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L110)</sub>
 
 ---
 
@@ -332,7 +353,7 @@ resolve(principal: McpPrincipal, options: {corpus: 'internal' | 'external'}): Pr
 
 **Returns** `Promise<AccessContext>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L103)</sub>
 
 ---
 
@@ -349,7 +370,7 @@ add(id: string, session: Omit<Session, "id" | "createdAt" | "lastActiveAt">): Se
 
 **Returns** `Session`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L56)</sub>
 
 ---
 
@@ -364,7 +385,7 @@ constructor(private readonly logger: Logger, private readonly policy: SessionPol
 | `logger` | `Logger` |  |
 | `policy`? | `SessionPolicy` |  (default `DEFAULT_SESSION_POLICY`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L48)</sub>
 
 ---
 
@@ -376,7 +397,7 @@ count(): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L91)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L91)</sub>
 
 ---
 
@@ -394,7 +415,7 @@ drain(timeoutMs: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L111)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L111)</sub>
 
 ---
 
@@ -410,7 +431,7 @@ get(id: string): Session | undefined
 
 **Returns** `Session \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L74)</sub>
 
 ---
 
@@ -422,7 +443,7 @@ isDraining(): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L95)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L95)</sub>
 
 ---
 
@@ -436,7 +457,7 @@ startDraining(): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L100)</sub>
 
 ---
 
@@ -452,17 +473,17 @@ touch(id: string): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L86)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L86)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=4f4e9e2abea89f32 -->
+<!-- kna:generated:start id=api.interface hash=36f03bedd831f748 -->
 ### `McpContext`
 
 ```typescript
 interface McpContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L62)</sub>
 
 ---
 
@@ -472,7 +493,7 @@ interface McpContext
 interface McpIdentity
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L51)</sub>
 
 ---
 
@@ -484,7 +505,7 @@ MCP server wiring.
 interface McpPrincipal
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L42)</sub>
 
 ---
 
@@ -494,7 +515,7 @@ interface McpPrincipal
 interface PermissionResolverLike
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L99)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L102)</sub>
 
 ---
 
@@ -506,7 +527,7 @@ Session tracking and drain.
 interface Session
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L19)</sub>
 
 ---
 
@@ -516,19 +537,19 @@ interface Session
 interface SessionPolicy
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L28)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=5ace568295bcc792 -->
+<!-- kna:generated:start id=api.property hash=c3afcac12e27ea78 -->
 ### `architecture`
 
 ```typescript
-architecture: (access: AccessContext, service: string | null) => Promise<{mermaid: string;textAlternative: string;repoIds: string[];moduleIds: string[];}>
+architecture: (access: AccessContext, scope: RetrievalScope, service: string | null) => Promise<{mermaid: string;textAlternative: string;repoIds: string[];moduleIds: string[];}>
 ```
 
-**Returns** `(access: AccessContext, service: string \| null) => Promise<{ mermaid: string; textAlternative: string; repoIds: string[]; moduleIds: string[]; }>`
+**Returns** `(access: AccessContext, scope: RetrievalScope, service: string \| null) => Promise<{ mermaid: string; textAlternative: string; repoIds: string[]; moduleIds: string[]; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L82)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L83)</sub>
 
 ---
 
@@ -540,19 +561,19 @@ authenticate: (token: string) => Promise<McpIdentity>
 
 **Returns** `(token: string) => Promise<McpIdentity>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L70)</sub>
 
 ---
 
 ### `changesSince`
 
 ```typescript
-changesSince: (access: AccessContext, since: string, options: {breakingOnly: boolean;limit: number}) => Promise<{rendered: string;repoIds: string[]}>
+changesSince: (access: AccessContext, scope: RetrievalScope, since: string, options: {breakingOnly: boolean;limit: number}) => Promise<{rendered: string;repoIds: string[]}>
 ```
 
-**Returns** `(access: AccessContext, since: string, options: { breakingOnly: boolean; limit: number; }) => Promise<{ rendered: string; repoIds: string[]; }>`
+**Returns** `(access: AccessContext, scope: RetrievalScope, since: string, options: { breakingOnly: boolean; limit: number; }) => Promise<{ rendered: string; repoIds: string[]; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L91)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L93)</sub>
 
 ---
 
@@ -564,7 +585,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L64)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L65)</sub>
 
 ---
 
@@ -576,7 +597,7 @@ env: PlatformEnv
 
 **Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L63)</sub>
 
 ---
 
@@ -594,7 +615,7 @@ health: HealthRegistry
 |---|---|
 | `200` | The service is up. |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L67)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L68)</sub>
 
 ---
 
@@ -606,7 +627,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L64)</sub>
 
 ---
 
@@ -618,7 +639,7 @@ permissions: PermissionResolverLike
 
 **Returns** `PermissionResolverLike`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L66)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L67)</sub>
 
 ---
 
@@ -630,7 +651,7 @@ recordAccess: (input: {identity: McpIdentity;action: string;chunkIds: string[];r
 
 **Returns** `(input: { identity: McpIdentity; action: string; chunkIds: string[]; repoIds: string[]; moduleIds: string[]; sessionId: string; }) => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L75)</sub>
 
 ---
 
@@ -642,7 +663,7 @@ resolveScope: (identity: McpIdentity, scope: {project?: string;repo?: string;ver
 
 **Returns** `(identity: McpIdentity, scope: { project?: string \| undefined; repo?: string \| undefined; version?: string \| undefined; expand?: boolean \| undefined; } \| undefined) => Promise<RetrievalScope>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L71)</sub>
 
 ---
 
@@ -654,7 +675,7 @@ resourceIndicator: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L68)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L69)</sub>
 
 ---
 
@@ -666,7 +687,7 @@ retrieval: RetrievalPipeline
 
 **Returns** `RetrievalPipeline`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L65)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L66)</sub>
 
 ---
 
@@ -678,7 +699,7 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L96)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L99)</sub>
 
 ---
 
@@ -692,7 +713,7 @@ audience: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L54)</sub>
 
 ---
 
@@ -704,7 +725,7 @@ clientName: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L58)</sub>
 
 ---
 
@@ -716,7 +737,7 @@ expiresAt: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L59)</sub>
 
 ---
 
@@ -730,7 +751,7 @@ inferredProjectId: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L57)</sub>
 
 ---
 
@@ -742,7 +763,7 @@ principal: McpPrincipal
 
 **Returns** `McpPrincipal`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L52)</sub>
 
 ---
 
@@ -754,7 +775,7 @@ scopes: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L55)</sub>
 
 ---
 
@@ -766,7 +787,7 @@ clearance: 'public' | 'internal' | 'confidential' | 'restricted'
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L47)</sub>
 
 ---
 
@@ -778,7 +799,7 @@ email: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L46)</sub>
 
 ---
 
@@ -790,7 +811,7 @@ id: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L43)</sub>
 
 ---
 
@@ -802,7 +823,7 @@ isServiceAccount: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L48)</sub>
 
 ---
 
@@ -814,7 +835,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L44)</sub>
 
 ---
 
@@ -826,7 +847,7 @@ subject: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/context.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/context.ts#L45)</sub>
 
 ---
 
@@ -838,7 +859,7 @@ createdAt: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L24)</sub>
 
 ---
 
@@ -850,7 +871,7 @@ id: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L20)</sub>
 
 ---
 
@@ -862,7 +883,7 @@ identity: McpIdentity
 
 **Returns** `McpIdentity`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L23)</sub>
 
 ---
 
@@ -874,7 +895,7 @@ lastActiveAt: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L25)</sub>
 
 ---
 
@@ -886,7 +907,7 @@ server: McpServer
 
 **Returns** `McpServer`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L21)</sub>
 
 ---
 
@@ -898,7 +919,7 @@ transport: StreamableHTTPServerTransport
 
 **Returns** `StreamableHTTPServerTransport`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L22)</sub>
 
 ---
 
@@ -912,7 +933,7 @@ idleTimeoutMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L30)</sub>
 
 ---
 
@@ -926,7 +947,7 @@ maxLifetimeMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L32)</sub>
 
 ---
 
@@ -940,15 +961,15 @@ maxPerPrincipal: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/session.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/session.ts#L34)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=40e413c622c67b11 -->
+<!-- kna:generated:start id=api.type hash=343859e45490888a -->
 ### `ToolName`
 
 ```typescript
 type ToolName = keyof typeof TOOL_DEFINITIONS
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/apps/mcp/src/tools.ts#L189)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/mcp/src/tools.ts#L189)</sub>
 <!-- kna:generated:end id=api.type -->

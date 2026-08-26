@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_e61755422498968ae44eeedf6cb65c6a
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
 analysisDepth: semantic
 owners:
   []
@@ -681,14 +681,14 @@ provenance:
 | Public symbols | 328 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=9e5518ceeec9596a -->
+<!-- kna:generated:start id=api.interface hash=0c4bdad3e2da0782 -->
 ### `AbstentionInput`
 
 ```typescript
 interface AbstentionInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L35)</sub>
 
 ---
 
@@ -700,7 +700,7 @@ Abstention (§15.5 BLOCKER).
 interface AbstentionPolicy
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L20)</sub>
 
 ---
 
@@ -710,7 +710,7 @@ interface AbstentionPolicy
 interface AbstentionVerdict
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L44)</sub>
 
 ---
 
@@ -722,7 +722,7 @@ Everything the ACL filter needs, resolved before the query runs.
 interface AccessContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L34)</sub>
 
 ---
 
@@ -734,7 +734,7 @@ Answer synthesis.
 interface AnswerCitation
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L30)</sub>
 
 ---
 
@@ -746,7 +746,7 @@ Which retrieval arms to emphasise, per intent (§8 query routing).
 interface ArmWeights
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L197)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L197)</sub>
 
 ---
 
@@ -758,7 +758,7 @@ Paired bootstrap.
 interface BootstrapComparison
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L138)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L138)</sub>
 
 ---
 
@@ -768,7 +768,7 @@ interface BootstrapComparison
 interface CandidateRef
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L137)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L137)</sub>
 
 ---
 
@@ -780,7 +780,7 @@ Compare two configs and say what a change costs.
 interface ConfigDiff
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L133)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L133)</sub>
 
 ---
 
@@ -792,7 +792,7 @@ interface ConfigDiff
 interface ContextBudget
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L148)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L148)</sub>
 
 ---
 
@@ -804,7 +804,7 @@ Maximal Marginal Relevance with a hard per-module cap.
 interface DiversifyOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L59)</sub>
 
 ---
 
@@ -814,7 +814,7 @@ interface DiversifyOptions
 interface EvalItemResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L25)</sub>
 
 ---
 
@@ -824,7 +824,7 @@ interface EvalItemResult
 interface EvalSummary
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L55)</sub>
 
 ---
 
@@ -834,7 +834,7 @@ interface EvalSummary
 interface ExpansionOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L39)</sub>
 
 ---
 
@@ -844,7 +844,7 @@ interface ExpansionOptions
 interface ExpansionResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L51)</sub>
 
 ---
 
@@ -856,7 +856,7 @@ Reciprocal Rank Fusion and diversity.
 interface FusionArm
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L17)</sub>
 
 ---
 
@@ -866,7 +866,7 @@ interface FusionArm
 interface FusionOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L24)</sub>
 
 ---
 
@@ -878,7 +878,7 @@ The CI gate.
 interface GatePolicy
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L24)</sub>
 
 ---
 
@@ -888,7 +888,7 @@ interface GatePolicy
 interface GateResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L42)</sub>
 
 ---
 
@@ -900,7 +900,7 @@ Graph expansion — the differentiator, and the footgun.
 interface GraphNeighbour
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L23)</sub>
 
 ---
 
@@ -912,7 +912,7 @@ Query understanding: multi-turn rewriting and intent routing.
 interface QueryUnderstanding
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L19)</sub>
 
 ---
 
@@ -924,7 +924,7 @@ Cross-encoder reranking.
 interface RerankerOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L16)</sub>
 
 ---
 
@@ -934,7 +934,7 @@ interface RerankerOptions
 interface RerankOutcome
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L24)</sub>
 
 ---
 
@@ -946,7 +946,7 @@ interface RerankOutcome
 interface RetrievalConfig
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L15)</sub>
 
 ---
 
@@ -958,7 +958,7 @@ The retrieval pipeline (§8).
 interface RetrievalPipelineOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L51)</sub>
 
 ---
 
@@ -968,7 +968,7 @@ interface RetrievalPipelineOptions
 interface RetrievalRequest
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L60)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L60)</sub>
 
 ---
 
@@ -978,7 +978,7 @@ interface RetrievalRequest
 interface RetrievalResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L99)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L99)</sub>
 
 ---
 
@@ -988,7 +988,7 @@ interface RetrievalResult
 interface RetrievalScope
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L14)</sub>
 
 ---
 
@@ -998,7 +998,7 @@ interface RetrievalScope
 interface RetrievalTrace
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L115)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L115)</sub>
 
 ---
 
@@ -1008,7 +1008,7 @@ interface RetrievalTrace
 interface ScoredChunk
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L75)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L75)</sub>
 
 ---
 
@@ -1020,7 +1020,7 @@ The three retrieval arms, as SQL.
 interface SearchOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L19)</sub>
 
 ---
 
@@ -1030,7 +1030,7 @@ interface SearchOptions
 interface StratumMetrics
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L38)</sub>
 
 ---
 
@@ -1040,7 +1040,7 @@ interface StratumMetrics
 interface SynthesisedAnswer
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L43)</sub>
 
 ---
 
@@ -1050,7 +1050,7 @@ interface SynthesisedAnswer
 interface SynthesiseOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L55)</sub>
 
 ---
 
@@ -1060,10 +1060,10 @@ interface SynthesiseOptions
 interface UnderstandOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L42)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=3f174d855b9cd557 -->
+<!-- kna:generated:start id=api.property hash=ac3b4ffad0bfa2dc -->
 ### `chunks`
 
 ```typescript
@@ -1072,7 +1072,7 @@ chunks: ScoredChunk[]
 
 **Returns** `ScoredChunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L36)</sub>
 
 ---
 
@@ -1084,7 +1084,7 @@ policy?: AbstentionPolicy
 
 **Returns** `AbstentionPolicy \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L39)</sub>
 
 ---
 
@@ -1096,7 +1096,7 @@ rerankerAvailable: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L38)</sub>
 
 ---
 
@@ -1110,7 +1110,7 @@ staleRepoIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L41)</sub>
 
 ---
 
@@ -1122,7 +1122,7 @@ topRerankScore: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L37)</sub>
 
 ---
 
@@ -1136,7 +1136,7 @@ minChunks: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L26)</sub>
 
 ---
 
@@ -1150,7 +1150,7 @@ minChunksWithoutReranker: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L24)</sub>
 
 ---
 
@@ -1164,7 +1164,7 @@ rerankThreshold: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L22)</sub>
 
 ---
 
@@ -1176,7 +1176,7 @@ abstain: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L45)</sub>
 
 ---
 
@@ -1188,7 +1188,7 @@ hedgingReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L53)</sub>
 
 ---
 
@@ -1200,7 +1200,7 @@ reason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L46)</sub>
 
 ---
 
@@ -1214,7 +1214,7 @@ requiresHedging: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L52)</sub>
 
 ---
 
@@ -1226,7 +1226,7 @@ clearance: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L39)</sub>
 
 ---
 
@@ -1240,7 +1240,7 @@ corpus: 'external' | 'internal'
 
 **Returns** `"internal" \| "external"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L45)</sub>
 
 ---
 
@@ -1254,7 +1254,7 @@ deniedRepoIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L47)</sub>
 
 ---
 
@@ -1266,7 +1266,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L35)</sub>
 
 ---
 
@@ -1280,7 +1280,7 @@ permittedRepoIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L38)</sub>
 
 ---
 
@@ -1294,7 +1294,7 @@ pinnedVersionId?: string | null
 
 **Returns** `string \| null \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L49)</sub>
 
 ---
 
@@ -1306,7 +1306,7 @@ principalId: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L36)</sub>
 
 ---
 
@@ -1318,7 +1318,7 @@ analysisDepth: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L40)</sub>
 
 ---
 
@@ -1330,7 +1330,7 @@ chunkId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L33)</sub>
 
 ---
 
@@ -1344,7 +1344,7 @@ marker: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L32)</sub>
 
 ---
 
@@ -1358,7 +1358,7 @@ path: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L37)</sub>
 
 ---
 
@@ -1370,7 +1370,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L39)</sub>
 
 ---
 
@@ -1382,7 +1382,7 @@ startLine: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L38)</sub>
 
 ---
 
@@ -1394,7 +1394,7 @@ symbolId: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L34)</sub>
 
 ---
 
@@ -1408,7 +1408,7 @@ corpora: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L202)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L202)</sub>
 
 ---
 
@@ -1420,7 +1420,7 @@ dense: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L198)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L198)</sub>
 
 ---
 
@@ -1432,7 +1432,7 @@ lexical: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L199)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L199)</sub>
 
 ---
 
@@ -1444,7 +1444,7 @@ symbol: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L200)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L200)</sub>
 
 ---
 
@@ -1456,7 +1456,7 @@ baseline: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L141)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L141)</sub>
 
 ---
 
@@ -1468,7 +1468,7 @@ candidate: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L142)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L142)</sub>
 
 ---
 
@@ -1480,7 +1480,7 @@ ci95: [number, number]
 
 **Returns** `[number, number]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L144)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L144)</sub>
 
 ---
 
@@ -1492,7 +1492,7 @@ delta: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L143)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L143)</sub>
 
 ---
 
@@ -1504,7 +1504,7 @@ metric: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L140)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L140)</sub>
 
 ---
 
@@ -1516,7 +1516,7 @@ n: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L147)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L147)</sub>
 
 ---
 
@@ -1530,7 +1530,7 @@ significant: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L146)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L146)</sub>
 
 ---
 
@@ -1542,7 +1542,7 @@ stratum: IntentStratum | 'overall'
 
 **Returns** `IntentStratum \| "overall"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L139)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L139)</sub>
 
 ---
 
@@ -1554,7 +1554,7 @@ chunkId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L138)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L138)</sub>
 
 ---
 
@@ -1566,7 +1566,7 @@ rank: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L139)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L139)</sub>
 
 ---
 
@@ -1578,7 +1578,7 @@ score: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L140)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L140)</sub>
 
 ---
 
@@ -1590,7 +1590,7 @@ changed: Array<{key: keyof RetrievalConfig;from: unknown;to: unknown}>
 
 **Returns** `{ key: keyof RetrievalConfig; from: unknown; to: unknown; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L134)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L134)</sub>
 
 ---
 
@@ -1602,7 +1602,7 @@ requiresBackfill: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L136)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L136)</sub>
 
 ---
 
@@ -1614,7 +1614,7 @@ requiresReindex: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L135)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L135)</sub>
 
 ---
 
@@ -1626,7 +1626,7 @@ summary: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L137)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L137)</sub>
 
 ---
 
@@ -1638,7 +1638,7 @@ conversationFraction: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L152)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L152)</sub>
 
 ---
 
@@ -1650,7 +1650,7 @@ expansionFraction: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L151)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L151)</sub>
 
 ---
 
@@ -1662,7 +1662,7 @@ primaryFraction: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L150)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L150)</sub>
 
 ---
 
@@ -1674,7 +1674,7 @@ totalTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L149)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L149)</sub>
 
 ---
 
@@ -1688,7 +1688,7 @@ generatedPenalty?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L65)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L65)</sub>
 
 ---
 
@@ -1702,7 +1702,7 @@ lambda?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L61)</sub>
 
 ---
 
@@ -1714,7 +1714,7 @@ limit: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L63)</sub>
 
 ---
 
@@ -1726,7 +1726,7 @@ maxPerModule?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L62)</sub>
 
 ---
 
@@ -1740,7 +1740,7 @@ abstained: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L33)</sub>
 
 ---
 
@@ -1754,7 +1754,7 @@ expected: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L29)</sub>
 
 ---
 
@@ -1766,7 +1766,7 @@ itemId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L26)</sub>
 
 ---
 
@@ -1778,7 +1778,7 @@ latencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L34)</sub>
 
 ---
 
@@ -1792,7 +1792,7 @@ retrieved: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L31)</sub>
 
 ---
 
@@ -1804,7 +1804,7 @@ stratum: IntentStratum
 
 **Returns** `IntentStratum`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L27)</sub>
 
 ---
 
@@ -1816,7 +1816,7 @@ tokensIn: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L35)</sub>
 
 ---
 
@@ -1828,7 +1828,7 @@ itemCount: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L59)</sub>
 
 ---
 
@@ -1840,7 +1840,7 @@ overall: Omit<StratumMetrics, 'stratum'>
 
 **Returns** `Omit<StratumMetrics, "stratum">`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L57)</sub>
 
 ---
 
@@ -1852,7 +1852,7 @@ quarantinedCount: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L60)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L60)</sub>
 
 ---
 
@@ -1864,7 +1864,7 @@ retrievalConfigVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L58)</sub>
 
 ---
 
@@ -1876,7 +1876,7 @@ strata: StratumMetrics[]
 
 **Returns** `StratumMetrics[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L56)</sub>
 
 ---
 
@@ -1888,7 +1888,7 @@ budget: ContextBudget
 
 **Returns** `ContextBudget`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L40)</sub>
 
 ---
 
@@ -1902,7 +1902,7 @@ centralityCeiling?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L46)</sub>
 
 ---
 
@@ -1914,7 +1914,7 @@ maxNeighboursPerSeed?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L43)</sub>
 
 ---
 
@@ -1928,7 +1928,7 @@ primaryTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L42)</sub>
 
 ---
 
@@ -1942,7 +1942,7 @@ relationPriority?: GraphNeighbour['relation'][]
 
 **Returns** `("caller" \| "callee" \| "type" \| "parent" \| "implementation")[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L48)</sub>
 
 ---
 
@@ -1954,7 +1954,7 @@ chunks: ScoredChunk[]
 
 **Returns** `ScoredChunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L52)</sub>
 
 ---
 
@@ -1968,7 +1968,7 @@ droppedCount: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L55)</sub>
 
 ---
 
@@ -1980,7 +1980,7 @@ droppedReasons: Record<string, number>
 
 **Returns** `Record<string, number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L56)</sub>
 
 ---
 
@@ -1992,7 +1992,7 @@ tokensUsed: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L53)</sub>
 
 ---
 
@@ -2004,7 +2004,7 @@ candidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L19)</sub>
 
 ---
 
@@ -2016,7 +2016,7 @@ name: 'dense' | 'lexical' | 'symbol'
 
 **Returns** `"symbol" \| "dense" \| "lexical"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L18)</sub>
 
 ---
 
@@ -2030,7 +2030,7 @@ weight: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L21)</sub>
 
 ---
 
@@ -2044,7 +2044,7 @@ k?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L26)</sub>
 
 ---
 
@@ -2056,7 +2056,7 @@ limit?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L27)</sub>
 
 ---
 
@@ -2070,7 +2070,7 @@ maxFalseAnswerRate: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L30)</sub>
 
 ---
 
@@ -2084,7 +2084,7 @@ maxP95LatencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L32)</sub>
 
 ---
 
@@ -2098,7 +2098,7 @@ maxRegression: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L26)</sub>
 
 ---
 
@@ -2112,7 +2112,7 @@ minStratumSize: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L28)</sub>
 
 ---
 
@@ -2124,7 +2124,7 @@ comparisons: BootstrapComparison[]
 
 **Returns** `BootstrapComparison[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L44)</sub>
 
 ---
 
@@ -2136,7 +2136,7 @@ failures: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L45)</sub>
 
 ---
 
@@ -2148,7 +2148,7 @@ passed: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L43)</sub>
 
 ---
 
@@ -2160,7 +2160,7 @@ report: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L47)</sub>
 
 ---
 
@@ -2172,7 +2172,7 @@ warnings: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L46)</sub>
 
 ---
 
@@ -2184,7 +2184,7 @@ analysisDepth: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L36)</sub>
 
 ---
 
@@ -2198,7 +2198,7 @@ centrality: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L34)</sub>
 
 ---
 
@@ -2210,7 +2210,7 @@ docSummary: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L27)</sub>
 
 ---
 
@@ -2222,7 +2222,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L28)</sub>
 
 ---
 
@@ -2234,7 +2234,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L25)</sub>
 
 ---
 
@@ -2246,7 +2246,7 @@ relation: 'caller' | 'callee' | 'type' | 'parent' | 'implementation'
 
 **Returns** `"caller" \| "callee" \| "type" \| "parent" \| "implementation"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L32)</sub>
 
 ---
 
@@ -2258,7 +2258,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L29)</sub>
 
 ---
 
@@ -2270,7 +2270,7 @@ sensitivity: ScoredChunk['sensitivity']
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L35)</sub>
 
 ---
 
@@ -2282,7 +2282,7 @@ signature: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L26)</sub>
 
 ---
 
@@ -2294,7 +2294,7 @@ sourcePath: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L30)</sub>
 
 ---
 
@@ -2306,7 +2306,7 @@ sourceStartLine: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L31)</sub>
 
 ---
 
@@ -2318,7 +2318,7 @@ symbolId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L24)</sub>
 
 ---
 
@@ -2332,7 +2332,7 @@ identifiers: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L23)</sub>
 
 ---
 
@@ -2344,7 +2344,7 @@ intentClass: IntentClass
 
 **Returns** `IntentClass`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L21)</sub>
 
 ---
 
@@ -2358,7 +2358,7 @@ needsRetrieval: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L25)</sub>
 
 ---
 
@@ -2370,7 +2370,7 @@ rewrittenQuery: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L20)</sub>
 
 ---
 
@@ -2384,7 +2384,7 @@ usedModel: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L27)</sub>
 
 ---
 
@@ -2396,7 +2396,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L20)</sub>
 
 ---
 
@@ -2408,7 +2408,7 @@ model: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L18)</sub>
 
 ---
 
@@ -2420,7 +2420,7 @@ onDegraded?: (reason: string) => void
 
 **Returns** `((reason: string) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L21)</sub>
 
 ---
 
@@ -2432,7 +2432,7 @@ timeoutMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L19)</sub>
 
 ---
 
@@ -2444,7 +2444,7 @@ url: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L17)</sub>
 
 ---
 
@@ -2456,7 +2456,7 @@ available: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L28)</sub>
 
 ---
 
@@ -2468,7 +2468,7 @@ chunks: ScoredChunk[]
 
 **Returns** `ScoredChunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L25)</sub>
 
 ---
 
@@ -2480,7 +2480,7 @@ degradedReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L29)</sub>
 
 ---
 
@@ -2492,7 +2492,7 @@ latencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L30)</sub>
 
 ---
 
@@ -2506,7 +2506,7 @@ topScore: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L27)</sub>
 
 ---
 
@@ -2518,7 +2518,7 @@ abstentionThreshold: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L48)</sub>
 
 ---
 
@@ -2530,7 +2530,7 @@ blurbModel: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L21)</sub>
 
 ---
 
@@ -2542,7 +2542,7 @@ blurbPromptVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L20)</sub>
 
 ---
 
@@ -2554,7 +2554,7 @@ chatModel: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L46)</sub>
 
 ---
 
@@ -2566,7 +2566,7 @@ chunkMaxTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L18)</sub>
 
 ---
 
@@ -2578,7 +2578,7 @@ chunkOverlapTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L19)</sub>
 
 ---
 
@@ -2590,7 +2590,7 @@ chunkStrategy: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L17)</sub>
 
 ---
 
@@ -2602,7 +2602,7 @@ contextExpansionFraction: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L43)</sub>
 
 ---
 
@@ -2614,7 +2614,7 @@ contextPrimaryFraction: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L42)</sub>
 
 ---
 
@@ -2626,7 +2626,7 @@ contextTotalTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L41)</sub>
 
 ---
 
@@ -2638,7 +2638,7 @@ dedupeThreshold: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L24)</sub>
 
 ---
 
@@ -2650,7 +2650,7 @@ efSearch: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L36)</sub>
 
 ---
 
@@ -2662,7 +2662,7 @@ embeddingDimensions: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L23)</sub>
 
 ---
 
@@ -2674,7 +2674,7 @@ embeddingModel: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L22)</sub>
 
 ---
 
@@ -2686,7 +2686,7 @@ expansionCentralityCeiling: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L40)</sub>
 
 ---
 
@@ -2698,7 +2698,7 @@ expansionMaxPerSeed: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L39)</sub>
 
 ---
 
@@ -2710,7 +2710,7 @@ generatedPenalty: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L35)</sub>
 
 ---
 
@@ -2722,7 +2722,7 @@ maxPerModule: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L34)</sub>
 
 ---
 
@@ -2734,7 +2734,7 @@ mmrLambda: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L33)</sub>
 
 ---
 
@@ -2746,7 +2746,7 @@ rerankerModel: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L32)</sub>
 
 ---
 
@@ -2758,7 +2758,7 @@ rrfK: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L27)</sub>
 
 ---
 
@@ -2770,7 +2770,7 @@ systemPromptVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L47)</sub>
 
 ---
 
@@ -2782,7 +2782,7 @@ topKDense: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L28)</sub>
 
 ---
 
@@ -2794,7 +2794,7 @@ topKLexical: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L29)</sub>
 
 ---
 
@@ -2806,7 +2806,7 @@ topKSymbol: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L30)</sub>
 
 ---
 
@@ -2818,7 +2818,7 @@ topNFinal: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L31)</sub>
 
 ---
 
@@ -2830,7 +2830,7 @@ abstentionPolicy?: AbstentionPolicy
 
 **Returns** `AbstentionPolicy \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L58)</sub>
 
 ---
 
@@ -2842,7 +2842,7 @@ budget?: ContextBudget
 
 **Returns** `ContextBudget \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L57)</sub>
 
 ---
 
@@ -2854,7 +2854,7 @@ config?: RetrievalConfig
 
 **Returns** `RetrievalConfig \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L56)</sub>
 
 ---
 
@@ -2866,7 +2866,7 @@ embed: (query: string) => Promise<number[]>
 
 **Returns** `(query: string) => Promise<number[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L55)</sub>
 
 ---
 
@@ -2878,7 +2878,7 @@ llm?: LlmClient
 
 **Returns** `LlmClient \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L54)</sub>
 
 ---
 
@@ -2890,7 +2890,7 @@ onDegraded?: (mode: string) => void
 
 **Returns** `((mode: string) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L59)</sub>
 
 ---
 
@@ -2902,7 +2902,7 @@ reranker: RerankerLike
 
 **Returns** `RerankerLike`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L53)</sub>
 
 ---
 
@@ -2914,7 +2914,7 @@ store: RetrievalStore
 
 **Returns** `RetrievalStore`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L52)</sub>
 
 ---
 
@@ -2926,7 +2926,7 @@ access: AccessContext
 
 **Returns** `AccessContext`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L63)</sub>
 
 ---
 
@@ -2938,7 +2938,7 @@ disableGraphExpansion?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L71)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L71)</sub>
 
 ---
 
@@ -2952,7 +2952,7 @@ disableRerank?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L70)</sub>
 
 ---
 
@@ -2966,7 +2966,7 @@ history?: Array<{role: 'user' | 'assistant';content: string}>
 
 **Returns** `{ role: "user" \| "assistant"; content: string; }[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L65)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L65)</sub>
 
 ---
 
@@ -2978,7 +2978,7 @@ query: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L61)</sub>
 
 ---
 
@@ -2990,7 +2990,7 @@ scope: RetrievalScope
 
 **Returns** `RetrievalScope`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L62)</sub>
 
 ---
 
@@ -3002,7 +3002,7 @@ sessionId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L72)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L72)</sub>
 
 ---
 
@@ -3016,7 +3016,7 @@ sessionSymbolIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L67)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L67)</sub>
 
 ---
 
@@ -3028,7 +3028,7 @@ topN?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L68)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L68)</sub>
 
 ---
 
@@ -3042,7 +3042,7 @@ abstain: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L103)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L103)</sub>
 
 ---
 
@@ -3054,7 +3054,7 @@ abstentionReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L104)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L104)</sub>
 
 ---
 
@@ -3066,7 +3066,7 @@ chunks: ScoredChunk[]
 
 **Returns** `ScoredChunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L100)</sub>
 
 ---
 
@@ -3080,7 +3080,7 @@ degradedModes: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L111)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L111)</sub>
 
 ---
 
@@ -3092,7 +3092,7 @@ hedgingReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L107)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L107)</sub>
 
 ---
 
@@ -3104,7 +3104,7 @@ intentClass: IntentClass
 
 **Returns** `IntentClass`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L108)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L108)</sub>
 
 ---
 
@@ -3118,7 +3118,7 @@ requiresHedging: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L106)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L106)</sub>
 
 ---
 
@@ -3130,7 +3130,7 @@ rewrittenQuery: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L109)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L109)</sub>
 
 ---
 
@@ -3142,7 +3142,7 @@ trace: RetrievalTrace
 
 **Returns** `RetrievalTrace`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L112)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L112)</sub>
 
 ---
 
@@ -3154,7 +3154,7 @@ kind: ScopeKind
 
 **Returns** `ScopeKind`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L15)</sub>
 
 ---
 
@@ -3166,7 +3166,7 @@ kinds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L24)</sub>
 
 ---
 
@@ -3178,7 +3178,7 @@ languages?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L23)</sub>
 
 ---
 
@@ -3190,7 +3190,7 @@ moduleIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L20)</sub>
 
 ---
 
@@ -3202,7 +3202,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L16)</sub>
 
 ---
 
@@ -3216,7 +3216,7 @@ projectIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L18)</sub>
 
 ---
 
@@ -3228,7 +3228,7 @@ repoIds?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L19)</sub>
 
 ---
 
@@ -3242,7 +3242,7 @@ versionId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L22)</sub>
 
 ---
 
@@ -3254,7 +3254,7 @@ denseCandidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L121)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L121)</sub>
 
 ---
 
@@ -3266,7 +3266,7 @@ embeddingModel: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L134)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L134)</sub>
 
 ---
 
@@ -3278,7 +3278,7 @@ expansionChunkIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L127)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L127)</sub>
 
 ---
 
@@ -3290,7 +3290,7 @@ fusedCandidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L124)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L124)</sub>
 
 ---
 
@@ -3302,7 +3302,7 @@ intentClass: IntentClass
 
 **Returns** `IntentClass`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L119)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L119)</sub>
 
 ---
 
@@ -3314,7 +3314,7 @@ lexicalCandidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L122)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L122)</sub>
 
 ---
 
@@ -3326,7 +3326,7 @@ rawQuery: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L117)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L117)</sub>
 
 ---
 
@@ -3338,7 +3338,7 @@ rerankedCandidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L125)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L125)</sub>
 
 ---
 
@@ -3350,7 +3350,7 @@ retrievalConfigVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L133)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L133)</sub>
 
 ---
 
@@ -3362,7 +3362,7 @@ rewrittenQuery: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L118)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L118)</sub>
 
 ---
 
@@ -3374,7 +3374,7 @@ scope: RetrievalScope
 
 **Returns** `RetrievalScope`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L120)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L120)</sub>
 
 ---
 
@@ -3386,7 +3386,7 @@ servedChunkIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L126)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L126)</sub>
 
 ---
 
@@ -3398,7 +3398,7 @@ stageTimingsMs: Record<string, number>
 
 **Returns** `Record<string, number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L128)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L128)</sub>
 
 ---
 
@@ -3412,7 +3412,7 @@ stageTokens: Record<string, number>
 
 **Returns** `Record<string, number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L131)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L131)</sub>
 
 ---
 
@@ -3424,7 +3424,7 @@ symbolCandidates: CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L123)</sub>
 
 ---
 
@@ -3436,7 +3436,7 @@ topRerankScore: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L132)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L132)</sub>
 
 ---
 
@@ -3448,7 +3448,7 @@ traceId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L116)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L116)</sub>
 
 ---
 
@@ -3462,7 +3462,7 @@ alsoPresentInModules?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L93)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L93)</sub>
 
 ---
 
@@ -3474,7 +3474,7 @@ analysisDepth: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L85)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L85)</sub>
 
 ---
 
@@ -3486,7 +3486,7 @@ chunkId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L76)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L76)</sub>
 
 ---
 
@@ -3498,7 +3498,7 @@ content: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L80)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L80)</sub>
 
 ---
 
@@ -3510,7 +3510,7 @@ corpus: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L87)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L87)</sub>
 
 ---
 
@@ -3522,7 +3522,7 @@ expansionRelation?: 'caller' | 'callee' | 'type' | 'parent' | 'implementation'
 
 **Returns** `"caller" \| "callee" \| "type" \| "parent" \| "implementation" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L96)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L96)</sub>
 
 ---
 
@@ -3534,7 +3534,7 @@ generated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L86)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L86)</sub>
 
 ---
 
@@ -3546,7 +3546,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L78)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L78)</sub>
 
 ---
 
@@ -3560,7 +3560,7 @@ ranks: {dense?: number;lexical?: number;symbol?: number;fused?: number;reranked?
 
 **Returns** `{ dense?: number \| undefined; lexical?: number \| undefined; symbol?: number \| undefined; fused?: number \| undefined; reranked?: number \| undefined; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L91)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L91)</sub>
 
 ---
 
@@ -3572,7 +3572,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L79)</sub>
 
 ---
 
@@ -3584,7 +3584,7 @@ score: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L89)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L89)</sub>
 
 ---
 
@@ -3596,7 +3596,7 @@ sensitivity: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L84)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L84)</sub>
 
 ---
 
@@ -3608,7 +3608,7 @@ sourceEndLine: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L83)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L83)</sub>
 
 ---
 
@@ -3620,7 +3620,7 @@ sourcePath: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L81)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L81)</sub>
 
 ---
 
@@ -3632,7 +3632,7 @@ sourceStartLine: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L82)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L82)</sub>
 
 ---
 
@@ -3644,7 +3644,7 @@ symbolId: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L77)</sub>
 
 ---
 
@@ -3656,7 +3656,7 @@ tokenCount: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L88)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L88)</sub>
 
 ---
 
@@ -3670,7 +3670,7 @@ viaExpansion?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L95)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L95)</sub>
 
 ---
 
@@ -3682,7 +3682,7 @@ access: AccessContext
 
 **Returns** `AccessContext`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L21)</sub>
 
 ---
 
@@ -3694,7 +3694,7 @@ corpora?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L24)</sub>
 
 ---
 
@@ -3706,7 +3706,7 @@ efSearch: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L23)</sub>
 
 ---
 
@@ -3718,7 +3718,7 @@ embeddingModel: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L22)</sub>
 
 ---
 
@@ -3730,7 +3730,7 @@ scope: RetrievalScope
 
 **Returns** `RetrievalScope`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L20)</sub>
 
 ---
 
@@ -3742,7 +3742,7 @@ abstentionRate: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L50)</sub>
 
 ---
 
@@ -3756,7 +3756,7 @@ falseAnswerRate: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L49)</sub>
 
 ---
 
@@ -3768,7 +3768,7 @@ mrr: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L42)</sub>
 
 ---
 
@@ -3780,7 +3780,7 @@ n: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L40)</sub>
 
 ---
 
@@ -3792,7 +3792,7 @@ p50LatencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L51)</sub>
 
 ---
 
@@ -3804,7 +3804,7 @@ p95LatencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L52)</sub>
 
 ---
 
@@ -3816,7 +3816,7 @@ precisionAt5: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L43)</sub>
 
 ---
 
@@ -3828,7 +3828,7 @@ recallAt10: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L41)</sub>
 
 ---
 
@@ -3840,7 +3840,7 @@ stratum: IntentStratum
 
 **Returns** `IntentStratum`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L39)</sub>
 
 ---
 
@@ -3854,7 +3854,7 @@ abstained: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L47)</sub>
 
 ---
 
@@ -3866,7 +3866,7 @@ citations: AnswerCitation[]
 
 **Returns** `AnswerCitation[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L45)</sub>
 
 ---
 
@@ -3880,7 +3880,7 @@ hedged: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L49)</sub>
 
 ---
 
@@ -3892,7 +3892,7 @@ hedgingReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L50)</sub>
 
 ---
 
@@ -3904,7 +3904,7 @@ model: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L51)</sub>
 
 ---
 
@@ -3916,7 +3916,7 @@ text: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L44)</sub>
 
 ---
 
@@ -3928,7 +3928,7 @@ usdEstimate: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L52)</sub>
 
 ---
 
@@ -3940,7 +3940,7 @@ client: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L58)</sub>
 
 ---
 
@@ -3954,7 +3954,7 @@ maxEvidence?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L62)</sub>
 
 ---
 
@@ -3966,7 +3966,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L59)</sub>
 
 ---
 
@@ -3978,7 +3978,7 @@ query: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L56)</sub>
 
 ---
 
@@ -3990,7 +3990,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L60)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L60)</sub>
 
 ---
 
@@ -4002,7 +4002,7 @@ result: RetrievalResult
 
 **Returns** `RetrievalResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L57)</sub>
 
 ---
 
@@ -4014,7 +4014,7 @@ client?: LlmClient
 
 **Returns** `LlmClient \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L43)</sub>
 
 ---
 
@@ -4026,7 +4026,7 @@ history?: Array<{role: 'user' | 'assistant';content: string}>
 
 **Returns** `{ role: "user" \| "assistant"; content: string; }[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L45)</sub>
 
 ---
 
@@ -4038,7 +4038,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L44)</sub>
 
 ---
 
@@ -4052,17 +4052,17 @@ sessionSymbolNames?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L47)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=2d8cfa3176c6aa3a -->
+<!-- kna:generated:start id=api.class hash=8f24619b8beaee98 -->
 ### `AccessDeniedError`
 
 ```typescript
 class AccessDeniedError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/acl.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/acl.ts#L19)</sub>
 
 ---
 
@@ -4074,7 +4074,7 @@ No-op reranker for Phase 1 and for eval baselines.
 class NullReranker
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L159)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L159)</sub>
 
 ---
 
@@ -4084,7 +4084,7 @@ class NullReranker
 class Reranker
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L33)</sub>
 
 ---
 
@@ -4094,7 +4094,7 @@ class Reranker
 class RetrievalPipeline
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L62)</sub>
 
 ---
 
@@ -4104,10 +4104,10 @@ class RetrievalPipeline
 class RetrievalStore
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L27)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=567f0d91fac84632 -->
+<!-- kna:generated:start id=api.method hash=ac4a2f6bfe0ac637 -->
 ### `constructor`
 
 ```typescript
@@ -4118,7 +4118,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/acl.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/acl.ts#L20)</sub>
 
 ---
 
@@ -4136,7 +4136,7 @@ rerank(_query: string, candidates: ScoredChunk[], topN: number): Promise<RerankO
 
 **Returns** `Promise<RerankOutcome>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L160)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L160)</sub>
 
 ---
 
@@ -4150,7 +4150,7 @@ constructor(private readonly options: RerankerOptions)
 |---|---|---|
 | `options` | `RerankerOptions` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L39)</sub>
 
 ---
 
@@ -4168,7 +4168,7 @@ rerank(query: string, candidates: ScoredChunk[], topN: number): Promise<RerankOu
 
 **Returns** `Promise<RerankOutcome>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L43)</sub>
 
 ---
 
@@ -4182,7 +4182,7 @@ constructor(private readonly options: RetrievalPipelineOptions)
 |---|---|---|
 | `options` | `RetrievalPipelineOptions` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L67)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L67)</sub>
 
 ---
 
@@ -4198,7 +4198,7 @@ retrieve(request: RetrievalRequest): Promise<RetrievalResult>
 
 **Returns** `Promise<RetrievalResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/pipeline.ts#L73)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/pipeline.ts#L73)</sub>
 
 ---
 
@@ -4212,7 +4212,7 @@ constructor(private readonly handle: DbHandle)
 |---|---|---|
 | `handle` | `DbHandle` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L28)</sub>
 
 ---
 
@@ -4232,7 +4232,7 @@ denseSearch(queryVector: number[], limit: number, options: SearchOptions): Promi
 
 **Returns** `Promise<CandidateRef[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L31)</sub>
 
 ---
 
@@ -4251,7 +4251,7 @@ hydrate(candidates: CandidateRef[], options: SearchOptions): Promise<ScoredChunk
 
 **Returns** `Promise<ScoredChunk[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L152)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L152)</sub>
 
 ---
 
@@ -4271,7 +4271,7 @@ lexicalSearch(query: string, limit: number, options: SearchOptions): Promise<Can
 
 **Returns** `Promise<CandidateRef[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L74)</sub>
 
 ---
 
@@ -4291,7 +4291,7 @@ neighbours(symbolIds: string[], options: SearchOptions, perSymbolLimit: number):
 
 **Returns** `Promise<Map<string, GraphNeighbour[]>>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L228)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L228)</sub>
 
 ---
 
@@ -4310,7 +4310,7 @@ staleRepoIds(orgId: string, repoIds: string[]): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L321)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L321)</sub>
 
 ---
 
@@ -4330,10 +4330,10 @@ symbolSearch(identifiers: string[], limit: number, options: SearchOptions): Prom
 
 **Returns** `Promise<CandidateRef[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/store.ts#L114)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/store.ts#L114)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=4fa463714605a6d8 -->
+<!-- kna:generated:start id=api.constant hash=e703c66d3ccf5c96 -->
 ### `ARM_WEIGHTS_BY_INTENT`
 
 ```typescript
@@ -4342,7 +4342,7 @@ const ARM_WEIGHTS_BY_INTENT: Record<IntentClass, ArmWeights>
 
 **Returns** `Record<IntentClass, ArmWeights>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L205)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L205)</sub>
 
 ---
 
@@ -4354,7 +4354,7 @@ const DEFAULT_ABSTENTION_POLICY: AbstentionPolicy
 
 **Returns** `AbstentionPolicy`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L29)</sub>
 
 ---
 
@@ -4366,7 +4366,7 @@ const DEFAULT_CONTEXT_BUDGET: ContextBudget
 
 **Returns** `ContextBudget`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L155)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L155)</sub>
 
 ---
 
@@ -4378,7 +4378,7 @@ const DEFAULT_GATE: GatePolicy
 
 **Returns** `GatePolicy`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L35)</sub>
 
 ---
 
@@ -4390,10 +4390,10 @@ const DEFAULT_RETRIEVAL_CONFIG: RetrievalConfig
 
 **Returns** `RetrievalConfig`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L51)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=e5c0f03ac0cbca22 -->
+<!-- kna:generated:start id=api.function hash=cf592ff4e5fd85f2 -->
 ### `buildAclPredicate`
 
 Build the mandatory predicate. Throws rather than returning an empty filter when the caller has no access at all — an empty predicate that accidentally means "everything" is exactly the failure this design is guarding against.
@@ -4409,7 +4409,7 @@ buildAclPredicate(access: AccessContext, scope: RetrievalScope): SQL<unknown>
 
 **Returns** `SQL<unknown>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/acl.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/acl.ts#L31)</sub>
 
 ---
 
@@ -4428,7 +4428,7 @@ classifyByHeuristic(query: string, identifiers: string[]): IntentClass
 
 **Returns** `IntentClass`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L160)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L160)</sub>
 
 ---
 
@@ -4446,7 +4446,7 @@ computeConfigVersion(config: RetrievalConfig): {version: string;indexVersion: st
 
 **Returns** `{ version: string; indexVersion: string; queryVersion: string; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L90)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L90)</sub>
 
 ---
 
@@ -4463,7 +4463,7 @@ diffConfig(before: RetrievalConfig, after: RetrievalConfig): ConfigDiff
 
 **Returns** `ConfigDiff`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/config-version.ts#L140)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/config-version.ts#L140)</sub>
 
 ---
 
@@ -4480,7 +4480,7 @@ diversify(chunks: ScoredChunk[], options: DiversifyOptions): ScoredChunk[]
 
 **Returns** `ScoredChunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L68)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L68)</sub>
 
 ---
 
@@ -4496,7 +4496,7 @@ evaluateAbstention(input: AbstentionInput): AbstentionVerdict
 
 **Returns** `AbstentionVerdict`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L56)</sub>
 
 ---
 
@@ -4515,7 +4515,7 @@ evaluateGate(baseline: EvalItemResult[], candidate: EvalItemResult[], summary: E
 
 **Returns** `GateResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/report.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/report.ts#L50)</sub>
 
 ---
 
@@ -4533,7 +4533,7 @@ expandWithBudget(seeds: ScoredChunk[], neighboursBySeed: Map<string, GraphNeighb
 
 **Returns** `ExpansionResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L67)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L67)</sub>
 
 ---
 
@@ -4549,7 +4549,7 @@ extractIdentifiers(query: string): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L219)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L219)</sub>
 
 ---
 
@@ -4568,7 +4568,7 @@ fitPrimaryToBudget(chunks: ScoredChunk[], budget: ContextBudget): {kept: ScoredC
 
 **Returns** `{ kept: ScoredChunk[]; dropped: ScoredChunk[]; tokensUsed: number; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L187)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L187)</sub>
 
 ---
 
@@ -4587,7 +4587,7 @@ minimumDetectableEffect(results: EvalItemResult[], metric: (i: EvalItemResult) =
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L215)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L215)</sub>
 
 ---
 
@@ -4606,7 +4606,7 @@ pairedBootstrap(baseline: EvalItemResult[], candidate: EvalItemResult[], metric:
 
 **Returns** `BootstrapComparison`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L150)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L150)</sub>
 
 ---
 
@@ -4624,7 +4624,7 @@ permissionSetHash(access: AccessContext): Promise<string>
 
 **Returns** `Promise<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/acl.ts#L113)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/acl.ts#L113)</sub>
 
 ---
 
@@ -4641,7 +4641,7 @@ precisionAtK(item: EvalItemResult, k: number): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L117)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L117)</sub>
 
 ---
 
@@ -4658,7 +4658,7 @@ recallAtK(item: EvalItemResult, k: number): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L110)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L110)</sub>
 
 ---
 
@@ -4674,7 +4674,7 @@ reciprocalRank(item: EvalItemResult): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L124)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L124)</sub>
 
 ---
 
@@ -4691,7 +4691,7 @@ reciprocalRankFusion(arms: FusionArm[], options: FusionOptions): CandidateRef[]
 
 **Returns** `CandidateRef[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L30)</sub>
 
 ---
 
@@ -4710,7 +4710,7 @@ renderAbstention(verdict: AbstentionVerdict, query: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L136)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L136)</sub>
 
 ---
 
@@ -4728,7 +4728,7 @@ renderHedge(reason: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/abstention.ts#L155)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/abstention.ts#L155)</sub>
 
 ---
 
@@ -4746,7 +4746,7 @@ renderNeighbour(neighbour: GraphNeighbour): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/expansion.ts#L162)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/expansion.ts#L162)</sub>
 
 ---
 
@@ -4764,7 +4764,7 @@ summarise(results: EvalItemResult[], retrievalConfigVersion: string, quarantined
 
 **Returns** `EvalSummary`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L63)</sub>
 
 ---
 
@@ -4780,7 +4780,7 @@ synthesiseAnswer(options: SynthesiseOptions): Promise<SynthesisedAnswer>
 
 **Returns** `Promise<SynthesisedAnswer>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/answer.ts#L90)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/answer.ts#L90)</sub>
 
 ---
 
@@ -4796,7 +4796,7 @@ tokenSet(content: string): Set<string>
 
 **Returns** `Set<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/fusion.ts#L140)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/fusion.ts#L140)</sub>
 
 ---
 
@@ -4813,7 +4813,7 @@ understandQuery(query: string, options: UnderstandOptions): Promise<QueryUnderst
 
 **Returns** `Promise<QueryUnderstanding>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/query.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/query.ts#L50)</sub>
 
 ---
 
@@ -4827,17 +4827,17 @@ uniformEmptyMessage(): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/acl.ts#L136)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/acl.ts#L136)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.type hash=5daff3fb1c9f3033 -->
+<!-- kna:generated:start id=api.type hash=e1d5134081aeaab3 -->
 ### `IntentClass`
 
 ```typescript
 type IntentClass = | 'exact-identifier' | 'cross-repo-call-path' | 'why-rationale' | 'how-to-integrate' | 'conceptual' | 'unanswerable'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L52)</sub>
 
 ---
 
@@ -4849,7 +4849,7 @@ Retrieval metrics, with confidence intervals.
 type IntentStratum = | 'exact-identifier' | 'cross-repo-call-path' | 'why-rationale' | 'how-to-integrate' | 'unanswerable'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/eval/metrics.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/eval/metrics.ts#L18)</sub>
 
 ---
 
@@ -4859,7 +4859,7 @@ type IntentStratum = | 'exact-identifier' | 'cross-repo-call-path' | 'why-ration
 type RerankerLike = Pick<Reranker, 'rerank'>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/reranker.ts#L171)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/reranker.ts#L171)</sub>
 
 ---
 
@@ -4871,5 +4871,5 @@ Retrieval contracts.
 type ScopeKind = 'project' | 'expanded' | 'org' | 'repo' | 'module'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/retrieval/src/types.ts#L12)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/retrieval/src/types.ts#L12)</sub>
 <!-- kna:generated:end id=api.type -->
