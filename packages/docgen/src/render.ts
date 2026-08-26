@@ -22,7 +22,19 @@ export interface RenderContext {
   symbols: IrSymbol[];
   /** Repo-relative source URL template, e.g. `https://github.com/acme/billing/blob/{sha}/{path}#L{line}`. */
   sourceUrlTemplate?: string;
-  commitSha: string;
+  /**
+   * What the source links point at, and what the frontmatter records.
+   *
+   * The platform's queryable copy passes the exact commit sha: it is a record of what was
+   * indexed, and it has to be exact to be worth anything.
+   *
+   * The in-repo copy passes the branch instead, for two reasons. A link pinned to a sha rots —
+   * rebase the branch and it points at a commit nobody can reach — while `blob/main/...` keeps
+   * working. And a file that records the commit it was generated from can never agree with the
+   * commit that contains it, because you would have to know a commit's hash before making it.
+   * That made "documentation is current" a check nothing could pass, and CI had been red on it.
+   */
+  revision: string;
 }
 
 export interface RenderedDocument {
@@ -310,7 +322,7 @@ function buildFrontmatter(
     generator: 'kna-docgen',
     moduleId: ctx.module.id,
     repoId: ctx.module.repoId,
-    commitSha: ctx.commitSha,
+    revision: ctx.revision,
     analysisDepth: ctx.module.analysisDepth,
     owners: ctx.module.owners,
     // Provenance: which symbols this page was built from, and what they hashed to. The doc-
@@ -363,7 +375,7 @@ function sourceLink(symbol: IrSymbol, ctx: RenderContext): string {
   const location = `${symbol.sourceRef.path}:${symbol.sourceRef.startLine}`;
   if (!ctx.sourceUrlTemplate) return `Source: \`${location}\``;
   const url = ctx.sourceUrlTemplate
-    .replace('{sha}', ctx.commitSha)
+    .replace('{sha}', ctx.revision)
     .replace('{path}', symbol.sourceRef.path)
     .replace('{line}', String(symbol.sourceRef.startLine));
   return `[Source](${url})`;

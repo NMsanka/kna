@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_059a7404d61707948d63d574a23b22c5
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -215,7 +215,7 @@ provenance:
 | Public symbols | 95 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=5927365915261f4c -->
+<!-- kna:generated:start id=api.function hash=56a4af7323b9849f -->
 ### `createWorkerContext`
 
 ```typescript
@@ -228,7 +228,7 @@ createWorkerContext(env: {KNA_ENV: "development" | "test" | "staging" | "product
 
 **Returns** `Promise<WorkerContext>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L37)</sub>
 
 ---
 
@@ -248,7 +248,7 @@ embedChunks(ctx: WorkerContext, orgId: string, chunks: Chunk[]): Promise<{vector
 
 **Returns** `Promise<{ vectors: Map<string, number[]>; fromCache: number; computed: number; usd: number; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L472)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L472)</sub>
 
 ---
 
@@ -265,7 +265,7 @@ indexModule(ctx: WorkerContext, input: IndexModuleInput): Promise<IndexModuleRes
 
 **Returns** `Promise<IndexModuleResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L51)</sub>
 
 ---
 
@@ -281,7 +281,7 @@ parseVector(text: string): number[]
 
 **Returns** `number[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L614)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L614)</sub>
 
 ---
 
@@ -298,7 +298,7 @@ regenerateDocs(ctx: WorkerContext, input: RegenerateDocsInput): Promise<Regenera
 
 **Returns** `Promise<RegenerateDocsResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L79)</sub>
 
 ---
 
@@ -316,7 +316,7 @@ resolveCrossRepoEdges(ctx: WorkerContext, input: CrossRepoInput, options: {timeo
 
 **Returns** `Promise<CrossRepoResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L42)</sub>
 
 ---
 
@@ -336,7 +336,7 @@ resolveProjectIds(ctx: WorkerContext, orgId: string, declared: readonly string[]
 
 **Returns** `Promise<string[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/project-scope.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/project-scope.ts#L23)</sub>
 
 ---
 
@@ -353,10 +353,10 @@ runNightlyMaintenance(ctx: WorkerContext, orgId: string): Promise<MaintenanceRep
 
 **Returns** `Promise<MaintenanceReport>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L40)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=361e28ad54c11063 -->
+<!-- kna:generated:start id=api.interface hash=9694295898ff8488 -->
 ### `CrossRepoInput`
 
 The cross-repo resolution pass (§4.3).
@@ -365,7 +365,7 @@ The cross-repo resolution pass (§4.3).
 interface CrossRepoInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L24)</sub>
 
 ---
 
@@ -375,7 +375,7 @@ interface CrossRepoInput
 interface CrossRepoResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L30)</sub>
 
 ---
 
@@ -387,7 +387,7 @@ Worker-side Git client.
 interface GitClientOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L12)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L12)</sub>
 
 ---
 
@@ -399,7 +399,7 @@ Index one module.
 interface IndexModuleInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L30)</sub>
 
 ---
 
@@ -409,7 +409,7 @@ interface IndexModuleInput
 interface IndexModuleResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L39)</sub>
 
 ---
 
@@ -419,7 +419,7 @@ interface IndexModuleResult
 interface InvariantViolation
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L27)</sub>
 
 ---
 
@@ -431,7 +431,7 @@ Nightly maintenance.
 interface MaintenanceReport
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L20)</sub>
 
 ---
 
@@ -443,7 +443,7 @@ Regenerate documentation for a repository.
 interface RegenerateDocsInput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L44)</sub>
 
 ---
 
@@ -453,7 +453,7 @@ interface RegenerateDocsInput
 interface RegenerateDocsResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L52)</sub>
 
 ---
 
@@ -465,10 +465,10 @@ Worker wiring.
 interface WorkerContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L22)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=1b33950e44a5ac1b -->
+<!-- kna:generated:start id=api.property hash=960daba4f0184765 -->
 ### `orgId`
 
 ```typescript
@@ -477,7 +477,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L25)</sub>
 
 ---
 
@@ -489,7 +489,7 @@ projectId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L26)</sub>
 
 ---
 
@@ -501,7 +501,7 @@ triggeredByRepoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L27)</sub>
 
 ---
 
@@ -513,7 +513,7 @@ byKind: Record<string, number>
 
 **Returns** `Record<string, number>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L34)</sub>
 
 ---
 
@@ -525,7 +525,7 @@ durationMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L36)</sub>
 
 ---
 
@@ -537,7 +537,7 @@ edgesPending: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L33)</sub>
 
 ---
 
@@ -549,7 +549,7 @@ edgesResolved: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L32)</sub>
 
 ---
 
@@ -561,7 +561,7 @@ projectId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L31)</sub>
 
 ---
 
@@ -573,7 +573,7 @@ timedOut: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/cross-repo.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/cross-repo.ts#L35)</sub>
 
 ---
 
@@ -585,7 +585,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L16)</sub>
 
 ---
 
@@ -597,7 +597,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L15)</sub>
 
 ---
 
@@ -609,7 +609,7 @@ provider: 'github' | 'azuredevops' | 'gitlab'
 
 **Returns** `"github" \| "azuredevops" \| "gitlab"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L13)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L13)</sub>
 
 ---
 
@@ -621,7 +621,7 @@ writeEnabled: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L14)</sub>
 
 ---
 
@@ -633,7 +633,7 @@ bundleStorageKey: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L36)</sub>
 
 ---
 
@@ -645,7 +645,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L34)</sub>
 
 ---
 
@@ -657,7 +657,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L33)</sub>
 
 ---
 
@@ -669,7 +669,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L31)</sub>
 
 ---
 
@@ -681,7 +681,7 @@ ref: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L35)</sub>
 
 ---
 
@@ -693,7 +693,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L32)</sub>
 
 ---
 
@@ -705,7 +705,7 @@ blurbsGenerated: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L45)</sub>
 
 ---
 
@@ -717,7 +717,7 @@ chunksDeleted: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L42)</sub>
 
 ---
 
@@ -729,7 +729,7 @@ chunksUpserted: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L41)</sub>
 
 ---
 
@@ -741,7 +741,7 @@ embeddingsComputed: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L43)</sub>
 
 ---
 
@@ -753,7 +753,7 @@ embeddingsFromCache: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L44)</sub>
 
 ---
 
@@ -765,7 +765,7 @@ estimatedUsd: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L46)</sub>
 
 ---
 
@@ -777,7 +777,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L40)</sub>
 
 ---
 
@@ -789,7 +789,7 @@ skipped: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L47)</sub>
 
 ---
 
@@ -801,7 +801,7 @@ skipReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/index-module.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L48)</sub>
 
 ---
 
@@ -813,7 +813,7 @@ detail: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L35)</sub>
 
 ---
 
@@ -825,7 +825,7 @@ kind: | 'chunk-symbol-count-mismatch' | 'orphan-chunk' | 'dangling-cross-repo-ed
 
 **Returns** `"chunk-symbol-count-mismatch" \| "orphan-chunk" \| "dangling-cross-repo-edge" \| "doc-references-dead-symbol" \| "rls-missing" \| "stale-module"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L28)</sub>
 
 ---
 
@@ -837,7 +837,7 @@ scope: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L36)</sub>
 
 ---
 
@@ -849,7 +849,7 @@ severity: 'warn' | 'error'
 
 **Returns** `"warn" \| "error"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L37)</sub>
 
 ---
 
@@ -861,7 +861,7 @@ evalQuarantine: {quarantined: number;released: number}
 
 **Returns** `{ quarantined: number; released: number; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L23)</sub>
 
 ---
 
@@ -873,7 +873,7 @@ invariants: InvariantViolation[]
 
 **Returns** `InvariantViolation[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L22)</sub>
 
 ---
 
@@ -885,7 +885,7 @@ lexicalStats: {projectsRefreshed: number;terms: number}
 
 **Returns** `{ projectsRefreshed: number; terms: number; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L24)</sub>
 
 ---
 
@@ -897,7 +897,7 @@ reconciliation: {checked: number;stale: number;enqueued: number}
 
 **Returns** `{ checked: number; stale: number; enqueued: number; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/maintenance.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L21)</sub>
 
 ---
 
@@ -909,7 +909,7 @@ bundleStorageKey: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L49)</sub>
 
 ---
 
@@ -921,7 +921,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L47)</sub>
 
 ---
 
@@ -933,7 +933,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L45)</sub>
 
 ---
 
@@ -945,7 +945,7 @@ ref: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L48)</sub>
 
 ---
 
@@ -957,7 +957,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L46)</sub>
 
 ---
 
@@ -969,7 +969,7 @@ chunksUpserted: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L54)</sub>
 
 ---
 
@@ -981,7 +981,7 @@ documentsWritten: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L53)</sub>
 
 ---
 
@@ -993,7 +993,7 @@ estimatedUsd: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L60)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L60)</sub>
 
 ---
 
@@ -1007,7 +1007,7 @@ proseFailed: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L59)</sub>
 
 ---
 
@@ -1021,7 +1021,7 @@ proseRejected: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L57)</sub>
 
 ---
 
@@ -1033,7 +1033,7 @@ proseSections: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L55)</sub>
 
 ---
 
@@ -1045,7 +1045,7 @@ skipped: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L61)</sub>
 
 ---
 
@@ -1057,7 +1057,7 @@ skipReason: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/jobs/regenerate-docs.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L62)</sub>
 
 ---
 
@@ -1069,7 +1069,7 @@ budget: BudgetManager
 
 **Returns** `BudgetManager`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L27)</sub>
 
 ---
 
@@ -1081,7 +1081,7 @@ bundleStore: BundleStore
 
 **Returns** `BundleStore`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L28)</sub>
 
 ---
 
@@ -1093,7 +1093,7 @@ db: DbHandle
 
 **Returns** `DbHandle`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L25)</sub>
 
 ---
 
@@ -1105,7 +1105,7 @@ env: PlatformEnv
 
 **Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L23)</sub>
 
 ---
 
@@ -1117,7 +1117,7 @@ git: GitClient | null
 
 **Returns** `GitClient \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L30)</sub>
 
 ---
 
@@ -1135,7 +1135,7 @@ health: HealthRegistry
 |---|---|
 | `200` | The service is up. |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L31)</sub>
 
 ---
 
@@ -1147,7 +1147,7 @@ llm: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L26)</sub>
 
 ---
 
@@ -1159,7 +1159,7 @@ logger: Logger
 
 **Returns** `Logger`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L24)</sub>
 
 ---
 
@@ -1171,7 +1171,7 @@ metrics: typeof KnaMetrics
 
 **Returns** `{ readonly bundlesIngested: Counter<Attributes>; readonly bundlesRejected: Counter<Attributes>; readonly indexLagSeconds: Histogram<Attributes>; readonly symbolsIndexed: Counter<Attributes>; readonly queueDepth: ObservableGauge; readonly queueOldestJobAgeSeconds: ObservableGauge; readonly dlqDepth: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L32)</sub>
 
 ---
 
@@ -1183,7 +1183,7 @@ queue: WorkerQueue
 
 **Returns** `WorkerQueue`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L29)</sub>
 
 ---
 
@@ -1195,7 +1195,7 @@ retrievalConfig: RetrievalConfig
 
 **Returns** `RetrievalConfig`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L33)</sub>
 
 ---
 
@@ -1207,17 +1207,17 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/context.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L34)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=2b768c5ed40f5639 -->
+<!-- kna:generated:start id=api.class hash=72d9229f2f3b2a04 -->
 ### `GitClient`
 
 ```typescript
 class GitClient
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L29)</sub>
 
 ---
 
@@ -1227,7 +1227,7 @@ class GitClient
 class WorkerQueue
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L50)</sub>
 
 ---
 
@@ -1237,10 +1237,10 @@ class WorkerQueue
 class WriteDisabledError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L19)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=a7e548ae02f97601 -->
+<!-- kna:generated:start id=api.method hash=47a1d0fd4859bef6 -->
 ### `constructor`
 
 ```typescript
@@ -1251,7 +1251,7 @@ constructor(private readonly options: GitClientOptions)
 |---|---|---|
 | `options` | `GitClientOptions` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L30)</sub>
 
 ---
 
@@ -1270,7 +1270,7 @@ headSha(remote: string, branch: string): Promise<string | null>
 
 **Returns** `Promise<string \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L33)</sub>
 
 ---
 
@@ -1286,7 +1286,7 @@ openDocsPullRequest(input: {repoRemote: string;branch: string;title: string;body
 
 **Returns** `Promise<{ url: string; number: number; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L39)</sub>
 
 ---
 
@@ -1300,7 +1300,7 @@ close(): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L198)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L198)</sub>
 
 ---
 
@@ -1316,7 +1316,7 @@ constructor(redisUrl: string, private readonly logger: Logger, private readonly 
 | `logger` | `Logger` |  |
 | `options`? | `{ maxInFlightPerOrg?: number \| undefined; }` |  (default `{}`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L57)</sub>
 
 ---
 
@@ -1332,7 +1332,7 @@ enqueueRegenerateDocs(job: {orgId: string;repoId: string;commitSha: string;ref: 
 
 **Returns** `Promise<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L204)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L204)</sub>
 
 ---
 
@@ -1349,7 +1349,7 @@ pause(name: QueueName, reason: string): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L218)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L218)</sub>
 
 ---
 
@@ -1368,7 +1368,7 @@ pauseAll(reason: string, durationMs: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L184)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L184)</sub>
 
 ---
 
@@ -1380,7 +1380,7 @@ ping(): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L189)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L189)</sub>
 
 ---
 
@@ -1400,7 +1400,7 @@ register(name: QueueName, processor: (job: Job<T>) => Promise<unknown>, options:
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L81)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L81)</sub>
 
 ---
 
@@ -1414,10 +1414,10 @@ constructor(operation: string)
 |---|---|---|
 | `operation` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/git.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L20)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=f237cee8632c5ea3 -->
+<!-- kna:generated:start id=api.constant hash=c94347a27be3f87f -->
 ### `QUEUE_NAMES`
 
 ```typescript
@@ -1426,15 +1426,15 @@ const QUEUE_NAMES: {readonly indexModule: "index-module";readonly crossRepo: "cr
 
 **Returns** `{ readonly indexModule: "index-module"; readonly crossRepo: "cross-repo-resolve"; readonly regenerateDocs: "regenerate-docs"; readonly maintenance: "maintenance"; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L14)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=930dab3bc7ced9ef -->
+<!-- kna:generated:start id=api.type hash=8036b84c4525556a -->
 ### `QueueName`
 
 ```typescript
 type QueueName = (typeof QUEUE_NAMES)[keyof typeof QUEUE_NAMES]
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/apps/worker/src/services/queue.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/queue.ts#L21)</sub>
 <!-- kna:generated:end id=api.type -->

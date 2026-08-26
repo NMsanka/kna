@@ -4,7 +4,7 @@ docType: architecture-overview
 generated: true
 generator: kna-docgen
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: shallow
 provenance:
   moduleIds:
@@ -63,11 +63,11 @@ provenance:
 
 # kna architecture
 
-<!-- kna:generated:start id=architecture.summary hash=c1ed8a31aab7f654 -->
+<!-- kna:generated:start id=architecture.summary hash=90dd005ce4b8f260 -->
 | | |
 |---|---|
 | Repository | `github.com/nmsanka/kna` |
-| Commit | `bb7ab26e932f` on `master` |
+| Revision | `master` |
 | Modules | 20 |
 | Internal dependencies | 65 |
 | Runtime services | 10 |
@@ -294,7 +294,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=aea3d5121aa1cbcb -->
+<!-- kna:generated:start id=architecture.component hash=0478d67c743a8505 -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
 | `packages/ir` | 15 | 180 | 0 | typescript | — |
@@ -307,7 +307,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/analyzer-core` | 3 | 124 | 0 | typescript | — |
 | `packages/scanner` | 3 | 87 | 0 | typescript | — |
 | `packages/chunking` | 3 | 71 | 0 | typescript | — |
-| `packages/docgen` | 2 | 142 | 0 | typescript | — |
+| `packages/docgen` | 2 | 143 | 0 | typescript | — |
 | `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
 | `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |

@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_e934df0188a3716dda0ad3ad564013b4
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -183,7 +183,7 @@ provenance:
 | Public symbols | 79 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=04af4e5f36c4e5eb -->
+<!-- kna:generated:start id=api.constant hash=7106341161325d0b -->
 ### `accessBreadth`
 
 §15.4 — "legitimate insiders can exfiltrate the corpus through MCP undetected... alert on *breadth** rather than volume — an engineer touching 40 repos in an hour is the signal." Maintained as a rolling aggregate so the detector is a cheap read, not a scan of audit rows.
@@ -194,7 +194,7 @@ const accessBreadth: PgTableWithColumns<{name: "access_breadth";schema: undefine
 
 **Returns** `PgTableWithColumns<{ name: "access_breadth"; schema: undefined; columns: { orgId: PgColumn<{ name: "org_id"; tableName: "access_breadth"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRun…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L78)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L78)</sub>
 
 ---
 
@@ -206,7 +206,7 @@ const analysisDepth: PgEnum<["shallow", "semantic", "artifact"]>
 
 **Returns** `PgEnum<["shallow", "semantic", "artifact"]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L34)</sub>
 
 ---
 
@@ -218,7 +218,7 @@ const apiSpecs: PgTableWithColumns<{name: "api_specs";schema: undefined;columns:
 
 **Returns** `PgTableWithColumns<{ name: "api_specs"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "api_specs"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L227)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L227)</sub>
 
 ---
 
@@ -232,7 +232,7 @@ const apiTokens: PgTableWithColumns<{name: "api_tokens";schema: undefined;column
 
 **Returns** `PgTableWithColumns<{ name: "api_tokens"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "api_tokens"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: fal…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/auth.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/auth.ts#L41)</sub>
 
 ---
 
@@ -246,7 +246,7 @@ const auditEvents: PgTableWithColumns<{name: "audit_events";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "audit_events"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "audit_events"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L23)</sub>
 
 ---
 
@@ -258,7 +258,7 @@ const chunks: PgTableWithColumns<{name: "chunks";schema: undefined;columns: {id:
 
 **Returns** `PgTableWithColumns<{ name: "chunks"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "chunks"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enum…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L58)</sub>
 
 ---
 
@@ -272,7 +272,7 @@ const contextBlurbs: PgTableWithColumns<{name: "context_blurbs";schema: undefine
 
 **Returns** `PgTableWithColumns<{ name: "context_blurbs"; schema: undefined; columns: { orgId: PgColumn<{ name: "org_id"; tableName: "context_blurbs"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRun…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L179)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L179)</sub>
 
 ---
 
@@ -286,7 +286,7 @@ const crossRepoEdges: PgTableWithColumns<{name: "cross_repo_edges";schema: undef
 
 **Returns** `PgTableWithColumns<{ name: "cross_repo_edges"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "cross_repo_edges"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntime…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L202)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L202)</sub>
 
 ---
 
@@ -300,7 +300,7 @@ const deadLetters: PgTableWithColumns<{name: "dead_letters";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "dead_letters"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "dead_letters"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L295)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L295)</sub>
 
 ---
 
@@ -314,7 +314,7 @@ const documents: PgTableWithColumns<{name: "documents";schema: undefined;columns
 
 **Returns** `PgTableWithColumns<{ name: "documents"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "documents"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L204)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L204)</sub>
 
 ---
 
@@ -328,7 +328,7 @@ const EMBEDDING_DIMENSIONS: 1536
 
 **Returns** `1536`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L52)</sub>
 
 ---
 
@@ -342,7 +342,7 @@ const embeddingCache: PgTableWithColumns<{name: "embedding_cache";schema: undefi
 
 **Returns** `PgTableWithColumns<{ name: "embedding_cache"; schema: undefined; columns: { contentHash: PgColumn<{ name: "content_hash"; tableName: "embedding_cache"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L160)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L160)</sub>
 
 ---
 
@@ -356,7 +356,7 @@ const embeddings: PgTableWithColumns<{name: "embeddings";schema: undefined;colum
 
 **Returns** `PgTableWithColumns<{ name: "embeddings"; schema: undefined; columns: { chunkId: PgColumn<{ name: "chunk_id"; tableName: "embeddings"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRuntime…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L136)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L136)</sub>
 
 ---
 
@@ -370,7 +370,7 @@ const erasureRequests: PgTableWithColumns<{name: "erasure_requests";schema: unde
 
 **Returns** `PgTableWithColumns<{ name: "erasure_requests"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "erasure_requests"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntime…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L349)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L349)</sub>
 
 ---
 
@@ -384,7 +384,7 @@ const evalItems: PgTableWithColumns<{name: "eval_items";schema: undefined;column
 
 **Returns** `PgTableWithColumns<{ name: "eval_items"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "eval_items"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: fal…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L212)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L212)</sub>
 
 ---
 
@@ -396,7 +396,7 @@ const evalRuns: PgTableWithColumns<{name: "eval_runs";schema: undefined;columns:
 
 **Returns** `PgTableWithColumns<{ name: "eval_runs"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "eval_runs"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L253)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L253)</sub>
 
 ---
 
@@ -408,7 +408,7 @@ const feedback: PgTableWithColumns<{name: "feedback";schema: undefined;columns: 
 
 **Returns** `PgTableWithColumns<{ name: "feedback"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "feedback"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L183)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L183)</sub>
 
 ---
 
@@ -420,7 +420,7 @@ const gitProvider: PgEnum<["github", "azuredevops", "gitlab", "bitbucket", "loca
 
 **Returns** `PgEnum<["github", "azuredevops", "gitlab", "bitbucket", "local"]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L44)</sub>
 
 ---
 
@@ -434,7 +434,7 @@ const irBundles: PgTableWithColumns<{name: "ir_bundles";schema: undefined;column
 
 **Returns** `PgTableWithColumns<{ name: "ir_bundles"; schema: undefined; columns: { bundleId: PgColumn<{ name: "bundle_id"; tableName: "ir_bundles"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntim…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L62)</sub>
 
 ---
 
@@ -446,7 +446,7 @@ const languageEnum: PgEnum<["typescript", "javascript", "python", "csharp", "unk
 
 **Returns** `PgEnum<["typescript", "javascript", "python", "csharp", "unknown"]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L36)</sub>
 
 ---
 
@@ -460,7 +460,7 @@ const mcpTokens: PgTableWithColumns<{name: "mcp_tokens";schema: undefined;column
 
 **Returns** `PgTableWithColumns<{ name: "mcp_tokens"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "mcp_tokens"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: fal…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/auth.ts#L80)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/auth.ts#L80)</sub>
 
 ---
 
@@ -474,7 +474,7 @@ const moduleLocks: PgTableWithColumns<{name: "module_locks";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "module_locks"; schema: undefined; columns: { moduleId: PgColumn<{ name: "module_id"; tableName: "module_locks"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRu…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L280)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L280)</sub>
 
 ---
 
@@ -488,7 +488,7 @@ const moduleProjects: PgTableWithColumns<{name: "module_projects";schema: undefi
 
 **Returns** `PgTableWithColumns<{ name: "module_projects"; schema: undefined; columns: { moduleId: PgColumn<{ name: "module_id"; tableName: "module_projects"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L189)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L189)</sub>
 
 ---
 
@@ -500,7 +500,7 @@ const moduleRelations: Relations<"modules", {repo: One<"repos", true>;projects: 
 
 **Returns** `Relations<"modules", { repo: One<"repos", true>; projects: Many<"module_projects">; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L281)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L281)</sub>
 
 ---
 
@@ -514,7 +514,7 @@ const modules: PgTableWithColumns<{name: "modules";schema: undefined;columns: {i
 
 **Returns** `PgTableWithColumns<{ name: "modules"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "modules"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; en…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L130)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L130)</sub>
 
 ---
 
@@ -528,7 +528,7 @@ const oauthClients: PgTableWithColumns<{name: "oauth_clients";schema: undefined;
 
 **Returns** `PgTableWithColumns<{ name: "oauth_clients"; schema: undefined; columns: { clientId: PgColumn<{ name: "client_id"; tableName: "oauth_clients"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; has…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/auth.ts#L125)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/auth.ts#L125)</sub>
 
 ---
 
@@ -540,7 +540,7 @@ const orgRelations: Relations<"orgs", {projects: Many<"projects">;repos: Many<"r
 
 **Returns** `Relations<"orgs", { projects: Many<"projects">; repos: Many<"repos">; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L271)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L271)</sub>
 
 ---
 
@@ -552,7 +552,7 @@ const orgs: PgTableWithColumns<{name: "orgs";schema: undefined;columns: {id: PgC
 
 **Returns** `PgTableWithColumns<{ name: "orgs"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "orgs"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValu…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L52)</sub>
 
 ---
 
@@ -566,7 +566,7 @@ const partnerKeys: PgTableWithColumns<{name: "partner_keys";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "partner_keys"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "partner_keys"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/auth.ts#L147)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/auth.ts#L147)</sub>
 
 ---
 
@@ -580,7 +580,7 @@ const permissionRevocations: PgTableWithColumns<{name: "permission_revocations";
 
 **Returns** `PgTableWithColumns<{ name: "permission_revocations"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "permission_revocations"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L256)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L256)</sub>
 
 ---
 
@@ -594,7 +594,7 @@ const principalRoles: PgTableWithColumns<{name: "principal_roles";schema: undefi
 
 **Returns** `PgTableWithColumns<{ name: "principal_roles"; schema: undefined; columns: { principalId: PgColumn<{ name: "principal_id"; tableName: "principal_roles"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/auth.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/auth.ts#L21)</sub>
 
 ---
 
@@ -608,7 +608,7 @@ const principals: PgTableWithColumns<{name: "principals";schema: undefined;colum
 
 **Returns** `PgTableWithColumns<{ name: "principals"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "principals"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: fal…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L211)</sub>
 
 ---
 
@@ -620,7 +620,7 @@ const projects: PgTableWithColumns<{name: "projects";schema: undefined;columns: 
 
 **Returns** `PgTableWithColumns<{ name: "projects"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "projects"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L69)</sub>
 
 ---
 
@@ -634,7 +634,7 @@ const queryTraces: PgTableWithColumns<{name: "query_traces";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "query_traces"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "query_traces"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L100)</sub>
 
 ---
 
@@ -646,7 +646,7 @@ const repoPermissions: PgTableWithColumns<{name: "repo_permissions";schema: unde
 
 **Returns** `PgTableWithColumns<{ name: "repo_permissions"; schema: undefined; columns: { principalId: PgColumn<{ name: "principal_id"; tableName: "repo_permissions"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincremen…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L231)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L231)</sub>
 
 ---
 
@@ -658,7 +658,7 @@ const repoRelations: Relations<"repos", {org: One<"orgs", true>;modules: Many<"m
 
 **Returns** `Relations<"repos", { org: One<"orgs", true>; modules: Many<"modules">; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L276)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L276)</sub>
 
 ---
 
@@ -670,7 +670,7 @@ const repos: PgTableWithColumns<{name: "repos";schema: undefined;columns: {id: P
 
 **Returns** `PgTableWithColumns<{ name: "repos"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "repos"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumVa…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L88)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L88)</sub>
 
 ---
 
@@ -684,7 +684,7 @@ const sensitivityTier: PgEnum<["public", "internal", "confidential", "restricted
 
 **Returns** `PgEnum<["public", "internal", "confidential", "restricted"]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/tenancy.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/tenancy.ts#L27)</sub>
 
 ---
 
@@ -696,7 +696,7 @@ const services: PgTableWithColumns<{name: "services";schema: undefined;columns: 
 
 **Returns** `PgTableWithColumns<{ name: "services"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "services"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L250)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L250)</sub>
 
 ---
 
@@ -710,7 +710,7 @@ const spendLedger: PgTableWithColumns<{name: "spend_ledger";schema: undefined;co
 
 **Returns** `PgTableWithColumns<{ name: "spend_ledger"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "spend_ledger"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/operations.ts#L324)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/operations.ts#L324)</sub>
 
 ---
 
@@ -724,7 +724,7 @@ const symbolAliases: PgTableWithColumns<{name: "symbol_aliases";schema: undefine
 
 **Returns** `PgTableWithColumns<{ name: "symbol_aliases"; schema: undefined; columns: { orgId: PgColumn<{ name: "org_id"; tableName: "symbol_aliases"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRun…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L180)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L180)</sub>
 
 ---
 
@@ -736,7 +736,7 @@ const symbols: PgTableWithColumns<{name: "symbols";schema: undefined;columns: {i
 
 **Returns** `PgTableWithColumns<{ name: "symbols"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "symbols"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; en…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L94)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L94)</sub>
 
 ---
 
@@ -750,10 +750,10 @@ const versions: PgTableWithColumns<{name: "versions";schema: undefined;columns: 
 
 **Returns** `PgTableWithColumns<{ name: "versions"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "versions"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/ir.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L36)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=947da5e848afca1a -->
+<!-- kna:generated:start id=api.function hash=dd3f8aa10d03edd0 -->
 ### `anyOf`
 
 Bind a JavaScript array as a single Postgres array parameter.
@@ -768,7 +768,7 @@ anyOf(values: readonly unknown[]): SQL<unknown>
 
 **Returns** `SQL<unknown>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/sql.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/sql.ts#L24)</sub>
 
 ---
 
@@ -786,7 +786,7 @@ assertRlsEffective(handle: DbHandle): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L90)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L90)</sub>
 
 ---
 
@@ -802,7 +802,7 @@ createDb(options: DbOptions): DbHandle
 
 **Returns** `DbHandle`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L40)</sub>
 
 ---
 
@@ -820,7 +820,7 @@ const halfvec: (dimensions: number) => {(): PgCustomColumnBuilder<{name: "";data
 
 **Returns** `{ (): PgCustomColumnBuilder<{ name: ""; dataType: "custom"; columnType: "PgCustomColumn"; data: number[]; driverParam: string; enumValues: undefined; }>; <TConfig extends Record<string, any> & { dimensions: number; }>(fieldConfig?: TConfig \| undefined): PgCustomColumnBuilder<{ name: ""; dataType: "c…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/schema/chunks.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/chunks.ts#L35)</sub>
 
 ---
 
@@ -836,7 +836,7 @@ migrate(options: MigrateOptions): Promise<MigrationResult>
 
 **Returns** `Promise<MigrationResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L42)</sub>
 
 ---
 
@@ -855,7 +855,7 @@ setEfSearch(tx: Db, efSearch: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L243)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L243)</sub>
 
 ---
 
@@ -873,7 +873,7 @@ splitStatements(sqlText: string): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L132)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L132)</sub>
 
 ---
 
@@ -893,7 +893,7 @@ tryModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): P
 
 **Returns** `Promise<{ acquired: true; result: T; } \| { acquired: false; result: null; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L224)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L224)</sub>
 
 ---
 
@@ -913,7 +913,7 @@ withAuthProbe(handle: DbHandle, tokenHash: string, fn: (tx: Db) => Promise<T>): 
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L131)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L131)</sub>
 
 ---
 
@@ -933,7 +933,7 @@ withIdentityProbe(handle: DbHandle, subject: string, fn: (tx: Db) => Promise<T>)
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L155)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L155)</sub>
 
 ---
 
@@ -953,7 +953,7 @@ withModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): 
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L211)</sub>
 
 ---
 
@@ -973,7 +973,7 @@ withOrgContext(handle: DbHandle, orgId: string, fn: (tx: Db) => Promise<T>): Pro
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L105)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L105)</sub>
 
 ---
 
@@ -993,7 +993,7 @@ withRepoProbe(handle: DbHandle, remote: string, fn: (tx: Db) => Promise<T>): Pro
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L177)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L177)</sub>
 
 ---
 
@@ -1014,10 +1014,10 @@ withSystemContext(handle: DbHandle, orgId: string, reason: "indexing" | "cross-r
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L193)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L193)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.type hash=f5b771355bf307b8 -->
+<!-- kna:generated:start id=api.type hash=9c037db5739d5784 -->
 ### `Db`
 
 Database access.
@@ -1026,17 +1026,17 @@ Database access.
 type Db = PostgresJsDatabase<typeof schema>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L21)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.interface hash=75d7325fc23c34f7 -->
+<!-- kna:generated:start id=api.interface hash=035e5adb12c9b855 -->
 ### `DbHandle`
 
 ```typescript
 interface DbHandle
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L33)</sub>
 
 ---
 
@@ -1046,7 +1046,7 @@ interface DbHandle
 interface DbOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L23)</sub>
 
 ---
 
@@ -1056,7 +1056,7 @@ interface DbOptions
 interface MigrateOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L30)</sub>
 
 ---
 
@@ -1066,10 +1066,10 @@ interface MigrateOptions
 interface MigrationResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L37)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=4aba1f0aecea5ee9 -->
+<!-- kna:generated:start id=api.property hash=dc9c0eb21e5251f1 -->
 ### `close`
 
 ```typescript
@@ -1078,7 +1078,7 @@ close: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L36)</sub>
 
 ---
 
@@ -1090,7 +1090,7 @@ db: Db
 
 **Returns** `Db`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L34)</sub>
 
 ---
 
@@ -1102,7 +1102,7 @@ role: DbOptions['role']
 
 **Returns** `"interactive" \| "batch" \| "migration"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L37)</sub>
 
 ---
 
@@ -1114,7 +1114,7 @@ sql: postgres.Sql
 
 **Returns** `Sql<{}>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L35)</sub>
 
 ---
 
@@ -1126,7 +1126,7 @@ applicationName?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L27)</sub>
 
 ---
 
@@ -1138,7 +1138,7 @@ onNotice?: (notice: unknown) => void
 
 **Returns** `((notice: unknown) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L30)</sub>
 
 ---
 
@@ -1150,7 +1150,7 @@ poolMax?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L25)</sub>
 
 ---
 
@@ -1164,7 +1164,7 @@ role: 'interactive' | 'batch' | 'migration'
 
 **Returns** `"interactive" \| "batch" \| "migration"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L29)</sub>
 
 ---
 
@@ -1176,7 +1176,7 @@ statementTimeoutMs?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L26)</sub>
 
 ---
 
@@ -1188,7 +1188,7 @@ url: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L24)</sub>
 
 ---
 
@@ -1202,7 +1202,7 @@ dryRun?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L33)</sub>
 
 ---
 
@@ -1214,7 +1214,7 @@ onLog?: (message: string) => void
 
 **Returns** `((message: string) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L34)</sub>
 
 ---
 
@@ -1226,7 +1226,7 @@ url: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L31)</sub>
 
 ---
 
@@ -1238,7 +1238,7 @@ applied: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L38)</sub>
 
 ---
 
@@ -1250,20 +1250,20 @@ skipped: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/migrate.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L39)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=c1d3d18881796984 -->
+<!-- kna:generated:start id=api.class hash=f2f4e5cb7e5ea881 -->
 ### `RlsIneffectiveError`
 
 ```typescript
 class RlsIneffectiveError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L69)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=3e98d50bda3d242b -->
+<!-- kna:generated:start id=api.method hash=a2e68468deabe27d -->
 ### `constructor`
 
 ```typescript
@@ -1274,5 +1274,5 @@ constructor(role: string)
 |---|---|---|
 | `role` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/db/src/client.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L70)</sub>
 <!-- kna:generated:end id=api.method -->

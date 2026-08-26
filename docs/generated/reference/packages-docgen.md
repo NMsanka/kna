@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_9a189635182a8361fe3d3ab5c044c601
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -13,6 +13,7 @@ provenance:
   symbolIds:
     - sym_d77d39994bbb798eaa0d6926eb2b727ef1f354fd
     - sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4
+    - sym_67288c95e97d838e833f908fc46f4fc84dc97f9a
     - sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75
     - sym_a2d4dbca46908f320d26de49675bd6eb1d38d402
     - sym_3b3a904fb3e886ef4e6006dc8145c2590951329f
@@ -109,8 +110,8 @@ provenance:
     - sym_3eb20c1136aa9547eef53b2a46c2caeca9b00a41
     - sym_8698550667d83e31c0b7fd6f50a87e9fbad314a6
     - sym_4dcbb1158116043d22d8152757b916ceb0cf3fc5
-    - sym_d62fae50b946127ff72f47b281a3488f73adb2a5
     - sym_423a705766d56a9f118b37095061c1c746f728c7
+    - sym_fef6c12c0b7414473c084ea50da30331fd3fec6a
     - sym_dea4892c55bd6f96c9a9023c05f1c093f7c4addd
     - sym_42c1f5d34dd6fdd5cfd186cb0d9107034391a45c
     - sym_e9c1f044eb8b148e569a32038dad5ce7e38d202f
@@ -156,6 +157,7 @@ provenance:
   signatureHashes:
     sym_d77d39994bbb798eaa0d6926eb2b727ef1f354fd: e17246edd35771858985fe8f62bdd085c04384ca703ada98b8c52e2f71037d6f
     sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4: 37fc3750388d47a9224bc44c7032e499bad9639b31dc85238bd08b58e7c3f8da
+    sym_67288c95e97d838e833f908fc46f4fc84dc97f9a: 4209ff6af60eda8a91f1784ddf3e82d57cf66888556de475b3c97f9f117fd1c4
     sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75: 7b1abd85cc0be532c7bc518bd053fed29f4aa175ca537e1a897937b3dc226fe3
     sym_a2d4dbca46908f320d26de49675bd6eb1d38d402: 898d5ef8d25c679924e6481919f7a65f248c68ca1de1e83e9990a166dbfa468a
     sym_3b3a904fb3e886ef4e6006dc8145c2590951329f: 41ef6df4223cf2e205e5e93a6b0e326cf4543ea523957cb203cd965188666e3d
@@ -252,8 +254,8 @@ provenance:
     sym_3eb20c1136aa9547eef53b2a46c2caeca9b00a41: 338cedcc060d657d43c4c672aac4434d8f6e497d1f0d531c6058365ff3031d80
     sym_8698550667d83e31c0b7fd6f50a87e9fbad314a6: 5bdc4793686b466424aefe2f75dd9af6e7928fc30b8ab9c56fe5533a4cb910c6
     sym_4dcbb1158116043d22d8152757b916ceb0cf3fc5: cfde877555adb871ec61c5ab9b0e9bad4154ce749153908a2eed16a7c9eeacab
-    sym_d62fae50b946127ff72f47b281a3488f73adb2a5: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
     sym_423a705766d56a9f118b37095061c1c746f728c7: 579462789f017942a1eb28a948d4f4b5e855f39e6ecde3cdaeb0418dacfa5a14
+    sym_fef6c12c0b7414473c084ea50da30331fd3fec6a: 4209ff6af60eda8a91f1784ddf3e82d57cf66888556de475b3c97f9f117fd1c4
     sym_dea4892c55bd6f96c9a9023c05f1c093f7c4addd: 7b1abd85cc0be532c7bc518bd053fed29f4aa175ca537e1a897937b3dc226fe3
     sym_42c1f5d34dd6fdd5cfd186cb0d9107034391a45c: 8da63e19675e8b0c0ece072038665873b8e4781dfebf84eeb1d955eba9dc822a
     sym_e9c1f044eb8b148e569a32038dad5ce7e38d202f: cf15d403ae64cb1e672e8f05901f54f85a5b65dd1f0a64c66e2195f12ef04a1c
@@ -300,16 +302,16 @@ provenance:
 
 # @kna/docgen reference
 
-<!-- kna:generated:start id=overview hash=d70a30081b5f9cac -->
+<!-- kna:generated:start id=overview hash=dbf20628fff90738 -->
 | | |
 |---|---|
 | Package | `@kna/docgen` (npm) |
 | Path | `packages/docgen` |
 | Languages | typescript |
-| Public symbols | 142 |
+| Public symbols | 143 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=d590be00a75557b1 -->
+<!-- kna:generated:start id=api.function hash=00d80e0d1e7b69f3 -->
 ### `assessStaleness`
 
 ```typescript
@@ -324,7 +326,7 @@ assessStaleness(provenance: DocProvenance, currentSymbols: Map<string, {name: st
 
 **Returns** `StalenessAssessment`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L52)</sub>
 
 ---
 
@@ -341,7 +343,7 @@ generateProse(request: ProseRequest, options: GenerateProseOptions): Promise<Pro
 
 **Returns** `Promise<ProseResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L62)</sub>
 
 ---
 
@@ -361,7 +363,7 @@ mergeRegions(existing: string, generated: Map<string, string>, options: {force?:
 
 **Returns** `MergeResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L90)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L90)</sub>
 
 ---
 
@@ -379,7 +381,7 @@ moduleSlug(module: {path: string;name: string;id: string;key: string;orgId: stri
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L286)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L298)</sub>
 
 ---
 
@@ -395,7 +397,7 @@ parseRegions(document: string): GeneratedRegion[]
 
 **Returns** `GeneratedRegion[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L35)</sub>
 
 ---
 
@@ -411,7 +413,7 @@ renderArchitectureOverview(ctx: ArchitectureContext): RenderedDocument
 
 **Returns** `RenderedDocument`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L39)</sub>
 
 ---
 
@@ -429,7 +431,7 @@ renderDependencyDiagram(input: {modules: IrModule[];edges: Array<{from: string;t
 
 **Returns** `{ mermaid: string; textAlternative: string; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L247)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L259)</sub>
 
 ---
 
@@ -447,7 +449,7 @@ renderFacts(request: ProseRequest): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L167)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L167)</sub>
 
 ---
 
@@ -463,7 +465,7 @@ renderIntegrationGuide(ctx: IntegrationGuideContext): RenderedDocument
 
 **Returns** `RenderedDocument`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L34)</sub>
 
 ---
 
@@ -481,7 +483,7 @@ renderModuleReference(ctx: RenderContext): RenderedDocument
 
 **Returns** `RenderedDocument`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L58)</sub>
 
 ---
 
@@ -499,7 +501,7 @@ renderPullRequestBody(input: {moduleName: string;ownerTeam: string | null;commit
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L146)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L146)</sub>
 
 ---
 
@@ -518,7 +520,7 @@ renderPullRequestTitle(moduleName: string, assessments: StalenessAssessment[]): 
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L123)</sub>
 
 ---
 
@@ -535,7 +537,7 @@ renderRegion(id: string, content: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L63)</sub>
 
 ---
 
@@ -551,7 +553,7 @@ serialiseFrontmatter(frontmatter: Record<string, unknown>): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L325)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L337)</sub>
 
 ---
 
@@ -569,7 +571,7 @@ stripMarkers(document: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L138)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L138)</sub>
 
 ---
 
@@ -589,10 +591,10 @@ verifyGrounding(prose: string, facts: string, options: GenerateProseOptions): Pr
 
 **Returns** `Promise<{ grounded: boolean; ungroundedClaims: string[]; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L125)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L125)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=fa767f4b108eaed1 -->
+<!-- kna:generated:start id=api.interface hash=3050bae42031ea2c -->
 ### `ArchitectureContext`
 
 Architecture overview — deterministic (§6).
@@ -601,7 +603,7 @@ Architecture overview — deterministic (§6).
 interface ArchitectureContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L23)</sub>
 
 ---
 
@@ -613,7 +615,7 @@ Documentation staleness — a structural comparison, not a judgement (§4.2).
 interface DocProvenance
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L15)</sub>
 
 ---
 
@@ -623,7 +625,7 @@ interface DocProvenance
 interface GeneratedRegion
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L22)</sub>
 
 ---
 
@@ -633,7 +635,7 @@ interface GeneratedRegion
 interface GenerateProseOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L54)</sub>
 
 ---
 
@@ -645,7 +647,7 @@ API integration guide — deterministic, from the OpenAPI document (§6).
 interface IntegrationGuideContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L26)</sub>
 
 ---
 
@@ -655,7 +657,7 @@ interface IntegrationGuideContext
 interface MergeResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L72)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L72)</sub>
 
 ---
 
@@ -665,7 +667,7 @@ interface MergeResult
 interface ProseRequest
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L37)</sub>
 
 ---
 
@@ -675,7 +677,7 @@ interface ProseRequest
 interface ProseResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L44)</sub>
 
 ---
 
@@ -687,7 +689,7 @@ The deterministic renderer (§6).
 interface RenderContext
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L20)</sub>
 
 ---
 
@@ -697,7 +699,7 @@ interface RenderContext
 interface RenderedDocument
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L40)</sub>
 
 ---
 
@@ -707,7 +709,7 @@ interface RenderedDocument
 interface StaleFinding
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L31)</sub>
 
 ---
 
@@ -717,10 +719,10 @@ interface StaleFinding
 interface StalenessAssessment
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L39)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=27dd253ff26c6589 -->
+<!-- kna:generated:start id=api.property hash=10cc996ab2cf8864 -->
 ### `payload`
 
 ```typescript
@@ -729,7 +731,21 @@ payload: IrBundlePayload
 
 **Returns** `{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: string; defau…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L24)</sub>
+
+---
+
+### `revision`
+
+What this document records as its revision — see `RenderContext.revision`.
+
+```typescript
+revision: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L28)</sub>
 
 ---
 
@@ -743,7 +759,7 @@ sourceUrlTemplate?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L26)</sub>
 
 ---
 
@@ -755,7 +771,7 @@ documentId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L16)</sub>
 
 ---
 
@@ -767,7 +783,7 @@ ownerTeam: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L19)</sub>
 
 ---
 
@@ -779,7 +795,7 @@ signatureHashes: Record<string, string>
 
 **Returns** `Record<string, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L21)</sub>
 
 ---
 
@@ -791,7 +807,7 @@ slug: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L17)</sub>
 
 ---
 
@@ -803,7 +819,7 @@ symbolIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L20)</sub>
 
 ---
 
@@ -815,7 +831,7 @@ title: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L18)</sub>
 
 ---
 
@@ -829,7 +845,7 @@ actualHash: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L27)</sub>
 
 ---
 
@@ -841,7 +857,7 @@ content: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L28)</sub>
 
 ---
 
@@ -853,7 +869,7 @@ endIndex: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L30)</sub>
 
 ---
 
@@ -867,7 +883,7 @@ humanEdited: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L32)</sub>
 
 ---
 
@@ -879,7 +895,7 @@ id: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L23)</sub>
 
 ---
 
@@ -893,7 +909,7 @@ recordedHash: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L25)</sub>
 
 ---
 
@@ -905,7 +921,7 @@ startIndex: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L29)</sub>
 
 ---
 
@@ -917,7 +933,7 @@ client: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L55)</sub>
 
 ---
 
@@ -929,7 +945,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L56)</sub>
 
 ---
 
@@ -941,7 +957,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L57)</sub>
 
 ---
 
@@ -955,7 +971,7 @@ verify?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L59)</sub>
 
 ---
 
@@ -969,7 +985,7 @@ linkHandlers?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L31)</sub>
 
 ---
 
@@ -981,7 +997,7 @@ spec: ApiSpec
 
 **Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L27)</sub>
 
 ---
 
@@ -995,7 +1011,7 @@ symbols?: IrSymbol[]
 
 **Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L29)</sub>
 
 ---
 
@@ -1007,7 +1023,7 @@ $ref?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L763)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L763)</sub>
 
 ---
 
@@ -1019,7 +1035,7 @@ default?: unknown
 
 **Returns** `unknown`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L767)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L767)</sub>
 
 ---
 
@@ -1031,7 +1047,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L772)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L772)</sub>
 
 ---
 
@@ -1043,7 +1059,7 @@ enum?: unknown[]
 
 **Returns** `unknown[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L766)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L766)</sub>
 
 ---
 
@@ -1055,7 +1071,7 @@ example?: unknown
 
 **Returns** `unknown`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L768)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L768)</sub>
 
 ---
 
@@ -1067,7 +1083,7 @@ format?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L765)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L765)</sub>
 
 ---
 
@@ -1079,7 +1095,7 @@ items?: JsonSchema
 
 **Returns** `JsonSchema \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L769)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L769)</sub>
 
 ---
 
@@ -1091,7 +1107,7 @@ nullable?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L773)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L773)</sub>
 
 ---
 
@@ -1103,7 +1119,7 @@ properties?: Record<string, JsonSchema>
 
 **Returns** `Record<string, JsonSchema> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L770)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L770)</sub>
 
 ---
 
@@ -1115,7 +1131,7 @@ required?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L771)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L771)</sub>
 
 ---
 
@@ -1127,7 +1143,7 @@ type?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L764)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L764)</sub>
 
 ---
 
@@ -1139,7 +1155,7 @@ appended: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L75)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L75)</sub>
 
 ---
 
@@ -1151,7 +1167,7 @@ document: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L73)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L73)</sub>
 
 ---
 
@@ -1165,7 +1181,7 @@ orphaned: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L79)</sub>
 
 ---
 
@@ -1179,7 +1195,7 @@ preserved: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L77)</sub>
 
 ---
 
@@ -1191,7 +1207,7 @@ replaced: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/regions.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L74)</sub>
 
 ---
 
@@ -1203,7 +1219,7 @@ dev: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L36)</sub>
 
 ---
 
@@ -1217,7 +1233,7 @@ evidence: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L35)</sub>
 
 ---
 
@@ -1229,7 +1245,7 @@ from: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L32)</sub>
 
 ---
 
@@ -1241,7 +1257,7 @@ to: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/architecture.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L33)</sub>
 
 ---
 
@@ -1253,7 +1269,7 @@ components?: {schemas?: Record<string, JsonSchema>;securitySchemes?: Record<stri
 
 **Returns** `{ schemas?: Record<string, JsonSchema> \| undefined; securitySchemes?: Record<string, { type?: string \| undefined; scheme?: string \| undefined; bearerFormat?: string \| undefined; in?: string \| undefined; name?: string \| undefined; description?: string \| undefined; }> \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L805)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L805)</sub>
 
 ---
 
@@ -1265,7 +1281,7 @@ info?: {title?: string;version?: string;description?: string}
 
 **Returns** `{ title?: string \| undefined; version?: string \| undefined; description?: string \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L801)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L801)</sub>
 
 ---
 
@@ -1277,7 +1293,7 @@ paths?: Record<string, PathItem>
 
 **Returns** `Record<string, PathItem> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L804)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L804)</sub>
 
 ---
 
@@ -1289,7 +1305,7 @@ security?: Array<Record<string, string[]>>
 
 **Returns** `Record<string, string[]>[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L803)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L803)</sub>
 
 ---
 
@@ -1301,7 +1317,7 @@ servers?: Array<{url: string;description?: string}>
 
 **Returns** `{ url: string; description?: string \| undefined; }[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L802)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L802)</sub>
 
 ---
 
@@ -1313,7 +1329,7 @@ deprecated?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L789)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L789)</sub>
 
 ---
 
@@ -1325,7 +1341,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L787)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L787)</sub>
 
 ---
 
@@ -1337,7 +1353,7 @@ operationId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L785)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L785)</sub>
 
 ---
 
@@ -1349,7 +1365,7 @@ parameters?: OpenApiParameter[]
 
 **Returns** `OpenApiParameter[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L790)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L790)</sub>
 
 ---
 
@@ -1361,7 +1377,7 @@ requestBody?: {required?: boolean;content?: Record<string, {schema?: JsonSchema}
 
 **Returns** `{ required?: boolean \| undefined; content?: Record<string, { schema?: JsonSchema \| undefined; }> \| undefined; } \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L791)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L791)</sub>
 
 ---
 
@@ -1373,7 +1389,7 @@ responses?: Record<string, {description?: string}>
 
 **Returns** `Record<string, { description?: string \| undefined; }> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L792)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L792)</sub>
 
 ---
 
@@ -1385,7 +1401,7 @@ security?: unknown[]
 
 **Returns** `unknown[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L793)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L793)</sub>
 
 ---
 
@@ -1397,7 +1413,7 @@ summary?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L786)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L786)</sub>
 
 ---
 
@@ -1409,7 +1425,7 @@ tags?: string[]
 
 **Returns** `string[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L788)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L788)</sub>
 
 ---
 
@@ -1421,7 +1437,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L781)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L781)</sub>
 
 ---
 
@@ -1433,7 +1449,7 @@ in?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L778)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L778)</sub>
 
 ---
 
@@ -1445,7 +1461,7 @@ name?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L777)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L777)</sub>
 
 ---
 
@@ -1457,7 +1473,7 @@ required?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L779)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L779)</sub>
 
 ---
 
@@ -1469,7 +1485,7 @@ schema?: JsonSchema
 
 **Returns** `JsonSchema \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L780)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L780)</sub>
 
 ---
 
@@ -1481,7 +1497,7 @@ deprecated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L607)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L607)</sub>
 
 ---
 
@@ -1493,7 +1509,7 @@ description: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L605)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L605)</sub>
 
 ---
 
@@ -1505,7 +1521,7 @@ doc: OpenApiDocument
 
 **Returns** `OpenApiDocument`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L618)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L618)</sub>
 
 ---
 
@@ -1517,7 +1533,7 @@ method: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L601)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L601)</sub>
 
 ---
 
@@ -1529,7 +1545,7 @@ operationId: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L603)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L603)</sub>
 
 ---
 
@@ -1541,7 +1557,7 @@ parameters: Array<{name: string;in: string;required: boolean;schema: JsonSchema 
 
 **Returns** `{ name: string; in: string; required: boolean; schema: JsonSchema \| undefined; description: string \| null; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L608)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L608)</sub>
 
 ---
 
@@ -1553,7 +1569,7 @@ path: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L602)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L602)</sub>
 
 ---
 
@@ -1565,7 +1581,7 @@ requestSchema: JsonSchema | undefined
 
 **Returns** `JsonSchema \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L615)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L615)</sub>
 
 ---
 
@@ -1577,7 +1593,7 @@ responses: Array<{status: string;description: string}>
 
 **Returns** `{ status: string; description: string; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L616)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L616)</sub>
 
 ---
 
@@ -1589,7 +1605,7 @@ security: unknown[] | undefined
 
 **Returns** `unknown[] \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L617)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L617)</sub>
 
 ---
 
@@ -1601,7 +1617,7 @@ summary: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L604)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L604)</sub>
 
 ---
 
@@ -1613,7 +1629,7 @@ tags: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L606)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L606)</sub>
 
 ---
 
@@ -1625,7 +1641,7 @@ module: IrModule
 
 **Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L38)</sub>
 
 ---
 
@@ -1639,7 +1655,7 @@ section: 'module-overview' | 'endpoint-group' | 'getting-started'
 
 **Returns** `"module-overview" \| "endpoint-group" \| "getting-started"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L41)</sub>
 
 ---
 
@@ -1651,7 +1667,7 @@ symbols: IrSymbol[]
 
 **Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L39)</sub>
 
 ---
 
@@ -1665,7 +1681,7 @@ factIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L49)</sub>
 
 ---
 
@@ -1677,7 +1693,7 @@ grounded: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L50)</sub>
 
 ---
 
@@ -1689,7 +1705,7 @@ model: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L46)</sub>
 
 ---
 
@@ -1701,7 +1717,7 @@ promptVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L47)</sub>
 
 ---
 
@@ -1713,7 +1729,7 @@ text: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L45)</sub>
 
 ---
 
@@ -1725,19 +1741,7 @@ ungroundedClaims: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L51)</sub>
-
----
-
-### `commitSha`
-
-```typescript
-commitSha: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L51)</sub>
 
 ---
 
@@ -1749,7 +1753,21 @@ module: IrModule
 
 **Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L21)</sub>
+
+---
+
+### `revision`
+
+What the source links point at, and what the frontmatter records.
+
+```typescript
+revision: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L37)</sub>
 
 ---
 
@@ -1763,7 +1781,7 @@ sourceUrlTemplate?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L24)</sub>
 
 ---
 
@@ -1775,7 +1793,7 @@ symbols: IrSymbol[]
 
 **Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L22)</sub>
 
 ---
 
@@ -1787,7 +1805,7 @@ docType: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L43)</sub>
 
 ---
 
@@ -1799,7 +1817,7 @@ frontmatter: Record<string, unknown>
 
 **Returns** `Record<string, unknown>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L44)</sub>
 
 ---
 
@@ -1811,7 +1829,7 @@ provenanceSignatureHashes: Record<string, string>
 
 **Returns** `Record<string, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L48)</sub>
 
 ---
 
@@ -1823,7 +1841,7 @@ provenanceSymbolIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L47)</sub>
 
 ---
 
@@ -1837,7 +1855,7 @@ sections: Map<string, string>
 
 **Returns** `Map<string, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L46)</sub>
 
 ---
 
@@ -1849,7 +1867,7 @@ slug: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L41)</sub>
 
 ---
 
@@ -1861,7 +1879,7 @@ title: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/render.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L42)</sub>
 
 ---
 
@@ -1873,7 +1891,7 @@ bearerFormat?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L676)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L676)</sub>
 
 ---
 
@@ -1885,7 +1903,7 @@ description?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L679)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L679)</sub>
 
 ---
 
@@ -1897,7 +1915,7 @@ headerName?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L678)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L678)</sub>
 
 ---
 
@@ -1909,7 +1927,7 @@ in?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L677)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L677)</sub>
 
 ---
 
@@ -1921,7 +1939,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L673)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L673)</sub>
 
 ---
 
@@ -1933,7 +1951,7 @@ scheme?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L675)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L675)</sub>
 
 ---
 
@@ -1945,7 +1963,7 @@ type: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/integration-guide.ts#L674)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L674)</sub>
 
 ---
 
@@ -1957,7 +1975,7 @@ breaking: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L36)</sub>
 
 ---
 
@@ -1969,7 +1987,7 @@ detail: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L35)</sub>
 
 ---
 
@@ -1981,7 +1999,7 @@ qualifiedName: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L33)</sub>
 
 ---
 
@@ -1993,7 +2011,7 @@ reason: StalenessReason
 
 **Returns** `StalenessReason`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L34)</sub>
 
 ---
 
@@ -2005,7 +2023,7 @@ symbolId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L32)</sub>
 
 ---
 
@@ -2017,7 +2035,7 @@ documentId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L40)</sub>
 
 ---
 
@@ -2029,7 +2047,7 @@ findings: StaleFinding[]
 
 **Returns** `StaleFinding[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L45)</sub>
 
 ---
 
@@ -2043,7 +2061,7 @@ lowRisk: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L47)</sub>
 
 ---
 
@@ -2057,7 +2075,7 @@ orphanedSymbolIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L49)</sub>
 
 ---
 
@@ -2071,7 +2089,7 @@ score: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L44)</sub>
 
 ---
 
@@ -2083,7 +2101,7 @@ slug: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L41)</sub>
 
 ---
 
@@ -2095,10 +2113,10 @@ stale: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L42)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=016ee3ce0fa70492 -->
+<!-- kna:generated:start id=api.constant hash=f1b6411fc545188b -->
 ### `PROSE_PROMPT_VERSION`
 
 The LLM prose layer (§6).
@@ -2109,15 +2127,15 @@ const PROSE_PROMPT_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/prose.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L22)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=cb291dfca3da0379 -->
+<!-- kna:generated:start id=api.type hash=7f517512b9932b45 -->
 ### `StalenessReason`
 
 ```typescript
 type StalenessReason = | 'signature-changed' | 'symbol-removed' | 'symbol-renamed' | 'doc-comment-changed' | 'endpoint-changed'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/docgen/src/staleness.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L24)</sub>
 <!-- kna:generated:end id=api.type -->

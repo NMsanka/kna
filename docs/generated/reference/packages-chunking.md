@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_095c1135195b5ab97f79cc1523d4f37a
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -167,7 +167,7 @@ provenance:
 | Public symbols | 71 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=15201c62e58b322e -->
+<!-- kna:generated:start id=api.constant hash=a21eee36df460d8d -->
 ### `BLURB_PROMPT_VERSION`
 
 Context blurb generation — Anthropic's contextual retrieval (§8).
@@ -178,17 +178,17 @@ const BLURB_PROMPT_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L21)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.interface hash=334291bfb5210414 -->
+<!-- kna:generated:start id=api.interface hash=ee53f4417b7eaac6 -->
 ### `BlurbRequest`
 
 ```typescript
 interface BlurbRequest
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L35)</sub>
 
 ---
 
@@ -198,7 +198,7 @@ interface BlurbRequest
 interface BlurbResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L40)</sub>
 
 ---
 
@@ -210,7 +210,7 @@ Chunking (§8).
 interface Chunk
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L26)</sub>
 
 ---
 
@@ -220,7 +220,7 @@ interface Chunk
 interface ChunkOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L57)</sub>
 
 ---
 
@@ -230,7 +230,7 @@ interface ChunkOptions
 interface ClusterOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L70)</sub>
 
 ---
 
@@ -240,7 +240,7 @@ interface ClusterOptions
 interface ClusterResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L62)</sub>
 
 ---
 
@@ -250,7 +250,7 @@ interface ClusterResult
 interface DuplicateCluster
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L54)</sub>
 
 ---
 
@@ -260,10 +260,10 @@ interface DuplicateCluster
 interface GenerateBlurbsOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L48)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=f7f79a39580e57a5 -->
+<!-- kna:generated:start id=api.property hash=d0edb42e310df94d -->
 ### `module`
 
 ```typescript
@@ -272,7 +272,7 @@ module: IrModule
 
 **Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L37)</sub>
 
 ---
 
@@ -284,7 +284,7 @@ symbol: IrSymbol
 
 **Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L36)</sub>
 
 ---
 
@@ -296,7 +296,7 @@ blurb: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L43)</sub>
 
 ---
 
@@ -308,7 +308,7 @@ model: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L44)</sub>
 
 ---
 
@@ -320,7 +320,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L42)</sub>
 
 ---
 
@@ -332,7 +332,7 @@ promptVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L45)</sub>
 
 ---
 
@@ -344,7 +344,7 @@ signatureHash: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L41)</sub>
 
 ---
 
@@ -356,7 +356,7 @@ analysisDepth: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L42)</sub>
 
 ---
 
@@ -370,7 +370,7 @@ content: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L37)</sub>
 
 ---
 
@@ -382,7 +382,7 @@ contentHash: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L39)</sub>
 
 ---
 
@@ -394,7 +394,7 @@ contextHeader: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L38)</sub>
 
 ---
 
@@ -406,7 +406,7 @@ corpus: 'code' | 'docs' | 'spec' | 'adr' | 'infra'
 
 **Returns** `"code" \| "docs" \| "spec" \| "adr" \| "infra"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L35)</sub>
 
 ---
 
@@ -418,7 +418,7 @@ generated: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L46)</sub>
 
 ---
 
@@ -430,7 +430,7 @@ id: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L27)</sub>
 
 ---
 
@@ -442,7 +442,7 @@ indexedCommitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L47)</sub>
 
 ---
 
@@ -454,7 +454,7 @@ moduleId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L30)</sub>
 
 ---
 
@@ -466,7 +466,7 @@ ordinal: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L34)</sub>
 
 ---
 
@@ -478,7 +478,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L28)</sub>
 
 ---
 
@@ -490,7 +490,7 @@ projectIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L31)</sub>
 
 ---
 
@@ -502,7 +502,7 @@ repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L29)</sub>
 
 ---
 
@@ -516,7 +516,7 @@ retrievalConfigVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L54)</sub>
 
 ---
 
@@ -528,7 +528,7 @@ sensitivity: Sensitivity
 
 **Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L41)</sub>
 
 ---
 
@@ -540,7 +540,7 @@ sourceEndLine: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L45)</sub>
 
 ---
 
@@ -552,7 +552,7 @@ sourcePath: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L43)</sub>
 
 ---
 
@@ -564,7 +564,7 @@ sourceStartLine: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L44)</sub>
 
 ---
 
@@ -576,7 +576,7 @@ symbolId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L33)</sub>
 
 ---
 
@@ -588,7 +588,7 @@ tokenCount: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L40)</sub>
 
 ---
 
@@ -600,7 +600,7 @@ versionId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L32)</sub>
 
 ---
 
@@ -614,7 +614,7 @@ blurbsBySignatureHash?: Map<string, string>
 
 **Returns** `Map<string, string> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L63)</sub>
 
 ---
 
@@ -626,7 +626,7 @@ commitSha: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L60)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L60)</sub>
 
 ---
 
@@ -640,7 +640,7 @@ maxTokens?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L65)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L65)</sub>
 
 ---
 
@@ -652,7 +652,7 @@ module: IrModule
 
 **Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L58)</sub>
 
 ---
 
@@ -664,7 +664,7 @@ overlapTokens?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L66)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L66)</sub>
 
 ---
 
@@ -676,7 +676,7 @@ retrievalConfigVersion: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L61)</sub>
 
 ---
 
@@ -688,7 +688,7 @@ versionId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L59)</sub>
 
 ---
 
@@ -702,7 +702,7 @@ minTokens?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L74)</sub>
 
 ---
 
@@ -716,7 +716,7 @@ threshold?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L72)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L72)</sub>
 
 ---
 
@@ -730,7 +730,7 @@ assignments: Map<string, string>
 
 **Returns** `Map<string, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L65)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L65)</sub>
 
 ---
 
@@ -742,7 +742,7 @@ clusters: DuplicateCluster[]
 
 **Returns** `DuplicateCluster[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L63)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L63)</sub>
 
 ---
 
@@ -756,7 +756,7 @@ representatives: Set<string>
 
 **Returns** `Set<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L67)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L67)</sub>
 
 ---
 
@@ -768,7 +768,7 @@ clusterId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L55)</sub>
 
 ---
 
@@ -780,7 +780,7 @@ memberChunkIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L57)</sub>
 
 ---
 
@@ -794,7 +794,7 @@ moduleIds: string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L59)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L59)</sub>
 
 ---
 
@@ -806,7 +806,7 @@ representativeChunkId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L56)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L56)</sub>
 
 ---
 
@@ -820,7 +820,7 @@ cachedSignatureHashes?: Set<string>
 
 **Returns** `Set<string> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L53)</sub>
 
 ---
 
@@ -832,7 +832,7 @@ client: LlmClient
 
 **Returns** `LlmClient`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L49)</sub>
 
 ---
 
@@ -844,7 +844,7 @@ concurrency?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L54)</sub>
 
 ---
 
@@ -856,7 +856,7 @@ onProgress?: (done: number, total: number) => void
 
 **Returns** `((done: number, total: number) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L55)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L55)</sub>
 
 ---
 
@@ -868,7 +868,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L50)</sub>
 
 ---
 
@@ -880,10 +880,10 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L51)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=21892c6d238d5023 -->
+<!-- kna:generated:start id=api.function hash=40712aeae74f389f -->
 ### `buildContextHeader`
 
 The context header.
@@ -899,7 +899,7 @@ buildContextHeader(symbol: {name: string;id: string;orgId: string;repoId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L192)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L192)</sub>
 
 ---
 
@@ -916,7 +916,7 @@ chunkSymbols(symbols: {name: string;id: string;orgId: string;repoId: string;proj
 
 **Returns** `Chunk[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L76)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L76)</sub>
 
 ---
 
@@ -935,7 +935,7 @@ clusterChunks(chunks: Chunk[], options: ClusterOptions): ClusterResult
 
 **Returns** `ClusterResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L85)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L85)</sub>
 
 ---
 
@@ -953,7 +953,7 @@ estimateTokens(text: string): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L401)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L401)</sub>
 
 ---
 
@@ -970,7 +970,7 @@ generateBlurbs(requests: BlurbRequest[], options: GenerateBlurbsOptions): Promis
 
 **Returns** `Promise<BlurbResult[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L58)</sub>
 
 ---
 
@@ -987,7 +987,7 @@ hammingDistance(a: bigint, b: bigint): number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L44)</sub>
 
 ---
 
@@ -1003,7 +1003,7 @@ isGeneratedPath(path: string): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L169)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L169)</sub>
 
 ---
 
@@ -1022,7 +1022,7 @@ renderBlurbPrompt(symbol: {name: string;id: string;orgId: string;repoId: string;
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/blurb.ts#L138)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L138)</sub>
 
 ---
 
@@ -1040,7 +1040,7 @@ renderDeterministicFacts(symbol: {name: string;id: string;orgId: string;repoId: 
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L224)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L224)</sub>
 
 ---
 
@@ -1058,7 +1058,7 @@ simhash(text: string): bigint
 
 **Returns** `bigint`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/dedupe.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/dedupe.ts#L24)</sub>
 
 ---
 
@@ -1076,7 +1076,7 @@ splitAtStatementBoundaries(source: string, maxTokens: number, overlapTokens: num
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L355)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L355)</sub>
 
 ---
 
@@ -1096,5 +1096,5 @@ splitToBudget(text: string, maxTokens: number, overlapTokens: number): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/packages/chunking/src/chunker.ts#L309)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L309)</sub>
 <!-- kna:generated:end id=api.function -->

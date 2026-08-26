@@ -89,7 +89,9 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
         renderModuleReference({
           module,
           symbols,
-          commitSha: ctx.version.commitSha,
+          // The branch, not the commit: this copy lives in the repository, and a link
+          // pinned to a sha rots while `blob/main/...` keeps working.
+          revision: ctx.version.ref,
           sourceUrlTemplate: sourceUrlTemplate(ctx),
         }),
       );
@@ -102,6 +104,7 @@ export async function generateCommand(ctx: CliContext, options: GenerateOptions)
     documents.push(
       renderArchitectureOverview({
         payload: result.bundle.payload,
+        revision: ctx.version.ref,
         sourceUrlTemplate: sourceUrlTemplate(ctx),
       }),
     );

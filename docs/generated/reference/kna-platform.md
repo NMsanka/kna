@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_5bdb211a43046f19ca2ed8c4e3a662ca
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: bb7ab26e932fb39b87903e05bc3cef24f45a2c86
+revision: master
 analysisDepth: shallow
 owners:
   []
@@ -67,7 +67,7 @@ provenance:
 > for a complete picture.
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=c91f2d96491edc42 -->
+<!-- kna:generated:start id=api.function hash=06dfd853b06cf127 -->
 ### `anchor`
 
 ```python
@@ -79,7 +79,7 @@ def anchor(b, side):
 | `b` | — |  |
 | `side` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L44)</sub>
 
 ---
 
@@ -100,7 +100,7 @@ def arrow(a, b, label = None, sides = None, colour = "#1e1e1e", dashed = False, 
 | `via`? | — |  (default `None`) |
 | `size`? | — |  (default `13`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L49)</sub>
 
 ---
 
@@ -114,7 +114,7 @@ def base(**kw):
 |---|---|---|
 | `kw` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L10)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L10)</sub>
 
 ---
 
@@ -139,7 +139,7 @@ def box(x, y, w, h, s, stroke = "#1e1e1e", bg = "transparent", size = 16, dashed
 | `fill`? | — |  (default `"solid"`) |
 | `radius`? | — |  (default `True`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L29)</sub>
 
 ---
 
@@ -161,7 +161,7 @@ def chain(items, x0, y0, w, h, gap, colour, label_size = 12, vertical = False):
 | `label_size`? | — |  (default `12`) |
 | `vertical`? | — |  (default `False`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L331)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L331)</sub>
 
 ---
 
@@ -175,7 +175,7 @@ def cy(b): return b["y"]+ b["height"]/ 2
 |---|---|---|
 | `b` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L288)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L288)</sub>
 
 ---
 
@@ -191,7 +191,7 @@ def emit(stem):
 |---|---|---|
 | `stem` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L100)</sub>
 
 ---
 
@@ -208,7 +208,7 @@ def heading(x, y, s, size = 28):
 | `s` | — |  |
 | `size`? | — |  (default `28`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L79)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L79)</sub>
 
 ---
 
@@ -224,7 +224,7 @@ def lane(a, b, x):
 | `b` | — |  |
 | `x` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L575)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L575)</sub>
 
 ---
 
@@ -240,7 +240,7 @@ def lane_rl(a, b, x):
 | `b` | — |  |
 | `x` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L290)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L290)</sub>
 
 ---
 
@@ -256,7 +256,7 @@ def lane_rr(a, b, x):
 | `b` | — |  |
 | `x` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L293)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L293)</sub>
 
 ---
 
@@ -270,7 +270,7 @@ def mid(b): return b["y"]+ b["height"]/ 2
 |---|---|---|
 | `b` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L573)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L573)</sub>
 
 ---
 
@@ -280,7 +280,7 @@ def mid(b): return b["y"]+ b["height"]/ 2
 def rid(): return uuid.uuid4().hex[: 20]
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L7)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L7)</sub>
 
 ---
 
@@ -290,7 +290,7 @@ def rid(): return uuid.uuid4().hex[: 20]
 def sd(): return random.randint(1, 2**31 - 1)
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L8)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L8)</sub>
 
 ---
 
@@ -313,7 +313,7 @@ def text_el(x, y, w, h, s, size = 16, colour = "#1e1e1e", align = "center", fami
 | `family`? | — |  (default `5`) |
 | `container`? | — |  (default `None`) |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L19)</sub>
 
 ---
 
@@ -331,10 +331,10 @@ def zone(x, y, w, h, title):
 | `h` | — |  |
 | `title` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L82)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L82)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.method hash=44ff485a1cff0abe -->
+<!-- kna:generated:start id=api.method hash=6cd3cd86970366ac -->
 ### `crosses`
 
 ```python
@@ -347,7 +347,7 @@ def crosses(p, q, r):
 | `q` | — |  |
 | `r` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L132)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L132)</sub>
 
 ---
 
@@ -361,7 +361,7 @@ def label_of(r):
 |---|---|---|
 | `r` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L115)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L115)</sub>
 
 ---
 
@@ -376,5 +376,5 @@ def overlaps(a, b):
 | `a` | — |  |
 | `b` | — |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/bb7ab26e932fb39b87903e05bc3cef24f45a2c86/scripts/gen-architecture-diagram.py#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/scripts/gen-architecture-diagram.py#L123)</sub>
 <!-- kna:generated:end id=api.method -->

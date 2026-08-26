@@ -24,6 +24,8 @@ export interface ArchitectureContext {
   payload: IrBundlePayload;
   /** Repo-relative source URL template, as for the module reference. */
   sourceUrlTemplate?: string;
+  /** What this document records as its revision — see `RenderContext.revision`. */
+  revision: string;
 }
 
 interface ModuleEdge {
@@ -44,7 +46,10 @@ export function renderArchitectureOverview(ctx: ArchitectureContext): RenderedDo
 
   const sections = new Map<string, string>();
 
-  sections.set('architecture.summary', renderSummary(payload, modules, edges, endpoints));
+  sections.set(
+    'architecture.summary',
+    renderSummary(payload, modules, edges, endpoints, ctx.revision),
+  );
   sections.set('architecture.context', renderContext(payload));
   sections.set('architecture.container', renderContainer(modules, edges));
   sections.set('architecture.component', renderComponent(modules, payload));
@@ -65,7 +70,7 @@ export function renderArchitectureOverview(ctx: ArchitectureContext): RenderedDo
       generated: true,
       generator: 'kna-docgen',
       repoId: payload.repo.id,
-      commitSha: payload.version.commitSha,
+      revision: ctx.revision,
       analysisDepth: payload.analysisDepth,
       // Module-level provenance, since this document is built from the module graph rather
       // than from individual declarations.
@@ -93,15 +98,14 @@ function renderSummary(
   modules: IrModule[],
   edges: ModuleEdge[],
   endpoints: IrSymbol[],
+  revision: string,
 ): string {
   const lines: string[] = [];
 
   lines.push('| | |');
   lines.push('|---|---|');
   lines.push(`| Repository | \`${payload.repo.remote}\` |`);
-  lines.push(
-    `| Commit | \`${payload.version.commitSha.slice(0, 12)}\` on \`${payload.version.ref}\` |`,
-  );
+  lines.push(`| Revision | \`${revision}\` |`);
   lines.push(`| Modules | ${modules.length} |`);
   lines.push(`| Internal dependencies | ${edges.length} |`);
   lines.push(`| Runtime services | ${payload.services.length} |`);
