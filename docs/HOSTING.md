@@ -81,6 +81,20 @@ docker build -f deploy/Dockerfile --target migrate -t YOUR_REGISTRY/kna-migrate:
 
 Tag by commit, not `latest`. A rolling deploy needs to name the version it is rolling to.
 
+The `api` image also carries the web application. It is bundled during the image build and
+served from `apps/web/dist`, so there is no second container, no static host and nothing to put
+in front of it — one image, one process, one port.
+
+Two things about that build are worth knowing before it surprises you:
+
+- **`.dockerignore` is load-bearing.** Without it `COPY apps apps` copies the host's
+  `node_modules` over the ones the image just installed, and the web build fails with
+  `Cannot find module` because a pnpm bin symlink points into a store path that does not exist
+  in the image.
+- **Every workspace package needs its manifest copied** in the dependency stage of the
+  Dockerfile. A missing one is invisible for as long as anyone builds on a machine that has
+  already run `pnpm install`, and fails only on a clean builder — which is what CI is.
+
 The `migrate` image exists separately because migrations run as the **owner** role while the
 services run as non-superuser roles. One image cannot hold both credentials without defeating the
 point.

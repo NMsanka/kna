@@ -1,0 +1,34 @@
+# Without this, `COPY apps apps` copies the host's node_modules over the ones the image just
+# installed. For the TypeScript packages that went unnoticed, because their dependencies resolve
+# from the root node_modules either way. It broke the moment a package had its own toolchain:
+# apps/web's vite binary is a pnpm symlink into a store path that does not exist in the image,
+# so `vite build` failed with "Cannot find module".
+#
+# It also keeps the build context small — node_modules is by far the largest thing here, and it
+# was being uploaded to the daemon on every build.
+node_modules
+**/node_modules
+
+# Build output. Everything is rebuilt inside the image; copying a host build in risks shipping
+# something that was never compiled by the image's own toolchain.
+dist
+**/dist
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+.git
+.github
+coverage
+**/coverage
+
+# Local state and secrets. `.env` holds a real provider key; it must never reach an image layer.
+.env
+.env.*
+!.env.example
+.kna
+.claude
+
+# Nothing here is needed to build or run a service.
+docs
+*.md
+!README.md

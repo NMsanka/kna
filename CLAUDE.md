@@ -310,6 +310,35 @@ curl -X POST localhost:8080/v1/admin/repos/<repoId>/ingest-credential -H "author
 
 ---
 
+## Using it from a browser
+
+The API serves a React application. Two surfaces, one sign-in:
+
+| Path | What it is |
+|---|---|
+| `/chat` | Ask about one project or one repository |
+| `/chat/all` | Ask across every repository you can read, with the evidence grouped by which one it came from |
+| `/admin` | Repositories: register, mint a publish credential, reindex |
+| `/admin/people` | Add someone and issue their token |
+
+Sign in with a `KNA_TOKEN`. The administration pages appear only for a caller who can actually
+use them — the application asks the API rather than trusting anything the browser claims.
+
+**The token is never held by the browser.** Signing in exchanges it for an httpOnly cookie, and
+the application calls `/app/api/*`, which reads that cookie and forwards to the endpoint that
+already existed. A token in `localStorage` would sit where any injected script could read it, and
+§10 Layer 5 is explicit that the corpus is full of attacker-controllable text.
+
+`/app/api/*` re-implements no rule: `ask` is `/v1/search`, the administrative calls are
+`/v1/admin/*`. The ACL, the audit trail and the trace are applied by those endpoints exactly as
+they are for the CLI and the editor.
+
+The application is built by `pnpm build` into `apps/web/dist`, and the API serves it from there.
+Without that build the services still start; `/chat` and `/admin` return 404 and the API says so
+once, in a warning at boot.
+
+---
+
 ## Using it from an editor
 
 The MCP server is the developer-facing surface. `.mcp.json` in this repo points at it; each
@@ -618,7 +647,7 @@ If you add a service or change its wiring, start it once. The type checker will 
 | CLI distribution to CI | Interim: built from source in the workflow. See [ADR 0002](docs/adr/0002-cli-distribution.md) |
 | Git provider HTTP calls | **Not written.** Interfaces and write-gating refusals work |
 | Documentation site | Not started — bought, not built (ADR 0001) |
-| Web chat UI | Not started, and **not** ruled out by ADR 0001. That ADR defers the *documentation site* and the *external* assistant; the internal assistant is on its build list. The IDE surface (MCP) covers developers today |
+| Web application | Built. React, served by the API at `/chat` and `/admin`. ADR 0001 defers the *documentation site* and the *external* assistant; the internal assistant was always on its build list |
 
 ---
 

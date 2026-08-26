@@ -75,7 +75,7 @@ credential scoped to that one repository — saved alongside your other tokens.
 Watch for `unknown project slug` in the output. It is not an error and the repository still
 indexes, but it will answer nothing to project-scoped questions.
 
-Same thing through the console if you prefer a form: **http://localhost:8080/admin**
+Same thing through the web application if you prefer a form: **http://localhost:8080/admin**
 
 ---
 
@@ -147,7 +147,30 @@ evidence is weak it says so instead of guessing.
 
 ---
 
-## 7. From your editor
+## 7. From a browser
+
+Nothing to install. Open it and sign in with your `KNA_TOKEN`:
+
+```bash
+start http://localhost:8080/chat
+```
+
+| Path | What it is |
+|---|---|
+| `/chat` | Ask about one project or one repository |
+| `/chat/all` | Ask across every repository you can read |
+| `/admin` | Register a repository, mint a publish credential, reindex |
+| `/admin/people` | Add someone and issue their token |
+
+The administration pages only appear if your token can actually use them.
+
+This is the easiest thing to hand a colleague — no CLI, no editor setup, no token in a config
+file anywhere. It is built by `pnpm build`; if it was never built, these paths return 404 and the
+API says so in a warning at startup.
+
+---
+
+## 8. From your editor
 
 No per-repository setup. Scope is inferred from the folder you have open.
 
@@ -160,7 +183,7 @@ reads that variable rather than embedding a token.
 
 ---
 
-## 8. Read the documentation
+## 9. Read the documentation
 
 List what exists:
 
@@ -187,7 +210,7 @@ Nothing is committed. Review the diff and open a pull request.
 
 ---
 
-## 9. Day to day
+## 10. Day to day
 
 ```bash
 pnpm dev status
@@ -217,7 +240,7 @@ the one thing that cannot be rebuilt.
 
 ---
 
-## 10. When you change something
+## 11. When you change something
 
 **Changed the code and want it re-indexed?** Publishing the same commit again does nothing — that
 is the cost model working, since nothing changed. Commit your change and publish, or force it:
@@ -350,8 +373,8 @@ Or from the editor, once you have restarted it:
 
 ## Administration
 
-The console at **http://localhost:8080/admin** covers registering repositories, minting publish
-credentials, triggering reindexes, and adding people. Sign in with `KNA_TOKEN`.
+The web application at **http://localhost:8080/admin** covers registering repositories, minting
+publish credentials, triggering reindexes, and adding people. Sign in with `KNA_TOKEN`.
 
 Adding someone from the command line instead:
 

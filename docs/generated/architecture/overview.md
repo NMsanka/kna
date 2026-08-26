@@ -12,6 +12,7 @@ provenance:
     - mod_d4b7cb542aa0325c8670d5cc55f2a346
     - mod_60c6c3d09d17fe1b6c4635bbce85a4da
     - mod_bf87d3c81fe7c219d3ebcf9086ac795a
+    - mod_dcfe4c28e35366ea5f85f8993e6a8c47
     - mod_059a7404d61707948d63d574a23b22c5
     - mod_a6d6b353ede56846d3b6628df43de776
     - mod_5ad4e42d509481ab472fb7e14415c7be
@@ -33,6 +34,7 @@ provenance:
     - "pkg:npm/@kna/api"
     - "pkg:npm/@kna/cli"
     - "pkg:npm/@kna/mcp"
+    - "pkg:npm/@kna/web"
     - "pkg:npm/@kna/worker"
     - "pkg:npm/@kna/analyzer-core"
     - "pkg:npm/@kna/analyzer-openapi"
@@ -63,12 +65,12 @@ provenance:
 
 # kna architecture
 
-<!-- kna:generated:start id=architecture.summary hash=90dd005ce4b8f260 -->
+<!-- kna:generated:start id=architecture.summary hash=4f0c5f766f2abf61 -->
 | | |
 |---|---|
 | Repository | `github.com/nmsanka/kna` |
 | Revision | `master` |
-| Modules | 20 |
+| Modules | 21 |
 | Internal dependencies | 65 |
 | Runtime services | 10 |
 | HTTP endpoints | 3 |
@@ -130,13 +132,14 @@ Runtime topology: 10 service(s)
 | `worker` | job | — | `deploy/docker-compose.yml` |
 <!-- kna:generated:end id=architecture.context -->
 
-<!-- kna:generated:start id=architecture.container hash=e6d7b46e1a9052d9 -->
+<!-- kna:generated:start id=architecture.container hash=34a256cd46e19043 -->
 ```mermaid
 graph LR
   nq79hr9["kna-platform"]
   nhlj2kt["@kna/api"]
   nszx0fb["@kna/cli"]
   nok97yi["@kna/mcp"]
+  n5jhgf7["@kna/web"]
   nmbkpwu["@kna/worker"]
   nekc84h["@kna/analyzer-core"]
   ng38xj1["@kna/analyzer-openapi"]
@@ -223,7 +226,7 @@ graph LR
 <details>
 <summary>Text description of the diagram above</summary>
 
-Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are runtime dependencies; dashed arrows are development-only.
+Module graph: 21 module(s), 65 internal dependency edge(s). Solid arrows are runtime dependencies; dashed arrows are development-only.
 
 - @kna/worker depends on @kna/chunking
 - @kna/worker depends on @kna/contracts
@@ -294,7 +297,7 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=0478d67c743a8505 -->
+<!-- kna:generated:start id=architecture.component hash=fe5a4910d81b9d17 -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
 | `packages/ir` | 15 | 180 | 0 | typescript | — |
@@ -311,18 +314,19 @@ Module graph: 20 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
 | `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |
-| `apps/api` | 0 | 219 | 1 | typescript | — |
+| `apps/api` | 0 | 193 | 1 | typescript | — |
 | `apps/worker` | 0 | 95 | 1 | typescript | — |
 | `apps/cli` | 0 | 93 | 0 | typescript | — |
 | `apps/mcp` | 0 | 63 | 1 | typescript | — |
+| `apps/web` | 0 | 50 | 0 | typescript | — |
 | `packages/analyzer-typescript/test/fixtures/billing` | 0 | 33 | 0 | typescript | — |
 | `.` | 0 | 19 | 0 | typescript, python | — |
 
 Ordered by in-degree. `packages/ir` is the most depended-upon module here, which makes it the one where a breaking change costs most.
 <!-- kna:generated:end id=architecture.component -->
 
-<!-- kna:generated:start id=architecture.confidence hash=fee125b5aad123bd -->
-**1 of 20 module(s) were analysed at shallow depth.** Their
+<!-- kna:generated:start id=architecture.confidence hash=f0313d979de1fdd9 -->
+**1 of 21 module(s) were analysed at shallow depth.** Their
 dependency edges come from declared manifests only; type references and call edges that
 would appear at semantic depth are missing from the diagrams above.
 
