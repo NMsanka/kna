@@ -21,6 +21,7 @@ COPY packages/scanner/package.json packages/scanner/
 COPY packages/analyzer-core/package.json packages/analyzer-core/
 COPY packages/analyzer-typescript/package.json packages/analyzer-typescript/
 COPY packages/analyzer-openapi/package.json packages/analyzer-openapi/
+COPY packages/audit/package.json packages/audit/
 COPY packages/db/package.json packages/db/
 COPY packages/llm/package.json packages/llm/
 COPY packages/chunking/package.json packages/chunking/
@@ -30,6 +31,7 @@ COPY apps/cli/package.json apps/cli/
 COPY apps/api/package.json apps/api/
 COPY apps/worker/package.json apps/worker/
 COPY apps/mcp/package.json apps/mcp/
+COPY apps/web/package.json apps/web/
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
     pnpm install --frozen-lockfile
 
@@ -38,7 +40,9 @@ FROM deps AS build
 COPY tsconfig.base.json tsconfig.json ./
 COPY packages packages
 COPY apps apps
-RUN pnpm exec tsc -b
+# `pnpm build` rather than `tsc -b`: the web application is bundled by Vite, which tsc knows
+# nothing about. One definition of what building means, in the root package.json.
+RUN pnpm run build
 
 # Production dependency tree only. Dev dependencies are a meaningful share of the image and an
 # unnecessary share of the attack surface.
@@ -64,6 +68,9 @@ HEALTHCHECK --interval=15s --timeout=3s --start-period=20s --retries=3 \
 # ── API ─────────────────────────────────────────────────────────────────────────────────────
 FROM runtime AS api
 COPY --from=build --chown=kna:kna /app/apps/api ./apps/api
+# The API serves the web application; `web-static.ts` resolves this path relative to its own
+# location. Without it the service starts, says so in a warning, and 404s /chat and /admin.
+COPY --from=build --chown=kna:kna /app/apps/web/dist ./apps/web/dist
 EXPOSE 8080
 # Signals reach Node directly — no shell wrapper — so SIGTERM triggers the graceful drain
 # rather than being swallowed by /bin/sh.

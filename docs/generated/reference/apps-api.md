@@ -14,6 +14,7 @@ provenance:
     - sym_234158d5af1043b39e7d7e7660d95e106b1ab693
     - sym_8206fb3702d74e19a32aa7fe002f0b8b28ecdd96
     - sym_5051f03eb3615f30df03d987f607cb4899048e3b
+    - sym_ab2bded5e942edad12985e3990ef9181bc9a6c49
     - sym_f90acade45a33b8dbc4139695fef9955ddc93801
     - sym_ef2def0235cbf60a636a034fd08a80ece0407a0a
     - sym_610b7c319a96e8e53692808126bf806a1a115142
@@ -46,15 +47,6 @@ provenance:
     - sym_c76ca06760c178c2ad2365ca3c8a587763ce7670
     - sym_3ac83003863dde63a93cae81db1cd5d7c003c109
     - sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0
-    - sym_c5f9ae315f7e3e6978f0b1716b244d74f4327ac7
-    - sym_88896cb22a10bc34587a2189a3a3a77a968e140f
-    - sym_378dae0271c4964beac823d06f7a19821293a941
-    - sym_bdc6571e93b81404d3e6b477bbf34b8eeeac82a9
-    - sym_727eb3d04edd02f7cd64fc3a94a6956839974fde
-    - sym_23b59dce15364331eae5223f1ecbd3fae1dc5059
-    - sym_90da842724b806468ff126928b15b92d4d65a15a
-    - sym_cfb8841b06ce5655728ded29e759ab1f76f25d7d
-    - sym_e9d32dd6e45535b7ef71db57a8a9f96a65fd969b
     - sym_a78160698b0c2b066a856dcf67dad150dd14e440
     - sym_28a454c7906bda9451f93e3b7bad448125abea53
     - sym_ccc6410fe201756198c5cfb0707ff7e43099ac17
@@ -70,7 +62,6 @@ provenance:
     - sym_0d9026c66955ef18c9d35fccba585949da0934b2
     - sym_9178b8cfbf9283569a795c576ae22e85b25d1619
     - sym_9d83aac414b0b8a9c16154dab6aa3f12575d741c
-    - sym_54b2104e78f4df7f4161f648c5b033d2ab42c438
     - sym_8060308bf8f81dbdb041ee945891b6a7533a8d13
     - sym_5c99466d4c51a85a09c6c0eec570aa8f663a2a91
     - sym_3cbd1f42583af8f3c4fa05388663f52e52079a6e
@@ -122,9 +113,7 @@ provenance:
     - sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a
     - sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816
     - sym_6d111ab4bb3127b56fab5186da867fc8c5082a35
-    - sym_b3996c309af80d17ab3dcb7ef414095bc409b228
     - sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3
-    - sym_aa4d7876de9151ec661c1ba86e36a98645d8267a
     - sym_716024655c502106d72501e2afdf5734b7839d9e
     - sym_3b511c7a05eb34e95d02d21f3b8643fd7d19ad44
     - sym_f9d74c383cd532e11788e941e55ec11e7360f642
@@ -141,7 +130,6 @@ provenance:
     - sym_b8801541afee066cb475ac3fb39d15d383174d8f
     - sym_5f8c4f21db87b5029986275520e3b68caba9d0bb
     - sym_6337825473fbaf345143c9a670a47380c1854128
-    - sym_a3fbd69e1f0ac11256cdad3e1ae8b9a8dd9fecf9
     - sym_99e2f2f344cb4ecd8e7cadb44ddad2efb7ab2e51
     - sym_d4fd472fc6f5e8a311c78a9875f9649cb4b0a2b4
     - sym_3a42bfee3bb48f340da9071ce6f4844acdba67a1
@@ -194,21 +182,13 @@ provenance:
     - sym_b308e5a622e4c88cc3e56e8f0597b1373c2a3793
     - sym_7e9046dcfd9a00bfb985840ac82986ea5a399149
     - sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2
-    - sym_a63de5d32ff052e84116851be5928d49e20716ee
-    - sym_dfdb5bcac86a4bfd2fbec33e2173ba1b91243d24
     - sym_b31927a18f52be77c9e87dde00e4606d927732e4
-    - sym_1193fa79a768cbfdbc673987babb743534c17764
     - sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37
     - sym_04e278213d5d8a27796972ddaed315645c1bdf91
+    - sym_91736137dac9f377a80496662f03227791387c3c
     - sym_16e820042efc0adba4b6cdf0339db64a7be12ea1
-    - sym_3215d891dcefb73e4c8c4aece974da044a8a974f
+    - sym_acdb5a1fa0f5a4a0a60c86b49896007f1798093c
     - sym_c2d52927bdd110baf677093dfc47438e8fc43346
-    - sym_3a2642016efb8db347b98b796219527613496d3d
-    - sym_4bb84851af3ff903758b84a449e71ea55a19edd7
-    - sym_7eec375f4a3383b45c68e0fe7c2f24cfa2e3a78b
-    - sym_4a3211d79585a6029d0957a6db1df327c796370f
-    - sym_f92dfec074e8bc82eb0e0a5e35d5c95f02f18bf5
-    - sym_08cb106433c8b050924c1f986d53f0be9d92fd10
     - sym_279edf7b2a99d73a12d33d1dc0e64a09427e1903
     - sym_8e94156c1b1eac60ab9344f8deba10a4086f74c1
     - sym_32e5742d5ba2b94894b7b90ecd11ce398c431e31
@@ -218,12 +198,6 @@ provenance:
     - sym_bfdc9d580f6f0ecb29d7ab22dc5d1befb58cf6ce
     - sym_a4051422feccfce922a114e2b7007fa6e257a002
     - sym_46286277757a654f3a59674171a855392065fd16
-    - sym_c9a3f16455fac634a02c6b92022d1c7c9a4f0e8e
-    - sym_e9b2a06dc067b91fff4a3d98782a8c1ab70fd4ea
-    - sym_1445b7055db3e6a22db9aacff92392d1394f9439
-    - sym_9b666196c79b7a9beb6c77df60e1271058c6219b
-    - sym_39630781ac404af2a157960bd5af7acc21503b75
-    - sym_7dff23fc592e66c1f6e427e5f2fd1b95f317abd4
     - sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a
     - sym_3ea43c25c16cebb9d24cc52e15ff84037a3c567a
     - sym_b9c5cf557843fd761abbd5979dab6d10fd584ab8
@@ -234,6 +208,7 @@ provenance:
     sym_234158d5af1043b39e7d7e7660d95e106b1ab693: bbe1e5c9d34806920cf4ce69ddb458041b4d980c33b7bc44df99ed3c7a7d473d
     sym_8206fb3702d74e19a32aa7fe002f0b8b28ecdd96: 87fda0fb02f9f2ce6742038a7dce2320f77ae64e8d721134f5a3447e498ca195
     sym_5051f03eb3615f30df03d987f607cb4899048e3b: 7fbbcfe966155fd0b3202537451dca0ac527b9cff6450dd8de5ac8154875ef4c
+    sym_ab2bded5e942edad12985e3990ef9181bc9a6c49: 1194607a0159935456d04c5ad51339509f5a979282c1c8e0f0b595c17129a822
     sym_f90acade45a33b8dbc4139695fef9955ddc93801: 5b3ac696e3e2498494a6ef839dc58056eeb5d452d39d281483fef56b34df47d2
     sym_ef2def0235cbf60a636a034fd08a80ece0407a0a: 96dcde66bd5dec5d51998500b9eb87c4c52247568a280465bbdba65ac758013f
     sym_610b7c319a96e8e53692808126bf806a1a115142: eb405de206e42f7d09ff9f2ee83720f9024c87090c0b096ffd81361c4f60684f
@@ -266,15 +241,6 @@ provenance:
     sym_c76ca06760c178c2ad2365ca3c8a587763ce7670: 63e31c2d452bac3acfceb313866005d9507beaa345cd0abdc938445414aba0fc
     sym_3ac83003863dde63a93cae81db1cd5d7c003c109: 6d2b711c096d7d2f003f26569933cff575a76aa5ea547da4799ff882def35e2b
     sym_e34cfc12baca49ae6d8013ce6cfc9fcb5439a7d0: 583e9e20bf991ec81c9e598e73dad4c10884d03e2873c56f348e90318531a768
-    sym_c5f9ae315f7e3e6978f0b1716b244d74f4327ac7: 8fc51c9c8f2482a58e0138cde842bbf2872b4d88312d7ba6e10f9642650906b5
-    sym_88896cb22a10bc34587a2189a3a3a77a968e140f: 7a6ab274ca4bd83682af7470406e03abb3d3ca05cb7177c7aa502931d7d8a2cb
-    sym_378dae0271c4964beac823d06f7a19821293a941: 3168a4975c8452e4ce790147616c39f9ff9545d4b9871a7741fefde9812c2a45
-    sym_bdc6571e93b81404d3e6b477bbf34b8eeeac82a9: a3a2aa7d1385c5a1020dac0e25d6e92bc6add1275870823f4e48d51e55b5bda3
-    sym_727eb3d04edd02f7cd64fc3a94a6956839974fde: 06632e08cc10e5d122424b0cc5c6bbd21b500c301241a8e41c2442f2115e2680
-    sym_23b59dce15364331eae5223f1ecbd3fae1dc5059: 8c09dab31451ef8541245d8abc24d224bb4451066027a8df1af4c4a1f4bac8dc
-    sym_90da842724b806468ff126928b15b92d4d65a15a: 5aeaf478ae68ba7cb516b00649c56ca68554b2433d6dc0bb5351d02a91b98953
-    sym_cfb8841b06ce5655728ded29e759ab1f76f25d7d: 9668a2cf37d5691806d1c37b99dacff4ce30ddbbd3e21717097f4857a9f2bbb8
-    sym_e9d32dd6e45535b7ef71db57a8a9f96a65fd969b: d840194c26c5400fba664fe052ef23291d4c1b25e78a1ab603a831213e4e3093
     sym_a78160698b0c2b066a856dcf67dad150dd14e440: 9db623bafb0d0261f9ccf3216b34f1610baf6545cdd385ef7726cf94f0ee9202
     sym_28a454c7906bda9451f93e3b7bad448125abea53: 60b1d467fe29f57f70a5684e006953f737ddcb652e631c8fb6a51a03c9b81e99
     sym_ccc6410fe201756198c5cfb0707ff7e43099ac17: 4cfffe10457c091cbc87af1e51986912c3360659456480e9d6fb6c64f9566795
@@ -290,7 +256,6 @@ provenance:
     sym_0d9026c66955ef18c9d35fccba585949da0934b2: b646b7eaf578b4ffa792d9e8f5df17f1d3a50df75dd1c314cf7cc4c890d1511e
     sym_9178b8cfbf9283569a795c576ae22e85b25d1619: c31e3e3ee6a741126e59b3dafdd17f10555d1041cff97f452cffcb2673893a47
     sym_9d83aac414b0b8a9c16154dab6aa3f12575d741c: c1ba2d39c2049c95f131a33295bbec702fb49172f67df467dd6d5d089adc7dee
-    sym_54b2104e78f4df7f4161f648c5b033d2ab42c438: 06a3ca82032de63f3f958b9c259333feeb7e515112edc0e933da0f856eafed1a
     sym_8060308bf8f81dbdb041ee945891b6a7533a8d13: d355eb93bebda82fc79cd083408543afb527cf0cc2349627e92fdbe1f3a82f35
     sym_5c99466d4c51a85a09c6c0eec570aa8f663a2a91: 45accbb99769f672ef5628ac4a89f58f6ffb1743da6b40a8f2c5b1759bffe245
     sym_3cbd1f42583af8f3c4fa05388663f52e52079a6e: e7af95d993ba7dce5734faf2cda9bfabbd6583c0b17e92a13f360b0173b6099f
@@ -342,9 +307,7 @@ provenance:
     sym_0c42a286fc97472c3b824650cb8e1c0f57fa8f0a: 5b1f48e3765a659bcd5e1bf482c66be8051fb9193725c8041f7bd3dd74f65742
     sym_a86bebc0cf0cba6f2e4b6906b0703f1502ff4816: a43e0eba892eedb967fae25fb557c74c96d4c10532551ed9ab91d0b8ea71d6a0
     sym_6d111ab4bb3127b56fab5186da867fc8c5082a35: 89c5ac5761e3c7359258c1028922b80b83e0601e04adcf7f86789c07f85da759
-    sym_b3996c309af80d17ab3dcb7ef414095bc409b228: c7d9aca82b05bc5e97eeb211be646d952021695427b2abe4fbfd4c5b919ca3fc
     sym_b2c3376462b3eb363fa865e5d0eeedecb58dd8d3: da800be6f74d23ca39b91446c6464882d07b2fde0e43f68d14979f027f39690f
-    sym_aa4d7876de9151ec661c1ba86e36a98645d8267a: d828441fd96aebcc82f5b90c7a7d96840ab068d069f31685c6aa2d245ac04c58
     sym_716024655c502106d72501e2afdf5734b7839d9e: e19d6449ad689627491a90ec0f11d5941d2914058e9903761c832855842645e3
     sym_3b511c7a05eb34e95d02d21f3b8643fd7d19ad44: 98d9b0b31f0b581eff7c527b94a87b4badf165fab9fc6bf4e355068ea358ff15
     sym_f9d74c383cd532e11788e941e55ec11e7360f642: 96bdde28ea143cac32ba1c88ba5ce10727bcfde5723d58f5ad6f0bd5a7019823
@@ -361,7 +324,6 @@ provenance:
     sym_b8801541afee066cb475ac3fb39d15d383174d8f: de4a4424817b1c7ed9f44296fb7134449c3456ba0d0aa02d0d0d3b74915afb25
     sym_5f8c4f21db87b5029986275520e3b68caba9d0bb: ce00fe67a76409731c89cb7ca0878b35f16d981ca07492c2767fffd9bea7084f
     sym_6337825473fbaf345143c9a670a47380c1854128: 7c690a24d9de06ee8965cb219ad9b6e3df4e5cb4ddf21494c01dcbfb27389050
-    sym_a3fbd69e1f0ac11256cdad3e1ae8b9a8dd9fecf9: 7bdbb258a07a016721ffe1c6370bbd87b7378088f4a6f19f2b6baf7757f6d6fb
     sym_99e2f2f344cb4ecd8e7cadb44ddad2efb7ab2e51: 950e6d017832a50f398df3ac601d1d22820ddf24e3d6250a6adf34d929dd6ee5
     sym_d4fd472fc6f5e8a311c78a9875f9649cb4b0a2b4: a8ffed659525d435be937100e8392d4130d23df795e3c0fe15d8daae9f5156c8
     sym_3a42bfee3bb48f340da9071ce6f4844acdba67a1: 634b66809e06e05d06a74e8c00780bf1ddb5dd3f288b917a364b00d576c4ff5e
@@ -414,21 +376,13 @@ provenance:
     sym_b308e5a622e4c88cc3e56e8f0597b1373c2a3793: ad0aeee6ea50456b3b89333adc706c5ddbd652c7307e75ff7293b6722daaa6af
     sym_7e9046dcfd9a00bfb985840ac82986ea5a399149: d6f360e5cfe2a5704044adc0ffbadc6fcaee0b1bd641df8606047947b963c5b5
     sym_ebfdf1574df85f65c88ba85ba74b85934da60bc2: 18e93735f7e9821b45a6414d5790f2fbf734fa1b45ba0a778dcbeea250c866cc
-    sym_a63de5d32ff052e84116851be5928d49e20716ee: ca893473720282a6189093a2b05f59f1120c881c46b155203f6234885f0bc175
-    sym_dfdb5bcac86a4bfd2fbec33e2173ba1b91243d24: 2041ecc82a46b166c1da3e2193a1d5082ce6e447e5fdec830819ba6d507de0b1
     sym_b31927a18f52be77c9e87dde00e4606d927732e4: 22392da1e6e50f529a21cb858ed8ef97df3a8edb0ef60b67c9cbd4ec15799b6b
-    sym_1193fa79a768cbfdbc673987babb743534c17764: 34a4878b64c54b1fddf09a5fe7f3cb08d24cb94edb136ebaabe94b4e5afb8993
     sym_d4cdcfd29b3fa8a75408bb935d65d991e442df37: 250ef28ad307a74c04a0317e2edd54d7892e0b646ea45f996905bc01cfad8fd3
     sym_04e278213d5d8a27796972ddaed315645c1bdf91: f2dd1eb942b12d471ce6d6e7c45cf3f35788bb48c075293031cd5b5b94c343af
+    sym_91736137dac9f377a80496662f03227791387c3c: ec3230df68c51bf19524eba4445b94a2362b95d3e3372d4497c2a09535176796
     sym_16e820042efc0adba4b6cdf0339db64a7be12ea1: 0a15a21fae873cbdf0e650c1e7919a40d3628192057dbbd2fd69c7ec828cf62f
-    sym_3215d891dcefb73e4c8c4aece974da044a8a974f: 79ca1376a5eab5866cf81ac7123318f16e8564c80a663709c67b77eed61f84f3
+    sym_acdb5a1fa0f5a4a0a60c86b49896007f1798093c: 5cbd687f1f3be95c959638bd7c1ac5ebc463885165c4c18767a176ee0ed78f80
     sym_c2d52927bdd110baf677093dfc47438e8fc43346: b0d5cce1d727be34966b4206a6dfc10abd55396016a0bdc5223c10f9925489ab
-    sym_3a2642016efb8db347b98b796219527613496d3d: 1ac07c1448bee09ce76e74425273b0b38e2d594abebd0abd5043777e6d7ff9be
-    sym_4bb84851af3ff903758b84a449e71ea55a19edd7: 49b8e6fa41140827105d1be5ced6d5982836700379b13e74187c12535653b5e9
-    sym_7eec375f4a3383b45c68e0fe7c2f24cfa2e3a78b: 054e4cfd18d0763983e240e22a92fe1a5190d8b07a32de922a1eb408800c546f
-    sym_4a3211d79585a6029d0957a6db1df327c796370f: 40cfc000541db3d99166ab7ce14fa0d9ff5a395f291774cb704352bd00322ad6
-    sym_f92dfec074e8bc82eb0e0a5e35d5c95f02f18bf5: 1dff695a6c53bf1ae3f86bb639e36c44e245d7bdbc3d62d15a924352c54184bd
-    sym_08cb106433c8b050924c1f986d53f0be9d92fd10: 5db2030d9dace7be73ac3ac91da12f909652770182d11e8dae6f10ecb036b317
     sym_279edf7b2a99d73a12d33d1dc0e64a09427e1903: aae1ca122b630af1d058b81be928545aaffd9db8740c1a993d6bf0182a18819d
     sym_8e94156c1b1eac60ab9344f8deba10a4086f74c1: 83eb4b5fc195fba07b1ec90451a6cb2b36e67de362027b75a9919e15169d896b
     sym_32e5742d5ba2b94894b7b90ecd11ce398c431e31: b18535fed7fbfff371b61e9c0aa5157b58dfb3628f9618a79c195c196b09a7e4
@@ -438,12 +392,6 @@ provenance:
     sym_bfdc9d580f6f0ecb29d7ab22dc5d1befb58cf6ce: 8b468f536d9005ed7f0edf1f0cd913d47d36e394a79945d98ce2d3bdaa921b00
     sym_a4051422feccfce922a114e2b7007fa6e257a002: 1541aa3237fa3c104e4a0b4b7fd3ed59c755e5a21b20817b9c9c9960a20469a8
     sym_46286277757a654f3a59674171a855392065fd16: bb752f49312a8e2c0829990f688b3ec795e18f35b21dbf6ab348e7aab74dfc85
-    sym_c9a3f16455fac634a02c6b92022d1c7c9a4f0e8e: 51a6650434c4b680f4837b32c685a87afa84528fd68b7c2127d8450c2e123829
-    sym_e9b2a06dc067b91fff4a3d98782a8c1ab70fd4ea: 630f6d21cb0f06f0e1efe6b443820835d80c8ceee29a9a68a2bc1ad284110037
-    sym_1445b7055db3e6a22db9aacff92392d1394f9439: b043e03ff570813e23bee31ae095cf8c4c4bbaa04b7f7ccaa4af06d2704b0610
-    sym_9b666196c79b7a9beb6c77df60e1271058c6219b: 84781c4a1c3981beb9e4eaa3ae10cfc83f9109feec64ce61e168e55c40f10981
-    sym_39630781ac404af2a157960bd5af7acc21503b75: 3c3490c13d76159e076fe2417f01e2a29fc55d690269060e3811930736b1cec6
-    sym_7dff23fc592e66c1f6e427e5f2fd1b95f317abd4: d4d149efbf9db8d1c841c65aa6af5f22f098557f9c8f91672bf75fa80062a3cb
     sym_3d16fedd9996e8842c1776ae7deb7acf5d8e916a: cfae7b76e9a57e1c5b381496635284e49382b453d8fbdab1a4f999680c74d89d
     sym_3ea43c25c16cebb9d24cc52e15ff84037a3c567a: a19d95590f1090ad9434fc3fac662db3b87875a92896a94b1b129af386a3c32b
     sym_b9c5cf557843fd761abbd5979dab6d10fd584ab8: 37610bb81e784153648e9b9a5ef601e704c0b267565acc3ca422ed563c978917
@@ -454,16 +402,16 @@ provenance:
 
 # @kna/api reference
 
-<!-- kna:generated:start id=overview hash=e067bba64769ecfe -->
+<!-- kna:generated:start id=overview hash=bd53f38348485cf8 -->
 | | |
 |---|---|
 | Package | `@kna/api` (npm) |
 | Path | `apps/api` |
 | Languages | typescript |
-| Public symbols | 219 |
+| Public symbols | 193 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.interface hash=4635ec07b8eeadd6 -->
+<!-- kna:generated:start id=api.interface hash=c2ace8921264c485 -->
 ### `ApiContext`
 
 ```typescript
@@ -483,16 +431,6 @@ interface BearerClaims
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/auth.ts#L236)</sub>
-
----
-
-### `Citation`
-
-```typescript
-interface Citation
-```
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L36)</sub>
 
 ---
 
@@ -612,17 +550,7 @@ interface RegenerateDocsJob
 interface SessionTools
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L27)</sub>
-
----
-
-### `Turn`
-
-```typescript
-interface Turn
-```
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L25)</sub>
 
 ---
 
@@ -632,10 +560,10 @@ interface Turn
 interface WebSession
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L19)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=57f6f75d5adc068a -->
+<!-- kna:generated:start id=api.property hash=8bcb39dd0d74285f -->
 ### `audit`
 
 ```typescript
@@ -657,6 +585,20 @@ authenticate: (request: FastifyRequest) => Promise<Principal>
 **Returns** `(request: FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>>) => Promise<Principal>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L70)</sub>
+
+---
+
+### `authenticateToken`
+
+For surfaces whose credential is not in an Authorization header.
+
+```typescript
+authenticateToken: (token: string) => Promise<Principal>
+```
+
+**Returns** `(token: string) => Promise<Principal>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L72)</sub>
 
 ---
 
@@ -782,7 +724,7 @@ mintIngestToken: (claims: {orgId: string;repoId: string;issuedAt: number;expires
 
 **Returns** `(claims: { orgId: string; repoId: string; issuedAt: number; expiresAt: number; }) => string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L71)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L73)</sub>
 
 ---
 
@@ -842,7 +784,7 @@ shutdown: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L79)</sub>
 
 ---
 
@@ -981,94 +923,6 @@ repoIds: string[]
 **Returns** `string[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/auth.ts#L44)</sub>
-
----
-
-### `analysisDepth`
-
-```typescript
-analysisDepth: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L49)</sub>
-
----
-
-### `chunkId`
-
-Carried through only to join against `hits`, which is where the repository lives.
-
-```typescript
-chunkId: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L39)</sub>
-
----
-
-### `marker`
-
-```typescript
-marker: number
-```
-
-**Returns** `number`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L37)</sub>
-
----
-
-### `path`
-
-```typescript
-path: string | null
-```
-
-**Returns** `string \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L47)</sub>
-
----
-
-### `qualifiedName`
-
-```typescript
-qualifiedName: string | null
-```
-
-**Returns** `string \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L46)</sub>
-
----
-
-### `repo`
-
-The response's `citations` do not carry a repository, but its `hits` do. They are joined by chunkId when the turn is built, because "which repositories did this answer draw on" is the entire point of asking across all of them.
-
-```typescript
-repo: string | null
-```
-
-**Returns** `string \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L45)</sub>
-
----
-
-### `startLine`
-
-```typescript
-startLine: number | null
-```
-
-**Returns** `number \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L48)</sub>
 
 ---
 
@@ -1972,68 +1826,6 @@ repoId: string
 
 ---
 
-### `disabled`
-
-A registered repository with nothing published yet: shown, but not selectable.
-
-```typescript
-disabled?: boolean
-```
-
-**Returns** `boolean \| undefined`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L56)</sub>
-
----
-
-### `label`
-
-```typescript
-label: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L54)</sub>
-
----
-
-### `value`
-
-```typescript
-value: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L53)</sub>
-
----
-
-### `label`
-
-```typescript
-label: string | null
-```
-
-**Returns** `string \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L60)</sub>
-
----
-
-### `options`
-
-```typescript
-options: ScopeChoice[]
-```
-
-**Returns** `ScopeChoice[]`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L61)</sub>
-
----
-
 ### `call`
 
 Call an endpoint of this same API as the signed-in caller.
@@ -2044,7 +1836,7 @@ call: (session: WebSession, method: 'GET' | 'POST', path: string, body?: unknown
 
 **Returns** `(session: WebSession, method: "GET" \| "POST", path: string, body?: unknown) => Promise<{ ok: boolean; status: number; data: Record<string, unknown>; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L34)</sub>
 
 ---
 
@@ -2056,7 +1848,7 @@ clearCookie: (reply: FastifyReply) => FastifyReply
 
 **Returns** `(reply: FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, unknown, FastifySchema, FastifyTypeProviderDefault, unknown>) => FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, unknown, FastifySch…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L31)</sub>
 
 ---
 
@@ -2068,7 +1860,7 @@ redirect: (reply: FastifyReply, to: string, flash?: string) => FastifyReply
 
 **Returns** `(reply: FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, unknown, FastifySchema, FastifyTypeProviderDefault, unknown>, to: string, flash?: string \| undefined) => FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerRespon…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L32)</sub>
 
 ---
 
@@ -2082,7 +1874,7 @@ requireSession: (request: FastifyRequest, reply: FastifyReply) => WebSession | n
 
 **Returns** `(request: FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>>, reply: FastifyReply<RouteGenericInterface, RawServer…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L29)</sub>
 
 ---
 
@@ -2094,7 +1886,7 @@ sessionOf: (request: FastifyRequest) => WebSession | null
 
 **Returns** `(request: FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>>) => WebSession \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L27)</sub>
 
 ---
 
@@ -2106,7 +1898,7 @@ setCookie: (reply: FastifyReply, session: WebSession) => FastifyReply
 
 **Returns** `(reply: FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, unknown, FastifySchema, FastifyTypeProviderDefault, unknown>, session: WebSession) => FastifyReply<RouteGenericInterface, RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L30)</sub>
 
 ---
 
@@ -2118,67 +1910,7 @@ sign: (session: WebSession) => string
 
 **Returns** `(session: WebSession) => string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L28)</sub>
-
----
-
-### `abstained`
-
-```typescript
-abstained: boolean
-```
-
-**Returns** `boolean`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L32)</sub>
-
----
-
-### `answer`
-
-```typescript
-answer: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L30)</sub>
-
----
-
-### `citations`
-
-```typescript
-citations: Citation[]
-```
-
-**Returns** `Citation[]`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L31)</sub>
-
----
-
-### `note`
-
-```typescript
-note: string | null
-```
-
-**Returns** `string \| null`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L33)</sub>
-
----
-
-### `question`
-
-```typescript
-question: string
-```
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L26)</sub>
 
 ---
 
@@ -2190,7 +1922,7 @@ expiresAt: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L22)</sub>
 
 ---
 
@@ -2204,10 +1936,10 @@ token: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L21)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=2a352ca6b53d2576 -->
+<!-- kna:generated:start id=api.function hash=e2b422046d8947dc -->
 ### `assertAudience`
 
 ```typescript
@@ -2256,25 +1988,7 @@ buildServer(ctx: ApiContext): Promise<KnaServer>
 
 **Returns** `Promise<KnaServer>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/server.ts#L33)</sub>
-
----
-
-### `chatLayout`
-
-```typescript
-chatLayout(title: string, body: string, chrome: boolean): string
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `title` | `string` |  |
-| `body` | `string` |  |
-| `chrome`? | `boolean` |  (default `true`) |
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui/render.ts#L134)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/server.ts#L32)</sub>
 
 ---
 
@@ -2290,7 +2004,7 @@ createApiContext(env: {KNA_ENV: "development" | "test" | "staging" | "production
 
 **Returns** `Promise<ApiContext>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L80)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L82)</sub>
 
 ---
 
@@ -2307,25 +2021,7 @@ createSessionTools(app: KnaServer, options: {secret: string;cookieName: string;p
 
 **Returns** `SessionTools`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L77)</sub>
-
----
-
-### `escapeHtml`
-
-Markup for the administration console.
-
-```typescript
-escapeHtml(value: string): string
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `value` | `string` |  |
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/admin-ui/render.ts#L15)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L42)</sub>
 
 ---
 
@@ -2341,7 +2037,7 @@ hashToken(token: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L302)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L316)</sub>
 
 ---
 
@@ -2362,25 +2058,7 @@ lastIndexedPayload(db: DbHandle, orgId: string, repoId: string, ref: string): Pr
 
 **Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L281)</sub>
-
----
-
-### `layout`
-
-```typescript
-layout(title: string, body: string, options: {chrome?: boolean;}): string
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `title` | `string` |  |
-| `body` | `string` |  |
-| `options`? | `{ chrome?: boolean \| undefined; }` |  (default `{}`) |
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/admin-ui/render.ts#L104)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L295)</sub>
 
 ---
 
@@ -2398,24 +2076,6 @@ mintIngestToken(secret: string, claims: Omit<IngestClaims, "jti">): string
 **Returns** `string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/auth.ts#L196)</sub>
-
----
-
-### `page`
-
-```typescript
-page(title: string, flash: string | null | undefined, sections: string[]): string
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `title` | `string` |  |
-| `flash` | `string \| null \| undefined` |  |
-| `sections` | `string[]` |  |
-
-**Returns** `string`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/admin-ui/render.ts#L130)</sub>
 
 ---
 
@@ -2438,40 +2098,6 @@ registerAdminRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 ---
 
-### `registerAdminUiRoutes`
-
-```typescript
-registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `app` | `KnaServer` |  |
-| `ctx` | `ApiContext` |  |
-
-**Returns** `Promise<void>`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/admin-ui.ts#L30)</sub>
-
----
-
-### `registerChatUiRoutes`
-
-```typescript
-registerChatUiRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `app` | `KnaServer` |  |
-| `ctx` | `ApiContext` |  |
-
-**Returns** `Promise<void>`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L64)</sub>
-
----
-
 ### `registerDocsRoutes`
 
 ```typescript
@@ -2486,24 +2112,6 @@ registerDocsRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 **Returns** `Promise<void>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/docs.ts#L37)</sub>
-
----
-
-### `registerFormBodyParser`
-
-HTML forms post `application/x-www-form-urlencoded`, which Fastify does not parse without being told to. Done here rather than by adding @fastify/formbody: it is a dozen lines against a dependency, and only the rendered surfaces accept a form at all.
-
-```typescript
-registerFormBodyParser(app: KnaServer): void
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `app` | `KnaServer` |  |
-
-**Returns** `void`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L57)</sub>
 
 ---
 
@@ -2545,6 +2153,23 @@ registerSearchRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 ---
 
+### `registerWebAppRoutes`
+
+```typescript
+registerWebAppRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `app` | `KnaServer` |  |
+| `ctx` | `ApiContext` |  |
+
+**Returns** `Promise<void>`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-app.ts#L23)</sub>
+
+---
+
 ### `registerWebhookRoutes`
 
 Git provider webhooks.
@@ -2564,21 +2189,19 @@ registerWebhookRoutes(app: KnaServer, ctx: ApiContext): Promise<void>
 
 ---
 
-### `renderTurn`
+### `registerWebStaticRoutes`
 
 ```typescript
-renderTurn(turn: Turn, index: number, mode: Mode): string
+registerWebStaticRoutes(app: KnaServer): Promise<void>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `turn` | `Turn` |  |
-| `index` | `number` |  |
-| `mode` | `Mode` |  |
+| `app` | `KnaServer` |  |
 
-**Returns** `string`
+**Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L422)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-static.ts#L32)</sub>
 
 ---
 
@@ -2590,26 +2213,7 @@ requestId(): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L298)</sub>
-
----
-
-### `scopeFrom`
-
-The picker's value, as a retrieval scope.
-
-```typescript
-scopeFrom(mode: Mode, selected: string): {kind: "org";} | {kind: "project";projectIds: string[];} | {kind: "repo";repoIds: string[];}
-```
-
-| Parameter | Type | Description |
-|---|---|---|
-| `mode` | `Mode` |  |
-| `selected` | `string` |  |
-
-**Returns** `{ kind: "org"; } \| { kind: "project"; projectIds: string[]; } \| { kind: "repo"; repoIds: string[]; }`
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L257)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L312)</sub>
 
 ---
 
@@ -3343,7 +2947,7 @@ constructor(operation: string)
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/services/git.ts#L35)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.constant hash=4d4cddd053825c23 -->
+<!-- kna:generated:start id=api.constant hash=fc6cfbb4620c6173 -->
 ### `QUEUE_NAMES`
 
 Job queues.
@@ -3360,7 +2964,7 @@ const QUEUE_NAMES: {readonly indexModule: "index-module";readonly crossRepo: "cr
 
 ### `SESSION_TTL_MS`
 
-Browser sessions for the server-rendered surfaces.
+Browser sessions.
 
 ```typescript
 const SESSION_TTL_MS: number
@@ -3368,10 +2972,10 @@ const SESSION_TTL_MS: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/web-session.ts#L17)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=c2aecf7535f7d378 -->
+<!-- kna:generated:start id=api.type hash=83b5be160d5f21ed -->
 ### `KnaServer`
 
 Wiring.
@@ -3381,16 +2985,6 @@ type KnaServer = FastifyInstance<RawServerDefault, IncomingMessage, ServerRespon
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/context.ts#L47)</sub>
-
----
-
-### `Mode`
-
-```typescript
-type Mode = 'project' | 'all'
-```
-
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/api/src/routes/chat-ui.ts#L340)</sub>
 
 ---
 

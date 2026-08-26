@@ -167,6 +167,19 @@ Two things it bridges that would otherwise catch you out, both real:
 
 ---
 
+## In a browser
+
+The least setup of anything here. `pnpm dev bootstrap` builds it, so it is already running:
+
+```bash
+start http://localhost:8080/chat
+```
+
+Sign in with the `KNA_TOKEN` from `.kna/tokens.env`. `/chat` scopes to one project or repository,
+`/chat/all` asks across everything you can read, and `/admin` is the same registration and
+credential minting the script does — useful for checking that a repository landed where you
+expected it to.
+
 ## Querying across repositories
 
 This is the part that only a multi-repo setup can exercise. Four scopes:
