@@ -1,3 +1,4 @@
+import { normaliseTypeText } from './type-text.js';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import {
@@ -729,7 +730,9 @@ function joinJsDoc(docs: JSDoc[]): string | null {
  * qualifier here loses nothing that anything downstream was reading.
  */
 export function renderType(text: string, max: number): string {
-  return truncate(collapseImportTypes(text), max);
+  // Normalise before truncating: the order has to be decided on the whole type, or two
+  // machines can disagree about which members survived the cut.
+  return truncate(normaliseTypeText(collapseImportTypes(text)), max);
 }
 
 const IMPORT_QUALIFIER = /import\((["'])(?:(?!\1).)*\1\)\./g;
