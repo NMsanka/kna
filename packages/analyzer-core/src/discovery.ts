@@ -94,14 +94,25 @@ export async function discover(options: DiscoveryOptions): Promise<DiscoveryResu
     .add(knaignore)
     .add(options.exclude ?? []);
 
-  const entries = await globby(['**/*'], {
-    cwd: root,
-    dot: false,
-    onlyFiles: true,
-    followSymbolicLinks: false,
-    gitignore: false,
-    ignore: ['**/node_modules/**', '**/.git/**'],
-  });
+  // Sorted, because globby returns filesystem order and nothing downstream is indifferent to
+  // it. TypeScript assigns type ids in creation order and orders a union's members by those
+  // ids, so the same declaration printed on two machines can come out as
+  // `"development" | "test" | "production"` on one and `"production" | "development" | "test"`
+  // on the other. A symbol id is derived from its signature, so that gives one declaration two
+  // ids — and §7's cost model rests on re-analysing an unchanged commit producing no work.
+  //
+  // `maxFiles` truncates this list too, so an unsorted order could also analyse a different
+  // *set* of files on a large repository.
+  const entries = (
+    await globby(['**/*'], {
+      cwd: root,
+      dot: false,
+      onlyFiles: true,
+      followSymbolicLinks: false,
+      gitignore: false,
+      ignore: ['**/node_modules/**', '**/.git/**'],
+    })
+  ).sort();
 
   const deniedPaths: string[] = [];
   const files: DiscoveredFile[] = [];

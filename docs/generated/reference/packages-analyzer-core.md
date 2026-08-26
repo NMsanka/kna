@@ -557,7 +557,7 @@ ignores(path: string): boolean
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L15)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.property hash=8998b31e832ae55f -->
+<!-- kna:generated:start id=api.property hash=b7f7f3fbac0af034 -->
 ### `capabilities`
 
 ```typescript
@@ -1136,7 +1136,7 @@ dependencies: RawModule['dependencies']
 
 **Returns** `{ name: string; version: string \| null; dev: boolean; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L193)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L204)</sub>
 
 ---
 
@@ -1148,7 +1148,7 @@ ecosystem: Ecosystem
 
 **Returns** `"npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L190)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L201)</sub>
 
 ---
 
@@ -1160,7 +1160,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L189)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L200)</sub>
 
 ---
 
@@ -1172,7 +1172,7 @@ packageName: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L191)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L202)</sub>
 
 ---
 
@@ -1184,7 +1184,7 @@ packageVersion: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L192)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L203)</sub>
 
 ---
 
@@ -1665,7 +1665,7 @@ const zAnalyzerResponse: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;o
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L33)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=4abb41cbb1328645 -->
+<!-- kna:generated:start id=api.function hash=6c6061681b88df00 -->
 ### `detectLanguage`
 
 ```typescript
@@ -1748,7 +1748,7 @@ matchCodeowners(content: string, path: string): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L384)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L395)</sub>
 
 ---
 

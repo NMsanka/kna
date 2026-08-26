@@ -304,3 +304,51 @@ describe('renderType', () => {
     expect(renderType(raw, 20)).toBe(`${'A'.repeat(20)}…`);
   });
 });
+
+describe('determinism', () => {
+  /**
+   * The same module, analysed with its files handed over in a different order.
+   *
+   * globby returns filesystem order and TypeScript assigns type ids in the order files are
+   * added, so this is worth pinning on its own — `maxFiles` truncates that list too, which
+   * means an unsorted order could analyse a different *set* of files on a large repository.
+   *
+   * It does **not** cover the failure that prompted it. CI printed
+   * `"production" | "development" | "test" | "staging"` for a declaration this machine prints
+   * as `"development" | "test" | "staging" | "production"`. That union originates in
+   * @kna/config and reaches @kna/api through project references, so it does not depend on the
+   * order of the analysed module's own files — reversing them here changes nothing, verified
+   * against the real module. Whatever moves it lives in how the whole program resolves, and it
+   * has not been reproduced off CI.
+   */
+  it('produces identical symbols whatever order the files arrive in', async () => {
+    const discovery = await discover({ repoRoot: fixtureRoot });
+    const module = discovery.modules[0]!;
+
+    const run = async (files: typeof module.files): Promise<string> => {
+      const response = await new TypeScriptAnalyzer().analyze({
+        protocol: 'kna-analyzer/1',
+        repoRoot: fixtureRoot,
+        commitSha: COMMIT,
+        module: {
+          path: module.module.path,
+          name: module.module.name,
+          manifestPath: module.manifestPath,
+        },
+        files: files.map((f) => ({ path: f.path, hash: f.hash })),
+        options: { includeSource: false },
+      });
+      // Sorted for comparison: the question is whether the *content* is stable, not whether
+      // the analyser happens to emit in a fixed order.
+      return JSON.stringify(
+        [...response.symbols]
+          .sort((a, b) => a.qualifiedName.localeCompare(b.qualifiedName))
+          .map((s) => [s.qualifiedName, s.signature, s.returnType?.text ?? null]),
+      );
+    };
+
+    const forwards = await run(module.files);
+    const backwards = await run([...module.files].reverse());
+    expect(backwards).toBe(forwards);
+  }, 120_000);
+});
