@@ -2,15 +2,15 @@
   "name": "kna-platform",
   "version": "0.1.0",
   "private": true,
-  "description": "AI-powered documentation & knowledge platform — polyglot IR, deterministic docs, hybrid retrieval, MCP",
+  "description": "AI-powered documentation & knowledge platform \u2014 polyglot IR, deterministic docs, hybrid retrieval, MCP",
   "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": ">=22.0.0"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc -b && pnpm --filter @kna/web build",
     "clean": "pnpm -r exec rimraf dist .tsbuildinfo && rimraf node_modules/.cache",
-    "typecheck": "tsc -b",
+    "typecheck": "tsc -b && pnpm --filter @kna/web typecheck",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
