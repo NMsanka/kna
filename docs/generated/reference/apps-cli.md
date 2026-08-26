@@ -211,7 +211,7 @@ provenance:
 | Public symbols | 93 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=06a48cce7b3265b1 -->
+<!-- kna:generated:start id=api.function hash=1d9beffca550d7c9 -->
 ### `analyze`
 
 ```typescript
@@ -263,7 +263,7 @@ changedFiles(git: SimpleGit, from: string, to: string): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L161)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L176)</sub>
 
 ---
 
@@ -393,7 +393,7 @@ isCiEnvironment(): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L147)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L162)</sub>
 
 ---
 
@@ -409,7 +409,7 @@ isUnborn(commitSha: string): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L115)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L130)</sub>
 
 ---
 
@@ -1301,7 +1301,7 @@ platformRepo: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L187)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=0a47c336af570ec3 -->
+<!-- kna:generated:start id=api.constant hash=ce51caeed7611457 -->
 ### `CLI_VERSION`
 
 ```typescript
@@ -1336,7 +1336,7 @@ const UNBORN_COMMIT_SHA: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L113)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L128)</sub>
 <!-- kna:generated:end id=api.constant -->
 
 <!-- kna:generated:start id=api.class hash=51c472ce034d55ac -->

@@ -70,6 +70,8 @@ export interface ApiContext {
   git: GitProviderClient | null;
   oidc: OidcVerifier | null;
   authenticate: (request: FastifyRequest) => Promise<Principal>;
+  /** For surfaces whose credential is not in an Authorization header. */
+  authenticateToken: (token: string) => Promise<Principal>;
   mintIngestToken: (claims: {
     orgId: string;
     repoId: string;
@@ -243,17 +245,28 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
       check: async () => ({ state: 'up' }),
     });
 
-  const authenticate = async (request: FastifyRequest): Promise<Principal> => {
-    const header = request.headers.authorization;
-    if (!header?.startsWith('Bearer ')) {
-      throw new AuthError('Missing bearer token.', 401, 'missing_token');
-    }
-    const principal = await store.principalForToken(header.slice(7).trim());
+  /**
+   * Resolve a principal from a token, wherever the token came from.
+   *
+   * Split out because the web application holds its token in an httpOnly cookie rather than an
+   * Authorization header, and reconstructing a fake header to reuse `authenticate` would be a
+   * lie told to get past a signature.
+   */
+  const authenticateToken = async (token: string): Promise<Principal> => {
+    const principal = await store.principalForToken(token.trim());
     if (!principal) throw new AuthError('Unknown or expired token.', 401, 'invalid_token');
     if (principal.disabledAt) {
       throw new AuthError('This identity has been disabled.', 403, 'principal_disabled');
     }
     return principal;
+  };
+
+  const authenticate = async (request: FastifyRequest): Promise<Principal> => {
+    const header = request.headers.authorization;
+    if (!header?.startsWith('Bearer ')) {
+      throw new AuthError('Missing bearer token.', 401, 'missing_token');
+    }
+    return authenticateToken(header.slice(7));
   };
 
   return {
@@ -274,6 +287,7 @@ export async function createApiContext(env = loadPlatformEnv()): Promise<ApiCont
     git,
     oidc,
     authenticate,
+    authenticateToken,
     mintIngestToken: (claims) =>
       mintIngestToken(env.INGEST_HMAC_SECRET ?? env.SESSION_SECRET, claims),
     shutdown: async () => {

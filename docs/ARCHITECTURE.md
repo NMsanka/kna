@@ -36,7 +36,8 @@ PLATFORM
   │
   ├─→ retrieval: dense + lexical + symbol → RRF → diversity → rerank → expand → abstain
   │        │
-  │        ├─→ API  (/v1/search, /v1/chat)
+  │        ├─→ API  (/v1/search)
+  │        ├─→ web  (/chat, /admin — React, served by the API)
   │        └─→ MCP  (seven read-only tools)
   │
   └─→ docgen: deterministic render + bounded prose → reviewed pull request

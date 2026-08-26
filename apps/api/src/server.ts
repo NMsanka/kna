@@ -12,9 +12,8 @@ import { AuthError } from './auth.js';
 import { registerIngestRoutes } from './routes/ingest.js';
 import { registerSearchRoutes } from './routes/search.js';
 import { registerDocsRoutes } from './routes/docs.js';
-import { registerAdminUiRoutes } from './routes/admin-ui.js';
-import { registerChatUiRoutes } from './routes/chat-ui.js';
-import { registerFormBodyParser } from './routes/web-session.js';
+import { registerWebAppRoutes } from './routes/web-app.js';
+import { registerWebStaticRoutes } from './routes/web-static.js';
 import { registerAdminRoutes } from './routes/admin.js';
 import { registerWebhookRoutes } from './routes/webhooks.js';
 
@@ -99,12 +98,10 @@ export async function buildServer(ctx: ApiContext): Promise<KnaServer> {
   await registerSearchRoutes(app, ctx);
   await registerDocsRoutes(app, ctx);
   await registerAdminRoutes(app, ctx);
-  // Once for the whole server: Fastify throws on a duplicate parser for a content
-  // type, so a per-surface registration would take the process down at boot as soon
-  // as there were two rendered surfaces.
-  registerFormBodyParser(app);
-  await registerAdminUiRoutes(app, ctx);
-  await registerChatUiRoutes(app, ctx);
+  // The web application and the JSON layer it talks to. Registered before the static
+  // handler so /app/api/* is matched by a route rather than by the single-page shell.
+  await registerWebAppRoutes(app, ctx);
+  await registerWebStaticRoutes(app);
   await registerWebhookRoutes(app, ctx);
 
   /**

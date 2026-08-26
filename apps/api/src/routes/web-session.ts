@@ -3,13 +3,11 @@ import type { FastifyReply, FastifyRequest } from 'fastify';
 import type { KnaServer } from '../context.js';
 
 /**
- * Browser sessions for the server-rendered surfaces.
+ * Browser sessions.
  *
- * Two of them now — the administration console and the chat surface — and they had better agree
- * about what a session is. This existed once, inside `registerAdminUiRoutes`; a second copy for
- * chat would have been two cookie implementations to keep in step, and a divergence between them
- * is the kind of thing nobody notices until one of them accepts something the other would have
- * refused.
+ * The web application signs in by exchanging a token for one of these, so the token itself is
+ * never in `localStorage` where an injected script could read it — and §10 Layer 5 is explicit
+ * that the corpus is full of attacker-controllable text.
  *
  * **Authentication is interim and every page that uses it says so.** It exchanges an existing API
  * token for a short-lived signed cookie. The destination is the company SSO login that §15.4
@@ -39,39 +37,6 @@ export interface SessionTools {
     path: string,
     body?: unknown,
   ) => Promise<{ ok: boolean; status: number; data: Record<string, unknown> }>;
-}
-
-/**
- * HTML forms post `application/x-www-form-urlencoded`, which Fastify does not parse without
- * being told to. Done here rather than by adding @fastify/formbody: it is a dozen lines against
- * a dependency, and only the rendered surfaces accept a form at all.
- *
- * Registered once for the whole server, not once per surface — Fastify throws on a duplicate
- * parser for the same content type, so the second surface to register would take the process
- * down at boot.
- *
- * Repeated keys become an array, because a list of checkboxes — "which repositories may this
- * person read" — posts the same name several times, and collapsing that to the last value would
- * silently grant one repository instead of five.
- */
-export function registerFormBodyParser(app: KnaServer): void {
-  app.addContentTypeParser(
-    'application/x-www-form-urlencoded',
-    { parseAs: 'string' },
-    (_request, body, done) => {
-      try {
-        const params = new URLSearchParams(body as string);
-        const parsed: Record<string, string | string[]> = {};
-        for (const key of new Set(params.keys())) {
-          const values = params.getAll(key);
-          parsed[key] = values.length > 1 ? values : values[0]!;
-        }
-        done(null, parsed);
-      } catch (error) {
-        done(error as Error, undefined);
-      }
-    },
-  );
 }
 
 export function createSessionTools(

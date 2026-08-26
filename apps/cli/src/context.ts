@@ -69,6 +69,21 @@ export async function createContext(options: {
     (await currentBranchName(git));
   const isTag = branch !== 'HEAD' && /^v?\d+\.\d+/.test(branch);
 
+  /**
+   * The repository's default branch, asked of git rather than assumed.
+   *
+   * It was hardcoded to `main`, which is wrong for every repository on `master` — including this
+   * one. It matters because the in-repo documentation's source links are built from it: pinning
+   * them to the *current* branch means every branch rewrites every link and the
+   * "documentation is current" check can never pass, while pinning them to a commit sha means a
+   * file recording a commit that cannot contain it.
+   */
+  const defaultBranch =
+    (await git
+      .revparse(['--abbrev-ref', 'origin/HEAD'])
+      .then((r) => r.trim().replace(/^origin\//, ''))
+      .catch(() => null)) ?? 'main';
+
   let committedAt: string | null = null;
   try {
     const log = await git.log({ maxCount: 1 });
@@ -91,7 +106,7 @@ export async function createContext(options: {
       orgId,
       remote: canonicalRemote(remoteUrl),
       name: repoNameFrom(remoteUrl, repoRoot),
-      defaultBranch: 'main',
+      defaultBranch,
       provider: providerFrom(remoteUrl),
     },
     version: {
