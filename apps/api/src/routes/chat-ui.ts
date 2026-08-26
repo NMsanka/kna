@@ -52,6 +52,13 @@ export interface Citation {
 interface ScopeChoice {
   value: string;
   label: string;
+  /** A registered repository with nothing published yet: shown, but not selectable. */
+  disabled?: boolean;
+}
+
+interface ScopeGroup {
+  label: string | null;
+  options: ScopeChoice[];
 }
 
 export async function registerChatUiRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
@@ -136,7 +143,7 @@ export async function registerChatUiRoutes(app: KnaServer, ctx: ApiContext): Pro
       const choices = await scopeChoices(session);
       return reply
         .type('text/html')
-        .send(renderPage({ mode, turns: [], choices, selected: choices[0]?.value ?? 'org' }));
+        .send(renderPage({ mode, turns: [], choices, selected: firstChoice(choices) }));
     });
 
     app.post(path, async (request, reply) => {
@@ -163,10 +170,7 @@ export async function registerChatUiRoutes(app: KnaServer, ctx: ApiContext): Pro
         ])
         .slice(-(MAX_TURNS * 2));
 
-      const scope =
-        mode === 'all' || !selected.startsWith('project:')
-          ? { kind: 'org' as const }
-          : { kind: 'project' as const, projectIds: [selected.slice('project:'.length)] };
+      const scope = scopeFrom(mode, selected);
 
       // A cross-repository question needs more evidence to have a chance of spanning anything:
       // eight chunks from one dense ranking will usually all come from whichever repository
@@ -195,15 +199,76 @@ export async function registerChatUiRoutes(app: KnaServer, ctx: ApiContext): Pro
     return new Map(repos.map((r) => [r.id, r.name]));
   }
 
-  /** Only projects this caller can actually read; see the comment on `GET /v1/scope`. */
-  async function scopeChoices(session: WebSession): Promise<ScopeChoice[]> {
+  /**
+   * What the picker offers, in the order people reach for it.
+   *
+   * Projects first, because a project is the unit the model is built around — a product area,
+   * which a repository may belong to several of. Repositories second, because that is what
+   * someone actually wants on their first day, and a tenant with one project has a picker that
+   * says nothing without them.
+   *
+   * Everything here comes from `GET /v1/scope`, which lists only what this caller may read.
+   */
+  async function scopeChoices(session: WebSession): Promise<ScopeGroup[]> {
     const result = await sessions.call(session, 'GET', '/v1/scope');
     const projects = (result.data.projects ?? []) as Array<{ id: string; name: string }>;
-    return [
-      ...projects.map((p) => ({ value: `project:${p.id}`, label: p.name })),
-      { value: 'org', label: 'Everything I can read' },
-    ];
+    const repos = (result.data.repos ?? []) as Array<{
+      id: string;
+      name: string;
+      indexed: boolean;
+    }>;
+
+    const groups: ScopeGroup[] = [];
+    if (projects.length) {
+      groups.push({
+        label: 'Projects',
+        options: projects.map((p) => ({ value: `project:${p.id}`, label: p.name })),
+      });
+    }
+    if (repos.length) {
+      groups.push({
+        label: 'Repositories',
+        options: repos.map((r) => ({
+          value: `repo:${r.id}`,
+          label: r.indexed ? r.name : `${r.name} — nothing indexed yet`,
+          disabled: !r.indexed,
+        })),
+      });
+    }
+    groups.push({ label: null, options: [{ value: 'org', label: 'Everything I can read' }] });
+    return groups;
   }
+
+  function firstChoice(groups: ScopeGroup[]): string {
+    for (const group of groups) {
+      const usable = group.options.find((o) => !o.disabled);
+      if (usable) return usable.value;
+    }
+    return 'org';
+  }
+}
+
+/**
+ * The picker's value, as a retrieval scope.
+ *
+ * The cross-repository section ignores the value entirely — it has no picker, and honouring a
+ * stale one posted from the other section would quietly narrow the thing that exists to be wide.
+ */
+export function scopeFrom(
+  mode: Mode,
+  selected: string,
+):
+  | { kind: 'org' }
+  | { kind: 'project'; projectIds: string[] }
+  | { kind: 'repo'; repoIds: string[] } {
+  if (mode === 'all') return { kind: 'org' };
+  if (selected.startsWith('project:')) {
+    return { kind: 'project', projectIds: [selected.slice('project:'.length)] };
+  }
+  if (selected.startsWith('repo:')) {
+    return { kind: 'repo', repoIds: [selected.slice('repo:'.length)] };
+  }
+  return { kind: 'org' };
 }
 
 function turnFrom(
@@ -277,7 +342,7 @@ export type Mode = 'project' | 'all';
 function renderPage(input: {
   mode: Mode;
   turns: Turn[];
-  choices: ScopeChoice[];
+  choices: ScopeGroup[];
   selected: string;
 }): string {
   const { mode, turns, choices, selected } = input;
@@ -312,12 +377,18 @@ function renderPage(input: {
          }
        </div>`;
 
+  const option = (c: ScopeChoice): string =>
+    `<option value="${escapeHtml(c.value)}"${c.value === selected ? ' selected' : ''}${
+      c.disabled ? ' disabled' : ''
+    }>${escapeHtml(c.label)}</option>`;
+
   const options = choices
-    .map(
-      (c) =>
-        `<option value="${escapeHtml(c.value)}"${c.value === selected ? ' selected' : ''}>${escapeHtml(
-          c.label,
-        )}</option>`,
+    .map((group) =>
+      group.label === null
+        ? group.options.map(option).join('')
+        : `<optgroup label="${escapeHtml(group.label)}">${group.options
+            .map(option)
+            .join('')}</optgroup>`,
     )
     .join('');
 

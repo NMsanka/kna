@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { renderTurn, type Citation, type Turn } from './chat-ui.js';
+import { renderTurn, scopeFrom, type Citation, type Turn } from './chat-ui.js';
 
 /**
  * The cross-repository section's whole reason to exist is that it shows which repositories an
@@ -95,5 +95,28 @@ describe('the cross-repository section', () => {
     );
     expect(html).not.toContain('<img');
     expect(html).toContain('&lt;img');
+  });
+});
+
+describe('the scope picker', () => {
+  it('turns a project choice into a project scope', () => {
+    expect(scopeFrom('project', 'project:prj_local')).toEqual({
+      kind: 'project',
+      projectIds: ['prj_local'],
+    });
+  });
+
+  it('turns a repository choice into a repository scope', () => {
+    expect(scopeFrom('project', 'repo:repo_abc')).toEqual({ kind: 'repo', repoIds: ['repo_abc'] });
+  });
+
+  it('falls back to the org rather than guessing at an unrecognised value', () => {
+    expect(scopeFrom('project', 'nonsense')).toEqual({ kind: 'org' });
+  });
+
+  // A value posted from the other section must not narrow the section that exists to be wide.
+  it('ignores the picker entirely in the cross-repository section', () => {
+    expect(scopeFrom('all', 'repo:repo_abc')).toEqual({ kind: 'org' });
+    expect(scopeFrom('all', 'project:prj_local')).toEqual({ kind: 'org' });
   });
 });

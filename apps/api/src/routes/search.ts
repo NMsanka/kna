@@ -72,10 +72,16 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
            ORDER BY p.name
         `,
       );
-      const repos = await tx.execute<{ id: string; name: string }>(sql`
-        SELECT id, name FROM repos
-         WHERE org_id = ${principal.orgId} AND id = ${anyOf(access.permittedRepoIds)}
-         ORDER BY name
+      // `indexed` rather than filtering: a registered repository with nothing published yet
+      // should still appear, said plainly. Hiding it produces "where has my repository gone",
+      // which is a worse question than "why is it greyed out".
+      const repos = await tx.execute<{ id: string; name: string; modules: string }>(sql`
+        SELECT r.id, r.name, count(m.id)::text AS modules
+          FROM repos r
+          LEFT JOIN modules m ON m.repo_id = r.id
+         WHERE r.org_id = ${principal.orgId} AND r.id = ${anyOf(access.permittedRepoIds)}
+         GROUP BY r.id, r.name
+         ORDER BY r.name
       `);
       return { projects, repos };
     });
@@ -87,7 +93,11 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
         name: String(p.name),
         repoCount: Number(p.repos),
       })),
-      repos: rows.repos.map((r) => ({ id: String(r.id), name: String(r.name) })),
+      repos: rows.repos.map((r) => ({
+        id: String(r.id),
+        name: String(r.name),
+        indexed: Number(r.modules) > 0,
+      })),
     };
   });
 
