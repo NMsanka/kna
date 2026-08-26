@@ -437,7 +437,12 @@ cmd_publish() {
 
   load_signing_secret
   step "Publishing $path"
-  KNA_INGEST_TOKEN="$token" node "$ROOT/apps/cli/dist/bin.js" --cwd "$path" publish
+  # --org, because this script registered the repository under $ORG and looked its
+  # credential up by the repo id derived from it. Without it the CLI falls back to the
+  # config file, and a repository that has none asserts org "default" — a different repo
+  # id, and a credential that does not authorise it. The config schema says a repository
+  # with no config file is fully onboardable; this is what makes that true here.
+  KNA_INGEST_TOKEN="$token" node "$ROOT/apps/cli/dist/bin.js" --cwd "$path" --org "$ORG" publish
 }
 
 cmd_ask() {
