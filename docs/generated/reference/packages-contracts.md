@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_1f78830f9189e59a918cb6b012c825e7
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -165,14 +165,14 @@ provenance:
 | Public symbols | 70 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.class hash=11884a3618a93c0b -->
+<!-- kna:generated:start id=api.class hash=a65239bc1b947fba -->
 ### `BundleStore`
 
 ```typescript
 class BundleStore
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L28)</sub>
 
 ---
 
@@ -182,10 +182,10 @@ class BundleStore
 class BundleStoreError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L241)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L241)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=1a159f0272e74b00 -->
+<!-- kna:generated:start id=api.method hash=755efb02c7917bef -->
 ### `constructor`
 
 ```typescript
@@ -196,7 +196,7 @@ constructor(private readonly options: BundleStoreOptions)
 |---|---|---|
 | `options` | `BundleStoreOptions` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L31)</sub>
 
 ---
 
@@ -212,7 +212,7 @@ get(key: string): Promise<{envelope: {commitSha: string;orgId: string;repoId: st
 
 **Returns** `Promise<{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L75)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L75)</sub>
 
 ---
 
@@ -228,7 +228,7 @@ getPayload(key: string): Promise<{languages: ("typescript" | "javascript" | "pyt
 
 **Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L87)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L87)</sub>
 
 ---
 
@@ -240,7 +240,7 @@ healthy(): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L109)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L109)</sub>
 
 ---
 
@@ -261,7 +261,7 @@ key(orgId: string, repoId: string, commitSha: string, bundleId: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L40)</sub>
 
 ---
 
@@ -280,7 +280,7 @@ listKeys(prefix: string, limit: number): Promise<string[]>
 
 **Returns** `Promise<string[]>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L123)</sub>
 
 ---
 
@@ -294,7 +294,7 @@ objectLockEnabled(): Promise<boolean>
 
 **Returns** `Promise<boolean>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L99)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L99)</sub>
 
 ---
 
@@ -310,7 +310,7 @@ put(bundle: {envelope: {commitSha: string;orgId: string;repoId: string;signature
 
 **Returns** `Promise<string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L44)</sub>
 
 ---
 
@@ -325,10 +325,10 @@ constructor(message: string, readonly status: number)
 | `message` | `string` |  |
 | `status` | `number` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L242)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L242)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=3fd29317d43b62d4 -->
+<!-- kna:generated:start id=api.interface hash=698a6236d6fd6eb5 -->
 ### `BundleStoreOptions`
 
 The IR bundle store — the system of record.
@@ -337,7 +337,7 @@ The IR bundle store — the system of record.
 interface BundleStoreOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L19)</sub>
 
 ---
 
@@ -347,7 +347,7 @@ interface BundleStoreOptions
 interface VerificationResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L99)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L99)</sub>
 
 ---
 
@@ -357,10 +357,10 @@ interface VerificationResult
 interface VerifyOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L105)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L105)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=8e66e854a46cb6fa -->
+<!-- kna:generated:start id=api.property hash=36e781e5784f9158 -->
 ### `accessKey`
 
 ```typescript
@@ -369,7 +369,7 @@ accessKey: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L22)</sub>
 
 ---
 
@@ -381,7 +381,7 @@ bucket: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L21)</sub>
 
 ---
 
@@ -393,7 +393,7 @@ endpoint: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L20)</sub>
 
 ---
 
@@ -405,7 +405,7 @@ fetchImpl?: typeof fetch
 
 **Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L25)</sub>
 
 ---
 
@@ -417,7 +417,7 @@ region: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L24)</sub>
 
 ---
 
@@ -429,7 +429,7 @@ secretKey: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/bundle-store.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L23)</sub>
 
 ---
 
@@ -441,7 +441,7 @@ detail: string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L102)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L102)</sub>
 
 ---
 
@@ -453,7 +453,7 @@ failure: VerificationFailure | null
 
 **Returns** `VerificationFailure \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L101)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L101)</sub>
 
 ---
 
@@ -465,7 +465,7 @@ valid: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L100)</sub>
 
 ---
 
@@ -477,7 +477,7 @@ actualPayloadBytes: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L109)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L109)</sub>
 
 ---
 
@@ -491,7 +491,7 @@ actualPayloadHash: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L108)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L108)</sub>
 
 ---
 
@@ -503,7 +503,7 @@ envelope: IrBundleEnvelope
 
 **Returns** `{ commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: stri…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L106)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L106)</sub>
 
 ---
 
@@ -515,7 +515,7 @@ hmacSecret?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L111)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L111)</sub>
 
 ---
 
@@ -529,7 +529,7 @@ isNonceSeen: (orgId: string, nonce: string) => Promise<boolean>
 
 **Returns** `(orgId: string, nonce: string) => Promise<boolean>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L114)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L114)</sub>
 
 ---
 
@@ -541,7 +541,7 @@ isProduction: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L121)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L121)</sub>
 
 ---
 
@@ -553,7 +553,7 @@ maxBundleBytes: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L112)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L112)</sub>
 
 ---
 
@@ -565,7 +565,7 @@ mode: 'sigstore' | 'hmac' | 'permissive-dev'
 
 **Returns** `"sigstore" \| "hmac" \| "permissive-dev"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L110)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L110)</sub>
 
 ---
 
@@ -577,7 +577,7 @@ now?: Date
 
 **Returns** `Date \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L122)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L122)</sub>
 
 ---
 
@@ -591,7 +591,7 @@ resolveRepoRemote?: (repoId: string) => Promise<string | null>
 
 **Returns** `((repoId: string) => Promise<string \| null>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L118)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L118)</sub>
 
 ---
 
@@ -605,7 +605,7 @@ scanPassed: boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L120)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L120)</sub>
 
 ---
 
@@ -619,10 +619,10 @@ verifyCommit?: (input: {repoId: string;commitSha: string;ref: string}) => Promis
 
 **Returns** `((input: { repoId: string; commitSha: string; ref: string; }) => Promise<boolean>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L116)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L116)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=76e6278a618077ab -->
+<!-- kna:generated:start id=api.function hash=8fec62b94109b1ed -->
 ### `canonicalClaims`
 
 §15.2 BLOCKER — "'IR bundle, signed' is a word in a diagram."
@@ -637,7 +637,7 @@ canonicalClaims(input: {orgId: string;repoId: string;commitSha: string;ref: stri
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L26)</sub>
 
 ---
 
@@ -655,7 +655,7 @@ explainFailure(result: VerificationResult): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L287)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L287)</sub>
 
 ---
 
@@ -672,7 +672,7 @@ signHmac(secret: string, claims: string): {value: string;algorithm: "sigstore-ke
 
 **Returns** `{ value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: string \| null; runId: string \| null; }; keyId: string \| null; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L49)</sub>
 
 ---
 
@@ -690,7 +690,7 @@ signUnsignedDev(claims: string): {value: string;algorithm: "sigstore-keyless" | 
 
 **Returns** `{ value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: string \| null; runId: string \| null; }; keyId: string \| null; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L70)</sub>
 
 ---
 
@@ -708,17 +708,17 @@ verifyEnvelope(options: VerifyOptions): Promise<VerificationResult>
 
 **Returns** `Promise<VerificationResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L132)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L132)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.type hash=27910205ce66551d -->
+<!-- kna:generated:start id=api.type hash=4bad9fff8184bce3 -->
 ### `ErrorResponse`
 
 ```typescript
 type ErrorResponse = z.infer<typeof zErrorResponse>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L354)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L354)</sub>
 
 ---
 
@@ -728,7 +728,7 @@ type ErrorResponse = z.infer<typeof zErrorResponse>
 type IngestRequest = z.infer<typeof zIngestRequest>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L17)</sub>
 
 ---
 
@@ -738,7 +738,7 @@ type IngestRequest = z.infer<typeof zIngestRequest>
 type IngestResponse = z.infer<typeof zIngestResponse>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L51)</sub>
 
 ---
 
@@ -748,7 +748,7 @@ type IngestResponse = z.infer<typeof zIngestResponse>
 type SearchRequest = z.infer<typeof zSearchRequest>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L101)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L101)</sub>
 
 ---
 
@@ -758,7 +758,7 @@ type SearchRequest = z.infer<typeof zSearchRequest>
 type SearchResponse = z.infer<typeof zSearchResponse>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L200)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L200)</sub>
 
 ---
 
@@ -768,10 +768,10 @@ type SearchResponse = z.infer<typeof zSearchResponse>
 type VerificationFailure = | 'expired' | 'replayed' | 'bad-signature' | 'signer-scope-mismatch' | 'commit-not-found' | 'payload-hash-mismatch' | 'unsupported-algorithm' | 'unsigned-in-production' | 'scan-not-passed' | 'bundle-too-large'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/signing.ts#L87)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L87)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=b40b6b96e419881a -->
+<!-- kna:generated:start id=api.constant hash=af7047eae8a725fb -->
 ### `zAnswer`
 
 ```typescript
@@ -780,7 +780,7 @@ const zAnswer: z.ZodObject<{text: z.ZodString;citations: z.ZodArray<z.ZodObject<
 
 **Returns** `ZodObject<{ text: ZodString; citations: ZodArray<ZodObject<{ marker: ZodNumber; chunkId: ZodString; symbolId: ZodNullable<ZodString>; qualifiedName: ZodNullable<ZodString>; path: ZodNullable<ZodString>; startLine: ZodNullable<ZodNumber>; analysisDepth: ZodString; }, "strip", ZodTypeAny, { path: stri…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L125)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L125)</sub>
 
 ---
 
@@ -792,7 +792,7 @@ const zBulkReviewDecision: z.ZodObject<{repoId: z.ZodString;decision: z.ZodEnum<
 
 **Returns** `ZodObject<{ repoId: ZodString; decision: ZodEnum<["approve", "reject"]>; reason: ZodString; }, "strip", ZodTypeAny, { reason: string; repoId: string; decision: "approve" \| "reject"; }, { reason: string; repoId: string; decision: "approve" \| "reject"; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L283)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L283)</sub>
 
 ---
 
@@ -804,7 +804,7 @@ const zChatRequest: z.ZodObject<{query: z.ZodString;scope: z.ZodDefault<z.ZodObj
 
 **Returns** `ZodObject<{ query: ZodString; scope: ZodDefault<ZodObject<{ kind: ZodDefault<ZodEnum<["project", "expanded", "org", "repo", "module"]>>; projectIds: ZodOptional<ZodArray<ZodString, "many">>; repoIds: ZodOptional<ZodArray<ZodString, "many">>; moduleIds: ZodOptional<ZodArray<ZodString, "many">>; versi…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L202)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L202)</sub>
 
 ---
 
@@ -818,7 +818,7 @@ const zCreatePrincipalRequest: z.ZodObject<{subject: z.ZodString;email: z.ZodDef
 
 **Returns** `ZodObject<{ subject: ZodString; email: ZodDefault<ZodNullable<ZodString>>; displayName: ZodDefault<ZodNullable<ZodString>>; clearance: ZodDefault<ZodEnum<["public", "internal", "confidential", "restricted"]>>; isServiceAccount: ZodDefault<ZodBoolean>; roles: ZodDefault<ZodArray<ZodEnum<["admin", "me…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L162)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L162)</sub>
 
 ---
 
@@ -830,7 +830,7 @@ const zCreatePrincipalResponse: z.ZodObject<{principalId: z.ZodString;subject: z
 
 **Returns** `ZodObject<{ principalId: ZodString; subject: ZodString; token: ZodString; lastFourChars: ZodString; grantedRepoIds: ZodArray<ZodString, "many">; warning: ZodString; }, "strip", ZodTypeAny, { token: string; subject: string; principalId: string; lastFourChars: string; grantedRepoIds: string[]; warning…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L176)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L176)</sub>
 
 ---
 
@@ -842,7 +842,7 @@ const zErrorResponse: z.ZodObject<{error: z.ZodObject<{code: z.ZodString;message
 
 **Returns** `ZodObject<{ error: ZodObject<{ code: ZodString; message: ZodString; guidance: ZodDefault<ZodNullable<ZodString>>; traceId: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { code: string; message: string; traceId: string \| null; guidance: string \| null; }, { code: string; message: string;…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L345)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L345)</sub>
 
 ---
 
@@ -854,7 +854,7 @@ const zFeedbackRequest: z.ZodObject<{traceId: z.ZodString;signal: z.ZodEnum<["up
 
 **Returns** `ZodObject<{ traceId: ZodString; signal: ZodEnum<["up", "down", "copied", "rephrased", "abandoned"]>; triage: ZodOptional<ZodEnum<["retrieval-miss", "ranking-miss", "context-truncation", "generation-error", "knowledge-absent"]>>; comment: ZodOptional<ZodString>; }, "strip", ZodTypeAny, { traceId: str…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L208)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L208)</sub>
 
 ---
 
@@ -866,7 +866,7 @@ const zHealthResponse: z.ZodObject<{status: z.ZodEnum<["ok", "degraded", "not-re
 
 **Returns** `ZodObject<{ status: ZodEnum<["ok", "degraded", "not-ready"]>; version: ZodString; irSchemaVersion: ZodString; retrievalConfigVersion: ZodString; degradedModes: ZodDefault<ZodArray<ZodString, "many">>; dependencies: ZodDefault<ZodArray<ZodObject<{ name: ZodString; kind: ZodString; state: ZodString; }…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L334)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L334)</sub>
 
 ---
 
@@ -880,7 +880,7 @@ const zIngestCredentialRequest: z.ZodObject<{reason: z.ZodString;ttlHours: z.Zod
 
 **Returns** `ZodObject<{ reason: ZodString; ttlHours: ZodDefault<ZodNumber>; }, "strip", ZodTypeAny, { reason: string; ttlHours: number; }, { reason: string; ttlHours?: number \| undefined; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L266)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L266)</sub>
 
 ---
 
@@ -892,7 +892,7 @@ const zIngestCredentialResponse: z.ZodObject<{token: z.ZodString;repoId: z.ZodSt
 
 **Returns** `ZodObject<{ token: ZodString; repoId: ZodString; expiresAt: ZodString; warning: ZodString; }, "strip", ZodTypeAny, { token: string; expiresAt: string; repoId: string; warning: string; }, { token: string; expiresAt: string; repoId: string; warning: string; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L276)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L276)</sub>
 
 ---
 
@@ -906,7 +906,7 @@ const zIngestRequest: z.ZodObject<{envelope: z.ZodObject<{irSchemaVersion: z.Zod
 
 **Returns** `ZodObject<{ envelope: ZodObject<{ irSchemaVersion: ZodString; bundleId: ZodString; orgId: ZodString; repoId: ZodString; commitSha: ZodString; ref: ZodString; nonce: ZodString; issuedAt: ZodString; expiresAt: ZodString; producer: ZodObject<{ name: ZodDefault<ZodString>; version: ZodString; environmen…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L16)</sub>
 
 ---
 
@@ -918,7 +918,7 @@ const zIngestResponse: z.ZodObject<{accepted: z.ZodBoolean;bundleId: z.ZodString
 
 **Returns** `ZodObject<{ accepted: ZodBoolean; bundleId: ZodString; storageKey: ZodNullable<ZodString>; jobIds: ZodArray<ZodString, "many">; warnings: ZodDefault<ZodArray<ZodString, "many">>; circuitBreaker: ZodDefault<ZodNullable<ZodObject<{ tripped: ZodBoolean; rule: ZodNullable<ZodString>; reason: ZodNullable…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L19)</sub>
 
 ---
 
@@ -930,7 +930,7 @@ const zOnboardRepoRequest: z.ZodObject<{remote: z.ZodString;projectSlugs: z.ZodD
 
 **Returns** `ZodObject<{ remote: ZodString; projectSlugs: ZodDefault<ZodArray<ZodString, "many">>; openPullRequest: ZodDefault<ZodBoolean>; grantTo: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { remote: string; projectSlugs: string[]; openPullRequest: boolean; grantTo: string[]; }, { remote:…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L225)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L225)</sub>
 
 ---
 
@@ -942,7 +942,7 @@ const zOnboardRepoResponse: z.ZodObject<{repoId: z.ZodString;remote: z.ZodString
 
 **Returns** `ZodObject<{ repoId: ZodString; remote: ZodString; pullRequestUrl: ZodNullable<ZodString>; grantedTo: ZodArray<ZodString, "many">; projectSlugs: ZodArray<ZodString, "many">; unknownProjectSlugs: ZodArray<ZodString, "many">; }, "strip", ZodTypeAny, { repoId: string; remote: string; projectSlugs: strin…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L244)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L244)</sub>
 
 ---
 
@@ -954,7 +954,7 @@ const zPublishExternallyPreview: z.ZodObject<{moduleId: z.ZodString;moduleName: 
 
 **Returns** `ZodObject<{ moduleId: ZodString; moduleName: ZodString; newlyVisibleSymbols: ZodArray<ZodObject<{ symbolId: ZodString; qualifiedName: ZodString; kind: ZodString; }, "strip", ZodTypeAny, { kind: string; symbolId: string; qualifiedName: string; }, { kind: string; symbolId: string; qualifiedName: strin…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L324)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L324)</sub>
 
 ---
 
@@ -968,7 +968,7 @@ const zPublishExternallyRequest: z.ZodObject<{moduleIds: z.ZodArray<z.ZodString,
 
 **Returns** `ZodObject<{ moduleIds: ZodArray<ZodString, "many">; approvedBy: ZodString; acknowledgement: ZodLiteral<"I have reviewed the symbols listed and confirm they may be visible to integration partners.">; }, "strip", ZodTypeAny, { moduleIds: string[]; approvedBy: string; acknowledgement: "I have reviewed …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L290)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L290)</sub>
 
 ---
 
@@ -982,7 +982,7 @@ const zReindexRequest: z.ZodEffects<z.ZodObject<{repoIds: z.ZodDefault<z.ZodArra
 
 **Returns** `ZodEffects<ZodObject<{ repoIds: ZodDefault<ZodArray<ZodString, "many">>; moduleIds: ZodDefault<ZodArray<ZodString, "many">>; reason: ZodString; }, "strip", ZodTypeAny, { reason: string; repoIds: string[]; moduleIds: string[]; }, { reason: string; repoIds?: string[] \| undefined; moduleIds?: string[] …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L308)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L308)</sub>
 
 ---
 
@@ -994,7 +994,7 @@ const zReindexResponse: z.ZodObject<{jobIds: z.ZodArray<z.ZodString, "many">;mod
 
 **Returns** `ZodObject<{ jobIds: ZodArray<ZodString, "many">; moduleCount: ZodNumber; skipped: ZodArray<ZodObject<{ repoId: ZodString; reason: ZodString; }, "strip", ZodTypeAny, { reason: string; repoId: string; }, { reason: string; repoId: string; }>, "many">; }, "strip", ZodTypeAny, { jobIds: string[]; moduleC…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L318)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L318)</sub>
 
 ---
 
@@ -1006,7 +1006,7 @@ const zScopeInput: z.ZodObject<{kind: z.ZodDefault<z.ZodEnum<["project", "expand
 
 **Returns** `ZodObject<{ kind: ZodDefault<ZodEnum<["project", "expanded", "org", "repo", "module"]>>; projectIds: ZodOptional<ZodArray<ZodString, "many">>; repoIds: ZodOptional<ZodArray<ZodString, "many">>; moduleIds: ZodOptional<ZodArray<ZodString, "many">>; version: ZodOptional<ZodString>; languages: ZodOption…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L74)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L74)</sub>
 
 ---
 
@@ -1018,7 +1018,7 @@ const zSearchHit: z.ZodObject<{chunkId: z.ZodString;symbolId: z.ZodNullable<z.Zo
 
 **Returns** `ZodObject<{ chunkId: ZodString; symbolId: ZodNullable<ZodString>; qualifiedName: ZodNullable<ZodString>; content: ZodString; score: ZodNumber; provenance: ZodObject<{ repoId: ZodString; moduleId: ZodString; path: ZodNullable<ZodString>; startLine: ZodNullable<ZodNumber>; endLine: ZodNullable<ZodNumb…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L103)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L103)</sub>
 
 ---
 
@@ -1030,7 +1030,7 @@ const zSearchRequest: z.ZodObject<{query: z.ZodString;scope: z.ZodDefault<z.ZodO
 
 **Returns** `ZodObject<{ query: ZodString; scope: ZodDefault<ZodObject<{ kind: ZodDefault<ZodEnum<["project", "expanded", "org", "repo", "module"]>>; projectIds: ZodOptional<ZodArray<ZodString, "many">>; repoIds: ZodOptional<ZodArray<ZodString, "many">>; moduleIds: ZodOptional<ZodArray<ZodString, "many">>; versi…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L83)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L83)</sub>
 
 ---
 
@@ -1042,7 +1042,7 @@ const zSearchResponse: z.ZodObject<{hits: z.ZodArray<z.ZodObject<{chunkId: z.Zod
 
 **Returns** `ZodObject<{ hits: ZodArray<ZodObject<{ chunkId: ZodString; symbolId: ZodNullable<ZodString>; qualifiedName: ZodNullable<ZodString>; content: ZodString; score: ZodNumber; provenance: ZodObject<{ repoId: ZodString; moduleId: ZodString; path: ZodNullable<ZodString>; startLine: ZodNullable<ZodNumber>; e…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L185)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L185)</sub>
 
 ---
 
@@ -1056,7 +1056,7 @@ const zTokenExchangeRequest: z.ZodObject<{idToken: z.ZodString;repoRemote: z.Zod
 
 **Returns** `ZodObject<{ idToken: ZodString; repoRemote: ZodString; audience: ZodDefault<ZodString>; }, "strip", ZodTypeAny, { idToken: string; repoRemote: string; audience: string; }, { idToken: string; repoRemote: string; audience?: string \| undefined; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L57)</sub>
 
 ---
 
@@ -1068,5 +1068,5 @@ const zTokenExchangeResponse: z.ZodObject<{token: z.ZodString;expiresAt: z.ZodSt
 
 **Returns** `ZodObject<{ token: ZodString; expiresAt: ZodString; repoId: ZodString; orgId: ZodString; }, "strip", ZodTypeAny, { token: string; expiresAt: string; repoId: string; orgId: string; }, { token: string; expiresAt: string; repoId: string; orgId: string; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/contracts/src/api.ts#L64)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L64)</sub>
 <!-- kna:generated:end id=api.constant -->

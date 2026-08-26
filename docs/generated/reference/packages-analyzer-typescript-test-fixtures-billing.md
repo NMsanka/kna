@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_ea77493fddbabc61a22fc9301ccd5bd3
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -83,7 +83,7 @@ provenance:
 | Public symbols | 29 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=f189ca3f66a64f15 -->
+<!-- kna:generated:start id=api.constant hash=75e31e7b81621fbf -->
 ### `DEFAULT_CURRENCY`
 
 ```typescript
@@ -92,10 +92,10 @@ const DEFAULT_CURRENCY: "USD"
 
 **Returns** `"USD"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L141)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L141)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=1a606ea2d86e4724 -->
+<!-- kna:generated:start id=api.function hash=27f1df25eae9c97b -->
 ### `formatMoney`
 
 Format an amount for display.
@@ -111,7 +111,7 @@ formatMoney(money: Money, locale: string): string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L130)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L130)</sub>
 
 ---
 
@@ -127,17 +127,17 @@ const summariseInvoice: (invoice: Invoice) => string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L143)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L143)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=369a16c78e41b91d -->
+<!-- kna:generated:start id=api.interface hash=6300c0456b4d39d8 -->
 ### `Invoice`
 
 ```typescript
 interface Invoice
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L32)</sub>
 
 ---
 
@@ -147,7 +147,7 @@ interface Invoice
 interface InvoiceLine
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L17)</sub>
 
 ---
 
@@ -157,7 +157,7 @@ interface InvoiceLine
 interface InvoiceRepository
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L48)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L48)</sub>
 
 ---
 
@@ -169,10 +169,10 @@ Billing domain types and the service that owns invoice lifecycle.
 interface Money
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L10)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L10)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=d587dd4053109a2b -->
+<!-- kna:generated:start id=api.property hash=8a43e5a1d3899f79 -->
 ### `customerId`
 
 ```typescript
@@ -181,7 +181,7 @@ customerId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L34)</sub>
 
 ---
 
@@ -193,7 +193,7 @@ id: InvoiceId
 
 **Returns** `InvoiceId`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L33)</sub>
 
 ---
 
@@ -205,7 +205,7 @@ issuedAt: Date | null
 
 **Returns** `Date \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L38)</sub>
 
 ---
 
@@ -217,7 +217,7 @@ lines: InvoiceLine[]
 
 **Returns** `InvoiceLine[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L36)</sub>
 
 ---
 
@@ -229,7 +229,7 @@ status: InvoiceStatus
 
 **Returns** `InvoiceStatus`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L35)</sub>
 
 ---
 
@@ -241,7 +241,7 @@ total: Money
 
 **Returns** `Money`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L37)</sub>
 
 ---
 
@@ -253,7 +253,7 @@ description: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L18)</sub>
 
 ---
 
@@ -265,7 +265,7 @@ quantity: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L19)</sub>
 
 ---
 
@@ -277,7 +277,7 @@ unitPrice: Money
 
 **Returns** `Money`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L20)</sub>
 
 ---
 
@@ -291,7 +291,7 @@ amountMinor: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L12)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L12)</sub>
 
 ---
 
@@ -305,27 +305,27 @@ currency: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L14)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=fc8d83063a21ec0b -->
+<!-- kna:generated:start id=api.type hash=7f21ddfcd22aafda -->
 ### `InvoiceId`
 
 ```typescript
 type InvoiceId = string&{readonly __brand: 'InvoiceId'}
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L30)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.class hash=189631e0db9d27c2 -->
+<!-- kna:generated:start id=api.class hash=2f38adc0068ccc83 -->
 ### `InvoiceNotFoundError`
 
 ```typescript
 class InvoiceNotFoundError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L41)</sub>
 
 ---
 
@@ -337,10 +337,10 @@ Creates, issues and voids invoices.
 class InvoiceService
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L58)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=733aa8777bf69b81 -->
+<!-- kna:generated:start id=api.method hash=0cf2f0a4e61aea2d -->
 ### `constructor`
 
 ```typescript
@@ -351,7 +351,7 @@ constructor(readonly invoiceId: InvoiceId)
 |---|---|---|
 | `invoiceId` | `InvoiceId` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L42)</sub>
 
 ---
 
@@ -367,7 +367,7 @@ findById(id: InvoiceId): Promise<Invoice | null>
 
 **Returns** `Promise<Invoice \| null>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L49)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L49)</sub>
 
 ---
 
@@ -383,7 +383,7 @@ save(invoice: Invoice): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L50)</sub>
 
 ---
 
@@ -397,7 +397,7 @@ constructor(private readonly repository: InvoiceRepository)
 |---|---|---|
 | `repository` | `InvoiceRepository` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L61)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L61)</sub>
 
 ---
 
@@ -420,7 +420,7 @@ create(customerId: string, lines: InvoiceLine[]): Promise<Invoice>
 
 - `RangeError` — When `lines` is empty.
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L71)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L71)</sub>
 
 ---
 
@@ -438,7 +438,7 @@ forceIssue(id: InvoiceId): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L107)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L107)</sub>
 
 ---
 
@@ -460,17 +460,17 @@ issue(id: InvoiceId): Promise<Invoice>
 
 - `InvoiceNotFoundError` — When no invoice with that id exists.
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L96)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L96)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.enum hash=d5a4d3ed87ed8eb1 -->
+<!-- kna:generated:start id=api.enum hash=4e6e265af35b17cf -->
 ### `InvoiceStatus`
 
 ```typescript
 enum InvoiceStatus
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L23)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-typescript/test/fixtures/billing/src/invoice-service.ts#L23)</sub>
 <!-- kna:generated:end id=api.enum -->
 
 <!-- kna:generated:start id=deprecations hash=f98d4a4d92c6ac3a -->

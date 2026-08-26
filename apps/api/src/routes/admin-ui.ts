@@ -1,9 +1,9 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
 import { sql } from 'drizzle-orm';
 import { withOrgContext } from '@kna/db';
-import type { FastifyReply, FastifyRequest } from 'fastify';
+import type { FastifyRequest } from 'fastify';
 import type { ApiContext, KnaServer } from '../context.js';
 import { layout, page, escapeHtml } from './admin-ui/render.js';
+import { createSessionTools, SESSION_TTL_MS } from './web-session.js';
 
 /**
  * The administration console.
@@ -26,118 +26,15 @@ import { layout, page, escapeHtml } from './admin-ui/render.js';
  */
 
 const COOKIE = 'kna_admin';
-const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
-
-interface Session {
-  token: string;
-  expiresAt: number;
-}
 
 export async function registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Promise<void> {
-  const secret = ctx.env.SESSION_SECRET;
-
-  // HTML forms post `application/x-www-form-urlencoded`, which Fastify does not parse without
-  // being told to. Done here rather than by adding @fastify/formbody: it is a dozen lines against
-  // a dependency, and this is the only surface in the API that accepts a form at all.
-  //
-  // Repeated keys become an array, because a list of checkboxes — "which repositories may this
-  // person read" — posts the same name several times, and collapsing that to the last value
-  // would silently grant one repository instead of five.
-  app.addContentTypeParser(
-    'application/x-www-form-urlencoded',
-    { parseAs: 'string' },
-    (_request, body, done) => {
-      try {
-        const params = new URLSearchParams(body as string);
-        const parsed: Record<string, string | string[]> = {};
-        for (const key of new Set(params.keys())) {
-          const values = params.getAll(key);
-          parsed[key] = values.length > 1 ? values : values[0]!;
-        }
-        done(null, parsed);
-      } catch (error) {
-        done(error as Error, undefined);
-      }
-    },
-  );
-
-  /**
-   * A signed cookie carrying the caller's API token.
-   *
-   * The token itself is the credential — the cookie only saves retyping it, and is signed so a
-   * forged one is rejected rather than trusted. `httpOnly` keeps it away from any script on the
-   * page, and `sameSite: strict` means another site cannot cause a request that carries it,
-   * which is what makes the state-changing forms below safe to post.
-   */
-  function sign(session: Session): string {
-    const payload = Buffer.from(JSON.stringify(session)).toString('base64url');
-    const mac = createHmac('sha256', secret).update(payload).digest('base64url');
-    return `${payload}.${mac}`;
-  }
-
-  function verify(cookie: string | undefined): Session | null {
-    if (!cookie) return null;
-    const [payload, mac] = cookie.split('.');
-    if (!payload || !mac) return null;
-
-    const expected = createHmac('sha256', secret).update(payload).digest('base64url');
-    const a = Buffer.from(mac);
-    const b = Buffer.from(expected);
-    if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
-
-    try {
-      const session = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8')) as Session;
-      return session.expiresAt > Date.now() ? session : null;
-    } catch {
-      return null;
-    }
-  }
-
-  function sessionOf(request: FastifyRequest): Session | null {
-    const header = request.headers.cookie ?? '';
-    const match = header.split(';').find((c) => c.trim().startsWith(`${COOKIE}=`));
-    return verify(match?.trim().slice(COOKIE.length + 1));
-  }
-
-  /** Call an endpoint of this same API, as the signed-in administrator. */
-  async function call(
-    session: Session,
-    method: string,
-    path: string,
-    body?: unknown,
-  ): Promise<{ ok: boolean; status: number; data: Record<string, unknown> }> {
-    const response = await app.inject({
-      method: method as 'GET' | 'POST',
-      url: path,
-      headers: {
-        authorization: `Bearer ${session.token}`,
-        ...(body ? { 'content-type': 'application/json' } : {}),
-      },
-      ...(body ? { payload: JSON.stringify(body) } : {}),
-    });
-
-    let data: Record<string, unknown> = {};
-    try {
-      data = response.json() as Record<string, unknown>;
-    } catch {
-      data = {};
-    }
-    return { ok: response.statusCode < 400, status: response.statusCode, data };
-  }
-
-  function redirect(reply: FastifyReply, to: string, flash?: string): FastifyReply {
-    const query = flash ? `?flash=${encodeURIComponent(flash)}` : '';
-    return reply.code(303).header('location', `${to}${query}`).send();
-  }
-
-  function requireSession(request: FastifyRequest, reply: FastifyReply): Session | null {
-    const session = sessionOf(request);
-    if (!session) {
-      void redirect(reply, '/admin/login');
-      return null;
-    }
-    return session;
-  }
+  const sessions = createSessionTools(app, {
+    secret: ctx.env.SESSION_SECRET,
+    cookieName: COOKIE,
+    path: '/admin',
+    loginPath: '/admin/login',
+  });
+  const { requireSession, redirect, call } = sessions;
 
   // ── Sign in ──────────────────────────────────────────────────────────────────────────────
 
@@ -190,7 +87,7 @@ export async function registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Pr
       );
     }
 
-    const cookie = sign({ token, expiresAt: Date.now() + SESSION_TTL_MS });
+    const cookie = sessions.sign({ token, expiresAt: Date.now() + SESSION_TTL_MS });
     return reply
       .code(303)
       .header(
@@ -515,6 +412,11 @@ export async function registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Pr
            <p class="muted">
              Granted read access to ${((result.data.grantedRepoIds as string[]) ?? []).length}
              repository(ies).
+           </p>
+           <p class="note">
+             Send it with somewhere to use it. <strong>/chat</strong> needs nothing installed —
+             they paste this token and ask a question. The same token also works for
+             <span class="mono">kna ask</span> and for the MCP server in an editor.
            </p>
            <a class="button" href="/admin/people">Back</a>
          </section>`,

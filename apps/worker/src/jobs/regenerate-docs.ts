@@ -132,7 +132,9 @@ export async function regenerateDocs(
       document: renderModuleReference({
         module,
         symbols,
-        commitSha: input.commitSha,
+        // The exact commit, because this copy is the platform's record of what was
+        // indexed and is only worth anything if it is exact.
+        revision: input.commitSha,
         ...(sourceUrlTemplate ? { sourceUrlTemplate } : {}),
       }),
     });
@@ -142,6 +144,7 @@ export async function regenerateDocs(
     module: null,
     document: renderArchitectureOverview({
       payload,
+      revision: input.commitSha,
       ...(sourceUrlTemplate ? { sourceUrlTemplate } : {}),
     }),
   });

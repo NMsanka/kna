@@ -41,6 +41,66 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
     });
   });
 
+  /**
+   * What may this caller scope a question to?
+   *
+   * The chat surface needs a project picker, and a picker that offers a project the caller
+   * cannot read is worse than no picker: they choose it, get nothing back, and conclude the
+   * platform is broken rather than that they lack access.
+   *
+   * So both lists are derived from `permittedRepoIds` rather than from the org. A project
+   * appears only when the caller can read at least one repository that has a module in it.
+   */
+  app.get('/v1/scope', async (request) => {
+    const principal = await ctx.authenticate(request);
+    const access = await ctx.permissions.resolve(principal, { corpus: 'internal' });
+
+    if (access.permittedRepoIds.length === 0) {
+      return { projects: [], repos: [] };
+    }
+
+    const rows = await withSystemContext(ctx.db, principal.orgId, 'maintenance', async (tx) => {
+      const projects = await tx.execute<{ id: string; slug: string; name: string; repos: string }>(
+        sql`
+          SELECT p.id, p.slug, p.name, count(DISTINCT m.repo_id)::text AS repos
+            FROM projects p
+            JOIN module_projects mp ON mp.project_id = p.id
+            JOIN modules m ON m.id = mp.module_id
+           WHERE p.org_id = ${principal.orgId}
+             AND m.repo_id = ${anyOf(access.permittedRepoIds)}
+           GROUP BY p.id, p.slug, p.name
+           ORDER BY p.name
+        `,
+      );
+      // `indexed` rather than filtering: a registered repository with nothing published yet
+      // should still appear, said plainly. Hiding it produces "where has my repository gone",
+      // which is a worse question than "why is it greyed out".
+      const repos = await tx.execute<{ id: string; name: string; modules: string }>(sql`
+        SELECT r.id, r.name, count(m.id)::text AS modules
+          FROM repos r
+          LEFT JOIN modules m ON m.repo_id = r.id
+         WHERE r.org_id = ${principal.orgId} AND r.id = ${anyOf(access.permittedRepoIds)}
+         GROUP BY r.id, r.name
+         ORDER BY r.name
+      `);
+      return { projects, repos };
+    });
+
+    return {
+      projects: rows.projects.map((p) => ({
+        id: String(p.id),
+        slug: String(p.slug),
+        name: String(p.name),
+        repoCount: Number(p.repos),
+      })),
+      repos: rows.repos.map((r) => ({
+        id: String(r.id),
+        name: String(r.name),
+        indexed: Number(r.modules) > 0,
+      })),
+    };
+  });
+
   app.post('/v1/search', async (request, reply) => {
     const traceId = randomUUID();
     const body = zSearchRequest.parse(request.body);

@@ -5,7 +5,7 @@ generated: true
 generator: kna-docgen
 moduleId: mod_d73a1a44210fb57290e06032b69a3729
 repoId: repo_3b52360b05e38e76b3db3583c2cb6aec
-commitSha: 0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d
+revision: master
 analysisDepth: semantic
 owners:
   []
@@ -99,7 +99,7 @@ provenance:
 | Public symbols | 37 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=81cd69df047880e7 -->
+<!-- kna:generated:start id=api.property hash=c18ccbca7b402d0e -->
 ### `consecutiveFailures`
 
 ```typescript
@@ -108,7 +108,7 @@ consecutiveFailures: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L51)</sub>
 
 ---
 
@@ -120,7 +120,7 @@ lastDetail: string | undefined
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L54)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L54)</sub>
 
 ---
 
@@ -132,7 +132,7 @@ lastState: DependencyState
 
 **Returns** `DependencyState`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L53)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L53)</sub>
 
 ---
 
@@ -144,7 +144,7 @@ openedAt: number | null
 
 **Returns** `number \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L52)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L52)</sub>
 
 ---
 
@@ -156,7 +156,7 @@ check: () => Promise<{state: DependencyState;detail?: string}>
 
 **Returns** `() => Promise<{ state: DependencyState; detail?: string \| undefined; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L22)</sub>
 
 ---
 
@@ -170,7 +170,7 @@ cooldownMs?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L26)</sub>
 
 ---
 
@@ -184,7 +184,7 @@ failureThreshold?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L24)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L24)</sub>
 
 ---
 
@@ -196,7 +196,7 @@ kind: DependencyKind
 
 **Returns** `DependencyKind`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L21)</sub>
 
 ---
 
@@ -208,7 +208,7 @@ name: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L20)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L20)</sub>
 
 ---
 
@@ -220,7 +220,7 @@ environment?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L41)</sub>
 
 ---
 
@@ -232,7 +232,7 @@ level?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L40)</sub>
 
 ---
 
@@ -244,7 +244,7 @@ pretty?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L43)</sub>
 
 ---
 
@@ -256,7 +256,7 @@ region?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L42)</sub>
 
 ---
 
@@ -268,7 +268,7 @@ service: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L39)</sub>
 
 ---
 
@@ -280,7 +280,7 @@ attributes?: Record<string, string | number | boolean>
 
 **Returns** `Record<string, string \| number \| boolean> \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/tracing.ts#L14)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L14)</sub>
 
 ---
 
@@ -294,10 +294,10 @@ llmTraceId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/tracing.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L16)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=8b09ddeef907b153 -->
+<!-- kna:generated:start id=api.function hash=f31d1dfb05409c1a -->
 ### `createLogger`
 
 ```typescript
@@ -310,7 +310,7 @@ createLogger(options: LoggerOptions): Logger
 
 **Returns** `Logger`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L66)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L66)</sub>
 
 ---
 
@@ -324,7 +324,7 @@ currentTraceId(): string | null
 
 **Returns** `string \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/tracing.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L46)</sub>
 
 ---
 
@@ -343,7 +343,7 @@ installGracefulShutdown(handlers: {name: string;drain: () => Promise<void>;}[], 
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L169)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L169)</sub>
 
 ---
 
@@ -363,7 +363,7 @@ timed(histogram: Histogram<Attributes>, attributes: Record<string, string | numb
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/metrics.ts#L105)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/metrics.ts#L105)</sub>
 
 ---
 
@@ -381,10 +381,10 @@ withSpan(name: string, options: SpanOptions, fn: (span: Span) => Promise<T>): Pr
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/tracing.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L19)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.constant hash=1709dd44916c8c3b -->
+<!-- kna:generated:start id=api.constant hash=69e1fed5e685a6e8 -->
 ### `DEGRADED_MODE_BANNERS`
 
 What a user is told when a mode is active. Named, not improvised at the call site.
@@ -395,7 +395,7 @@ const DEGRADED_MODE_BANNERS: Record<DegradedMode, string>
 
 **Returns** `Record<DegradedMode, string>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L37)</sub>
 
 ---
 
@@ -407,17 +407,17 @@ const KnaMetrics: {readonly bundlesIngested: Counter;readonly bundlesRejected: C
 
 **Returns** `{ readonly bundlesIngested: Counter; readonly bundlesRejected: Counter; readonly indexLagSeconds: Histogram; readonly symbolsIndexed: Counter; readonly queueDepth: ObservableGauge; readonly queueOldestJobAgeSeconds: ObservableGauge; readonly dlqDepth: ObservableGauge; readonly jobDurationMs: Histogr…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/metrics.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/metrics.ts#L21)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=6164bafa71d00998 -->
+<!-- kna:generated:start id=api.type hash=3cab7504ef018271 -->
 ### `DegradedMode`
 
 ```typescript
 type DegradedMode = | 'reranker-unavailable' | 'embeddings-unavailable' | 'generation-unavailable' | 'git-provider-unavailable' | 'bundle-store-unavailable'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L29)</sub>
 
 ---
 
@@ -429,7 +429,7 @@ Health, readiness and degraded modes (§15.6).
 type DependencyKind = 'critical' | 'advisory'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L16)</sub>
 
 ---
 
@@ -439,17 +439,17 @@ type DependencyKind = 'critical' | 'advisory'
 type DependencyState = 'up' | 'degraded' | 'down'
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L17)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.interface hash=837417342c8793a3 -->
+<!-- kna:generated:start id=api.interface hash=2677d2a1b7b0d5a0 -->
 ### `DependencyCheck`
 
 ```typescript
 interface DependencyCheck
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L19)</sub>
 
 ---
 
@@ -459,7 +459,7 @@ interface DependencyCheck
 interface LoggerOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/logger.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/logger.ts#L38)</sub>
 
 ---
 
@@ -469,20 +469,20 @@ interface LoggerOptions
 interface SpanOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/tracing.ts#L13)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L13)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.class hash=5a7b7da04d3a712a -->
+<!-- kna:generated:start id=api.class hash=61c0c848a5d28b4d -->
 ### `HealthRegistry`
 
 ```typescript
 class HealthRegistry
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L57)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=99d49a861fd8708b -->
+<!-- kna:generated:start id=api.method hash=db0025133e35905e -->
 ### `activeBanners`
 
 ```typescript
@@ -491,7 +491,7 @@ activeBanners(): string[]
 
 **Returns** `string[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L159)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L159)</sub>
 
 ---
 
@@ -507,7 +507,7 @@ enterDegraded(mode: DegradedMode): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L147)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L147)</sub>
 
 ---
 
@@ -523,7 +523,7 @@ exitDegraded(mode: DegradedMode): void
 
 **Returns** `void`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L151)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L151)</sub>
 
 ---
 
@@ -539,7 +539,7 @@ isDegraded(mode: DegradedMode): boolean
 
 **Returns** `boolean`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L155)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L155)</sub>
 
 ---
 
@@ -553,7 +553,7 @@ liveness(): {status: "ok";uptimeSeconds: number;}
 
 **Returns** `{ status: "ok"; uptimeSeconds: number; }`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L77)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L77)</sub>
 
 ---
 
@@ -567,7 +567,7 @@ readiness(): Promise<{status: "ready" | "not-ready";dependencies: {name: string;
 
 **Returns** `Promise<{ status: "ready" \| "not-ready"; dependencies: { name: string; kind: DependencyKind; state: DependencyState; detail?: string \| undefined; }[]; degradedModes: DegradedMode[]; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L82)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L82)</sub>
 
 ---
 
@@ -583,5 +583,5 @@ register(check: DependencyCheck): this
 
 **Returns** `this`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/0e88100c77d7488b49c3ffa0d98cdbb0ff68fb4d/packages/observability/src/health.ts#L62)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L62)</sub>
 <!-- kna:generated:end id=api.method -->
