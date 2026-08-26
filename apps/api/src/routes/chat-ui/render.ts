@@ -101,6 +101,21 @@ const STYLES = `
     margin-bottom: 1.5rem; font-size: 0.86rem; border-radius: 0 3px 3px 0;
   }
   .empty { color: var(--muted); text-align: center; padding: 4rem 1rem; }
+
+  .tabs { display: flex; gap: 1.5rem; margin: -0.25rem 0 1.5rem; }
+  .tabs a {
+    color: var(--muted); text-decoration: none; font-size: 0.9rem;
+    padding-bottom: 0.4rem; border-bottom: 2px solid transparent;
+  }
+  .tabs a.on { color: var(--ink); border-bottom-color: var(--accent); }
+  .tabs a:hover { color: var(--ink); }
+
+  .repo-group { margin-bottom: 0.9rem; }
+  .repo-group:last-child { margin-bottom: 0; }
+  .repo-name {
+    font-family: ui-monospace, Menlo, monospace; font-size: 0.8rem;
+    color: var(--ink); margin-bottom: 0.3rem;
+  }
 `;
 
 export function chatLayout(title: string, body: string, chrome = true): string {
