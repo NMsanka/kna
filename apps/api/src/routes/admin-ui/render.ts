@@ -104,6 +104,7 @@ ${
          <nav>
            <a href="/admin">Repositories</a>
            <a href="/admin/people">People</a>
+           <a href="/chat">Chat</a>
          </nav>
          <form method="post" action="/admin/logout"><button class="link" type="submit">Sign out</button></form>
        </header>`

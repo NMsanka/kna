@@ -131,7 +131,6 @@ ${
     ? `<header class="bar">
          <span class="brand">KNA</span>
          <span class="who"></span>
-         <a href="/admin">Administration</a>
          <form method="post" action="/chat/logout"><button class="link" type="submit">Sign out</button></form>
        </header>`
     : ''

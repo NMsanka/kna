@@ -413,6 +413,11 @@ export async function registerAdminUiRoutes(app: KnaServer, ctx: ApiContext): Pr
              Granted read access to ${((result.data.grantedRepoIds as string[]) ?? []).length}
              repository(ies).
            </p>
+           <p class="note">
+             Send it with somewhere to use it. <strong>/chat</strong> needs nothing installed —
+             they paste this token and ask a question. The same token also works for
+             <span class="mono">kna ask</span> and for the MCP server in an editor.
+           </p>
            <a class="button" href="/admin/people">Back</a>
          </section>`,
       ]),
