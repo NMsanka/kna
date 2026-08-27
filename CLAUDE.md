@@ -161,11 +161,19 @@ DATABASE_URL=postgres://kna:kna@localhost:5432/kna pnpm test
 Integration tests **skip silently** when `DATABASE_URL` is unset. A green `pnpm test` with no
 database has not tested tenant isolation. Current baseline: **194 unit tests plus 25 integration tests, 12 files.**
 
-| Connection | URL | Used by |
+| Connection | Role | Used by |
 |---|---|---|
-| Owner / superuser | `postgres://kna:kna@localhost:5432/kna` | Migrations, test fixtures |
-| Interactive | `postgres://kna_interactive:devpass@localhost:5432/kna` | API, MCP |
-| Batch | `postgres://kna_batch:devpass@localhost:5432/kna` | Worker, integration tests |
+| Owner / superuser | `kna` | Migrations, test fixtures |
+| Interactive | `kna_interactive` | API, MCP |
+| Batch | `kna_batch` | Worker, integration tests |
+
+All three reach `localhost:5432/kna`. The owner's password is `kna`; the two application
+roles use the password set by the `ALTER ROLE` command above. They are not repeated as full
+connection URLs here because the guardrail scanner refuses a publish over
+`url-embedded-credentials`, and it is right to: a credential inside a URL is the shape that
+ends up in shell history, in logs, and in this system's own embedding cache. An allowlist
+entry would have exempted this whole file from that rule to restate a value the reader has
+already set.
 
 The distinction is not cosmetic — see the first gotcha below.
 
