@@ -40,6 +40,15 @@ export const DEFAULT_SESSION_POLICY: SessionPolicy = {
   maxPerPrincipal: 5,
 };
 
+/**
+ * Refresh the identity object captured by tool handlers without breaking their reference to it.
+ * Authentication runs on every HTTP request, so this keeps tool authorization tied to the token
+ * on that request rather than to the token that happened to create the MCP session.
+ */
+export function refreshSessionIdentity(current: McpIdentity, authenticated: McpIdentity): void {
+  Object.assign(current, authenticated);
+}
+
 export class SessionRegistry {
   private readonly sessions = new Map<string, Session>();
   private draining = false;

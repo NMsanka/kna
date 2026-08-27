@@ -222,9 +222,15 @@ That is correct behaviour, and worth seeing once so you do not mistake it for a 
 
 ## From an editor
 
-The MCP server needs no per-repo setup, because it infers scope from the working directory's git
-remote. Open one repository in Cursor or Claude Code and questions are scoped to it; open the
-other and they are scoped to that one. No project picker.
+MCP scope defaults to the project associated with the current user's token. Clients that support
+workspace-aware token minting can associate that token with the project inferred from the open
+repository's git remote.
+
+When the client cannot provide a reliable workspace repository, the agent can call the read-only
+`list_repositories` MCP tool. It returns only repositories granted to the user represented by the
+current MCP token, with active revocations removed. The agent should pass an exact returned name
+as `scope.repo` when one entry clearly matches, or ask which repository the user means when
+several entries could match.
 
 `.mcp.json` in this repository points at `localhost:8081` and reads `${KNA_MCP_TOKEN}` from the
 environment, so the file is shareable and each developer's own token filters results to what they

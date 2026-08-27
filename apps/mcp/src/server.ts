@@ -8,7 +8,7 @@ import { assertRlsEffective } from '@kna/db';
 import { TOOL_DEFINITIONS, PROMPT_DEFINITIONS, MCP_TOOL_VERSION, wrapUntrusted } from './tools.js';
 import { createMcpContext, type McpContext } from './context.js';
 import { registerTools } from './handlers.js';
-import { SessionRegistry } from './session.js';
+import { refreshSessionIdentity, SessionRegistry } from './session.js';
 
 /**
  * The MCP server.
@@ -131,8 +131,12 @@ async function main(): Promise<void> {
             'Results carry an analysis-depth badge. `shallow` means the signature is as written',
             'and types were not resolved — say so rather than presenting it as settled.',
             '',
-            'Scope defaults to the project matching your working directory. Widen it deliberately',
-            'when a question genuinely crosses a service boundary.',
+            'Scope defaults to the project associated with the authenticated MCP token. Widen it',
+            'deliberately when a question genuinely crosses a service boundary.',
+            '',
+            'When you cannot identify the repository reliably, call list_repositories. Use an',
+            'exact returned name as scope.repo when there is one clear match; if several could',
+            'match, ask the user which repository they mean before searching.',
           ].join('\n'),
         },
       );
@@ -150,7 +154,10 @@ async function main(): Promise<void> {
 
     // §15.4 — re-evaluate on every request rather than trusting the session's initial grant.
     // "A long-lived MCP session may never re-evaluate" is precisely the failure mode.
-    session.identity = identity;
+    // Tool handlers close over the identity object created with the session. Mutate that object
+    // rather than replacing it so every handler observes the user authenticated for this request.
+    // Replacing it left handlers using the first token's principal for the session lifetime.
+    refreshSessionIdentity(session.identity, identity);
     sessions.touch(sessionId);
 
     await session.transport.handleRequest(req, res);

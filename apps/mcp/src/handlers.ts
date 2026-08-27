@@ -5,6 +5,7 @@ import { anyOf, withOrgContext } from '@kna/db';
 import { TOOL_DEFINITIONS, wrapUntrusted } from './tools.js';
 import type { McpContext, McpIdentity } from './context.js';
 import { scopeNarrowing } from './scope.js';
+import { repositoryListPredicate } from './repository-list.js';
 
 /**
  * Tool handlers.
@@ -29,6 +30,98 @@ export function registerTools(
   identity: McpIdentity,
   sessionId: string,
 ): void {
+  server.registerTool(
+    'list_repositories',
+    {
+      title: TOOL_DEFINITIONS.list_repositories.title,
+      description: TOOL_DEFINITIONS.list_repositories.description,
+      inputSchema: TOOL_DEFINITIONS.list_repositories.inputSchema,
+    },
+    async (args) => {
+      // Resolve on every call from the authenticated user. This applies positive grants and the
+      // active deny list before repository metadata reaches the MCP client.
+      const access = await ctx.permissions.resolve(identity.principal, { corpus: 'internal' });
+      if (access.permittedRepoIds.length === 0) {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: 'No repositories are available to this user. This does not reveal whether other repositories exist.',
+            },
+          ],
+        };
+      }
+
+      const query = args.query?.trim() || null;
+      const rows = await withOrgContext(ctx.db, access.orgId, async (tx) =>
+        tx.execute<{
+          id: string;
+          name: string;
+          remote: string;
+          modules: string;
+          project_slugs: string[];
+          total: string;
+        }>(sql`
+          SELECT r.id, r.name, r.remote,
+                 count(DISTINCT m.id)::text AS modules,
+                 coalesce(
+                   array_agg(DISTINCT p.slug ORDER BY p.slug)
+                     FILTER (WHERE p.slug IS NOT NULL),
+                   ARRAY[]::text[]
+                 ) AS project_slugs,
+                 count(*) OVER()::text AS total
+            FROM repos r
+            LEFT JOIN modules m ON m.repo_id = r.id
+            LEFT JOIN module_projects mp ON mp.module_id = m.id
+            LEFT JOIN projects p ON p.id = mp.project_id
+           WHERE ${repositoryListPredicate(access)}
+             ${query ? sql`AND (r.name ILIKE ${`%${query}%`} OR r.remote ILIKE ${`%${query}%`})` : sql``}
+           GROUP BY r.id, r.name, r.remote
+           ORDER BY r.name, r.remote
+           LIMIT ${args.limit ?? 100}
+        `),
+      );
+
+      await ctx.recordAccess({
+        identity,
+        action: 'mcp.list_repositories',
+        chunkIds: [],
+        repoIds: rows.map((row) => row.id),
+        moduleIds: [],
+        sessionId,
+      });
+
+      const total = rows[0] ? Number(rows[0].total) : 0;
+      const response = {
+        repositories: rows.map((row) => ({
+          name: row.name,
+          remote: row.remote,
+          indexed: Number(row.modules) > 0,
+          projects: row.project_slugs,
+          useWithOtherTools: { scope: { repo: row.name } },
+        })),
+        shown: rows.length,
+        total,
+        truncated: total > rows.length,
+        nextStep:
+          rows.length === 1
+            ? 'Use the exact repository name shown above as scope.repo.'
+            : rows.length > 1
+              ? 'Choose the clear match, or ask the user which repository they mean before searching.'
+              : 'No repository name or remote matched the filter. Ask the user for another name or list without a filter.',
+      };
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: wrapUntrusted(JSON.stringify(response, null, 2), 'available repository metadata'),
+          },
+        ],
+      };
+    },
+  );
+
   // ── search_codebase ──────────────────────────────────────────────────────────────────────
   server.registerTool(
     'search_codebase',
