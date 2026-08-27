@@ -4,9 +4,9 @@ import { z } from 'zod';
  * The MCP tool surface (§9).
  *
  * "Keep the tool surface small and sharp — coding agents perform worse with sprawling tool
- * lists." Seven tools, exactly as specified, and no more:
+ * lists." Eight focused, read-only tools:
  *
- *   search_codebase, get_symbol, get_api_spec, find_usages,
+ *   list_repositories, search_codebase, get_symbol, get_api_spec, find_usages,
  *   get_architecture, search_docs, get_changes_since
  *
  * Two constraints govern every one of them.
@@ -20,21 +20,25 @@ import { z } from 'zod';
  * the schemas are versioned and additive; a parameter is never repurposed.
  */
 
-export const MCP_TOOL_VERSION = '1.0.0';
+export const MCP_TOOL_VERSION = '1.1.0';
 
 /**
- * Scope is optional everywhere and defaults to the project inferred from the client's working
- * directory git remote (§4.3): "when someone has `billing-api` open in Cursor, default to the
- * Billing project. Expose scope as an optional tool parameter so an agent can widen it
- * deliberately."
+ * Scope is optional everywhere and defaults to the project carried by the authenticated MCP
+ * token. A client that can identify its working-directory git remote can use that when minting
+ * the token; otherwise the agent discovers an exact repository name with list_repositories.
  */
 const zScope = z
   .object({
     project: z
       .string()
       .optional()
-      .describe('Project slug. Defaults to the project inferred from your working directory.'),
-    repo: z.string().optional().describe('Repository name, to narrow to a single repo.'),
+      .describe('Project slug. Defaults to the project associated with the MCP token.'),
+    repo: z
+      .string()
+      .optional()
+      .describe(
+        'Exact repository name, to narrow to one repo. Use list_repositories when the name is unknown or ambiguous.',
+      ),
     version: z
       .string()
       .optional()
@@ -49,6 +53,29 @@ const zScope = z
   .optional();
 
 export const TOOL_DEFINITIONS = {
+  list_repositories: {
+    title: 'List available repositories',
+    description: [
+      'List repositories this user is permitted to search, including their exact names, remotes,',
+      'indexing status, and project membership.',
+      '',
+      'Use this before another tool when the repository cannot be determined reliably from the',
+      'user request or current workspace. If one entry clearly matches, pass its exact `name` as',
+      '`scope.repo`. If several entries could match, ask the user which repository they mean.',
+      '',
+      'This is discovery, not search: it never returns source code or documentation content.',
+    ].join('\n'),
+    inputSchema: {
+      query: z
+        .string()
+        .min(1)
+        .max(200)
+        .optional()
+        .describe('Optional case-insensitive filter against repository name or git remote.'),
+      limit: z.number().int().min(1).max(200).default(100),
+    },
+  },
+
   search_codebase: {
     title: 'Search the codebase',
     description: [
