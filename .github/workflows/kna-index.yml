@@ -189,7 +189,17 @@ jobs:
       - name: Publish IR bundle
         env:
           KNA_PLATFORM_URL: ${{ vars.KNA_PLATFORM_URL }}
-          KNA_TOKEN: ${{ steps.token.outputs.token }}
+          # KNA_INGEST_TOKEN, not KNA_TOKEN. They are different credentials: one is a
+          # principal identity for `/v1/*`, this is a claim scoped to a single repository.
+          # The CLI reads the name in `platform.ingestTokenEnv`, so the wrong one simply is
+          # not found, and publish fails with `No ingest credential` while a perfectly good
+          # credential sits in the environment under another name.
+          KNA_INGEST_TOKEN: ${{ steps.token.outputs.token }}
+          # Signs the envelope. The analyse job has no signing secret on purpose, so the
+          # bundle arrives here unsigned and is re-signed at the point it is sent. Without
+          # this the envelope stays `unsigned-dev`, which any deployment not in permissive-dev
+          # refuses — an unsigned bundle lets a token holder assert another tenant's orgId.
+          KNA_INGEST_HMAC_SECRET: ${{ secrets.KNA_INGEST_HMAC_SECRET }}
         run: |
           node apps/cli/dist/bin.js publish \
             --bundle kna-ir.json \
