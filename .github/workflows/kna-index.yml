@@ -128,13 +128,34 @@ jobs:
             -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
             "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kna-ingest" | jq -r '.value')
 
-          RESPONSE=$(curl -sSf -X POST "$KNA_PLATFORM_URL/v1/auth/ci-exchange" \
+          # The full remote, not $GITHUB_REPOSITORY. The platform canonicalises whatever it
+          # is given and matches that against the registered remote, so `owner/repo`
+          # normalises to `owner/repo` with no host and matches nothing. A properly
+          # registered repository is then refused with `repo_not_registered`, which reads as
+          # a permissions problem and is a string-shape problem.
+          REMOTE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+
+          # The body is captured rather than discarded. `curl -sSf` exits non-zero and prints
+          # nothing, which throws away the one thing the platform sends for this moment: 401
+          # with the reason a token was refused, 403 naming the identity and the repository it
+          # is not authorised for, 502 when the issuer could not be reached. A workflow cannot
+          # read the platform's logs, so a discarded body leaves `exit code 22` and nothing.
+          STATUS=$(curl -sS -X POST "$KNA_PLATFORM_URL/v1/auth/ci-exchange" \
             -H 'content-type: application/json' \
-            -d "$(jq -n --arg t "$ID_TOKEN" --arg r "$GITHUB_REPOSITORY" \
+            -o exchange.json -w '%{http_code}' \
+            -d "$(jq -n --arg t "$ID_TOKEN" --arg r "$REMOTE" \
                   '{idToken: $t, repoRemote: $r, audience: "kna-ingest"}')")
 
-          echo "::add-mask::$(echo "$RESPONSE" | jq -r '.token')"
-          echo "token=$(echo "$RESPONSE" | jq -r '.token')" >> "$GITHUB_OUTPUT"
+          if [ "$STATUS" != "200" ]; then
+            echo "::error::Token exchange failed with HTTP $STATUS"
+            jq -r '.error | to_entries[] | "  \(.key): \(.value)"' exchange.json || cat exchange.json
+            exit 1
+          fi
+
+          TOKEN=$(jq -r '.token' exchange.json)
+          rm -f exchange.json
+          echo "::add-mask::$TOKEN"
+          echo "token=$TOKEN" >> "$GITHUB_OUTPUT"
 
       - name: Publish IR bundle
         env:

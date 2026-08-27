@@ -63,10 +63,11 @@ export class OidcVerifier {
       throw new OidcError('Malformed OIDC token.');
     }
 
-    const header = JSON.parse(Buffer.from(headerPart, 'base64url').toString('utf8')) as {
-      alg: string;
-      kid: string;
-    };
+    // Three dot-separated parts is not the same as three parts that decode to JSON. A bare
+    // `a.b.c` passes the check above and then throws SyntaxError out of JSON.parse, which is
+    // not an OidcError and so escaped the route as a 500 — the exact failure the typed error
+    // exists to prevent, reintroduced one line below the check for it.
+    const header = decodeSegment<{ alg: string; kid: string }>(headerPart, 'header');
 
     if (header.alg !== 'RS256') {
       // Restricting the algorithm is not pedantry: accepting whatever the token declares is the
@@ -83,10 +84,7 @@ export class OidcVerifier {
       throw new OidcError('OIDC token signature is invalid.');
     }
 
-    const claims = JSON.parse(Buffer.from(payloadPart, 'base64url').toString('utf8')) as Record<
-      string,
-      unknown
-    >;
+    const claims = decodeSegment<Record<string, unknown>>(payloadPart, 'claims');
 
     if (claims.iss !== this.options.issuer) {
       throw new OidcError(`Token issuer '${String(claims.iss)}' is not the configured issuer.`);
@@ -152,6 +150,15 @@ export class OidcVerifier {
     }
     const body = (await response.json()) as { keys: Jwk[] };
     this.jwks = { keys: body.keys, fetchedAt: Date.now() };
+  }
+}
+
+/** Decode one base64url JWT segment, reporting a bad one as a refused token rather than a crash. */
+function decodeSegment<T>(segment: string, what: string): T {
+  try {
+    return JSON.parse(Buffer.from(segment, 'base64url').toString('utf8')) as T;
+  } catch {
+    throw new OidcError(`OIDC token ${what} is not valid JSON.`);
   }
 }
 

@@ -64,6 +64,14 @@ describe('OidcVerifier', () => {
       expect(await failureOf(v.verify(t, 'kna-ingest'))).toBe('token');
     });
 
+    it('a structurally valid token whose segments are not JSON', async () => {
+      // `a.b.c` has three parts, so it passes the shape check and then reached an unguarded
+      // JSON.parse. SyntaxError is not an OidcError, so it escaped the route as a 500 — the
+      // failure the typed error exists to prevent, one line past the check for it.
+      const v = verifier(reachable);
+      expect(await failureOf(v.verify('a.b.c', 'kna-ingest'))).toBe('token');
+    });
+
     it('a key id the issuer does not publish', async () => {
       const v = verifier(reachable);
       const t = token({ alg: 'RS256', kid: 'rotated-away' }, { iss: ISSUER });
