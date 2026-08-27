@@ -15,7 +15,7 @@ provenance:
     - sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4
     - sym_67288c95e97d838e833f908fc46f4fc84dc97f9a
     - sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75
-    - sym_a2d4dbca46908f320d26de49675bd6eb1d38d402
+    - sym_5f81b063a263349fcfa2608422faad72cfbfe231
     - sym_3b3a904fb3e886ef4e6006dc8145c2590951329f
     - sym_2b4582952fbd03d46706b4422326cad287906f70
     - sym_8ce05d64a3b515c2f3c7e5780726609ae07f5b32
@@ -63,7 +63,7 @@ provenance:
     - sym_80204670ba26ab3e8e8f9385089f9473cae90942
     - sym_481fbdb24b1f44b610f3a9b0f3514e3a6ab0f621
     - sym_d4cee2a7be464e539866edd5b77fa1b0f682fe4b
-    - sym_5980b6414b657596767d03eefab094bfe5887f60
+    - sym_40bb7cc5aba8f60d79672921e21d7957e993c213
     - sym_4aa060b9e950f208f4d8035fbe788de2a0ad709c
     - sym_33550684aa487196b25750e0ecc163893242da97
     - sym_9480a51cfdc24ad8eef837a04b5a3ff638e48754
@@ -114,7 +114,7 @@ provenance:
     - sym_fef6c12c0b7414473c084ea50da30331fd3fec6a
     - sym_dea4892c55bd6f96c9a9023c05f1c093f7c4addd
     - sym_42c1f5d34dd6fdd5cfd186cb0d9107034391a45c
-    - sym_e9c1f044eb8b148e569a32038dad5ce7e38d202f
+    - sym_86b5e76f627924560505f0b0ae14efa6a33a2fa0
     - sym_6069c0718b1f565f3cc0111b903ca496e90fff8d
     - sym_9aa0bbb8cdddaff238664a1a9d9a61ca9e17ebfa
     - sym_1cb44c4f331b8e70d94ac06fab774b43af28825f
@@ -126,7 +126,7 @@ provenance:
     - sym_af03152eb8323dd485221562646714aa838c49c4
     - sym_ebcb37dbe0befe76683af477c8f277a5b2d295bf
     - sym_556a2a76c5a2886df64a8d3812af900051968c51
-    - sym_b6c319d876b179c6a27107bd80b97a93d8bf7f78
+    - sym_55a59d8c3624ad64c30d80a69156effcdb4bfdf3
     - sym_cd5bf3c2a6261743d9ff399fe50a7a7bff97c06a
     - sym_eb2a86c3a511272b45b23a50f3e11a601132d237
     - sym_0a6985ebdf35ec5ed2a46af429ceb8293496effa
@@ -159,7 +159,7 @@ provenance:
     sym_32ac374a105d3b4025d4e03cbb761d9d1ab973c4: 37fc3750388d47a9224bc44c7032e499bad9639b31dc85238bd08b58e7c3f8da
     sym_67288c95e97d838e833f908fc46f4fc84dc97f9a: 4209ff6af60eda8a91f1784ddf3e82d57cf66888556de475b3c97f9f117fd1c4
     sym_fd7a0e39aeea9d7ae2eb8d00a59ce0e6ef2c2a75: 7b1abd85cc0be532c7bc518bd053fed29f4aa175ca537e1a897937b3dc226fe3
-    sym_a2d4dbca46908f320d26de49675bd6eb1d38d402: 898d5ef8d25c679924e6481919f7a65f248c68ca1de1e83e9990a166dbfa468a
+    sym_5f81b063a263349fcfa2608422faad72cfbfe231: df5ec09faccf18291e1a6096b86c18a3cf46634820a817a32dd35fc48a9bf533
     sym_3b3a904fb3e886ef4e6006dc8145c2590951329f: 41ef6df4223cf2e205e5e93a6b0e326cf4543ea523957cb203cd965188666e3d
     sym_2b4582952fbd03d46706b4422326cad287906f70: b36a18ad95ac6688071e46f404f3286dc489e915a9617817d308598d838d6132
     sym_8ce05d64a3b515c2f3c7e5780726609ae07f5b32: 64de1562584bd33114c15453e5ab4bec0307ea7e9741b79a06e11a27cd5cc0e9
@@ -207,7 +207,7 @@ provenance:
     sym_80204670ba26ab3e8e8f9385089f9473cae90942: 515e29c6e08188213aa489405b48fd134c1e82b1b369c64f368bb6a9c21b7ee5
     sym_481fbdb24b1f44b610f3a9b0f3514e3a6ab0f621: 7b349755422a131815dbe421e32f2fba4396c67c0e4f93fdff7e476a407e415c
     sym_d4cee2a7be464e539866edd5b77fa1b0f682fe4b: 4211a9a4977dad4c298f7b9afd0993b65857ecdcd5903dd3931eaa71c210a86d
-    sym_5980b6414b657596767d03eefab094bfe5887f60: 623bf2a6e84a101adf0e9d822ccc40631125bf3ddba99771a60cde608701ff4c
+    sym_40bb7cc5aba8f60d79672921e21d7957e993c213: 361636f2d74cef09231c883634fa415e663fe4a5b6cb9ce41e5ce808c45f634f
     sym_4aa060b9e950f208f4d8035fbe788de2a0ad709c: 48b1ca80fc50c30729ece3de72a97c67857115b43891dd07ee8ba2d6b1f9e134
     sym_33550684aa487196b25750e0ecc163893242da97: 8e5d073aeef8b851adb1657988ca251b79ea6a5db620305a02ddcb4427f75342
     sym_9480a51cfdc24ad8eef837a04b5a3ff638e48754: 1e3dcbcd08bd9b8d6b98ca21c7e17c5b7228a9213335c0e91da2d6c2a1fc121a
@@ -258,7 +258,7 @@ provenance:
     sym_fef6c12c0b7414473c084ea50da30331fd3fec6a: 4209ff6af60eda8a91f1784ddf3e82d57cf66888556de475b3c97f9f117fd1c4
     sym_dea4892c55bd6f96c9a9023c05f1c093f7c4addd: 7b1abd85cc0be532c7bc518bd053fed29f4aa175ca537e1a897937b3dc226fe3
     sym_42c1f5d34dd6fdd5cfd186cb0d9107034391a45c: 8da63e19675e8b0c0ece072038665873b8e4781dfebf84eeb1d955eba9dc822a
-    sym_e9c1f044eb8b148e569a32038dad5ce7e38d202f: cf15d403ae64cb1e672e8f05901f54f85a5b65dd1f0a64c66e2195f12ef04a1c
+    sym_86b5e76f627924560505f0b0ae14efa6a33a2fa0: cf15d403ae64cb1e672e8f05901f54f85a5b65dd1f0a64c66e2195f12ef04a1c
     sym_6069c0718b1f565f3cc0111b903ca496e90fff8d: 49cd031925fdaa22bc2b128b06c83fb3fab7d7f796f68bb1ebd3e9d6673ab14a
     sym_9aa0bbb8cdddaff238664a1a9d9a61ca9e17ebfa: bcdf3d811e52c4fafe4e5b0391703045e6eeb065206ca541d4130ba1f03daf1d
     sym_1cb44c4f331b8e70d94ac06fab774b43af28825f: 338334ed470e09c60592f00a85f93171f5af8d09f3c7c4f30a3a1d5e401a7a30
@@ -270,7 +270,7 @@ provenance:
     sym_af03152eb8323dd485221562646714aa838c49c4: 7cb4ebc2aed41ce31de1545161c98567715522c94666cfa8c855f1fc44fd51fa
     sym_ebcb37dbe0befe76683af477c8f277a5b2d295bf: cf1bd9595939784532e03d0ef133549bc4e7543afcf5cfd1c557b7231c4c21c5
     sym_556a2a76c5a2886df64a8d3812af900051968c51: 10453fd8ddcce40f4aea9791432e82edd3156e0d64a9e6b93b75a8cd291d684e
-    sym_b6c319d876b179c6a27107bd80b97a93d8bf7f78: 8bea197d8f089750649f0177a607d3faa7c254b5368c27dad590331baf81493f
+    sym_55a59d8c3624ad64c30d80a69156effcdb4bfdf3: d29269827a2148e2e63328d1c5d829fab98353e5e1d9491e435d9cd07e2eac73
     sym_cd5bf3c2a6261743d9ff399fe50a7a7bff97c06a: 0bacbbe02154d6c1626a1ce9552d2eedaad358778d9c45e6e598954ee635d041
     sym_eb2a86c3a511272b45b23a50f3e11a601132d237: 53ca8624760b48ef56c498011d4d416ca08839f7a59b9d380724fead95789d02
     sym_0a6985ebdf35ec5ed2a46af429ceb8293496effa: d60d2f4d7aa107b3341c6fce6894b28de9f3495ed9c906e91ba61e9c59d5a5f0
@@ -295,7 +295,7 @@ provenance:
     sym_aebb73a44e010d594e2aae6e1586626b37f863f1: c97d81b77b2e85d72b1ad3882759f67326c97d98a5966431eec2cea7056fd8d2
     sym_6aad413d6c50d65282c8b09906528b56fc467f2a: 23f61b01ab717f33c225e75ea3aeb45173609b0eff4973fbd52751443e4daa8b
     sym_525de1336e2a8d76791e67dacd11034eb6652681: a09faae58e228af4afdfc4bc9457410dbc68a412e056ca8b1fb88c02bb019d0b
-    sym_d5db5992b3c7d5d17d20cf803b85ff97bf4d5df4: ffd343150e7afb40f58e91f5e86b7b4f6c2f22d1ef6fdba4bc25f16b25f9e527
+    sym_d5db5992b3c7d5d17d20cf803b85ff97bf4d5df4: 855a0f5600cd916a48823f6239538e792f19505a2aab8c3806bdc167a3d52d34
     sym_55fcb883a54a0dc84d0a1a48ddfdaf10d4622e2b: 077b87f3100b8fc9974f8960ee9c30d663ad4460e88b3815c06e429cf809adbe
     sym_adfd4348d0d5583bd144e09caae6645bf19ad027: b6f015e1b9dd4d7b1911fc13c4af7d6b41b110897aa4730b0b02ff0ed10393f6
 ---
@@ -311,17 +311,17 @@ provenance:
 | Public symbols | 143 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=00d80e0d1e7b69f3 -->
+<!-- kna:generated:start id=api.function hash=e16009d3dd3a9e5c -->
 ### `assessStaleness`
 
 ```typescript
-assessStaleness(provenance: DocProvenance, currentSymbols: Map<string, {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "public" | "protected" | "internal" | "private";sensit…, aliases: Map<string, string>): StalenessAssessment
+assessStaleness(provenance: DocProvenance, currentSymbols: Map<string, {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "internal" | "private" | "protected" | "public";sensit…, aliases: Map<string, string>): StalenessAssessment
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `provenance` | `DocProvenance` |  |
-| `currentSymbols` | `Map<string, { name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: strin…` |  |
+| `currentSymbols` | `Map<string, { name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since…` |  |
 | `aliases`? | `Map<string, string>` |  (default `new Map()`) |
 
 **Returns** `StalenessAssessment`
@@ -372,12 +372,12 @@ mergeRegions(existing: string, generated: Map<string, string>, options: {force?:
 Filename-safe slug for a module.
 
 ```typescript
-moduleSlug(module: {path: string;name: string;id: string;key: string;orgId: string;repoId: string;projectIds: string[];ecosystem: "npm" | "nuget" | "pypi" | "go" | "maven"…): string
+moduleSlug(module: {path: string;name: string;id: string;key: string;orgId: string;repoId: string;projectIds: string[];ecosystem: "go" | "maven" | "none" | "npm" | "nuget"…): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `module` | `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…` |  |
+| `module` | `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…` |  |
 
 **Returns** `string`
 
@@ -427,7 +427,7 @@ renderDependencyDiagram(input: {modules: IrModule[];edges: Array<{from: string;t
 
 | Parameter | Type | Description |
 |---|---|---|
-| `input` | `{ modules: { path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "cshar…` |  |
+| `input` | `{ modules: { path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescrip…` |  |
 
 **Returns** `{ mermaid: string; textAlternative: string; }`
 
@@ -492,12 +492,12 @@ renderModuleReference(ctx: RenderContext): RenderedDocument
 The PR body. §7 — "include the source diff and the symbol IDs in the PR body so review is fast", and §15.8 — surface the accountable owner rather than just an assignee.
 
 ```typescript
-renderPullRequestBody(input: {moduleName: string;ownerTeam: string | null;commitSha: string;assessments: StalenessAssessment[];autoMerged: boolean;}): string
+renderPullRequestBody(input: {moduleName: string;ownerTeam: null | string;commitSha: string;assessments: StalenessAssessment[];autoMerged: boolean;}): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `input` | `{ moduleName: string; ownerTeam: string \| null; commitSha: string; assessments: StalenessAssessment[]; autoMerged: boolean; }` |  |
+| `input` | `{ moduleName: string; ownerTeam: null \| string; commitSha: string; assessments: StalenessAssessment[]; autoMerged: boolean; }` |  |
 
 **Returns** `string`
 
@@ -722,14 +722,14 @@ interface StalenessAssessment
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L39)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=10cc996ab2cf8864 -->
+<!-- kna:generated:start id=api.property hash=821760b8537fb87b -->
 ### `payload`
 
 ```typescript
 payload: IrBundlePayload
 ```
 
-**Returns** `{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: string; defau…`
+**Returns** `{ version: { kind: "branch" \| "tag"; ref: string; commitSha: string; committedAt: null; \| string }; repo: { id: string; name: string; orgId: string; remote: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }; modules: { path: string; id: string; s…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L24)</sub>
 
@@ -781,7 +781,7 @@ documentId: string
 ownerTeam: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L19)</sub>
 
@@ -907,7 +907,7 @@ Hash recorded when the region was last generated.
 recordedHash: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/regions.ts#L25)</sub>
 
@@ -995,7 +995,7 @@ linkHandlers?: boolean
 spec: ApiSpec
 ```
 
-**Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }`
+**Returns** `{ title: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; sourcePath: null \| string; specId: string; moduleId: string; version: string; documentHash: string; document?: unknown; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L27)</sub>
 
@@ -1009,7 +1009,7 @@ Symbols with an HTTP binding, used to link an operation to its handler.
 symbols?: IrSymbol[]
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
+**Returns** `undefined \| { name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L29)</sub>
 
@@ -1057,7 +1057,7 @@ description?: string
 enum?: unknown[]
 ```
 
-**Returns** `unknown[] \| undefined`
+**Returns** `undefined \| unknown[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L766)</sub>
 
@@ -1267,7 +1267,7 @@ to: string
 components?: {schemas?: Record<string, JsonSchema>;securitySchemes?: Record<string, {type?: string;scheme?: string;bearerFormat?: string;in?: string;name?: string;description?: string;}>;}
 ```
 
-**Returns** `{ schemas?: Record<string, JsonSchema> \| undefined; securitySchemes?: Record<string, { type?: string \| undefined; scheme?: string \| undefined; bearerFormat?: string \| undefined; in?: string \| undefined; name?: string \| undefined; description?: string \| undefined; }> \| undefined; } \| undefined`
+**Returns** `undefined \| { schemas?: Record<string, JsonSchema> \| undefined; securitySchemes?: Record<string, { type?: string \| undefined; scheme?: string \| undefined; bearerFormat?: string \| undefined; in?: string \| undefined; name?: string \| undefined; description?: string \| undefined; }> \| undefined; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L805)</sub>
 
@@ -1279,7 +1279,7 @@ components?: {schemas?: Record<string, JsonSchema>;securitySchemes?: Record<stri
 info?: {title?: string;version?: string;description?: string}
 ```
 
-**Returns** `{ title?: string \| undefined; version?: string \| undefined; description?: string \| undefined; } \| undefined`
+**Returns** `undefined \| { title?: string \| undefined; version?: string \| undefined; description?: string \| undefined; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L801)</sub>
 
@@ -1315,7 +1315,7 @@ security?: Array<Record<string, string[]>>
 servers?: Array<{url: string;description?: string}>
 ```
 
-**Returns** `{ url: string; description?: string \| undefined; }[] \| undefined`
+**Returns** `undefined \| { url: string; description?: string \| undefined; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L802)</sub>
 
@@ -1375,7 +1375,7 @@ parameters?: OpenApiParameter[]
 requestBody?: {required?: boolean;content?: Record<string, {schema?: JsonSchema}>}
 ```
 
-**Returns** `{ required?: boolean \| undefined; content?: Record<string, { schema?: JsonSchema \| undefined; }> \| undefined; } \| undefined`
+**Returns** `undefined \| { required?: boolean \| undefined; content?: Record<string, { schema?: JsonSchema \| undefined; }> \| undefined; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L791)</sub>
 
@@ -1399,7 +1399,7 @@ responses?: Record<string, {description?: string}>
 security?: unknown[]
 ```
 
-**Returns** `unknown[] \| undefined`
+**Returns** `undefined \| unknown[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L793)</sub>
 
@@ -1507,7 +1507,7 @@ deprecated: boolean
 description: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L605)</sub>
 
@@ -1543,7 +1543,7 @@ method: string
 operationId: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L603)</sub>
 
@@ -1555,7 +1555,7 @@ operationId: string | null
 parameters: Array<{name: string;in: string;required: boolean;schema: JsonSchema | undefined;description: string | null;}>
 ```
 
-**Returns** `{ name: string; in: string; required: boolean; schema: JsonSchema \| undefined; description: string \| null; }[]`
+**Returns** `{ name: string; in: string; required: boolean; schema: JsonSchema \| undefined; description: null; \| string }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L608)</sub>
 
@@ -1603,7 +1603,7 @@ responses: Array<{status: string;description: string}>
 security: unknown[] | undefined
 ```
 
-**Returns** `unknown[] \| undefined`
+**Returns** `undefined \| unknown[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L617)</sub>
 
@@ -1615,7 +1615,7 @@ security: unknown[] | undefined
 summary: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L604)</sub>
 
@@ -1639,7 +1639,7 @@ tags: string[]
 module: IrModule
 ```
 
-**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
+**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L38)</sub>
 
@@ -1653,7 +1653,7 @@ Which section this prose introduces.
 section: 'module-overview' | 'endpoint-group' | 'getting-started'
 ```
 
-**Returns** `"module-overview" \| "endpoint-group" \| "getting-started"`
+**Returns** `"endpoint-group" \| "getting-started" \| "module-overview"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L41)</sub>
 
@@ -1665,7 +1665,7 @@ section: 'module-overview' | 'endpoint-group' | 'getting-started'
 symbols: IrSymbol[]
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
+**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L39)</sub>
 
@@ -1727,7 +1727,7 @@ promptVersion: string
 text: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L45)</sub>
 
@@ -1751,7 +1751,7 @@ ungroundedClaims: string[]
 module: IrModule
 ```
 
-**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
+**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L21)</sub>
 
@@ -1791,7 +1791,7 @@ sourceUrlTemplate?: string
 symbols: IrSymbol[]
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "protected" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
+**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/render.ts#L22)</sub>
 
@@ -2130,11 +2130,11 @@ const PROSE_PROMPT_VERSION: "1.0.0"
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/prose.ts#L22)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=7f517512b9932b45 -->
+<!-- kna:generated:start id=api.type hash=461a5eb9b16c2177 -->
 ### `StalenessReason`
 
 ```typescript
-type StalenessReason = | 'signature-changed' | 'symbol-removed' | 'symbol-renamed' | 'doc-comment-changed' | 'endpoint-changed'
+type StalenessReason = 'doc-comment-changed' | 'endpoint-changed' | 'signature-changed' | 'symbol-removed' | 'symbol-renamed'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L24)</sub>

@@ -12,7 +12,7 @@ owners:
 provenance:
   symbolIds:
     - sym_34b7c605192e3d697e82f1375aea24fb86d91c03
-    - sym_8a12f5fff3268abf5fccf29844b18c2f775fb679
+    - sym_1b139f193af85e74e8dc3b1c63d99132c1b17400
     - sym_f43a6452d4efd407560808cb2c1b7fb352fc5e01
     - sym_97aad7e756d236fea8bb2e40f312b59c5eacaee8
     - sym_e66ae37a1726d05a260bd68e16d9eb7a4b955d19
@@ -46,7 +46,7 @@ provenance:
     - sym_336f1927cead40ee8cc3cbde086f11b3f512961f
     - sym_0f591a81cd8f0013b0852e11788b322d4ec88df0
     - sym_2687c5c75591ebcd7aac0dc58eb1b2ffdc0be9f0
-    - sym_dff1b3f44e9ecfc2c9e931c7c5d2b887f952dd5c
+    - sym_66c95e51c2221005d5ab306b668871b75b31e7c4
     - sym_db3b884a3d2a30915f6c1bee979a08ef6ae06a47
     - sym_d821279b061e6d3957698a20260f1a3f5525a3fa
     - sym_5db93157b322c948cf776bf95cf8c3c482212e0c
@@ -63,7 +63,7 @@ provenance:
     - sym_a9eff038b75bbc603e20c42f760518134e849691
     - sym_9b7a4ef026a7ac311bf137d06545d1d5040e0533
     - sym_689d75b14fff13514393e80cdb6d8ace0e163dbd
-    - sym_8b22c35b583f979921debb79d851d824700edc3c
+    - sym_3f059d6a84c429f30951becd2c65f4bca5a78c5c
     - sym_557c2e9d8f77041000797062c26e919407c7631c
     - sym_3a78f40c129064cd5aec150a119f59354f92e8f5
     - sym_4595452fbc51efabaa77236aadd142c20365f0e7
@@ -76,7 +76,7 @@ provenance:
     - sym_2429865e3f1906ff16d97c702f2ec2a5ec533552
   signatureHashes:
     sym_34b7c605192e3d697e82f1375aea24fb86d91c03: d1e3fdcaf5fae1c032e64d0a471cef07c321ac09cf0ef973e27a9d977a97e478
-    sym_8a12f5fff3268abf5fccf29844b18c2f775fb679: d28e66c3436daf6a07a49429533aa58578b42da6221017f260a4343669504fed
+    sym_1b139f193af85e74e8dc3b1c63d99132c1b17400: 740708b751d331a14de5d47f5f5d662972cb01c585a0145186668ba7e0642e89
     sym_f43a6452d4efd407560808cb2c1b7fb352fc5e01: f5685e162de6170551d51d6b48ea3e3d32f5c2df162b9da5ef397844c3032fd8
     sym_97aad7e756d236fea8bb2e40f312b59c5eacaee8: 66a9d993b4e080ef71c20408a4f808c66409f0ab3f77903797e1a5d7dc91fcf9
     sym_e66ae37a1726d05a260bd68e16d9eb7a4b955d19: 8b81cf4b6d59b1751e42d6dd6163c853f4810a6aa1da0cfae22adfcde4b6243f
@@ -110,7 +110,7 @@ provenance:
     sym_336f1927cead40ee8cc3cbde086f11b3f512961f: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_0f591a81cd8f0013b0852e11788b322d4ec88df0: 58b5154a10896f92706c66129cb6e5d0bd89beed88a5d14bdc79c1a43d034b11
     sym_2687c5c75591ebcd7aac0dc58eb1b2ffdc0be9f0: e66502162bfc53fd1f8afe0fbb2ede0e96e8d2f450e7a3ff2756088acd0e109e
-    sym_dff1b3f44e9ecfc2c9e931c7c5d2b887f952dd5c: 655aedaae2f4bd5ff2c581c46e7c4494830a15f06895b66aefac548363b71b05
+    sym_66c95e51c2221005d5ab306b668871b75b31e7c4: 655aedaae2f4bd5ff2c581c46e7c4494830a15f06895b66aefac548363b71b05
     sym_db3b884a3d2a30915f6c1bee979a08ef6ae06a47: 06786016204b119045fcf6b462423014fbbb87412f40370a18308cbc0977513e
     sym_d821279b061e6d3957698a20260f1a3f5525a3fa: cfda646e7312d5f97a58c69e109753bc7526670b89194f64f56c0a0ec142afca
     sym_5db93157b322c948cf776bf95cf8c3c482212e0c: 5c26ac3e3014ea8c5d789e3aeebfa8d5a1fbb83ed458b8ff9fce175e39c833b2
@@ -127,7 +127,7 @@ provenance:
     sym_a9eff038b75bbc603e20c42f760518134e849691: 56a40da902dc27b941e087e84c78b822f4c1d9ae7dbf6ae91a78e58d59bf4dd3
     sym_9b7a4ef026a7ac311bf137d06545d1d5040e0533: 4b19635b4f99c95eea4dc42ec1ecf5c08e595dfc7c903dfa966f0f4ffc4dc581
     sym_689d75b14fff13514393e80cdb6d8ace0e163dbd: 85cad6802556d379aa0aa32c4734b01c43168210e79c26ba842195e7ed52a405
-    sym_8b22c35b583f979921debb79d851d824700edc3c: 43d7076c0afa399a7f9de8cb99dc8b213bff80d4135a18a99f584d1fb503199c
+    sym_3f059d6a84c429f30951becd2c65f4bca5a78c5c: d63194b6476fd79c89deb35188c268e0158e15ddafc15bdc84a15b9e922f4fd2
     sym_557c2e9d8f77041000797062c26e919407c7631c: fc168b4425605284b8f90f25b1f8b5897fadf2e799cd1ac22cfe3bfc4bd18d5c
     sym_3a78f40c129064cd5aec150a119f59354f92e8f5: 689b68454ce7e44afbbcc9a9edb86fca9b6b7371a1182e965b6492b37cbcf532
     sym_4595452fbc51efabaa77236aadd142c20365f0e7: 51491352cce955fd578eb72209e8e8e3b3500d58f97bb38b2cbf0f4615a3da39
@@ -151,7 +151,7 @@ provenance:
 | Public symbols | 63 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=693dab2b85e34ddc -->
+<!-- kna:generated:start id=api.constant hash=06cbe6c3fd0c795d -->
 ### `_schemaProbe`
 
 ```typescript
@@ -160,7 +160,7 @@ const _schemaProbe: z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>
 
 **Returns** `ZodObject<{}, "strip", ZodTypeAny, {}, {}>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/handlers.ts#L542)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/handlers.ts#L546)</sub>
 
 ---
 
@@ -229,16 +229,16 @@ const TOOL_DEFINITIONS: {readonly search_codebase: {readonly title: "Search the 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/tools.ts#L51)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=71c58dc1fbe00d0a -->
+<!-- kna:generated:start id=api.function hash=7cc53f8e5e9d5107 -->
 ### `createMcpContext`
 
 ```typescript
-createMcpContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…, logger: Logger): Promise<McpContext>
+createMcpContext(env: {KNA_ENV: "development" | "production" | "staging" | "test";KNA_REGION: string;LOG_LEVEL: "debug" | "error" | "fatal" | "info" | "trace" | "warn";DATABASE_U…, logger: Logger): Promise<McpContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env` | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  |
+| `env` | `{ KNA_ENV: "development" \| "production" \| "staging" \| "test"; KNA_REGION: string; LOG_LEVEL: "debug" \| "error" \| "fatal" \| "info" \| "trace" \| "warn"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: number; REDIS_U…` |  |
 | `logger` | `Logger` |  |
 
 **Returns** `Promise<McpContext>`
@@ -325,7 +325,7 @@ class SessionRegistry
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/session.ts#L43)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=271c2b2ecaa73633 -->
+<!-- kna:generated:start id=api.method hash=8a1f8189354a1d35 -->
 ### `constructor`
 
 ```typescript
@@ -349,7 +349,7 @@ resolve(principal: McpPrincipal, options: {corpus: 'internal' | 'external'}): Pr
 | Parameter | Type | Description |
 |---|---|---|
 | `principal` | `McpPrincipal` |  |
-| `options` | `{ corpus: "internal" \| "external"; }` |  |
+| `options` | `{ corpus: "external"; \| "internal" }` |  |
 
 **Returns** `Promise<AccessContext>`
 
@@ -360,13 +360,13 @@ resolve(principal: McpPrincipal, options: {corpus: 'internal' | 'external'}): Pr
 ### `add`
 
 ```typescript
-add(id: string, session: Omit<Session, "id" | "createdAt" | "lastActiveAt">): Session
+add(id: string, session: Omit<Session, "createdAt" | "id" | "lastActiveAt">): Session
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `id` | `string` |  |
-| `session` | `Omit<Session, "id" \| "createdAt" \| "lastActiveAt">` |  |
+| `session` | `Omit<Session, "createdAt" \| "id" \| "lastActiveAt">` |  |
 
 **Returns** `Session`
 
@@ -540,14 +540,14 @@ interface SessionPolicy
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/session.ts#L28)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=71b7da2e44456e67 -->
+<!-- kna:generated:start id=api.property hash=4e38d6686290552e -->
 ### `architecture`
 
 ```typescript
 architecture: (access: AccessContext, scope: RetrievalScope, service: string | null) => Promise<{mermaid: string;textAlternative: string;repoIds: string[];moduleIds: string[];}>
 ```
 
-**Returns** `(access: AccessContext, scope: RetrievalScope, service: string \| null) => Promise<{ mermaid: string; textAlternative: string; repoIds: string[]; moduleIds: string[]; }>`
+**Returns** `(access: AccessContext, scope: RetrievalScope, service: null \| string) => Promise<{ mermaid: string; textAlternative: string; repoIds: string[]; moduleIds: string[]; }>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L83)</sub>
 
@@ -595,7 +595,7 @@ db: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "development" \| "production" \| "staging" \| "test"; KNA_REGION: string; LOG_LEVEL: "debug" \| "error" \| "fatal" \| "info" \| "trace" \| "warn"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: number; REDIS_U…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L63)</sub>
 
@@ -661,7 +661,7 @@ recordAccess: (input: {identity: McpIdentity;action: string;chunkIds: string[];r
 resolveScope: (identity: McpIdentity, scope: {project?: string;repo?: string;version?: string;expand?: boolean} | undefined) => Promise<RetrievalScope>
 ```
 
-**Returns** `(identity: McpIdentity, scope: { project?: string \| undefined; repo?: string \| undefined; version?: string \| undefined; expand?: boolean \| undefined; } \| undefined) => Promise<RetrievalScope>`
+**Returns** `(identity: McpIdentity, scope: undefined \| { project?: string \| undefined; repo?: string \| undefined; version?: string \| undefined; expand?: boolean \| undefined; }) => Promise<RetrievalScope>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L71)</sub>
 
@@ -723,7 +723,7 @@ audience: string
 clientName: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L58)</sub>
 
@@ -749,7 +749,7 @@ Project inferred from the client's working-directory git remote, when it sent on
 inferredProjectId: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L57)</sub>
 
@@ -785,7 +785,7 @@ scopes: string[]
 clearance: 'public' | 'internal' | 'confidential' | 'restricted'
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L47)</sub>
 
@@ -797,7 +797,7 @@ clearance: 'public' | 'internal' | 'confidential' | 'restricted'
 email: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/context.ts#L46)</sub>
 

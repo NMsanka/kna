@@ -92,6 +92,12 @@ jobs:
   publish:
     name: Publish
     needs: analyse
+    # A repository that has not been onboarded to a platform has nowhere to publish. Without
+    # this the job runs anyway, builds the URL from an empty variable, and fails with
+    # `curl: (3) URL rejected: No host part in the URL` — which reads as a broken workflow
+    # rather than an unset variable. Skipping says the true thing: there is nothing to publish
+    # to yet. Set the KNA_PLATFORM_URL repository variable to switch it on.
+    if: vars.KNA_PLATFORM_URL != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -150,7 +156,7 @@ jobs:
     needs: publish
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     steps:
       - name: Note
         run: |

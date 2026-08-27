@@ -503,11 +503,11 @@ export async function registerAdminRoutes(app: KnaServer, ctx: ApiContext): Prom
         `);
 
         const moduleTargets = await tx.execute<{
-        module_id: string;
-        repo_id: string;
-        commit_sha: string;
-        ref: string;
-        storage_key: string;
+          module_id: string;
+          repo_id: string;
+          commit_sha: string;
+          ref: string;
+          storage_key: string;
         }>(sql`
           -- Module-specific reindexes can use the derived table because a module id only exists
           -- after at least one successful index. Repository reindexes below deliberately do not:

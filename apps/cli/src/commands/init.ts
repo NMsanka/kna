@@ -351,6 +351,11 @@ ${docsGenerate}
 
   publish:
     needs: analyse
+    # Skipped until the platform is reachable. Without this the job builds its URL from an unset
+    # variable and fails with \`curl: (3) URL rejected: No host part in the URL\`, which reads as
+    # a broken workflow rather than a repository that has not been onboarded yet. Set the
+    # KNA_PLATFORM_URL repository variable to switch it on.
+    if: vars.KNA_PLATFORM_URL != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

@@ -30,13 +30,16 @@ provenance:
     - sym_8acb7b3e94e40d0e52006d11502100f6edb3f1e8
     - sym_e5ffd7f967e6b90410fe1a83809f781a74446576
     - sym_ece3a08d97f24e6e116dd9ae98feb7e3126bfed1
+    - sym_c4f738720ff858cc68bf9c9df55241ebc9abc6aa
     - sym_5921523784c51596d2e8696c56cd0eac22953030
     - sym_d88d7683a2c204bda5b8bacdb6847837813a7bd1
     - sym_1d80563e64fb71bae2518037632d09ce45b73b74
     - sym_5f80a944523f5875924c34c4b25a4618d95e1ea8
     - sym_e222d914a86595dc0ae8e582bd35ec7bd4dcb29b
     - sym_43f7705c49c8b104fd2f82b75fbbde9ff89e35e6
+    - sym_bc7d46c1d629b4102b27f87a1996b38f2ea05768
     - sym_bf8345b719ec883f724a3adc2c9da4504188169d
+    - sym_2afe65c58af4e71b5de1c2136f2d65e63c257de9
     - sym_312b83602694d68661a4b392135a959ca413597f
     - sym_479653b7037aaefe172e752ed506b9e25e229cac
     - sym_592626b7f9e39ec6da45ac3523d203b19e8d8c4f
@@ -89,7 +92,7 @@ provenance:
     - sym_c695942a1e2ed95b0784598a02acdcddc0b5bbbf
     - sym_2cc96ef94e205e4df3f3b65e230b1b30c23357f6
     - sym_34a10b833e3d167c8d6959e2eae7908b02596680
-    - sym_3a470188b490453f43d645448417579bba6e385c
+    - sym_be48dd6afa8947c9570e13b12e7faa8b4b981c8e
   signatureHashes:
     sym_6273c489d9c00344cde0677ed68a9f53b5c435b7: 92fb07482c13e6497f039a4af86da0605311f06f4587918aab9164c9d47d8b46
     sym_7a4f423ec9ef0fe1d417ab968a3a66b2ffaf0b4a: 763435bcea2d97f2d5859f5f0dae56d7890dfcca7fdcd3d366665a35e489edf7
@@ -110,14 +113,17 @@ provenance:
     sym_8acb7b3e94e40d0e52006d11502100f6edb3f1e8: ef8310471b1305ff9385df0ed86ed0ef493332a494dab76474b0599374023da2
     sym_e5ffd7f967e6b90410fe1a83809f781a74446576: 68315467694a7292bb6aeb8bcc9b1b84b6888066dca8b737f8f864b7dc003a6b
     sym_ece3a08d97f24e6e116dd9ae98feb7e3126bfed1: 42f1062bcd1533dea0b46b334ec1569cf24df044eb2d80e7d8ea091cb3044f37
+    sym_c4f738720ff858cc68bf9c9df55241ebc9abc6aa: c6d55a4be25e90ffec1c2d73494efb31deddfde63327b580d516d26bf6a9f727
     sym_5921523784c51596d2e8696c56cd0eac22953030: 25063994c0964b569da0634a67f469665691f0e96cc0e7fd667b0afdd873440c
     sym_d88d7683a2c204bda5b8bacdb6847837813a7bd1: 07e4fd7c44eac510fb3a5cfa9a1d88bdb3ef69255826453c4805bea67d01be30
     sym_1d80563e64fb71bae2518037632d09ce45b73b74: 6e14ad6617487cbb37a34247dbc9f31edf7ee8c73e8b10e622ae887d6fe8912e
     sym_5f80a944523f5875924c34c4b25a4618d95e1ea8: 11b017cf7a6c2172c1b9e8c37dc8ef9bdace43d62a06c86033df052400ec6222
     sym_e222d914a86595dc0ae8e582bd35ec7bd4dcb29b: 9f3414b7d36990df6bde8512b89e9fb32d422d5cda468fd574041458f012de43
     sym_43f7705c49c8b104fd2f82b75fbbde9ff89e35e6: b91218cfe55b0740f05fd51bb9b16a871e4928c6b9d5fe0f28d4a5878d675e8c
+    sym_bc7d46c1d629b4102b27f87a1996b38f2ea05768: ed7acaf6d3ec314913965b962ddbe66149afd3d631dd7ea87a4cca931f827fd6
     sym_bf8345b719ec883f724a3adc2c9da4504188169d: eac6780d54a47c5bb40afedc7321e54cec6b991aa84cf6cb0f7d4e194d5d6d05
-    sym_312b83602694d68661a4b392135a959ca413597f: 70200cba5226bc4b3531f14ccbc97c8bd0aa5572f2968bbb017cba8fca851be9
+    sym_2afe65c58af4e71b5de1c2136f2d65e63c257de9: d121926e4a5a4ef7ca99d0094262c9d709570d2062562221bd37b3d11da92b74
+    sym_312b83602694d68661a4b392135a959ca413597f: 827b10e410b59f646d794fc83443e5eac82006317c4ab69944e9276cfb43c76f
     sym_479653b7037aaefe172e752ed506b9e25e229cac: 356c34e0e78490d4a17ada066f6b45552c2f0fa631e02eb708e0024df6c1d59d
     sym_592626b7f9e39ec6da45ac3523d203b19e8d8c4f: adb19b6c365a25940b820df61dda2fb596c514ca9f308ad28e5aa21595d37a0f
     sym_2e926e952dff98535f5e93baacea76675bc50037: 52a56680cea9ebda30907ac7e812ddd1e4abc6e01d7cd1dbd6f18161172d721c
@@ -162,25 +168,25 @@ provenance:
     sym_feec151c05052c13900cb4541adcb4534886e05f: 81e2d170bfad5798ec14c84ebe15da502b4ccc9230d328bba62c8f8975d40c4e
     sym_e8fc46888302d9007a783d3b0efda679017a6037: 367b88d2661f7d10029bb9cf7091e158630057402ffa1fb3437eea83168c9556
     sym_4b2d4fb6050d85a54b02cc1a0e7399f09f61ec4f: 4b505db03cd6fc0bcbdd14dccb51a4003aa7ec41e82a18c04170f5aac0b6ab08
-    sym_71de118405958d6cfb741ff74ac4f7174754edfc: 4acda62251f4434a1a0ba9b32b6a3e1fad6a2327e8e7ac5900e1cb03c21f84c3
+    sym_71de118405958d6cfb741ff74ac4f7174754edfc: 6b2cb6ee90420c308a580501064953207c9c35bb0f3d4e2f3334d92f0c0f6442
     sym_44e6119ed64ef03140a3555453e6aa3911adfe1e: 5efeb24fd229fd571c90c09dfef9987dcdfa5be7d19d666d55732381fdf9ca0d
     sym_434cf85caa36ee0d35fc1e318e7f84ee1551b559: 0491a761d32a30fc66584d93fb142f68f5a2b8f7da240be7af27e0f84f3d7b9e
     sym_0ee29dfbcc4e834a957c6552d081f7c399fd22a5: 493c4d3222bde87e55800349abeb5b83a66c7516839721515ff78dcd739aa94d
     sym_c695942a1e2ed95b0784598a02acdcddc0b5bbbf: b624c0d169f409a481da8120c47e8ba88cbdf3ab2ab360fd0a21368dfb155ad9
     sym_2cc96ef94e205e4df3f3b65e230b1b30c23357f6: d3f0ef30aedf7cdf029e5d58435cfc258ac648304aeb3916cfa72637cf012364
     sym_34a10b833e3d167c8d6959e2eae7908b02596680: 27d2a296d2dd243e13deaaa8b680ffd486fc0efc7799635fb94b25e481fcb6f7
-    sym_3a470188b490453f43d645448417579bba6e385c: 0d7e1093d2cada754eb8fc451c4adbb3d3bfbccb35451d993f3faf1ba2eeb4e0
+    sym_be48dd6afa8947c9570e13b12e7faa8b4b981c8e: 622d96d9effebf9df18665a7c4c449c9da2887eb96c919920633ea1901258f3a
 ---
 
 # @kna/db reference
 
-<!-- kna:generated:start id=overview hash=adbfa569326b3410 -->
+<!-- kna:generated:start id=overview hash=ee1f49ba8dcabc2f -->
 | | |
 |---|---|
 | Package | `@kna/db` (npm) |
 | Path | `packages/db` |
 | Languages | typescript |
-| Public symbols | 79 |
+| Public symbols | 82 |
 <!-- kna:generated:end id=overview -->
 
 <!-- kna:generated:start id=api.constant hash=7106341161325d0b -->
@@ -753,7 +759,7 @@ const versions: PgTableWithColumns<{name: "versions";schema: undefined;columns: 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/schema/ir.ts#L36)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=dd3f8aa10d03edd0 -->
+<!-- kna:generated:start id=api.function hash=ed71d426cf2088d4 -->
 ### `anyOf`
 
 Bind a JavaScript array as a single Postgres array parameter.
@@ -786,7 +792,7 @@ assertRlsEffective(handle: DbHandle): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L90)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L94)</sub>
 
 ---
 
@@ -802,7 +808,7 @@ createDb(options: DbOptions): DbHandle
 
 **Returns** `DbHandle`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L42)</sub>
 
 ---
 
@@ -855,7 +861,7 @@ setEfSearch(tx: Db, efSearch: number): Promise<void>
 
 **Returns** `Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L243)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L247)</sub>
 
 ---
 
@@ -882,7 +888,7 @@ splitStatements(sqlText: string): string[]
 Non-blocking variant, for the "another worker already has it" fast path.
 
 ```typescript
-tryModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): Promise<{acquired: true;result: T;} | {acquired: false;result: null;}>
+tryModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): Promise<{acquired: false;result: null;} | {acquired: true;result: T;}>
 ```
 
 | Parameter | Type | Description |
@@ -891,9 +897,9 @@ tryModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): P
 | `moduleId` | `string` |  |
 | `fn` | `(tx: Db) => Promise<T>` |  |
 
-**Returns** `Promise<{ acquired: true; result: T; } \| { acquired: false; result: null; }>`
+**Returns** `Promise<{ acquired: false; result: null; } \| { acquired: true; result: T; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L224)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L228)</sub>
 
 ---
 
@@ -913,7 +919,7 @@ withAuthProbe(handle: DbHandle, tokenHash: string, fn: (tx: Db) => Promise<T>): 
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L131)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L135)</sub>
 
 ---
 
@@ -933,7 +939,7 @@ withIdentityProbe(handle: DbHandle, subject: string, fn: (tx: Db) => Promise<T>)
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L155)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L159)</sub>
 
 ---
 
@@ -953,7 +959,7 @@ withModuleLock(handle: DbHandle, moduleId: string, fn: (tx: Db) => Promise<T>): 
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L215)</sub>
 
 ---
 
@@ -973,7 +979,7 @@ withOrgContext(handle: DbHandle, orgId: string, fn: (tx: Db) => Promise<T>): Pro
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L105)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L109)</sub>
 
 ---
 
@@ -993,7 +999,7 @@ withRepoProbe(handle: DbHandle, remote: string, fn: (tx: Db) => Promise<T>): Pro
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L177)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L181)</sub>
 
 ---
 
@@ -1002,19 +1008,19 @@ withRepoProbe(handle: DbHandle, remote: string, fn: (tx: Db) => Promise<T>): Pro
 Two paths deliberately run outside user context and need explicit org partitioning instead (§15.4): the cross-repo resolution pass and the indexing workers. This wrapper makes that choice visible at the call site rather than implicit in a missing `withOrgContext`.
 
 ```typescript
-withSystemContext(handle: DbHandle, orgId: string, reason: "indexing" | "cross-repo-resolution" | "maintenance", fn: (tx: Db) => Promise<T>): Promise<T>
+withSystemContext(handle: DbHandle, orgId: string, reason: "cross-repo-resolution" | "indexing" | "maintenance", fn: (tx: Db) => Promise<T>): Promise<T>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `handle` | `DbHandle` |  |
 | `orgId` | `string` |  |
-| `reason` | `"indexing" \| "cross-repo-resolution" \| "maintenance"` |  |
+| `reason` | `"cross-repo-resolution" \| "indexing" \| "maintenance"` |  |
 | `fn` | `(tx: Db) => Promise<T>` |  |
 
 **Returns** `Promise<T>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L193)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L197)</sub>
 <!-- kna:generated:end id=api.function -->
 
 <!-- kna:generated:start id=api.type hash=9c037db5739d5784 -->
@@ -1029,14 +1035,14 @@ type Db = PostgresJsDatabase<typeof schema>
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L21)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.interface hash=035e5adb12c9b855 -->
+<!-- kna:generated:start id=api.interface hash=40c1630104e3957f -->
 ### `DbHandle`
 
 ```typescript
 interface DbHandle
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L35)</sub>
 
 ---
 
@@ -1069,7 +1075,7 @@ interface MigrationResult
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L37)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=dc9c0eb21e5251f1 -->
+<!-- kna:generated:start id=api.property hash=126f84c1843c0322 -->
 ### `close`
 
 ```typescript
@@ -1078,7 +1084,7 @@ close: () => Promise<void>
 
 **Returns** `() => Promise<void>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L38)</sub>
 
 ---
 
@@ -1090,7 +1096,7 @@ db: Db
 
 **Returns** `Db`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L34)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L36)</sub>
 
 ---
 
@@ -1100,9 +1106,9 @@ db: Db
 role: DbOptions['role']
 ```
 
-**Returns** `"interactive" \| "batch" \| "migration"`
+**Returns** `"batch" \| "interactive" \| "migration"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L39)</sub>
 
 ---
 
@@ -1114,7 +1120,7 @@ sql: postgres.Sql
 
 **Returns** `Sql<{}>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L37)</sub>
 
 ---
 
@@ -1126,7 +1132,21 @@ applicationName?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L29)</sub>
+
+---
+
+### `idleInTransactionSessionTimeoutMs`
+
+Zero disables PostgreSQL's idle-in-transaction timeout for intentionally long batch work.
+
+```typescript
+idleInTransactionSessionTimeoutMs?: number
+```
+
+**Returns** `number \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L28)</sub>
 
 ---
 
@@ -1138,7 +1158,7 @@ onNotice?: (notice: unknown) => void
 
 **Returns** `((notice: unknown) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L30)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L32)</sub>
 
 ---
 
@@ -1162,9 +1182,9 @@ Interactive traffic gets a short timeout; batch work legitimately runs long.
 role: 'interactive' | 'batch' | 'migration'
 ```
 
-**Returns** `"interactive" \| "batch" \| "migration"`
+**Returns** `"batch" \| "interactive" \| "migration"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L31)</sub>
 
 ---
 
@@ -1253,17 +1273,17 @@ skipped: string[]
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/migrate.ts#L39)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.class hash=f2f4e5cb7e5ea881 -->
+<!-- kna:generated:start id=api.class hash=dab67484815e17e6 -->
 ### `RlsIneffectiveError`
 
 ```typescript
 class RlsIneffectiveError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L69)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L73)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=a2e68468deabe27d -->
+<!-- kna:generated:start id=api.method hash=68f233a1d629cfc2 -->
 ### `constructor`
 
 ```typescript
@@ -1274,5 +1294,5 @@ constructor(role: string)
 |---|---|---|
 | `role` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L70)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/db/src/client.ts#L74)</sub>
 <!-- kna:generated:end id=api.method -->

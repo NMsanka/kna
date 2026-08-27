@@ -19,6 +19,7 @@ provenance:
     - sym_eb4f69d5c82404ad4872fed9a645346d0a2645b4
     - sym_7b04f015c7e93928a686686d428288d4ebd20701
     - sym_04decb16c4cd17472b6bdb481fdc119e3cbe3a47
+    - sym_85303c452507f3dd3ca4b7874185f9667bec7d48
     - sym_be232619e2e7029134aafa6e8597ea53b7aa814c
     - sym_e59ec88e791cde694e20c173fd4d4d682066a9aa
     - sym_5a06a4279ead8eb3b288c3b0d321a2facd32f14e
@@ -88,7 +89,7 @@ provenance:
     - sym_11145911e95c54cf338f7f358a4aeaba41f822a1
     - sym_e91fd67a285988416d403b57eafbed1ebd11286e
     - sym_32a430c6524d3619448a7e72507c001fe0be7ac2
-    - sym_fd603df6ce50acc3437cb31b16646ddbf458a8e7
+    - sym_94ddf30460c29a6e179ea9c39144e157e54bfd79
     - sym_4318263e8bd5c5d0471d1d7c78de657709c5cfef
     - sym_90f08c627fa914a27dd739bdc30f99eaea444d81
     - sym_5cbc76d828d90cda7f675ad40a7ae8619568080d
@@ -113,6 +114,7 @@ provenance:
     sym_eb4f69d5c82404ad4872fed9a645346d0a2645b4: 045e20a66593c47701e26df4405b31fe7c086373036605f4839199ba2c8c47da
     sym_7b04f015c7e93928a686686d428288d4ebd20701: 9a236331aeb6a4bd4089926bdb64f189f86cf00d42e2501dd0035a3747bd7151
     sym_04decb16c4cd17472b6bdb481fdc119e3cbe3a47: e68251dc742de6ee5d7e76472cc831ebd2dda91c2ded7a9cf0422151d96c484a
+    sym_85303c452507f3dd3ca4b7874185f9667bec7d48: 81c6066bd4118deb77b4a6ceb03b6f67dd2bbe1e87150dbc8f0e095de533338f
     sym_be232619e2e7029134aafa6e8597ea53b7aa814c: 6b68aadfc3dea85f28c798e091cf13916c09e13301bf7a3917c9125591792259
     sym_e59ec88e791cde694e20c173fd4d4d682066a9aa: a7d88ff28c5e5d56d59d227c8a56a35febd1e2c085904cd2306422eb7426baeb
     sym_5a06a4279ead8eb3b288c3b0d321a2facd32f14e: 1d985cbc43df5c507c8af659ce6939c0e2870297a54f3e68b92e01fd3265eeb7
@@ -182,7 +184,7 @@ provenance:
     sym_11145911e95c54cf338f7f358a4aeaba41f822a1: 8e1ab7ec22c4448e7f88ab7072d141c71cd130e6582738b80044b8273421e3b0
     sym_e91fd67a285988416d403b57eafbed1ebd11286e: 379788d68382c478ace2d9ff88b77aa7d51d6b1b6e41cc93ada96c5b0f1990f7
     sym_32a430c6524d3619448a7e72507c001fe0be7ac2: 4dcabee0d8404fee295ce2c22b1c9e89c4cb3a77bc775055e2f658350d3592c7
-    sym_fd603df6ce50acc3437cb31b16646ddbf458a8e7: 16ede6f96aae58fb8108efb69b54fe875359bbb9173680458bd141b9edc9ac31
+    sym_94ddf30460c29a6e179ea9c39144e157e54bfd79: 16ede6f96aae58fb8108efb69b54fe875359bbb9173680458bd141b9edc9ac31
     sym_4318263e8bd5c5d0471d1d7c78de657709c5cfef: 9941ffd430bc762e50465bac74a9638344e7279058296c9a70867a39a213e756
     sym_90f08c627fa914a27dd739bdc30f99eaea444d81: 8b6a06873f1444f3fdc0ea8d54fe27a4e180529df567e55be1c8dfb523542c87
     sym_5cbc76d828d90cda7f675ad40a7ae8619568080d: 0c03de346325334ccbbd30706292c47ade5be051485172765b0c9d2f006e3917
@@ -202,16 +204,16 @@ provenance:
 
 # @kna/cli reference
 
-<!-- kna:generated:start id=overview hash=fade73b5bc6ff122 -->
+<!-- kna:generated:start id=overview hash=978065eee4da1a08 -->
 | | |
 |---|---|
 | Package | `@kna/cli` (npm) |
 | Path | `apps/cli` |
 | Languages | typescript |
-| Public symbols | 93 |
+| Public symbols | 94 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=1d9beffca550d7c9 -->
+<!-- kna:generated:start id=api.function hash=e204c702ee1b7712 -->
 ### `analyze`
 
 ```typescript
@@ -225,7 +227,7 @@ analyze(ctx: CliContext, options: AnalyzeOptions): Promise<AnalyzeOutput>
 
 **Returns** `Promise<AnalyzeOutput>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L42)</sub>
 
 ---
 
@@ -447,7 +449,7 @@ reportError(error: unknown): void
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/ui.ts#L109)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.interface hash=39b67477e931965b -->
+<!-- kna:generated:start id=api.interface hash=2d5f4236464a4c21 -->
 ### `AnalyzeOptions`
 
 The shared analysis path behind `describe`, `index` and `publish`.
@@ -456,7 +458,7 @@ The shared analysis path behind `describe`, `index` and `publish`.
 interface AnalyzeOptions
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L20)</sub>
 
 ---
 
@@ -466,7 +468,7 @@ interface AnalyzeOptions
 interface AnalyzeOutput
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L25)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L27)</sub>
 
 ---
 
@@ -561,7 +563,7 @@ interface WorkflowInput
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L184)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=ba31a37011d2b75f -->
+<!-- kna:generated:start id=api.property hash=93e7f75f56ab2512 -->
 ### `maxTier`
 
 ```typescript
@@ -570,7 +572,7 @@ maxTier?: 'tier0' | 'tier1' | 'tier2'
 
 **Returns** `"tier0" \| "tier1" \| "tier2" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L19)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L21)</sub>
 
 ---
 
@@ -582,7 +584,7 @@ quiet?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L22)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L24)</sub>
 
 ---
 
@@ -596,7 +598,7 @@ skipScan?: boolean
 
 **Returns** `boolean \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L23)</sub>
 
 ---
 
@@ -606,9 +608,9 @@ skipScan?: boolean
 apiSpecs: ApiSpec[]
 ```
 
-**Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
+**Returns** `{ title: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; sourcePath: null \| string; specId: string; moduleId: string; version: string; documentHash: string; document?: unknown; }[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L31)</sub>
 
 ---
 
@@ -618,9 +620,21 @@ apiSpecs: ApiSpec[]
 bundle: IrBundle
 ```
 
-**Returns** `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; wo…`
+**Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null…`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L28)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L30)</sub>
+
+---
+
+### `documents`
+
+```typescript
+documents: KnowledgeDocument[]
+```
+
+**Returns** `{ source: { type: string; instanceId: string; externalId: string; revision: string; canonicalUrl: null; \| string }; id: string; title: string; content: string; format: "markdown" \| "plain-text"; contentHash: string; documentType: string; audience: "developer" \| "end-user" \| "internal-user" \| "mixed"…`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L32)</sub>
 
 ---
 
@@ -632,7 +646,7 @@ gate: GateResult | null
 
 **Returns** `GateResult \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L29)</sub>
 
 ---
 
@@ -644,7 +658,7 @@ pipeline: PipelineResult
 
 **Returns** `PipelineResult`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L26)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L28)</sub>
 
 ---
 
@@ -726,7 +740,7 @@ platformUrl?: string
 scope: 'project' | 'repo' | 'org' | 'expanded'
 ```
 
-**Returns** `"project" \| "repo" \| "org" \| "expanded"`
+**Returns** `"expanded" \| "org" \| "project" \| "repo"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/ask.ts#L23)</sub>
 
@@ -762,7 +776,7 @@ topN: number
 action: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/doctor.ts#L27)</sub>
 
@@ -798,7 +812,7 @@ name: string
 status: 'ok' | 'warn' | 'fail'
 ```
 
-**Returns** `"ok" \| "warn" \| "fail"`
+**Returns** `"fail" \| "ok" \| "warn"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/doctor.ts#L25)</sub>
 
@@ -810,7 +824,7 @@ status: 'ok' | 'warn' | 'fail'
 config: RepoConfig
 ```
 
-**Returns** `{ projects: string[]; version: 1; org: string; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "public" \| "internal" \| undefined; sensitivity?: "public" \| "internal" \| "confidential" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
+**Returns** `{ projects: string[]; version: 1; org: string; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "internal" \| "public" \| undefined; sensitivity?: "confidential" \| "internal" \| "public" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L18)</sub>
 
@@ -834,7 +848,7 @@ configIsDefault: boolean
 configPath: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L19)</sub>
 
@@ -908,7 +922,7 @@ registry: AnalyzerRegistry
 repo: RepoRef
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; remote: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
+**Returns** `{ name: string; id: string; orgId: string; remote: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L22)</sub>
 
@@ -932,7 +946,7 @@ repoRoot: string
 version: VersionRef
 ```
 
-**Returns** `{ commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }`
+**Returns** `{ commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L23)</sub>
 
@@ -1082,7 +1096,7 @@ Where the CI runner gets the `kna` CLI from.
 cliSource?: 'source' | 'registry'
 ```
 
-**Returns** `"source" \| "registry" \| undefined`
+**Returns** `"registry" \| "source" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L42)</sub>
 
@@ -1170,7 +1184,7 @@ projects?: string[]
 provider?: 'github' | 'azuredevops' | 'gitlab'
 ```
 
-**Returns** `"github" \| "azuredevops" \| "gitlab" \| undefined`
+**Returns** `"azuredevops" \| "github" \| "gitlab" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L27)</sub>
 
@@ -1258,7 +1272,7 @@ token?: string
 cliSource: 'source' | 'registry'
 ```
 
-**Returns** `"source" \| "registry"`
+**Returns** `"registry" \| "source"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L186)</sub>
 
@@ -1301,7 +1315,7 @@ platformRepo: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L187)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=ce51caeed7611457 -->
+<!-- kna:generated:start id=api.constant hash=69747f50a1f37081 -->
 ### `CLI_VERSION`
 
 ```typescript
@@ -1310,7 +1324,7 @@ const CLI_VERSION: "1.0.0"
 
 **Returns** `"1.0.0"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L211)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L246)</sub>
 
 ---
 
@@ -1339,14 +1353,14 @@ const UNBORN_COMMIT_SHA: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L128)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.class hash=51c472ce034d55ac -->
+<!-- kna:generated:start id=api.class hash=812e7ef85e12d895 -->
 ### `GuardrailBlockedError`
 
 ```typescript
 class GuardrailBlockedError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L35)</sub>
 
 ---
 
@@ -1369,7 +1383,7 @@ class PublishError extends Error
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/publish.ts#L51)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=25351bcbde47a3f6 -->
+<!-- kna:generated:start id=api.method hash=29f5bf142a42327a -->
 ### `constructor`
 
 ```typescript
@@ -1380,7 +1394,7 @@ constructor(readonly gate: GateResult)
 |---|---|---|
 | `gate` | `GateResult` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L33)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L36)</sub>
 
 ---
 
@@ -1408,7 +1422,7 @@ constructor(message: string, readonly status: number, readonly guidance: string 
 |---|---|---|
 | `message` | `string` |  |
 | `status` | `number` |  |
-| `guidance` | `string \| null` |  |
+| `guidance` | `null \| string` |  |
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/publish.ts#L52)</sub>
 <!-- kna:generated:end id=api.method -->

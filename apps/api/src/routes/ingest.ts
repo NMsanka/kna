@@ -14,6 +14,7 @@ import { verifyEnvelope, explainFailure, zIngestResponse } from '@kna/contracts'
 import { withSystemContext } from '@kna/db';
 import { verifyIngestToken, AuthError } from '../auth.js';
 import type { ApiContext, KnaServer } from '../context.js';
+import { OidcError } from '../services/oidc.js';
 
 /**
  * The ingest endpoint — the trust boundary.
@@ -312,7 +313,39 @@ export async function registerIngestRoutes(app: KnaServer, ctx: ApiContext): Pro
       });
     }
 
-    const identity = await ctx.oidc.verify(body.idToken, body.audience ?? ctx.env.OIDC_AUDIENCE);
+    // Every message the verifier produces names exactly what is wrong: wrong audience,
+    // expired, unknown issuer, no matching key. Letting them escape collapsed all of it into
+    // one 500 reading 'The request could not be completed' — on the single endpoint whose
+    // caller is a workflow that cannot read our logs and has no other way to find out.
+    let identity;
+    try {
+      identity = await ctx.oidc.verify(body.idToken, body.audience ?? ctx.env.OIDC_AUDIENCE);
+    } catch (error) {
+      if (!(error instanceof OidcError)) throw error;
+
+      if (error.failure === 'issuer') {
+        request.log.error({ err: error.message }, 'oidc issuer unreachable');
+        return reply.code(502).send({
+          error: {
+            code: 'oidc_issuer_unreachable',
+            message: 'The configured OIDC issuer could not be reached.',
+            guidance:
+              'Nothing is wrong with the workflow. Retry, and if it persists check that this ' +
+              'deployment has outbound access to the issuer.',
+          },
+        });
+      }
+
+      return reply.code(401).send({
+        error: {
+          code: 'invalid_oidc_token',
+          message: error.message,
+          guidance:
+            'The job needs `permissions: id-token: write`, and must request the audience this ' +
+            'deployment expects.',
+        },
+      });
+    }
     const result = await ctx.store.resolveRepoForIdentity(identity, body.repoRemote);
 
     if (!result) {

@@ -12,7 +12,7 @@ owners:
 provenance:
   symbolIds:
     - sym_d64358e4b50d523851ab955621937ba8f05b159a
-    - sym_88c956362904febbb7bbdeb8eb69117675362662
+    - sym_f827b1b960d999ca116ede24f2903d787cee0f17
     - sym_5bb45045994694a14c8dd09ba38e183df68baca8
     - sym_2d8ddf47adbad9edba51ccf53573e092ee12ca6e
     - sym_0669e4f44225020e444f30dd2e50c4b0a338a834
@@ -24,13 +24,13 @@ provenance:
     - sym_cc42ee963f2b2262c8fc2d798af2c9265786d439
     - sym_6a09415cdd29ca9ba885a60caaa66465076c36a5
     - sym_90b379d6038acf0ed0c5c1a2f09284bf5ec919a6
-    - sym_a6cf8721da0633896f25acc88defd3f36df1a118
+    - sym_9317108d47d4840eb2cdcba4a7efc7b3f4802de1
     - sym_55047fb741a189443093f9817c911df3c8afae78
     - sym_09a84b9aae4759b259684607ecaaa763b9a68213
     - sym_51c5a2e3397691054f9b8bb6614e0de70d4cf8ff
     - sym_56099c082bcbd5ef86846bc2e06759f5784083f5
     - sym_f201be353375a6b8598399f8db467cff15e23abd
-    - sym_57687c6385d66f0347fc3a903c63d897f56549f0
+    - sym_dd1d5163e31d05933cd5dde84508c78a14aea799
     - sym_d29d3e4209d80ca4fbbf5a7cdcfd8d8371644791
     - sym_3dbcb6afcdfd10feef4a8d47a1763dd27ce46cfa
     - sym_99d983fb3c068d162568c6c6bc8efa1e450de564
@@ -65,7 +65,7 @@ provenance:
     - sym_bbf9b50bbb372a0576bec1c039217f9da980c659
     - sym_70da5163d0a3123ae98c8c1f360f6569b4213d41
     - sym_57db2a9d8b76698cdee15288b0b1d7e4ab73fa66
-    - sym_d135fe2f8054d2c1862046d56e5515a2adfe9563
+    - sym_898098b2c0759bbdd0eb8b23381f51c7db8056d3
     - sym_38a6ac79d5c09ac5cf4cd84163c322a6de7b7064
     - sym_b68fb9aee21bc1545849fcf25263f74fb0217c44
     - sym_fb0014a83bdcec4770e9b3549dcbc52953303615
@@ -93,7 +93,7 @@ provenance:
     - sym_ccd9a3516d141c26bcf8589c60ee3d9d519b938a
     - sym_2a3b4e63d952d6d785d11f647b36445516bd7056
     - sym_337a9dcadc929fe9df824db1ca775f37b6af4d7e
-    - sym_43e83767ab61d9bd23808bb21aaa6e644f46ae07
+    - sym_720e1da27ab468c9d233c8b813dc5a110b0b6b1f
     - sym_315adb34b789c95221d6817e04012eb3babcaf8e
     - sym_4e97d5dd34e28344214f347df7326ce9a4cb2e6e
     - sym_3c42b2c1a43c1686ebfe170745bbdb917f280a67
@@ -116,8 +116,8 @@ provenance:
     - sym_4db9efc8d3b47f7b7e350f93332f431f76fae8f1
     - sym_5173c24012bf8cece89804d96867637a9cadd6d9
     - sym_4069047691e37f1baa8ff2ce3e604de95c2835da
-    - sym_c2a06af33bf92d0e02fc4646db871c85602c3ef2
-    - sym_18308ffc32f4b781d47b8d5c3740ca9a050cb6eb
+    - sym_6ec30ee27edef31cd2bb082fb0d4b835133a2ef2
+    - sym_6494c00409f20de68e39c9ef84d900da37cece13
     - sym_61e0557522dc03414a0f2c3d7a9848df88ab192b
     - sym_c09f7a02298525aff13568a9e11a7e24e777702f
     - sym_25d6a1b5680da4e7f2c616a15c316c8c4520f302
@@ -137,7 +137,7 @@ provenance:
     - sym_0ba1fb6bf145f1a2303633d526e16a16ccc81835
   signatureHashes:
     sym_d64358e4b50d523851ab955621937ba8f05b159a: 3641a12fb5a0b5f6a587c547b8e87ad27d7e019df776018d1c70979acb87f8cf
-    sym_88c956362904febbb7bbdeb8eb69117675362662: 57201a5823e99438038f1a002cc934464dfb50a09007a175c221b662d3a52e18
+    sym_f827b1b960d999ca116ede24f2903d787cee0f17: 57201a5823e99438038f1a002cc934464dfb50a09007a175c221b662d3a52e18
     sym_5bb45045994694a14c8dd09ba38e183df68baca8: e9ec6c1e00e1f8f48c881530434cb9cb592dcd45933f6242a54e5c163d76d2a6
     sym_2d8ddf47adbad9edba51ccf53573e092ee12ca6e: f6b9ef34c4c2e63845b19b3ccce35f3519b164aa901621358fbe9376507b313d
     sym_0669e4f44225020e444f30dd2e50c4b0a338a834: 3a276a877f51cd7ae5cdebb4ab6cbe3acf3ba8a795c6e564dc9bd121d8faaa01
@@ -149,13 +149,13 @@ provenance:
     sym_cc42ee963f2b2262c8fc2d798af2c9265786d439: 834f06a959306013bb1faa7a90c3fb95949c21c2b6d8014ef64a8fa569cfaf42
     sym_6a09415cdd29ca9ba885a60caaa66465076c36a5: a4fe89238a0f78852246c8eb817d0f5b99c9dd6936e98f25408bc47b02906179
     sym_90b379d6038acf0ed0c5c1a2f09284bf5ec919a6: 417ac8b34d6de0deb3c8ac1c2dd56dbbe710c610acb5886cb870b737b32205cf
-    sym_a6cf8721da0633896f25acc88defd3f36df1a118: c934e7f8497242785f64234c3bacbef1addc4f9f69e5420c13913699faa54146
-    sym_55047fb741a189443093f9817c911df3c8afae78: 01fb42acffee72f60786b6b8a218387fcb21a317a2a389bdff7eab77443a7075
+    sym_9317108d47d4840eb2cdcba4a7efc7b3f4802de1: 0975cd64eb5cdd76f43fcb9b38c7a46d66fbf32910d3ee6f2f7d125f33f7b9a0
+    sym_55047fb741a189443093f9817c911df3c8afae78: d09cec878f9bc8720a94e86c235663c5ca42832e924297ee847cacfa8e950fdd
     sym_09a84b9aae4759b259684607ecaaa763b9a68213: 2d2608687bc1a9a2b860e57b5b82ec299ba5ca2fd0d3859c2ee5b57dc288d5a3
     sym_51c5a2e3397691054f9b8bb6614e0de70d4cf8ff: 74984e666696ed3673b7f98d4232a8c3d552cc7b6b237e1f78829cf77cbabb8f
     sym_56099c082bcbd5ef86846bc2e06759f5784083f5: f933bd32a7f8937b805d3ed0ec7fec201cbbb420dc06110b8475a25b7ed2f1f2
     sym_f201be353375a6b8598399f8db467cff15e23abd: c2a993b1ff4473c2cfa9516e662e69761dff60280426e1ead56a3899b11a60bf
-    sym_57687c6385d66f0347fc3a903c63d897f56549f0: 32aa56e0273b0a2172968eef9a702131a7110214c6f49aa9678c3cf3090b8338
+    sym_dd1d5163e31d05933cd5dde84508c78a14aea799: 32aa56e0273b0a2172968eef9a702131a7110214c6f49aa9678c3cf3090b8338
     sym_d29d3e4209d80ca4fbbf5a7cdcfd8d8371644791: 1706916135fc9301006335686f852502e177917f6f68539b552081f800ba763d
     sym_3dbcb6afcdfd10feef4a8d47a1763dd27ce46cfa: aefef78cf12f2fcf5e2fac8c7c560c5e14167c85184a001ff4d80a9d94b755bd
     sym_99d983fb3c068d162568c6c6bc8efa1e450de564: 7ab39605373999a6c7400d274815955e8180f836dafd2e98c1a964b9ff43e061
@@ -163,7 +163,7 @@ provenance:
     sym_4128e8d328c7e4afeece520191e048eb2303b9ab: fcbf12bc1d521ae72d00c8abb6fbb65182b150b141c4d64c121357dafbd7238e
     sym_40bcc6324e84acb9652fbc21d3fca62a28c4dde3: ef159d94f951d62c2b4eddb9f3d48cfcf26e794cf0d87cf7376da69ed4458040
     sym_f06944e60daad6684e5a2407f00415d5d560b0d5: 6a6d8b33aaeb2621cfdd42fafeabe655fb3c2ce1ff532a5c31f457b675574dfd
-    sym_5aacab92bf125f17b425b742760d1fc089ca98fd: 9456f3935a5b411344d19acef7e87471ca7ff2e2d068b62390b79cb7ead16c69
+    sym_5aacab92bf125f17b425b742760d1fc089ca98fd: 3a64dc27866f954d60d46dcdd3f75db73298ef1a3befbcefcda395d1bbc763a7
     sym_4104e6153ceabe8db9b3f70f5cd79575b8d3e518: d28451b688014cc11447c61176332d4cc85b2c3d539f09c1cf73502f9a0f549c
     sym_55a83f136e987f3f8cb1c736da9f6e211a8c3345: 0a671dbc793c1bdd9e3bd1a1060bbbc6c2bb51d1dc17f93a143aa235c7fcc518
     sym_f62cbd4b48a198ee27f081bec54f552eba4c7587: dc1438b82b2b3150166f7facc47992189ef88bdf4169f797e7c487e3b5ec6c6f
@@ -190,7 +190,7 @@ provenance:
     sym_bbf9b50bbb372a0576bec1c039217f9da980c659: e2e1d4ffd4123dff39bf66119ac421e6109d15332984717a91e53f6abb7ccecd
     sym_70da5163d0a3123ae98c8c1f360f6569b4213d41: 3dc1ba5d32baa21c75f0f6e3ab8f592e519cb6426a0eaf3999cf735127a17e23
     sym_57db2a9d8b76698cdee15288b0b1d7e4ab73fa66: 4321d55aa122d8d430b3c87edd56368f2c950fde243f7cca376b845b35f8761f
-    sym_d135fe2f8054d2c1862046d56e5515a2adfe9563: 30223c9f5360764276e2d1c2867746619fbab074afaa82be6a08e061ee0d506a
+    sym_898098b2c0759bbdd0eb8b23381f51c7db8056d3: 58acc03b764488f56480e2e6ff2a18d46533b1620d8da7aea6151a771bf5d6c6
     sym_38a6ac79d5c09ac5cf4cd84163c322a6de7b7064: 07eb8318ba7c24292c3c61f29ae648a119df92ed7500633e1c2b4f998a3b5ded
     sym_b68fb9aee21bc1545849fcf25263f74fb0217c44: 09d03bfa39c5907ccdb920535c7eb317ba108117b3db133a14521ca903448644
     sym_fb0014a83bdcec4770e9b3549dcbc52953303615: 8ff3aa9b61043e8c5f6008683159b1a936c9de0f81e5c5173e6f9a5e133c1e9f
@@ -218,8 +218,8 @@ provenance:
     sym_ccd9a3516d141c26bcf8589c60ee3d9d519b938a: d1dd2de353b251eb298f506e222513bc8fdc2fbf82079f65c40bb39651079ad5
     sym_2a3b4e63d952d6d785d11f647b36445516bd7056: 270ad6bc00cc2703ff539c049f222196b7fc5f350b7d44f01d1621f0284af02a
     sym_337a9dcadc929fe9df824db1ca775f37b6af4d7e: 1fc270f6f79b7cf107e951539e6fdb8e0dbe1aa2943c9faa001fb372a49b66d4
-    sym_43e83767ab61d9bd23808bb21aaa6e644f46ae07: 0af5c2be28f3a87ffb9bd2e470795744808ea7fd7b87a61082a8b834e4fb063a
-    sym_315adb34b789c95221d6817e04012eb3babcaf8e: d133f290fef7d50644616d1ac6aa752058f39a702a1b07d737d9ec0175393da8
+    sym_720e1da27ab468c9d233c8b813dc5a110b0b6b1f: 31e831bb94c5200a66b2322875a079d42a38dc4e023b935beea142b670c368ad
+    sym_315adb34b789c95221d6817e04012eb3babcaf8e: 980fc6d901abb52af9ccca4efe860134a0b0cb02c127876933311024e9aa852c
     sym_4e97d5dd34e28344214f347df7326ce9a4cb2e6e: eaa0989249934e73027b140c1347579a8d2783ab3f48d8e2f5bb974121d8d0b6
     sym_3c42b2c1a43c1686ebfe170745bbdb917f280a67: 668c4141f8a06404eade7a06097c24189f2fa78b7c9b1d3f77255725ed29174e
     sym_a9480431dbdb6a9b839963cbd871eb9c3f501e25: 035c38490bb8a7495e39d1a7556eca29d9234a2ddd49328d99dfaf6507085d47
@@ -240,9 +240,9 @@ provenance:
     sym_4f279f433dfc915cdd5f772c912301d66e5321a4: 37dda7e78dde04657c59bc86b4ed0eaf0d8b72487f13e1a8e4c5ed5198f83677
     sym_4db9efc8d3b47f7b7e350f93332f431f76fae8f1: bd149193f33441bab844fe1168485f5cb9d6d4ed48f3ff073772f9af7c12cd07
     sym_5173c24012bf8cece89804d96867637a9cadd6d9: 6bfdddd861158f58b6bce48f0828ce50ca0d7b904a1385919739549ca6a4107f
-    sym_4069047691e37f1baa8ff2ce3e604de95c2835da: 220026e0d740695d9ebc39402fc7d29af0a3f340cfd880e083f72618227110a4
-    sym_c2a06af33bf92d0e02fc4646db871c85602c3ef2: 7ef3a7c3d90be645ae4dcc348bec6794f18270338c7365e84b6e459c7a224c89
-    sym_18308ffc32f4b781d47b8d5c3740ca9a050cb6eb: acf9004573a7fe1fb2030d8c3113adea0f8df88d214442dd3ca747b30f565674
+    sym_4069047691e37f1baa8ff2ce3e604de95c2835da: f78694eaea7949dca6790843f0df9d8f0a6005eee68d806c62d49cac1a1a95d8
+    sym_6ec30ee27edef31cd2bb082fb0d4b835133a2ef2: 32e386e940377701cf989b1716bcd9c7fcadc787542e587ca4c22be87e2aafe1
+    sym_6494c00409f20de68e39c9ef84d900da37cece13: 6022e8775f007a8f40f216b0959148f02e9e5160d049d139db2fdea75c5a398a
     sym_61e0557522dc03414a0f2c3d7a9848df88ab192b: ea554f3579763d3568d16e47bb7d678fc6dba6f3e7fab0ed4ca252547bb1a88d
     sym_c09f7a02298525aff13568a9e11a7e24e777702f: 45d4f49e6b4ac8b97484f89942560b161b769c2542e43ae9581b701ba3972efd
     sym_25d6a1b5680da4e7f2c616a15c316c8c4520f302: 4d22416ef8fc196a810535369ad27db0e9daeac449aeac3096774eb512f238d9
@@ -258,7 +258,7 @@ provenance:
     sym_9df4a6d9de8e9673bd77004322d1cf17e38190ce: 804e0fa39ad74ca98dfb4bb8eb8eb306e7309c6c75ff318941f3dd824f85cb7b
     sym_f53fca486c1d1272f2ae85575b6e6fed22d5e5c3: 050a46fe7e33d3d1d16ff069521fe5f2b0e6066ebd9ade91582737c919691c88
     sym_860f31b93cd1e72ddc95292ef89a3a1220ec7f76: 723b38976a29345e47c5fba3ae925ed7be1cbd3d324b4cbfa919a150a3c81c2e
-    sym_cb886bd1dc18e18abb7a02eba0ef5c99f08e7318: 30e17bd6e3627b1657bfe0f01d43b307f89ca501f2c91b60c7f65d29b4640499
+    sym_cb886bd1dc18e18abb7a02eba0ef5c99f08e7318: bc727fb8dd9de4addb08146e46d420242ae05bbb5fbdd3b441b4d39f7c2da0e7
     sym_0ba1fb6bf145f1a2303633d526e16a16ccc81835: 31b4e0a692e103a9025e1509329ca8663301d27e0d8b517f961a8b424db6aef2
 ---
 
@@ -413,7 +413,7 @@ interface Tier0Input
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L21)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.method hash=f7877a9955181709 -->
+<!-- kna:generated:start id=api.method hash=4563489a20994d5b -->
 ### `analyze`
 
 ```typescript
@@ -422,9 +422,9 @@ analyze(request: AnalyzerRequest): Promise<AnalyzerResponse>
 
 | Parameter | Type | Description |
 |---|---|---|
-| `request` | `{ module: { path: string; name: string; manifestPath: string \| null; }; protocol: "kna-analyzer/1"; options: { includeSource: boolean; timeoutMs: number; }; repoRoot: string; commitSha: string; files: { path: string; language: string; generated: boolean; }[]; }` |  |
+| `request` | `{ module: { path: string; name: string; manifestPath: null; \| string }; protocol: "kna-analyzer/1"; options: { includeSource: boolean; timeoutMs: number; }; repoRoot: string; commitSha: string; files: { path: string; language: string; generated: boolean; }[]; }` |  |
 
-**Returns** `Promise<{ diagnostics: { path: string \| null; message: string; level: "info" \| "warn" \| "error"; }[]; degradations: { reason: string; missing: string \| null; }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "public" \| "i…`
+**Returns** `Promise<{ diagnostics: { path: null \| string; message: string; level: "error"; \| "info" \| "warn" }[]; degradations: { reason: string; missing: null; \| string }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "internal" \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L86)</sub>
 
@@ -442,7 +442,7 @@ probe(repoRoot: string): Promise<string | null>
 |---|---|---|
 | `repoRoot` | `string` |  |
 
-**Returns** `Promise<string \| null>`
+**Returns** `Promise<null \| string>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L85)</sub>
 
@@ -463,12 +463,12 @@ all(): Analyzer[]
 ### `forLanguage`
 
 ```typescript
-forLanguage(language: "typescript" | "javascript" | "python" | "csharp" | "unknown"): Analyzer[]
+forLanguage(language: "csharp" | "javascript" | "python" | "typescript" | "unknown"): Analyzer[]
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `language` | `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"` |  |
+| `language` | `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"` |  |
 
 **Returns** `Analyzer[]`
 
@@ -481,14 +481,14 @@ forLanguage(language: "typescript" | "javascript" | "python" | "csharp" | "unkno
 Probe every registered analyser once per run. The result feeds both the pipeline's tier decisions and the "why is my repo shallow?" diagnostic (§15.8) — a developer should never have to guess why their C# module came back at Tier 0.
 
 ```typescript
-probeAll(repoRoot: string): Promise<Map<string, string | null>>
+probeAll(repoRoot: string): Promise<Map<string, null | string>>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `repoRoot` | `string` |  |
 
-**Returns** `Promise<Map<string, string \| null>>`
+**Returns** `Promise<Map<string, null \| string>>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L110)</sub>
 
@@ -519,7 +519,7 @@ constructor(message: string, readonly code: 'timeout' | 'spawn-failed' | 'nonzer
 | Parameter | Type | Description |
 |---|---|---|
 | `message` | `string` |  |
-| `code` | `"timeout" \| "spawn-failed" \| "nonzero-exit" \| "bad-protocol" \| "output-too-large"` |  |
+| `code` | `"bad-protocol" \| "nonzero-exit" \| "output-too-large" \| "spawn-failed" \| "timeout"` |  |
 | `stderr`? | `string` |  (default `''`) |
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/subprocess.ts#L35)</sub>
@@ -557,7 +557,7 @@ ignores(path: string): boolean
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L15)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.property hash=b7f7f3fbac0af034 -->
+<!-- kna:generated:start id=api.property hash=f8c38d76390e7cf5 -->
 ### `capabilities`
 
 ```typescript
@@ -576,7 +576,7 @@ capabilities: AnalyzerCapabilities
 languages: Language[]
 ```
 
-**Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]`
+**Returns** `("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L79)</sub>
 
@@ -614,7 +614,7 @@ Depth this analyser reaches when its toolchain is present.
 depth: 'semantic' | 'artifact'
 ```
 
-**Returns** `"semantic" \| "artifact"`
+**Returns** `"artifact" \| "semantic"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L70)</sub>
 
@@ -652,7 +652,7 @@ resolvesTypes: boolean
 check: (symbols: RawSymbol[]) => string | null
 ```
 
-**Returns** `(symbols: { name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: s…`
+**Returns** `(symbols: { name: string; visibility: "internal" \| "private" \| "protected" \| "public"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| string; reason: string; replacement: null; \| string }; parameters: { type: null \| { text: string; symbolId: null \| string; pac…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L131)</sub>
 
@@ -690,7 +690,7 @@ closeAt: number
 kind: SymbolKind
 ```
 
-**Returns** `"function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"`
+**Returns** `"class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L31)</sub>
 
@@ -752,7 +752,7 @@ generated: boolean
 language: Language
 ```
 
-**Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
+**Returns** `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L32)</sub>
 
@@ -806,7 +806,7 @@ Marker file that identified it: package.json, *.csproj, pyproject.toml…
 manifestPath: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L44)</sub>
 
@@ -818,7 +818,7 @@ manifestPath: string | null
 module: RawModule
 ```
 
-**Returns** `{ path: string; name: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" \| "semanti…`
+**Returns** `{ path: string; name: string; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; visibility: "internal" \| "public"; analysisDepth: "artifact" \| "semant…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L41)</sub>
 
@@ -854,7 +854,7 @@ generatedPatterns?: string[]
 languages?: Language[]
 ```
 
-**Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[] \| undefined`
+**Returns** `("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[] \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L81)</sub>
 
@@ -916,7 +916,7 @@ deniedPaths: string[]
 languages: Language[]
 ```
 
-**Returns** `("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]`
+**Returns** `("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L53)</sub>
 
@@ -978,7 +978,7 @@ decorators?: string[]
 doc: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L658)</sub>
 
@@ -1014,7 +1014,7 @@ input: Tier0Input
 kind: SymbolKind
 ```
 
-**Returns** `"function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"`
+**Returns** `"class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L650)</sub>
 
@@ -1050,7 +1050,7 @@ name: string
 params: RawSymbol['parameters']
 ```
 
-**Returns** `{ type: { text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null; description: string \| null; name: string; optional: boolean; defaultValue: string \| null; rest: boolean; }[]`
+**Returns** `{ type: null \| { text: string; symbolId: null \| string; package: null \| string; nullable: boolean; isArray: boolean; typeArguments: string[]; }; description: null \| string; name: string; optional: boolean; defaultValue: null \| string; rest: boolean; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L659)</sub>
 
@@ -1062,7 +1062,7 @@ params: RawSymbol['parameters']
 parentQualifiedName: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L655)</sub>
 
@@ -1086,7 +1086,7 @@ qualifiedName: string
 returnTypeText?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L660)</sub>
 
@@ -1122,7 +1122,7 @@ startLine: number
 visibility: Visibility
 ```
 
-**Returns** `"public" \| "internal" \| "protected" \| "private"`
+**Returns** `"internal" \| "private" \| "protected" \| "public"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L652)</sub>
 
@@ -1134,7 +1134,7 @@ visibility: Visibility
 dependencies: RawModule['dependencies']
 ```
 
-**Returns** `{ name: string; version: string \| null; dev: boolean; }[]`
+**Returns** `{ name: string; version: null \| string; dev: boolean; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L204)</sub>
 
@@ -1146,7 +1146,7 @@ dependencies: RawModule['dependencies']
 ecosystem: Ecosystem
 ```
 
-**Returns** `"npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"`
+**Returns** `"go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L201)</sub>
 
@@ -1170,7 +1170,7 @@ name: string
 packageName: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L202)</sub>
 
@@ -1182,7 +1182,7 @@ packageName: string | null
 packageVersion: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L203)</sub>
 
@@ -1194,7 +1194,7 @@ packageVersion: string | null
 degradations: Array<{reason: string;missing: string | null}>
 ```
 
-**Returns** `{ reason: string; missing: string \| null; }[]`
+**Returns** `{ reason: string; missing: null; \| string }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L49)</sub>
 
@@ -1206,7 +1206,7 @@ degradations: Array<{reason: string;missing: string | null}>
 depth: AnalysisDepth
 ```
 
-**Returns** `"shallow" \| "semantic" \| "artifact"`
+**Returns** `"artifact" \| "semantic" \| "shallow"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L48)</sub>
 
@@ -1218,7 +1218,7 @@ depth: AnalysisDepth
 module: RawModule
 ```
 
-**Returns** `{ path: string; name: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" \| "semanti…`
+**Returns** `{ path: string; name: string; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; visibility: "internal" \| "public"; analysisDepth: "artifact" \| "semant…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L46)</sub>
 
@@ -1230,7 +1230,7 @@ module: RawModule
 symbols: RawSymbol[]
 ```
 
-**Returns** `{ name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: string \| nu…`
+**Returns** `{ name: string; visibility: "internal" \| "private" \| "protected" \| "public"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| string; reason: string; replacement: null; \| string }; parameters: { type: null \| { text: string; symbolId: null \| string; package: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L47)</sub>
 
@@ -1350,7 +1350,7 @@ module?: string
 phase: 'discovery' | 'tier0' | 'tier1' | 'tier2'
 ```
 
-**Returns** `"tier0" \| "tier1" \| "tier2" \| "discovery"`
+**Returns** `"discovery" \| "tier0" \| "tier1" \| "tier2"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L38)</sub>
 
@@ -1374,7 +1374,7 @@ total: number
 diagnostics: Array<{level: 'info' | 'warn' | 'error';message: string;path: string | null}>
 ```
 
-**Returns** `{ level: "info" \| "warn" \| "error"; message: string; path: string \| null; }[]`
+**Returns** `{ level: "error" \| "info" \| "warn"; message: string; path: null; \| string }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L58)</sub>
 
@@ -1434,7 +1434,7 @@ tiersRun: Array<'tier0' | 'tier1' | 'tier2'>
 toolchain: Record<string, string | null>
 ```
 
-**Returns** `Record<string, string \| null>`
+**Returns** `Record<string, null \| string>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/pipeline.ts#L55)</sub>
 
@@ -1570,7 +1570,7 @@ generated: boolean
 language: Language
 ```
 
-**Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
+**Returns** `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L24)</sub>
 
@@ -1627,7 +1627,7 @@ type AnalyzerResponse = z.infer<typeof zAnalyzerResponse>
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L66)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=91fc84feb1b088fb -->
+<!-- kna:generated:start id=api.constant hash=9f040ae456885a8d -->
 ### `CORE_CONFORMANCE`
 
 ```typescript
@@ -1645,10 +1645,10 @@ const CORE_CONFORMANCE: ConformanceExpectation[]
 The analyser contract (§13 — "three implementations must produce byte-identical IR semantics. This is the single highest-value spec in the project").
 
 ```typescript
-const zAnalyzerRequest: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;repoRoot: z.ZodString;commitSha: z.ZodString;module: z.ZodObject<{path: z.ZodString;name: z.ZodString;manifestPath: z.ZodNullable<z.ZodString>;}, "strip", z.ZodTypeAny, {path: string;name: string;manifestPath: string | null;}, {path: …
+const zAnalyzerRequest: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;repoRoot: z.ZodString;commitSha: z.ZodString;module: z.ZodObject<{path: z.ZodString;name: z.ZodString;manifestPath: z.ZodNullable<z.ZodString>;}, "strip", z.ZodTypeAny, {path: string;name: string;manifestPath: null; | string}, {path: …
 ```
 
-**Returns** `ZodObject<{ protocol: ZodLiteral<"kna-analyzer/1">; repoRoot: ZodString; commitSha: ZodString; module: ZodObject<{ path: ZodString; name: ZodString; manifestPath: ZodNullable<ZodString>; }, "strip", ZodTypeAny, { path: string; name: string; manifestPath: string \| null; }, { path: string; name: strin…`
+**Returns** `ZodObject<{ protocol: ZodLiteral<"kna-analyzer/1">; repoRoot: ZodString; commitSha: ZodString; module: ZodObject<{ path: ZodString; name: ZodString; manifestPath: ZodNullable<ZodString>; }, "strip", ZodTypeAny, { path: string; name: string; manifestPath: null; \| string }, { path: string; name: strin…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L14)</sub>
 
@@ -1665,18 +1665,18 @@ const zAnalyzerResponse: z.ZodObject<{protocol: z.ZodLiteral<"kna-analyzer/1">;o
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/registry.ts#L33)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=6c6061681b88df00 -->
+<!-- kna:generated:start id=api.function hash=875fdde52aed50ff -->
 ### `detectLanguage`
 
 ```typescript
-detectLanguage(path: string): "typescript" | "javascript" | "python" | "csharp" | "unknown"
+detectLanguage(path: string): "csharp" | "javascript" | "python" | "typescript" | "unknown"
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `path` | `string` |  |
 
-**Returns** `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"`
+**Returns** `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/discovery.ts#L70)</sub>
 
@@ -1721,15 +1721,15 @@ explainDepth(result: PipelineResult): string
 Parameters as written. Types are unresolved strings — that is the Tier 0 contract.
 
 ```typescript
-extractParams(signature: string, language: "typescript" | "javascript" | "python" | "csharp" | "unknown"): {type: {text: string;symbolId: string | null;package: string | null;nullable: boolean;isArray: boolean;typeArguments: string[];} | null;description: string | null;name: string;optional: boo…
+extractParams(signature: string, language: "csharp" | "javascript" | "python" | "typescript" | "unknown"): {type: null | {text: string;symbolId: null | string;package: null | string;nullable: boolean;isArray: boolean;typeArguments: string[];};description: null | string;name: string;optional: boo…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `signature` | `string` |  |
-| `language` | `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"` |  |
+| `language` | `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"` |  |
 
-**Returns** `{ type: { text: string; symbolId: string \| null; package: string \| null; nullable: boolean; isArray: boolean; typeArguments: string[]; } \| null; description: string \| null; name: string; optional: boolean; defaultValue: string \| null; rest: boolean; }[]`
+**Returns** `{ type: null \| { text: string; symbolId: null \| string; package: null \| string; nullable: boolean; isArray: boolean; typeArguments: string[]; }; description: null \| string; name: string; optional: boolean; defaultValue: null \| string; rest: boolean; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L526)</sub>
 
@@ -1755,15 +1755,15 @@ matchCodeowners(content: string, path: string): string[]
 ### `parseDocComment`
 
 ```typescript
-parseDocComment(raw: string, language: "typescript" | "javascript" | "python" | "csharp" | "unknown"): {params: {type: string | null;description: string;name: string;}[];summary: string;description: string | null;returns: {type: string | null;description: string;} | null;throws: {type: str…
+parseDocComment(raw: string, language: "csharp" | "javascript" | "python" | "typescript" | "unknown"): null | {params: {type: null | string;description: string;name: string;}[];summary: string;description: null | string;returns: null | {type: null | string;description: string;};throws: {ty…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `raw` | `string` |  |
-| `language` | `"typescript" \| "javascript" \| "python" \| "csharp" \| "unknown"` |  |
+| `language` | `"csharp" \| "javascript" \| "python" \| "typescript" \| "unknown"` |  |
 
-**Returns** `{ params: { type: string \| null; description: string; name: string; }[]; summary: string; description: string \| null; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, string>; …`
+**Returns** `null \| { params: { type: null \| string; description: string; name: string; }[]; summary: string; description: null \| string; returns: null \| { type: null \| string; description: string; }; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, st…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/doc-comment.ts#L24)</sub>
 
@@ -1772,14 +1772,14 @@ parseDocComment(raw: string, language: "typescript" | "javascript" | "python" | 
 ### `parseTier0`
 
 ```typescript
-parseTier0(input: Tier0Input): {name: string;visibility: "public" | "internal" | "protected" | "private";analysisDepth: "shallow" | "semantic" | "artifact";deprecated: {since: string | null;reason: string;replacement: string…
+parseTier0(input: Tier0Input): {name: string;visibility: "internal" | "private" | "protected" | "public";analysisDepth: "artifact" | "semantic" | "shallow";deprecated: null | {since: null | string;reason: string;replacement: …
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `input` | `Tier0Input` |  |
 
-**Returns** `{ name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: string \| nu…`
+**Returns** `{ name: string; visibility: "internal" \| "private" \| "protected" \| "public"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| string; reason: string; replacement: null; \| string }; parameters: { type: null \| { text: string; symbolId: null \| string; package: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/tier0/lexical.ts#L53)</sub>
 
@@ -1790,7 +1790,7 @@ parseTier0(input: Tier0Input): {name: string;visibility: "public" | "internal" |
 Probe a command's version without giving it stdin or a working repo.
 
 ```typescript
-probeCommand(command: string, args: string[], timeoutMs: number): Promise<string | null>
+probeCommand(command: string, args: string[], timeoutMs: number): Promise<null | string>
 ```
 
 | Parameter | Type | Description |
@@ -1799,7 +1799,7 @@ probeCommand(command: string, args: string[], timeoutMs: number): Promise<string
 | `args` | `string[]` |  |
 | `timeoutMs`? | `number` |  (default `10_000`) |
 
-**Returns** `Promise<string \| null>`
+**Returns** `Promise<null \| string>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/subprocess.ts#L208)</sub>
 
@@ -1808,15 +1808,15 @@ probeCommand(command: string, args: string[], timeoutMs: number): Promise<string
 ### `runAnalyzerSubprocess`
 
 ```typescript
-runAnalyzerSubprocess(options: SubprocessOptions, request: {module: {path: string;name: string;manifestPath: string | null;};protocol: "kna-analyzer/1";options: {includeSource: boolean;timeoutMs: number;};rep…): Promise<{diagnostics: {path: string | null;message: string;level: "info" | "warn" | "error";}[];degradations: {reason: string;missing: string | null;}[];protocol: "kna-analyzer/1";ok: boole…
+runAnalyzerSubprocess(options: SubprocessOptions, request: {module: {path: string;name: string;manifestPath: null; | string};protocol: "kna-analyzer/1";options: {includeSource: boolean;timeoutMs: number;};rep…): Promise<{diagnostics: {path: null | string;message: string;level: "error"; | "info" | "warn"}[];degradations: {reason: string;missing: null; | string}[];protocol: "kna-analyzer/1";ok: boole…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `options` | `SubprocessOptions` |  |
-| `request` | `{ module: { path: string; name: string; manifestPath: string \| null; }; protocol: "kna-analyzer/1"; options: { includeSource: boolean; timeoutMs: number; }; repoRoot: string; commitSha: string; files: { path: string; language: string; generated: boolean; }[]; }` |  |
+| `request` | `{ module: { path: string; name: string; manifestPath: null; \| string }; protocol: "kna-analyzer/1"; options: { includeSource: boolean; timeoutMs: number; }; repoRoot: string; commitSha: string; files: { path: string; language: string; generated: boolean; }[]; }` |  |
 
-**Returns** `Promise<{ diagnostics: { path: string \| null; message: string; level: "info" \| "warn" \| "error"; }[]; degradations: { reason: string; missing: string \| null; }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "public" \| "i…`
+**Returns** `Promise<{ diagnostics: { path: null \| string; message: string; level: "error"; \| "info" \| "warn" }[]; degradations: { reason: string; missing: null; \| string }[]; protocol: "kna-analyzer/1"; ok: boolean; analyzer: { name: string; version: string; }; symbols: { name: string; visibility: "internal" \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-core/src/subprocess.ts#L48)</sub>
 
@@ -1825,12 +1825,12 @@ runAnalyzerSubprocess(options: SubprocessOptions, request: {module: {path: strin
 ### `runConformance`
 
 ```typescript
-runConformance(symbols: {name: string;visibility: "public" | "protected" | "internal" | "private";analysisDepth: "shallow" | "semantic" | "artifact";deprecated: {since: string | n…): {passed: boolean;failures: string[];}
+runConformance(symbols: {name: string;visibility: "internal" | "private" | "protected" | "public";analysisDepth: "artifact" | "semantic" | "shallow";deprecated: null | {since: nul…): {passed: boolean;failures: string[];}
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbols` | `{ name: string; visibility: "public" \| "internal" \| "protected" \| "private"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; reason: string; replacement: string \| null; } \| null; parameters: { type: { text: string; symbolId: string \| null; package: string \| nu…` |  |
+| `symbols` | `{ name: string; visibility: "internal" \| "private" \| "protected" \| "public"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| string; reason: string; replacement: null; \| string }; parameters: { type: null \| { text: string; symbolId: null \| string; package: null…` |  |
 
 **Returns** `{ passed: boolean; failures: string[]; }`
 

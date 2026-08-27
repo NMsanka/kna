@@ -60,8 +60,10 @@ provenance:
     - sym_d7a6072eec0235095922fd2034ed36660a14d856
     - sym_1c934034816f66af4c5b27b3b58d60cf04e2593b
     - sym_6ff86ad0cf62e7a7da202f4dd0b455deaf649c87
-    - sym_8b7baaeb919d66d264f2f801da3ab614248590dd
+    - sym_d57aefb694472531ff937ab08401d9f9c286c978
     - sym_3a7a3830efc43303af91a382ea784019da833484
+    - sym_28994071e71d1517d74878c3ad653d1ef6f7726f
+    - sym_e66c2342690495168a4bfa4171d4ac28a168bd1c
     - sym_7693c2b3ca2be3e81ff8f57f2690b61c1fb8702c
     - sym_e6dbaf5b37ed5ca0746d34951e2d227e9ad4e3c9
     - sym_4f9bc769f297c7f6e724a3ebfc7c746c7966edb5
@@ -123,7 +125,7 @@ provenance:
     sym_9fc896dc47304477cc3f070333a79c8cee486448: b2e067952f2f8e6b1db79b1d6007f9448c079313bdb49caffb8cf905a310ad9e
     sym_2fa078614d6f894b6e50627ae03872458a470851: 9de5abdbe052a0ac6572457d7ac67e94d64bc4fbc13c249f723e83ed5f7e08e0
     sym_a92580a19b08748c9162c02cbf9bd7f0506612ae: 67e137663625f9d8fc1c2151b8b3554b7de46a81beadd07b717f7b9b7e344049
-    sym_9a18e17cc93d957683cc963f38e83ce0e26fc639: 5cee086fdab9361fbf3887cb10b7d58492284e40fdde95daa59f29814eb8d422
+    sym_9a18e17cc93d957683cc963f38e83ce0e26fc639: 03fd81265cd3815df6a4559cb328654c669a30d15a96c28c16735e1d81b88ef1
     sym_f9f07d545609e243ae7e5af05724b205154de90d: ade2f81cb6194d5e0322f860cf1cec59c7174fd7d67d3a783e3617556214fac1
     sym_90c8dce91f7dddc8583b63650ad25d5621d70cdf: d49c0d3d56a27b46405522c676d0452ef91deda73a0bcb6a9061678b0127158a
     sym_69b5c3fa1a94615a5e3da40480a7c9a12c78d6cd: 38b5feb66e88f865d1042dcace5fe0192150f39ad941a932165db477a62e38b0
@@ -155,12 +157,14 @@ provenance:
     sym_40353a06ce66cfd75afcdc57b2eed98cbf598837: 9de5abdbe052a0ac6572457d7ac67e94d64bc4fbc13c249f723e83ed5f7e08e0
     sym_e5db3539804cbffffd7a39aaf975d07af89b1854: 67e137663625f9d8fc1c2151b8b3554b7de46a81beadd07b717f7b9b7e344049
     sym_ec8c97b3266b48203df5c1e672b8feb07595b4b0: 460e76229c595a863bb9125195c32690ad98cb61db7d13eb676556ec55007e03
-    sym_0738e87c8237f8afb1d7b9b2748e2e46804a1eb9: 73043498b29034caa9785b3a58a87e520105c70896f60ac2c0b7a3a266ab855a
+    sym_0738e87c8237f8afb1d7b9b2748e2e46804a1eb9: b9065493aa6636253ec3b69893ab821d74022965d01d314a1c5916ba2e2a5c35
     sym_d7a6072eec0235095922fd2034ed36660a14d856: 696b747a299a2537ea17ecf93227ac48f1303e17cd44f8be0b6012311d58b014
     sym_1c934034816f66af4c5b27b3b58d60cf04e2593b: f958c40d8a2b6cb089c14b652cf29dad504de0486b7326bd82a05543bab50943
     sym_6ff86ad0cf62e7a7da202f4dd0b455deaf649c87: a27d30a5d5a1e622669a9d4bef8a56e1181b7dc9430910eb82e7db8833c0e00f
-    sym_8b7baaeb919d66d264f2f801da3ab614248590dd: 184f4896f6996f3cfcd8a8349b8c56216f323c57ddb65e5e98928c954c1c8674
+    sym_d57aefb694472531ff937ab08401d9f9c286c978: 184f4896f6996f3cfcd8a8349b8c56216f323c57ddb65e5e98928c954c1c8674
     sym_3a7a3830efc43303af91a382ea784019da833484: 99233bd200c24118b8ea2588ca7b00fff61016a13d36637edf6565563cbcc747
+    sym_28994071e71d1517d74878c3ad653d1ef6f7726f: 4e0d1ea2e286c1159bbcd1a1cb908f3cde099f2b454571a8a4893bc6fd81459d
+    sym_e66c2342690495168a4bfa4171d4ac28a168bd1c: 83aaabc5fcba38dcd2d2cae74650e83d7adbcc7969e750e76f82206e9a54a312
     sym_7693c2b3ca2be3e81ff8f57f2690b61c1fb8702c: a074f1b05bc558439c9fe3b4dbf986fe65434b49e7aba543c27f9fb96c1b2051
     sym_e6dbaf5b37ed5ca0746d34951e2d227e9ad4e3c9: bf36968f65af2fdcb7c6026d413aeb914cb226199327d6ceed0dfa57c35a3deb
     sym_4f9bc769f297c7f6e724a3ebfc7c746c7966edb5: fac0d7d85563f4d699c5abf3684c5c04d4823b1206d6240fb69b8354faf64bbb
@@ -197,7 +201,7 @@ provenance:
     sym_63f519574e019a33d6cc1f43bc865a558716bb16: f97e277f8da070300a23e8965c3502fadc155107fc19e6cdf04c119f43b15114
     sym_3d4772c5bcc746efe4830bf0278f0d1aaeb5f700: 24a314e7baf230b095bd7eb79c2a1a1febd5f7c7c95a2f49b28453d04e0a1c75
     sym_0ade9fc02ee5a667d1853537344c7fe52e72ec14: e1c8f59c4f734169ab880d8a337a490e0a3c538e69d4c30b1ebfded445ea8a1d
-    sym_ac918690be8a97383369cd1a64531c2fe39a152e: 096c4c37b68c0ef3714289b10dc2bae7de13146ad937bb940e254c89623c03fd
+    sym_ac918690be8a97383369cd1a64531c2fe39a152e: 961c8c08f0a5ffa308a9e93c74f649d06fe8a131cc9c7e46da269661ff4014bb
     sym_58f271bb8f07fbc03bdff4a930b9214b247002f9: c6307c21a5b54953c27e08591a558c256f258095b3ca41300afd0c82c8ab01ab
     sym_b89a776a9318d2ceeb369714d8da0bf99aeae91e: 0550e995e80dd319f821a8aa22706412004edb0229d63c405a688e213c8a7a84
     sym_996b4aef64c26513f152a65049f2314d3d2c5c45: 1e54a754944713651ea89f08c3201edd7d2bf7dbb3d9fa3659bf36c78f789c1d
@@ -212,16 +216,16 @@ provenance:
 
 # @kna/llm reference
 
-<!-- kna:generated:start id=overview hash=7014c9307ffa66fd -->
+<!-- kna:generated:start id=overview hash=608d8fd6e026df98 -->
 | | |
 |---|---|
 | Package | `@kna/llm` (npm) |
 | Path | `packages/llm` |
 | Languages | typescript |
-| Public symbols | 98 |
+| Public symbols | 100 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.class hash=804c62e9a0dead86 -->
+<!-- kna:generated:start id=api.class hash=e40a96a848ba1422 -->
 ### `BudgetManager`
 
 ```typescript
@@ -250,7 +254,7 @@ class InMemoryBudgetStore implements BudgetStore
 class LlmClient
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L120)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L124)</sub>
 
 ---
 
@@ -260,7 +264,7 @@ class LlmClient
 class LlmPolicyError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L50)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L54)</sub>
 
 ---
 
@@ -270,10 +274,10 @@ class LlmPolicyError extends Error
 class LlmRateLimitError extends Error
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L57)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L61)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=04652587c8c8f67a -->
+<!-- kna:generated:start id=api.method hash=4caf5a4b022ec810 -->
 ### `admit`
 
 Admit a unit of work, reserving its estimated cost.
@@ -477,7 +481,7 @@ complete(request: CompleteRequest): Promise<CompleteResult>
 
 **Returns** `Promise<CompleteResult>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L127)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L135)</sub>
 
 ---
 
@@ -491,7 +495,7 @@ constructor(private readonly options: LlmClientOptions)
 |---|---|---|
 | `options` | `LlmClientOptions` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L123)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L128)</sub>
 
 ---
 
@@ -505,11 +509,11 @@ embed(request: {orgId: string;repoId?: string;texts: string[];dimensions: number
 
 | Parameter | Type | Description |
 |---|---|---|
-| `request` | `{ orgId: string; repoId?: string \| undefined; texts: string[]; dimensions: number; contentSensitivity: "public" \| "internal" \| "confidential" \| "restricted"; timeoutMs?: number \| undefined; }` |  |
+| `request` | `{ orgId: string; repoId?: string \| undefined; texts: string[]; dimensions: number; contentSensitivity: "confidential" \| "internal" \| "public" \| "restricted"; timeoutMs?: number \| undefined; }` |  |
 
 **Returns** `Promise<{ vectors: number[][]; model: string; usage: UsageRecord; }>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L195)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L203)</sub>
 
 ---
 
@@ -523,7 +527,7 @@ constructor(message: string)
 |---|---|---|
 | `message` | `string` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L51)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L55)</sub>
 
 ---
 
@@ -539,10 +543,10 @@ constructor(message: string, readonly retryAfterMs: number, readonly keyClass: K
 | `retryAfterMs` | `number` |  |
 | `keyClass` | `KeyClass` |  |
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L58)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L62)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.interface hash=518eda87d3e9f48a -->
+<!-- kna:generated:start id=api.interface hash=81a909c1cad9fdcf -->
 ### `BudgetState`
 
 Spend budgets and backpressure.
@@ -571,7 +575,7 @@ interface BudgetStore
 interface ChatMessage
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L95)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L99)</sub>
 
 ---
 
@@ -581,7 +585,7 @@ interface ChatMessage
 interface CompleteRequest
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L100)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L104)</sub>
 
 ---
 
@@ -591,7 +595,7 @@ interface CompleteRequest
 interface CompleteResult
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L113)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L117)</sub>
 
 ---
 
@@ -645,7 +649,7 @@ interface RouteRequest
 interface UsageRecord
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L35)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L39)</sub>
 
 ---
 
@@ -658,7 +662,7 @@ interface WorkloadPolicy
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L27)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=f8bafc80749376b7 -->
+<!-- kna:generated:start id=api.property hash=76437b3324dcdfb3 -->
 ### `ceilingUsd`
 
 ```typescript
@@ -717,7 +721,7 @@ content: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L97)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L101)</sub>
 
 ---
 
@@ -727,9 +731,9 @@ content: string
 role: 'system' | 'user' | 'assistant'
 ```
 
-**Returns** `"system" \| "user" \| "assistant"`
+**Returns** `"assistant" \| "system" \| "user"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L96)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L100)</sub>
 
 ---
 
@@ -739,9 +743,9 @@ role: 'system' | 'user' | 'assistant'
 contentSensitivity: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L105)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L109)</sub>
 
 ---
 
@@ -753,7 +757,7 @@ maxTokens?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L107)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L111)</sub>
 
 ---
 
@@ -765,7 +769,7 @@ messages: ChatMessage[]
 
 **Returns** `ChatMessage[]`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L104)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L108)</sub>
 
 ---
 
@@ -777,7 +781,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L102)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L106)</sub>
 
 ---
 
@@ -789,7 +793,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L103)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L107)</sub>
 
 ---
 
@@ -799,9 +803,9 @@ repoId?: string
 responseFormat?: 'text' | 'json_object'
 ```
 
-**Returns** `"text" \| "json_object" \| undefined`
+**Returns** `"json_object" \| "text" \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L110)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L114)</sub>
 
 ---
 
@@ -813,7 +817,7 @@ temperature?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L106)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L110)</sub>
 
 ---
 
@@ -827,7 +831,7 @@ timeoutMs?: number
 
 **Returns** `number \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L109)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L113)</sub>
 
 ---
 
@@ -839,7 +843,7 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L101)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L105)</sub>
 
 ---
 
@@ -849,9 +853,9 @@ workload: Workload
 finishReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L116)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L120)</sub>
 
 ---
 
@@ -863,7 +867,7 @@ model: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L115)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L119)</sub>
 
 ---
 
@@ -875,7 +879,7 @@ text: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L114)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L118)</sub>
 
 ---
 
@@ -887,7 +891,7 @@ usage: UsageRecord
 
 **Returns** `UsageRecord`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L117)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L121)</sub>
 
 ---
 
@@ -939,6 +943,34 @@ totalUsd: number
 
 ---
 
+### `authHeader`
+
+Header used to authenticate to the OpenAI-compatible endpoint.
+
+```typescript
+authHeader?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L28)</sub>
+
+---
+
+### `authScheme`
+
+Bearer is the OpenAI/LiteLLM default; raw supports API-key headers.
+
+```typescript
+authScheme?: 'bearer' | 'raw'
+```
+
+**Returns** `"bearer" \| "raw" \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L30)</sub>
+
+---
+
 ### `baseUrl`
 
 ```typescript
@@ -957,9 +989,9 @@ baseUrl: string
 fetchImpl?: typeof fetch
 ```
 
-**Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
+**Returns** `((input: Request \| URL \| string, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L32)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L36)</sub>
 
 ---
 
@@ -985,7 +1017,7 @@ onRateLimited?: (info: {model: string;keyClass: KeyClass;retryAfterMs: number}) 
 
 **Returns** `((info: { model: string; keyClass: KeyClass; retryAfterMs: number; }) => void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L31)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L35)</sub>
 
 ---
 
@@ -997,9 +1029,9 @@ Called after every request with the usage record, for the spend ledger.
 onUsage?: (usage: UsageRecord) => void | Promise<void>
 ```
 
-**Returns** `((usage: UsageRecord) => void \| Promise<void>) \| undefined`
+**Returns** `((usage: UsageRecord) => Promise<void> \| void) \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L29)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L33)</sub>
 
 ---
 
@@ -1011,7 +1043,7 @@ region: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L27)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L31)</sub>
 
 ---
 
@@ -1047,7 +1079,7 @@ Null when the route is permitted. A string here is a refusal, not a warning.
 refusal: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L164)</sub>
 
@@ -1073,7 +1105,7 @@ Highest sensitivity tier present in the payload.
 contentSensitivity: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L170)</sub>
 
@@ -1139,7 +1171,7 @@ cachedInputTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L43)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L47)</sub>
 
 ---
 
@@ -1151,7 +1183,7 @@ estimatedUsd: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L44)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L48)</sub>
 
 ---
 
@@ -1163,7 +1195,7 @@ inputTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L41)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L45)</sub>
 
 ---
 
@@ -1175,7 +1207,7 @@ keyClass: KeyClass
 
 **Returns** `KeyClass`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L40)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L44)</sub>
 
 ---
 
@@ -1187,7 +1219,7 @@ latencyMs: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L45)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L49)</sub>
 
 ---
 
@@ -1199,7 +1231,7 @@ model: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L37)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L41)</sub>
 
 ---
 
@@ -1211,7 +1243,7 @@ orgId: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L46)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L50)</sub>
 
 ---
 
@@ -1223,7 +1255,7 @@ outputTokens: number
 
 **Returns** `number`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L42)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L46)</sub>
 
 ---
 
@@ -1235,7 +1267,7 @@ provider: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L38)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L42)</sub>
 
 ---
 
@@ -1247,7 +1279,7 @@ region: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L39)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L43)</sub>
 
 ---
 
@@ -1259,7 +1291,7 @@ repoId?: string
 
 **Returns** `string \| undefined`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L47)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L51)</sub>
 
 ---
 
@@ -1271,7 +1303,7 @@ workload: Workload
 
 **Returns** `Workload`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L36)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/client.ts#L40)</sub>
 
 ---
 
@@ -1351,7 +1383,7 @@ Highest sensitivity tier this workload's default route may handle.
 maxSensitivity: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L48)</sub>
 
@@ -1382,11 +1414,11 @@ workload: Workload
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L28)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=5623b823dc4c3444 -->
+<!-- kna:generated:start id=api.type hash=c2b7c9944d31b280 -->
 ### `BudgetVerdict`
 
 ```typescript
-type BudgetVerdict = | {admitted: true;reservationId: string;estimatedUsd: number} | {admitted: false;reason: string;spentTodayUsd: number;ceilingUsd: number;retryAfterMs: number;}
+type BudgetVerdict = {admitted: false;reason: string;spentTodayUsd: number;ceilingUsd: number;retryAfterMs: number;} | {admitted: true;reservationId: string;estimatedUsd: number}
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/budget.ts#L22)</sub>
@@ -1398,7 +1430,7 @@ type BudgetVerdict = | {admitted: true;reservationId: string;estimatedUsd: numbe
 §15.6 — interactive and batch must not share a provider quota.
 
 ```typescript
-type KeyClass = 'interactive' | 'batch'
+type KeyClass = 'batch' | 'interactive'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L25)</sub>
@@ -1410,7 +1442,7 @@ type KeyClass = 'interactive' | 'batch'
 Model and provider policy.
 
 ```typescript
-type Workload = | 'context-blurb' | 'query-rewrite' | 'intent-classify' | 'chat' | 'docgen' | 'embedding' | 'rerank' | 'grounding-judge'
+type Workload = 'chat' | 'context-blurb' | 'docgen' | 'embedding' | 'grounding-judge' | 'intent-classify' | 'query-rewrite' | 'rerank'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/llm/src/policy.ts#L14)</sub>

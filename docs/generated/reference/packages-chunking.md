@@ -21,7 +21,7 @@ provenance:
     - sym_5f271908795c275d489aefe07cefe62fa5b3f1f1
     - sym_4785c60bf8bed030e27e18dbfcc6783feebbf91e
     - sym_142a95277eebaacdd28987aa1ba51dc104cc4d82
-    - sym_2a54a09d16db4f974a86d4595f7f9ecedceef637
+    - sym_93cabe41fc0452578a0fd6a4526171a3697573c2
     - sym_bf3ac90defeb66c7a8ad2db48c4f508c38cf88ea
     - sym_90da85f2a65b5efb9995d494fe3c2a74044d2042
     - sym_8c8916fc80cf7a9ab32e9f78ca971e8ff865ff6b
@@ -52,7 +52,7 @@ provenance:
     - sym_104e382d1561da332054b1db51de0307e821dd44
     - sym_8376aa789e34a66661e7e7e5e636e7d48573916d
     - sym_3ae8c3945f7a353a89645fe56dbde09e31331352
-    - sym_36a58ae2dfd3d68da2595dd1f884d16c8e292b93
+    - sym_02dd8fb9e820319c46e0f166f4c8adca76bd2311
     - sym_ff797a59dceb45f771b12dd967703afdee694987
     - sym_22026fcc2e62b1dd57a48412c997dc719871f76c
     - sym_8aebe8c8971513a6b16640ec10d967361cd092a4
@@ -77,8 +77,8 @@ provenance:
     - sym_9970afe24bfa02dc3aaa468da7e4a44cd94b350f
     - sym_2fa71307a8e8b4aebeed42fe99689fcbbb77150d
     - sym_516192ff963941fce0e468650eff5415555ca9fe
-    - sym_ecadf854c6e0e190169e8ca2e6ceb8f6eb321021
-    - sym_f3348a974299ef2a5d8452a54d33648d5bdeb619
+    - sym_4f91d43fbc390353cdb92eefa5b55499abe94743
+    - sym_730f4e71e6b454908de46db3099a6188d896f8c8
     - sym_57dda1ce233423c8da5e456c27d6fe0fb2ce0ef4
     - sym_25a94d26156094b28bbbc65b0154faacff4dba9e
     - sym_61e66e7254594dc31209875ba9d51bccc9928c7c
@@ -93,7 +93,7 @@ provenance:
     sym_5f271908795c275d489aefe07cefe62fa5b3f1f1: 016a862b5f7e8846b393971ea04d90ceaae469137e8ba5d35b3276681890c004
     sym_4785c60bf8bed030e27e18dbfcc6783feebbf91e: 7de2690ee9d657c2084c72d63b7a27b522015575d74615a7c876dee0dbe3e0fc
     sym_142a95277eebaacdd28987aa1ba51dc104cc4d82: 8720f4ce06cdf5ba0796d4dc78c654a0fe32738969fd4b0fbc6fa096403d3555
-    sym_2a54a09d16db4f974a86d4595f7f9ecedceef637: 66b38e8deb1a1b0111d5fa41685e2454f93c18bcddea875640bc1553514e4b52
+    sym_93cabe41fc0452578a0fd6a4526171a3697573c2: 480403901fd29691aa0be8107c45a78a414f789dd7f8e4d19ea6aaab59919cb0
     sym_bf3ac90defeb66c7a8ad2db48c4f508c38cf88ea: cea9defb0546aa67378e0706d77ea27fb203ec2de316620e4041a2f40069ead8
     sym_90da85f2a65b5efb9995d494fe3c2a74044d2042: 3168a4975c8452e4ce790147616c39f9ff9545d4b9871a7741fefde9812c2a45
     sym_8c8916fc80cf7a9ab32e9f78ca971e8ff865ff6b: d49c0d3d56a27b46405522c676d0452ef91deda73a0bcb6a9061678b0127158a
@@ -124,7 +124,7 @@ provenance:
     sym_104e382d1561da332054b1db51de0307e821dd44: 945eceb0d38d930e7a5aaf3602f022bfa1efa5c0c20233823d31227d7e8d317d
     sym_8376aa789e34a66661e7e7e5e636e7d48573916d: 7bcdf65a4a8299730d1cc432b5022b685fafb9f6aca6e6594780537dad3163de
     sym_3ae8c3945f7a353a89645fe56dbde09e31331352: 692c247c933b7682e6e6d5972e8d96f2685237ce5ec603480100da4d8e86ea1e
-    sym_36a58ae2dfd3d68da2595dd1f884d16c8e292b93: 4026436c62a42aa1286cc858b73301033513fd3ff4af8f693fd3d885261473c8
+    sym_02dd8fb9e820319c46e0f166f4c8adca76bd2311: 2c780e1be2f6d736adfba786d60b7f99d8c3e10fd9691914d6aa57d2dbc1c3f2
     sym_ff797a59dceb45f771b12dd967703afdee694987: f36a453c3cd29bac778dffb2c7aa577582ee49ae0feef56af9f7c3c1dee2098c
     sym_22026fcc2e62b1dd57a48412c997dc719871f76c: 175b256d9f9ba1156faef4ac70ee21e72d26da3408056ce550fd161ff1e24e68
     sym_8aebe8c8971513a6b16640ec10d967361cd092a4: f4a7df4f67a53176bcdd6480694dde0e645ebda00f17f022312b98658a6c8ded
@@ -149,8 +149,8 @@ provenance:
     sym_9970afe24bfa02dc3aaa468da7e4a44cd94b350f: 24a314e7baf230b095bd7eb79c2a1a1febd5f7c7c95a2f49b28453d04e0a1c75
     sym_2fa71307a8e8b4aebeed42fe99689fcbbb77150d: fce56f85acb457cb69e00ea9f1a764488b7f57e70de02e665340e4852bd8a11b
     sym_516192ff963941fce0e468650eff5415555ca9fe: 6943ebc7dcd5e35f955afd53208db88971e379b1ea7d23051ebc0ffeee5b5b33
-    sym_ecadf854c6e0e190169e8ca2e6ceb8f6eb321021: 493a53e4c26873b350879f963d99dcf99e08055f0752dbee257ad48343b74d01
-    sym_f3348a974299ef2a5d8452a54d33648d5bdeb619: 4adbaec9fa8f13f404917983061d36c04d57b55965297362b82ef4f34c537d88
+    sym_4f91d43fbc390353cdb92eefa5b55499abe94743: b6d7135373c0e75ce1a19f87a53f974f28425b2de6d1d8882a2340d9cd4bd721
+    sym_730f4e71e6b454908de46db3099a6188d896f8c8: 39b39e27955dce3dceacd844ae4052e45aff165da727308b14d3080460b49f5f
     sym_57dda1ce233423c8da5e456c27d6fe0fb2ce0ef4: 5377e5eaf5c2647bbdd800cc4aa7894e01f0e5d04d2a9cb4494537956d8b0377
     sym_25a94d26156094b28bbbc65b0154faacff4dba9e: 320268dfd947d4d794d037738bfe9a4a1d504b8f2af7b2ebb131e4ac026919c3
     sym_61e66e7254594dc31209875ba9d51bccc9928c7c: d819ff9f61ee42f2967068e9868a0c2bf81237f6a83456584943cccbdb0fdf05
@@ -263,14 +263,14 @@ interface GenerateBlurbsOptions
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L48)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=d0edb42e310df94d -->
+<!-- kna:generated:start id=api.property hash=433a2382460f3d03 -->
 ### `module`
 
 ```typescript
 module: IrModule
 ```
 
-**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
+**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L37)</sub>
 
@@ -282,7 +282,7 @@ module: IrModule
 symbol: IrSymbol
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…`
+**Returns** `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L36)</sub>
 
@@ -392,7 +392,7 @@ contentHash: string
 contextHeader: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L38)</sub>
 
@@ -404,7 +404,7 @@ contextHeader: string | null
 corpus: 'code' | 'docs' | 'spec' | 'adr' | 'infra'
 ```
 
-**Returns** `"code" \| "docs" \| "spec" \| "adr" \| "infra"`
+**Returns** `"adr" \| "code" \| "docs" \| "infra" \| "spec"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L35)</sub>
 
@@ -526,7 +526,7 @@ retrievalConfigVersion: string
 sensitivity: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L41)</sub>
 
@@ -538,7 +538,7 @@ sensitivity: Sensitivity
 sourceEndLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L45)</sub>
 
@@ -550,7 +550,7 @@ sourceEndLine: number | null
 sourcePath: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L43)</sub>
 
@@ -562,7 +562,7 @@ sourcePath: string | null
 sourceStartLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L44)</sub>
 
@@ -650,7 +650,7 @@ maxTokens?: number
 module: IrModule
 ```
 
-**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…`
+**Returns** `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/chunker.ts#L58)</sub>
 
@@ -883,18 +883,18 @@ repoId?: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/chunking/src/blurb.ts#L51)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=40712aeae74f389f -->
+<!-- kna:generated:start id=api.function hash=f1fa435db4e0b626 -->
 ### `buildContextHeader`
 
 The context header.
 
 ```typescript
-buildContextHeader(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "public" | "protected" | "internal" | "private";sensitivity: "publ…, options: ChunkOptions): string
+buildContextHeader(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "internal" | "private" | "protected" | "public";sensitivity: "conf…, options: ChunkOptions): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…` |  |
+| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…` |  |
 | `options` | `ChunkOptions` |  |
 
 **Returns** `string`
@@ -906,12 +906,12 @@ buildContextHeader(symbol: {name: string;id: string;orgId: string;repoId: string
 ### `chunkSymbols`
 
 ```typescript
-chunkSymbols(symbols: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "public" | "protected" | "internal" | "private";sensitivity: "publ…, options: ChunkOptions): Chunk[]
+chunkSymbols(symbols: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "internal" | "private" | "protected" | "public";sensitivity: "conf…, options: ChunkOptions): Chunk[]
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbols` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…` |  |
+| `symbols` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…` |  |
 | `options` | `ChunkOptions` |  |
 
 **Returns** `Chunk[]`
@@ -1012,13 +1012,13 @@ isGeneratedPath(path: string): boolean
 Prompt layout puts the module preamble first and the symbol last, deliberately: the module block is identical for every symbol in a module, so it is exactly the repeated prefix that prompt caching discounts (§11 cost levers).
 
 ```typescript
-renderBlurbPrompt(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "public" | "protected" | "internal" | "private";sensitivity: "publ…, module: { path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" | "nuget" | "pypi" | "go" | "maven"…): string
+renderBlurbPrompt(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "internal" | "private" | "protected" | "public";sensitivity: "conf…, module: { path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" | "maven" | "none" | "npm" | "nuget"…): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…` |  |
-| `module` | `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unkno…` |  |
+| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…` |  |
+| `module` | `{ path: string; name: string; id: string; key: string; orgId: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…` |  |
 
 **Returns** `string`
 
@@ -1031,12 +1031,12 @@ renderBlurbPrompt(symbol: {name: string;id: string;orgId: string;repoId: string;
 Deterministic facts.
 
 ```typescript
-renderDeterministicFacts(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "public" | "protected" | "internal" | "private";sensitivity: "publ…): string
+renderDeterministicFacts(symbol: {name: string;id: string;orgId: string;repoId: string;projectIds: string[];visibility: "internal" | "private" | "protected" | "public";sensitivity: "conf…): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "public" \| "protected" \| "internal" \| "private"; sensitivity: "public" \| "internal" \| "confidential" \| "restricted"; analysisDepth: "shallow" \| "semantic" \| "artifact"; deprecated: { since: string \| null; re…` |  |
+| `symbol` | `{ name: string; id: string; orgId: string; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| "protected" \| "public"; sensitivity: "confidential" \| "internal" \| "public" \| "restricted"; analysisDepth: "artifact" \| "semantic" \| "shallow"; deprecated: null \| { since: null \| str…` |  |
 
 **Returns** `string`
 
