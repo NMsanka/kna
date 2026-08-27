@@ -104,6 +104,13 @@ jobs:
       # The deterministic sections are the ones that must not drift; prose is added platform-side.
       - name: Documentation is current
         run: |
+          # A normal clone has `origin/HEAD`; `actions/checkout` does not set it. The docs
+          # record the default branch so their links point somewhere that keeps working, and
+          # the CLI reads it from `origin/HEAD` — which here resolves to nothing and falls
+          # back to `main`. Every developer's machine says `master`, so the check compared
+          # two correct trees and failed on the difference between them. Set from GitHub's
+          # own answer rather than fetched, so it costs nothing and cannot be wrong.
+          git remote set-head origin "${{ github.event.repository.default_branch }}"
           node apps/cli/dist/bin.js generate --no-prose
           git add --intent-to-add docs/generated
           if ! git diff --quiet -- docs/generated; then
