@@ -374,9 +374,9 @@ export async function regenerateDocs(
       const vector = vectors.get(chunk.id);
       if (vector) {
         await tx.execute(sql`
-          INSERT INTO embeddings (chunk_id, org_id, module_id, version_id, model, dimensions, embedding)
+          INSERT INTO embeddings (chunk_id, org_id, module_id, version_id, corpus, model, dimensions, embedding)
           VALUES (
-            ${chunk.id}, ${chunk.orgId}, ${chunk.moduleId}, ${chunk.versionId},
+            ${chunk.id}, ${chunk.orgId}, ${chunk.moduleId}, ${chunk.versionId}, 'docs',
             ${ctx.retrievalConfig.embeddingModel}, ${ctx.retrievalConfig.embeddingDimensions},
             ${`[${vector.join(',')}]`}::halfvec
           )

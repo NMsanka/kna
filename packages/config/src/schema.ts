@@ -100,6 +100,27 @@ export const zRepoConfig = z.object({
 
   docs: z
     .object({
+      /** Existing documentation sources. External connectors use the same normalized contract
+       * but are configured on the platform because their credentials must not live in a repo. */
+      sources: z
+        .array(
+          z.object({
+            type: z.literal('repo-markdown'),
+            enabled: z.boolean().default(true),
+            include: z.array(z.string()).default(['README.md', '**/*.md', '**/*.mdx']),
+            exclude: z
+              .array(z.string())
+              .default(['**/node_modules/**', '**/.git/**', 'docs/generated/**']),
+          }),
+        )
+        .default([
+          {
+            type: 'repo-markdown',
+            enabled: true,
+            include: ['README.md', '**/*.md', '**/*.mdx'],
+            exclude: ['**/node_modules/**', '**/.git/**', 'docs/generated/**'],
+          },
+        ]),
       /** Where generated Markdown lands in this repo. Kept in-repo deliberately (§15.8 exit
        *  plan: "keep nothing that lives only in the platform's database"). */
       outputDir: z.string().default('docs/generated'),

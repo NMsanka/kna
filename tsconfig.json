@@ -13,6 +13,7 @@
     { "path": "packages/audit" },
     { "path": "packages/llm" },
     { "path": "packages/chunking" },
+    { "path": "packages/documents" },
     { "path": "packages/retrieval" },
     { "path": "packages/docgen" },
     { "path": "apps/cli" },

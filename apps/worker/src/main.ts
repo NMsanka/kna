@@ -6,6 +6,7 @@ import { indexModule, type IndexModuleInput } from './jobs/index-module.js';
 import { resolveCrossRepoEdges, type CrossRepoInput } from './jobs/cross-repo.js';
 import { runNightlyMaintenance } from './jobs/maintenance.js';
 import { regenerateDocs, type RegenerateDocsInput } from './jobs/regenerate-docs.js';
+import { indexDocuments, type IndexDocumentsInput } from './jobs/index-documents.js';
 
 /**
  * The worker process.
@@ -58,6 +59,16 @@ async function main(): Promise<void> {
     // Deliberately 1: the pass takes a per-project lock, so extra concurrency buys nothing
     // except contention.
     { concurrency: 1, db: ctx.db },
+  );
+
+  ctx.queue.register<IndexDocumentsInput>(
+    QUEUE_NAMES.indexDocuments,
+    async (job) => {
+      const result = await indexDocuments(ctx, job.data);
+      ctx.logger.info(result, 'existing documentation indexed');
+      return result;
+    },
+    { concurrency: 2, db: ctx.db, lockDurationMs: 300_000 },
   );
 
   ctx.queue.register<RegenerateDocsInput>(

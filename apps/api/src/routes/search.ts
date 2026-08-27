@@ -164,7 +164,9 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
       principalId: principal.id,
       surface: 'api',
       repoIds: reposTouched,
-      moduleIds: [...new Set(result.chunks.map((c) => c.moduleId))],
+      moduleIds: [
+        ...new Set(result.chunks.map((c) => c.moduleId).filter((id): id is string => id !== null)),
+      ],
     });
 
     // §15.5 — the full replayable trace. Without it a thumbs-down is unactionable.
@@ -263,6 +265,11 @@ export async function registerSearchRoutes(app: KnaServer, ctx: ApiContext): Pro
             repoId: chunk.repoId,
             moduleId: chunk.moduleId,
             path: chunk.sourcePath,
+            // Expansion chunks predate document provenance and legitimately have neither
+            // value. The wire contract uses explicit nulls so clients do not have to
+            // distinguish an absent key from "this is code, not an external document".
+            url: chunk.sourceUrl ?? null,
+            documentId: chunk.documentId ?? null,
             startLine: chunk.sourceStartLine,
             endLine: chunk.sourceEndLine,
             commitSha: null,

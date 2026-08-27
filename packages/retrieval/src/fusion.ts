@@ -15,7 +15,7 @@ import type { CandidateRef, ScoredChunk } from './types.js';
  */
 
 export interface FusionArm {
-  name: 'dense' | 'lexical' | 'symbol';
+  name: string;
   candidates: CandidateRef[];
   /** Arms are not equal: an exact symbol-name hit is stronger evidence than a dense neighbour. */
   weight: number;
@@ -86,7 +86,8 @@ export function diversify(chunks: ScoredChunk[], options: DiversifyOptions): Sco
     for (let i = 0; i < remaining.length; i++) {
       const candidate = remaining[i]!;
 
-      const used = perModule.get(candidate.moduleId) ?? 0;
+      const diversityKey = candidate.moduleId ?? `repo:${candidate.repoId}:docs`;
+      const used = perModule.get(diversityKey) ?? 0;
       if (used >= maxPerModule) continue;
 
       const relevance = candidate.score * (candidate.generated ? 1 - generatedPenalty : 1);
@@ -111,7 +112,8 @@ export function diversify(chunks: ScoredChunk[], options: DiversifyOptions): Sco
 
     const [chosen] = remaining.splice(bestIndex, 1);
     selected.push(chosen!);
-    perModule.set(chosen!.moduleId, (perModule.get(chosen!.moduleId) ?? 0) + 1);
+    const diversityKey = chosen!.moduleId ?? `repo:${chosen!.repoId}:docs`;
+    perModule.set(diversityKey, (perModule.get(diversityKey) ?? 0) + 1);
   }
 
   return selected;

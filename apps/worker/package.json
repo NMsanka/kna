@@ -17,6 +17,7 @@
     "@kna/contracts": "workspace:*",
     "@kna/db": "workspace:*",
     "@kna/docgen": "workspace:*",
+    "@kna/documents": "workspace:*",
     "@kna/ir": "workspace:*",
     "@kna/llm": "workspace:*",
     "@kna/observability": "workspace:*",

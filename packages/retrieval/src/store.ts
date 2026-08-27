@@ -48,7 +48,8 @@ export class RetrievalStore {
           ON e.chunk_id = c.id
          -- Pinned to exactly one embedding model per query. Fusing across spaces is
          -- meaningless, and this is the join condition that makes it impossible.
-         AND e.model = ${options.embeddingModel}
+        AND e.model = ${options.embeddingModel}
+        ${corpora.length ? sql`AND e.corpus = ${anyOf(corpora)}` : sql``}
         WHERE ${acl}
           ${corpora.length ? sql`AND c.corpus = ${anyOf(corpora)}` : sql``}
         ORDER BY e.embedding <=> ${vector}::halfvec
@@ -159,10 +160,12 @@ export class RetrievalStore {
       const rows = await tx.execute<{
         id: string;
         symbol_id: string | null;
-        module_id: string;
+        module_id: string | null;
         repo_id: string;
         content: string;
         source_path: string | null;
+        source_url: string | null;
+        document_id: string | null;
         source_start_line: number | null;
         source_end_line: number | null;
         sensitivity: ScoredChunk['sensitivity'];
@@ -173,7 +176,7 @@ export class RetrievalStore {
         cluster_modules: string[] | null;
       }>(sql`
         SELECT c.id, c.symbol_id, c.module_id, c.repo_id, c.content,
-               c.source_path, c.source_start_line, c.source_end_line,
+               c.source_path, c.source_url, c.document_id, c.source_start_line, c.source_end_line,
                c.sensitivity, c.analysis_depth, c.generated, c.corpus, c.token_count,
                CASE
                  WHEN c.duplicate_cluster_id IS NULL THEN NULL
@@ -200,6 +203,8 @@ export class RetrievalStore {
             repoId: row.repo_id,
             content: row.content,
             sourcePath: row.source_path,
+            sourceUrl: row.source_url,
+            documentId: row.document_id,
             sourceStartLine: row.source_start_line,
             sourceEndLine: row.source_end_line,
             sensitivity: row.sensitivity,

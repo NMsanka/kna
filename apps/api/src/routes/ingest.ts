@@ -50,7 +50,9 @@ export async function registerIngestRoutes(app: KnaServer, ctx: ApiContext): Pro
           error: {
             code: 'ir_version_unsupported',
             message: error.message,
-            guidance: `This platform accepts IR schema ${error.minimum} and newer. Upgrade docs-cli.`,
+            guidance: error.producerIsNewer
+              ? 'Rebuild and restart the API and worker so they use the same IR schema as docs-cli.'
+              : `This platform accepts IR schema ${error.minimum} through ${error.current}. Upgrade docs-cli.`,
             traceId,
           },
         });
@@ -204,6 +206,19 @@ export async function registerIngestRoutes(app: KnaServer, ctx: ApiContext): Pro
         });
         jobIds.push(jobId);
       }
+    }
+
+    // Existing documentation has its own acquisition and indexing lifecycle. It is not tied to
+    // symbol diffs and must run even when no code symbol changed.
+    if (bundle.payload.documents.length > 0 || previous?.documents.length) {
+      const jobId = await ctx.queue.enqueueIndexDocuments({
+        orgId: bundle.envelope.orgId,
+        repoId: bundle.envelope.repoId,
+        commitSha: bundle.envelope.commitSha,
+        ref: bundle.envelope.ref,
+        bundleStorageKey: storageKey,
+      });
+      jobIds.push(jobId);
     }
 
     if (plan.regenerate && diff.totals.regenerateCount > 0) {

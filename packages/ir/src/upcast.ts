@@ -1,5 +1,11 @@
 import { z } from 'zod';
-import { IR_SCHEMA_VERSION, isWithinSupportWindow, parseVersion } from './version.js';
+import {
+  IR_SCHEMA_MIN_SUPPORTED,
+  IR_SCHEMA_VERSION,
+  compareVersions,
+  isWithinSupportWindow,
+  parseVersion,
+} from './version.js';
 import { zIrBundle, type IrBundle } from './schema/bundle.js';
 
 /**
@@ -27,6 +33,7 @@ export class IrVersionError extends Error {
     readonly received: string,
     readonly minimum: string,
     readonly current: string,
+    readonly producerIsNewer = false,
   ) {
     super(message);
     this.name = 'IrVersionError';
@@ -51,25 +58,36 @@ export function upcastBundle(input: unknown): UpcastResult {
     throw new IrVersionError(
       'Bundle envelope is unreadable: no irSchemaVersion present.',
       'unknown',
-      IR_SCHEMA_VERSION,
+      IR_SCHEMA_MIN_SUPPORTED,
       IR_SCHEMA_VERSION,
     );
   }
 
   const received = versionProbe.data.envelope.irSchemaVersion;
+  const receivedVersion = parseVersion(received);
+  const currentVersion = parseVersion(IR_SCHEMA_VERSION);
+  if (compareVersions(receivedVersion, currentVersion) > 0) {
+    throw new IrVersionError(
+      `IR schema ${received} is newer than this platform runtime (${IR_SCHEMA_VERSION}). Rebuild and restart the platform before publishing this bundle.`,
+      received,
+      IR_SCHEMA_MIN_SUPPORTED,
+      IR_SCHEMA_VERSION,
+      true,
+    );
+  }
   if (!isWithinSupportWindow(received)) {
     throw new IrVersionError(
       `IR schema ${received} is outside the supported N-2 window (current ${IR_SCHEMA_VERSION}). Upgrade docs-cli: npm i -g @kna/docs-cli@latest`,
       received,
-      IR_SCHEMA_VERSION,
+      IR_SCHEMA_MIN_SUPPORTED,
       IR_SCHEMA_VERSION,
     );
   }
 
   const warnings: string[] = [];
   let current: unknown = input;
-  let [major] = parseVersion(received);
-  const [targetMajor] = parseVersion(IR_SCHEMA_VERSION);
+  let [major] = receivedVersion;
+  const [targetMajor] = currentVersion;
   let upcasted = false;
 
   while (major < targetMajor) {
@@ -78,7 +96,7 @@ export function upcastBundle(input: unknown): UpcastResult {
       throw new IrVersionError(
         `No upcast registered from IR schema major ${major}.`,
         received,
-        IR_SCHEMA_VERSION,
+        IR_SCHEMA_MIN_SUPPORTED,
         IR_SCHEMA_VERSION,
       );
     }

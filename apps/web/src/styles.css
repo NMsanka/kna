@@ -323,6 +323,113 @@ td.actions button {
   margin-bottom: 0;
 }
 
+.turn .markdown > :first-child {
+  margin-top: 0;
+}
+
+.turn .markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.turn .markdown h1,
+.turn .markdown h2,
+.turn .markdown h3,
+.turn .markdown h4 {
+  line-height: 1.3;
+  margin: 1.35rem 0 0.6rem;
+}
+
+.turn .markdown h1 {
+  font-size: 1.45rem;
+}
+
+.turn .markdown h2 {
+  font-size: 1.25rem;
+}
+
+.turn .markdown h3,
+.turn .markdown h4 {
+  font-size: 1.05rem;
+}
+
+.turn .markdown ul,
+.turn .markdown ol {
+  margin: 0 0 0.9rem;
+  padding-left: 1.6rem;
+}
+
+.turn .markdown li + li {
+  margin-top: 0.25rem;
+}
+
+.turn .markdown pre {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--ground);
+  line-height: 1.5;
+}
+
+.turn .markdown code {
+  border-radius: 3px;
+  background: var(--ground);
+  padding: 0.12rem 0.32rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+.turn .markdown pre code {
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.turn .markdown blockquote {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+}
+
+.turn .markdown table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.turn .markdown th,
+.turn .markdown td {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.turn .markdown th {
+  background: var(--ground);
+}
+
+.turn .markdown hr {
+  margin: 1.25rem 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.turn .markdown a:not(.cite) {
+  color: var(--accent);
+}
+
+.turn .markdown .image-omitted {
+  color: var(--muted);
+  font-style: italic;
+}
+
 .turn .replied.abstained {
   border-left: 3px solid var(--warn);
 }

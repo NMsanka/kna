@@ -33,6 +33,7 @@ const IORedis = IORedisModule as unknown as new (
 
 export const QUEUE_NAMES = {
   indexModule: 'index-module',
+  indexDocuments: 'index-documents',
   crossRepo: 'cross-repo-resolve',
   regenerateDocs: 'regenerate-docs',
   maintenance: 'maintenance',
@@ -72,6 +73,14 @@ export interface RegenerateDocsJob {
    * the old id — so the request succeeds, the operator sees 204, and nothing happens.
    */
   regenerationToken?: string;
+  bundleStorageKey: string;
+}
+
+export interface IndexDocumentsJob {
+  orgId: string;
+  repoId: string;
+  commitSha: string;
+  ref: string;
   bundleStorageKey: string;
 }
 
@@ -186,6 +195,14 @@ export class JobQueue {
       ? jobId('docs', job.repoId, job.commitSha, job.regenerationToken)
       : jobId('docs', job.repoId, job.commitSha);
     await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, {
+      jobId: id,
+    });
+    return id;
+  }
+
+  async enqueueIndexDocuments(job: IndexDocumentsJob): Promise<string> {
+    const id = jobId('source-docs', job.repoId, job.commitSha);
+    await this.queue(QUEUE_NAMES.indexDocuments).add(QUEUE_NAMES.indexDocuments, job, {
       jobId: id,
     });
     return id;

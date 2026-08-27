@@ -1,8 +1,10 @@
 import { runPipeline, type PipelineResult } from '@kna/analyzer-core';
-import { assemble, buildBundle, type ApiSpec, type IrBundle } from '@kna/ir';
+import { IR_SCHEMA_VERSION, assemble, buildBundle, type ApiSpec, type IrBundle } from '@kna/ir';
 import { classify, formatGateReport, runGate, type GateResult } from '@kna/scanner';
 import { extractApiSpecs, extractServices } from '@kna/analyzer-openapi';
 import { signHmac, signUnsignedDev, canonicalClaims } from '@kna/contracts';
+import { discoverMarkdownFiles, RepoMarkdownSource } from '@kna/documents';
+import type { KnowledgeDocument } from '@kna/ir';
 import type { CliContext } from '../context.js';
 import { ui } from '../ui.js';
 
@@ -27,6 +29,7 @@ export interface AnalyzeOutput {
   gate: GateResult | null;
   bundle: IrBundle;
   apiSpecs: ApiSpec[];
+  documents: KnowledgeDocument[];
 }
 
 export class GuardrailBlockedError extends Error {
@@ -65,10 +68,24 @@ export async function analyze(
 
   progress?.update('Scanning for secrets and PII');
 
+  const markdownConfig = ctx.config.docs.sources.find(
+    (source) => source.type === 'repo-markdown' && source.enabled,
+  );
+  const markdownPaths = markdownConfig
+    ? await discoverMarkdownFiles({
+        repoRoot: ctx.repoRoot,
+        include: markdownConfig.include,
+        exclude: markdownConfig.exclude,
+      })
+    : [];
+
   // ── Guardrail gate ───────────────────────────────────────────────────────────────────────
   let gate: GateResult | null = null;
   if (!options.skipScan) {
-    const files = pipeline.discovery.modules.flatMap((m) => m.files.map((f) => f.path));
+    const files = [
+      ...pipeline.discovery.modules.flatMap((m) => m.files.map((f) => f.path)),
+      ...markdownPaths,
+    ];
     gate = await runGate({
       repoRoot: ctx.repoRoot,
       files: [...new Set(files)],
@@ -150,6 +167,23 @@ export async function analyze(
       '',
   }));
 
+  progress?.update('Collecting repository documentation');
+  const documents = markdownConfig
+    ? (
+        await new RepoMarkdownSource({
+          repoRoot: ctx.repoRoot,
+          orgId: ctx.repo.orgId,
+          repoId: ctx.repo.id,
+          commitSha: ctx.version.commitSha,
+          projectIds: ctx.config.projects,
+          modules: assembled.modules.map((module) => ({ id: module.id, path: module.path })),
+          include: markdownConfig.include,
+          exclude: markdownConfig.exclude,
+          defaultSensitivity: ctx.config.security.defaultSensitivity,
+        }).pull()
+      ).documents
+    : [];
+
   const bundle = buildBundle({
     ...assembled,
     orgId: ctx.repo.orgId,
@@ -157,6 +191,7 @@ export async function analyze(
     version: ctx.version,
     apiSpecs: resolvedSpecs,
     services: serviceManifests,
+    documents,
     toolchain: {
       detected: pipeline.toolchain,
       tiersRun: resolvedSpecs.length > 0 ? [...pipeline.tiersRun, 'tier2'] : pipeline.tiersRun,
@@ -193,7 +228,7 @@ export async function analyze(
         nonce: claims.nonce!,
         expiresAt: claims.expiresAt!,
         payloadHash,
-        irSchemaVersion: '1.0.0',
+        irSchemaVersion: IR_SCHEMA_VERSION,
       });
       const secret = process.env.KNA_INGEST_HMAC_SECRET;
       return secret ? signHmac(secret, canonical) : signUnsignedDev(canonical);
@@ -201,11 +236,11 @@ export async function analyze(
   });
 
   progress?.done(
-    `Analysed ${assembled.symbols.length} symbols across ${assembled.modules.length} module(s)` +
+    `Analysed ${assembled.symbols.length} symbols and ${documents.length} document(s) across ${assembled.modules.length} module(s)` +
       (bound > 0 ? `, ${bound} bound to HTTP endpoints` : ''),
   );
 
-  return { pipeline, gate, bundle, apiSpecs: resolvedSpecs };
+  return { pipeline, gate, bundle, apiSpecs: resolvedSpecs, documents };
 }
 
 export const CLI_VERSION = '1.0.0';
