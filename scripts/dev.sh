@@ -178,10 +178,20 @@ cmd_seed() {
   remote="$(git remote get-url origin 2>/dev/null || echo '')"
   [ -n "$remote" ] && info "registering this repository: $remote"
 
+  # The seed HMAC-signs each ingest credential and falls back to the documented default when
+  # this is unset, so a rotated secret would mint credentials the API cannot verify. The only
+  # symptom is every publish failing on signature, long after the rotation.
+  local ingest_secret
+  ingest_secret="$(env_value INGEST_HMAC_SECRET)"
+  [ -n "$ingest_secret" ] || warn "no INGEST_HMAC_SECRET in .env — seeding with the default"
+
   local output
-  output="$(DATABASE_URL="$OWNER_URL" SEED_ORG_ID="$ORG" SEED_ORG="$ORG" \
-    SEED_PROJECT="$PROJECT" SEED_REPOS="$remote" \
-    pnpm --filter @kna/db exec tsx bin/seed.ts)"
+  output="$(
+    export DATABASE_URL="$OWNER_URL" SEED_ORG_ID="$ORG" SEED_ORG="$ORG" \
+      SEED_PROJECT="$PROJECT" SEED_REPOS="$remote"
+    [ -n "$ingest_secret" ] && export INGEST_HMAC_SECRET="$ingest_secret"
+    pnpm --filter @kna/db exec tsx bin/seed.ts
+  )"
 
   # The seed prints credentials once and stores them hashed, so they are captured here or lost.
   printf '# Written by scripts/dev.sh seed on %s\n' "$(date)" > "$TOKENS_FILE"
@@ -272,13 +282,25 @@ load_tokens() {
   set -a; . "$TOKENS_FILE"; set +a
 }
 
+# Read one value out of `.env` the way the services' own loader reads it.
+#
+# `cut -d= -f2-` is the obvious thing and is wrong in two ways that surface much later: it
+# keeps a trailing ` # comment`, which the Node loader strips, and it keeps surrounding
+# quotes. Two readers of one file disagreeing about what a value is produces a signature
+# mismatch, which reports as a rejected bundle and looks nothing like a parsing difference.
+env_value() {
+  [ -f "$ROOT/.env" ] || return 0
+  sed -n "s/^$1=//p" "$ROOT/.env" | head -1 |
+    sed -e 's/ #.*$//' -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/^"\(.*\)"$/\1/' -e "s/^'\(.*\)'$/\1/"
+}
+
 # The CLI signs bundles with KNA_INGEST_HMAC_SECRET; the server verifies them with
 # INGEST_HMAC_SECRET. Two names for one shared value, and only the server's is in .env — so
 # every publish silently produced an unsigned bundle until the CLI's name was set by hand.
 # Bridged here rather than left as a trap.
 load_signing_secret() {
   local secret
-  secret="$(grep -E '^INGEST_HMAC_SECRET=' "$ROOT/.env" 2>/dev/null | head -1 | cut -d= -f2-)"
+  secret="$(env_value INGEST_HMAC_SECRET)"
   if [ -n "$secret" ]; then
     export KNA_INGEST_HMAC_SECRET="${KNA_INGEST_HMAC_SECRET:-$secret}"
   else

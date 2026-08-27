@@ -230,6 +230,32 @@ install and build per job and gives every indexed repo read access to the platfo
 [ADR 0002](adr/0002-cli-distribution.md) — publishing the CLI makes it one `npx` line, and
 migrating is a one-flag change.
 
+The workflow also needs somewhere to publish *to*. `KNA_PLATFORM_URL` is a **repository**
+variable, not an environment one: the publish job declares no `environment:`, so an
+environment variable is invisible to it and the job sees an empty URL. The generated workflow
+skips the publish job when the variable is unset, so a repository that has not been pointed at
+a platform yet still analyses and still opens its documentation pull request.
+
+### Pointing CI at an instance that is not on the internet
+
+A tunnel (`cloudflared tunnel --url http://localhost:8080`) is enough to demonstrate the loop
+against a laptop, and two things have to be true before it works:
+
+- **`OIDC_ISSUER` must be set**, or `/v1/auth/ci-exchange` answers 501 and the job has no
+  credential. For GitHub it is `https://token.actions.githubusercontent.com`. It is read once
+  at boot, so setting it in `.env` does nothing until the API restarts.
+- **Rotate `INGEST_HMAC_SECRET` first.** The development value is printed in this repository's
+  own documentation. Publishing a hostname that accepts it lets anyone who can read the repo
+  forge a publish credential, and indexing is what spends the model budget.
+
+Rotating it means re-seeding: the secret signs each ingest credential, so credentials minted
+under the old one stop verifying. `pnpm dev seed` reads the new value out of `.env` and
+repoints `KNA_TOKEN` and `KNA_INGEST_TOKEN` for you. `KNA_MCP_TOKEN` lives in your OS
+environment and is the one you still set by hand.
+
+A quick tunnel's hostname is new on every start, so the repository variable needs updating
+each time. A named tunnel is the fix if this runs more than once or twice.
+
 ---
 
 ## What is not ready

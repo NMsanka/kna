@@ -555,6 +555,31 @@ the application's job, usually through a `--require` bootstrap. That bootstrap d
 yet. §15.6's requirement to correlate a Langfuse trace id with an OTel span id is unmet until it
 does.
 
+### The CI exchange is the one caller that cannot read the logs
+
+`OidcVerifier` produces a precise message for every way a token can be refused — wrong
+audience, expired, unknown issuer, no matching key — and the route let all of them escape
+uncaught. Fastify turned each into the same 500, `The request could not be completed`, with the
+diagnosis left in a log file on the platform.
+
+Every other endpoint has a caller who can go and read that log. This one's caller is a
+workflow on someone else's runner, and the message it gets back is the whole of what it will
+ever know. `/v1/auth/ci-exchange` now answers 401 with the verifier's own message, and
+separates that from 502 when the issuer itself could not be reached — because "your token is
+bad" sends someone off regenerating a credential that was always fine.
+
+### One value, two readers, and only one of them right
+
+`INGEST_HMAC_SECRET` signs each ingest credential at seed time and verifies it at publish time.
+`scripts/dev.sh` read `.env` with `cut -d= -f2-`, which keeps a trailing ` # comment` that the
+services' own loader strips — and `cmd_seed` did not pass the value on at all, so `seed.ts`
+silently fell back to `development-ingest-secret`.
+
+Neither shows up until the secret is rotated away from that default, and then every publish
+fails on signature — which reads as a broken credential rather than as two readers disagreeing
+about what a line of `.env` says. `env_value()` is now the single reader and matches the
+loader's rule.
+
 ### Windows: `pkill` does not reach node processes
 
 `pkill -f "apps/worker/dist/main.js"` reports success and kills nothing, so a stale worker keeps

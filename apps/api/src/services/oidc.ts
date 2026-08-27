@@ -30,8 +30,19 @@ interface Jwk {
   use?: string;
 }
 
+/**
+ * Why verification failed, because the two kinds belong to different people. A token this
+ * deployment rejects is a 401 the runner can act on — wrong audience, expired, wrong issuer.
+ * An issuer we could not reach is ours, and nothing the runner can do about it. Collapsing
+ * them tells a correctly configured workflow that its credentials are bad.
+ */
+export type OidcFailure = 'token' | 'issuer';
+
 export class OidcError extends Error {
-  constructor(message: string) {
+  constructor(
+    message: string,
+    readonly failure: OidcFailure = 'token',
+  ) {
     super(message);
     this.name = 'OidcError';
   }
@@ -126,15 +137,19 @@ export class OidcVerifier {
         `${this.options.issuer.replace(/\/$/, '')}/.well-known/openid-configuration`,
       );
       if (!discovery.ok) {
-        throw new OidcError(`OIDC discovery failed with ${discovery.status}.`);
+        throw new OidcError(`OIDC discovery failed with ${discovery.status}.`, 'issuer');
       }
       const config = (await discovery.json()) as { jwks_uri?: string };
-      if (!config.jwks_uri) throw new OidcError('OIDC discovery document has no jwks_uri.');
+      if (!config.jwks_uri) {
+        throw new OidcError('OIDC discovery document has no jwks_uri.', 'issuer');
+      }
       this.jwksUri = config.jwks_uri;
     }
 
     const response = await this.fetchImpl(this.jwksUri);
-    if (!response.ok) throw new OidcError(`JWKS fetch failed with ${response.status}.`);
+    if (!response.ok) {
+      throw new OidcError(`JWKS fetch failed with ${response.status}.`, 'issuer');
+    }
     const body = (await response.json()) as { keys: Jwk[] };
     this.jwks = { keys: body.keys, fetchedAt: Date.now() };
   }
