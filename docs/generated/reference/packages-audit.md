@@ -117,7 +117,7 @@ interface BreadthPolicy
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L206)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=6254add6dd4daa37 -->
+<!-- kna:generated:start id=api.property hash=64147b2b0ed30567 -->
 ### `action`
 
 ```typescript
@@ -136,7 +136,7 @@ action: string
 actorId?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L26)</sub>
 
@@ -148,7 +148,7 @@ actorId?: string | null
 actorSubject?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L27)</sub>
 
@@ -160,7 +160,7 @@ actorSubject?: string | null
 actorType: 'user' | 'ci' | 'mcp' | 'system' | 'admin' | 'partner'
 ```
 
-**Returns** `"user" \| "ci" \| "mcp" \| "system" \| "admin" \| "partner"`
+**Returns** `"admin" \| "ci" \| "mcp" \| "partner" \| "system" \| "user"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L25)</sub>
 
@@ -198,7 +198,7 @@ detail?: Record<string, unknown>
 llmTraceId?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L36)</sub>
 
@@ -222,7 +222,7 @@ orgId: string
 outcome?: 'success' | 'denied' | 'error'
 ```
 
-**Returns** `"error" \| "success" \| "denied" \| undefined`
+**Returns** `"denied" \| "error" \| "success" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L30)</sub>
 
@@ -246,7 +246,7 @@ reposTouched?: string[]
 resourceId?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L29)</sub>
 
@@ -258,7 +258,7 @@ resourceId?: string | null
 resourceType?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L28)</sub>
 
@@ -270,7 +270,7 @@ resourceType?: string | null
 sourceIp?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L37)</sub>
 
@@ -282,7 +282,7 @@ sourceIp?: string | null
 traceId?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L35)</sub>
 
@@ -294,7 +294,7 @@ traceId?: string | null
 userAgent?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/audit/src/recorder.ts#L38)</sub>
 

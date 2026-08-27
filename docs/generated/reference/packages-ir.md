@@ -70,8 +70,8 @@ provenance:
     - sym_d17966dfd99955def086a673a77815316e44fa2d
     - sym_4b6cfad3632f8f9962d6a12889f61499fccd31f2
     - sym_4d2abc83ecb7b12a6fd82520d4b04d9dba34452b
-    - sym_4cd30993f8a4e62de11027de2b1fcfe7f20231f6
-    - sym_8a4f0c1c0f3b9b1f331b583619ea3f7208979a55
+    - sym_384de4e3c68e303218399d69434301f2cd3ce43b
+    - sym_ec919c5aabb52ce793415a4cea42b760e111259e
     - sym_603c2d4276c229a82913641170d5b4e51b91b796
     - sym_3986d31eddda22fad155ee95c53cd4594cb9596a
     - sym_b4f556789f4bd9e0da584921c31e717c379bd1fe
@@ -93,14 +93,14 @@ provenance:
     - sym_3b8e582a0c385cf812010ef1540534a988582103
     - sym_2f213322c351c669cb63ba400a53804fcc7db53e
     - sym_11ec5d76a42b8fa065992d087bc539c7be9a330d
-    - sym_b002a43f7d2dfe644c52bcdb95393ec3dd1c97a3
-    - sym_073857f569aaafc9cbe978b25011b7a480110d06
+    - sym_e046f98c221889d6c482d123fb3a5888ed7ab2bc
+    - sym_856643b6834cc586232793b82a3d9f0d2dd67878
     - sym_fb91a08f85b21b02d391729ccbedd128839f04a5
     - sym_6847f0ffa0d4508a774c1f25f9766c13808425c2
-    - sym_72cbb8ff82a43971d7857f6302457909eb087f3f
-    - sym_fb9aaf9b05e5aeee229eb9c960065196f79c0350
-    - sym_1b2c073f18930d46f9d0beadd6d8d06afbeee1c8
-    - sym_43f763a69c09eace228d6af8b6b10d00565b7082
+    - sym_c7186e27fc95ae819077cfedad17cf385ee4f0c7
+    - sym_14df8ac917e95d4d092ea7382b212d1012bfddbf
+    - sym_4ec1bee2be11afebfe90beb54af1afb644cff7e1
+    - sym_5891dd39d85e41b50b3ffde810fef10cb07c1523
     - sym_c0a1bfeae1571fda2c15a4a53a236be57da5678d
     - sym_d8043948174abbefd68041633c3e3297d28c1109
     - sym_88e9178caf7ba7d80de8a19659b0bed78e63a567
@@ -109,9 +109,9 @@ provenance:
     - sym_9a8b0dfef8798244351b9df0f4671cb86a0e561a
     - sym_769f274bd1545d746c32f831fe82bd12c3641b1a
     - sym_fab1c5126c59d167d29630feb9f2089c29644c63
-    - sym_d95450839f1726bd4cd44ea68a70663d433a3700
+    - sym_05ba003e7fd8bdc47073b13a386d781c62cf7f1e
     - sym_40d2108c9c6a7ca796c8223c5a8a4efed13f20cc
-    - sym_c6e33c414934745d9553a7781fa616fbaf021084
+    - sym_bb53044d3dd82fa9d4e1b15fb982904e33f5d327
     - sym_da74c83ba50db301707f52cd4512257ff8772e1b
     - sym_1d96f0dc94c9d3278d65b95106e4b719944eeebe
     - sym_3bd2c0e8c72e2d706cb1079a2de93dd114850894
@@ -156,8 +156,8 @@ provenance:
     - sym_9c455b0e82f71fbff765e58b3d34a18512e67666
     - sym_26abe246470b279771475fb8b56cda2c13410076
     - sym_43d22d31a22dad59fa5621db0f9b324f56328dd5
-    - sym_b63a919b94279dd40b798059b5a327ac1b0599e0
-    - sym_527a26bb0a6999790cfdb31e9a2b91d63be7b80c
+    - sym_643db4a6f550985a47b317089fd9ed2b4f88ee31
+    - sym_5c9958224d0a0f9e295f356138b2c9ef72e17c67
     - sym_346112ea17d565444e7e391118dbc3e8984586ae
     - sym_db0a0f94d11f9033bd035abee1ad838bac1e1990
     - sym_2479b36e3334a5ed2183880c194ed5e933ae592c
@@ -208,13 +208,13 @@ provenance:
     sym_fb8dbd5a4eaf8780f726f98ea943ae40fb5605cb: 09f09c03df5df60daad4e782bc6654377800710507fbbf011d07661fe64e4fe3
     sym_0ed21d18b457d570b883ddbbe59837faad27e0a8: 8da63e19675e8b0c0ece072038665873b8e4781dfebf84eeb1d955eba9dc822a
     sym_acab4922d968ebc792f508ae78c29ec7a38c2d55: 5a9e343edb7521ebe9f3cfee3dc1d8e183115f1fa52c4f16ab1f835c14d06a10
-    sym_8544b8ff8592f467a69f620cb15b9e19a666f7b0: 52ef72f846133de6ea157c4d6c1cf94d457f84eb16c6dc397cc44f6558eaa795
+    sym_8544b8ff8592f467a69f620cb15b9e19a666f7b0: 45b451aff981ee27b45bc6bcf146c052b5538b71a8194852970ae1989a96044f
     sym_ba0e4858c9c68f1fdc248452d818c070610748f3: 31084ebf5b062d580b24706a5db5e67f83594f2a6f359f06784fe64243d8bc8e
     sym_a7fabcb02af9f46745c98f8efb99cf4d61f6bdde: fce849b9a31ad8cf9a187b0196fee7cc58a42ff3b0d62e0d41fda3e30be38a67
     sym_91deeded84b4ac6b1f1991d476c7c846d235ff0c: 0212038322884df4c6e8f5d7c8a9f4a4d1ae3d59da12319ecc8a3a0a41750e5e
     sym_e73b16b6f8a9795654f551f6fa9e83a2fca2c2e6: 89195f261c713ce2c6d5e5fe4608d6303e582021ae5152d87d63138e809529ab
-    sym_8f7d59ae240ebf9b8f74424077316f194b068fb0: 2e638d4c97b5660b6d7e5c988381dec33f2a5835c8a038ef607d9015c533df49
-    sym_7e19aa9d2dec81864f978dc0a5da230cb0b2fd8e: 302cb0aaff5d68b8e03d37b836eaad875a9a46e24006d7752fbfb1861e22fc5c
+    sym_8f7d59ae240ebf9b8f74424077316f194b068fb0: 205dfa0dc5d0eaf34fe64fad978ce309aa49d045b871022a336f3ee0841ce70c
+    sym_7e19aa9d2dec81864f978dc0a5da230cb0b2fd8e: 9e48c34e14563f85fe7e2b15423a9bb3aa497dd816d2798f115ed189f2f7d96c
     sym_d59436f4575e34e57d8ef62ea5cfbeabd91245dd: 6ae53d13c1dc0e0618983f7a4a078b3b6b39bd3cd2f6b9d3f53ca4d98a52bfd3
     sym_8d6bccf6b5c614deeadf1f8a92240213431841f4: 9a236331aeb6a4bd4089926bdb64f189f86cf00d42e2501dd0035a3747bd7151
     sym_c8ab2e46ebc982ea5f532a9aae2e8377fec1bef0: dea4b4690bb1cac56c66519fec57c4a71862a16e0096340984fc5ee64468bb65
@@ -236,7 +236,7 @@ provenance:
     sym_c5a6f2f9280b2d377ed3012bf4dc7e6f2f9633dc: 4f595944232cbc41df6c4cfd0afc00a592e15788b4144384133f2f88d9e71cbd
     sym_28b9480009e284bf3f7683a91803e9ce977805f5: 946426846f2c99d33c092362dca1d2e2cc63d6f1bcbb2105901088747340b029
     sym_b975a1569bb81fa1fe1eba52132763274424817b: b0807de3e821f267591388cd405ce0ae4c51691a81eb03c27f61520480bff8ef
-    sym_72a644d7b50c178934c42cc97f3f8ae8deb3fe19: 29b50982f083c134739857870926e41a2546a628471f744db2391cde19fd4eb3
+    sym_72a644d7b50c178934c42cc97f3f8ae8deb3fe19: a0970c2f9cdbd9d53ce00c1e9d81db39cdfba93bb163aa1bc2e53baaeb3bf86c
     sym_2be9121b044fd1687991b073528666fef608ef6e: f8744eaa99c04359d144d7f10f06c71f374fc36e6a0504c7f69f26071bea2c94
     sym_bab4584bcad926799096f8267071741c47d5fc78: 73c2265a290ed485c57d8991122acea2a9a336da8ebcbd760f166b900a24b19a
     sym_fb3e6d1afe64958937bd0cf14f7c6255c141fd28: 22e406e10a62d9af2045629a11bebcd4c57f3258c4e2cf238ad134b012e5f962
@@ -251,8 +251,8 @@ provenance:
     sym_d17966dfd99955def086a673a77815316e44fa2d: bf86dbd4e650833fc48ae4994e1e660ef6cb3e1c4144fb909227952cfa2c05ef
     sym_4b6cfad3632f8f9962d6a12889f61499fccd31f2: 21cfb813d49b620a625a1073246f54ff137aad36529b56bcab0cf39dcc35da1d
     sym_4d2abc83ecb7b12a6fd82520d4b04d9dba34452b: 5c89a8360e2fb6eaba18014217ee001a83d858fcd78702d0401eb5540a513839
-    sym_4cd30993f8a4e62de11027de2b1fcfe7f20231f6: 1ebe440dd48b10ccf1638e8db34972635906feaac314cd3e920fdd09adf30d43
-    sym_8a4f0c1c0f3b9b1f331b583619ea3f7208979a55: b75d3b9a89cd08cedfe26812bbef10e70ba6d1107d22c1261d79387d95a275b7
+    sym_384de4e3c68e303218399d69434301f2cd3ce43b: 94298129670374b4e0adf7eb55d5bf41766cef0afabbea39cbc1632a62a6158d
+    sym_ec919c5aabb52ce793415a4cea42b760e111259e: 1a761d8d722dc0e6e29f27e00bb91006be7e8b8b29f077a377c13501c38b2bc1
     sym_603c2d4276c229a82913641170d5b4e51b91b796: 9bb4730e9868d92ff9ad4703569fc63970cac7790e589cc264ce92c67d24ebf0
     sym_3986d31eddda22fad155ee95c53cd4594cb9596a: 69120b43abaab2119eeee85646d586d8fe24b67b7fdcf7b6033abd46fa984928
     sym_b4f556789f4bd9e0da584921c31e717c379bd1fe: 34fe55cc9acbebb6be913a838842f1ede036fbbefe99fa98b1fb6b2f1a3f5591
@@ -274,14 +274,14 @@ provenance:
     sym_3b8e582a0c385cf812010ef1540534a988582103: 5e74e958554bc86317eea900e443747a4d7fa975285e1f639dd91acbdfd8c194
     sym_2f213322c351c669cb63ba400a53804fcc7db53e: ee95caaa48d156da965192e332799ea1c99644cf99283c1ce226aa1c63b2d4b5
     sym_11ec5d76a42b8fa065992d087bc539c7be9a330d: 1244d566a9c896d7ef33a46e4ce548f0c7f8960628da86bdb991f1847a88a512
-    sym_b002a43f7d2dfe644c52bcdb95393ec3dd1c97a3: 3bdb9da87913c4d80dc85212f8a54147f686fc434959d7c104c68a3a7d0c9a71
-    sym_073857f569aaafc9cbe978b25011b7a480110d06: 97605eba3e4ea7db72ce39249566ec2fd76fe031392653876b9e033b7459022b
+    sym_e046f98c221889d6c482d123fb3a5888ed7ab2bc: 4c14b425bccefd5acb442097c4b60678084890f16c8290e3f783cc3ce4498f88
+    sym_856643b6834cc586232793b82a3d9f0d2dd67878: deb7fb8ede0dc6f27765c26f14360ba38c9ba0bf24ae55404a18a131552c8450
     sym_fb91a08f85b21b02d391729ccbedd128839f04a5: 5bf9d542704e2a31e8c3efca0868d029f79899b8da549f11f42edc15321f6959
     sym_6847f0ffa0d4508a774c1f25f9766c13808425c2: 5f1e73f2e0c35f82ad21f32031ab453ab6ffd7e15f94e5e5f2f7f3751188eeed
-    sym_72cbb8ff82a43971d7857f6302457909eb087f3f: 6134326ee4e152ce619a6668e8dcd080a3d172efd0b14ed72c502fa9918eec84
-    sym_fb9aaf9b05e5aeee229eb9c960065196f79c0350: 4b022b30e8f59e736a9378a435eb51b24b7557c969edd130a5b3fc3ceee3aeac
-    sym_1b2c073f18930d46f9d0beadd6d8d06afbeee1c8: 4463f3d072d936ac9fc15ffce7d4dd68a46342699492ec36c77cfce3ea92eaab
-    sym_43f763a69c09eace228d6af8b6b10d00565b7082: a4c46594130e2804053705c477ccf671bc7d660e58d367304ca8d57adfc0fa54
+    sym_c7186e27fc95ae819077cfedad17cf385ee4f0c7: c15b325ea9ba1727871aa355f90cb0c7bad34a14f14a0b42922703c52977bde4
+    sym_14df8ac917e95d4d092ea7382b212d1012bfddbf: 568ba289007827861d91795d966ffa0306e371c5140b3f97ab599ca6ec5e60e5
+    sym_4ec1bee2be11afebfe90beb54af1afb644cff7e1: e25070a785c27674df2165c717fdf640de967eac6242bc16c76860e7fda324b8
+    sym_5891dd39d85e41b50b3ffde810fef10cb07c1523: 54203b1b0ae86d423e0fa59f5b4184dcd616d8e4800e3cdd314ee6e65ec9c971
     sym_c0a1bfeae1571fda2c15a4a53a236be57da5678d: 15fe267175cd6d3f2c724d8386ee563578e47d0336abbbfa72cd34b02ab4ae61
     sym_d8043948174abbefd68041633c3e3297d28c1109: ae718c61bae7d49c576d0314917db8e38149cff1c41841604d95ea69eb6f767e
     sym_88e9178caf7ba7d80de8a19659b0bed78e63a567: 5717edbec8e1121f476df24cd027afef520cf768d3b39c5f6a29b1866d172013
@@ -290,9 +290,9 @@ provenance:
     sym_9a8b0dfef8798244351b9df0f4671cb86a0e561a: 016a862b5f7e8846b393971ea04d90ceaae469137e8ba5d35b3276681890c004
     sym_769f274bd1545d746c32f831fe82bd12c3641b1a: cce4dfb007dc448e793af65d58fcc1bc154698aa91b77617506b954f37c4a266
     sym_fab1c5126c59d167d29630feb9f2089c29644c63: 645b69d69010be121848329f2684d45af7e7cfcc40da6d027a12e00f75f35bd0
-    sym_d95450839f1726bd4cd44ea68a70663d433a3700: 8a09c9f815acf0fc845bc2d31dd3777b8d17e51ff8b4f3f27ccc2000a049cfd1
-    sym_40d2108c9c6a7ca796c8223c5a8a4efed13f20cc: e4aad530e34aa0d730065b6cb0f0be705831ca044b1dd04b2bcc569c3c684901
-    sym_c6e33c414934745d9553a7781fa616fbaf021084: 06c7617733732a7bc409da553d571df4e448570bda2779be42c6b9d317314613
+    sym_05ba003e7fd8bdc47073b13a386d781c62cf7f1e: 821eef07127939f9c06b0038653cd3f0423af6f3d5130897b0d93ea3c756236f
+    sym_40d2108c9c6a7ca796c8223c5a8a4efed13f20cc: c1fec4054d38a78fe87e2b9d8b1b31e0620f52983c6e244094f35966adc90614
+    sym_bb53044d3dd82fa9d4e1b15fb982904e33f5d327: 0c8211f32d040e9b9878f79aa5a1c768b750fe8a7be0674052dfd6df1e4637f9
     sym_da74c83ba50db301707f52cd4512257ff8772e1b: a0f521303e0f1e947c832d5aadcbf39c379361e64efccc412b1aeabf85df9fad
     sym_1d96f0dc94c9d3278d65b95106e4b719944eeebe: 557c93b90d024d8812873f0045ab39d76ddbeedf715550f54e3052702b395c91
     sym_3bd2c0e8c72e2d706cb1079a2de93dd114850894: 4d7d7ad4ecf2e45ac24b5f82635a4bc1195c9ff05cbef7583d2b43a7381f6313
@@ -337,13 +337,13 @@ provenance:
     sym_9c455b0e82f71fbff765e58b3d34a18512e67666: eb2dfc4ebb21aa8ed1f3102d650cd8052a7dad3b7aea9810829f99a5d9bd8c31
     sym_26abe246470b279771475fb8b56cda2c13410076: 48a3909ce59bf5eaa361b2f1662c18087431f2528c30643c794e355ae0718c10
     sym_43d22d31a22dad59fa5621db0f9b324f56328dd5: 38a0bded903f56cc720c580a44c2eae724aa42a102f8f8ae94a1996e154bbee7
-    sym_b63a919b94279dd40b798059b5a327ac1b0599e0: bc3926c510bc6e7dac82ede9400c13b1a7dd1b40d6e27f6f7ed9b983d0b7af02
-    sym_527a26bb0a6999790cfdb31e9a2b91d63be7b80c: ffff3ca35174f3d1bdedc4f20ed7d86b268f617e6f07d28d5861493cfe9a2182
+    sym_643db4a6f550985a47b317089fd9ed2b4f88ee31: 79d6832b8dfc31f5daea17d4475b7d23b55852dfb8128b15c5a1a2513552c39f
+    sym_5c9958224d0a0f9e295f356138b2c9ef72e17c67: b823c290e048944c2948389047ef55067a4349579f5e1f1341a455c2dc3c430a
     sym_346112ea17d565444e7e391118dbc3e8984586ae: 5db4993762bf2557f4936e0fae533d6c18584956cbc4da811830f6709cd345fa
     sym_db0a0f94d11f9033bd035abee1ad838bac1e1990: 79c2b8ecc89b1007502a2b823a31f167410a44cae1f738406b70560fe3ca5d5a
     sym_2479b36e3334a5ed2183880c194ed5e933ae592c: 21d8677cf3f440456f60f5a4a496f9c4646e3b1f7d635267f7961083839b316c
-    sym_cbd51127cbe1da43be5a2fee9c155bbab843b110: f625d908855173b9e565ca752b47ff231b80a88487262ffeb813d29c2bfbdaa3
-    sym_34b493bfbe0fb51824e5f9a8abcdb1c97609b132: e768a6b92ffdba7e5dad0aa1dd6348e0dfb393c29daf07a716cd5ab3d806d06c
+    sym_cbd51127cbe1da43be5a2fee9c155bbab843b110: e46cb6428e45659a5e6c82ae9dc55e4f6a7082bab7ccfb71f09ac4a3f941728d
+    sym_34b493bfbe0fb51824e5f9a8abcdb1c97609b132: ba103444ab3440fb58a634aa65285891629e655219160f52585e938df3371fc5
     sym_56bb2b829b4ad14d520cb85d4762778110515d81: 1a1b804ad91c52b7d1aba11947b9ab1aebd6932160c404a5c35522fa20de22bc
     sym_7f0473e7f5757de619a3a084c4ba174db4e2ed61: fb031a5246600a5f2e390ffcaaadf4b08e8e2db7c6ee081fb2dafff733cb626d
     sym_37195c8dfca1b06fcd9a9836cae4a916527db999: d264a37f53853ad643b835474bb3d72988a42ff1f8cceeb535df3a3c72a22003
@@ -360,7 +360,7 @@ provenance:
     sym_897163f4361a6ed62cac084e2773801c10723e38: 5c806ba4159aa3a8fa43e934321515ef8c53a18ed48acb74cd1d9b7c5086b463
     sym_0c935e3e3505f9cc0fb53650ee823c21dc80ddea: 896eb3ad4d213899edf3050c3ebb2350f4c9091a5d843786441ebda59b98d847
     sym_f8d86d7fd90bb6f8450c34a324f8f2635cf86fae: 39660f0c7698e0fe0d98a0c5f927af2d89ac8c552e58e4d46897ee46b2b70967
-    sym_d7fd515a0118fbbdaedf7aef23e8334d6f4e5f06: b88d6a490dab7b88fbc5338399e98b64b2cba3ae185764e7c842eed3a422f816
+    sym_d7fd515a0118fbbdaedf7aef23e8334d6f4e5f06: 6940ed25c7b85f32f204138e59a0bf69e3712ce2e24f1da6c9bb030aa8081f0a
     sym_a3c211287e49108eed4025f98261cd62c98dda2e: d2a3b41c07b75ebdd5857609abd1c943e1c70dd5fdcc00c8cbb93dbf1de58168
     sym_470c8baec5bc45054db1b1a3342611f32e896acb: a1132f70d9c74ea9b33b77fab92c8235a4bea646e01e057bb148e9a8dfc8844f
     sym_cedc5831d1f2541de97ce5d5bad8d1f393f9ac7f: 4fdf5cd542fa936a8e9f3e8527dec1309e9e7350e89eaa025294b50923557b41
@@ -369,8 +369,8 @@ provenance:
     sym_5dda79b62785b47ca7659011d22a937a7fa0dcbf: 7711bea07f7b1830e3ba19eec7728b121da4456879b24d4c13cca2abd5830d74
     sym_5f2249b685cd6fe1ba9e726c5c087c9316dfce69: 5ad15e4b8d77ce0989a53c0a8d9a3ca08df0d0a9471e08723d33ef4311172262
     sym_a3e0eecdd52b1c705efed7339bd01df5cbc13bfe: 3d96cd920070b1d727568e67b4087ae0aba47310b8ebea3de9f6389f64ebd3ac
-    sym_19c88e05a549ad5fe2f56e8583603baaad225b79: a83e8379f47eef9160b9e9b6ba26f7f6346b70d44dd042d3e1f176ee0c2e66db
-    sym_470a02c98957379bbabec1498550ba461b245271: 2c68d88620e779763c84aea2aa586f721ba0a0e6a2551748c5cb039b6f65dd95
+    sym_19c88e05a549ad5fe2f56e8583603baaad225b79: 27cb979ac707a5d7701bde11a7e89a2ac0bbfa52b009bddabefe03924c351a10
+    sym_470a02c98957379bbabec1498550ba461b245271: 5ce57042df12b318ace8efa5e11f99c2a2696d63937416cfd0caabe29d51b374
     sym_b9f0ec8707e50ae9d4c32956e143a14e4221bfa2: bd41af492fb045dda20e131dc3859f0e86e07522fb553cf6d5c60fbd317ba4f6
 ---
 
@@ -385,7 +385,7 @@ provenance:
 | Public symbols | 180 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.type hash=bf1e9123062b34b4 -->
+<!-- kna:generated:start id=api.type hash=4264680e9f71918c -->
 ### `AnalysisDepth`
 
 ```typescript
@@ -409,7 +409,7 @@ type ApiSpec = z.infer<typeof zApiSpec>
 ### `BreakerVerdict`
 
 ```typescript
-type BreakerVerdict = | {tripped: false;policy: CircuitBreakerPolicy} | {tripped: true;policy: CircuitBreakerPolicy;rule: 'churn-ratio' | 'absolute-count' | 'regeneration-count';reason: string;observed: {changed: number;churnRat…
+type BreakerVerdict = {tripped: true;policy: CircuitBreakerPolicy;rule: 'absolute-count' | 'churn-ratio' | 'regeneration-count';reason: string;observed: {changed: number;churnRatio: number;regenerations: number;total: number};…
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/circuit-breaker.ts#L36)</sub>
@@ -421,7 +421,7 @@ type BreakerVerdict = | {tripped: false;policy: CircuitBreakerPolicy} | {tripped
 Griffe-style breaking-change taxonomy, applied uniformly across all three languages.
 
 ```typescript
-type BreakingKind = | 'symbol-removed' | 'parameter-removed' | 'parameter-added-required' | 'parameter-type-changed' | 'parameter-renamed' | 'parameter-made-required' | 'return-type-changed' | 'visibility-reduced' | 'endpoint-removed' | 'route-changed' | 'method-changed' | 'response-removed' | 'request-field-required-added' | 'security-added'
+type BreakingKind = 'endpoint-removed' | 'method-changed' | 'parameter-added-required' | 'parameter-made-required' | 'parameter-removed' | 'parameter-renamed' | 'parameter-type-changed' | 'request-field-required-added' | 'response-removed' | 'return-type-changed' | 'route-changed' | 'security-added' | 'symbol-removed' | 'visibility-reduced'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L92)</sub>
@@ -443,7 +443,7 @@ type BundleSignature = z.infer<typeof zBundleSignature>
 §7 — "Change classification is what keeps this cheap". Most commits change bodies, not signatures, so a typical merge should trigger a handful of embedding upserts and zero LLM calls. Every class below states exactly which of the two pipelines it wakes up.
 
 ```typescript
-type ChangeClass = | 'unchanged' | 'formatting-only' | 'body-changed' | 'doc-changed' | 'signature-changed' | 'visibility-changed' | 'deprecation-changed' | 'http-binding-changed' | 'added' | 'removed' | 'moved' | 'renamed'
+type ChangeClass = 'added' | 'body-changed' | 'deprecation-changed' | 'doc-changed' | 'formatting-only' | 'http-binding-changed' | 'moved' | 'removed' | 'renamed' | 'signature-changed' | 'unchanged' | 'visibility-changed'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L8)</sub>
@@ -563,7 +563,7 @@ type Language = z.infer<typeof zLanguage>
 ### `NormalizableLanguage`
 
 ```typescript
-type NormalizableLanguage = 'typescript' | 'javascript' | 'python' | 'csharp' | 'unknown'
+type NormalizableLanguage = 'csharp' | 'javascript' | 'python' | 'typescript' | 'unknown'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/normalize.ts#L43)</sub>
@@ -691,7 +691,7 @@ type Visibility = z.infer<typeof zVisibility>
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/primitives.ts#L27)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.function hash=97e03e63cf244f70 -->
+<!-- kna:generated:start id=api.function hash=edd953ef6f8c6299 -->
 ### `assemble`
 
 ```typescript
@@ -711,14 +711,14 @@ assemble(input: AssembleInput): AssembleResult
 ### `buildBundle`
 
 ```typescript
-buildBundle(input: BuildBundleInput): {envelope: {orgId: string;ref: string;commitSha: string;repoId: string;signature: {value: string;algorithm: "sigstore-keyless" | "hmac-sha256" | "ed25519" | "unsigned-dev";signerClaims: {ref…
+buildBundle(input: BuildBundleInput): {envelope: {orgId: string;ref: string;commitSha: string;repoId: string;signature: {value: string;algorithm: "ed25519" | "hmac-sha256" | "sigstore-keyless" | "unsigned-dev";signerClaims: {ref…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `input` | `BuildBundleInput` |  |
 
-**Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: stri…`
+**Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L269)</sub>
 
@@ -855,13 +855,13 @@ degradedPlan(verdict: BreakerVerdict): {reindex: boolean;regenerate: boolean;req
 Structural breaking-change detection. §4.2 — "drift detection becomes a structural diff, not an LLM judgement". Everything here is a fact derivable from the IR; nothing is inferred by a model, so a "breaking change" badge on a doc PR is never a guess.
 
 ```typescript
-detectBreakingChanges(before: {id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…, after: { id: string; orgId: string; name: string; kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…): BreakingChange[]
+detectBreakingChanges(before: {id: string;orgId: string;name: string;kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…, after: { id: string; orgId: string; name: string; kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…): BreakingChange[]
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `before` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
-| `after` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
+| `before` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
+| `after` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
 
 **Returns** `BreakingChange[]`
 
@@ -874,13 +874,13 @@ detectBreakingChanges(before: {id: string;orgId: string;name: string;kind: "func
 Diff two IR snapshots symbol by symbol.
 
 ```typescript
-diffIr(before: {languages: ("unknown" | "typescript" | "javascript" | "python" | "csharp")[];analysisDepth: "shallow" | "semantic" | "artifact";version: {ref: string;kind…, after: {languages: ("unknown" | "typescript" | "javascript" | "python" | "csharp")[];analysisDepth: "shallow" | "semantic" | "artifact";version: {ref: string;kind…): IrDiff
+diffIr(before: null | {languages: ("csharp" | "javascript" | "python" | "typescript" | "unknown")[];analysisDepth: "artifact" | "semantic" | "shallow";version: {ref: strin…, after: {languages: ("csharp" | "javascript" | "python" | "typescript" | "unknown")[];analysisDepth: "artifact" | "semantic" | "shallow";version: {ref: string;kind…): IrDiff
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `before` | `{ languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }; repo: { id: string; orgId: string; remote: string; name: string; defau…` |  |
-| `after` | `{ languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }; repo: { id: string; orgId: string; remote: string; name: string; defau…` |  |
+| `before` | `null \| { languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }; repo: { id: string; orgId: string; remote: string; name: string…` |  |
+| `after` | `{ languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }; repo: { id: string; orgId: string; remote: string; name: string; defau…` |  |
 
 **Returns** `IrDiff`
 
@@ -908,13 +908,13 @@ evaluateCircuitBreaker(diff: IrDiff, policy: CircuitBreakerPolicy): BreakerVerdi
 ### `isId`
 
 ```typescript
-isId(value: string, prefix?: "repo_" | "mod_" | "sym_" | "chk_" | "doc_" | "org_" | "prj_" | undefined): boolean
+isId(value: string, prefix?: "chk_" | "doc_" | "mod_" | "org_" | "prj_" | "repo_" | "sym_" | undefined): boolean
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `value` | `string` |  |
-| `prefix`? | `"repo_" \| "mod_" \| "sym_" \| "chk_" \| "doc_" \| "org_" \| "prj_" \| undefined` |  |
+| `prefix`? | `"chk_" \| "doc_" \| "mod_" \| "org_" \| "prj_" \| "repo_" \| "sym_" \| undefined` |  |
 
 **Returns** `boolean`
 
@@ -927,13 +927,13 @@ isId(value: string, prefix?: "repo_" | "mod_" | "sym_" | "chk_" | "doc_" | "org_
 Sensitivity may only ever be raised automatically; lowering it is a reviewed event (§15.7).
 
 ```typescript
-isSensitivityDowngrade(before: {id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…, after: { id: string; orgId: string; name: string; kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…): boolean
+isSensitivityDowngrade(before: {id: string;orgId: string;name: string;kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…, after: { id: string; orgId: string; name: string; kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…): boolean
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `before` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
-| `after` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
+| `before` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
+| `after` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
 
 **Returns** `boolean`
 
@@ -965,14 +965,14 @@ isWithinSupportWindow(candidate: string, current: string): boolean
 A complete doc comment.
 
 ```typescript
-makeDocComment(overrides: Partial<{params: {name: string;type: string | null;description: string;}[];description: string | null;summary: string;returns: {type: string | null;de…): {params: {name: string;type: string | null;description: string;}[];description: string | null;summary: string;returns: {type: string | null;description: string;} | null;throws: {type: str…
+makeDocComment(overrides: Partial<{params: {name: string;type: null | string;description: string;}[];description: null | string;summary: string;returns: null | {type: null | str…): {params: {name: string;type: null | string;description: string;}[];description: null | string;summary: string;returns: null | {type: null | string;description: string;};throws: {type: str…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `overrides`? | `Partial<{ params: { name: string; type: string \| null; description: string; }[]; description: string \| null; summary: string; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, s…` |  (default `{}`) |
+| `overrides`? | `Partial<{ params: { name: string; type: null \| string; description: string; }[]; description: null \| string; summary: string; returns: null \| { type: null \| string; description: string; }; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, s…` |  (default `{}`) |
 
-**Returns** `{ params: { name: string; type: string \| null; description: string; }[]; description: string \| null; summary: string; returns: { type: string \| null; description: string; } \| null; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, string>; …`
+**Returns** `{ params: { name: string; type: null \| string; description: string; }[]; description: null \| string; summary: string; returns: null \| { type: null \| string; description: string; }; throws: { type: string; description: string; }[]; examples: string[]; seeAlso: string[]; tags: Record<string, string>; …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/testing/fixtures.ts#L66)</sub>
 
@@ -981,14 +981,14 @@ makeDocComment(overrides: Partial<{params: {name: string;type: string | null;des
 ### `makeModule`
 
 ```typescript
-makeModule(overrides: Partial<{id: string;orgId: string;name: string;path: string;key: string;repoId: string;projectIds: string[];ecosystem: "npm" | "nuget" | "pypi" | "go" | …): {id: string;orgId: string;name: string;path: string;key: string;repoId: string;projectIds: string[];ecosystem: "npm" | "nuget" | "pypi" | "go" | "maven" | "none";packageName: string | null;p…
+makeModule(overrides: Partial<{id: string;orgId: string;name: string;path: string;key: string;repoId: string;projectIds: string[];ecosystem: "go" | "maven" | "none" | "npm" | …): {id: string;orgId: string;name: string;path: string;key: string;repoId: string;projectIds: string[];ecosystem: "go" | "maven" | "none" | "npm" | "nuget" | "pypi";packageName: null | string;p…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `overrides`? | `Partial<{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python"…` |  (default `{}`) |
+| `overrides`? | `Partial<{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" …` |  (default `{}`) |
 
-**Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csha…`
+**Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/testing/fixtures.ts#L93)</sub>
 
@@ -997,15 +997,15 @@ makeModule(overrides: Partial<{id: string;orgId: string;name: string;path: strin
 ### `makePayload`
 
 ```typescript
-makePayload(symbols: {id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…, overrides: Partial<{ languages: ("unknown" | "typescript" | "javascript" | "python" | "csharp")[]; analysisDepth: "shallow" | "semantic" | "artifact"; version: { ref: stri…): { languages: ("unknown" | "typescript" | "javascript" | "python" | "csharp")[]; analysisDepth: "shallow" | "semantic" | "artifact"; version: { ref: string; kind: "branch" | "tag";commitSha: string;c…
+makePayload(symbols: {id: string;orgId: string;name: string;kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…, overrides: Partial<{ languages: ("csharp" | "javascript" | "python" | "typescript" | "unknown")[]; analysisDepth: "artifact" | "semantic" | "shallow"; version: { ref: stri…): { languages: ("csharp" | "javascript" | "python" | "typescript" | "unknown")[]; analysisDepth: "artifact" | "semantic" | "shallow"; version: { ref: string; kind: "branch" | "tag";commitSha: string;c…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbols` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
-| `overrides`? | `Partial<{ languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }; repo: { id: string; orgId: string; remote: string; name: strin…` |  (default `{}`) |
+| `symbols` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
+| `overrides`? | `Partial<{ languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }; repo: { id: string; orgId: string; remote: string; name: strin…` |  (default `{}`) |
 
-**Returns** `{ languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }; repo: { id: string; orgId: string; remote: string; name: string; defau…`
+**Returns** `{ languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }; repo: { id: string; orgId: string; remote: string; name: string; defau…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/testing/fixtures.ts#L118)</sub>
 
@@ -1014,14 +1014,14 @@ makePayload(symbols: {id: string;orgId: string;name: string;kind: "function" | "
 ### `makeSymbol`
 
 ```typescript
-makeSymbol(overrides: Partial<{id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | …): {id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "constant" | "module" | "namespace" | "endpoint…
+makeSymbol(overrides: Partial<{id: string;orgId: string;name: string;kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "metho…): { id: string; orgId: string; name: string; kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "module" | "namespace" | "property" | "reco…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `overrides`? | `Partial<{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "inter…` |  (default `{}`) |
+| `overrides`? | `Partial<{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "pri…` |  (default `{}`) |
 
-**Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
+**Returns** `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/testing/fixtures.ts#L15)</sub>
 
@@ -1032,12 +1032,12 @@ makeSymbol(overrides: Partial<{id: string;orgId: string;name: string;kind: "func
 Stable logical key for a module. Prefers package identity over filesystem location.
 
 ```typescript
-moduleKey(input: {repoId: string;path: string;ecosystem: EcosystemLike;packageName?: string | null;}): string
+moduleKey(input: {repoId: string;path: string;ecosystem: EcosystemLike;packageName?: null; | string}): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `input` | `{ repoId: string; path: string; ecosystem: EcosystemLike; packageName?: string \| null \| undefined; }` |  |
+| `input` | `{ repoId: string; path: string; ecosystem: EcosystemLike; packageName?: null \| string \| undefined; }` |  |
 
 **Returns** `string`
 
@@ -1050,12 +1050,12 @@ moduleKey(input: {repoId: string;path: string;ecosystem: EcosystemLike;packageNa
 Normalise a doc comment for change detection: strip leading comment markers and collapse blank runs, so re-indenting a JSDoc block is not a "documentation changed" event.
 
 ```typescript
-normalizeDocText(text: string | null | undefined): string
+normalizeDocText(text: null | string | undefined): string
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `text` | `string \| null \| undefined` |  |
+| `text` | `null \| string \| undefined` |  |
 
 **Returns** `string`
 
@@ -1213,14 +1213,14 @@ upcastBundle(input: unknown): UpcastResult
 A module is only as deep as its shallowest symbol — never overstate confidence (§5).
 
 ```typescript
-weakestDepth(depths: ("shallow" | "semantic" | "artifact")[]): "shallow" | "semantic" | "artifact"
+weakestDepth(depths: ("artifact" | "semantic" | "shallow")[]): "artifact" | "semantic" | "shallow"
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `depths` | `("shallow" \| "semantic" \| "artifact")[]` |  |
+| `depths` | `("artifact" \| "semantic" \| "shallow")[]` |  |
 
-**Returns** `"shallow" \| "semantic" \| "artifact"`
+**Returns** `"artifact" \| "semantic" \| "shallow"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L243)</sub>
 
@@ -1231,15 +1231,15 @@ weakestDepth(depths: ("shallow" | "semantic" | "artifact")[]): "shallow" | "sema
 Rebuild the derived hashes after mutating `signature` — mirrors what assembly does.
 
 ```typescript
-withSignature(symbol: {id: string;orgId: string;name: string;kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "consta…, signature: string): { id: string; orgId: string; name: string; kind: "function" | "type" | "class" | "interface" | "method" | "property" | "field" | "enum" | "enumMember" | "constant" | "module" | "namespace" | "endpoint…
+withSignature(symbol: {id: string;orgId: string;name: string;kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "mo…, signature: string): { id: string; orgId: string; name: string; kind: "class" | "constant" | "endpoint" | "enum" | "enumMember" | "field" | "function" | "interface" | "method" | "module" | "namespace" | "property" | "reco…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `symbol` | `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…` |  |
+| `symbol` | `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …` |  |
 | `signature` | `string` |  |
 
-**Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
+**Returns** `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/testing/fixtures.ts#L84)</sub>
 <!-- kna:generated:end id=api.function -->
@@ -1358,14 +1358,14 @@ interface UpcastResult
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/upcast.ts#L36)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=64f1aaa2b39c6de1 -->
+<!-- kna:generated:start id=api.property hash=74e8dd9c45287921 -->
 ### `apiSpecs`
 
 ```typescript
 apiSpecs?: ApiSpec[]
 ```
 
-**Returns** `{ version: string; moduleId: string; format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; specId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[] \| undefined`
+**Returns** `undefined \| { version: string; moduleId: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; specId: string; title: string; documentHash: string; sourcePath: null \| string; document?: unknown; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L30)</sub>
 
@@ -1389,7 +1389,7 @@ includeSource: boolean
 modules: Array<{module: RawModule;symbols: RawSymbol[]}>
 ```
 
-**Returns** `{ module: { name: string; path: string; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csharp")[]; visibility: "public" \| "internal"; analysisDepth: "shallow" …`
+**Returns** `{ module: { name: string; path: string; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; visibility: "internal" \| "public"; analysisDepth: "artifact"…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L29)</sub>
 
@@ -1425,7 +1425,7 @@ projectIds: string[]
 repo: RepoRef
 ```
 
-**Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
+**Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L26)</sub>
 
@@ -1439,7 +1439,7 @@ Per-module sensitivity from the classifier (§10 Layer 3); defaults to `internal
 sensitivityByModulePath?: Record<string, Sensitivity>
 ```
 
-**Returns** `Record<string, "public" \| "internal" \| "confidential" \| "restricted"> \| undefined`
+**Returns** `Record<string, "confidential" \| "internal" \| "public" \| "restricted"> \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L32)</sub>
 
@@ -1451,7 +1451,7 @@ sensitivityByModulePath?: Record<string, Sensitivity>
 version: VersionRef
 ```
 
-**Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }`
+**Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L27)</sub>
 
@@ -1463,7 +1463,7 @@ version: VersionRef
 modules: IrModule[]
 ```
 
-**Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "npm" \| "nuget" \| "pypi" \| "go" \| "maven" \| "none"; packageName: string \| null; packageVersion: string \| null; languages: ("unknown" \| "typescript" \| "javascript" \| "python" \| "csha…`
+**Returns** `{ id: string; orgId: string; name: string; path: string; key: string; repoId: string; projectIds: string[]; ecosystem: "go" \| "maven" \| "none" \| "npm" \| "nuget" \| "pypi"; packageName: null \| string; packageVersion: null \| string; languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unkno…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L37)</sub>
 
@@ -1475,7 +1475,7 @@ modules: IrModule[]
 symbols: IrSymbol[]
 ```
 
-**Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
+**Returns** `{ id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "private" \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L38)</sub>
 
@@ -1539,7 +1539,7 @@ kind: BreakingKind
 apiSpecs: ApiSpec[]
 ```
 
-**Returns** `{ version: string; moduleId: string; format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; specId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
+**Returns** `{ version: string; moduleId: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; specId: string; title: string; documentHash: string; sourcePath: null \| string; document?: unknown; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L254)</sub>
 
@@ -1551,7 +1551,7 @@ apiSpecs: ApiSpec[]
 environment: 'ci' | 'local' | 'replay'
 ```
 
-**Returns** `"local" \| "ci" \| "replay"`
+**Returns** `"ci" \| "local" \| "replay"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L260)</sub>
 
@@ -1599,7 +1599,7 @@ producerVersion: string
 repo: RepoRef
 ```
 
-**Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
+**Returns** `{ id: string; orgId: string; remote: string; name: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L252)</sub>
 
@@ -1623,7 +1623,7 @@ scan: IrBundlePayload['scan']
 services: IrBundlePayload['services']
 ```
 
-**Returns** `{ name: string; kind: "service" \| "database" \| "queue" \| "cache" \| "external" \| "job"; moduleId: string \| null; image: string \| null; dependsOn: string[]; ports: number[]; source: string; }[]`
+**Returns** `{ name: string; kind: "cache" \| "database" \| "external" \| "job" \| "queue" \| "service"; moduleId: null \| string; image: null \| string; dependsOn: string[]; ports: number[]; source: string; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L255)</sub>
 
@@ -1637,7 +1637,7 @@ Signing is injected so the IR package stays free of crypto-provider dependencies
 sign: (payloadHash: string, envelopeClaims: Record<string, string>) => IrBundle['envelope']['signature']
 ```
 
-**Returns** `(payloadHash: string, envelopeClaims: Record<string, string>) => { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: st…`
+**Returns** `(payloadHash: string, envelopeClaims: Record<string, string>) => { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; workflow: nu…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L262)</sub>
 
@@ -1649,7 +1649,7 @@ sign: (payloadHash: string, envelopeClaims: Record<string, string>) => IrBundle[
 toolchain: IrBundlePayload['toolchain']
 ```
 
-**Returns** `{ detected: Record<string, string \| null>; tiersRun: ("tier0" \| "tier1" \| "tier2")[]; degradations: { module: string; reason: string; missing: string \| null; }[]; durationMs: number; }`
+**Returns** `{ detected: Record<string, null \| string>; tiersRun: ("tier0" \| "tier1" \| "tier2")[]; degradations: { module: string; reason: string; missing: null; \| string }[]; durationMs: number; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L256)</sub>
 
@@ -1673,7 +1673,7 @@ ttlSeconds?: number
 version: VersionRef
 ```
 
-**Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }`
+**Returns** `{ ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/assemble.ts#L253)</sub>
 
@@ -1701,7 +1701,7 @@ Ordering hint for the fan-out queue; OpenAPI changes are the customer-facing sur
 priority: 'low' | 'normal' | 'high'
 ```
 
-**Returns** `"low" \| "normal" \| "high"`
+**Returns** `"high" \| "low" \| "normal"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L30)</sub>
 
@@ -1823,7 +1823,7 @@ changes: SymbolChange[]
 fromCommitSha: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L128)</sub>
 
@@ -1981,7 +1981,7 @@ action: ChangeAction
 after: IrSymbol | null
 ```
 
-**Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
+**Returns** `null \| { id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "priv…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L88)</sub>
 
@@ -1993,7 +1993,7 @@ after: IrSymbol | null
 before: IrSymbol | null
 ```
 
-**Returns** `{ id: string; orgId: string; name: string; kind: "function" \| "type" \| "class" \| "interface" \| "method" \| "property" \| "field" \| "enum" \| "enumMember" \| "constant" \| "module" \| "namespace" \| "endpoint" \| "record" \| "struct"; repoId: string; projectIds: string[]; visibility: "public" \| "internal" \| "…`
+**Returns** `null \| { id: string; orgId: string; name: string; kind: "class" \| "constant" \| "endpoint" \| "enum" \| "enumMember" \| "field" \| "function" \| "interface" \| "method" \| "module" \| "namespace" \| "property" \| "record" \| "struct" \| "type"; repoId: string; projectIds: string[]; visibility: "internal" \| "priv…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/diff/types.ts#L87)</sub>
 
@@ -2129,7 +2129,7 @@ Disambiguator for overloads, which share a qualified name. Analysers pass the no
 overloadDiscriminator?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/ids.ts#L87)</sub>
 
@@ -2153,7 +2153,7 @@ qualifiedName: string
 bundle: IrBundle
 ```
 
-**Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: stri…`
+**Returns** `{ envelope: { orgId: string; ref: string; commitSha: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/upcast.ts#L37)</sub>
 
@@ -2198,7 +2198,7 @@ warnings: string[]
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/upcast.ts#L42)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=9e3d5ddf9eecf6b5 -->
+<!-- kna:generated:start id=api.constant hash=6df450220c082b3a -->
 ### `CHANGE_ACTIONS`
 
 ```typescript
@@ -2257,7 +2257,7 @@ const IR_SCHEMA_VERSION: "1.0.0"
 const SENSITIVITY_RANK: Record<Sensitivity, number>
 ```
 
-**Returns** `Record<"public" \| "internal" \| "confidential" \| "restricted", number>`
+**Returns** `Record<"confidential" \| "internal" \| "public" \| "restricted", number>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/primitives.ts#L41)</sub>
 
@@ -2322,10 +2322,10 @@ const zBundleSignature: z.ZodObject<{algorithm: z.ZodEnum<["sigstore-keyless", "
 ### `zDeprecation`
 
 ```typescript
-const zDeprecation: z.ZodObject<{since: z.ZodDefault<z.ZodNullable<z.ZodString>>;reason: z.ZodDefault<z.ZodString>;replacement: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {since: string | null;reason: string;replacement: string | null;}, {since?: string | null | undefined;reason?: stri…
+const zDeprecation: z.ZodObject<{since: z.ZodDefault<z.ZodNullable<z.ZodString>>;reason: z.ZodDefault<z.ZodString>;replacement: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {since: null | string;reason: string;replacement: null; | string}, {since?: null | string | undefined;reason?: stri…
 ```
 
-**Returns** `ZodObject<{ since: ZodDefault<ZodNullable<ZodString>>; reason: ZodDefault<ZodString>; replacement: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { since: string \| null; reason: string; replacement: string \| null; }, { since?: string \| null \| undefined; reason?: string \| undefined; repl…`
+**Returns** `ZodObject<{ since: ZodDefault<ZodNullable<ZodString>>; reason: ZodDefault<ZodString>; replacement: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { since: null \| string; reason: string; replacement: null; \| string }, { since?: null \| string \| undefined; reason?: string \| undefined; repl…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/primitives.ts#L83)</sub>
 
@@ -2334,10 +2334,10 @@ const zDeprecation: z.ZodObject<{since: z.ZodDefault<z.ZodNullable<z.ZodString>>
 ### `zDocComment`
 
 ```typescript
-const zDocComment: z.ZodObject<{summary: z.ZodString;description: z.ZodDefault<z.ZodNullable<z.ZodString>>;params: z.ZodDefault<z.ZodArray<z.ZodObject<{name: z.ZodString;type: z.ZodNullable<z.ZodString>;description: z.ZodString;}, "strip", z.ZodTypeAny, {name: string;type: string | null;description: string;…
+const zDocComment: z.ZodObject<{summary: z.ZodString;description: z.ZodDefault<z.ZodNullable<z.ZodString>>;params: z.ZodDefault<z.ZodArray<z.ZodObject<{name: z.ZodString;type: z.ZodNullable<z.ZodString>;description: z.ZodString;}, "strip", z.ZodTypeAny, {name: string;type: null | string;description: string;…
 ```
 
-**Returns** `ZodObject<{ summary: ZodString; description: ZodDefault<ZodNullable<ZodString>>; params: ZodDefault<ZodArray<ZodObject<{ name: ZodString; type: ZodNullable<ZodString>; description: ZodString; }, "strip", ZodTypeAny, { name: string; type: string \| null; description: string; }, { name: string; type: s…`
+**Returns** `ZodObject<{ summary: ZodString; description: ZodDefault<ZodNullable<ZodString>>; params: ZodDefault<ZodArray<ZodObject<{ name: ZodString; type: ZodNullable<ZodString>; description: ZodString; }, "strip", ZodTypeAny, { name: string; type: null \| string; description: string; }, { name: string; type: n…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/primitives.ts#L61)</sub>
 
@@ -2373,7 +2373,7 @@ const zHttpBinding: z.ZodObject<{method: z.ZodEnum<["GET", "POST", "PUT", "PATCH
 const zHttpBody: z.ZodObject<{contentType: z.ZodString;schemaRef: z.ZodDefault<z.ZodNullable<z.ZodString>>;schema: z.ZodDefault<z.ZodNullable<z.ZodUnknown>>;required: z.ZodDefault<z.ZodBoolean>;example: z.ZodDefault<z.ZodNullable<z.ZodUnknown>>;}, "strip", z.ZodTypeAny, {required: boolean;contentType: string…
 ```
 
-**Returns** `ZodObject<{ contentType: ZodString; schemaRef: ZodDefault<ZodNullable<ZodString>>; schema: ZodDefault<ZodNullable<ZodUnknown>>; required: ZodDefault<ZodBoolean>; example: ZodDefault<ZodNullable<ZodUnknown>>; }, "strip", ZodTypeAny, { required: boolean; contentType: string; schemaRef: string \| null; …`
+**Returns** `ZodObject<{ contentType: ZodString; schemaRef: ZodDefault<ZodNullable<ZodString>>; schema: ZodDefault<ZodNullable<ZodUnknown>>; required: ZodDefault<ZodBoolean>; example: ZodDefault<ZodNullable<ZodUnknown>>; }, "strip", ZodTypeAny, { required: boolean; contentType: string; schemaRef: null \| string; …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/http.ts#L28)</sub>
 
@@ -2399,7 +2399,7 @@ const zHttpMethod: z.ZodEnum<["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "
 const zHttpParameter: z.ZodObject<{name: z.ZodString;in: z.ZodEnum<["path", "query", "header", "cookie"]>;required: z.ZodDefault<z.ZodBoolean>;schema: z.ZodDefault<z.ZodNullable<z.ZodUnknown>>;description: z.ZodDefault<z.ZodNullable<z.ZodString>>;deprecated: z.ZodDefault<z.ZodBoolean>;}, "strip", z.ZodTypeAny, {n…
 ```
 
-**Returns** `ZodObject<{ name: ZodString; in: ZodEnum<["path", "query", "header", "cookie"]>; required: ZodDefault<ZodBoolean>; schema: ZodDefault<ZodNullable<ZodUnknown>>; description: ZodDefault<ZodNullable<ZodString>>; deprecated: ZodDefault<ZodBoolean>; }, "strip", ZodTypeAny, { name: string; description: st…`
+**Returns** `ZodObject<{ name: ZodString; in: ZodEnum<["path", "query", "header", "cookie"]>; required: ZodDefault<ZodBoolean>; schema: ZodDefault<ZodNullable<ZodUnknown>>; description: ZodDefault<ZodNullable<ZodString>>; deprecated: ZodDefault<ZodBoolean>; }, "strip", ZodTypeAny, { name: string; description: nu…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/http.ts#L19)</sub>
 
@@ -2548,10 +2548,10 @@ const zScanReport: z.ZodObject<{scannerVersion: z.ZodString;rulesetHash: z.ZodSt
 ### `zSecurityRequirement`
 
 ```typescript
-const zSecurityRequirement: z.ZodObject<{scheme: z.ZodString;type: z.ZodEnum<["apiKey", "http", "oauth2", "openIdConnect", "mutualTLS", "unknown"]>;scopes: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;}, "strip", z.ZodTypeAny, {type: "unknown" | "apiKey" | "http" | "oauth2" | "openIdConnect" | "mutualTLS";scheme: string…
+const zSecurityRequirement: z.ZodObject<{scheme: z.ZodString;type: z.ZodEnum<["apiKey", "http", "oauth2", "openIdConnect", "mutualTLS", "unknown"]>;scopes: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;}, "strip", z.ZodTypeAny, {type: "apiKey" | "http" | "mutualTLS" | "oauth2" | "openIdConnect" | "unknown";scheme: string…
 ```
 
-**Returns** `ZodObject<{ scheme: ZodString; type: ZodEnum<["apiKey", "http", "oauth2", "openIdConnect", "mutualTLS", "unknown"]>; scopes: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { type: "unknown" \| "apiKey" \| "http" \| "oauth2" \| "openIdConnect" \| "mutualTLS"; scheme: string; scopes: stri…`
+**Returns** `ZodObject<{ scheme: ZodString; type: ZodEnum<["apiKey", "http", "oauth2", "openIdConnect", "mutualTLS", "unknown"]>; scopes: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { type: "apiKey" \| "http" \| "mutualTLS" \| "oauth2" \| "openIdConnect" \| "unknown"; scheme: string; scopes: stri…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/http.ts#L45)</sub>
 
@@ -2655,7 +2655,7 @@ const zToolchainReport: z.ZodObject<{detected: z.ZodDefault<z.ZodRecord<z.ZodStr
 const zTypeRef: z.ZodObject<{text: z.ZodString;symbolId: z.ZodDefault<z.ZodNullable<z.ZodString>>;package: z.ZodDefault<z.ZodNullable<z.ZodString>>;nullable: z.ZodDefault<z.ZodBoolean>;isArray: z.ZodDefault<z.ZodBoolean>;typeArguments: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;}, "strip", z.ZodTypeAny, {…
 ```
 
-**Returns** `ZodObject<{ text: ZodString; symbolId: ZodDefault<ZodNullable<ZodString>>; package: ZodDefault<ZodNullable<ZodString>>; nullable: ZodDefault<ZodBoolean>; isArray: ZodDefault<ZodBoolean>; typeArguments: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { text: string; symbolId: string …`
+**Returns** `ZodObject<{ text: ZodString; symbolId: ZodDefault<ZodNullable<ZodString>>; package: ZodDefault<ZodNullable<ZodString>>; nullable: ZodDefault<ZodBoolean>; isArray: ZodDefault<ZodBoolean>; typeArguments: ZodDefault<ZodArray<ZodString, "many">>; }, "strip", ZodTypeAny, { text: string; symbolId: null \| …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/primitives.ts#L90)</sub>
 
@@ -2666,10 +2666,10 @@ const zTypeRef: z.ZodObject<{text: z.ZodString;symbolId: z.ZodDefault<z.ZodNulla
 Unresolved edge target. Tier 0 sees the *name* `createInvoice` but cannot resolve it to an id; Tier 1 usually can. Keeping the unresolved form rather than discarding it lets the cross-repo pass resolve later, and lets retrieval fall back to name matching.
 
 ```typescript
-const zUnresolvedRef: z.ZodObject<{name: z.ZodString;kind: z.ZodEnum<["call", "type", "import", "extends", "implements"]>;hint: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {name: string;kind: "type" | "implements" | "extends" | "call" | "import";hint: string | null;}, {name: string;kind: …
+const zUnresolvedRef: z.ZodObject<{name: z.ZodString;kind: z.ZodEnum<["call", "type", "import", "extends", "implements"]>;hint: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {name: string;kind: "call" | "extends" | "implements" | "import" | "type";hint: null; | string}, {name: string;kind: …
 ```
 
-**Returns** `ZodObject<{ name: ZodString; kind: ZodEnum<["call", "type", "import", "extends", "implements"]>; hint: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { name: string; kind: "type" \| "implements" \| "extends" \| "call" \| "import"; hint: string \| null; }, { name: string; kind: "type" \| "impl…`
+**Returns** `ZodObject<{ name: ZodString; kind: ZodEnum<["call", "type", "import", "extends", "implements"]>; hint: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { name: string; kind: "call" \| "extends" \| "implements" \| "import" \| "type"; hint: null; \| string }, { name: string; kind: "call" \| "exte…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/symbol.ts#L34)</sub>
 
@@ -2680,10 +2680,10 @@ const zUnresolvedRef: z.ZodObject<{name: z.ZodString;kind: z.ZodEnum<["call", "t
 The version axis (§4.3). `(scopeKeys, version)` is the full addressing tuple on every chunk; the column exists from day one even though Phase 1 only ever writes `main`, because retrofitting it means reindexing everything.
 
 ```typescript
-const zVersionRef: z.ZodObject<{ref: z.ZodString;kind: z.ZodEnum<["branch", "tag"]>;commitSha: z.ZodString;committedAt: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {ref: string;kind: "branch" | "tag";commitSha: string;committedAt: string | null;}, {ref: string;kind: "branch" | "tag";…
+const zVersionRef: z.ZodObject<{ref: z.ZodString;kind: z.ZodEnum<["branch", "tag"]>;commitSha: z.ZodString;committedAt: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {ref: string;kind: "branch" | "tag";commitSha: string;committedAt: null; | string}, {ref: string;kind: "branch" | "tag";…
 ```
 
-**Returns** `ZodObject<{ ref: ZodString; kind: ZodEnum<["branch", "tag"]>; commitSha: ZodString; committedAt: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: string \| null; }, { ref: string; kind: "branch" \| "tag"; commitSha: stri…`
+**Returns** `ZodObject<{ ref: ZodString; kind: ZodEnum<["branch", "tag"]>; commitSha: ZodString; committedAt: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { ref: string; kind: "branch" \| "tag"; commitSha: string; committedAt: null; \| string }, { ref: string; kind: "branch" \| "tag"; commitSha: stri…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/ir/src/schema/repo.ts#L19)</sub>
 

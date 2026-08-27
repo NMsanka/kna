@@ -11,7 +11,7 @@ owners:
   []
 provenance:
   symbolIds:
-    - sym_94a8dac65e553dbf73754419fa7cb9f2382566eb
+    - sym_421a6ce8ac628768ed104bbd5da75933013bf518
     - sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19
     - sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9
     - sym_dbf84f0792700801f3137a55c3114621f5068449
@@ -107,7 +107,7 @@ provenance:
     - sym_c64eac068438700ad3e0fdd220bde04689157665
     - sym_02ea86ef634fdbf9d8bfa2075a3d9c900b9273b8
   signatureHashes:
-    sym_94a8dac65e553dbf73754419fa7cb9f2382566eb: 1f38a39a16c6ee169f400eac16c3e999a57a73e67a853f13c1463f70d99621ff
+    sym_421a6ce8ac628768ed104bbd5da75933013bf518: 2d241d526dec8a73e44d70bcf1c7607d068eb5311eb6383997ef1a3a1c7a5498
     sym_3e42d52c957187f88fd9e75a9dc85c21b6bf5f19: db35ff8a4521fa24e81bf2a586585cc4a1b2bcbbe55801861b13c4bf50444358
     sym_06ca7f2b39b61e41263b270dcc70cad58e22cee9: df781e7ef3c829322dc35797037ceabe81285eeef31161e52659fe384f9e8b29
     sym_dbf84f0792700801f3137a55c3114621f5068449: db0bc537d8a37a13b13867db62adc1180efc79cd2544e591394d9f1dd5dc2f84
@@ -122,7 +122,7 @@ provenance:
     sym_5116504364bc2d26b4753d29aa760755041d2e2f: 71b8fe147c51c1dad3f7d029bf68491a9c0f138de22a08cbe1108b874ea7a80c
     sym_32e25334f7badd37c560b0d1e5d21bb01869bf6c: 773f8ae0bff7805aad5e87dbfc3125a317da2555b32c93cd2a4486b7618d92ae
     sym_c4a150b4d35c7a27858fa710367d9070f322a142: a2b9c9f3dc7baf63f0af5984238c9291889ef8b83b2cf1d140505811edf81aa4
-    sym_b9047fb276d379c24b7719458c0c38beef065d03: 325c7ea1a14331cdb43ec53cbf89c52458f647faba4cb8f79ab3aa4da792087c
+    sym_b9047fb276d379c24b7719458c0c38beef065d03: 6386ba91d02c46f53470217b7e79ee0f6e3eb3ed7a08b7b44b1d2754a48315b2
     sym_71c7d6eeea1c0c2610ce5096aa9136853a56fe19: 46235ea050750c9fadde59fd680f010409a0168fba209291c885f6ae12d348dd
     sym_cd26bcb248e42c3a90194baf4bb29092f09984dc: 2371904389cd1627ddc5bbaef939591581ab72bb77951186f4b79c7b8a08018f
     sym_3ac6b6e9b0000d6e048e8b3decb56d3d558d46fb: bf36968f65af2fdcb7c6026d413aeb914cb226199327d6ceed0dfa57c35a3deb
@@ -215,16 +215,16 @@ provenance:
 | Public symbols | 95 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=56a4af7323b9849f -->
+<!-- kna:generated:start id=api.function hash=c09861df5bf56ee5 -->
 ### `createWorkerContext`
 
 ```typescript
-createWorkerContext(env: {KNA_ENV: "development" | "test" | "staging" | "production";KNA_REGION: string;LOG_LEVEL: "trace" | "debug" | "info" | "warn" | "error" | "fatal";DATABASE_U…): Promise<WorkerContext>
+createWorkerContext(env: {KNA_ENV: "development" | "production" | "staging" | "test";KNA_REGION: string;LOG_LEVEL: "debug" | "error" | "fatal" | "info" | "trace" | "warn";DATABASE_U…): Promise<WorkerContext>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `env`? | `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…` |  (default `loadPlatformEnv()`) |
+| `env`? | `{ KNA_ENV: "development" \| "production" \| "staging" \| "test"; KNA_REGION: string; LOG_LEVEL: "debug" \| "error" \| "fatal" \| "info" \| "trace" \| "warn"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: number; REDIS_U…` |  (default `loadPlatformEnv()`) |
 
 **Returns** `Promise<WorkerContext>`
 
@@ -468,7 +468,7 @@ interface WorkerContext
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L22)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=960daba4f0184765 -->
+<!-- kna:generated:start id=api.property hash=253c339339d5c871 -->
 ### `orgId`
 
 ```typescript
@@ -583,7 +583,7 @@ timedOut: boolean
 fetchImpl?: typeof fetch
 ```
 
-**Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
+**Returns** `((input: Request \| URL \| string, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L16)</sub>
 
@@ -607,7 +607,7 @@ logger: Logger
 provider: 'github' | 'azuredevops' | 'gitlab'
 ```
 
-**Returns** `"github" \| "azuredevops" \| "gitlab"`
+**Returns** `"azuredevops" \| "github" \| "gitlab"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L13)</sub>
 
@@ -799,7 +799,7 @@ skipped: boolean
 skipReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/index-module.ts#L48)</sub>
 
@@ -823,7 +823,7 @@ detail: string
 kind: | 'chunk-symbol-count-mismatch' | 'orphan-chunk' | 'dangling-cross-repo-edge' | 'doc-references-dead-symbol' | 'rls-missing' | 'stale-module'
 ```
 
-**Returns** `"chunk-symbol-count-mismatch" \| "orphan-chunk" \| "dangling-cross-repo-edge" \| "doc-references-dead-symbol" \| "rls-missing" \| "stale-module"`
+**Returns** `"chunk-symbol-count-mismatch" \| "dangling-cross-repo-edge" \| "doc-references-dead-symbol" \| "orphan-chunk" \| "rls-missing" \| "stale-module"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L28)</sub>
 
@@ -847,7 +847,7 @@ scope: string
 severity: 'warn' | 'error'
 ```
 
-**Returns** `"warn" \| "error"`
+**Returns** `"error" \| "warn"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/maintenance.ts#L37)</sub>
 
@@ -1055,7 +1055,7 @@ skipped: boolean
 skipReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/jobs/regenerate-docs.ts#L62)</sub>
 
@@ -1103,7 +1103,7 @@ db: DbHandle
 env: PlatformEnv
 ```
 
-**Returns** `{ KNA_ENV: "development" \| "test" \| "staging" \| "production"; KNA_REGION: string; LOG_LEVEL: "trace" \| "debug" \| "info" \| "warn" \| "error" \| "fatal"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; REDIS_URL: string; BUNDLE_STORE_ENDPOINT: string; BUNDLE_STORE…`
+**Returns** `{ KNA_ENV: "development" \| "production" \| "staging" \| "test"; KNA_REGION: string; LOG_LEVEL: "debug" \| "error" \| "fatal" \| "info" \| "trace" \| "warn"; DATABASE_URL: string; DATABASE_POOL_MAX: number; DATABASE_STATEMENT_TIMEOUT_MS: number; DATABASE_BATCH_IDLE_IN_TRANSACTION_TIMEOUT_MS: number; REDIS_U…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/context.ts#L23)</sub>
 
@@ -1240,7 +1240,7 @@ class WriteDisabledError extends Error
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L19)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=47a1d0fd4859bef6 -->
+<!-- kna:generated:start id=api.method hash=c8aea43f37229005 -->
 ### `constructor`
 
 ```typescript
@@ -1260,7 +1260,7 @@ constructor(private readonly options: GitClientOptions)
 HEAD of the default branch, for the reconciliation sweep.
 
 ```typescript
-headSha(remote: string, branch: string): Promise<string | null>
+headSha(remote: string, branch: string): Promise<null | string>
 ```
 
 | Parameter | Type | Description |
@@ -1268,7 +1268,7 @@ headSha(remote: string, branch: string): Promise<string | null>
 | `remote` | `string` |  |
 | `branch` | `string` |  |
 
-**Returns** `Promise<string \| null>`
+**Returns** `Promise<null \| string>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/worker/src/services/git.ts#L33)</sub>
 

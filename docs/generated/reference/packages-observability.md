@@ -46,7 +46,7 @@ provenance:
     - sym_b84bfe67429bd1043f9249c93bd47d1d3a1d4625
     - sym_99ad01b60467d3d45ddee5996aae60d9fd5d99da
     - sym_6546fdc77eda71723b2d4d0e8bac67e850d83984
-    - sym_e45b46486ef370f51094483ffa4cc0ed75f0db9d
+    - sym_acf241c670c087294677051b81a371a14c0a5523
     - sym_fbdb4a479596f5b87f230d547bae2da266e58182
   signatureHashes:
     sym_66960a3e3287cb84045131fc1088f04eb06ed79e: 1d8929328ab7ceb4c7aebf1aabf76429e0bddb8532b2c07b8e9e21d496a224f2
@@ -54,24 +54,24 @@ provenance:
     sym_5aea070b6a8c4d2d55a04c41669b58e8aac70bd7: 8b97d8ce60ed2ea47306e2b4d972f56d33fe81a2a751c2f67da686c89e534007
     sym_6437182cde1299ccf551573f540987fa2b78442b: dd67695d791acf96f43f04a7aa761e4d10cdf7c47b9e5246976e478ba646c5f9
     sym_ea172a2e7f30f6c25b703edee1a63d90fdac5468: eff551a88f32d4f9dff49835b4f5a2fa0f25601ab9981512c1668d73f06f5d26
-    sym_23eb079bac6695a36fd78cdc092580f3de641c43: 659ebd5911e5719b0653ae4f3e974b1bf0338a1d63599d9c5c847ee5296a6fe1
+    sym_23eb079bac6695a36fd78cdc092580f3de641c43: 9b3464f7078a069809c2fe45cc33d50c3a8eb05aff4482982e4683b0b88bce6a
     sym_4413bdeda15c78575231483aef5095430a79c83f: 7560087a6c1fdefdd890a9189ae5559003d2dae15fd17ec7ea802370389fc70d
-    sym_9df7587373c44e8ee8996f424d0b429f2cde3d20: a6f7f2285789240ff7b5e37ab36c911c6c5f7c9bb50bca6fef71f2c043481ed8
+    sym_9df7587373c44e8ee8996f424d0b429f2cde3d20: 5d16d7fe326016c428f57731634e110e135753836cfd98c9a4e0e1dfcbdd53ad
     sym_91c50035eddaaafad2cc927ee0d760be6bb266da: 831baefe499bfd8dda269d2ff8b568c300a17daba91b9959558a595d0cf20667
     sym_c435b818e9f1232028e5dd244146207c82119bd8: c1ff1f8b8a6e1e1c839d5d27d9a91cb8f8c55c40df9fadb3400395a931e03ce2
     sym_9bafc97e441819c84f2d532586165025527e62dc: d8f13186a979c0bc055e657d3d2be43aa67f3e9e2787df1e8e30a3089dc75447
     sym_774101def4525e20c97af617f67e21b11cfda390: 585d5c77e7691f09a58bb1e181e8c0925f4602ab16901e56ed7d4cda144978dd
     sym_13c1f4780bd7d8b0122fa6c58abba16bcae9082a: f8f3fd35f30a138844ba43a1b8a231297406f3e63b7519d576a4f9fb8bdbb085
     sym_95d87ea4d02ea278b03833cacbb642a866f9655d: 3a276a877f51cd7ae5cdebb4ab6cbe3acf3ba8a795c6e564dc9bd121d8faaa01
-    sym_f38e07ae71c3f0394b0830e7758acb73e5fe55a1: 6da65fb8f392ac9b79153a63c8af7ef319df30b36b07f5ee8af1666791f210eb
-    sym_d265a35f221e289ab08fc050399cab5914eb6ec8: bdbc2da2fb1f6a3d8cda2d0977b68111cadc8ea3ecdc92939e0d69c1055c6615
+    sym_f38e07ae71c3f0394b0830e7758acb73e5fe55a1: 7e83885d19c30fb435829d5ecf8500dbb591ae4f27b529cbf2ec633500967325
+    sym_d265a35f221e289ab08fc050399cab5914eb6ec8: 85c9632373fd8002a66d35ae759d0f1b9ccc293013f785b012a2f616d27bcf35
     sym_d8dfde868f161330abf08df1d4d8d48eb6e168e4: bcd528b13012015c794f04664c80c261352be0e38e1914a6358a71a61e2f8507
     sym_a61f891b7f37cf362556f9dde13f08613fbee4ca: 60751f15c7ca0f56f5bbaf2925ed0e6f1c0989aff3eb3f4cae87cd595529365a
     sym_6e0009ce8a6977cfd0a7073e1ab8dcfd0928ca3a: 605654b31f99510be585e445bfb732546883beb0c8d110f95eadcd70450d8f52
     sym_b26e2738ed6d236c90d98c5df4221634f3541329: 3eb901da1cabf135fe29a5371c8f7cc01b6d7dde9d9fb07f53f76f05b2ab4b63
     sym_95f3fcccc6c64de5144ac11d322284a5437b069e: 68a9c711cbdcb08c531453ba8a62f4f01f0cdc2c9fc6de1977e8264a24f3bc9f
     sym_503b06b63f2e1ab40fe71468390ba6cb668a05ae: df6ee52c00642112efff4f6394b96b85186a7b51bf51b76519cd9e77bccb452d
-    sym_2c64245630d6f26c5d17fa058be025071dd1fa79: e7878cc08e4733b4b97c187ddbdab10da97dd5bcfda2040700dc8b5801f8f233
+    sym_2c64245630d6f26c5d17fa058be025071dd1fa79: 88af35b65e881cbaba06875d923f152289219df2e1fe2ca3a05464f3fd0d57ff
     sym_206bea88c4bedf62380d4acc5c702e6d33dcb857: d9ab8974645869e25d080f2abbe6f0ab9b7c14494882ab588a847d9e84491270
     sym_38a2440a100fe2808423a91b259a4f054d8dc8d6: e25e10aca3b05a41c81c99669d78bacf5c061279adffc5607a7e9857fc9ce5b2
     sym_d6dd5148cddee70e0368ea6e556354ebd94eb377: da2235cf7482fae50d7ab5357cc82d2dad896bf07e15c7e02c8116195852c080
@@ -84,7 +84,7 @@ provenance:
     sym_b84bfe67429bd1043f9249c93bd47d1d3a1d4625: 19507fab0bf22d7fdd9755c66dd5aeb5d924da16d3dfe216732e723bc83bb6e9
     sym_99ad01b60467d3d45ddee5996aae60d9fd5d99da: 2c83ef5a791b960ce862e999ed69573415d122472c64bcd5fe8eba38ef2b7fea
     sym_6546fdc77eda71723b2d4d0e8bac67e850d83984: c7f8ad482afaee1a8785e5b367b2de02d42660588ca437e625f988b8fdaaab7e
-    sym_e45b46486ef370f51094483ffa4cc0ed75f0db9d: ed2a43191fc03878ebc3182e920f740ce31494eba0be509ff2534809edc060a1
+    sym_acf241c670c087294677051b81a371a14c0a5523: 02f437caab68ad0f91726a1b3d45b20850bb439b8a4b416ffa2c3eca5957a9bc
     sym_fbdb4a479596f5b87f230d547bae2da266e58182: 9499de61d3289359d708c575fd744420aa54c91ffab6adea9dc8e58f68acdf48
 ---
 
@@ -99,7 +99,7 @@ provenance:
 | Public symbols | 37 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=c18ccbca7b402d0e -->
+<!-- kna:generated:start id=api.property hash=c90eac8c090e3141 -->
 ### `consecutiveFailures`
 
 ```typescript
@@ -142,7 +142,7 @@ lastState: DependencyState
 openedAt: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L52)</sub>
 
@@ -278,7 +278,7 @@ service: string
 attributes?: Record<string, string | number | boolean>
 ```
 
-**Returns** `Record<string, string \| number \| boolean> \| undefined`
+**Returns** `Record<string, boolean \| number \| string> \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L14)</sub>
 
@@ -297,7 +297,7 @@ llmTraceId?: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L16)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=f31d1dfb05409c1a -->
+<!-- kna:generated:start id=api.function hash=840fb62e611089c6 -->
 ### `createLogger`
 
 ```typescript
@@ -319,10 +319,10 @@ createLogger(options: LoggerOptions): Logger
 Current trace id, for stamping onto audit records and query traces.
 
 ```typescript
-currentTraceId(): string | null
+currentTraceId(): null | string
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/tracing.ts#L46)</sub>
 
@@ -352,13 +352,13 @@ installGracefulShutdown(handlers: {name: string;drain: () => Promise<void>;}[], 
 Convenience wrapper that always records duration, including on the failure path.
 
 ```typescript
-timed(histogram: Histogram<Attributes>, attributes: Record<string, string | number | boolean>, fn: () => Promise<T>): Promise<T>
+timed(histogram: Histogram<Attributes>, attributes: Record<string, boolean | number | string>, fn: () => Promise<T>): Promise<T>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `histogram` | `Histogram<Attributes>` |  |
-| `attributes` | `Record<string, string \| number \| boolean>` |  |
+| `attributes` | `Record<string, boolean \| number \| string>` |  |
 | `fn` | `() => Promise<T>` |  |
 
 **Returns** `Promise<T>`
@@ -410,11 +410,11 @@ const KnaMetrics: {readonly bundlesIngested: Counter;readonly bundlesRejected: C
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/metrics.ts#L21)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=3cab7504ef018271 -->
+<!-- kna:generated:start id=api.type hash=718d318a29c766cc -->
 ### `DegradedMode`
 
 ```typescript
-type DegradedMode = | 'reranker-unavailable' | 'embeddings-unavailable' | 'generation-unavailable' | 'git-provider-unavailable' | 'bundle-store-unavailable'
+type DegradedMode = 'bundle-store-unavailable' | 'embeddings-unavailable' | 'generation-unavailable' | 'git-provider-unavailable' | 'reranker-unavailable'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L29)</sub>
@@ -426,7 +426,7 @@ type DegradedMode = | 'reranker-unavailable' | 'embeddings-unavailable' | 'gener
 Health, readiness and degraded modes (§15.6).
 
 ```typescript
-type DependencyKind = 'critical' | 'advisory'
+type DependencyKind = 'advisory' | 'critical'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L16)</sub>
@@ -436,7 +436,7 @@ type DependencyKind = 'critical' | 'advisory'
 ### `DependencyState`
 
 ```typescript
-type DependencyState = 'up' | 'degraded' | 'down'
+type DependencyState = 'degraded' | 'down' | 'up'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L17)</sub>
@@ -482,7 +482,7 @@ class HealthRegistry
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L57)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=db0025133e35905e -->
+<!-- kna:generated:start id=api.method hash=4c0321b8a4e91b87 -->
 ### `activeBanners`
 
 ```typescript
@@ -562,10 +562,10 @@ liveness(): {status: "ok";uptimeSeconds: number;}
 Readiness: can this pod serve traffic? Critical dependencies only.
 
 ```typescript
-readiness(): Promise<{status: "ready" | "not-ready";dependencies: {name: string;kind: DependencyKind;state: DependencyState;detail?: string | undefined;}[];degradedModes: DegradedMode[];}>
+readiness(): Promise<{status: "not-ready" | "ready";dependencies: {name: string;kind: DependencyKind;state: DependencyState;detail?: string | undefined;}[];degradedModes: DegradedMode[];}>
 ```
 
-**Returns** `Promise<{ status: "ready" \| "not-ready"; dependencies: { name: string; kind: DependencyKind; state: DependencyState; detail?: string \| undefined; }[]; degradedModes: DegradedMode[]; }>`
+**Returns** `Promise<{ status: "not-ready" \| "ready"; dependencies: { name: string; kind: DependencyKind; state: DependencyState; detail?: string \| undefined; }[]; degradedModes: DegradedMode[]; }>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/observability/src/health.ts#L82)</sub>
 

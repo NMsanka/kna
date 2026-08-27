@@ -66,7 +66,7 @@ provenance:
     sym_a1cf2cf510f7ec9838caea9519d6333af8dc2dd9: 630f6d21cb0f06f0e1efe6b443820835d80c8ceee29a9a68a2bc1ad284110037
     sym_b8f02e4aeda9936644a9b55d886d48f5154b4a77: 84781c4a1c3981beb9e4eaa3ae10cfc83f9109feec64ce61e168e55c40f10981
     sym_9706b017e72e9199ed11c78ec8754bc93d0202e5: eeb206363d36454d74c278cc13b7a4dacaee0858835a3e4cceaacd8b1d647127
-    sym_4d12d58976eac18b3cfba416febce5e9d143711b: 353929e76d408a8e470801b65799c4275ccd71e645b2d8d775129b6eb0c69fd5
+    sym_4d12d58976eac18b3cfba416febce5e9d143711b: 2fc8f44a683bfe66537bb13c0527ef4635eb8ba6923b12dabfebdada744ea9a0
     sym_ae03de70a491549140304396d0a8402e01350f7d: 89d2aa3a32c7e11252ec7787f644ec9b4957e99e1360449fa9ebe7b1f940a472
     sym_7ab8cd1bcc7d2ebc489d2bce03489ed340d20718: 6a90cccb6920623f6819700ade69989b6102283726b9df45d239e6f92be9a413
     sym_8c6d5360266741f3b37763671a68748f4357befa: fd2a81f50e526b26098d3ae9dc95a66b3262773bf1b758605aee926f0b82c641
@@ -197,7 +197,7 @@ interface ScopeGroup
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L20)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=32654b281f45ea68 -->
+<!-- kna:generated:start id=api.property hash=3d85e53d11e03422 -->
 ### `abstained`
 
 ```typescript
@@ -276,7 +276,7 @@ marker: number
 path: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L30)</sub>
 
@@ -288,7 +288,7 @@ path: string | null
 qualifiedName: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L29)</sub>
 
@@ -300,7 +300,7 @@ qualifiedName: string | null
 repo: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L28)</sub>
 
@@ -312,7 +312,7 @@ repo: string | null
 startLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L31)</sub>
 
@@ -360,7 +360,7 @@ clearance: string
 displayName: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L53)</sub>
 
@@ -528,7 +528,7 @@ value: string
 label: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L21)</sub>
 
@@ -564,7 +564,7 @@ answer: Answer | null
 error: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L18)</sub>
 
@@ -581,14 +581,14 @@ question: string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L16)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.constant hash=3c5578a21ad63971 -->
+<!-- kna:generated:start id=api.constant hash=d5d4f09987c9b656 -->
 ### `api`
 
 ```typescript
-const api: {me: () => Promise<Me>;signIn: (token: string) => Promise<Me>;signOut: () => Promise<{ok: true;}>;scope: () => Promise<{groups: ScopeGroup[];}>;ask: (input: {question: string;scope: string;history: Array<{role: "user" | "assistant";content: string;}>;everywhere: boolean;}) => Promis…
+const api: {me: () => Promise<Me>;signIn: (token: string) => Promise<Me>;signOut: () => Promise<{ok: true;}>;scope: () => Promise<{groups: ScopeGroup[];}>;ask: (input: {question: string;scope: string;history: Array<{role: "assistant" | "user";content: string;}>;everywhere: boolean;}) => Promis…
 ```
 
-**Returns** `{ me: () => Promise<Me>; signIn: (token: string) => Promise<Me>; signOut: () => Promise<{ ok: true; }>; scope: () => Promise<{ groups: ScopeGroup[]; }>; ask: (input: { question: string; scope: string; history: { role: "user" \| "assistant"; content: string; }[]; everywhere: boolean; }) => Promise<{ a…`
+**Returns** `{ me: () => Promise<Me>; signIn: (token: string) => Promise<Me>; signOut: () => Promise<{ ok: true; }>; scope: () => Promise<{ groups: ScopeGroup[]; }>; ask: (input: { question: string; scope: string; history: { role: "assistant" \| "user"; content: string; }[]; everywhere: boolean; }) => Promise<{ a…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L93)</sub>
 <!-- kna:generated:end id=api.constant -->

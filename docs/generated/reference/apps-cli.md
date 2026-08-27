@@ -88,7 +88,7 @@ provenance:
     - sym_11145911e95c54cf338f7f358a4aeaba41f822a1
     - sym_e91fd67a285988416d403b57eafbed1ebd11286e
     - sym_32a430c6524d3619448a7e72507c001fe0be7ac2
-    - sym_fd603df6ce50acc3437cb31b16646ddbf458a8e7
+    - sym_94ddf30460c29a6e179ea9c39144e157e54bfd79
     - sym_4318263e8bd5c5d0471d1d7c78de657709c5cfef
     - sym_90f08c627fa914a27dd739bdc30f99eaea444d81
     - sym_5cbc76d828d90cda7f675ad40a7ae8619568080d
@@ -182,7 +182,7 @@ provenance:
     sym_11145911e95c54cf338f7f358a4aeaba41f822a1: 8e1ab7ec22c4448e7f88ab7072d141c71cd130e6582738b80044b8273421e3b0
     sym_e91fd67a285988416d403b57eafbed1ebd11286e: 379788d68382c478ace2d9ff88b77aa7d51d6b1b6e41cc93ada96c5b0f1990f7
     sym_32a430c6524d3619448a7e72507c001fe0be7ac2: 4dcabee0d8404fee295ce2c22b1c9e89c4cb3a77bc775055e2f658350d3592c7
-    sym_fd603df6ce50acc3437cb31b16646ddbf458a8e7: 16ede6f96aae58fb8108efb69b54fe875359bbb9173680458bd141b9edc9ac31
+    sym_94ddf30460c29a6e179ea9c39144e157e54bfd79: 16ede6f96aae58fb8108efb69b54fe875359bbb9173680458bd141b9edc9ac31
     sym_4318263e8bd5c5d0471d1d7c78de657709c5cfef: 9941ffd430bc762e50465bac74a9638344e7279058296c9a70867a39a213e756
     sym_90f08c627fa914a27dd739bdc30f99eaea444d81: 8b6a06873f1444f3fdc0ea8d54fe27a4e180529df567e55be1c8dfb523542c87
     sym_5cbc76d828d90cda7f675ad40a7ae8619568080d: 0c03de346325334ccbbd30706292c47ade5be051485172765b0c9d2f006e3917
@@ -561,7 +561,7 @@ interface WorkflowInput
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L184)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=ba31a37011d2b75f -->
+<!-- kna:generated:start id=api.property hash=93ab581d311073eb -->
 ### `maxTier`
 
 ```typescript
@@ -606,7 +606,7 @@ skipScan?: boolean
 apiSpecs: ApiSpec[]
 ```
 
-**Returns** `{ format: "openapi3" \| "openapi31" \| "swagger2" \| "asyncapi" \| "graphql" \| "grpc"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: string \| null; document?: unknown; }[]`
+**Returns** `{ format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: null \| string; document?: unknown; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L29)</sub>
 
@@ -618,7 +618,7 @@ apiSpecs: ApiSpec[]
 bundle: IrBundle
 ```
 
-**Returns** `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; wo…`
+**Returns** `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; wo…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/analyze.ts#L28)</sub>
 
@@ -726,7 +726,7 @@ platformUrl?: string
 scope: 'project' | 'repo' | 'org' | 'expanded'
 ```
 
-**Returns** `"project" \| "repo" \| "org" \| "expanded"`
+**Returns** `"expanded" \| "org" \| "project" \| "repo"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/ask.ts#L23)</sub>
 
@@ -762,7 +762,7 @@ topN: number
 action: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/doctor.ts#L27)</sub>
 
@@ -798,7 +798,7 @@ name: string
 status: 'ok' | 'warn' | 'fail'
 ```
 
-**Returns** `"ok" \| "warn" \| "fail"`
+**Returns** `"fail" \| "ok" \| "warn"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/doctor.ts#L25)</sub>
 
@@ -810,7 +810,7 @@ status: 'ok' | 'warn' | 'fail'
 config: RepoConfig
 ```
 
-**Returns** `{ projects: string[]; version: 1; org: string; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "public" \| "internal" \| undefined; sensitivity?: "public" \| "internal" \| "confidential" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
+**Returns** `{ projects: string[]; version: 1; org: string; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "internal" \| "public" \| undefined; sensitivity?: "confidential" \| "internal" \| "public" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L18)</sub>
 
@@ -834,7 +834,7 @@ configIsDefault: boolean
 configPath: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L19)</sub>
 
@@ -908,7 +908,7 @@ registry: AnalyzerRegistry
 repo: RepoRef
 ```
 
-**Returns** `{ name: string; id: string; orgId: string; remote: string; defaultBranch: string; provider: "github" \| "azuredevops" \| "gitlab" \| "bitbucket" \| "local"; }`
+**Returns** `{ name: string; id: string; orgId: string; remote: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L22)</sub>
 
@@ -932,7 +932,7 @@ repoRoot: string
 version: VersionRef
 ```
 
-**Returns** `{ commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }`
+**Returns** `{ commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/context.ts#L23)</sub>
 
@@ -1082,7 +1082,7 @@ Where the CI runner gets the `kna` CLI from.
 cliSource?: 'source' | 'registry'
 ```
 
-**Returns** `"source" \| "registry" \| undefined`
+**Returns** `"registry" \| "source" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L42)</sub>
 
@@ -1170,7 +1170,7 @@ projects?: string[]
 provider?: 'github' | 'azuredevops' | 'gitlab'
 ```
 
-**Returns** `"github" \| "azuredevops" \| "gitlab" \| undefined`
+**Returns** `"azuredevops" \| "github" \| "gitlab" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L27)</sub>
 
@@ -1258,7 +1258,7 @@ token?: string
 cliSource: 'source' | 'registry'
 ```
 
-**Returns** `"source" \| "registry"`
+**Returns** `"registry" \| "source"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/init.ts#L186)</sub>
 
@@ -1369,7 +1369,7 @@ class PublishError extends Error
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/publish.ts#L51)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=25351bcbde47a3f6 -->
+<!-- kna:generated:start id=api.method hash=812bd0b24a161010 -->
 ### `constructor`
 
 ```typescript
@@ -1408,7 +1408,7 @@ constructor(message: string, readonly status: number, readonly guidance: string 
 |---|---|---|
 | `message` | `string` |  |
 | `status` | `number` |  |
-| `guidance` | `string \| null` |  |
+| `guidance` | `null \| string` |  |
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/cli/src/commands/publish.ts#L52)</sub>
 <!-- kna:generated:end id=api.method -->

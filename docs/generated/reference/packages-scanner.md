@@ -65,11 +65,11 @@ provenance:
     - sym_d15b99daa69e8b3f518452fdb17d82341139797c
     - sym_6791bf1bc61d1ae7a52156006770ddf2632120fc
     - sym_99bcf892e36e472854a9b4ae47d033498f976465
-    - sym_ed298ef1def22ca639d2b7448090ecf1b542e4fc
+    - sym_05cae35b53a8d9080cd002162a61c3db486cf10f
     - sym_905855b5c36a06cbc20c6ac6ca0f09f5eba77c1a
     - sym_933127abb01932ad739298994dda484164b1af56
     - sym_fef955d34cd39ce3a10b9fe6377c53284b04827e
-    - sym_663361f42ecf9f67b1ef30718497c986997f484d
+    - sym_abb4c693c51475df811130c7e4c22f46492392c2
     - sym_b75c5ee52574f953af046b8f659f273361a0eaeb
     - sym_ecb598f657a4b84b55d022553837d6681d2e0b8b
     - sym_de1984e0278951fa9d34309917a2268b5b54f9e4
@@ -100,7 +100,7 @@ provenance:
     - sym_28c262a38a46b6bf9d946950ea3f8c38db38dca9
   signatureHashes:
     sym_cd9d6b40cabdda18d43a8dea11d58fed742b6598: 7a2ecdf619d95d4e47dfdeb5f888b370c5ae900b631745d769853b237b6e9d2c
-    sym_67f4ec3beee80fab654f308edbdd7394a1f33cbc: e11b6b0f81a27ae9399a06578bbc4047335822f6eb2b60d663b49102d732c8aa
+    sym_67f4ec3beee80fab654f308edbdd7394a1f33cbc: c1739442468ebcaa1d81eacd37600d26edbaba6d91b2d49bb9035e74c44a0555
     sym_534595ab7543343fd42c798d18cb311591eead57: 7dda255bbbc58522e13ebf2db959ea05dfa2c0c76320fe1094b25ead7d121f6c
     sym_81ca60e3ad795bac386cb3bf766569df1337caa8: 874ca3a597f27a33e46c19a6181b1802a26ee28eb066c2488b6a93237ddf1a00
     sym_e02784ba60ce1726990587d01c9debaa7d4a1532: 888b8e68b193969f27a6d1df77f2c0fde82d9b1336dde8f303e13662949d9fde
@@ -153,11 +153,11 @@ provenance:
     sym_d15b99daa69e8b3f518452fdb17d82341139797c: a18fabfe73566d8a35b946657605bdfb6bc2ef0228fb4ef6ee439302b9585172
     sym_6791bf1bc61d1ae7a52156006770ddf2632120fc: f31f834f3f03b9dd5f9a416eaf5152f9f580546093f83487f6ac5b2afb278fd4
     sym_99bcf892e36e472854a9b4ae47d033498f976465: b8c6e2c28365455d5d251e7f6b5e2f5f9003a295b71d5b7ddc2954a50c5a7fa8
-    sym_ed298ef1def22ca639d2b7448090ecf1b542e4fc: 6596b9094323bf78c7e0fec9a53cc439d9122eb3c7d0f18633d4653512835840
+    sym_05cae35b53a8d9080cd002162a61c3db486cf10f: c6901562a792356d3cc04377bf504dc7d8d192298de5427ff2dbfb8a1d445fb7
     sym_905855b5c36a06cbc20c6ac6ca0f09f5eba77c1a: 151386d784f0b5b6c4e8a812565094586422fdd0eb0056c9c6f75444227af122
     sym_933127abb01932ad739298994dda484164b1af56: 34b7fd3ea5c24a00a5f91f7b93ab2e94f8d948542a463977e302f696a52f2dda
     sym_fef955d34cd39ce3a10b9fe6377c53284b04827e: 966e089d3ed1e58e4d7b80b4e964f9ddc93d10b0040909b29eb8234e7955a017
-    sym_663361f42ecf9f67b1ef30718497c986997f484d: 099002e1e02444cdcd0d45e68d48e2ccafb716964b13f510903e2719cc2393b4
+    sym_abb4c693c51475df811130c7e4c22f46492392c2: 1a2657882079cff5d3b1e2fea80e914548292afa8fb7cf8b333a8b3b315d9ba0
     sym_b75c5ee52574f953af046b8f659f273361a0eaeb: ceb9188bff5ad8212a3676cb61dd6974cc305109624c33e61fe29889230e7622
     sym_ecb598f657a4b84b55d022553837d6681d2e0b8b: 6bd7c8c9b27115653876bf656de2ddf7237a76673d4513e85c582c42147b17a1
     sym_de1984e0278951fa9d34309917a2268b5b54f9e4: cf340b60dbb6bb232601f33bb621979bdd9301bd9811bf7f9e9f67257e1a5967
@@ -305,11 +305,11 @@ const SKIP_PATH_PATTERNS: RegExp[]
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/rules.ts#L284)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.type hash=4a3bab50b40d1135 -->
+<!-- kna:generated:start id=api.type hash=5cd6c6ed345d96ea -->
 ### `Category`
 
 ```typescript
-type Category = 'secret' | 'pii' | 'injection'
+type Category = 'injection' | 'pii' | 'secret'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/rules.ts#L14)</sub>
@@ -417,7 +417,7 @@ interface ScanOptions
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/scanner.ts#L32)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=f0290a9eb55378db -->
+<!-- kna:generated:start id=api.property hash=f572740f74d2a022 -->
 ### `reasons`
 
 ```typescript
@@ -450,7 +450,7 @@ requiresReviewToPublishExternally: boolean
 tier: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/classify.ts#L71)</sub>
 
@@ -486,7 +486,7 @@ reason: string
 tier: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/classify.ts#L25)</sub>
 
@@ -514,7 +514,7 @@ Tier from the repo's own config, if it named one for this path.
 configuredTier?: Sensitivity | null
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted" \| null \| undefined`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted" \| null \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/classify.ts#L62)</sub>
 
@@ -540,7 +540,7 @@ Repo-wide default from config.
 repoDefault: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/classify.ts#L64)</sub>
 
@@ -600,7 +600,7 @@ skipped: boolean
 skipReason: 'denied-path' | 'binary-or-generated' | 'too-large' | null
 ```
 
-**Returns** `"denied-path" \| "binary-or-generated" \| "too-large" \| null`
+**Returns** `"binary-or-generated" \| "denied-path" \| "too-large" \| null`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/scanner.ts#L47)</sub>
 
@@ -712,7 +712,7 @@ Set when a repo allowlist entry matched; kept in the report for audit.
 suppressedBy: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/scanner.ts#L29)</sub>
 
@@ -724,7 +724,7 @@ suppressedBy: string | null
 allowlist?: Array<{path: string;rule: string;reason: string}>
 ```
 
-**Returns** `{ path: string; rule: string; reason: string; }[] \| undefined`
+**Returns** `undefined \| { path: string; rule: string; reason: string; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/gate.ts#L12)</sub>
 
@@ -1002,7 +1002,7 @@ severity: Severity
 allowlist?: Array<{path: string;rule: string;reason: string}>
 ```
 
-**Returns** `{ path: string; rule: string; reason: string; }[] \| undefined`
+**Returns** `undefined \| { path: string; rule: string; reason: string; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/scanner.ts#L37)</sub>
 
@@ -1071,7 +1071,7 @@ rules?: Rule[]
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/scanner/src/scanner.ts#L36)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=69d44617a0b808e6 -->
+<!-- kna:generated:start id=api.function hash=f29c27bf83d212b0 -->
 ### `classify`
 
 ```typescript
@@ -1147,12 +1147,12 @@ isDeniedPath(path: string): boolean
 §10 Layer 3 — `restricted` content never enters the embedding pipeline.
 
 ```typescript
-isEmbeddable(tier: "public" | "internal" | "confidential" | "restricted"): boolean
+isEmbeddable(tier: "confidential" | "internal" | "public" | "restricted"): boolean
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `tier` | `"public" \| "internal" \| "confidential" \| "restricted"` |  |
+| `tier` | `"confidential" \| "internal" \| "public" \| "restricted"` |  |
 
 **Returns** `boolean`
 
@@ -1217,13 +1217,13 @@ isSkippablePath(path: string): boolean
 A caller with clearance `clearance` may see content at or below their tier.
 
 ```typescript
-isVisibleTo(contentTier: "public" | "internal" | "confidential" | "restricted", clearance: "public" | "internal" | "confidential" | "restricted"): boolean
+isVisibleTo(contentTier: "confidential" | "internal" | "public" | "restricted", clearance: "confidential" | "internal" | "public" | "restricted"): boolean
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `contentTier` | `"public" \| "internal" \| "confidential" \| "restricted"` |  |
-| `clearance` | `"public" \| "internal" \| "confidential" \| "restricted"` |  |
+| `contentTier` | `"confidential" \| "internal" \| "public" \| "restricted"` |  |
+| `clearance` | `"confidential" \| "internal" \| "public" \| "restricted"` |  |
 
 **Returns** `boolean`
 

@@ -297,14 +297,14 @@ Module graph: 21 module(s), 65 internal dependency edge(s). Solid arrows are run
 </details>
 <!-- kna:generated:end id=architecture.container -->
 
-<!-- kna:generated:start id=architecture.component hash=fe5a4910d81b9d17 -->
+<!-- kna:generated:start id=architecture.component hash=59356fb83c346cea -->
 | Module | Depended on by | Public symbols | Endpoints | Languages | Owners |
 |---|---:|---:|---:|---|---|
 | `packages/ir` | 15 | 180 | 0 | typescript | — |
 | `packages/config` | 9 | 31 | 0 | typescript | — |
 | `packages/observability` | 8 | 37 | 0 | typescript | — |
-| `packages/llm` | 6 | 98 | 0 | typescript | — |
-| `packages/db` | 5 | 79 | 0 | typescript | — |
+| `packages/llm` | 6 | 100 | 0 | typescript | — |
+| `packages/db` | 5 | 80 | 0 | typescript | — |
 | `packages/contracts` | 4 | 70 | 0 | typescript | — |
 | `packages/retrieval` | 3 | 328 | 0 | typescript | — |
 | `packages/analyzer-core` | 3 | 124 | 0 | typescript | — |
@@ -313,8 +313,8 @@ Module graph: 21 module(s), 65 internal dependency edge(s). Solid arrows are run
 | `packages/docgen` | 2 | 143 | 0 | typescript | — |
 | `packages/audit` | 2 | 34 | 0 | typescript | — |
 | `packages/analyzer-openapi` | 1 | 38 | 0 | typescript | — |
-| `packages/analyzer-typescript` | 1 | 28 | 0 | typescript | — |
-| `apps/api` | 0 | 193 | 1 | typescript | — |
+| `packages/analyzer-typescript` | 1 | 29 | 0 | typescript | — |
+| `apps/api` | 0 | 195 | 1 | typescript | — |
 | `apps/worker` | 0 | 95 | 1 | typescript | — |
 | `apps/cli` | 0 | 93 | 0 | typescript | — |
 | `apps/mcp` | 0 | 63 | 1 | typescript | — |

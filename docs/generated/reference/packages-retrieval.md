@@ -153,7 +153,7 @@ provenance:
     - sym_96e7f6115b56ce31d44d601b7fbcdde9c485067d
     - sym_02932da8b79fd72b2532a765fb5acd07d6b222e5
     - sym_17fb50e7594b6be5ad166e259c78e76aef065869
-    - sym_e6f991b1989f7e96c1ca929a92a288875497dcb0
+    - sym_f015e050d95df59ec8944abc31e08e4488ba2514
     - sym_db9f74b30b90bc88076dd042ebc4217bfc0686bf
     - sym_60b85b7f9dbd893e1ea8442e5957e859075ff697
     - sym_370019fcc7d18a8a07da81c56d8effdc7fe68f5e
@@ -477,12 +477,12 @@ provenance:
     sym_3516aa3361cbf91451b13ff263f8e3df4f4d5735: 27d2daccc4bdb25c66821796d70907bbf79ab01cff50e4deeb610beb670b4a8a
     sym_aed58a6ef28e54bf8e6a7f8bc653c1aaf1e0d6fc: 6d41bd73be6a24fb6b5c98740922a26b5709d0e5c5525756da32d3b0b3f0d83d
     sym_3e9a059003d9a49dd83457ece6a1debcf3e6059b: afbc71274833d9b5e82cf13acacfba1ade12e7367bddc7ba19921f993e8a314a
-    sym_c0998be78c9def4180f4f09311dd5e069293f89b: 3b5d9023d8073997ca03790d35fa09ef54768c0d44f288c12f2d224d7d7382f3
-    sym_b5e155a4703ac4dbc90732396f06e4c4e5008238: f25d94faaace0a7522a49126c6395afef35ffeef585ab3ddfa5962dbfc1a0b2a
+    sym_c0998be78c9def4180f4f09311dd5e069293f89b: af34eb68238db05079844706d9fe01246fbee906a0bad7502cc44888b9bfbff0
+    sym_b5e155a4703ac4dbc90732396f06e4c4e5008238: d0ae2d4d762c7f4852c039a422fa606522673b4d9cb6b0abec80cc5e754adf42
     sym_96e7f6115b56ce31d44d601b7fbcdde9c485067d: 450d7c51c65d40c1c7047c6856fc81e3481130d0d846a2e085a07b7ef73030a7
     sym_02932da8b79fd72b2532a765fb5acd07d6b222e5: 6ff3723e77607cd8e268a090f5ea86a5a42b7b6e4d765648272e7c8ed98af1f4
     sym_17fb50e7594b6be5ad166e259c78e76aef065869: 64e2916adb4e9d5679f0289584ed6bd32c0a4644f7faed601cd38ded2b6c899c
-    sym_e6f991b1989f7e96c1ca929a92a288875497dcb0: dbdcaab6ee5254ff6aad5d8d69644ac44ce5a436be069e084adaa3587e9aa607
+    sym_f015e050d95df59ec8944abc31e08e4488ba2514: b77fb5c4a9e1d4a2687ebe70854bdf44754a77c65829601935e262ae80e27dae
     sym_db9f74b30b90bc88076dd042ebc4217bfc0686bf: 2920b908db4e08e19717446f3bcacd66050a57e8df1fda9ae35fd1f0342b38c0
     sym_60b85b7f9dbd893e1ea8442e5957e859075ff697: 7187932e639989bf58ba2d47776e1e66a3c1d352d28f7f42b36d45ad538c7915
     sym_370019fcc7d18a8a07da81c56d8effdc7fe68f5e: 8e07257ea85b0f73599d4dcda49913a43b2b95f4c67f9f8a6b9d22140f38de1c
@@ -607,7 +607,7 @@ provenance:
     sym_b26b9bff61c8876734589d3f44cd74c53077e26e: 13d9861313cad84296c0b94e426ff32d5e4bf7314df931e6bc742367e65dbed2
     sym_e1f6b8ab5783438cf11f9375e1c3a4f2b807b7ae: 78115349c3f33ddacf19df61d1c349732b16403348f3bee9203c5571f6d371bf
     sym_5af44bdc505285a27c53c0ed5b036bd31e9b3c3e: 425e90747e312dc83664720762bd5eb0fcfae2543e94a1500502a96a5c4e0230
-    sym_0fb78f2635322dd622efeff0eab0dc7174eaaf8a: 7d9100a744ed04e0ccd637e2fdc6e1e3cefe776bd6c721b82230cc883fc70999
+    sym_0fb78f2635322dd622efeff0eab0dc7174eaaf8a: 1f5af2f1d25b41df427e57ee954be2055ebacca18f74a39ba486af4201943d6c
     sym_60ec3796eafb07af4a6903b0eb5a65b196ee1624: 7ddf841baa29c83650458f3abd6f9713232a950fffd9a1c2af7fafc23757c929
     sym_ab5d78009e30ec342c7397d53638b7fc6c399a4f: 505ecb8948cc081ef0a2551aaee834a904d6cbea1f336b942137943b2e7674ca
     sym_a62e772a7d180f9dd85898d81b30ad46e237136d: 3168a4975c8452e4ce790147616c39f9ff9545d4b9871a7741fefde9812c2a45
@@ -1063,7 +1063,7 @@ interface UnderstandOptions
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/query.ts#L42)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=bc203e5135323363 -->
+<!-- kna:generated:start id=api.property hash=b73f168802430c94 -->
 ### `chunks`
 
 ```typescript
@@ -1120,7 +1120,7 @@ staleRepoIds?: string[]
 topRerankScore: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/abstention.ts#L37)</sub>
 
@@ -1186,7 +1186,7 @@ abstain: boolean
 hedgingReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/abstention.ts#L53)</sub>
 
@@ -1198,7 +1198,7 @@ hedgingReason: string | null
 reason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/abstention.ts#L46)</sub>
 
@@ -1224,7 +1224,7 @@ requiresHedging: boolean
 clearance: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L39)</sub>
 
@@ -1238,7 +1238,7 @@ Corpus separation. §10 Layer 4 — the Documentation Assistant queries a physic
 corpus: 'external' | 'internal'
 ```
 
-**Returns** `"internal" \| "external"`
+**Returns** `"external" \| "internal"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L45)</sub>
 
@@ -1292,7 +1292,7 @@ Present for external partner keys, which are scoped to a contracted API version.
 pinnedVersionId?: string | null
 ```
 
-**Returns** `string \| null \| undefined`
+**Returns** `null \| string \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L49)</sub>
 
@@ -1304,7 +1304,7 @@ pinnedVersionId?: string | null
 principalId: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L36)</sub>
 
@@ -1356,7 +1356,7 @@ The file, which is the anchor a reader can actually open. Symbol names are resol
 path: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/answer.ts#L37)</sub>
 
@@ -1380,7 +1380,7 @@ repoId: string
 startLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/answer.ts#L38)</sub>
 
@@ -1392,7 +1392,7 @@ startLine: number | null
 symbolId: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/answer.ts#L34)</sub>
 
@@ -1540,7 +1540,7 @@ significant: boolean
 stratum: IntentStratum | 'overall'
 ```
 
-**Returns** `IntentStratum \| "overall"`
+**Returns** `"overall" \| IntentStratum`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/eval/metrics.ts#L139)</sub>
 
@@ -1940,7 +1940,7 @@ Relations in preference order. Types first: they are what make a signature legib
 relationPriority?: GraphNeighbour['relation'][]
 ```
 
-**Returns** `("caller" \| "callee" \| "type" \| "parent" \| "implementation")[] \| undefined`
+**Returns** `("callee" \| "caller" \| "implementation" \| "parent" \| "type")[] \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/expansion.ts#L48)</sub>
 
@@ -2014,7 +2014,7 @@ candidates: CandidateRef[]
 name: 'dense' | 'lexical' | 'symbol'
 ```
 
-**Returns** `"symbol" \| "dense" \| "lexical"`
+**Returns** `"dense" \| "lexical" \| "symbol"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/fusion.ts#L18)</sub>
 
@@ -2208,7 +2208,7 @@ centrality: number
 docSummary: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/expansion.ts#L27)</sub>
 
@@ -2244,7 +2244,7 @@ qualifiedName: string
 relation: 'caller' | 'callee' | 'type' | 'parent' | 'implementation'
 ```
 
-**Returns** `"caller" \| "callee" \| "type" \| "parent" \| "implementation"`
+**Returns** `"callee" \| "caller" \| "implementation" \| "parent" \| "type"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/expansion.ts#L32)</sub>
 
@@ -2268,7 +2268,7 @@ repoId: string
 sensitivity: ScoredChunk['sensitivity']
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/expansion.ts#L35)</sub>
 
@@ -2368,7 +2368,7 @@ needsRetrieval: boolean
 rewrittenQuery: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/query.ts#L20)</sub>
 
@@ -2394,7 +2394,7 @@ usedModel: boolean
 fetchImpl?: typeof fetch
 ```
 
-**Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
+**Returns** `((input: Request \| URL \| string, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/reranker.ts#L20)</sub>
 
@@ -2478,7 +2478,7 @@ chunks: ScoredChunk[]
 degradedReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/reranker.ts#L29)</sub>
 
@@ -2504,7 +2504,7 @@ Null when the reranker did not run — the abstention policy branches on this.
 topScore: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/reranker.ts#L27)</sub>
 
@@ -2744,7 +2744,7 @@ mmrLambda: number
 rerankerModel: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/config-version.ts#L32)</sub>
 
@@ -2964,7 +2964,7 @@ Prior turns, for the standalone-query rewrite (§15.5 multi-turn).
 history?: Array<{role: 'user' | 'assistant';content: string}>
 ```
 
-**Returns** `{ role: "user" \| "assistant"; content: string; }[] \| undefined`
+**Returns** `undefined \| { role: "assistant" \| "user"; content: string; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L65)</sub>
 
@@ -3052,7 +3052,7 @@ abstain: boolean
 abstentionReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L104)</sub>
 
@@ -3090,7 +3090,7 @@ degradedModes: string[]
 hedgingReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L107)</sub>
 
@@ -3128,7 +3128,7 @@ requiresHedging: boolean
 rewrittenQuery: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L109)</sub>
 
@@ -3360,7 +3360,7 @@ retrievalConfigVersion: string
 rewrittenQuery: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L118)</sub>
 
@@ -3434,7 +3434,7 @@ symbolCandidates: CandidateRef[]
 topRerankScore: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L132)</sub>
 
@@ -3520,7 +3520,7 @@ corpus: string
 expansionRelation?: 'caller' | 'callee' | 'type' | 'parent' | 'implementation'
 ```
 
-**Returns** `"caller" \| "callee" \| "type" \| "parent" \| "implementation" \| undefined`
+**Returns** `"callee" \| "caller" \| "implementation" \| "parent" \| "type" \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L96)</sub>
 
@@ -3594,7 +3594,7 @@ score: number
 sensitivity: Sensitivity
 ```
 
-**Returns** `"public" \| "internal" \| "confidential" \| "restricted"`
+**Returns** `"confidential" \| "internal" \| "public" \| "restricted"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L84)</sub>
 
@@ -3606,7 +3606,7 @@ sensitivity: Sensitivity
 sourceEndLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L83)</sub>
 
@@ -3618,7 +3618,7 @@ sourceEndLine: number | null
 sourcePath: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L81)</sub>
 
@@ -3630,7 +3630,7 @@ sourcePath: string | null
 sourceStartLine: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L82)</sub>
 
@@ -3642,7 +3642,7 @@ sourceStartLine: number | null
 symbolId: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L77)</sub>
 
@@ -3754,7 +3754,7 @@ abstentionRate: number
 falseAnswerRate: number | null
 ```
 
-**Returns** `number \| null`
+**Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/eval/metrics.ts#L49)</sub>
 
@@ -3890,7 +3890,7 @@ hedged: boolean
 hedgingReason: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/answer.ts#L50)</sub>
 
@@ -3902,7 +3902,7 @@ hedgingReason: string | null
 model: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/answer.ts#L51)</sub>
 
@@ -4024,7 +4024,7 @@ client?: LlmClient
 history?: Array<{role: 'user' | 'assistant';content: string}>
 ```
 
-**Returns** `{ role: "user" \| "assistant"; content: string; }[] \| undefined`
+**Returns** `undefined \| { role: "assistant" \| "user"; content: string; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/query.ts#L45)</sub>
 
@@ -4393,7 +4393,7 @@ const DEFAULT_RETRIEVAL_CONFIG: RetrievalConfig
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/config-version.ts#L51)</sub>
 <!-- kna:generated:end id=api.constant -->
 
-<!-- kna:generated:start id=api.function hash=f5597498effec3ca -->
+<!-- kna:generated:start id=api.function hash=d390512a2de20aa1 -->
 ### `buildAclPredicate`
 
 Build the mandatory predicate. Throws rather than returning an empty filter when the caller has no access at all — an empty predicate that accidentally means "everything" is exactly the failure this design is guarding against.
@@ -4594,7 +4594,7 @@ minimumDetectableEffect(results: EvalItemResult[], metric: (i: EvalItemResult) =
 ### `pairedBootstrap`
 
 ```typescript
-pairedBootstrap(baseline: EvalItemResult[], candidate: EvalItemResult[], metric: (item: EvalItemResult) => number, options: {iterations?: number;metricName?: string;stratum?: IntentStratum | "overall";}): BootstrapComparison
+pairedBootstrap(baseline: EvalItemResult[], candidate: EvalItemResult[], metric: (item: EvalItemResult) => number, options: {iterations?: number;metricName?: string;stratum?: "overall"; | IntentStratum}): BootstrapComparison
 ```
 
 | Parameter | Type | Description |
@@ -4602,7 +4602,7 @@ pairedBootstrap(baseline: EvalItemResult[], candidate: EvalItemResult[], metric:
 | `baseline` | `EvalItemResult[]` |  |
 | `candidate` | `EvalItemResult[]` |  |
 | `metric` | `(item: EvalItemResult) => number` |  |
-| `options`? | `{ iterations?: number \| undefined; metricName?: string \| undefined; stratum?: IntentStratum \| "overall" \| undefined; }` |  (default `{}`) |
+| `options`? | `{ iterations?: number \| undefined; metricName?: string \| undefined; stratum?: "overall" \| IntentStratum \| undefined; }` |  (default `{}`) |
 
 **Returns** `BootstrapComparison`
 
@@ -4830,11 +4830,11 @@ uniformEmptyMessage(): string
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/acl.ts#L136)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.type hash=affac4430c201d45 -->
+<!-- kna:generated:start id=api.type hash=e64330cbec7d0ef0 -->
 ### `IntentClass`
 
 ```typescript
-type IntentClass = | 'exact-identifier' | 'cross-repo-call-path' | 'why-rationale' | 'how-to-integrate' | 'conceptual' | 'unanswerable'
+type IntentClass = 'conceptual' | 'cross-repo-call-path' | 'exact-identifier' | 'how-to-integrate' | 'unanswerable' | 'why-rationale'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L52)</sub>
@@ -4846,7 +4846,7 @@ type IntentClass = | 'exact-identifier' | 'cross-repo-call-path' | 'why-rational
 Retrieval metrics, with confidence intervals.
 
 ```typescript
-type IntentStratum = | 'exact-identifier' | 'cross-repo-call-path' | 'why-rationale' | 'how-to-integrate' | 'unanswerable'
+type IntentStratum = 'cross-repo-call-path' | 'exact-identifier' | 'how-to-integrate' | 'unanswerable' | 'why-rationale'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/eval/metrics.ts#L18)</sub>
@@ -4868,7 +4868,7 @@ type RerankerLike = Pick<Reranker, 'rerank'>
 Retrieval contracts.
 
 ```typescript
-type ScopeKind = 'project' | 'expanded' | 'org' | 'repo' | 'module'
+type ScopeKind = 'expanded' | 'module' | 'org' | 'project' | 'repo'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/retrieval/src/types.ts#L12)</sub>

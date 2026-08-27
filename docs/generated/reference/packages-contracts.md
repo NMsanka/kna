@@ -19,7 +19,7 @@ provenance:
     - sym_c425b285436e8d2906eeeb02245bda03bdd29dfa
     - sym_1cafe12494aeaf2a6148c6fe75b97b37a2dbfd06
     - sym_08d517584fb34836be0e95e6ca881c8704001303
-    - sym_ce6a0a3be6ae0bafa04d4717336a41d1cd529421
+    - sym_b837bbcab26169917411d46f9d0c6b35d0a194c9
     - sym_1fc0760ae9df4ccc83b2700ec2368582faa8ef97
     - sym_ff1ccfca1bc4f91c8dd703828ff4c34242f465b1
     - sym_44735f43b95102ecaa4489d971f8d46bab520fb8
@@ -84,13 +84,13 @@ provenance:
   signatureHashes:
     sym_9585f94c759be6be187fa99c132dd373867e935c: 2f16341f525ffbfaaafeb792d35e9b5712bb9138521e4732b8dd6c361717db34
     sym_665d18b51de7278c101ce811368538ab4342fc61: 602952f31f2383a2d5dd00194ffb48195036205ce25a37fc937ae91ee151574c
-    sym_cddacc7517ee9abbe780fcf78d92073047c24ce8: 7e60dd7bfb7ba3c055ad0f4c5c0f25671604585e9a52ccbe93ae8a188db74385
-    sym_716d0748ab10bbdb5af5946253a54209a5b18fc7: 7a1c1dca8ecf2b36cad37e0407c415b8ce4ed687cb3d8cdf93ed822a4e7adb02
+    sym_cddacc7517ee9abbe780fcf78d92073047c24ce8: c1b18488e451517410194e1a25314743579946842fca5df42e2b941e3665b4b4
+    sym_716d0748ab10bbdb5af5946253a54209a5b18fc7: ba87b87560ef41acd2b093d24e795343dde6eb3572a2ee6c53d68b5ff606aeee
     sym_1c0b27168ebd323916736c3a1bf325a39a66e0bc: 8e9eed16b89bbb68b1fe54bb7ba5e307daea6c6481f96379ef980f97c8faaa14
     sym_c425b285436e8d2906eeeb02245bda03bdd29dfa: 3972596c8b469913e5f76aeab9ce71a051b038710ba7dfd8f5f0c4fcbf757774
     sym_1cafe12494aeaf2a6148c6fe75b97b37a2dbfd06: 2391db0e8fd8badc2831b48f4c798c3417a6a79c262023d90ce8de9d53e2b26e
     sym_08d517584fb34836be0e95e6ca881c8704001303: dd5b9a9ced80c23feb64e40080bfd725493b4cec61c99a47a6b127248c938137
-    sym_ce6a0a3be6ae0bafa04d4717336a41d1cd529421: 659603d1a9ab9e4f87b27f602320cb1f793adaca23ece72c18d3641711f7ddc4
+    sym_b837bbcab26169917411d46f9d0c6b35d0a194c9: aa80b8b6993bd481e8343c987090680e7afbebc466a7c048c362b57d51d7bdce
     sym_1fc0760ae9df4ccc83b2700ec2368582faa8ef97: 09112ec92591a7583ae43989ae567f25b66e555e87063f250120a9f059b44f6b
     sym_ff1ccfca1bc4f91c8dd703828ff4c34242f465b1: 6a90cccb6920623f6819700ade69989b6102283726b9df45d239e6f92be9a413
     sym_44735f43b95102ecaa4489d971f8d46bab520fb8: 9dde3168c4d5101cf77a9789c56680f5021f88c0f9c2616137f1e9ce734005fb
@@ -107,9 +107,9 @@ provenance:
     sym_1e442183fcf4b353dc605fa68dc0fb038e1765ce: d32b60781624be6bfea664205ab347371e32459ee3d192253bf2da87ab08acf7
     sym_9e659beb1017a24dc098b2d368483c439fe70dc7: 12473c3b113f88062fd659ba70a7254642b86a1a8c1b47ff8d6d8b32849a8390
     sym_5c2b893af44c8f29ba42446f9741ed727cb9b3fd: 5effcf12388ca909a7eac1385e564b810b7abe2897a18f441f5a5e1455649736
-    sym_d8ed154de9149dd630ca0d0addb1eeaa7240a9db: 9e47826333a641f4e3390438cae248f04425c4e1ba2e338c47552943308721bf
-    sym_5c71360327985a1a1ebcdba1b986e2e86308d05a: 123e5051bb7c484b116767b06d335d21f36d6f6fe7fa36ad212c8fe07339308f
-    sym_fc937de29cef14204d8cee362c7fbc3b59a734a1: 6ee8eddb2c0737b65227dcb1f31ea6a7b50da022745af68cdaa6a35935b296e0
+    sym_d8ed154de9149dd630ca0d0addb1eeaa7240a9db: 8f1c9d67866c6af2cf711d246352e3985bad1e26eb885c56961b58f68aa6ed9e
+    sym_5c71360327985a1a1ebcdba1b986e2e86308d05a: db828511fbf0196bc173479f3413871796f7342468cb73aa8e69b71acb829d4a
+    sym_fc937de29cef14204d8cee362c7fbc3b59a734a1: c6922f2424c6c29fc68527573a3d7190cd9eb251f59930d99589606815c68841
     sym_5ccebecf2c1f8257c7d4d09c18129d69edab9a57: 0ddd5700f9124aea5f3dc1763d0f21bc4e38de1396e47ca104b3e67d502a5788
     sym_0c455d7c660a068181f0c5109bbb2001ae14982b: 05c375e5e2bcbdaa71fae1ae9d4c9a6420de75d6f7940ad852b24b7c5e041e9c
     sym_1fed2491c55792af0336df8a6cabb4a7a53fb776: 60b3af1f7132a8556715b6703200f2d3446911a49019c203cf11ec29cb74934e
@@ -133,7 +133,7 @@ provenance:
     sym_6e6d5bf68a18c392c885e36b8dc709eb3390f200: f549a93decca1356135d0453a6171725e4f2eabb2f4e13b2985e373fd2d7b174
     sym_15a2115dc28e7835d1364134c4c5c2403fed281b: bfb16aaf50c628298263661d0490b7504154981af2388545703a5d318b4ae6b2
     sym_5f9ef93c1b80990ca1385e05225218afa94d790c: 27bd81c6fd7439598cffba8277f133e8531061e8956db7d8a968389731e827d3
-    sym_8c30197d5d6faafb1c146d385b259b85a549f56b: 8b98d03e206427b6368637504f0cdf77530f0419df614022cbb81c108716ee55
+    sym_8c30197d5d6faafb1c146d385b259b85a549f56b: ea36d5e955d8bb81b2faedcab4e8c8a6b7a3cf9f4ef5aea43f97e0ba26531311
     sym_dae816748964ee97e1c45d0d0157ae006d8ac4c4: 0f6ccda84f49a5ac8b3c1f916d34fc69cafd7ef346c592c61fd54b53754598a9
     sym_ddce0303f407f38632ab6ff449c68aaaab491c94: f749c07074add7cbf3520f49644d514fab494ee30e36a076879a0ca3bf17486d
     sym_f71b62b89407479975245ac2efd0eb1af0546665: 7dc512bf03294dfec984ab47ae3f62b783332080026b38f47913220d0dd33472
@@ -185,7 +185,7 @@ class BundleStoreError extends Error
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L241)</sub>
 <!-- kna:generated:end id=api.class -->
 
-<!-- kna:generated:start id=api.method hash=755efb02c7917bef -->
+<!-- kna:generated:start id=api.method hash=ddd68dcf25dfbc04 -->
 ### `constructor`
 
 ```typescript
@@ -203,14 +203,14 @@ constructor(private readonly options: BundleStoreOptions)
 ### `get`
 
 ```typescript
-get(key: string): Promise<{envelope: {commitSha: string;orgId: string;repoId: string;signature: {value: string;algorithm: "sigstore-keyless" | "hmac-sha256" | "ed25519" | "unsigned-dev";signerClaims: {ref: str…
+get(key: string): Promise<{envelope: {commitSha: string;orgId: string;repoId: string;signature: {value: string;algorithm: "ed25519" | "hmac-sha256" | "sigstore-keyless" | "unsigned-dev";signerClaims: {ref: nul…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `key` | `string` |  |
 
-**Returns** `Promise<{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| …`
+**Returns** `Promise<{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| st…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L75)</sub>
 
@@ -219,14 +219,14 @@ get(key: string): Promise<{envelope: {commitSha: string;orgId: string;repoId: st
 ### `getPayload`
 
 ```typescript
-getPayload(key: string): Promise<{languages: ("typescript" | "javascript" | "python" | "csharp" | "unknown")[];analysisDepth: "shallow" | "semantic" | "artifact";version: {commitSha: string;kind: "branch" | "tag";ref: s…
+getPayload(key: string): Promise<{languages: ("csharp" | "javascript" | "python" | "typescript" | "unknown")[];analysisDepth: "artifact" | "semantic" | "shallow";version: {commitSha: string;kind: "branch" | "tag";ref: s…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `key` | `string` |  |
 
-**Returns** `Promise<{ languages: ("typescript" \| "javascript" \| "python" \| "csharp" \| "unknown")[]; analysisDepth: "shallow" \| "semantic" \| "artifact"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: string \| null; }; repo: { name: string; id: string; orgId: string; remote: strin…`
+**Returns** `Promise<{ languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: null; \| string }; repo: { name: string; id: string; orgId: string; remote: strin…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L87)</sub>
 
@@ -301,12 +301,12 @@ objectLockEnabled(): Promise<boolean>
 ### `put`
 
 ```typescript
-put(bundle: {envelope: {commitSha: string;orgId: string;repoId: string;signature: {value: string;algorithm: "sigstore-keyless" | "hmac-sha256" | "ed25519" | "unsigne…): Promise<string>
+put(bundle: {envelope: {commitSha: string;orgId: string;repoId: string;signature: {value: string;algorithm: "ed25519" | "hmac-sha256" | "sigstore-keyless" | "unsigne…): Promise<string>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
-| `bundle` | `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; wo…` |  |
+| `bundle` | `{ envelope: { commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; wo…` |  |
 
 **Returns** `Promise<string>`
 
@@ -360,7 +360,7 @@ interface VerifyOptions
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L105)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=36e781e5784f9158 -->
+<!-- kna:generated:start id=api.property hash=b7d40d69ccf2ddb9 -->
 ### `accessKey`
 
 ```typescript
@@ -403,7 +403,7 @@ endpoint: string
 fetchImpl?: typeof fetch
 ```
 
-**Returns** `((input: string \| URL \| Request, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
+**Returns** `((input: Request \| URL \| string, init?: RequestInit \| undefined) => Promise<Response>) \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/bundle-store.ts#L25)</sub>
 
@@ -439,7 +439,7 @@ secretKey: string
 detail: string | null
 ```
 
-**Returns** `string \| null`
+**Returns** `null \| string`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L102)</sub>
 
@@ -501,7 +501,7 @@ actualPayloadHash: string
 envelope: IrBundleEnvelope
 ```
 
-**Returns** `{ commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: stri…`
+**Returns** `{ commitSha: string; orgId: string; repoId: string; signature: { value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; workflow: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L106)</sub>
 
@@ -563,7 +563,7 @@ maxBundleBytes: number
 mode: 'sigstore' | 'hmac' | 'permissive-dev'
 ```
 
-**Returns** `"sigstore" \| "hmac" \| "permissive-dev"`
+**Returns** `"hmac" \| "permissive-dev" \| "sigstore"`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L110)</sub>
 
@@ -589,7 +589,7 @@ Map an asserted repoId back to its canonical remote, to compare against signer c
 resolveRepoRemote?: (repoId: string) => Promise<string | null>
 ```
 
-**Returns** `((repoId: string) => Promise<string \| null>) \| undefined`
+**Returns** `((repoId: string) => Promise<null \| string>) \| undefined`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L118)</sub>
 
@@ -622,7 +622,7 @@ verifyCommit?: (input: {repoId: string;commitSha: string;ref: string}) => Promis
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L116)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=8fec62b94109b1ed -->
+<!-- kna:generated:start id=api.function hash=9f6034d7b36bc2b0 -->
 ### `canonicalClaims`
 
 §15.2 BLOCKER — "'IR bundle, signed' is a word in a diagram."
@@ -662,7 +662,7 @@ explainFailure(result: VerificationResult): string
 ### `signHmac`
 
 ```typescript
-signHmac(secret: string, claims: string): {value: string;algorithm: "sigstore-keyless" | "hmac-sha256" | "ed25519" | "unsigned-dev";signerClaims: {ref: string | null;issuer: string | null;subject: string | null;repository: string | nul…
+signHmac(secret: string, claims: string): {value: string;algorithm: "ed25519" | "hmac-sha256" | "sigstore-keyless" | "unsigned-dev";signerClaims: {ref: null | string;issuer: null | string;subject: null | string;repository: null | strin…
 ```
 
 | Parameter | Type | Description |
@@ -670,7 +670,7 @@ signHmac(secret: string, claims: string): {value: string;algorithm: "sigstore-ke
 | `secret` | `string` |  |
 | `claims` | `string` |  |
 
-**Returns** `{ value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: string \| null; runId: string \| null; }; keyId: string \| null; }`
+**Returns** `{ value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; workflow: null \| string; runId: null; \| string }; keyId: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L49)</sub>
 
@@ -681,14 +681,14 @@ signHmac(secret: string, claims: string): {value: string;algorithm: "sigstore-ke
 Development-only signature. Refused in production by `loadPlatformEnv`, and refused again here — a permissive default that only fails in one place is a permissive default.
 
 ```typescript
-signUnsignedDev(claims: string): {value: string;algorithm: "sigstore-keyless" | "hmac-sha256" | "ed25519" | "unsigned-dev";signerClaims: {ref: string | null;issuer: string | null;subject: string | null;repository: string | nul…
+signUnsignedDev(claims: string): {value: string;algorithm: "ed25519" | "hmac-sha256" | "sigstore-keyless" | "unsigned-dev";signerClaims: {ref: null | string;issuer: null | string;subject: null | string;repository: null | strin…
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `claims` | `string` |  |
 
-**Returns** `{ value: string; algorithm: "sigstore-keyless" \| "hmac-sha256" \| "ed25519" \| "unsigned-dev"; signerClaims: { ref: string \| null; issuer: string \| null; subject: string \| null; repository: string \| null; sha: string \| null; workflow: string \| null; runId: string \| null; }; keyId: string \| null; }`
+**Returns** `{ value: string; algorithm: "ed25519" \| "hmac-sha256" \| "sigstore-keyless" \| "unsigned-dev"; signerClaims: { ref: null \| string; issuer: null \| string; subject: null \| string; repository: null \| string; sha: null \| string; workflow: null \| string; runId: null; \| string }; keyId: null; \| string }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L70)</sub>
 
@@ -711,7 +711,7 @@ verifyEnvelope(options: VerifyOptions): Promise<VerificationResult>
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L132)</sub>
 <!-- kna:generated:end id=api.function -->
 
-<!-- kna:generated:start id=api.type hash=4bad9fff8184bce3 -->
+<!-- kna:generated:start id=api.type hash=e1e5407c5a268265 -->
 ### `ErrorResponse`
 
 ```typescript
@@ -765,20 +765,20 @@ type SearchResponse = z.infer<typeof zSearchResponse>
 ### `VerificationFailure`
 
 ```typescript
-type VerificationFailure = | 'expired' | 'replayed' | 'bad-signature' | 'signer-scope-mismatch' | 'commit-not-found' | 'payload-hash-mismatch' | 'unsupported-algorithm' | 'unsigned-in-production' | 'scan-not-passed' | 'bundle-too-large'
+type VerificationFailure = 'bad-signature' | 'bundle-too-large' | 'commit-not-found' | 'expired' | 'payload-hash-mismatch' | 'replayed' | 'scan-not-passed' | 'signer-scope-mismatch' | 'unsigned-in-production' | 'unsupported-algorithm'
 ```
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/signing.ts#L87)</sub>
 <!-- kna:generated:end id=api.type -->
 
-<!-- kna:generated:start id=api.constant hash=af7047eae8a725fb -->
+<!-- kna:generated:start id=api.constant hash=f918cda4f3d337c8 -->
 ### `zAnswer`
 
 ```typescript
 const zAnswer: z.ZodObject<{text: z.ZodString;citations: z.ZodArray<z.ZodObject<{marker: z.ZodNumber;chunkId: z.ZodString;symbolId: z.ZodNullable<z.ZodString>;qualifiedName: z.ZodNullable<z.ZodString>;path: z.ZodNullable<z.ZodString>;startLine: z.ZodNullable<z.ZodNumber>;analysisDepth: z.ZodString;}, "st…
 ```
 
-**Returns** `ZodObject<{ text: ZodString; citations: ZodArray<ZodObject<{ marker: ZodNumber; chunkId: ZodString; symbolId: ZodNullable<ZodString>; qualifiedName: ZodNullable<ZodString>; path: ZodNullable<ZodString>; startLine: ZodNullable<ZodNumber>; analysisDepth: ZodString; }, "strip", ZodTypeAny, { path: stri…`
+**Returns** `ZodObject<{ text: ZodString; citations: ZodArray<ZodObject<{ marker: ZodNumber; chunkId: ZodString; symbolId: ZodNullable<ZodString>; qualifiedName: ZodNullable<ZodString>; path: ZodNullable<ZodString>; startLine: ZodNullable<ZodNumber>; analysisDepth: ZodString; }, "strip", ZodTypeAny, { path: null…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L125)</sub>
 
@@ -837,10 +837,10 @@ const zCreatePrincipalResponse: z.ZodObject<{principalId: z.ZodString;subject: z
 ### `zErrorResponse`
 
 ```typescript
-const zErrorResponse: z.ZodObject<{error: z.ZodObject<{code: z.ZodString;message: z.ZodString;guidance: z.ZodDefault<z.ZodNullable<z.ZodString>>;traceId: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {code: string;message: string;traceId: string | null;guidance: string | null;}, {code: st…
+const zErrorResponse: z.ZodObject<{error: z.ZodObject<{code: z.ZodString;message: z.ZodString;guidance: z.ZodDefault<z.ZodNullable<z.ZodString>>;traceId: z.ZodDefault<z.ZodNullable<z.ZodString>>;}, "strip", z.ZodTypeAny, {code: string;message: string;traceId: null | string;guidance: null; | string}, {code: st…
 ```
 
-**Returns** `ZodObject<{ error: ZodObject<{ code: ZodString; message: ZodString; guidance: ZodDefault<ZodNullable<ZodString>>; traceId: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { code: string; message: string; traceId: string \| null; guidance: string \| null; }, { code: string; message: string;…`
+**Returns** `ZodObject<{ error: ZodObject<{ code: ZodString; message: ZodString; guidance: ZodDefault<ZodNullable<ZodString>>; traceId: ZodDefault<ZodNullable<ZodString>>; }, "strip", ZodTypeAny, { code: string; message: string; traceId: null \| string; guidance: null; \| string }, { code: string; message: string;…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/contracts/src/api.ts#L345)</sub>
 
