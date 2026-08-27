@@ -58,7 +58,7 @@ export function registerTools(
         action: 'mcp.search_codebase',
         chunkIds: result.chunks.map((c) => c.chunkId),
         repoIds: [...new Set(result.chunks.map((c) => c.repoId))],
-        moduleIds: [...new Set(result.chunks.map((c) => c.moduleId))],
+        moduleIds: [...new Set(result.chunks.map((c) => c.moduleId).filter(isPresent))],
         sessionId,
       });
 
@@ -420,7 +420,7 @@ export function registerTools(
         action: 'mcp.search_docs',
         chunkIds: docs.map((c) => c.chunkId),
         repoIds: [...new Set(docs.map((c) => c.repoId))],
-        moduleIds: [...new Set(docs.map((c) => c.moduleId))],
+        moduleIds: [...new Set(docs.map((c) => c.moduleId).filter(isPresent))],
         sessionId,
       });
 
@@ -537,6 +537,10 @@ function extractOperation(document: unknown, operationId: string): unknown {
   }
 
   return { error: `No operation '${operationId}' in this specification.` };
+}
+
+function isPresent<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined;
 }
 
 export const _schemaProbe = z.object({});

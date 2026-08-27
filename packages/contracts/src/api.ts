@@ -109,8 +109,10 @@ export const zSearchHit = z.object({
   /** Provenance, always. §6 rule 2 — every claim traces to a symbol and a source location. */
   provenance: z.object({
     repoId: z.string(),
-    moduleId: z.string(),
+    moduleId: z.string().nullable(),
     path: z.string().nullable(),
+    url: z.string().url().nullable(),
+    documentId: z.string().nullable(),
     startLine: z.number().nullable(),
     endLine: z.number().nullable(),
     commitSha: z.string().nullable(),
@@ -131,6 +133,8 @@ export const zAnswer = z.object({
       symbolId: z.string().nullable(),
       qualifiedName: z.string().nullable(),
       path: z.string().nullable(),
+      url: z.string().url().nullable(),
+      documentId: z.string().nullable(),
       startLine: z.number().int().nullable(),
       analysisDepth: z.string(),
     }),

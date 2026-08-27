@@ -253,6 +253,7 @@ export interface BuildBundleInput extends AssembleResult {
   version: VersionRef;
   apiSpecs: ApiSpec[];
   services: IrBundlePayload['services'];
+  documents?: IrBundlePayload['documents'];
   toolchain: IrBundlePayload['toolchain'];
   scan: IrBundlePayload['scan'];
   includesSource: boolean;
@@ -274,6 +275,7 @@ export function buildBundle(input: BuildBundleInput): IrBundle {
     symbols: input.symbols,
     apiSpecs: input.apiSpecs,
     services: input.services,
+    documents: input.documents ?? [],
     languages: [...new Set(input.symbols.map((s) => s.language))],
     analysisDepth: weakestDepth(input.modules.map((m) => m.analysisDepth)),
     toolchain: input.toolchain,

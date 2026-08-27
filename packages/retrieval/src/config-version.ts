@@ -34,6 +34,7 @@ export interface RetrievalConfig {
   maxPerModule: number;
   generatedPenalty: number;
   efSearch: number;
+  corpusFusionStrategy: string;
 
   // ── Expansion and budget ─────────────────────────────────────────────────────────────────
   expansionMaxPerSeed: number;
@@ -68,6 +69,7 @@ export const DEFAULT_RETRIEVAL_CONFIG: RetrievalConfig = {
   maxPerModule: 3,
   generatedPenalty: 0.25,
   efSearch: 100,
+  corpusFusionStrategy: 'separate-code-document-arms-v1',
 
   expansionMaxPerSeed: 4,
   expansionCentralityCeiling: 50,

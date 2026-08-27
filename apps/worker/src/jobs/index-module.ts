@@ -396,9 +396,9 @@ async function swapModulePartition(
 
       if (vector) {
         await tx.execute(sql`
-          INSERT INTO embeddings (chunk_id, org_id, module_id, version_id, model, dimensions, embedding)
+          INSERT INTO embeddings (chunk_id, org_id, module_id, version_id, corpus, model, dimensions, embedding)
           VALUES (
-            ${chunk.id}, ${chunk.orgId}, ${chunk.moduleId}, ${chunk.versionId},
+            ${chunk.id}, ${chunk.orgId}, ${chunk.moduleId}, ${chunk.versionId}, ${chunk.corpus},
             ${ctx.retrievalConfig.embeddingModel}, ${ctx.retrievalConfig.embeddingDimensions},
             ${`[${vector.join(',')}]`}::halfvec
           )
@@ -469,10 +469,17 @@ async function swapModulePartition(
  * Exported because documentation regeneration embeds too, and the content-hash cache is the
  * whole cost model (§11): a second implementation would quietly halve the hit rate.
  */
+export interface EmbeddableChunk {
+  id: string;
+  content: string;
+  contentHash: string;
+  sensitivity: Chunk['sensitivity'];
+}
+
 export async function embedChunks(
   ctx: WorkerContext,
   orgId: string,
-  chunks: Chunk[],
+  chunks: EmbeddableChunk[],
 ): Promise<{ vectors: Map<string, number[]>; fromCache: number; computed: number; usd: number }> {
   const vectors = new Map<string, number[]>();
   const model = ctx.retrievalConfig.embeddingModel;
@@ -490,7 +497,7 @@ export async function embedChunks(
     cached.map((row) => [row.content_hash, parseVector(row.embedding)] as const),
   );
 
-  const toCompute: Chunk[] = [];
+  const toCompute: EmbeddableChunk[] = [];
   for (const chunk of chunks) {
     const hit = cacheByHash.get(chunk.contentHash);
     if (hit) vectors.set(chunk.id, hit);

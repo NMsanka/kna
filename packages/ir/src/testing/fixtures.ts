@@ -150,5 +150,6 @@ export function makePayload(
     includesSource: false,
     generatedAt: new Date('2026-08-20T00:00:00.000Z').toISOString(),
     ...overrides,
+    documents: overrides.documents ?? [],
   };
 }

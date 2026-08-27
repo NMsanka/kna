@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent, type JSX } from 'react';
+import ReactMarkdown, { type Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { api, type Answer, type Citation, type ScopeGroup } from '../api';
 import { citedIn, groupByRepository, sourcesHeading } from '../citations';
 
@@ -222,7 +224,7 @@ function TurnView(props: { turn: Turn; index: number; everywhere: boolean }): JS
         {turn.error ? (
           <p className="error">{turn.error}</p>
         ) : (
-          <AnswerText text={turn.answer!.text} index={index} />
+          <AnswerText text={turn.answer!.text} citations={turn.answer!.citations} index={index} />
         )}
 
         {cited.length > 0 && (
@@ -268,29 +270,96 @@ function SourceItem(props: { citation: Citation; index: number }): JSX.Element {
 }
 
 /**
- * Renders the answer with its `[1]` markers as links to the matching source.
+ * Render model output as Markdown, with `[1]` markers linked to the matching source.
  *
- * Built from an array of nodes rather than by setting HTML. The answer is model output over a
- * corpus of attacker-controllable text, and there is no version of this where interpolating it
- * into `dangerouslySetInnerHTML` is the right call.
+ * ReactMarkdown builds React nodes and does not enable raw HTML. That property is important here:
+ * the answer is model output over attacker-controllable repository text. Images are suppressed as
+ * well, because an image URL in retrieved content must not turn a developer's browser into a
+ * tracking request.
  */
-function AnswerText(props: { text: string; index: number }): JSX.Element {
-  const paragraphs = props.text.split(/\n{2,}/);
-  return (
-    <>
-      {paragraphs.map((paragraph, p) => (
-        <p key={p}>
-          {paragraph.split(/(\[\d+\])/).map((piece, i) => {
-            const marker = /^\[(\d+)\]$/.exec(piece);
-            if (!marker) return <span key={i}>{piece}</span>;
-            return (
-              <a key={i} className="cite" href={`#s${props.index}-${marker[1]}`}>
-                {marker[1]}
-              </a>
-            );
-          })}
-        </p>
-      ))}
-    </>
+export function AnswerText(props: {
+  text: string;
+  citations: Citation[];
+  index: number;
+}): JSX.Element {
+  const citationPlugin = useMemo(
+    () => remarkCitations(props.index, new Set(props.citations.map((citation) => citation.marker))),
+    [props.citations, props.index],
   );
+
+  return (
+    <div className="markdown">
+      <ReactMarkdown remarkPlugins={[remarkGfm, citationPlugin]} components={MARKDOWN_COMPONENTS}>
+        {props.text}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
+const MARKDOWN_COMPONENTS: Components = {
+  a({ href, children, node: _node, ...properties }) {
+    const citation = /^#s\d+-\d+$/.test(href ?? '');
+    return (
+      <a
+        {...properties}
+        href={href}
+        className={citation ? 'cite' : properties.className}
+        {...(citation ? {} : { target: '_blank', rel: 'noreferrer noopener' })}
+      >
+        {children}
+      </a>
+    );
+  },
+  img({ alt }) {
+    return <span className="image-omitted">{alt ? `[Image: ${alt}]` : '[Image omitted]'}</span>;
+  },
+};
+
+interface MarkdownNode {
+  type: string;
+  value?: string;
+  url?: string;
+  children?: MarkdownNode[];
+}
+
+/**
+ * Turn citation markers into Markdown links after parsing. Code and inline-code nodes contain a
+ * value rather than text children, so examples such as `items[1]` remain untouched.
+ */
+function remarkCitations(index: number, validMarkers: Set<number>) {
+  return () =>
+    (tree: MarkdownNode): void =>
+      transformChildren(tree);
+
+  function transformChildren(parent: MarkdownNode): void {
+    if (!parent.children || parent.type === 'link') return;
+    const transformed: MarkdownNode[] = [];
+    for (const child of parent.children) {
+      if (child.type !== 'text' || child.value === undefined) {
+        transformChildren(child);
+        transformed.push(child);
+        continue;
+      }
+
+      let cursor = 0;
+      const pattern = /\[(\d+)\]/g;
+      for (const match of child.value.matchAll(pattern)) {
+        const marker = Number(match[1]);
+        const offset = match.index ?? 0;
+        if (!validMarkers.has(marker)) continue;
+        if (offset > cursor)
+          transformed.push({ type: 'text', value: child.value.slice(cursor, offset) });
+        transformed.push({
+          type: 'link',
+          url: `#s${index}-${marker}`,
+          children: [{ type: 'text', value: String(marker) }],
+        });
+        cursor = offset + match[0].length;
+      }
+      if (cursor < child.value.length)
+        transformed.push({ type: 'text', value: child.value.slice(cursor) });
+      else if (cursor === 0) transformed.push(child);
+    }
+    parent.children = transformed;
+  }
 }

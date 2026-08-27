@@ -59,7 +59,22 @@ export function buildAclPredicate(access: AccessContext, scope: RetrievalScope):
         'Caller has no permitted repositories. Refusing to run an unscoped query.',
       );
     }
-    clauses.push(inArray('c.repo_id', access.permittedRepoIds));
+    // Existing documentation is independently indexed, but repo-linked documents inherit the
+    // same repository grants. Connector-native ACLs fail closed until their identities have
+    // been mapped; merely adding a connector can never make its pages readable by accident.
+    clauses.push(sql`(
+      (c.corpus <> 'docs' AND ${inArray('c.repo_id', access.permittedRepoIds)})
+      OR
+      (c.corpus = 'docs' AND ${inArray('c.repo_id', access.permittedRepoIds)} AND (
+        c.document_id IS NULL OR EXISTS (
+          SELECT 1 FROM documents d
+          WHERE d.org_id = c.org_id AND d.id = c.document_id
+            AND d.deleted_at IS NULL
+            AND COALESCE(d.access_policy ->> 'mode', 'inherit-repositories')
+                IN ('inherit-repositories', 'public')
+        )
+      ))
+    )`);
 
     // §15.4 — revocations are a short-TTL deny list that takes precedence over any grant. A
     // permission removal must not wait for the next positive-cache refresh.

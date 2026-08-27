@@ -11,7 +11,7 @@
  * Semantic version of the IR schema itself. Bump MINOR for additive optional fields,
  * MAJOR for anything an N-2 upcast cannot repair.
  */
-export const IR_SCHEMA_VERSION = '1.0.0' as const;
+export const IR_SCHEMA_VERSION = '1.1.0' as const;
 
 /**
  * Oldest bundle schema the ingest endpoint will accept. §15.3 — "CLI version skew across the
@@ -33,12 +33,35 @@ export function parseVersion(v: string): [number, number, number] {
   return [Number(m[1]), Number(m[2]), Number(m[3])];
 }
 
-/** True when `candidate` is within the N-2 MAJOR window of `current`. */
+/**
+ * True when `candidate` is not newer than this runtime and is within its N-2 MAJOR window.
+ *
+ * A newer minor version can contain additive fields that this runtime's Zod schema does not
+ * know. Zod strips unknown object keys, so accepting that bundle would mutate the payload before
+ * integrity verification and produce a misleading hash-mismatch error. More importantly, it
+ * could silently discard knowledge. Forward compatibility therefore requires a runtime upgrade;
+ * only older compatible bundles are upcast here.
+ */
 export function isWithinSupportWindow(
   candidate: string,
   current: string = IR_SCHEMA_VERSION,
 ): boolean {
-  const [cMaj] = parseVersion(candidate);
-  const [curMaj] = parseVersion(current);
-  return cMaj <= curMaj && cMaj >= curMaj - 2;
+  const candidateVersion = parseVersion(candidate);
+  const currentVersion = parseVersion(current);
+  const [candidateMajor] = candidateVersion;
+  const [currentMajor] = currentVersion;
+  return (
+    candidateMajor >= currentMajor - 2 && compareVersions(candidateVersion, currentVersion) <= 0
+  );
+}
+
+export function compareVersions(
+  left: [number, number, number],
+  right: [number, number, number],
+): number {
+  for (let index = 0; index < left.length; index += 1) {
+    const difference = left[index]! - right[index]!;
+    if (difference !== 0) return difference;
+  }
+  return 0;
 }

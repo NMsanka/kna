@@ -13,6 +13,7 @@ const IORedis = IORedisModule as unknown as new (
 
 export const QUEUE_NAMES = {
   indexModule: 'index-module',
+  indexDocuments: 'index-documents',
   crossRepo: 'cross-repo-resolve',
   regenerateDocs: 'regenerate-docs',
   maintenance: 'maintenance',
@@ -210,6 +211,20 @@ export class WorkerQueue {
   }): Promise<string> {
     const id = jobId('docs', job.repoId, job.commitSha);
     await this.queue(QUEUE_NAMES.regenerateDocs).add(QUEUE_NAMES.regenerateDocs, job, {
+      jobId: id,
+    });
+    return id;
+  }
+
+  async enqueueIndexDocuments(job: {
+    orgId: string;
+    repoId: string;
+    commitSha: string;
+    ref: string;
+    bundleStorageKey: string;
+  }): Promise<string> {
+    const id = jobId('source-docs', job.repoId, job.commitSha);
+    await this.queue(QUEUE_NAMES.indexDocuments).add(QUEUE_NAMES.indexDocuments, job, {
       jobId: id,
     });
     return id;
