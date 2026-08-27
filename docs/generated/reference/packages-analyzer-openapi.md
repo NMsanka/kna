@@ -52,7 +52,7 @@ provenance:
   signatureHashes:
     sym_ebb0abb68ad61ef073e3c2ade5bcc02a4076b5a8: d7ab8a405086a98d7649f8e3cb39570d3eee6b0cd83c221b2825666de4b39bc3
     sym_dda3d15045c6c9d6104e55e4b4fd33cef46a50a6: d67e8313392744d074e6205da8f81c484f0d8902806a027e09618e18aa0507ce
-    sym_25540a309bd9424b187f6102ee5294a141128143: da06ffe4dbabb4fbf15913db32cc2ad045389d7b82f0efa30d0fc62146ca054c
+    sym_25540a309bd9424b187f6102ee5294a141128143: 19e199474d2c9b3231bee1ea62d3bcf892e7cd8165f893ffada64780d237444b
     sym_185f0ebc630ab9aec337f629d588972080c1657f: 434fd0653c72ccdc243dd9116e6ad29e63d5d4f00a008942d5cfa7e90b5ff685
     sym_a86cdd2b66c4fb714acd03dbc3a53882028d3f29: 79fc445e139ddc21cf418cc1b5211038f9eb5f188e150d488c3731406774647b
     sym_fbcf56c2600c614451c4ce15d0cb212913f783e1: 66bdd070adc84499c3796c63c29eca6c4a75a33e8e3391451db04bf4a70173c3
@@ -101,7 +101,7 @@ provenance:
 | Public symbols | 38 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.property hash=28cfe3cd5563cf84 -->
+<!-- kna:generated:start id=api.property hash=bb0426df29a905c4 -->
 ### `services`
 
 ```typescript
@@ -198,7 +198,7 @@ skipped: Array<{path: string;reason: string}>
 specs: ApiSpec[]
 ```
 
-**Returns** `{ format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: null \| string; document?: unknown; }[]`
+**Returns** `{ title: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; sourcePath: null \| string; specId: string; moduleId: string; version: string; documentHash: string; document?: unknown; }[]`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-openapi/src/openapi.ts#L48)</sub>
 
@@ -503,7 +503,7 @@ schema?: unknown
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-openapi/src/openapi.ts#L159)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.function hash=b62edef051ba5102 -->
+<!-- kna:generated:start id=api.function hash=d98995873c7751dd -->
 ### `extractApiSpecs`
 
 ```typescript
@@ -523,14 +523,14 @@ extractApiSpecs(input: ExtractSpecsInput): Promise<ExtractSpecsResult>
 ### `extractServices`
 
 ```typescript
-extractServices(input: ExtractServicesInput): Promise<{name: string;kind: "cache" | "database" | "external" | "job" | "queue" | "service";moduleId: null | string;image: null | string;dependsOn: string[];ports: number[];source: string;}[]>
+extractServices(input: ExtractServicesInput): Promise<{source: string;moduleId: null | string;name: string;kind: "cache" | "database" | "external" | "job" | "queue" | "service";image: null | string;dependsOn: string[];ports: number[];}[]>
 ```
 
 | Parameter | Type | Description |
 |---|---|---|
 | `input` | `ExtractServicesInput` |  |
 
-**Returns** `Promise<{ name: string; kind: "cache" \| "database" \| "external" \| "job" \| "queue" \| "service"; moduleId: null \| string; image: null \| string; dependsOn: string[]; ports: number[]; source: string; }[]>`
+**Returns** `Promise<{ source: string; moduleId: null \| string; name: string; kind: "cache" \| "database" \| "external" \| "job" \| "queue" \| "service"; image: null \| string; dependsOn: string[]; ports: number[]; }[]>`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/analyzer-openapi/src/infra.ts#L26)</sub>
 <!-- kna:generated:end id=api.function -->

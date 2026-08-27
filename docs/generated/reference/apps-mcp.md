@@ -151,7 +151,7 @@ provenance:
 | Public symbols | 63 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.constant hash=693dab2b85e34ddc -->
+<!-- kna:generated:start id=api.constant hash=06cbe6c3fd0c795d -->
 ### `_schemaProbe`
 
 ```typescript
@@ -160,7 +160,7 @@ const _schemaProbe: z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>
 
 **Returns** `ZodObject<{}, "strip", ZodTypeAny, {}, {}>`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/handlers.ts#L542)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/mcp/src/handlers.ts#L546)</sub>
 
 ---
 

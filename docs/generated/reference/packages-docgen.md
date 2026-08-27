@@ -722,14 +722,14 @@ interface StalenessAssessment
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/staleness.ts#L39)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=777b0c7d7be4efce -->
+<!-- kna:generated:start id=api.property hash=821760b8537fb87b -->
 ### `payload`
 
 ```typescript
 payload: IrBundlePayload
 ```
 
-**Returns** `{ languages: ("csharp" \| "javascript" \| "python" \| "typescript" \| "unknown")[]; analysisDepth: "artifact" \| "semantic" \| "shallow"; version: { commitSha: string; kind: "branch" \| "tag"; ref: string; committedAt: null; \| string }; repo: { name: string; id: string; orgId: string; remote: string; defau…`
+**Returns** `{ version: { kind: "branch" \| "tag"; ref: string; commitSha: string; committedAt: null; \| string }; repo: { id: string; name: string; orgId: string; remote: string; defaultBranch: string; provider: "azuredevops" \| "bitbucket" \| "github" \| "gitlab" \| "local"; }; modules: { path: string; id: string; s…`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/architecture.ts#L24)</sub>
 
@@ -995,7 +995,7 @@ linkHandlers?: boolean
 spec: ApiSpec
 ```
 
-**Returns** `{ format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; version: string; specId: string; moduleId: string; title: string; documentHash: string; sourcePath: null \| string; document?: unknown; }`
+**Returns** `{ title: string; format: "asyncapi" \| "graphql" \| "grpc" \| "openapi3" \| "openapi31" \| "swagger2"; sourcePath: null \| string; specId: string; moduleId: string; version: string; documentHash: string; document?: unknown; }`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/docgen/src/integration-guide.ts#L27)</sub>
 

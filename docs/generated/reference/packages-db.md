@@ -37,7 +37,9 @@ provenance:
     - sym_5f80a944523f5875924c34c4b25a4618d95e1ea8
     - sym_e222d914a86595dc0ae8e582bd35ec7bd4dcb29b
     - sym_43f7705c49c8b104fd2f82b75fbbde9ff89e35e6
+    - sym_bc7d46c1d629b4102b27f87a1996b38f2ea05768
     - sym_bf8345b719ec883f724a3adc2c9da4504188169d
+    - sym_2afe65c58af4e71b5de1c2136f2d65e63c257de9
     - sym_312b83602694d68661a4b392135a959ca413597f
     - sym_479653b7037aaefe172e752ed506b9e25e229cac
     - sym_592626b7f9e39ec6da45ac3523d203b19e8d8c4f
@@ -118,7 +120,9 @@ provenance:
     sym_5f80a944523f5875924c34c4b25a4618d95e1ea8: 11b017cf7a6c2172c1b9e8c37dc8ef9bdace43d62a06c86033df052400ec6222
     sym_e222d914a86595dc0ae8e582bd35ec7bd4dcb29b: 9f3414b7d36990df6bde8512b89e9fb32d422d5cda468fd574041458f012de43
     sym_43f7705c49c8b104fd2f82b75fbbde9ff89e35e6: b91218cfe55b0740f05fd51bb9b16a871e4928c6b9d5fe0f28d4a5878d675e8c
+    sym_bc7d46c1d629b4102b27f87a1996b38f2ea05768: ed7acaf6d3ec314913965b962ddbe66149afd3d631dd7ea87a4cca931f827fd6
     sym_bf8345b719ec883f724a3adc2c9da4504188169d: eac6780d54a47c5bb40afedc7321e54cec6b991aa84cf6cb0f7d4e194d5d6d05
+    sym_2afe65c58af4e71b5de1c2136f2d65e63c257de9: d121926e4a5a4ef7ca99d0094262c9d709570d2062562221bd37b3d11da92b74
     sym_312b83602694d68661a4b392135a959ca413597f: 827b10e410b59f646d794fc83443e5eac82006317c4ab69944e9276cfb43c76f
     sym_479653b7037aaefe172e752ed506b9e25e229cac: 356c34e0e78490d4a17ada066f6b45552c2f0fa631e02eb708e0024df6c1d59d
     sym_592626b7f9e39ec6da45ac3523d203b19e8d8c4f: adb19b6c365a25940b820df61dda2fb596c514ca9f308ad28e5aa21595d37a0f
@@ -176,13 +180,13 @@ provenance:
 
 # @kna/db reference
 
-<!-- kna:generated:start id=overview hash=eaa9495b88b213fe -->
+<!-- kna:generated:start id=overview hash=ee1f49ba8dcabc2f -->
 | | |
 |---|---|
 | Package | `@kna/db` (npm) |
 | Path | `packages/db` |
 | Languages | typescript |
-| Public symbols | 80 |
+| Public symbols | 82 |
 <!-- kna:generated:end id=overview -->
 
 <!-- kna:generated:start id=api.constant hash=7106341161325d0b -->

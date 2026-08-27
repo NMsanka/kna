@@ -15,6 +15,7 @@ provenance:
     - sym_a1cf2cf510f7ec9838caea9519d6333af8dc2dd9
     - sym_b8f02e4aeda9936644a9b55d886d48f5154b4a77
     - sym_9706b017e72e9199ed11c78ec8754bc93d0202e5
+    - sym_89f3333ea3b677489cd6896a072b92476643c2e9
     - sym_4d12d58976eac18b3cfba416febce5e9d143711b
     - sym_ae03de70a491549140304396d0a8402e01350f7d
     - sym_7ab8cd1bcc7d2ebc489d2bce03489ed340d20718
@@ -30,6 +31,10 @@ provenance:
     - sym_ce085af658ea1feabbf1130725aacc1f31970f6a
     - sym_613433c71a0dcc6a5bc82627d450704f09a23370
     - sym_553b0728e533c61c7e4f6f8d5c8bfe7fc3efcf7f
+    - sym_d2834f4eb0ebead1058f7e7620299ed0880f986e
+    - sym_55f37360dbfe52c0158f8be6b01e7d09d5aacc69
+    - sym_a58cc0a01551935d301e539bcbb1afcbf40c3274
+    - sym_bd3c7dfd3133e22c4b50412aedb8987c3b7d1f28
     - sym_1e3151b326af71f18061e71f5f5799d8b96efd68
     - sym_05d227b278f63ac13db020634506a96b5347b187
     - sym_2520b1dbe10f656bb00f5f3229e8041532c830a3
@@ -66,6 +71,7 @@ provenance:
     sym_a1cf2cf510f7ec9838caea9519d6333af8dc2dd9: 630f6d21cb0f06f0e1efe6b443820835d80c8ceee29a9a68a2bc1ad284110037
     sym_b8f02e4aeda9936644a9b55d886d48f5154b4a77: 84781c4a1c3981beb9e4eaa3ae10cfc83f9109feec64ce61e168e55c40f10981
     sym_9706b017e72e9199ed11c78ec8754bc93d0202e5: eeb206363d36454d74c278cc13b7a4dacaee0858835a3e4cceaacd8b1d647127
+    sym_89f3333ea3b677489cd6896a072b92476643c2e9: fa72d02f22327916f7f74cac97f1b652a75732b3a5715b1cc6363b8540742450
     sym_4d12d58976eac18b3cfba416febce5e9d143711b: 2fc8f44a683bfe66537bb13c0527ef4635eb8ba6923b12dabfebdada744ea9a0
     sym_ae03de70a491549140304396d0a8402e01350f7d: 89d2aa3a32c7e11252ec7787f644ec9b4957e99e1360449fa9ebe7b1f940a472
     sym_7ab8cd1bcc7d2ebc489d2bce03489ed340d20718: 6a90cccb6920623f6819700ade69989b6102283726b9df45d239e6f92be9a413
@@ -81,6 +87,10 @@ provenance:
     sym_ce085af658ea1feabbf1130725aacc1f31970f6a: d840194c26c5400fba664fe052ef23291d4c1b25e78a1ab603a831213e4e3093
     sym_613433c71a0dcc6a5bc82627d450704f09a23370: 0c24f9ea8427cc7bc47ccabe1dd75073de69495b7305a83162d2236e1c97ac82
     sym_553b0728e533c61c7e4f6f8d5c8bfe7fc3efcf7f: 1c331fc424f5b21a204f52dfe3307e1153e9051ae38a770d2bd0e1e46d6c87c4
+    sym_d2834f4eb0ebead1058f7e7620299ed0880f986e: 802ea23e9c75bd409f8b76832653bae2d01584d65e7a9c8f2b661ed2694f3919
+    sym_55f37360dbfe52c0158f8be6b01e7d09d5aacc69: 2283c8f7d956ce72bedae91b43771bae4695f92d405896626319b9ed7a083ae5
+    sym_a58cc0a01551935d301e539bcbb1afcbf40c3274: f820497fdb4cc694a1ad8b0fe665724a60d0a89da2e4905bdc7c1096c91bd392
+    sym_bd3c7dfd3133e22c4b50412aedb8987c3b7d1f28: d3af9a064b1256343e76ee73ef375c813fec945d6fef83f81d2cdac2152a630b
     sym_1e3151b326af71f18061e71f5f5799d8b96efd68: 9e76dc161a8d7925f9a4433cd0bff41f7d5232127f8129e15a9e1fb11595e031
     sym_05d227b278f63ac13db020634506a96b5347b187: 293d29c44fd8baa7a6a6711b9a758a8901eb6b346da72d818bec87a35a7d768f
     sym_2520b1dbe10f656bb00f5f3229e8041532c830a3: 58b5154a10896f92706c66129cb6e5d0bd89beed88a5d14bdc79c1a43d034b11
@@ -116,13 +126,13 @@ provenance:
 
 # @kna/web reference
 
-<!-- kna:generated:start id=overview hash=b13130d1567a3a5c -->
+<!-- kna:generated:start id=overview hash=858c7dc2fef7becc -->
 | | |
 |---|---|
 | Package | `@kna/web` (npm) |
 | Path | `apps/web` |
 | Languages | typescript |
-| Public symbols | 50 |
+| Public symbols | 55 |
 <!-- kna:generated:end id=overview -->
 
 <!-- kna:generated:start id=api.interface hash=80f7c84215885b0f -->
@@ -197,7 +207,7 @@ interface ScopeGroup
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L20)</sub>
 <!-- kna:generated:end id=api.interface -->
 
-<!-- kna:generated:start id=api.property hash=3d85e53d11e03422 -->
+<!-- kna:generated:start id=api.property hash=d8d7281875a8b759 -->
 ### `abstained`
 
 ```typescript
@@ -315,6 +325,54 @@ startLine: number | null
 **Returns** `null \| number`
 
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L31)</sub>
+
+---
+
+### `children`
+
+```typescript
+children?: MarkdownNode[]
+```
+
+**Returns** `MarkdownNode[] \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L322)</sub>
+
+---
+
+### `type`
+
+```typescript
+type: string
+```
+
+**Returns** `string`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L319)</sub>
+
+---
+
+### `url`
+
+```typescript
+url?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L321)</sub>
+
+---
+
+### `value`
+
+```typescript
+value?: string
+```
+
+**Returns** `string \| undefined`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L320)</sub>
 
 ---
 
@@ -554,7 +612,7 @@ answer: Answer | null
 
 **Returns** `Answer \| null`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L17)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L19)</sub>
 
 ---
 
@@ -566,7 +624,7 @@ error: string | null
 
 **Returns** `null \| string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L18)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L20)</sub>
 
 ---
 
@@ -578,7 +636,7 @@ question: string
 
 **Returns** `string`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L16)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L18)</sub>
 <!-- kna:generated:end id=api.property -->
 
 <!-- kna:generated:start id=api.constant hash=d5d4f09987c9b656 -->
@@ -618,7 +676,25 @@ constructor(message: string, readonly status: number)
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/api.ts#L65)</sub>
 <!-- kna:generated:end id=api.method -->
 
-<!-- kna:generated:start id=api.function hash=f3c80cd382f5cde4 -->
+<!-- kna:generated:start id=api.function hash=d4ebc6a2c38a1db4 -->
+### `AnswerText`
+
+Render model output as Markdown, with `[1]` markers linked to the matching source.
+
+```typescript
+AnswerText(props: {text: string;citations: Citation[];index: number;}): Element
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `props` | `{ text: string; citations: Citation[]; index: number; }` |  |
+
+**Returns** `Element`
+
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L280)</sub>
+
+---
+
 ### `App`
 
 ```typescript
@@ -643,7 +719,7 @@ Chat(props: {everywhere: boolean;go: (path: string) => void;onError: (error: unk
 
 **Returns** `Element`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L21)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/apps/web/src/pages/Chat.tsx#L23)</sub>
 
 ---
 

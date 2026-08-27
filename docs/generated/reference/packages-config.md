@@ -87,7 +87,7 @@ provenance:
 | Public symbols | 31 |
 <!-- kna:generated:end id=overview -->
 
-<!-- kna:generated:start id=api.function hash=b206fa2235cf5748 -->
+<!-- kna:generated:start id=api.function hash=c976133b8406c1ce -->
 ### `clearConfigCache`
 
 Clear the cosmiconfig cache — needed in tests and in a long-lived worker process.
@@ -116,7 +116,7 @@ defaultConfig(org: string): {version: 1;org: string;projects: string[];modules: 
 
 **Returns** `{ version: 1; org: string; projects: string[]; modules: { path: string; projects: string[]; owners: string[]; name?: string \| undefined; visibility?: "internal" \| "public" \| undefined; sensitivity?: "confidential" \| "internal" \| "public" \| "restricted" \| undefined; }[]; exclude: string[]; vendored: …`
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L148)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L169)</sub>
 
 ---
 
@@ -405,14 +405,14 @@ warnings: string[]
 <sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/load.ts#L11)</sub>
 <!-- kna:generated:end id=api.property -->
 
-<!-- kna:generated:start id=api.type hash=9b3ab514f8a4508d -->
+<!-- kna:generated:start id=api.type hash=146ee35031f2aa91 -->
 ### `ModuleConfig`
 
 ```typescript
 type ModuleConfig = z.infer<typeof zModuleConfig>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L144)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L165)</sub>
 
 ---
 
@@ -432,7 +432,7 @@ type PlatformEnv = z.infer<typeof zPlatformEnv>
 type RepoConfig = z.infer<typeof zRepoConfig>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L143)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L164)</sub>
 
 ---
 
@@ -442,7 +442,7 @@ type RepoConfig = z.infer<typeof zRepoConfig>
 type SensitivityRule = z.infer<typeof zSensitivityRule>
 ```
 
-<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L145)</sub>
+<sub>[Source](https://github.com/nmsanka/kna/blob/master/packages/config/src/schema.ts#L166)</sub>
 <!-- kna:generated:end id=api.type -->
 
 <!-- kna:generated:start id=api.constant hash=892e63beecae484e -->
