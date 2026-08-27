@@ -75,10 +75,12 @@ export interface RetrievalRequest {
 export interface ScoredChunk {
   chunkId: string;
   symbolId: string | null;
-  moduleId: string;
+  moduleId: string | null;
   repoId: string;
   content: string;
   sourcePath: string | null;
+  sourceUrl?: string | null;
+  documentId?: string | null;
   sourceStartLine: number | null;
   sourceEndLine: number | null;
   sensitivity: Sensitivity;

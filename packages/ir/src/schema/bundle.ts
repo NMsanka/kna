@@ -3,6 +3,7 @@ import { zModule } from './module.js';
 import { zSymbol } from './symbol.js';
 import { zRepoRef, zVersionRef } from './repo.js';
 import { zAnalysisDepth, zLanguage } from './primitives.js';
+import { zKnowledgeDocument } from './document.js';
 
 /** Raw Tier 2 artefacts carried alongside the symbols. */
 export const zApiSpec = z.object({
@@ -59,6 +60,8 @@ export const zIrBundlePayload = z.object({
   symbols: z.array(zSymbol),
   apiSpecs: z.array(zApiSpec).default([]),
   services: z.array(zServiceManifest).default([]),
+  /** Existing documentation acquired through connector-neutral source adapters. */
+  documents: z.array(zKnowledgeDocument).default([]),
   languages: z.array(zLanguage).default([]),
   analysisDepth: zAnalysisDepth,
   toolchain: zToolchainReport,

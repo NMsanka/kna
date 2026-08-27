@@ -138,34 +138,78 @@ export class RetrievalPipeline {
       corpora: weights.corpora,
     };
 
-    // ── Stage 2: three arms, in parallel ───────────────────────────────────────────────────
-    const [dense, lexical, symbolHits] = await Promise.all([
-      time(timings, 'dense', async () => {
-        const vector = await this.options.embed(searchQuery);
-        return this.options.store.denseSearch(vector, this.config.topKDense, searchOptions);
-      }).catch((error: unknown) => {
-        // Embeddings down. §15.6's named degraded mode keeps the other arms serving rather
-        // than failing the request: lexical and symbol lookup need no provider at all.
-        degradedModes.push('embeddings-unavailable');
-        this.options.onDegraded?.('embeddings-unavailable');
-        void error;
-        return [];
-      }),
-      time(timings, 'lexical', () =>
-        this.options.store.lexicalSearch(searchQuery, this.config.topKLexical, searchOptions),
-      ),
-      time(timings, 'symbol', () =>
-        this.options.store.symbolSearch(
-          understanding.identifiers,
-          this.config.topKSymbol,
-          searchOptions,
-        ),
-      ),
+    // ── Stage 2: code and documentation are separate ranked arms ───────────────────────────
+    // They have different chunking and population sizes. Searching them independently prevents
+    // a large code corpus from removing all documentation before fusion (and vice versa).
+    const documentationCorpusNames = new Set<string>(['docs', 'adr']);
+    const documentationCorpora = weights.corpora.filter(
+      (corpus) => corpus === 'docs' || corpus === 'adr',
+    );
+    const codeCorpora = weights.corpora.filter((corpus) => !documentationCorpusNames.has(corpus));
+    let queryVector: number[] | null = null;
+    try {
+      queryVector = await time(timings, 'embed-query', () => this.options.embed(searchQuery));
+    } catch {
+      degradedModes.push('embeddings-unavailable');
+      this.options.onDegraded?.('embeddings-unavailable');
+    }
+
+    const searchCorpus = (corpora: string[]) => ({ ...searchOptions, corpora });
+    const [denseCode, denseDocs, lexicalCode, lexicalDocs, symbolHits] = await Promise.all([
+      queryVector && codeCorpora.length
+        ? time(timings, 'dense-code', () =>
+            this.options.store.denseSearch(
+              queryVector!,
+              this.config.topKDense,
+              searchCorpus(codeCorpora),
+            ),
+          )
+        : [],
+      queryVector && documentationCorpora.length
+        ? time(timings, 'dense-docs', () =>
+            this.options.store.denseSearch(
+              queryVector!,
+              this.config.topKDense,
+              searchCorpus(documentationCorpora),
+            ),
+          )
+        : [],
+      codeCorpora.length
+        ? time(timings, 'lexical-code', () =>
+            this.options.store.lexicalSearch(
+              searchQuery,
+              this.config.topKLexical,
+              searchCorpus(codeCorpora),
+            ),
+          )
+        : [],
+      documentationCorpora.length
+        ? time(timings, 'lexical-docs', () =>
+            this.options.store.lexicalSearch(
+              searchQuery,
+              this.config.topKLexical,
+              searchCorpus(documentationCorpora),
+            ),
+          )
+        : [],
+      codeCorpora.length
+        ? time(timings, 'symbol', () =>
+            this.options.store.symbolSearch(
+              understanding.identifiers,
+              this.config.topKSymbol,
+              searchCorpus(codeCorpora),
+            ),
+          )
+        : [],
     ]);
+    const dense = [...denseCode, ...denseDocs];
+    const lexical = [...lexicalCode, ...lexicalDocs];
 
     const arms: FusionArm[] = [
-      { name: 'dense', candidates: dense, weight: weights.dense },
-      { name: 'lexical', candidates: lexical, weight: weights.lexical },
+      { name: 'dense-code', candidates: denseCode, weight: weights.dense },
+      { name: 'dense-docs', candidates: denseDocs, weight: weights.dense },
+      { name: 'lexical-code', candidates: lexicalCode, weight: weights.lexical },
+      { name: 'lexical-docs', candidates: lexicalDocs, weight: weights.lexical },
       { name: 'symbol', candidates: symbolHits, weight: weights.symbol },
     ];
 

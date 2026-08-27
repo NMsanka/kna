@@ -9,6 +9,12 @@ products over one substrate: a CLI that analyses repositories and generates docu
 knowledge base that stays synchronised with code changes, and an MCP server that exposes the
 same knowledge to coding agents.
 
+Existing Markdown and MDX documentation is ingested into a documentation corpus that stays
+separate from code embeddings but remains linked by repository, project, module, version, and
+provenance. The source-neutral connector boundary supports later integrations such as Confluence
+without a rewrite of indexing or retrieval. See
+[existing documentation ingestion](docs/existing-documentation.md).
+
 Built from [`docs/architecture-recommendation.md`](docs/architecture-recommendation.md). Where
 this implementation departs from that document, the code says why at the point of departure.
 

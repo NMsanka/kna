@@ -10,6 +10,7 @@ export * from './schema/http.js';
 export * from './schema/symbol.js';
 export * from './schema/module.js';
 export * from './schema/repo.js';
+export * from './schema/document.js';
 export * from './schema/bundle.js';
 
 export * from './diff/index.js';

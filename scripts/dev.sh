@@ -505,7 +505,11 @@ cmd_bootstrap() {
   step "Building"
   pnpm build
   cmd_seed
-  cmd_start
+  # A build does not change code already loaded by the host Node processes. Keeping an old API
+  # alive after an IR schema change makes it parse a new bundle with an old schema, which can
+  # discard additive fields and surface as a misleading payload-hash mismatch. Bootstrap means
+  # "run the stack I just built", so replace any existing local services deliberately.
+  cmd_restart
   echo
   step "Ready"
   info "$(invocation) publish          index this repository"

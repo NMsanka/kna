@@ -64,19 +64,20 @@ export const chunks = pgTable(
     //    join across three tables on the hot path." ──────────────────────────────────────────
     orgId: text('org_id').notNull(),
     repoId: text('repo_id').notNull(),
-    moduleId: text('module_id').notNull(),
+    moduleId: text('module_id'),
     projectIds: jsonb('project_ids')
       .$type<string[]>()
       .notNull()
       .default(sql`'[]'::jsonb`),
     versionId: text('version_id').notNull(),
+    /** Vector namespace. Documentation and code are searched as separate ranked arms. */
+    corpus: text('corpus').notNull().default('code'),
 
     symbolId: text('symbol_id'),
+    /** Present for documentation chunks. Code chunks use symbolId instead. */
+    documentId: text('document_id'),
     /** Ordinal within an oversized symbol that had to be split. */
     ordinal: integer('ordinal').notNull().default(0),
-
-    /** What kind of thing this chunk is — drives query routing (§8). */
-    corpus: text('corpus').notNull().default('code'),
 
     /**
      * The text that was embedded, including the generated context header. Anthropic's
@@ -103,6 +104,7 @@ export const chunks = pgTable(
     analysisDepth: text('analysis_depth').notNull().default('shallow'),
 
     sourcePath: text('source_path'),
+    sourceUrl: text('source_url'),
     sourceStartLine: integer('source_start_line'),
     sourceEndLine: integer('source_end_line'),
 
@@ -138,8 +140,10 @@ export const embeddings = pgTable(
   {
     chunkId: text('chunk_id').notNull(),
     orgId: text('org_id').notNull(),
-    moduleId: text('module_id').notNull(),
+    moduleId: text('module_id'),
     versionId: text('version_id').notNull(),
+    /** Vector namespace. Documentation and code are searched as separate ranked arms. */
+    corpus: text('corpus').notNull().default('code'),
     /** Identity of the space this vector lives in. Never nullable, never defaulted. */
     model: text('model').notNull(),
     dimensions: integer('dimensions').notNull(),
@@ -149,6 +153,7 @@ export const embeddings = pgTable(
   (t) => [
     uniqueIndex('embeddings_identity_idx').on(t.chunkId, t.model),
     index('embeddings_scope_idx').on(t.orgId, t.model, t.moduleId),
+    index('embeddings_corpus_scope_idx').on(t.orgId, t.model, t.corpus, t.versionId),
   ],
 );
 
@@ -216,6 +221,24 @@ export const documents = pgTable(
     docType: text('doc_type').notNull(),
     /** Where it lives in the customer's own repo — the exit-cheap property (§15.8). */
     repoPath: text('repo_path'),
+    sourceId: text('source_id'),
+    sourceType: text('source_type').notNull().default('generated'),
+    sourceInstanceId: text('source_instance_id'),
+    externalId: text('external_id'),
+    sourceRevision: text('source_revision'),
+    canonicalUrl: text('canonical_url'),
+    audience: text('audience').notNull().default('developer'),
+    authority: text('authority').notNull().default('supporting'),
+    accessPolicy: jsonb('access_policy')
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default(sql`'{}'::jsonb`),
+    sourceMetadata: jsonb('source_metadata')
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default(sql`'{}'::jsonb`),
+    sourceUpdatedAt: timestamp('source_updated_at', { withTimezone: true }),
+    deletedAt: timestamp('deleted_at', { withTimezone: true }),
 
     /** Symbol ids this document was built from. Drives drift detection and "show me the
      *  source" links. §6 rule 2: every generated section records its provenance. */
@@ -255,5 +278,60 @@ export const documents = pgTable(
     uniqueIndex('documents_slug_idx').on(t.orgId, t.slug, t.versionId),
     index('documents_scope_idx').on(t.orgId, t.projectId, t.visibility),
     index('documents_staleness_idx').on(t.orgId, t.stalenessScore),
+  ],
+);
+
+/** Configured documentation sources and their incremental synchronization checkpoint. */
+export const documentSources = pgTable(
+  'document_sources',
+  {
+    id: text('id').primaryKey(),
+    orgId: text('org_id').notNull(),
+    sourceType: text('source_type').notNull(),
+    instanceId: text('instance_id').notNull(),
+    config: jsonb('config')
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default(sql`'{}'::jsonb`),
+    cursor: text('cursor'),
+    status: text('status').notNull().default('active'),
+    lastSyncedAt: timestamp('last_synced_at', { withTimezone: true }),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex('document_sources_identity_idx').on(t.orgId, t.sourceType, t.instanceId),
+    index('document_sources_status_idx').on(t.orgId, t.status),
+  ],
+);
+
+/** Explicit and inferred links from documents to repositories, projects, modules, and symbols. */
+export const documentAssociations = pgTable(
+  'document_associations',
+  {
+    id: text('id').primaryKey(),
+    orgId: text('org_id').notNull(),
+    documentId: text('document_id').notNull(),
+    repoId: text('repo_id'),
+    projectId: text('project_id'),
+    moduleId: text('module_id'),
+    symbolId: text('symbol_id'),
+    associationType: text('association_type').notNull(),
+    confidence: real('confidence').notNull().default(1),
+    createdBy: text('created_by').notNull().default('connector'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex('document_associations_identity_idx').on(
+      t.orgId,
+      t.documentId,
+      t.repoId,
+      t.projectId,
+      t.moduleId,
+      t.symbolId,
+      t.associationType,
+    ),
+    index('document_associations_repo_idx').on(t.orgId, t.repoId, t.documentId),
+    index('document_associations_project_idx').on(t.orgId, t.projectId, t.documentId),
   ],
 );
