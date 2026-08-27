@@ -105,15 +105,44 @@ jobs:
       id-token: write
 
     steps:
-      # Only the artefact is downloaded. This job never checks out the repository, so no
-      # contributor-controlled code runs in the environment holding the publish credential.
-      - uses: actions/download-artifact@v4
+      # This repository *is* the platform, so there is no published CLI to fetch. `@kna/cli`
+      # is on no registry (ADR 0002) and `npx --yes @kna/cli` fails with E404. It is built
+      # from this checkout instead — which is exactly what `kna init --cli-source source`
+      # generates for every other repository today.
+      #
+      # This job used to check out nothing, so that no contributor-controlled code ran in the
+      # environment holding the publish credential. That reasoning does not transfer to the
+      # platform indexing itself. The workflow runs only on push to the default branch, on a
+      # tag, or by hand — never on a pull request and never from a fork — so the code built
+      # here is already reviewed and merged. The credential it guards is scoped to this one
+      # repository for minutes, and anyone who can change merged platform code owns the
+      # platform outright and has no use for a token scoped to the repository they already
+      # control. For every other repository the separation is real and stays as it was, and
+      # it returns here unchanged the moment the CLI is published.
+      - uses: actions/checkout@v4
         with:
-          name: kna-ir
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
+
+      # The CLI only. The repository's own build logic — the part that resolves tsconfigs and
+      # restores packages over the code under analysis — belongs to the analyse job, which has
+      # no credentials, and stays there. `--ignore-scripts` for the same reason it is used
+      # there: a dependency's install script would run as this job.
+      - name: Build the kna CLI
+        run: pnpm install --frozen-lockfile --ignore-scripts && pnpm exec tsc -b
+
+      # After the checkout, which cleans the workspace and would otherwise delete it.
+      - uses: actions/download-artifact@v4
+        with:
+          name: kna-ir
 
       # §15.2 — "mint the ingest credential via CI OIDC exchange scoped to one `repoId` for ~10
       # minutes, never a static org secret." A static org secret in repository settings is a
@@ -162,7 +191,7 @@ jobs:
           KNA_PLATFORM_URL: ${{ vars.KNA_PLATFORM_URL }}
           KNA_TOKEN: ${{ steps.token.outputs.token }}
         run: |
-          npx --yes @kna/cli publish \
+          node apps/cli/dist/bin.js publish \
             --bundle kna-ir.json \
             --platform-url "$KNA_PLATFORM_URL"
 
